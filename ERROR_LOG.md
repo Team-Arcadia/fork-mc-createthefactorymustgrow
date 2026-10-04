@@ -177,3 +177,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** It extends Create's `PumpBlockEntity`, which pushes pressure into the pipe network only when its speed or the pipes change (`updatePressureChange` / `updatePipesOnSide`). The electric pump has no speed, so the pressure it computed while unpowered (0) stayed in the pipes when power arrived, and after any later voltage change.
 **Fix:** `lazyTick` recomputes the pressure from the power state and calls `updatePressureChange()` when it differs from the last value pushed.
 **Prevention:** A Create pump subclass driven by anything but rotation must trigger the pressure redistribution itself whenever its driving input changes.
+
+## [2026-10-04 18:43] - An engine refuelled by pipe after running dry never restarted
+**Context:** New end-to-end game test: distillation tower diesel piped into a regular engine that already had its redstone signal.
+**Error:** The engine held 4000 mB of diesel, the inspector found nothing wrong, and its shaft stayed at 0 RPM.
+**Root cause:** Emptying the fuel tank set `rpm = 0` through `tankUpdated`, but nothing recomputed the rotation when fuel arrived again; only a redstone signal change or an item interaction called `updateRotation`. Any engine switched on before its first fuel, or that ran out and was refilled by a pipe or the piping upgrade, stayed still until the lever was toggled.
+**Fix:** `AbstractEngineBlockEntity.tankUpdated` calls `updateRotation` when the fuel tank goes from empty to holding fuel.
+**Prevention:** Every state that zeroes a machine's output (empty tank, missing input) needs the matching transition back; test machines in the order a pipe feeds them, not only in the order a player clicks.

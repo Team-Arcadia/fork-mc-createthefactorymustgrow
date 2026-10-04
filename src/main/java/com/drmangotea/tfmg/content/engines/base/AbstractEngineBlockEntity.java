@@ -56,6 +56,9 @@ public abstract class AbstractEngineBlockEntity extends KineticElectricBlockEnti
     public boolean signalChanged;
     //
     public int fuelConsumptionTimer = 0;
+    // Whether the fuel tank held anything at its last change; not saved, a
+    // freshly loaded engine recomputes its rotation on its first fill anyway.
+    private boolean hadFuel = false;
     //
 
 
@@ -108,6 +111,16 @@ public abstract class AbstractEngineBlockEntity extends KineticElectricBlockEnti
         }
         if (level == null || !level.isLoaded(getBlockPos()))
             return;
+        // Fuel arriving in an empty tank must restart the engine. Running dry
+        // set rpm to 0 and nothing recomputed it when a pipe refilled the
+        // tank, so an engine that ran out of fuel, or was switched on before
+        // its first fuel arrived, sat still on a full tank with its signal on
+        // until the lever was toggled.
+        boolean hasFuel = !stack.isEmpty();
+        if (fuelTank && hasFuel && !hadFuel && !level.isClientSide)
+            updateRotation();
+        if (fuelTank)
+            hadFuel = hasFuel;
         sendData();
         try {
             setChanged();
