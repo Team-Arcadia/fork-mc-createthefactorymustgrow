@@ -12,6 +12,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -26,8 +27,14 @@ public class LitLithiumBladeItem extends SwordItem {
         super(pTier, pProperties);
     }
 
+    // Since 1.21 the wear of a hit belongs in postHurtEnemy: also wearing the
+    // blade in hurtEnemy cost 3 durability per hit instead of 2.
+    @Override
+    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        stack.hurtAndBreak(2, attacker, EquipmentSlot.MAINHAND);
+    }
+
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pStack.hurtAndBreak(2, pAttacker, LivingEntity.getSlotForHand(pAttacker.getUsedItemHand()));
         MobEffectInstance poison = pTarget.getEffect(TFMGMobEffects.HELLFIRE);
 
         if (poison != null) {

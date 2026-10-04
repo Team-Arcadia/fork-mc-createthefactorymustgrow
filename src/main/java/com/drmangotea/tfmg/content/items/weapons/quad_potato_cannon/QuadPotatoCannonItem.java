@@ -6,6 +6,7 @@ package com.drmangotea.tfmg.content.items.weapons.quad_potato_cannon;
 
 import com.drmangotea.tfmg.TFMGClient;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
+import com.drmangotea.tfmg.mixin.accessor.PotatoProjectileEntityAccessor;
 import com.simibubi.create.AllEnchantments;
 import com.simibubi.create.AllEntityTypes;
 import com.simibubi.create.api.equipment.potatoCannon.PotatoCannonProjectileType;
@@ -136,6 +137,12 @@ public class QuadPotatoCannonItem extends ProjectileWeaponItem implements Custom
                 break;
             projectile.setItem(ammoStackCopy);
             projectile.setEnchantmentEffectsFromCannon(heldStack);
+            // One piece of ammo is spent for the whole volley, so only the
+            // first projectile may give it back (Create's cannon does the
+            // same for split shots). Every projectile kept the Potato
+            // Recovery chance, turning one potato into up to four.
+            if (i != 0)
+                ((PotatoProjectileEntityAccessor) projectile).tfmg$setRecoveryChance(0);
 
             Vec3 splitMotion = motion;
             if (spray) {

@@ -352,3 +352,94 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** `BucketItem.use` casts the player to `ServerPlayer` unconditionally when it fills a bucket on the server (`CriteriaTriggers.FILLED_BUCKET`). `GameTestHelper.makeMockPlayer` returns a plain `Player`.
 **Fix:** The fluid tests use a bare `ServerPlayer` (no connection, never logged in, as the progression test already does).
 **Prevention:** Use a bare `ServerPlayer` for any item use that may award a criterion. Also, in these tests: `GameTestHelper.destroyBlock` drops nothing (break with `level.destroyBlock(pos, true)` to check drops), and the platform templates' floor is the layer at y=1, so anything that must stand on the floor goes at y=2.
+
+## [2026-10-04 20:30] - Refuelling a flamethrower from a tank it emptied voided the fuel
+**Context:** New handheld game test: a flamethrower clicked on a Create tank holding 2000 mB of each fuel.
+**Error:** The tank went to 0 mB, the click answered SUCCESS, and the flamethrower held the empty fallback fuel. Partial drains (fuel left in the tank) worked, which is why the 1.3.0 engine fix did not show it.
+**Root cause:** `FlamethrowerItem.useOn` built the new fuel from `fluidStack.getFluid()` after the drain, and `fluidStack` was the tank's live stack (`getFluidInTank` returns it uncopied). Once the drain took everything, the stack read as empty, `createForType` found no fuel type and returned EMPTY.
+**Fix:** The new fuel is built from the fuel type resolved before the drain.
+**Prevention:** Never read a `getFluidInTank` result after draining the same handler; copy it or keep the values first. Test a refill that empties the source exactly, not only one that leaves some behind.
+
+## [2026-10-04 20:38] - A flamethrower that ran dry kept its trigger held
+**Context:** Handheld game test firing 30 mB of gasoline until empty.
+**Error:** The fuel reached empty but the player stayed in use (`isUsingItem`) until the button was released, slowed as when using any item.
+**Root cause:** `onUseTick` returned early when the component was the `FlamethrowerFuel.EMPTY` constant, and `decrement` returns that very constant when the last drop is fired, so the `stopUsingItem` branch below was never reached on the server.
+**Fix:** Any empty fuel, whatever the instance, stops the use.
+**Prevention:** Never decide behaviour by comparing records by identity; use their own `isEmpty()`.
+
+## [2026-10-04 20:31] - Quad potato cannon duplicated ammo with Potato Recovery
+**Context:** New handheld game test firing a quad cannon enchanted with Potato Recovery III.
+**Error:** All 4 projectiles of one shot carried a recovery chance ("Recovery" saved as 0.5), so one potato could come back up to four times.
+**Root cause:** `QuadPotatoCannonItem.use` copies Create's split-shot loop but dropped its `if (i != 0) projectile.recoveryChance = 0;`. The field is protected in Create's package, so the copy could not write it and the line was lost.
+**Fix:** A new accessor mixin (`PotatoProjectileEntityAccessor`) clears the recovery chance of every projectile but the first.
+**Prevention:** When copying a Create method into TFMG, check every statement that touches a non-public member: it is the one that silently disappears. One ammo spent must never be recoverable more than once.
+
+## [2026-10-04 20:32] - Thermite and zinc grenades turned blue when reloaded
+**Context:** New game test saving a thrown grenade of each kind and loading it back, as a chunk unload does.
+**Error:** A thermite or zinc grenade came back as a blue (copper) grenade.
+**Root cause:** The colour is a final field set by the thrower's constructor and never saved; the entity type constructor, used for every loaded or client-side grenade, hard-coded BLUE.
+**Fix:** The type constructor derives the colour from the entity type (`ThermiteGrenade.colorOf`).
+**Prevention:** State that is not saved must be derivable from what is: the entity type is always known when an entity is rebuilt.
+
+## [2026-10-04 20:48] - Copper grenade sparks set no fire
+**Context:** New game test dropping each kind of spark on the floor.
+**Error:** Plain and green sparks set their fire; blue sparks set nothing, so copper grenades burnt nothing.
+**Root cause:** In the 1.21 refactor of the sparks into one `Spark` class, `BlueSpark.getFireState` returned `Optional.empty()` (as `LithiumSpark` does) instead of the blue fire 1.20.1 placed.
+**Fix:** `BlueSpark` returns `BlueFireBlock.getState` again, and its blue particle trail is back.
+**Prevention:** When subclasses are folded into a template method, test each subclass's override, not only the base.
+
+## [2026-10-04 20:49] - Napalm blasts one block off on negative coordinates
+**Context:** Reading the napalm potato and napalm bomb while writing their game tests.
+**Error:** The fire explosion was centred on `new BlockPos((int) x, (int) y, (int) z)`.
+**Root cause:** An `(int)` cast rounds towards zero, so on negative coordinates the blast moved one block towards the origin.
+**Fix:** Both use `BlockPos.containing`, which floors.
+**Prevention:** Never build a BlockPos from casts of entity coordinates; use `blockPosition()` or `BlockPos.containing`.
+
+## [2026-10-04 20:33] - Lead weapons and the lit lithium blade wore twice as fast
+**Context:** New handheld game tests counting durability per hit.
+**Error:** A lead sword lost 3 per hit, a lead axe 4, the lit lithium blade 3, where 1.20.1 took 2 each.
+**Root cause:** Since 1.21 vanilla wears weapons in `postHurtEnemy` (sword 1, digger 2) and only calls `hurtEnemy` for effects. The ported overrides still wore the item in `hurtEnemy`, so both ran; the lead sword also passed the target's hand slot.
+**Fix:** `hurtEnemy` only applies the effects; the lead sword and lit blade wear 2 in `postHurtEnemy`, the lead axe keeps the axe's own 2.
+**Prevention:** When porting a 1.20 `hurtEnemy` that wears the item, move the wear to `postHurtEnemy`.
+
+## [2026-10-04 20:34] - TFMG pickaxes, shovels and hoes attacked five times a second
+**Context:** New tool tier game tests reading each tool's attribute modifiers.
+**Error:** Steel, aluminum and lead pickaxes, shovels and hoes had an attack speed modifier of +1.0 (vanilla tools: -2.8 to -3.0); lead tools even used the axe's helper.
+**Root cause:** The 1.21 port replaced the 1.20.1 constructors with `createAttributes(tier, 1, 1)` placeholders.
+**Fix:** The 1.20.1 values are back: pickaxe (1, -2.8), shovel (1.5, -3.0), hoe (0, -3.0), each with its own helper.
+**Prevention:** A tool's attack speed modifier is always negative; the tier test now checks every TFMG tool's attributes.
+
+## [2026-10-04 20:35] - The oil hammer said nothing on a dedicated server
+**Context:** New handheld game test: a server player knocks the ground above a registered oil deposit.
+**Error:** No message reached the player.
+**Root cause:** The reserves message was sent only on the client (`level.isClientSide`), reading `TFMG.DEPOSITS`, which is filled only on the server. In singleplayer both sides share that static, so it worked there and nowhere else.
+**Fix:** The server sends the line (`displayClientMessage` on the server player).
+**Prevention:** Data held by a server-side manager must be read and reported on the server; a static shared in singleplayer hides the bug from local testing.
+
+## [2026-10-04 20:36] - Sneak-clicking an engine with an oil can filled its fuel tank
+**Context:** New handheld game test sneak-clicking a regular engine with a full oil can and a full cooling fluid bottle.
+**Error:** 4000 mB of lubrication oil or cooling fluid went into the engine's fuel tank, which refuses extraction, so the engine was jammed with a fluid it cannot burn.
+**Root cause:** The 1.3.0 "sneak pours into any fluid handler" change runs in `onItemUseFirst`, before the engine's own handling, and an engine's capability is its fuel tank, which accepts any fluid.
+**Fix:** On an engine the sneak-click empties the can as its tooltip says; oil and coolant still go in with a plain click.
+**Prevention:** A generic "pour into any fluid handler" must exclude blocks whose handler is not a general container; check what a capability is before filling it.
+
+## [2026-10-04 20:37] - A block of laminated magnetic alloy burned in furnaces
+**Context:** New game test reading the furnace burn time of TFMG items.
+**Error:** The laminated magnetic alloy block burned for 28800 ticks.
+**Root cause:** Its registration copied the coal coke block's `.item(CoalCokeBlockItem::new)`.
+**Fix:** It uses a plain block item.
+**Prevention:** When copying a block registration, check the item factory: it carries behaviour (burn time) that a model or tag review does not show.
+
+## [2026-10-04 20:24] - Game test platform floor is at helper y=1, not y=0
+**Context:** First run of the handheld tests: torches placed on the floor, shovels, hoes and fired sparks all misbehaved.
+**Error:** Clicking the floor at helper y=0 placed nothing or hit the ground below the platform; a pig spawned at y=1 dropped to y=0.
+**Root cause:** `StructureUtils.prepareTestStructure` puts the structure block one block below the structure, and `GameTestHelper` coordinates start at the structure block. Template layer 0 (the floor) is therefore helper y=1; `TFMGGameTestUtil` said y=0.
+**Fix:** Floor blocks are at y=1, things standing on the floor at y=2; the util comment now says so.
+**Prevention:** Before relying on a template's layout, check one known block with `helper.getBlockState` instead of the comment.
+
+## [2026-10-04 20:23] - Calling the multimeter tooltip crashed the game test server
+**Context:** Handheld test asking a powered resistor for its multimeter tooltip on the server.
+**Error:** `Attempted to load class net/minecraft/client/Minecraft for invalid dist DEDICATED_SERVER` and the whole run crashed.
+**Root cause:** `IElectric.makeMultimeterTooltip` builds goggle lines (`forGoggles`), which reach client classes; it is only called from client overlays.
+**Fix:** The test reads the values the overlay shows (voltage, resistance, current, power) instead.
+**Prevention:** Never call a tooltip or goggle builder from server-side test code.

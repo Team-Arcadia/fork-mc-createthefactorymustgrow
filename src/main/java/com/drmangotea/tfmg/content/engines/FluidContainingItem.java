@@ -114,6 +114,13 @@ public class FluidContainingItem extends Item {
             // read as "nothing happened" and lost up to 4000 mB. Voiding
             // stays available on blocks that hold no fluid.
             int amount = stack.getOrDefault(TFMGDataComponents.AMOUNT, 0);
+            // An engine's fluid handler is its fuel tank, which takes any fluid
+            // and gives nothing back: pouring there filled the fuel tank with
+            // oil or cooling fluid for good. On an engine, sneaking empties the
+            // can as its tooltip says; the engine's own oil and coolant are
+            // filled by a plain click (AbstractSmallEngineBlockEntity).
+            if (level.getBlockEntity(pos) instanceof com.drmangotea.tfmg.content.engines.base.AbstractEngineBlockEntity)
+                handler = null;
             if (handler != null) {
                 // Decide on both sides so the click is consumed consistently,
                 // but let the server own the change.

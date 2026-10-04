@@ -75,13 +75,14 @@ public class FlamethrowerItem extends Item implements CustomArmPoseItem {
         // reach the client through normal entity/stack sync.
         if (level.isClientSide)
             return;
-        if (stack.getOrDefault(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.EMPTY) == FlamethrowerFuel.EMPTY)
-            return;
 
-        int fuelAmount = stack.getOrDefault(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.EMPTY).amount();
-
-        if(fuelAmount==0) {
-            stack.set(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.EMPTY);
+        // An empty tank lets go of the trigger. This used to return early on
+        // the EMPTY constant itself, which is exactly what firing the last
+        // drop leaves on the stack, so a flamethrower that ran dry stayed in
+        // use (and slowed its holder) until the button was released.
+        if (stack.getOrDefault(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.EMPTY).isEmpty()) {
+            if (stack.getOrDefault(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.EMPTY) != FlamethrowerFuel.EMPTY)
+                stack.set(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.EMPTY);
             entity.stopUsingItem();
             return;
         }
@@ -206,10 +207,14 @@ public class FlamethrowerItem extends Item implements CustomArmPoseItem {
                         int drained = capability.drain(stackToDrain, IFluidHandler.FluidAction.EXECUTE).getAmount();
                         if (drained <= 0)
                             continue;
+                        // Build the new fuel from the type found before the drain:
+                        // fluidStack is the tank's live stack, which reads as empty
+                        // once the drain took all of it, so a tank emptied in one
+                        // click used to hand back no fuel at all.
                         if (sameFuel)
                             stack.set(TFMGDataComponents.FLAMETHROWER, existingFuel.increment(drained, FUEL_CAPACITY));
                         else
-                            stack.set(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.createForType(level.registryAccess(), fluidStack.getFluid(), drained));
+                            stack.set(TFMGDataComponents.FLAMETHROWER, new FlamethrowerFuel(fuel.fuelType(), drained, fuel.color()));
                         // getPlayer() is @Nullable (dispenser/automation use).
                         if (context.getPlayer() != null)
                             context.getPlayer().getCooldowns().addCooldown(stack.getItem(), 20);

@@ -20,7 +20,19 @@ public class ThermiteGrenade extends ThrowableItemProjectile {
 
     public ThermiteGrenade(EntityType<? extends ThermiteGrenade> p_37391_, Level p_37392_) {
         super(p_37391_, p_37392_);
-        this.flameColor =ChemicalColor.BLUE;
+        // This constructor builds every grenade loaded from a save (and every
+        // client copy). The colour is not saved, so it has to come from the
+        // entity type: it used to be blue for all three, and a thermite or
+        // zinc grenade reloaded in flight burst into blue fire.
+        this.flameColor = colorOf(p_37391_);
+    }
+
+    public static ChemicalColor colorOf(EntityType<?> type) {
+        if (type == TFMGEntityTypes.ZINC_GRENADE.get())
+            return ChemicalColor.GREEN;
+        if (type == TFMGEntityTypes.COPPER_GRENADE.get())
+            return ChemicalColor.BLUE;
+        return ChemicalColor.BASE;
     }
 
     public ThermiteGrenade(Level p_37399_, LivingEntity p_37400_, ChemicalColor color,EntityType grenade) {

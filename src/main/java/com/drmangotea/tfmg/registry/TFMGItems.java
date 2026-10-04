@@ -414,7 +414,10 @@ public class TFMGItems {
                         .texture("layer0", "tfmg:item/" + material + "_sword"))
                 .register());
         list.add(REGISTRATE.item(material + "_pickaxe", p -> new PickaxeItem(tier, p))
-                .properties(p -> p.attributes(PickaxeItem.createAttributes(tier, 1, 1)))
+                // Damage and attack speed as on the 1.20.1 tools. The 1.21 port
+                // passed (1, 1) to pickaxes, shovels and hoes: +1 attack speed
+                // made them swing five times a second and outdamage any sword.
+                .properties(p -> p.attributes(PickaxeItem.createAttributes(tier, 1, -2.8F)))
                 .tag(ItemTags.PICKAXES)
                 .tag(ItemTags.MINING_ENCHANTABLE)
                 .tag(ItemTags.MINING_LOOT_ENCHANTABLE)
@@ -438,7 +441,7 @@ public class TFMGItems {
                         .texture("layer0", "tfmg:item/" + material + "_axe"))
                 .register());
         list.add(REGISTRATE.item(material + "_shovel", p -> new ShovelItem(tier, p))
-                .properties(p -> p.attributes(ShovelItem.createAttributes(tier, 1, 1)))
+                .properties(p -> p.attributes(ShovelItem.createAttributes(tier, 1.5F, -3.0F)))
                 .tag(ItemTags.SHOVELS)
                 .tag(ItemTags.MINING_ENCHANTABLE)
                 .tag(ItemTags.MINING_LOOT_ENCHANTABLE)
@@ -449,7 +452,7 @@ public class TFMGItems {
                         .texture("layer0", "tfmg:item/" + material + "_shovel"))
                 .register());
         list.add(REGISTRATE.item(material + "_hoe", p -> new HoeItem(tier, p))
-                .properties(p -> p.attributes(HoeItem.createAttributes(tier, 1, 1)))
+                .properties(p -> p.attributes(HoeItem.createAttributes(tier, 0, -3.0F)))
                 .tag(ItemTags.HOES)
                 .tag(ItemTags.MINING_ENCHANTABLE)
                 .tag(ItemTags.DURABILITY_ENCHANTABLE)
@@ -486,7 +489,8 @@ public class TFMGItems {
                         .texture("layer0", "tfmg:item/lead_sword"))
                 .register());
         list.add(REGISTRATE.item("lead_pickaxe", p -> new PickaxeItem(TFMGTiers.LEAD, p))
-                .properties(p -> p.attributes(AxeItem.createAttributes(TFMGTiers.LEAD, 1,1)))
+                // Lead tools used the axe's attribute helper with (1, 1); see toolset().
+                .properties(p -> p.attributes(PickaxeItem.createAttributes(TFMGTiers.LEAD, 1, -2.8F)))
                 .tag(ItemTags.PICKAXES)
                 .tag(ItemTags.MINING_ENCHANTABLE)
                 .tag(ItemTags.MINING_LOOT_ENCHANTABLE)
@@ -510,7 +514,7 @@ public class TFMGItems {
                         .texture("layer0", "tfmg:item/lead_axe"))
                 .register());
         list.add(REGISTRATE.item("lead_shovel", p -> new ShovelItem(TFMGTiers.LEAD, p))
-                .properties(p -> p.attributes(AxeItem.createAttributes(TFMGTiers.LEAD, 1,1)))
+                .properties(p -> p.attributes(ShovelItem.createAttributes(TFMGTiers.LEAD, 1.5F, -3.0F)))
                 .tag(ItemTags.SHOVELS)
                 .tag(ItemTags.MINING_ENCHANTABLE)
                 .tag(ItemTags.MINING_LOOT_ENCHANTABLE)
@@ -521,7 +525,7 @@ public class TFMGItems {
                         .texture("layer0", "tfmg:item/lead_shovel"))
                 .register());
         list.add(REGISTRATE.item("lead_hoe", p -> new HoeItem(TFMGTiers.LEAD, p))
-                .properties(p -> p.attributes(AxeItem.createAttributes(TFMGTiers.LEAD, 1,1)))
+                .properties(p -> p.attributes(HoeItem.createAttributes(TFMGTiers.LEAD, 0, -3.0F)))
                 .tag(ItemTags.HOES)
                 .tag(ItemTags.MINING_ENCHANTABLE)
                 .tag(ItemTags.DURABILITY_ENCHANTABLE)

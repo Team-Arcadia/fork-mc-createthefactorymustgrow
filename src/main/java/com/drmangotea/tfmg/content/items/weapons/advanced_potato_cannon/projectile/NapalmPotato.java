@@ -64,7 +64,9 @@ public class NapalmPotato extends ThrowableItemProjectile {
         if (!this.level().isClientSide) {
             this.level().broadcastEntityEvent(this, (byte) 3);
 
-            TFMGUtils.createFireExplosion(level(),this,new BlockPos((int) getX(), (int) getY(), (int) getZ()),15,2.5f);
+            // containing() floors; an (int) cast rounds towards zero and put the
+            // blast one block off on negative coordinates.
+            TFMGUtils.createFireExplosion(level(),this,BlockPos.containing(getX(), getY(), getZ()),15,2.5f);
 
             this.discard();
         }

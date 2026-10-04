@@ -11,8 +11,9 @@ public class LeadAxeItem extends AxeItem {
     public LeadAxeItem(Tier pTier, Properties pProperties) {
         super(pTier,pProperties);
     }
+    // The axe's 2 durability per hit comes from DiggerItem#postHurtEnemy since
+    // 1.21; also wearing it here cost 4 per hit.
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pStack.hurtAndBreak(2, pAttacker, LivingEntity.getSlotForHand(pAttacker.getUsedItemHand()));
         MobEffectInstance poison = pTarget.getEffect(MobEffects.POISON);
 
         if(poison!=null) {

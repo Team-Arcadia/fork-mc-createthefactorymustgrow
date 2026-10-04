@@ -30,7 +30,11 @@ public class OilHammerItem extends Item {
                     return InteractionResult.SUCCESS;
                 int oilReserves = TFMG.DEPOSITS.getReservoirFor(posToCheck.asLong()).oilReserves;
 
-                if (level.isClientSide&&player!=null)
+                // The deposit registry only exists on the server: a client
+                // connected to a dedicated server has an empty list and never
+                // found a reservoir, so the hammer stayed silent everywhere but
+                // in singleplayer. The server sends the line instead.
+                if (!level.isClientSide&&player!=null)
                     player.displayClientMessage(TFMGLang.translateDirect("oil_hammer.reserves", oilReserves)
                             .withStyle(ChatFormatting.YELLOW), true);
 

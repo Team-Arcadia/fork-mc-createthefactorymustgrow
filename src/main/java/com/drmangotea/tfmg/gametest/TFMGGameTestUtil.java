@@ -24,9 +24,14 @@ import java.util.function.Consumer;
  */
 public final class TFMGGameTestUtil {
 
-    /** 5x5x5 smooth stone floor at y=0, air above. Tests build on y=1. */
+    /**
+     * 5x5x5 smooth stone floor, air above. The floor is layer 0 of the
+     * template, which GameTestHelper coordinates put at y=1 (the structure
+     * block sits at y=0): a block set at y=1 replaces the floor, one at y=2
+     * stands on it, and an entity at y=2 stands on the floor.
+     */
     public static final String PLATFORM = TFMG.MOD_ID + ":gametest/platform";
-    /** 12x8x12 smooth stone floor at y=0, air above. For multiblocks. */
+    /** 12x8x12 smooth stone floor (helper y=1, as above), air above. For multiblocks. */
     public static final String PLATFORM_LARGE = TFMG.MOD_ID + ":gametest/platform_large";
 
     private TFMGGameTestUtil() {
