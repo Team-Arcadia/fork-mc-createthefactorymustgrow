@@ -6,6 +6,19 @@ All notable changes to Create: The Factory Must Grow are documented here.
 
 ## [Unreleased]
 
+### Added
+
+- **Oil and engine game tests** - Every machine of the oil and power lines now runs for real in a game test: the surface scanner, both pumpjacks, one distillation tower per recipe, every engine fuel, layout and upgrade, the turbine, radial and large engines, the engine controller and gearbox, fireboxes, flarestacks, gas lamps, exhausts, smokestacks, TFMG pipes and tanks, the electric pump and the concrete hose, plus a pumpjack to tower to engine to press chain.
+
+### Fixed
+
+- **Fuel engines no longer report "no voltage"** in the Factory Inspector unless a generator is mounted on them.
+- **Radial and turbine engines** no longer claim to have no output shaft, and show their real stress capacity.
+- **A firebox placed already lit** (blueprint, schematic) now goes out when it has no fuel instead of heating forever.
+- **The electric pump** now pumps when its power arrives after its pipes were laid.
+- **An engine refuelled by pipe** after running dry, or switched on before its first fuel, now restarts on its own.
+- **The Factory Inspector** says when a pumpjack beam still needs Super Glue.
+
 ---
 
 ## [1.3.0] - 2026-10-04
