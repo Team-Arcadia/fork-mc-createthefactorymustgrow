@@ -73,5 +73,16 @@
   "tfmg.blueprint.selected": "Blueprint: %s (%s/%s), %s layers. Right-click a block to project it.",
   "tfmg.blueprint.layer": "%s: layer %s of %s",
   "tfmg.blueprint.done": "%s: every layer is built.",
-  "tfmg.blueprint.cleared": "Projection cleared."
+  "tfmg.blueprint.cleared": "Projection cleared.",
+  "item.tfmg.factory_blueprint.blank": "Blank Factory Blueprint",
+  "item.tfmg.factory_blueprint.line": "Factory Blueprint: %s",
+  "tfmg.blueprint.blank": "A blank blueprint. Real ones are found in village chests or bought from master cartographers.",
+  "tfmg.blueprint.line.steel": "Steel Line",
+  "tfmg.blueprint.line.chemistry": "Chemistry Line",
+  "tfmg.blueprint.line.oil": "Oil Line",
+  "tfmg.blueprint.line.power": "Power Line",
+  "tfmg.blueprint.line.steel.contents": "Coke oven, air intake, blast stove, blast furnace",
+  "tfmg.blueprint.line.chemistry.contents": "Chemical vat, electrolysis, arc furnace, firebox",
+  "tfmg.blueprint.line.oil.contents": "Surface scanner, pumpjack, distillation tower",
+  "tfmg.blueprint.line.power.contents": "Large generator, engines"
 }

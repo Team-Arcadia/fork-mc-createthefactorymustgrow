@@ -241,6 +241,17 @@ def build():
 
 BLUEPRINTS = os.path.join(ROOT, 'src', 'main', 'resources', 'assets', 'tfmg', 'blueprints')
 
+# Which Factory Blueprint (assembly line) shows the structures of a chapter.
+# Must match BlueprintLines.LINES in the mod.
+LINE_OF_CHAPTER = {
+    'coke_oven': 'steel', 'hot_air': 'steel', 'blast_furnace': 'steel', 'casting_and_steel': 'steel',
+    'chemical_vats': 'chemistry', 'aluminium': 'chemistry', 'arc_furnace': 'chemistry',
+    'fireboxes_and_gases': 'chemistry', 'winding_and_magnets': 'chemistry',
+    'finding_oil': 'oil', 'pumpjack': 'oil', 'distillation': 'oil',
+    'power': 'power', 'electricity_basics': 'power', 'network_control': 'power',
+    'electric_machines': 'power', 'engines': 'power', 'engine_upgrades': 'power',
+}
+
 
 def build_blueprints(chapters):
     """One blueprint per schematic, for the Factory Blueprint's in-world
@@ -257,7 +268,10 @@ def build_blueprints(chapters):
             cid = re.sub(r'^\d+_', '', chapter_id)
             bid = '%s_%d' % (cid, index)
             name = {lang: localized(page.get('title'), lang) or localized(chapter.get('title'), lang) for lang in LANGS}
+            if cid not in LINE_OF_CHAPTER:
+                sys.exit('chapter %s has a schematic but no blueprint line' % cid)
             write(os.path.join(BLUEPRINTS, bid + '.json'), {
+                'line': LINE_OF_CHAPTER[cid],
                 'order': order * 100 + index,
                 'name': name,
                 'layers': [[row.replace('.', ' ') for row in layer] for layer in schematic['layers']],

@@ -52,10 +52,23 @@ public class FactoryInspectorItem extends Item {
         if (level.isClientSide)
             return InteractionResult.SUCCESS;
         BlockPos pos = context.getClickedPos();
+        InspectionReport report = new InspectionReport();
+        for (Component line : inspect(level, pos, report))
+            player.sendSystemMessage(line);
+        level.playSound(null, pos, report.hasProblems() ? SoundEvents.NOTE_BLOCK_BASS.value() : SoundEvents.NOTE_BLOCK_CHIME.value(),
+                SoundSource.PLAYERS, 0.6f, report.hasProblems() ? 0.7f : 1.4f);
+        player.getCooldowns().addCooldown(this, 10);
+        return InteractionResult.CONSUME;
+    }
+
+    /**
+     * Inspects the block at {@code pos} and returns the full report as chat
+     * lines, header and closing verdict included. {@code report} receives the
+     * raw lines, so callers can tell whether problems were found.
+     */
+    public static List<Component> inspect(Level level, BlockPos pos, InspectionReport report) {
         BlockState state = level.getBlockState(pos);
         BlockEntity be = level.getBlockEntity(pos);
-
-        InspectionReport report = new InspectionReport();
         boolean specific = be instanceof IInspectable;
         if (be instanceof IInspectable inspectable)
             inspectable.inspect(report);
@@ -67,21 +80,18 @@ public class FactoryInspectorItem extends Item {
             GenericInspections.tanks(be, report);
 
         boolean tfmg = BuiltInRegistries.BLOCK.getKey(state.getBlock()).getNamespace().equals(TFMG.MOD_ID);
-        player.sendSystemMessage(Component.translatable("tfmg.inspector.header", state.getBlock().getName())
+        List<Component> out = new java.util.ArrayList<>();
+        out.add(Component.translatable("tfmg.inspector.header", state.getBlock().getName())
                 .withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
-        for (Component line : report.render())
-            player.sendSystemMessage(line);
+        out.addAll(report.render());
         if (report.isEmpty()) {
-            player.sendSystemMessage(Component.translatable(tfmg ? "tfmg.inspector.nothing" : "tfmg.inspector.not_tfmg")
+            out.add(Component.translatable(tfmg ? "tfmg.inspector.nothing" : "tfmg.inspector.not_tfmg")
                     .withStyle(ChatFormatting.GRAY));
         } else if (!report.hasProblems()) {
-            player.sendSystemMessage(Component.translatable(specific ? "tfmg.inspector.all_good" : "tfmg.inspector.readings_only")
+            out.add(Component.translatable(specific ? "tfmg.inspector.all_good" : "tfmg.inspector.readings_only")
                     .withStyle(specific ? ChatFormatting.GREEN : ChatFormatting.GRAY));
         }
-        level.playSound(null, pos, report.hasProblems() ? SoundEvents.NOTE_BLOCK_BASS.value() : SoundEvents.NOTE_BLOCK_CHIME.value(),
-                SoundSource.PLAYERS, 0.6f, report.hasProblems() ? 0.7f : 1.4f);
-        player.getCooldowns().addCooldown(this, 10);
-        return InteractionResult.CONSUME;
+        return out;
     }
 
     @Override

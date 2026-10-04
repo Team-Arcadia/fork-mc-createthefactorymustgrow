@@ -28,6 +28,11 @@ public class TFMGDataComponents {
 			"fuel_tags",
 			builder -> builder.persistent(CompoundTag.CODEC).networkSynchronized(ByteBufCodecs.COMPOUND_TAG)
 	);
+	// The assembly line a Factory Blueprint shows ("steel", "chemistry", "oil", "power").
+	public static final DataComponentType<String> BLUEPRINT_LINE = register(
+			"blueprint_line",
+			builder -> builder.persistent(Codec.STRING).networkSynchronized(ByteBufCodecs.STRING_UTF8)
+	);
 	public static final DataComponentType<Integer> SPOOL_AMOUNT = register(
 			"spool_amount",
 			builder -> builder.persistent(ExtraCodecs.NON_NEGATIVE_INT).networkSynchronized(ByteBufCodecs.VAR_INT)

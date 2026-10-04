@@ -108,6 +108,25 @@ public class TFMGDataTests {
         return false;
     }
 
+    /** The inspector's progression checklist builds and reads cleanly for a fresh player. */
+    @GameTest(template = "gametest/platform", batch = "tfmg_data")
+    public static void progressionChecklistReads(GameTestHelper helper) {
+        // A bare server player: no connection, no login, just inventory and stats.
+        var player = new net.minecraft.server.level.ServerPlayer(helper.getLevel().getServer(), helper.getLevel(),
+                new com.mojang.authlib.GameProfile(java.util.UUID.randomUUID(), "tfmg-test"),
+                net.minecraft.server.level.ClientInformation.createDefault());
+        List<String> raw = new ArrayList<>();
+        var lines = com.drmangotea.tfmg.content.items.inspector.ProgressionTracker.report(player);
+        for (var line : lines) {
+            String text = line.getString();
+            if (text.contains("tfmg.inspector.") || text.contains("%s"))
+                raw.add(text);
+        }
+        if (lines.size() < 20)
+            raw.add("only " + lines.size() + " lines");
+        report(helper, raw, "progression lines with raw text");
+    }
+
     /** An empty tag yields a single barrier stack named after the tag. */
     private static boolean resolves(Ingredient ingredient) {
         ItemStack[] items = ingredient.getItems();

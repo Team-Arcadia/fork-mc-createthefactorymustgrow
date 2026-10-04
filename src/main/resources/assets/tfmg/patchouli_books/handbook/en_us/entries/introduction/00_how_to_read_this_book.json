@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Use the $(item)search$() bar on the contents page, and bookmark the pages you use most. $(li)Stuck? Right-click the machine with the $(item)Factory Inspector$(): it tells you what works, what stops it and what to do."
+      "text": "$(li)Use the $(item)search$() bar on the contents page, and bookmark the pages you use most. $(li)Stuck? Right-click the machine with the $(item)Factory Inspector$(): it tells you what works, what stops it and what to do. $(li)$(item)Factory Blueprints$() project a multiblock into the world layer by layer. They are rare:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "look in village workshop chests, or buy one from a master cartographer. Each covers one assembly line."
     },
     {
       "type": "patchouli:spotlight",

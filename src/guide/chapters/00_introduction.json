@@ -20,7 +20,8 @@
           "- Every multiblock has a **3D view** page. Press **Visualize** on it to project the structure as a ghost in front of you: missing and wrong blocks are shown until it is complete.",
           "- The last page of an entry shows the **items** it talks about; hover them for details, and use JEI for their recipes.",
           "- Use the **search** bar on the contents page, and bookmark the pages you use most.",
-          "- Stuck? Right-click the machine with the **Factory Inspector**: it tells you what works, what stops it and what to do."
+          "- Stuck? Right-click the machine with the **Factory Inspector**: it tells you what works, what stops it and what to do.",
+          "- **Factory Blueprints** project a multiblock into the world layer by layer. They are rare: look in village workshop chests, or buy one from a master cartographer. Each covers one assembly line."
         ],
         "fr_fr": [
           "The Factory Must Grow apporte l'ère de **l'acier**, du **pétrole** et de **l'électricité** à Create.",
@@ -30,7 +31,8 @@
           "- Chaque multibloc a une page de **vue 3D**. Appuyez sur **Visualiser** pour projeter la structure en fantôme devant vous : les blocs manquants ou mal placés sont signalés jusqu'à ce qu'elle soit complète.",
           "- La dernière page d'une entrée montre les **objets** dont elle parle ; survolez-les pour les détails, et utilisez JEI pour leurs recettes.",
           "- Utilisez la **recherche** du sommaire, et mettez en signet les pages dont vous vous servez le plus.",
-          "- Bloqué ? Faites un clic droit sur la machine avec l'**Inspecteur d'usine** : il vous dit ce qui fonctionne, ce qui la bloque et quoi faire."
+          "- Bloqué ? Faites un clic droit sur la machine avec l'**Inspecteur d'usine** : il vous dit ce qui fonctionne, ce qui la bloque et quoi faire.",
+          "- Les **plans d'usine** projettent un multibloc dans le monde couche par couche. Ils sont rares : cherchez dans les coffres des ateliers de village, ou achetez-en un à un cartographe maître. Chacun couvre une ligne d'assemblage."
         ]
       },
       "items": [

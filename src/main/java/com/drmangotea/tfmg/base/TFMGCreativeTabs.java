@@ -140,6 +140,8 @@ public class TFMGCreativeTabs {
         List<RegistryEntry<Item, ? extends Item>> list = new ArrayList<>();
 
         list.add(TFMGItems.LIT_LITHIUM_BLADE);
+        // Listed per line through customAdditions; a blank one shows nothing.
+        list.add(TFMGItems.FACTORY_BLUEPRINT);
         list.add(TFMGItems.GOLDEN_TURBO);
         list.add(TFMGItems.ALUMINUM_SPOOL);
         list.add(TFMGItems.COPPER_SPOOL);
@@ -157,6 +159,10 @@ public class TFMGCreativeTabs {
         // Kinetics, listed here because the decoration tab filters them out.
         list.add(TFMGEncasedBlocks.STEEL_ENCASED_SHAFT.asStack());
         list.add(TFMGEncasedBlocks.HEAVY_CASING_ENCASED_SHAFT.asStack());
+
+        // One Factory Blueprint per assembly line; the blank item stays hidden.
+        for (String line : com.drmangotea.tfmg.content.items.blueprint.BlueprintLines.LINES)
+            list.add(com.drmangotea.tfmg.content.items.blueprint.BlueprintLines.stack(line));
 
         ItemStack copperSpool = TFMGItems.COPPER_SPOOL.asStack();
         copperSpool.set(TFMGDataComponents.SPOOL_AMOUNT,1000);

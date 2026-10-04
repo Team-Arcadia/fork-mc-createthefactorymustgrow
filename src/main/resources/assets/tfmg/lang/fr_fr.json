@@ -2383,5 +2383,16 @@
   "tfmg.inspector.winding_machine.recipe_done": "Terminé : %s",
   "tfmg.inspector.winding_machine.wrong_spool": "%s montée, mais la recette demande %s",
   "tfmg.inspector.winding_machine.recipe": "Enroule %s en %s : %s / %s tours",
-  "tfmg.inspector.winding_machine.spool_short": "Seulement %s tours restants sur la bobine, il en faut encore %s : elle va s'arrêter"
+  "tfmg.inspector.winding_machine.spool_short": "Seulement %s tours restants sur la bobine, il en faut encore %s : elle va s'arrêter",
+  "item.tfmg.factory_blueprint.blank": "Plan d'usine vierge",
+  "item.tfmg.factory_blueprint.line": "Plan d'usine : %s",
+  "tfmg.blueprint.blank": "Un plan vierge. Les vrais se trouvent dans les coffres des villages ou s'achètent aux cartographes maîtres.",
+  "tfmg.blueprint.line.steel": "Ligne de l'acier",
+  "tfmg.blueprint.line.chemistry": "Ligne de la chimie",
+  "tfmg.blueprint.line.oil": "Ligne du pétrole",
+  "tfmg.blueprint.line.power": "Ligne de l'énergie",
+  "tfmg.blueprint.line.steel.contents": "Four à coke, prise d'air, fourneau à air chaud, haut fourneau",
+  "tfmg.blueprint.line.chemistry.contents": "Cuve chimique, électrolyse, four à arc, foyer",
+  "tfmg.blueprint.line.oil.contents": "Scanner de surface, chevalet de pompage, tour de distillation",
+  "tfmg.blueprint.line.power.contents": "Grand générateur, moteurs"
 }

@@ -62,6 +62,8 @@ public class TFMGBlockTests {
                 if (be != null)
                     roundTrip(helper, level, abs, placed, be);
             }
+            List<String> inspection = TFMGGameTestUtil.inspectionProblems(helper, abs);
+            TFMGGameTestUtil.check(helper, inspection.isEmpty(), "inspector report shows raw text: " + inspection);
             level.destroyBlock(abs, true);
             helper.succeed();
         });

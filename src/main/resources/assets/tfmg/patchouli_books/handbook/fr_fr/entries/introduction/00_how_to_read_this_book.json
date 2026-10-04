@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Utilisez la $(item)recherche$() du sommaire, et mettez en signet les pages dont vous vous servez le plus. $(li)Bloqué ? Faites un clic droit sur la machine avec l'$(item)Inspecteur d'usine$() : il vous dit ce qui fonctionne, ce qui la bloque et quoi faire."
+      "text": "$(li)Utilisez la $(item)recherche$() du sommaire, et mettez en signet les pages dont vous vous servez le plus. $(li)Bloqué ? Faites un clic droit sur la machine avec l'$(item)Inspecteur d'usine$() : il vous dit ce qui fonctionne, ce qui la bloque et quoi faire. $(li)Les $(item)plans d'usine$() projettent un multibloc dans le monde couche par couche. Ils sont rares :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "cherchez dans les coffres des ateliers de village, ou achetez-en un à un cartographe maître. Chacun couvre une ligne d'assemblage."
     },
     {
       "type": "patchouli:spotlight",

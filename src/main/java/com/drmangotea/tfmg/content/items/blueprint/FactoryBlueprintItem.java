@@ -17,8 +17,8 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 /**
- * The Factory Blueprint projects a TFMG multiblock into the world one layer
- * at a time, as a ghost of the blocks to place. Each layer is checked as it
+ * A Factory Blueprint carries one assembly line (see {@link BlueprintLines})
+ * and projects that line's multiblocks into the world one layer at a time, as a ghost of the blocks to place. Each layer is checked as it
  * is built and the next one appears once it is complete.
  *
  * <ul>
@@ -37,9 +37,9 @@ public class FactoryBlueprintItem extends Item {
 
     /** Client handlers, set by the client entrypoint. */
     public interface ClientHandler {
-        void useInAir(Player player, boolean sneaking);
+        void useInAir(Player player, String line, boolean sneaking);
 
-        void useOnBlock(Player player, BlockPos pos, Direction face, boolean sneaking);
+        void useOnBlock(Player player, String line, BlockPos pos, Direction face, boolean sneaking);
     }
 
     public static ClientHandler CLIENT;
@@ -53,20 +53,44 @@ public class FactoryBlueprintItem extends Item {
         Player player = context.getPlayer();
         if (player == null)
             return InteractionResult.PASS;
+        String line = BlueprintLines.lineOf(stack);
+        if (line == null)
+            return InteractionResult.PASS;
         if (context.getLevel().isClientSide && CLIENT != null)
-            CLIENT.useOnBlock(player, context.getClickedPos(), context.getClickedFace(), player.isShiftKeyDown());
+            CLIENT.useOnBlock(player, line, context.getClickedPos(), context.getClickedFace(), player.isShiftKeyDown());
         return InteractionResult.sidedSuccess(context.getLevel().isClientSide);
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack stack = player.getItemInHand(hand);
+        String line = BlueprintLines.lineOf(stack);
+        if (line == null) {
+            if (level.isClientSide)
+                player.displayClientMessage(Component.translatable("tfmg.blueprint.blank"), true);
+            return InteractionResultHolder.pass(stack);
+        }
         if (level.isClientSide && CLIENT != null)
-            CLIENT.useInAir(player, player.isShiftKeyDown());
-        return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide);
+            CLIENT.useInAir(player, line, player.isShiftKeyDown());
+        return InteractionResultHolder.sidedSuccess(stack, level.isClientSide);
+    }
+
+    @Override
+    public Component getName(ItemStack stack) {
+        String line = BlueprintLines.lineOf(stack);
+        if (line == null)
+            return Component.translatable("item.tfmg.factory_blueprint.blank");
+        return Component.translatable("item.tfmg.factory_blueprint.line", Component.translatable("tfmg.blueprint.line." + line));
     }
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        String line = BlueprintLines.lineOf(stack);
+        if (line == null) {
+            tooltip.add(Component.translatable("tfmg.blueprint.blank").withStyle(ChatFormatting.GRAY));
+            return;
+        }
+        tooltip.add(Component.translatable("tfmg.blueprint.line." + line + ".contents").withStyle(ChatFormatting.GOLD));
         tooltip.add(Component.translatable("item.tfmg.factory_blueprint.hint.air").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.translatable("item.tfmg.factory_blueprint.hint.block").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.translatable("item.tfmg.factory_blueprint.hint.sneak").withStyle(ChatFormatting.GRAY));

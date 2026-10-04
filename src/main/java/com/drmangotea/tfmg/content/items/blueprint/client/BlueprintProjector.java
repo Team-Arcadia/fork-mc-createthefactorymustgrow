@@ -46,11 +46,14 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
 
     public static final BlueprintProjector INSTANCE = new BlueprintProjector();
 
-    private record Blueprint(String id, int order, Map<String, String> name, List<Map<BlockPos, BlockState>> layers,
+    private record Blueprint(String id, String line, int order, Map<String, String> name, List<Map<BlockPos, BlockState>> layers,
                              int sizeX, int sizeZ) {
     }
 
     private List<Blueprint> blueprints;
+    // The line of the blueprint item in use, and the structures it covers.
+    private String line;
+    private List<Blueprint> inLine = List.of();
     private int selected;
 
     // Active projection; layer < 0 when nothing is projected.
@@ -65,8 +68,8 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
     // ------------------------------------------------------------ input
 
     @Override
-    public void useInAir(Player player, boolean sneaking) {
-        List<Blueprint> all = blueprints();
+    public void useInAir(Player player, String line, boolean sneaking) {
+        List<Blueprint> all = selectLine(line);
         if (all.isEmpty()) {
             say(player, Component.translatable("tfmg.blueprint.none"));
             return;
@@ -91,13 +94,13 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
     }
 
     @Override
-    public void useOnBlock(Player player, BlockPos pos, Direction face, boolean sneaking) {
+    public void useOnBlock(Player player, String line, BlockPos pos, Direction face, boolean sneaking) {
         if (sneaking) {
             clear();
             say(player, Component.translatable("tfmg.blueprint.cleared"));
             return;
         }
-        List<Blueprint> all = blueprints();
+        List<Blueprint> all = selectLine(line);
         if (all.isEmpty()) {
             say(player, Component.translatable("tfmg.blueprint.none"));
             return;
@@ -124,7 +127,7 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
         }
         if (!shown.validate(mc.level, anchor, rotation))
             return;
-        Blueprint b = blueprints().get(selected);
+        Blueprint b = inLine.get(selected);
         if (layer + 1 >= b.layers().size()) {
             say(mc.player, Component.translatable("tfmg.blueprint.done", name(b)).withStyle(ChatFormatting.GREEN));
             clear();
@@ -136,7 +139,7 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
     // ------------------------------------------------------------ helpers
 
     private void showLayer(Player player, int index) {
-        Blueprint b = blueprints().get(selected);
+        Blueprint b = inLine.get(selected);
         layer = index;
         Map<BlockPos, IStateMatcher> positions = new HashMap<>();
         for (Map.Entry<BlockPos, BlockState> e : b.layers().get(index).entrySet())
@@ -171,6 +174,17 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
 
     private static void say(Player player, Component message) {
         player.displayClientMessage(message, true);
+    }
+
+    /** Switches to the structures of a line; a different line drops the projection. */
+    private List<Blueprint> selectLine(String newLine) {
+        if (!newLine.equals(line)) {
+            clear();
+            line = newLine;
+            inLine = blueprints().stream().filter(b -> newLine.equals(b.line())).toList();
+            selected = 0;
+        }
+        return inLine;
     }
 
     private List<Blueprint> blueprints() {
@@ -240,6 +254,7 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
             name.put(lang, nameJson.get(lang).getAsString());
         String path = id.getPath();
         return new Blueprint(path.substring(path.lastIndexOf('/') + 1, path.length() - 5),
+                json.has("line") ? json.get("line").getAsString() : "",
                 json.has("order") ? json.get("order").getAsInt() : 1000, name, out, sizeX, sizeZ);
     }
 }

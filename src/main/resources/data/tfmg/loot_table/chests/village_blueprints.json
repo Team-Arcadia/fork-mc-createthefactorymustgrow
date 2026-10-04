@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 76
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfmg:factory_blueprint",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "tfmg:blueprint_line": "steel"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfmg:factory_blueprint",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "tfmg:blueprint_line": "chemistry"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfmg:factory_blueprint",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "tfmg:blueprint_line": "oil"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tfmg:factory_blueprint",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "tfmg:blueprint_line": "power"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "tfmg:chests/village_blueprints"
+}

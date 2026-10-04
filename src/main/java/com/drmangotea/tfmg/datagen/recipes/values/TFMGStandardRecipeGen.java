@@ -379,14 +379,6 @@ public class TFMGStandardRecipeGen extends TFMGRecipeProvider {
                     .pattern("ICG")
                     .pattern("II ")),
 
-    // The blueprint: paper and blue dye, available from the start.
-    FACTORY_BLUEPRINT = create(TFMGItems.FACTORY_BLUEPRINT)
-            .unlockedBy(() -> Items.PAPER)
-            .viaShapeless(b -> b
-                    .requires(Items.PAPER)
-                    .requires(Items.PAPER)
-                    .requires(Items.BLUE_DYE)),
-
     // The handbook must be craftable from the first minutes: a book and coal.
     FACTORY_GUIDE = create(TFMGItems.FACTORY_GUIDE)
             .unlockedBy(() -> Items.BOOK)

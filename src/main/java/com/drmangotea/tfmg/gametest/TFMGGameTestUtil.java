@@ -87,6 +87,22 @@ public final class TFMGGameTestUtil {
         return out;
     }
 
+    /**
+     * Runs the Factory Inspector on a block and returns what is wrong with its
+     * report: any line that still shows a raw translation key or an unfilled
+     * placeholder (an exception fails the test on its own).
+     */
+    public static List<String> inspectionProblems(GameTestHelper helper, net.minecraft.core.BlockPos absolute) {
+        List<String> problems = new ArrayList<>();
+        for (net.minecraft.network.chat.Component line : com.drmangotea.tfmg.content.items.inspector.FactoryInspectorItem
+                .inspect(helper.getLevel(), absolute, new com.drmangotea.tfmg.content.items.inspector.InspectionReport())) {
+            String text = line.getString();
+            if (text.contains("tfmg.inspector.") || text.contains("tfmg.goggles.") || text.contains("%s") || text.contains("%d"))
+                problems.add(text);
+        }
+        return problems;
+    }
+
     public static void check(GameTestHelper helper, boolean condition, String message) {
         if (!condition)
             helper.fail(message);

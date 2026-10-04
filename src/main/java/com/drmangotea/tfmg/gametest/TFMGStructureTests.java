@@ -142,6 +142,12 @@ public class TFMGStructureTests {
             }
             TFMGGameTestUtil.check(helper, problems.isEmpty(), id + ": formed structure lost data on reload: " + problems);
 
+            // The inspector reads every block of the formed structure cleanly.
+            for (BlockPos rel : blocks.keySet()) {
+                List<String> inspection = TFMGGameTestUtil.inspectionProblems(helper, helper.absolutePos(ORIGIN.offset(rel)));
+                TFMGGameTestUtil.check(helper, inspection.isEmpty(), id + ": inspector report at " + rel + " shows raw text: " + inspection);
+            }
+
             // What breaking each block should give back, as its own loot says
             // (reinforced bricks give fireproof bricks, wall plates give
             // reinforcements...). Anything above that is a duplication.
