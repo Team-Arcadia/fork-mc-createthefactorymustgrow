@@ -170,3 +170,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Heat is read from the firebox blockstate (`TFMGBoilerHeaters`), but `FireboxBlockEntity.lazyTick` only wrote `HEAT_LEVEL = NONE` when its `running` flag had been true. A firebox whose blockstate arrived lit (blueprint, schematic, `/setblock`, a moved structure) never had `running` set, so the "stop burning" branch never touched it.
 **Fix:** When the firebox cannot burn, the blockstate is put out whenever it is not already `NONE`, whatever `running` says.
 **Prevention:** When a blockstate is the source of truth for other machines, reconcile it against the real condition on every update; never gate the write on a flag that only tracks the block's own past writes.
+
+## [2026-10-04 18:40] - Electric pump powered after its pipes were laid never pumped
+**Context:** New game test: tank, pipe, electric pump, pipe, tank, then a creative generator placed next to the pump.
+**Error:** The pump read 500 V, 2500 W and pressure 1000 in the inspector, yet moved 0 mB.
+**Root cause:** It extends Create's `PumpBlockEntity`, which pushes pressure into the pipe network only when its speed or the pipes change (`updatePressureChange` / `updatePipesOnSide`). The electric pump has no speed, so the pressure it computed while unpowered (0) stayed in the pipes when power arrived, and after any later voltage change.
+**Fix:** `lazyTick` recomputes the pressure from the power state and calls `updatePressureChange()` when it differs from the last value pushed.
+**Prevention:** A Create pump subclass driven by anything but rotation must trigger the pressure redistribution itself whenever its driving input changes.

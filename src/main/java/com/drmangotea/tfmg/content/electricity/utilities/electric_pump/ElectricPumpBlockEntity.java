@@ -208,7 +208,22 @@ public class ElectricPumpBlockEntity extends PumpBlockEntity implements IElectri
     public void lazyTick() {
         super.lazyTick();
         lazyTickElectricity();
+        // Create pumps push their pressure into the pipes only when their
+        // speed or the pipes change. This pump has no speed: a pump whose
+        // power arrived after its pipes were laid (a generator started, a
+        // switch closed, the network rebuilt on load) kept the zero pressure
+        // it computed unpowered and never moved a drop.
+        if (level != null && !level.isClientSide) {
+            float pressure = getPowerUsage() == 0 ? 0 : Math.min(1500, data.getVoltage() * 2f);
+            if (pressure != lastPressure) {
+                lastPressure = pressure;
+                updatePressureChange();
+            }
+        }
     }
+
+    /** Pressure last pushed into the pipes; not saved, a fresh pump recomputes it. */
+    private float lastPressure = -1;
 
     @Override
     public ElectricBlockValues getData() {
