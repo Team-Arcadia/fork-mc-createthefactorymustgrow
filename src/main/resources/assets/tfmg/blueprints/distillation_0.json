@@ -2,8 +2,8 @@
   "line": "oil",
   "order": 17000,
   "name": {
-    "en_us": "A crude oil tower",
-    "fr_fr": "Une tour à pétrole brut"
+    "en_us": "Distillation: A crude oil tower",
+    "fr_fr": "La distillation : Une tour à pétrole brut"
   },
   "layers": [
     [

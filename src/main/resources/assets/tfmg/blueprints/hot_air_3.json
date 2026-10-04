@@ -2,8 +2,8 @@
   "line": "steel",
   "order": 4003,
   "name": {
-    "en_us": "The blast stove",
-    "fr_fr": "Le fourneau à air chaud"
+    "en_us": "Hot Air: The blast stove",
+    "fr_fr": "L'air chaud : Le fourneau à air chaud"
   },
   "layers": [
     [

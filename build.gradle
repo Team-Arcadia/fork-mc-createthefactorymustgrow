@@ -82,6 +82,17 @@ neoForge {
             programArguments.addAll '--quickPlaySingleplayer', 'tfmg_gametest'
         }
 
+        // Builds the showcase map in the client, photographs every multiblock,
+        // its inspector report and a blueprint projection (run/screenshots/showcase_*).
+        clientShowcaseShots {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enableGameTest', 'true'
+            systemProperty 'tfmg.showcase.shots', 'true'
+            systemProperty 'tfmg.gametest.exit', 'true'
+            programArguments.addAll '--quickPlaySingleplayer', 'tfmg_gametest'
+        }
+
         // Same pass on a regular dedicated server with a normal world.
         serverGameTest {
             server()

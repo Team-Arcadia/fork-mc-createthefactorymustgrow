@@ -2,8 +2,8 @@
   "line": "steel",
   "order": 4001,
   "name": {
-    "en_us": "The air intake",
-    "fr_fr": "La prise d'air"
+    "en_us": "Hot Air: The air intake",
+    "fr_fr": "L'air chaud : La prise d'air"
   },
   "layers": [
     [

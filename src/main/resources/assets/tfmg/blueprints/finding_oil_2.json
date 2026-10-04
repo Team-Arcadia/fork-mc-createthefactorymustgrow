@@ -2,8 +2,8 @@
   "line": "oil",
   "order": 15002,
   "name": {
-    "en_us": "The surface scanner",
-    "fr_fr": "Le scanner de surface"
+    "en_us": "Finding Oil: The surface scanner",
+    "fr_fr": "Trouver du pétrole : Le scanner de surface"
   },
   "layers": [
     [

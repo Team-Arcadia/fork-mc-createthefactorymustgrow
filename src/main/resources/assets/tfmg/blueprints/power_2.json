@@ -2,8 +2,8 @@
   "line": "power",
   "order": 8002,
   "name": {
-    "en_us": "Large generator",
-    "fr_fr": "Grand générateur"
+    "en_us": "Making Power: Large generator",
+    "fr_fr": "Produire de l'électricité : Grand générateur"
   },
   "layers": [
     [

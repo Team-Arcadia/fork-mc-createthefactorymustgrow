@@ -267,7 +267,12 @@ def build_blueprints(chapters):
                 continue
             cid = re.sub(r'^\d+_', '', chapter_id)
             bid = '%s_%d' % (cid, index)
-            name = {lang: localized(page.get('title'), lang) or localized(chapter.get('title'), lang) for lang in LANGS}
+            name = {}
+            for lang in LANGS:
+                chapter_title = localized(chapter.get('title'), lang)
+                page_title = localized(page.get('title'), lang)
+                sep = ' : ' if lang == 'fr_fr' else ': '
+                name[lang] = chapter_title + sep + page_title if page_title else chapter_title
             if cid not in LINE_OF_CHAPTER:
                 sys.exit('chapter %s has a schematic but no blueprint line' % cid)
             write(os.path.join(BLUEPRINTS, bid + '.json'), {
