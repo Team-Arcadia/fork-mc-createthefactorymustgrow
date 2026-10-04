@@ -149,3 +149,45 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Patchouli draws an anchored ghost through `simulate(..., forView = true)`, which adds one block on Y, while `IMultiblock.validate` uses `forView = false`. The projector checked one block below the drawn ghost, so the layer never matched; Patchouli then reported it complete and the projector read that as the player closing it. On top of that, `strictBlockMatcher` compares against the block's default state, so any block placed with another facing (coke oven, hatches) never matched.
 **Fix:** The projector checks the layer through the same view simulation the visualizer renders, and anchors one block lower so the ghost sits on the clicked face. Each position matches on the block only (`predicateMatcher` with the drawn state for display). The client showcase now places each layer where it is drawn and fails if the projector does not move on.
 **Prevention:** When checking a Patchouli multiblock shown with `showMultiblock`, use `simulate(level, anchor, rotation, true)`, never `validate`.
+
+## [2026-10-04 18:20] - A charging accumulator counted as a power source
+**Context:** Power game test: a 64 RPM generator (1320 W) feeding 1361 W of resistors, with a charged accumulator on the line.
+**Error:** The network was not flagged as undersupplied and the bank still gained 100 FE per tick: 1461 W consumed on 1320 W generated.
+**Root cause:** `AccumulatorBlockEntity.powerGeneration()` returned its full output whenever it held charge, and `ElectricalNetwork.updateNetwork` summed it with the generators. Driven above its own voltage the bank charges and never discharges (`tick`), so it was counted as a source and as a load at the same time.
+**Fix:** New `IElectric.powerGeneration(int networkVoltage)`; the network sums power after the network voltage is known (and `getNetworkPowerGeneration` passes the member's voltage). The accumulator supplies nothing while the network voltage is above its own.
+**Prevention:** A storage block may only count as a source when it is actually the one setting the voltage. Any new storage or conversion block must answer `powerGeneration(int)` accordingly.
+
+## [2026-10-04 18:27] - Breaking a block of a charged accumulator bank voided charge
+**Context:** Power game test breaking the middle of a full five block bank.
+**Error:** 500000 FE became 200000 in the lower half, 0 in the upper half and 0 in the dropped item.
+**Root cause:** Create's `IBE.onRemove` calls `destroy()` while the block entity is still in the chunk, so the chain rebuild in `destroy()` walked through the broken block and kept the old chain whole; the real split only happened on the next neighbour refresh, which summed the controller's charge into the shorter half and clamped it. A non-controller also donated only its own (always empty) storage. On paths that roll drops before `destroy()` (drills, explosions, the wrench) the item read the raw storage while `destroy()` handed the same charge to the surviving banks.
+**Fix:** `destroy()` flags the block as removing (chain scans skip it), takes the bank's charge out of the controller, fills the controller side, hands the rest to the far side and keeps only what fits nowhere; `getDrops` uses `chargeKeptOnRemoval()` while the block entity is not removed yet.
+**Prevention:** In a Create block entity's `destroy()`, the block entity is still returned by `level.getBlockEntity(pos)`. Multiblock scans run from `destroy()` must exclude it explicitly. Item drops must agree with what `destroy()` hands out, whichever runs first.
+
+## [2026-10-04 18:22] - Converter and accumulator traded FE back and forth
+**Context:** Power game test: converter in TFMG to FE mode with an accumulator on its FE side.
+**Error:** The accumulator never filled; the converter's own storage kept everything.
+**Root cause:** The converter exposed its raw storage as the FE capability in both modes. The accumulator pushes FE into any neighbour, so it sent the converted FE straight back every tick.
+**Fix:** The converter's FE port is one way: extract only in TFMG to FE mode, receive only in FE to TFMG mode.
+**Prevention:** An energy capability on a block with a direction of conversion must refuse the wrong direction, or pushing neighbours loop the energy.
+
+## [2026-10-04 18:22] - Electric pump moved nothing through pipes when powered after placement
+**Context:** Power game test: tank, pipe, electric pump, pipe, tank, generator added 40 ticks later.
+**Error:** Pump against the tanks worked; the piped one never moved fluid.
+**Root cause:** Create spreads pump pressure into pipes only from `updatePressureChange`, run on a speed change. The electric pump never changes speed, so its pipes kept the zero pressure computed at placement.
+**Fix:** `ElectricPumpBlockEntity.onNetworkChanged` calls `updatePressureChange()` on the server whenever its voltage changes.
+**Prevention:** Electric versions of kinetic machines must replay whatever Create triggers from `onSpeedChanged` when their voltage changes.
+
+## [2026-10-04 18:22] - Large transformer input part reported a 1.00 ratio
+**Context:** Power game test assembling a 100/300 turn large transformer.
+**Error:** The output was right (300 V from 100 V) but the inspector on the input part read a ratio of 1.00.
+**Root cause:** `LargeCoilBlockEntity.createTransformer` set the turn ratio on the output part only; the input part kept its default until a steel block copied it over.
+**Fix:** The ratio is set on both parts at assembly.
+**Prevention:** When a multiblock is assembled from two block entities, every value either part displays must be written to both.
+
+## [2026-10-04 18:24] - Neon tube shone on an overloaded network
+**Context:** Power game test: a 1 ohm load on a generator too weak for it, with a bulb and a neon tube.
+**Error:** The bulb went dark (network flagged not enough power), the neon tube kept shining at full voltage.
+**Root cause:** `NeonTubeBlockEntity.tick` set its light from the voltage alone, without the `canWork()` check the light bulb has.
+**Fix:** The neon tube lights only when `canWork()`.
+**Prevention:** Every consumer must gate its effect on `canWork()`, not on the voltage alone.
