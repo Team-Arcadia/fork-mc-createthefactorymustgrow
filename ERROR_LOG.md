@@ -157,3 +157,10 @@ in other shapes, and the file was only saved by the grep count.
 **Fix:** `IInspectable.wantsElectricCheck()` (default true), honoured by the inspector; small engines answer true only with a generator upgrade mounted, the large engine always false.
 **Prevention:** A block that implements `IElectric` for an optional feature must opt out of the generic electric check, the same way `wantsRotationCheck` lets non-shaft kinetic blocks opt out of "not turning".
 
+## [2026-10-04 11:05] - Radial and turbine engines claimed to have no output shaft
+**Context:** Same engine game tests, radial and turbine engines.
+**Error:** Both engines turned their shaft at the expected speed, yet the inspector reported `engine.no_shaft`, the goggles printed "no shaft", and `outputStress()` (goggle stress capacity) read 0.
+**Root cause:** `AbstractSmallEngineBlockEntity.hasOutputShaft` only recognised the `SHAFT` engine state, which only regular engines reach by having a shaft inserted. Radial (`SINGLE`/`SHAFT` ends) and turbine (`SINGLE`/`BACK`) engines export rotation through built-in shaft faces declared by their block's `hasShaftTowards`.
+**Fix:** `hasOutputShaft` now asks the engine block's own `hasShaftTowards` for each horizontal face and counts a face only if it does not lead into another engine block, which keeps the old answer for regular engines.
+**Prevention:** Derive "does this export rotation" from the block's kinetic contract (`hasShaftTowards`), never from one subclass's blockstate value.
+
