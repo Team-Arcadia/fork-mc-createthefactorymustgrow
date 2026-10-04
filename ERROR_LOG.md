@@ -359,3 +359,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The 1.21 port replaced the 1.20.1 constructors with `createAttributes(tier, 1, 1)` placeholders.
 **Fix:** The 1.20.1 values are back: pickaxe (1, -2.8), shovel (1.5, -3.0), hoe (0, -3.0), each with its own helper.
 **Prevention:** A tool's attack speed modifier is always negative; the tier test now checks every TFMG tool's attributes.
+
+## [2026-10-04 20:35] - The oil hammer said nothing on a dedicated server
+**Context:** New handheld game test: a server player knocks the ground above a registered oil deposit.
+**Error:** No message reached the player.
+**Root cause:** The reserves message was sent only on the client (`level.isClientSide`), reading `TFMG.DEPOSITS`, which is filled only on the server. In singleplayer both sides share that static, so it worked there and nowhere else.
+**Fix:** The server sends the line (`displayClientMessage` on the server player).
+**Prevention:** Data held by a server-side manager must be read and reported on the server; a static shared in singleplayer hides the bug from local testing.
