@@ -35,6 +35,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **No more dead end on magnets and aluminium** - The voltmeter needs a magnet, the polarizer needs the voltmeter, and magnets only came out of the polarizer, so survival could never make the first one. A hand recipe (magnetic alloy ingot, redstone blocks, compass) breaks the loop. Likewise the steel mechanism every generator needs takes aluminium, which only electrolysis made: a superheated mixer recipe (4 bauxite powder and 1 coal coke dust) gives the first ingots. The polarizer and electrolysis stay the efficient routes.
 - **The casting basin gives its result by hand** - Right-click with an empty hand to take the ingot.
 - **Game tests** - One test per block (place, tick, save and reload, client sync, break), data checks (loot tables, recipe ingredients, item names, the handbook) and machine tests (vat, arc furnace recovery, casting, blast furnace hatch, firebox, electric motor). Run them with `gradlew runGameTestServer`, `runClientGameTest` and `runServerGameTest`. Test code is not shipped in the jar.
+- **Metallurgy and chemistry game tests** - Every machine of the steel and chemistry lines runs for real, built in the world and supplied the way a factory would be: coke ovens (single and 3x3) fed by hoppers with their gases pumped away, regular and reinforced blast furnaces fed through the gas hatch or the output, a blast stove fed by an air intake and creosote and piping hot air into a furnace, every casting recipe, every chemical vat recipe with its real mixer, compressor, freezer, electrodes and firebox, the winding machine, the polarizer, the machine input, and a complete line from coal to a steel ingot in a chest through a coke oven, crushing wheels, a blast furnace and a casting basin. The Factory Inspector must report nothing wrong while each one works, and name what is missing before it is supplied.
 
 ### Fixed
 
@@ -62,6 +63,10 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Electric diode model** - It pointed at a model that does not exist and rendered as the missing model.
 - **JEI** - Create's own registrations were registered a second time (duplicate entries, an error on every load); the blast furnace page hid the slag of recipes without gas; datapack recipes with one fluid no longer break the hot blast and winding pages.
 - **steel_from_dust** only loads when another mod provides iron dust, instead of showing an empty tag.
+- **Hoppers emptied the polarizer and the winding machine too early** - A hopper under either machine pulled the ingot or the unfinished coil straight back out before it was polarised or wound. Only the finished item leaves through automation now.
+- **A hopper could not fuel a loaded blast furnace** - Once the furnace held ore and flux, a hopper on its output block found no slot for coke dust and kept it. The fuel now shows as a third slot hoppers can fill.
+- **Chemical vats ran on dead attachments** - A recipe matched right after the attachments were found kept running when they had no power or rotation: electrolysis made hydrogen without a generator. The vat now pauses until every attachment works.
+- **A lone chemical vat held half its capacity** - A vat placed on its own kept 4000 mB per tank until its chunk reloaded, so a single vat could never make liquid concrete. It now gets its full capacity at once.
 
 ### Performance
 
@@ -79,6 +84,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Plus d'impasse sur les aimants et l'aluminium** - Le voltmetre demande un aimant, le polariseur demande le voltmetre, et les aimants ne sortaient que du polariseur : la survie ne pouvait jamais fabriquer le premier. Une recette a la main (lingot d'alliage magnetique, blocs de redstone, boussole) casse la boucle. De meme, le mecanisme en acier qu'exige tout generateur demande de l'aluminium, que seule l'electrolyse produisait : une recette de melangeur surchauffe (4 poudres de bauxite et 1 poussiere de coke) donne les premiers lingots. Le polariseur et l'electrolyse restent les voies rentables.
 - **Le bassin de coulee se vide a la main** - Clic droit main vide pour prendre le lingot.
 - **Tests en jeu** - Un test par bloc (pose, fonctionnement, sauvegarde et rechargement, synchronisation client, casse), des verifications de donnees (tables de butin, ingredients des recettes, noms des objets, le manuel) et des tests de machines (cuve, recuperation du four a arc, coulee, trappe du haut fourneau, foyer, moteur electrique). A lancer avec `gradlew runGameTestServer`, `runClientGameTest` et `runServerGameTest`. Le code de test n'est pas livre dans le jar.
+- **Tests en jeu de metallurgie et de chimie** - Chaque machine des lignes acier et chimie fonctionne pour de vrai, construite dans le monde et alimentee comme dans une usine : fours a coke (simple et 3x3) alimentes par des entonnoirs, leurs gaz pompes, hauts fourneaux classique et renforce alimentes par la trappe a gaz ou la sortie, fourneau a air chaud alimente par une prise d'air et de la creosote et envoyant l'air chaud par tuyaux dans un haut fourneau, chaque recette de coulee, chaque recette de cuve chimique avec son vrai melangeur, compresseur, congelateur, electrodes et foyer, la machine a bobiner, le polariseur, l'entree de machine, et une ligne complete du charbon a un lingot d'acier dans un coffre via un four a coke, des roues de broyage, un haut fourneau et un bassin de coulee. L'Inspecteur d'usine ne doit rien signaler pendant que chacune travaille, et nommer ce qui manque avant qu'elle soit alimentee.
 
 ### Correctifs
 
@@ -106,6 +112,10 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Modele de la diode electrique** - Il pointait vers un modele inexistant et s'affichait en modele manquant.
 - **JEI** - Les enregistrements propres a Create etaient faits une seconde fois (doublons, une erreur a chaque chargement) ; la page du haut fourneau cachait le laitier des recettes sans gaz ; les recettes de datapack a un seul fluide ne cassent plus les pages d'air chaud et de bobinage.
 - **steel_from_dust** ne se charge que si un autre mod fournit de la poussiere de fer, au lieu d'afficher un tag vide.
+- **Les entonnoirs vidaient trop tot le polariseur et la machine a bobiner** - Un entonnoir sous l'une de ces machines retirait le lingot ou la bobine inachevee avant qu'il soit polarise ou bobine. Seul l'objet fini sort par l'automatisation desormais.
+- **Un entonnoir ne pouvait pas alimenter un haut fourneau charge** - Une fois le minerai et le fondant en place, un entonnoir sur la sortie ne trouvait aucun emplacement pour la poussiere de coke et la gardait. Le combustible apparait maintenant comme un troisieme emplacement que les entonnoirs remplissent.
+- **Les cuves chimiques tournaient sur des machines en panne** - Une recette trouvee juste apres la detection des machines continuait sans courant ni rotation : l'electrolyse faisait de l'hydrogene sans generateur. La cuve attend maintenant que chaque machine fonctionne.
+- **Une cuve seule n'avait que la moitie de sa capacite** - Une cuve posee seule gardait 4000 mB par reservoir jusqu'au rechargement de son chunk, et ne pouvait donc jamais faire de beton liquide. Elle a desormais sa pleine capacite tout de suite.
 
 ### Performances
 
