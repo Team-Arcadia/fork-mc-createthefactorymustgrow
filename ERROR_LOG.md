@@ -149,3 +149,11 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Patchouli draws an anchored ghost through `simulate(..., forView = true)`, which adds one block on Y, while `IMultiblock.validate` uses `forView = false`. The projector checked one block below the drawn ghost, so the layer never matched; Patchouli then reported it complete and the projector read that as the player closing it. On top of that, `strictBlockMatcher` compares against the block's default state, so any block placed with another facing (coke oven, hatches) never matched.
 **Fix:** The projector checks the layer through the same view simulation the visualizer renders, and anchors one block lower so the ghost sits on the clicked face. Each position matches on the block only (`predicateMatcher` with the drawn state for display). The client showcase now places each layer where it is drawn and fails if the projector does not move on.
 **Prevention:** When checking a Patchouli multiblock shown with `showMultiblock`, use `simulate(level, anchor, rotation, true)`, never `validate`.
+
+## [2026-10-04 11:00] - Every healthy fuel engine reported "no voltage" in the Factory Inspector
+**Context:** New functional engine game tests assert that the inspector shows no problem line on a running engine.
+**Error:** Regular, radial, turbine and large engines all reported `No voltage reaches this block` with advice to wire a generator, while turning at full speed.
+**Root cause:** Engines extend `KineticElectricBlockEntity` only so the generator upgrade can make them a voltage source. `FactoryInspectorItem` runs `GenericInspections.electric` on every `IElectric`, which flags zero voltage on anything that is not a generator.
+**Fix:** `IInspectable.wantsElectricCheck()` (default true), honoured by the inspector; small engines answer true only with a generator upgrade mounted, the large engine always false.
+**Prevention:** A block that implements `IElectric` for an optional feature must opt out of the generic electric check, the same way `wantsRotationCheck` lets non-shaft kinetic blocks opt out of "not turning".
+

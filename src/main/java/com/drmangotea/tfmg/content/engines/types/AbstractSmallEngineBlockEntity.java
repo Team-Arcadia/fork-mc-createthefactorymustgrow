@@ -955,6 +955,17 @@ public abstract class AbstractSmallEngineBlockEntity extends AbstractEngineBlock
 
     // Factory Inspector
 
+    // Fuel engines are electric only to carry a generator upgrade; without
+    // one, "no voltage reaches this block" was reported as a problem on every
+    // healthy engine, with advice to wire a generator to it.
+    @Override
+    public boolean wantsElectricCheck() {
+        for (AbstractSmallEngineBlockEntity be : getControllerBE().getEngines())
+            if (be.upgrade.isPresent() && be.upgrade.get().getItem() == TFMGBlocks.GENERATOR.asItem())
+                return true;
+        return false;
+    }
+
     @Override
     public void inspect(InspectionReport report) {
         AbstractSmallEngineBlockEntity master = this;

@@ -74,7 +74,7 @@ public class FactoryInspectorItem extends Item {
             inspectable.inspect(report);
         if (be instanceof KineticBlockEntity kinetic)
             GenericInspections.kinetic(kinetic, report);
-        if (be instanceof IElectric electric)
+        if (be instanceof IElectric electric && !(be instanceof IInspectable checked && !checked.wantsElectricCheck()))
             GenericInspections.electric(electric, report);
         if (be != null)
             GenericInspections.tanks(be, report);
