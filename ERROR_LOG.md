@@ -164,3 +164,9 @@ in other shapes, and the file was only saved by the grep count.
 **Fix:** `hasOutputShaft` now asks the engine block's own `hasShaftTowards` for each horizontal face and counts a face only if it does not lead into another engine block, which keeps the old answer for regular engines.
 **Prevention:** Derive "does this export rotation" from the block's kinetic contract (`hasShaftTowards`), never from one subclass's blockstate value.
 
+## [2026-10-04 18:35] - A firebox placed lit heated forever without fuel
+**Context:** New game test building the handbook distillation blueprint (fireboxes stored as `blaze=fading`) with crude oil but no firebox fuel.
+**Error:** After 200 ticks every firebox still showed a flame and the steel tank kept heat level 8, so the tower would distil on empty fireboxes.
+**Root cause:** Heat is read from the firebox blockstate (`TFMGBoilerHeaters`), but `FireboxBlockEntity.lazyTick` only wrote `HEAT_LEVEL = NONE` when its `running` flag had been true. A firebox whose blockstate arrived lit (blueprint, schematic, `/setblock`, a moved structure) never had `running` set, so the "stop burning" branch never touched it.
+**Fix:** When the firebox cannot burn, the blockstate is put out whenever it is not already `NONE`, whatever `running` says.
+**Prevention:** When a blockstate is the source of truth for other machines, reconcile it against the real condition on every update; never gate the write on a flag that only tracks the block's own past writes.

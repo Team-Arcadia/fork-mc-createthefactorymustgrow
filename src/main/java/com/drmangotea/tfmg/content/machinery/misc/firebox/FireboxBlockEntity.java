@@ -106,7 +106,12 @@ public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleI
         FireboxBlockEntity controller = isController() ? this : getControllerBE();
 
         if (controller == null || !canBurn(controller)) {
-            if (wasRunning)
+            // Put out a lit blockstate whatever the running flag says. The
+            // heat a tower, vat or boiler reads is the blockstate, and a
+            // firebox placed already lit (handbook blueprint, schematic,
+            // /setblock) never had running set, so it heated forever on an
+            // empty tank.
+            if (wasRunning || getBlockState().getValue(FireboxBlock.HEAT_LEVEL) != BlazeBurnerBlock.HeatLevel.NONE)
                 level.setBlock(getBlockPos(), getBlockState().setValue(FireboxBlock.HEAT_LEVEL, BlazeBurnerBlock.HeatLevel.NONE), 2);
             running = false;
 
