@@ -373,3 +373,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The 1.3.0 "sneak pours into any fluid handler" change runs in `onItemUseFirst`, before the engine's own handling, and an engine's capability is its fuel tank, which accepts any fluid.
 **Fix:** On an engine the sneak-click empties the can as its tooltip says; oil and coolant still go in with a plain click.
 **Prevention:** A generic "pour into any fluid handler" must exclude blocks whose handler is not a general container; check what a capability is before filling it.
+
+## [2026-10-04 20:37] - A block of laminated magnetic alloy burned in furnaces
+**Context:** New game test reading the furnace burn time of TFMG items.
+**Error:** The laminated magnetic alloy block burned for 28800 ticks.
+**Root cause:** Its registration copied the coal coke block's `.item(CoalCokeBlockItem::new)`.
+**Fix:** It uses a plain block item.
+**Prevention:** When copying a block registration, check the item factory: it carries behaviour (burn time) that a model or tag review does not show.

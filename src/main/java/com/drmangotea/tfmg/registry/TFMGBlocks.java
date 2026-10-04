@@ -1689,7 +1689,9 @@ public class TFMGBlocks {
             .tag(BlockTags.BEACON_BASE_BLOCKS)
             .blockstate(simpleCubeAll("laminated_magnetic_alloy_block"))
             .tag(BlockTags.NEEDS_IRON_TOOL)
-            .item(CoalCokeBlockItem::new)
+            // A plain block item: it was copied from the coal coke block and
+            // burned in a furnace for 28800 ticks.
+            .item()
             .build()
             .register();
 
