@@ -380,3 +380,17 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Its registration copied the coal coke block's `.item(CoalCokeBlockItem::new)`.
 **Fix:** It uses a plain block item.
 **Prevention:** When copying a block registration, check the item factory: it carries behaviour (burn time) that a model or tag review does not show.
+
+## [2026-10-04 20:24] - Game test platform floor is at helper y=1, not y=0
+**Context:** First run of the handheld tests: torches placed on the floor, shovels, hoes and fired sparks all misbehaved.
+**Error:** Clicking the floor at helper y=0 placed nothing or hit the ground below the platform; a pig spawned at y=1 dropped to y=0.
+**Root cause:** `StructureUtils.prepareTestStructure` puts the structure block one block below the structure, and `GameTestHelper` coordinates start at the structure block. Template layer 0 (the floor) is therefore helper y=1; `TFMGGameTestUtil` said y=0.
+**Fix:** Floor blocks are at y=1, things standing on the floor at y=2; the util comment now says so.
+**Prevention:** Before relying on a template's layout, check one known block with `helper.getBlockState` instead of the comment.
+
+## [2026-10-04 20:23] - Calling the multimeter tooltip crashed the game test server
+**Context:** Handheld test asking a powered resistor for its multimeter tooltip on the server.
+**Error:** `Attempted to load class net/minecraft/client/Minecraft for invalid dist DEDICATED_SERVER` and the whole run crashed.
+**Root cause:** `IElectric.makeMultimeterTooltip` builds goggle lines (`forGoggles`), which reach client classes; it is only called from client overlays.
+**Fix:** The test reads the values the overlay shows (voltage, resistance, current, power) instead.
+**Prevention:** Never call a tooltip or goggle builder from server-side test code.
