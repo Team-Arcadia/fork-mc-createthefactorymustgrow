@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Ce dernier point compte : si vous reliez une machine à une cuve de gravure, cette machine doit quand même fonctionner, sinon le circuit ne sera jamais gravé.$(br2)L'éthylène et le propylène viennent du craquage du naphta (page précédente). L'air se récupère avec une $(item)prise d'air$()."
+      "text": "Ce dernier point compte : si vous reliez une machine à une cuve de gravure, cette machine doit quand même fonctionner, sinon le circuit ne sera jamais gravé."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'éthylène et le propylène viennent du craquage du naphta (page précédente). L'air se récupère avec une $(item)prise d'air$()."
     },
     {
       "type": "patchouli:spotlight",

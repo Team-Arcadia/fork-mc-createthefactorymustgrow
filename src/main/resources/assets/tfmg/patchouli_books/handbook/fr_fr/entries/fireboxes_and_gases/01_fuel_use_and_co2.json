@@ -22,7 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)branchez une pompe mécanique sur le foyer et aspirez le CO2 par des tuyaux,$(li)envoyez-le vers un $(item)échappement$() ou une $(item)cheminée$() qui le rejette dans l'air,$(li)ou gardez-le dans des réservoirs pour plus tard.$(br2)Le carburant peut être pompé dedans, et seul le CO2 peut être pompé dehors."
+      "text": "$(li)branchez une pompe mécanique sur le foyer et aspirez le CO2 par des tuyaux,$(li)envoyez-le vers un $(item)échappement$() ou une $(item)cheminée$() qui le rejette dans l'air,$(li)ou gardez-le dans des réservoirs pour plus tard."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le carburant peut être pompé dedans, et seul le CO2 peut être pompé dehors."
     },
     {
       "type": "patchouli:spotlight",

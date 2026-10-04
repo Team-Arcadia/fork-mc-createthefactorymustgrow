@@ -6,15 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The $(item)arc furnace$() is not a block of its own: it is a chemical vat set up to melt iron with electric arcs. It makes molten steel without a blast furnace or hot air. $(l)The build - $(item)Fireproof Chemical Vat$() blocks only.$() Steel and cast iron vats do not work."
+      "text": "The $(item)arc furnace$() is not a block of its own: it is a chemical vat set up to melt iron with electric arcs. It makes molten steel without a blast furnace or hot air.$(br2)$(l)The build$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)At least $(item)9 vat blocks$(): a 3x3 vat one block high is the usual shape. $(li)$(item)3 Electrode Holders$() on top of the vat, each with a $(item)Graphite Electrode$(). $(li)$(item)No heat$() is needed: you can leave the space under the vat empty."
+      "text": "$(li)$(item)Fireproof Chemical Vat$() blocks only. Steel and cast iron vats do not work.$(li)At least $(item)9 vat blocks$(): a 3x3 vat one block high is the usual shape.$(li)$(item)3 Electrode Holders$() on top of the vat, each with a $(item)Graphite Electrode$()."
     },
     {
       "type": "patchouli:text",
-      "text": "Any other machine you attach must be working too, or nothing runs. The simplest arc furnace has the three holders and nothing else."
+      "text": "$(li)$(item)No heat$() is needed: you can leave the space under the vat empty.$(br2)Any other machine you attach must be working too, or nothing runs. The simplest arc furnace has the three holders and nothing else."
     },
     {
       "type": "patchouli:text",

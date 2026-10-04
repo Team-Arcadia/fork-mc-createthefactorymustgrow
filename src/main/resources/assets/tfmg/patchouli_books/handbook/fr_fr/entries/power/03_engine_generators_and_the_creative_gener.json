@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Tension : $(item)20 x tr/min du moteur / 500$().$(li)Puissance : $(item)1 W par tr/min du moteur$().$(li)Le couple du moteur est multiplié par $(item)0,7$().$(br2)À 4 000 tr/min de moteur, cela donne 160 V et 4 000 W, en plus de la rotation que le moteur fournit toujours. Voir le chapitre $(item)Moteurs$() pour en construire et en alimenter un."
+      "text": "$(li)Tension : $(item)20 x tr/min du moteur / 500$().$(li)Puissance : $(item)1 W par tr/min du moteur$().$(li)Le couple du moteur est multiplié par $(item)0,7$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Générateur créatif$()$(br)Disponible uniquement en mode créatif. Réglez sa tension avec la boîte de valeur sur le dessus, de $(item)0 à 2 500 V$() par pas de 10 V. Sa puissance est pratiquement illimitée et il ne surcharge jamais lui-même. Servez-vous-en pour tester une installation avant de construire de vrais générateurs, mais les autres blocs de son réseau gardent leurs propres limites."
+      "text": "À 4 000 tr/min de moteur, cela donne 160 V et 4 000 W, en plus de la rotation que le moteur fournit toujours. Voir le chapitre $(item)Moteurs$() pour en construire et en alimenter un.$(br2)$(l)Générateur créatif$()$(br)Disponible uniquement en mode créatif."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Réglez sa tension avec la boîte de valeur sur le dessus, de $(item)0 à 2 500 V$() par pas de 10 V.$(br)Sa puissance est pratiquement illimitée et il ne surcharge jamais lui-même."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Servez-vous-en pour tester une installation avant de construire de vrais générateurs, mais les autres blocs de son réseau gardent leurs propres limites."
     },
     {
       "type": "patchouli:spotlight",

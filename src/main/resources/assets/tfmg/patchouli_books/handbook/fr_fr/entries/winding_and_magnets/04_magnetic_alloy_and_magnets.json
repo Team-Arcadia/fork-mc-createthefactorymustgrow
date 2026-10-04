@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Alliage magnétique Mélangez $(item)2 lingots de nickel$(), $(item)1 lingot de silicium$() et $(item)2 lingots d'acier$() dans un bassin $(item)chauffé$() :$() vous obtenez $(item)2 lingots d'alliage magnétique$() (15 secondes). Pressez un lingot pour obtenir une $(item)plaque d'alliage magnétique$() ;"
+      "text": "$(l)Alliage magnétique$()"
     },
     {
       "type": "patchouli:text",
-      "text": "neuf plaques donnent un bloc d'alliage magnétique laminé.$(br2)$(l)Le polariseur$()$(br)Le $(item)polariseur$() transforme un $(item)lingot d'alliage magnétique$() en $(item)aimant$(). Clic droit avec le lingot (ou alimentez-le par un entonnoir), puis branchez le courant sur sa $(item)face arrière$()."
+      "text": "Mélangez $(item)2 lingots de nickel$(), $(item)1 lingot de silicium$() et $(item)2 lingots d'acier$() dans un bassin $(item)chauffé$() : vous obtenez $(item)2 lingots d'alliage magnétique$() (15 secondes). Pressez un lingot pour obtenir une $(item)plaque d'alliage magnétique$() ; neuf plaques donnent un bloc d'alliage magnétique laminé."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le polariseur$()$(br)Le $(item)polariseur$() transforme un $(item)lingot d'alliage magnétique$() en $(item)aimant$(). Clic droit avec le lingot (ou alimentez-le par un entonnoir), puis branchez le courant sur sa $(item)face arrière$()."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Votre premier aimant$()$(br)Le polariseur demande une $(item)jauge électrique$(), et la jauge demande un aimant. Depuis la 1.3.0, une recette à la main casse cette boucle : un $(item)lingot d'alliage magnétique$() au centre, des $(item)blocs de redstone$() au-dessus, à gauche et à droite, et une $(item)boussole$() en dessous. Elle coûte cher exprès : construisez un polariseur dès que possible."
+      "text": "$(l)Votre premier aimant$()$(br)Le polariseur demande une $(item)jauge électrique$(), et la jauge demande un aimant.$(br)Depuis la 1.3.0, une recette à la main casse cette boucle :$(br)un $(item)lingot d'alliage magnétique$() au centre, des $(item)blocs de redstone$() au-dessus, à gauche et à droite, et une $(item)boussole$() en dessous."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Elle coûte cher exprès :$(br)construisez un polariseur dès que possible."
     },
     {
       "type": "patchouli:spotlight",

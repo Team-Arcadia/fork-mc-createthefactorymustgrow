@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le moteur électrique retransforme l'électricité en rotation : une seule centrale peut ainsi entraîner des machines dans toute la base grâce aux fils. Il se fabrique par assemblage séquencé sur un axe :"
+      "text": "Le moteur électrique retransforme l'électricité en rotation :$(br)une seule centrale peut ainsi entraîner des machines dans toute la base grâce aux fils.$(br)Il se fabrique par assemblage séquencé sur un axe :"
     },
     {
       "type": "patchouli:text",
-      "text": "une bobine de cuivre sur l'enrouleuse, un aimant, un mécanisme en acier et un tournevis, trois fois de suite.$(br2)$(l)Vitesse et consommation$()$(li)Vitesse : $(item)tension x 0,8 tr/min$(), jusqu'à $(item)255 tr/min$(), atteints vers 319 V.$(li)Résistance : $(item)30 ohms$(), il tire donc $(item)V / 30$() ampères.$(li)À 300 V, il tourne à 240 tr/min et tire 10 A, soit $(item)3 000 W$()."
+      "text": "une bobine de cuivre sur l'enrouleuse, un aimant, un mécanisme en acier et un tournevis, trois fois de suite."
     },
     {
       "type": "patchouli:text",
-      "text": "Sa capacité de contrainte augmente avec sa vitesse. Choisissez le sens de rotation avec sa boîte de valeur.$(br2)$(l)Le brancher$()$(br)Le courant entre par sa face $(item)arrière$(), à l'opposé de l'axe. Depuis la 1.3.0, un moteur couché sur le côté accepte aussi le courant par sa face $(item)du dessous$() : vous pouvez alimenter une rangée de moteurs par des câbles posés en dessous."
+      "text": "$(l)Vitesse et consommation$()$(li)Vitesse : $(item)tension x 0,8 tr/min$(), jusqu'à $(item)255 tr/min$(), atteints vers 319 V.$(li)Résistance : $(item)30 ohms$(), il tire donc $(item)V / 30$() ampères.$(li)À 300 V, il tourne à 240 tr/min et tire 10 A, soit $(item)3 000 W$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sa capacité de contrainte augmente avec sa vitesse. Choisissez le sens de rotation avec sa boîte de valeur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le brancher$()$(br)Le courant entre par sa face $(item)arrière$(), à l'opposé de l'axe. Depuis la 1.3.0, un moteur couché sur le côté accepte aussi le courant par sa face $(item)du dessous$() : vous pouvez alimenter une rangée de moteurs par des câbles posés en dessous."
     },
     {
       "type": "patchouli:text",

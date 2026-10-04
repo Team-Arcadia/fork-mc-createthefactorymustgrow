@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)4. Colle$()$(br)Passez de la $(item)super glue$() sur tout le balancier, de la tête au connecteur. Il bouge comme une seule contraption, et les blocs non collés restent en place.$(br2)$(l)5. Entraînement$()$(br)Posez la $(item)manivelle$() sous le connecteur et une $(item)entrée de machine$() juste sous la manivelle."
+      "text": "$(l)4. Colle$()$(br)Passez de la $(item)super glue$() sur tout le balancier, de la tête au connecteur. Il bouge comme une seule contraption, et les blocs non collés restent en place."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)5. Entraînement$()$(br)Posez la $(item)manivelle$() sous le connecteur et une $(item)entrée de machine$() juste sous la manivelle."
     },
     {
       "type": "patchouli:spotlight",

@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Avant de passer au chapitre sur l'acier, vérifiez que vous avez : $(li)Une production régulière de $(item)briques réfractaires$(), en blocs : les murs du haut fourneau, les fourneaux à air chaud, la sortie et la trappe en consomment."
+      "text": "Avant de passer au chapitre sur l'acier, vérifiez que vous avez :"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Une ligne de compactage chauffée pour les $(item)lingots de fonte$(), et une presse qui fait les $(item)plaques de fonte$(). $(li)Une pile de $(item)tuyaux en fonte$() et quelques $(item)cuves à fluide en fonte$(). $(li)Au moins un $(item)four à coke$() et beaucoup de $(item)charbon$() : le haut fourneau brûle de la $(item)poussière de coke de charbon$(), du coke passé aux roues de concassage. $(li)Une ligne de $(item)sable calcaire$() :"
+      "text": "$(li)Une production régulière de $(item)briques réfractaires$(), en blocs : les murs du haut fourneau, les fourneaux à air chaud, la sortie et la trappe en consomment."
     },
     {
       "type": "patchouli:text",
-      "text": "miel, lave qui coule, perceuse et roues de concassage. $(li)Du $(item)fer$() pour le fourneau : fer brut ou fer brut concassé, les deux fonctionnent. $(li)Un $(item)bassin de coulée$(), pour transformer l'acier liquide en lingots."
+      "text": "$(li)Une ligne de compactage chauffée pour les $(item)lingots de fonte$(), et une presse qui fait les $(item)plaques de fonte$().$(li)Une pile de $(item)tuyaux en fonte$() et quelques $(item)cuves à fluide en fonte$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Au moins un $(item)four à coke$() et beaucoup de $(item)charbon$() : le haut fourneau brûle de la $(item)poussière de coke de charbon$(), du coke passé aux roues de concassage.$(li)Une ligne de $(item)sable calcaire$() : miel, lave qui coule, perceuse et roues de concassage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Du $(item)fer$() pour le fourneau : fer brut ou fer brut concassé, les deux fonctionnent.$(li)Un $(item)bassin de coulée$(), pour transformer l'acier liquide en lingots."
     },
     {
       "type": "patchouli:text",

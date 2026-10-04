@@ -10,15 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Fireproof bricks$(), from fireclay.$(li)$(item)Cast iron$(), from iron and coal.$(li)$(item)Limesand$(), the flux of the blast furnace.$(li)$(item)Cement and concrete$().$(li)$(item)Sheets and alloys$() of lead and nickel."
+      "text": "$(li)$(item)Fireproof bricks$(), from fireclay.$(li)$(item)Cast iron$(), from iron and coal.$(li)$(item)Limesand$(), the flux of the blast furnace.$(li)$(item)Cement and concrete$().$(li)$(item)Sheets and alloys$() of lead and nickel.$(br2)$(l)Create machines you need$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Create machines you need$()$(li)$(item)Crushing wheels$(), for limesand and crushed ores.$(li)A $(item)mechanical mixer$() over a $(item)basin$(), for fireclay, cement and concrete.$(li)A $(item)mechanical press$(): over a depot or belt it presses sheets, over a basin it compacts.$(li)A $(item)blaze burner$() under the basin, lit with fuel, for the recipes marked $(item)heated$()."
+      "text": "$(li)$(item)Crushing wheels$(), for limesand and crushed ores.$(li)A $(item)mechanical mixer$() over a $(item)basin$(), for fireclay, cement and concrete.$(li)A $(item)mechanical press$(): over a depot or belt it presses sheets, over a basin it compacts."
     },
     {
       "type": "patchouli:text",
-      "text": "Click an item at the bottom of a page to see its exact recipe in JEI."
+      "text": "$(li)A $(item)blaze burner$() under the basin, lit with fuel, for the recipes marked $(item)heated$().$(br2)Click an item at the bottom of a page to see its exact recipe in JEI."
     },
     {
       "type": "patchouli:spotlight",

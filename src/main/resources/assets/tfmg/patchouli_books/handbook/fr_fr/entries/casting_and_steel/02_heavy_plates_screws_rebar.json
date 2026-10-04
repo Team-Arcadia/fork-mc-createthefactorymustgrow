@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Une rangée de trois presses au-dessus d'un tapis le fait en un seul passage. Les plaques lourdes servent aux tuyaux et cuves en acier, au carter de machinerie lourd et au mécanisme en acier. Ce sont aussi les plaques d'acier de toutes les recettes qui en demandent.$(br2)$(l)Vis$()$(br)Découpez un lingot d'acier au tailleur de pierre ou avec une $(item)scie mécanique$() : $(item)4 vis$() par lingot."
+      "text": "Une rangée de trois presses au-dessus d'un tapis le fait en un seul passage. Les plaques lourdes servent aux tuyaux et cuves en acier, au carter de machinerie lourd et au mécanisme en acier. Ce sont aussi les plaques d'acier de toutes les recettes qui en demandent."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Armatures$()$(br)De la même façon : $(item)4 armatures$() par lingot d'acier. Il en faut pour le tournevis.$(br2)Le tailleur de pierre transforme aussi un lingot d'acier en $(item)8 tuyaux industriels$(), utilisés par les cheminées et les tours de distillation."
+      "text": "$(l)Vis$()$(br)Découpez un lingot d'acier au tailleur de pierre ou avec une $(item)scie mécanique$() : $(item)4 vis$() par lingot.$(br2)$(l)Armatures$()$(br)De la même façon : $(item)4 armatures$() par lingot d'acier. Il en faut pour le tournevis."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le tailleur de pierre transforme aussi un lingot d'acier en $(item)8 tuyaux industriels$(), utilisés par les cheminées et les tours de distillation."
     },
     {
       "type": "patchouli:spotlight",

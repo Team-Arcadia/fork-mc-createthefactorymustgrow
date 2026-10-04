@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Largeur$() : 1x1 ou $(item)2x2$() au maximum.$(li)$(item)Hauteur$() : jusqu'à la limite de hauteur des réservoirs de Create (réglage serveur, 32 par défaut).$(br2)Quelle que soit sa taille, le fourneau a quatre réservoirs de $(item)8000 mB$() : air en entrée, combustible en entrée, air chaud en sortie, CO2 en sortie. Les lunettes affichent les quatre."
+      "text": "$(li)$(item)Largeur$() : 1x1 ou $(item)2x2$() au maximum.$(li)$(item)Hauteur$() : jusqu'à la limite de hauteur des réservoirs de Create (réglage serveur, 32 par défaut)."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)La taille, c'est la vitesse$()$(br)Le fourneau fait un cycle, puis attend avant le suivant. Chaque cycle convertit $(item)une part par bloc$(), et l'attente raccourcit quand le fourneau grandit. La production suit donc le $(item)carré$() du nombre de blocs : deux fois plus de blocs, environ quatre fois plus d'air chaud."
+      "text": "Quelle que soit sa taille, le fourneau a quatre réservoirs de $(item)8000 mB$() : air en entrée, combustible en entrée, air chaud en sortie, CO2 en sortie. Les lunettes affichent les quatre.$(br2)$(l)La taille, c'est la vitesse$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le fourneau fait un cycle, puis attend avant le suivant. Chaque cycle convertit $(item)une part par bloc$(), et l'attente raccourcit quand le fourneau grandit. La production suit donc le $(item)carré$() du nombre de blocs : deux fois plus de blocs, environ quatre fois plus d'air chaud."
     },
     {
       "type": "patchouli:text",

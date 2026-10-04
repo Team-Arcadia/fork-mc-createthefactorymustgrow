@@ -6,19 +6,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Les roues de concassage transforment les minerais en $(item)minerai concassé$(), qui fond en lingots. Concasser le bloc de minerai rapporte plus que le miner. $(li)$(item)Minerai de plomb$() :"
+      "text": "Les roues de concassage transforment les minerais en $(item)minerai concassé$(), qui fond en lingots. Concasser le bloc de minerai rapporte plus que le miner."
     },
     {
       "type": "patchouli:text",
-      "text": "1 plomb brut concassé, plus 75 % de chance d'un second, et 75 % de chance d'une pépite d'expérience. $(li)$(item)Minerai de nickel$() : la même chose, avec du nickel brut concassé. $(li)$(item)Minerai de lithium$() : 1 lithium brut concassé, plus 25 % de chance d'un autre, 75 % de pépite d'expérience, 12 % de pierre taillée. $(li)$(item)Minerai de lithium des abîmes$() :"
+      "text": "$(li)$(item)Minerai de plomb$() : 1 plomb brut concassé, plus 75 % de chance d'un second, et 75 % de chance d'une pépite d'expérience.$(li)$(item)Minerai de nickel$() : la même chose, avec du nickel brut concassé."
     },
     {
       "type": "patchouli:text",
-      "text": "2 lithium brut concassé, plus 25 % de chance d'un troisième. $(li)$(item)Plomb, nickel et lithium bruts$() : 1 minerai concassé chacun, plus 75 % de chance d'une pépite d'expérience. Un bloc de lithium brut en donne 9."
+      "text": "$(li)$(item)Minerai de lithium$() : 1 lithium brut concassé, plus 25 % de chance d'un autre, 75 % de pépite d'expérience, 12 % de pierre taillée.$(li)$(item)Minerai de lithium des abîmes$() : 2 lithium brut concassé, plus 25 % de chance d'un troisième."
     },
     {
       "type": "patchouli:text",
-      "text": "Faites fondre le minerai concassé dans un four (10 secondes) ou un haut fourneau vanilla (5 secondes), un lingot par pièce. Les objets bruts fondent aussi en lingots, mais les concasser d'abord rapporte davantage.$(br2)TFMG n'ajoute aucune recette de lavage pour ces minerais concassés : envoyez-les directement au four."
+      "text": "$(li)$(item)Plomb, nickel et lithium bruts$() : 1 minerai concassé chacun, plus 75 % de chance d'une pépite d'expérience. Un bloc de lithium brut en donne 9."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Faites fondre le minerai concassé dans un four (10 secondes) ou un haut fourneau vanilla (5 secondes), un lingot par pièce. Les objets bruts fondent aussi en lingots, mais les concasser d'abord rapporte davantage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "TFMG n'ajoute aucune recette de lavage pour ces minerais concassés : envoyez-les directement au four."
     },
     {
       "type": "patchouli:spotlight",

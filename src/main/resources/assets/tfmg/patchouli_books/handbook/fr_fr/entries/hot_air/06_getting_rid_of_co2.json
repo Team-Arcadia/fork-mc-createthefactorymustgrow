@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Échappement$()$(br)Une petite bouche qui se fixe sur n'importe quelle face d'un bloc. Il contient $(item)1000 mB$() et rejette $(item)10 mB par tick$(), puis $(item)100 mB par tick$() dès qu'il contient plus de 700 mB. Un échappement suffit pour un four à coke ou un fourneau à air chaud 2x2x5."
+      "text": "$(l)Échappement$()$(br)Une petite bouche qui se fixe sur n'importe quelle face d'un bloc. Il contient $(item)1000 mB$() et rejette $(item)10 mB par tick$(), puis $(item)100 mB par tick$() dès qu'il contient plus de 700 mB. Un échappement suffit pour un four à coke ou un fourneau à air chaud 2x2x5.$(br2)$(l)Cheminée$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Cheminée$()$(br)Les cheminées en briques, en béton et métalliques s'empilent en colonne ; construisez chaque colonne d'un seul type. Chaque bloc contient $(item)8000 mB$() et pousse son gaz dans le bloc du dessus ; seul le $(item)bloc du sommet$() rejette, $(item)10 mB par tick$(), puis $(item)50 mB par tick$() quand il contient plus de 7000 mB. Envoyez le CO2 dans le bloc du bas."
+      "text": "Les cheminées en briques, en béton et métalliques s'empilent en colonne ;$(br)construisez chaque colonne d'un seul type.$(br)Chaque bloc contient $(item)8000 mB$() et pousse son gaz dans le bloc du dessus ;$(br)seul le $(item)bloc du sommet$() rejette, $(item)10 mB par tick$(), puis $(item)50 mB par tick$() quand il contient plus de 7000 mB."
     },
     {
       "type": "patchouli:text",
-      "text": "Une cheminée rejette moins qu'un échappement mais stocke beaucoup plus, ce qui absorbe les à-coups. Pour le débit pur, mettez plusieurs échappements sur la ligne de CO2.$(br2)Pompez le CO2 par la $(item)face du dessus$() d'un four à coke et par un $(item)côté de la couche du bas$() d'un fourneau à air chaud."
+      "text": "Envoyez le CO2 dans le bloc du bas.$(br2)Une cheminée rejette moins qu'un échappement mais stocke beaucoup plus, ce qui absorbe les à-coups. Pour le débit pur, mettez plusieurs échappements sur la ligne de CO2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Pompez le CO2 par la $(item)face du dessus$() d'un four à coke et par un $(item)côté de la couche du bas$() d'un fourneau à air chaud."
     },
     {
       "type": "patchouli:spotlight",

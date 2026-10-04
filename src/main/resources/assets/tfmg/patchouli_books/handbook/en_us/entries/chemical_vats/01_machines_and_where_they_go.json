@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A vat only counts machines that sit $(item)directly on its top layer$() or $(item)directly under its bottom layer$(), inside its footprint. $(li)$(item)Industrial Mixer$(): on top, in the $(item)centre$() of a 3x3 vat (anywhere on top of a smaller one)."
+      "text": "A vat only counts machines that sit $(item)directly on its top layer$() or $(item)directly under its bottom layer$(), inside its footprint."
     },
     {
       "type": "patchouli:text",
-      "text": "Give it a $(item)Mixer Blade$() for mixing or a $(item)Centrifuge$() for centrifuging by right-clicking. Driven from its top shaft, it needs at least $(item)30 RPM$(). $(li)$(item)Electrode Holder$(): on top, powered through its $(item)top face$(). Right-click it with an electrode, sneak-click with an empty hand to take it out. It needs at least $(item)5 A$() (server config). $(li)$(item)Compressor$():"
+      "text": "$(li)$(item)Industrial Mixer$(): on top, in the $(item)centre$() of a 3x3 vat (anywhere on top of a smaller one). Give it a $(item)Mixer Blade$() for mixing or a $(item)Centrifuge$() for centrifuging by right-clicking. Driven from its top shaft, it needs at least $(item)30 RPM$()."
     },
     {
       "type": "patchouli:text",
-      "text": "on top or underneath, driven by a horizontal shaft at $(item)120 RPM or more$(). $(li)$(item)Freezer$(): on top or underneath, powered by electricity on any side, it needs $(item)more than 3 A$() (75 ohm, so above 225 V)."
+      "text": "$(li)$(item)Electrode Holder$(): on top, powered through its $(item)top face$(). Right-click it with an electrode, sneak-click with an empty hand to take it out. It needs at least $(item)5 A$() (server config).$(li)$(item)Compressor$(): on top or underneath, driven by a horizontal shaft at $(item)120 RPM or more$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Freezer$(): on top or underneath, powered by electricity on any side, it needs $(item)more than 3 A$() (75 ohm, so above 225 V)."
     },
     {
       "type": "patchouli:text",

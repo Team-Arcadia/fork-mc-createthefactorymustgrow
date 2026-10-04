@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "L'électrolyse se fait dans une cuve chimique avec $(item)deux porte-électrodes$(), chacun tenant une $(item)électrode en cuivre$() ou $(item)en zinc$() (vous pouvez les mélanger). $(l)Le montage - Une cuve chimique en $(item)acier$() ou $(item)réfractaire$().$() La fonte ne marche pas."
+      "text": "L'électrolyse se fait dans une cuve chimique avec $(item)deux porte-électrodes$(), chacun tenant une $(item)électrode en cuivre$() ou $(item)en zinc$() (vous pouvez les mélanger).$(br2)$(l)Le montage$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Les machines doivent être dans l'emprise de la cuve, donc deux porte-électrodes demandent une cuve d'au moins $(item)2x2$(). $(li)Les deux porte-électrodes vont $(item)au-dessus$() de la cuve. $(li)Une $(item)chaleur de 2$() sous la cuve : un seul $(item)foyer$() allumé suffit, ou un brûleur à blaze surchauffé."
+      "text": "$(li)Une cuve chimique en $(item)acier$() ou $(item)réfractaire$(). La fonte ne marche pas.$(li)Les machines doivent être dans l'emprise de la cuve, donc deux porte-électrodes demandent une cuve d'au moins $(item)2x2$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les deux porte-électrodes vont $(item)au-dessus$() de la cuve.$(li)Une $(item)chaleur de 2$() sous la cuve : un seul $(item)foyer$() allumé suffit, ou un brûleur à blaze surchauffé."
     },
     {
       "type": "patchouli:text",

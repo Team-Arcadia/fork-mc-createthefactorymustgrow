@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Multimètre Tenez-le dans n'importe quelle main et regardez un bloc électrique pour lire sa $(item)tension$(), son $(item)courant$(), sa $(item)résistance$() et sa $(item)puissance$().$() Les générateurs affichent aussi la tension et la puissance qu'ils produisent."
+      "text": "$(l)Multimètre$()$(br)Tenez-le dans n'importe quelle main et regardez un bloc électrique pour lire sa $(item)tension$(), son $(item)courant$(), sa $(item)résistance$() et sa $(item)puissance$()."
     },
     {
       "type": "patchouli:text",
-      "text": "Accroupissez-vous pour ajouter la production et la consommation totales du réseau. Fabriquez-le avec une teinture pour changer sa couleur. $(l)Jauge électrique Posez-la contre un bloc électrique :$() son aiguille mesure le bloc derrière elle. Utilisez une $(item)clé$() de Create dessus pour changer de mode et d'échelle :"
+      "text": "Les générateurs affichent aussi la tension et la puissance qu'ils produisent.$(br)Accroupissez-vous pour ajouter la production et la consommation totales du réseau.$(br)Fabriquez-le avec une teinture pour changer sa couleur.$(br2)$(l)Jauge électrique$()"
     },
     {
       "type": "patchouli:text",
-      "text": "tension (500 V), haute tension (10 000 V), courant (16 A), résistance (500 ohms), puissance (5 000 W), consommation et production du réseau (50 000 W) et charge d'un accumulateur. C'est aussi une source pour $(item)liaison d'affichage$()."
+      "text": "Posez-la contre un bloc électrique :$(br)son aiguille mesure le bloc derrière elle.$(br)Utilisez une $(item)clé$() de Create dessus pour changer de mode et d'échelle :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "tension (500 V), haute tension (10 000 V), courant (16 A), résistance (500 ohms), puissance (5 000 W), consommation et production du réseau (50 000 W) et charge d'un accumulateur.$(br)C'est aussi une source pour $(item)liaison d'affichage$()."
     },
     {
       "type": "patchouli:text",

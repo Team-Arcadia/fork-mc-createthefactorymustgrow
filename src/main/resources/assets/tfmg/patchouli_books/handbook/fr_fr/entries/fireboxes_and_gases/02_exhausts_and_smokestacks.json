@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)L'échappement$()$(li)Contient $(item)1000 mB$() et peut être orienté dans n'importe quelle direction.$(li)Rejette $(item)10 mB par tick$() (200 mB par seconde).$(li)Quand il reste moins de 300 mB de place, il rejette $(item)100 mB par tick$() à la place.$(br2)Un échappement maintenu presque plein peut donc rejeter beaucoup : assez pour le plus grand foyer."
+      "text": "$(l)L'échappement$()$(li)Contient $(item)1000 mB$() et peut être orienté dans n'importe quelle direction.$(li)Rejette $(item)10 mB par tick$() (200 mB par seconde).$(li)Quand il reste moins de 300 mB de place, il rejette $(item)100 mB par tick$() à la place."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Les cheminées$()$(br)Les cheminées en briques, en béton et métalliques fonctionnent toutes pareil et ne diffèrent que par l'aspect.$(li)Chacune contient $(item)8000 mB$().$(li)Empilez-les : chaque bloc passe son CO2 à celui du dessus, et seul celui du $(item)haut$() le rejette.$(li)Celle du haut rejette $(item)10 mB par tick$(), ou $(item)50 mB par tick$() quand il reste moins de 1000 mB de place."
+      "text": "Un échappement maintenu presque plein peut donc rejeter beaucoup : assez pour le plus grand foyer.$(br2)$(l)Les cheminées$()$(br)Les cheminées en briques, en béton et métalliques fonctionnent toutes pareil et ne diffèrent que par l'aspect.$(li)Chacune contient $(item)8000 mB$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Empilez-les : chaque bloc passe son CO2 à celui du dessus, et seul celui du $(item)haut$() le rejette.$(li)Celle du haut rejette $(item)10 mB par tick$(), ou $(item)50 mB par tick$() quand il reste moins de 1000 mB de place."
     },
     {
       "type": "patchouli:text",

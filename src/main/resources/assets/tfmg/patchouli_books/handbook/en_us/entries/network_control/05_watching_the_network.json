@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Voltage observer$()$(br)Mount it on an electric block. It gives a $(item)redstone signal$() while that network has any voltage. A $(item)comparator$() reads it more finely: the strength grows with the voltage and is full at $(item)250 V$(). $(l)Display link sources Point a Create $(item)display link$() at:$()"
+      "text": "$(l)Voltage observer$()$(br)Mount it on an electric block. It gives a $(item)redstone signal$() while that network has any voltage. A $(item)comparator$() reads it more finely: the strength grows with the voltage and is full at $(item)250 V$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)an $(item)electric gauge$() or a $(item)voltage observer$(): voltage, current, resistance, power used or generated, voltage generated, and the network's consumption, generation, resistance and id; $(li)an $(item)accumulator$(): voltage and the network's consumption, generation and resistance; $(li)a $(item)potentiometer$(): voltage and voltage generated."
+      "text": "$(l)Display link sources$()$(br)Point a Create $(item)display link$() at:$(li)an $(item)electric gauge$() or a $(item)voltage observer$(): voltage, current, resistance, power used or generated, voltage generated, and the network's consumption, generation, resistance and id;"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)an $(item)accumulator$(): voltage and the network's consumption, generation and resistance;$(li)a $(item)potentiometer$(): voltage and voltage generated."
     },
     {
       "type": "patchouli:text",

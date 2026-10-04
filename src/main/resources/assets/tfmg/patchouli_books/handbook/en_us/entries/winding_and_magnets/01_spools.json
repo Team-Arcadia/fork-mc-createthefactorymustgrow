@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A full spool holds $(item)1000 turns$() of wire. There are three: $(item)Copper$(), $(item)Aluminum$() and $(item)Constantan$(). $(l)Making spools - $(item)Empty Spool$():$() cut $(item)Hardened Planks$() in a Stonecutter. $(li)Crafting: surround an Empty Spool with $(item)8 wires$() of one metal."
+      "text": "A full spool holds $(item)1000 turns$() of wire. There are three: $(item)Copper$(), $(item)Aluminum$() and $(item)Constantan$().$(br2)$(l)Making spools$()$(li)$(item)Empty Spool$(): cut $(item)Hardened Planks$() in a Stonecutter."
     },
     {
       "type": "patchouli:text",
-      "text": "The spool comes out full, 1000 turns. $(li)Winding: put $(item)wire$() in the Winding Machine's workpiece slot with an empty spool, or a spool of the same metal, mounted. Each wire gives $(item)125 turns$(), wound one per tick, up to 1000. Wire goes in one at a time, so feed it with a funnel."
+      "text": "$(li)Crafting: surround an Empty Spool with $(item)8 wires$() of one metal. The spool comes out full, 1000 turns."
     },
     {
       "type": "patchouli:text",
-      "text": "A spool whose turns run out turns back into an $(item)Empty Spool$(), ready to be refilled.$(br2)$(l)Laying cables$()$(br)Spools are also how you lay cables between connectors: click one connector, then the other. A run costs $(item)125 turns per 8 blocks$() of length. If the spool does not have enough turns left for that run, it tells you and nothing is placed."
+      "text": "$(li)Winding: put $(item)wire$() in the Winding Machine's workpiece slot with an empty spool, or a spool of the same metal, mounted. Each wire gives $(item)125 turns$(), wound one per tick, up to 1000. Wire goes in one at a time, so feed it with a funnel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A spool whose turns run out turns back into an $(item)Empty Spool$(), ready to be refilled."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Laying cables$()$(br)Spools are also how you lay cables between connectors: click one connector, then the other. A run costs $(item)125 turns per 8 blocks$() of length. If the spool does not have enough turns left for that run, it tells you and nothing is placed."
     },
     {
       "type": "patchouli:text",

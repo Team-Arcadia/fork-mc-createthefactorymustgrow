@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Cylindre de moteur diesel$() (4 plaques d'aluminium) : diesel. $(li)$(item)Cylindre de moteur$() (cylindre diesel + bougie d'allumage) : essence, kérosène, naphta. $(li)$(item)Cylindre de moteur$() + tuyau en laiton : GPL. $(li)Cylindre de moteur rempli au bec verseur avec 250 mB de $(item)butane$(), $(item)propane$() ou $(item)hydrogène$() : ce gaz."
+      "text": "$(li)$(item)Cylindre de moteur diesel$() (4 plaques d'aluminium) : diesel.$(li)$(item)Cylindre de moteur$() (cylindre diesel + bougie d'allumage) : essence, kérosène, naphta.$(li)$(item)Cylindre de moteur$() + tuyau en laiton : GPL."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Cylindre de moteur simple$() (4 plaques de fer + briquet) : créosote et gaz de four. $(li)$(item)Pale de turbine$() (8 plaques de fer + arbre) : kérosène. Les moteurs à turbine n'acceptent que des pales."
+      "text": "$(li)Cylindre de moteur rempli au bec verseur avec 250 mB de $(item)butane$(), $(item)propane$() ou $(item)hydrogène$() : ce gaz.$(li)$(item)Cylindre de moteur simple$() (4 plaques de fer + briquet) : créosote et gaz de four."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Pale de turbine$() (8 plaques de fer + arbre) : kérosène. Les moteurs à turbine n'acceptent que des pales."
     },
     {
       "type": "patchouli:text",

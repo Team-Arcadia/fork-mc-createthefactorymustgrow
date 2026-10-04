@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)a structure that is not complete,$(li)a missing fuel, flux or hot air,$(li)a full output or exhaust tank,$(li)a vat recipe that needs more heat or pressure.$(br2)When a machine sits idle, look at it with goggles first. The last chapter, $(item)Troubleshooting$(), lists every message and how to fix it."
+      "text": "$(li)a structure that is not complete,$(li)a missing fuel, flux or hot air,$(li)a full output or exhaust tank,$(li)a vat recipe that needs more heat or pressure."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When a machine sits idle, look at it with goggles first. The last chapter, $(item)Troubleshooting$(), lists every message and how to fix it."
     },
     {
       "type": "patchouli:spotlight",

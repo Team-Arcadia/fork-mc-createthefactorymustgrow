@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Les $(item)briques réfractaires$(), à partir d'argile réfractaire.$(li)La $(item)fonte$(), à partir de fer et de charbon.$(li)Le $(item)sable calcaire$(), fondant du haut fourneau.$(li)Le $(item)ciment$() et le $(item)béton$().$(li)Les $(item)plaques et alliages$() de plomb et de nickel. $(l)Machines de Create nécessaires - Des $(item)roues de concassage$(), pour le sable calcaire et les minerais concassés.$()"
+      "text": "$(li)Les $(item)briques réfractaires$(), à partir d'argile réfractaire.$(li)La $(item)fonte$(), à partir de fer et de charbon.$(li)Le $(item)sable calcaire$(), fondant du haut fourneau.$(li)Le $(item)ciment$() et le $(item)béton$().$(li)Les $(item)plaques et alliages$() de plomb et de nickel."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Un $(item)malaxeur mécanique$() au-dessus d'un $(item)bassin$(), pour l'argile réfractaire, le ciment et le béton. $(li)Une $(item)presse mécanique$() : au-dessus d'un dépôt ou d'un tapis elle presse des plaques, au-dessus d'un bassin elle compacte. $(li)Un $(item)brûleur à blaze$() sous le bassin, alimenté en combustible, pour les recettes marquées $(item)chauffées$()."
+      "text": "$(l)Machines de Create nécessaires$()$(li)Des $(item)roues de concassage$(), pour le sable calcaire et les minerais concassés.$(li)Un $(item)malaxeur mécanique$() au-dessus d'un $(item)bassin$(), pour l'argile réfractaire, le ciment et le béton."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Une $(item)presse mécanique$() : au-dessus d'un dépôt ou d'un tapis elle presse des plaques, au-dessus d'un bassin elle compacte.$(li)Un $(item)brûleur à blaze$() sous le bassin, alimenté en combustible, pour les recettes marquées $(item)chauffées$()."
     },
     {
       "type": "patchouli:text",

@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The pumpjack lifts crude oil from a deposit into a tank at the surface. It is built from separate blocks that join into a rocking beam: $(li)$(item)Pumpjack Base$(): sits on the pipe column, holds the oil. $(li)$(item)Industrial Pipes$():"
+      "text": "The pumpjack lifts crude oil from a deposit into a tank at the surface. It is built from separate blocks that join into a rocking beam:$(br2)$(li)$(item)Pumpjack Base$(): sits on the pipe column, holds the oil."
     },
     {
       "type": "patchouli:text",
-      "text": "a straight column from the base down to the deposit (only three are shown here). $(li)$(item)Pumpjack Hammer Holder$(): the pivot. The beam rests on top of it. $(li)$(item)Beam$(): a line of $(item)hammer parts$() with a $(item)hammer head$() at one end and a $(item)hammer connector$() at the other. $(li)$(item)Pumpjack Crank$(): under the connector, it drives the beam."
+      "text": "$(li)$(item)Industrial Pipes$(): a straight column from the base down to the deposit (only three are shown here).$(li)$(item)Pumpjack Hammer Holder$(): the pivot. The beam rests on top of it.$(li)$(item)Beam$(): a line of $(item)hammer parts$() with a $(item)hammer head$() at one end and a $(item)hammer connector$() at the other."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Machine Input$(): under the crank, it takes the rotation.$(br2)In this view the head hangs over the base on the west, the connector over the crank on the east, and the holder stands in the middle on two steel trusses. The shaft on the north side of the machine input is where the rotation comes in.$(br2)Use $(item)-$() and $(item)+$() to look at it layer by layer."
+      "text": "$(li)$(item)Pumpjack Crank$(): under the connector, it drives the beam.$(li)$(item)Machine Input$(): under the crank, it takes the rotation."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In this view the head hangs over the base on the west, the connector over the crank on the east, and the holder stands in the middle on two steel trusses. The shaft on the north side of the machine input is where the rotation comes in.$(br2)Use $(item)-$() and $(item)+$() to look at it layer by layer."
     },
     {
       "type": "patchouli:multiblock",

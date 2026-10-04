@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "To cross a distance, string a wire between two $(item)cable insulators$(). Place an insulator on a face of an electric block: it connects to the block it sits on."
+      "text": "To cross a distance, string a wire between two $(item)cable insulators$(). Place an insulator on a face of an electric block: it connects to the block it sits on. Insulators placed in a straight line, all facing the same way, pass power along the stack, and the wire attaches to the outermost one. Insulators handle up to $(item)100,000 V$()."
     },
     {
       "type": "patchouli:text",
-      "text": "Insulators placed in a straight line, all facing the same way, pass power along the stack, and the wire attaches to the outermost one. Insulators handle up to $(item)100,000 V$().$(br2)$(l)Filling a spool$()$(br)Cut an $(item)empty spool$() from hardened planks in a stonecutter. Mount it on a $(item)winding machine$() and feed it wire: each wire adds $(item)125 turns$(), and a full spool holds $(item)1,000 turns$()."
+      "text": "$(l)Filling a spool$()$(br)Cut an $(item)empty spool$() from hardened planks in a stonecutter. Mount it on a $(item)winding machine$() and feed it wire: each wire adds $(item)125 turns$(), and a full spool holds $(item)1,000 turns$().$(br2)$(l)Stringing the wire$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Stringing the wire$()$(li)Right-click an insulator with a filled spool, then right-click a second insulator.$(li)Every $(item)8 blocks$() of wire use $(item)125 turns$(), so a full spool covers about $(item)64 blocks$().$(li)Sneak and right-click in the air to cancel a started wire.$(li)Breaking an insulator gives back the wire, one item per 8 blocks."
+      "text": "$(li)Right-click an insulator with a filled spool, then right-click a second insulator.$(li)Every $(item)8 blocks$() of wire use $(item)125 turns$(), so a full spool covers about $(item)64 blocks$().$(li)Sneak and right-click in the air to cancel a started wire."
     },
     {
       "type": "patchouli:text",
-      "text": "Copper, aluminum and constantan spools all work. In this version the metal only changes the wire's color."
+      "text": "$(li)Breaking an insulator gives back the wire, one item per 8 blocks.$(br2)Copper, aluminum and constantan spools all work. In this version the metal only changes the wire's color."
     },
     {
       "type": "patchouli:spotlight",

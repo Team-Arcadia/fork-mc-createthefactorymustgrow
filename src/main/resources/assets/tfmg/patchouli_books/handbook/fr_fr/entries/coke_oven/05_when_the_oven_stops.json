@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Regardez n'importe quel bloc du four avec les $(item)lunettes d'ingénieur$() pour savoir ce qui se passe. En plus de la progression et des deux réservoirs, une ligne rouge indique quel réservoir bloque le four :$(br2)$(li)$(item)Réservoir de CO2 plein : pompez-le par la face du HAUT$()$(li)$(item)Réservoir de créosote plein : pompez-le par un côté$() $(l)Vérifications - Aucune progression :$()"
+      "text": "Regardez n'importe quel bloc du four avec les $(item)lunettes d'ingénieur$() pour savoir ce qui se passe. En plus de la progression et des deux réservoirs, une ligne rouge indique quel réservoir bloque le four :"
     },
     {
       "type": "patchouli:text",
-      "text": "l'emplacement est-il vide, ou contient-il autre chose que du charbon ou une bûche ? $(li)Bloqué sur le même temps restant : un réservoir est plein, lisez la ligne rouge. $(li)Le coke s'entasse devant : la zone de chute est bouchée ou rien ne le ramasse. $(li)Le four est plus lent que prévu :"
+      "text": "$(li)$(item)Réservoir de CO2 plein : pompez-le par la face du HAUT$()$(li)$(item)Réservoir de créosote plein : pompez-le par un côté$()$(br2)$(l)Vérifications$()$(li)Aucune progression : l'emplacement est-il vide, ou contient-il autre chose que du charbon ou une bûche ?"
     },
     {
       "type": "patchouli:text",
-      "text": "un bloc regarde dans un autre sens ou manque, donc le carré est plus petit. Cassez-le et reposez-le face à l'avant."
+      "text": "$(li)Bloqué sur le même temps restant : un réservoir est plein, lisez la ligne rouge.$(li)Le coke s'entasse devant : la zone de chute est bouchée ou rien ne le ramasse."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Le four est plus lent que prévu : un bloc regarde dans un autre sens ou manque, donc le carré est plus petit. Cassez-le et reposez-le face à l'avant."
     },
     {
       "type": "patchouli:spotlight",

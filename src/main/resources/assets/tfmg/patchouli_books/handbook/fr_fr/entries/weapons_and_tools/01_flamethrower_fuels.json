@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Chaque carburant donne au jet sa propre forme (dispersion / vitesse / étincelles par tick) : $(li)$(item)Essence$() : 15 / 1 / 3 - $(item)Diesel$() : 7 / 2 / 3. Serré et de longue portée. $(li)$(item)Kérosène$() : 10 / 1,3 / 4 - $(item)Naphta$() :"
+      "text": "Chaque carburant donne au jet sa propre forme (dispersion / vitesse / étincelles par tick) :$(br2)$(li)$(item)Essence$() : 15 / 1 / 3$(li)$(item)Diesel$() : 7 / 2 / 3. Serré et de longue portée.$(li)$(item)Kérosène$() : 10 / 1,3 / 4"
     },
     {
       "type": "patchouli:text",
-      "text": "20 / 0,8 / 1. Le plus économe. $(li)$(item)GPL$() : 35 / 0,6 / 16. Un nuage de feu court et large. $(li)$(item)Napalm$() : 20 / 1,8 / 15. Rapide et dense. $(li)$(item)Laitier en fusion$() : 15 / 0,3 / 15. Lourd et court."
+      "text": "$(li)$(item)Naphta$() : 20 / 0,8 / 1. Le plus économe.$(li)$(item)GPL$() : 35 / 0,6 / 16. Un nuage de feu court et large.$(li)$(item)Napalm$() : 20 / 1,8 / 15. Rapide et dense.$(li)$(item)Laitier en fusion$() : 15 / 0,3 / 15. Lourd et court."
     },
     {
       "type": "patchouli:text",
-      "text": "Une dispersion plus forte écarte les étincelles, une vitesse plus forte les envoie plus loin, et plus d'étincelles par tick donne plus de feu mais vide le réservoir plus vite, puisque le carburant consommé à chaque tick suit le nombre d'étincelles.$(br2)Ces types de carburant sont définis par les données : un modpack peut en ajouter ou modifier ces valeurs avec un datapack."
+      "text": "Une dispersion plus forte écarte les étincelles, une vitesse plus forte les envoie plus loin, et plus d'étincelles par tick donne plus de feu mais vide le réservoir plus vite, puisque le carburant consommé à chaque tick suit le nombre d'étincelles."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ces types de carburant sont définis par les données : un modpack peut en ajouter ou modifier ces valeurs avec un datapack."
     },
     {
       "type": "patchouli:spotlight",

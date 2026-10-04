@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Canon à patates avancé Il ne tire que des $(item)patates au napalm$() :$() une patate remplie de 500 mB de napalm par un bec verseur. À l'impact, elle éclate en une pluie d'étincelles de feu et une explosion qui $(item)détruit des blocs$()."
+      "text": "$(l)Canon à patates avancé$()$(br)Il ne tire que des $(item)patates au napalm$() :$(br)une patate remplie de 500 mB de napalm par un bec verseur.$(br)À l'impact, elle éclate en une pluie d'étincelles de feu et une explosion qui $(item)détruit des blocs$()."
     },
     {
       "type": "patchouli:text",
-      "text": "Il recharge en 75 ticks (moins de 4 secondes) et a 500 points de durabilité. Comme le canon de Create, un réservoir dorsal rempli encaisse l'usure. $(l)Canon à patates quadruple Il prend les mêmes munitions que le canon à patates de Create, mais chaque tir lance $(item)quatre fois$() plus de projectiles en gerbe, pour une seule munition.$()"
+      "text": "Il recharge en 75 ticks (moins de 4 secondes) et a 500 points de durabilité.$(br)Comme le canon de Create, un réservoir dorsal rempli encaisse l'usure.$(br2)$(l)Canon à patates quadruple$()"
     },
     {
       "type": "patchouli:text",
-      "text": "Le temps de recharge dépend de la munition, comme dans Create. Il a 100 points de durabilité, utilise l'air du réservoir dorsal de la même façon, et accepte Puissance, Frappe, Flamme, Butin et Récupération de patates."
+      "text": "Il prend les mêmes munitions que le canon à patates de Create, mais chaque tir lance $(item)quatre fois$() plus de projectiles en gerbe, pour une seule munition.$(br)Le temps de recharge dépend de la munition, comme dans Create."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il a 100 points de durabilité, utilise l'air du réservoir dorsal de la même façon, et accepte Puissance, Frappe, Flamme, Butin et Récupération de patates."
     },
     {
       "type": "patchouli:text",

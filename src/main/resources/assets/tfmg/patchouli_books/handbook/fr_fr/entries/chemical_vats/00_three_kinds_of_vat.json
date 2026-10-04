@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "La $(item)cuve chimique$() est le réacteur à tout faire du mod : elle mélange, craque, congèle, compresse et fait de l'électrolyse. Il en existe trois sortes, et chaque recette indique celles qu'elle accepte : $(li)$(item)Cuve chimique en fonte$() : la moins chère."
+      "text": "La $(item)cuve chimique$() est le réacteur à tout faire du mod : elle mélange, craque, congèle, compresse et fait de l'électrolyse. Il en existe trois sortes, et chaque recette indique celles qu'elle accepte :"
     },
     {
       "type": "patchouli:text",
-      "text": "La plupart des recettes de mélange et de congélation l'acceptent. $(li)$(item)Cuve chimique en acier$() : nécessaire pour la pression et l'électrolyse. $(li)$(item)Cuve chimique réfractaire$() (garnie de briques réfractaires) : accepte tout, et c'est la seule où le $(item)four à arc$() fonctionne. Ses fenêtres ne s'ouvrent pas."
+      "text": "$(li)$(item)Cuve chimique en fonte$() : la moins chère. La plupart des recettes de mélange et de congélation l'acceptent.$(li)$(item)Cuve chimique en acier$() : nécessaire pour la pression et l'électrolyse."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Cuve chimique réfractaire$() (garnie de briques réfractaires) : accepte tout, et c'est la seule où le $(item)four à arc$() fonctionne. Ses fenêtres ne s'ouvrent pas."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Chaque cuve a $(item)4 réservoirs d'entrée$() et $(item)4 de sortie$(), de $(item)8 seaux par bloc$() avec la taille de réservoir par défaut de Create, plus $(item)4 emplacements d'objets en entrée$() et $(item)4 en sortie$(). Chaque emplacement contient un objet différent.$(br2)Frappez une cuve avec une $(item)clé$() pour ouvrir ou fermer ses fenêtres."
+      "text": "Chaque cuve a $(item)4 réservoirs d'entrée$() et $(item)4 de sortie$(), de $(item)8 seaux par bloc$() avec la taille de réservoir par défaut de Create, plus $(item)4 emplacements d'objets en entrée$() et $(item)4 en sortie$(). Chaque emplacement contient un objet différent."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Frappez une cuve avec une $(item)clé$() pour ouvrir ou fermer ses fenêtres."
     },
     {
       "type": "patchouli:spotlight",

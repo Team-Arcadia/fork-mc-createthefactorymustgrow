@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Plastic All steps but the last run in a chemical vat with an industrial mixer and a $(item)heat of 2$() (one burning firebox under the vat is enough):$() $(li)$(item)500 mB naphtha$() gives $(item)250 mB ethylene + 250 mB propylene$(), - $(item)500 mB ethylene$() or $(item)500 mB propylene$() gives $(item)500 mB molten plastic$()."
+      "text": "$(l)Plastic$()$(br)All steps but the last run in a chemical vat with an industrial mixer and a $(item)heat of 2$() (one burning firebox under the vat is enough):$(li)$(item)500 mB naphtha$() gives $(item)250 mB ethylene + 250 mB propylene$(),$(li)$(item)500 mB ethylene$() or $(item)500 mB propylene$() gives $(item)500 mB molten plastic$()."
     },
     {
       "type": "patchouli:text",

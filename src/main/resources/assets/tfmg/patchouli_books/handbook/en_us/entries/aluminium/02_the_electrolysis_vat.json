@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Electrolysis runs in a chemical vat with $(item)two Electrode Holders$(), each holding a $(item)Copper$() or $(item)Zinc Electrode$() (you can mix them). $(l)The build - A $(item)Steel$() or $(item)Fireproof$() Chemical Vat.$() Cast iron does not work."
+      "text": "Electrolysis runs in a chemical vat with $(item)two Electrode Holders$(), each holding a $(item)Copper$() or $(item)Zinc Electrode$() (you can mix them).$(br2)$(l)The build$()$(li)A $(item)Steel$() or $(item)Fireproof$() Chemical Vat. Cast iron does not work."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Machines must sit on the vat's own footprint, so two holders need a vat at least $(item)2x2$() wide. $(li)Both holders go $(item)on top$() of the vat. $(li)$(item)Heat 2$() under the vat: one burning $(item)Firebox$() is enough, or a superheated Blaze Burner."
+      "text": "$(li)Machines must sit on the vat's own footprint, so two holders need a vat at least $(item)2x2$() wide.$(li)Both holders go $(item)on top$() of the vat.$(li)$(item)Heat 2$() under the vat: one burning $(item)Firebox$() is enough, or a superheated Blaze Burner."
     },
     {
       "type": "patchouli:text",
-      "text": "Do not put an Industrial Mixer on this vat unless it is spinning at 30 RPM or more: any attached machine that is not working stops every recipe.$(br2)$(l)Getting electrodes$()$(br)Put a $(item)Block of Copper$() or a $(item)Block of Zinc$() in a $(item)Stonecutter$(): one block gives one electrode. Right-click a holder with an electrode to insert it. Sneak and right-click with an empty hand to take it back."
+      "text": "Do not put an Industrial Mixer on this vat unless it is spinning at 30 RPM or more: any attached machine that is not working stops every recipe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Getting electrodes$()$(br)Put a $(item)Block of Copper$() or a $(item)Block of Zinc$() in a $(item)Stonecutter$(): one block gives one electrode. Right-click a holder with an electrode to insert it. Sneak and right-click with an empty hand to take it back."
     },
     {
       "type": "patchouli:multiblock",

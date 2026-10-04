@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Every layer$()$(li)The $(item)4 corners$(): Fireproof Brick Reinforcement.$(li)The $(item)4 edge middles$(): Fireproof Bricks.$(li)The $(item)centre$(): empty air.$(br2)$(l)The bottom layer$()$(li)Its $(item)centre$() is a block of $(item)Fireproof Bricks$(): the floor of the shaft.$(li)One edge brick is replaced by the $(item)Blast Furnace Output$()."
+      "text": "$(l)Every layer$()$(li)The $(item)4 corners$(): Fireproof Brick Reinforcement.$(li)The $(item)4 edge middles$(): Fireproof Bricks.$(li)The $(item)centre$(): empty air."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The bottom layer$()$(li)Its $(item)centre$() is a block of $(item)Fireproof Bricks$(): the floor of the shaft.$(li)One edge brick is replaced by the $(item)Blast Furnace Output$()."
     },
     {
       "type": "patchouli:text",

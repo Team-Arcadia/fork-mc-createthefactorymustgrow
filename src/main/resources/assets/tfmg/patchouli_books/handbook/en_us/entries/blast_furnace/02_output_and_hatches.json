@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)The gas hatch$()$(br)A hatch placed in the air $(item)right above the centre of the top layer$() collects the $(item)furnace gas$(). Pump it out and send it to the blast stove as fuel. Without it the gas is simply lost; the furnace still runs.$(br2)That top hatch also accepts items: anything a funnel puts into it falls down the shaft. It is the easiest way to feed a tall furnace."
+      "text": "$(l)The gas hatch$()$(br)A hatch placed in the air $(item)right above the centre of the top layer$() collects the $(item)furnace gas$(). Pump it out and send it to the blast stove as fuel. Without it the gas is simply lost; the furnace still runs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That top hatch also accepts items: anything a funnel puts into it falls down the shaft. It is the easiest way to feed a tall furnace."
     },
     {
       "type": "patchouli:spotlight",

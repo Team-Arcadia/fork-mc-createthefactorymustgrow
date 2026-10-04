@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Fuel$()$(br)Pipe fuel into any block of the engine. It must be one of the fuels the cylinders accept. When the tank runs dry the engine stops.$(br2)$(l)Exhaust$()$(br)A running engine fills its $(item)exhaust tank (8000 mB) with CO2$(). When it is full the engine stops. Pump the CO2 out of the engine with a pipe into an $(item)Exhaust$() block, which vents it as smoke, or into a tank."
+      "text": "$(l)Fuel$()$(br)Pipe fuel into any block of the engine. It must be one of the fuels the cylinders accept. When the tank runs dry the engine stops."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Exhaust$()$(br)A running engine fills its $(item)exhaust tank (8000 mB) with CO2$(). When it is full the engine stops. Pump the CO2 out of the engine with a pipe into an $(item)Exhaust$() block, which vents it as smoke, or into a tank."
     },
     {
       "type": "patchouli:text",

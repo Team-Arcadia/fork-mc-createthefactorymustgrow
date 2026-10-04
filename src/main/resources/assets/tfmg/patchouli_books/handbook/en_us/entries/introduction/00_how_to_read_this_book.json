@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Every multiblock has a $(item)3D view$() page. Press $(item)Visualize$() on it to project the structure as a ghost in front of you: missing and wrong blocks are shown until it is complete. $(li)The last page of an entry shows the $(item)items$() it talks about; hover them for details, and use JEI for their recipes."
+      "text": "$(li)Every multiblock has a $(item)3D view$() page. Press $(item)Visualize$() on it to project the structure as a ghost in front of you: missing and wrong blocks are shown until it is complete."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Use the $(item)search$() bar on the contents page, and bookmark the pages you use most. $(li)Stuck? Right-click the machine with the $(item)Factory Inspector$(): it tells you what works, what stops it and what to do. $(li)$(item)Factory Blueprints$() project a multiblock into the world layer by layer. They are rare:"
+      "text": "$(li)The last page of an entry shows the $(item)items$() it talks about; hover them for details, and use JEI for their recipes.$(li)Use the $(item)search$() bar on the contents page, and bookmark the pages you use most."
     },
     {
       "type": "patchouli:text",
-      "text": "look in village workshop chests, or buy one from a master cartographer. Each covers one assembly line."
+      "text": "$(li)Stuck? Right-click the machine with the $(item)Factory Inspector$(): it tells you what works, what stops it and what to do."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Factory Blueprints$() project a multiblock into the world layer by layer. They are rare: look in village workshop chests, or buy one from a master cartographer. Each covers one assembly line."
     },
     {
       "type": "patchouli:spotlight",

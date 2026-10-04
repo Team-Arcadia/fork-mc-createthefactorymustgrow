@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Etched Circuit Board$()$(br)1 Coated Circuit Board and 250 mB Sulfuric Acid give 1 Etched Circuit Board in 5 seconds. This one needs $(item)no machine$() and no heat: any vat with the ingredients will do it.$(br2)That last point matters: if you attach a machine to an etching vat, the machine must still be working, or the board will never be etched."
+      "text": "$(l)Etched Circuit Board$()$(br)1 Coated Circuit Board and 250 mB Sulfuric Acid give 1 Etched Circuit Board in 5 seconds. This one needs $(item)no machine$() and no heat: any vat with the ingredients will do it."
     },
     {
       "type": "patchouli:text",
-      "text": "Ethylene and propylene come from cracking naphtha (previous page). Air is collected by an $(item)Air Intake$()."
+      "text": "That last point matters: if you attach a machine to an etching vat, the machine must still be working, or the board will never be etched.$(br2)Ethylene and propylene come from cracking naphtha (previous page). Air is collected by an $(item)Air Intake$()."
     },
     {
       "type": "patchouli:spotlight",

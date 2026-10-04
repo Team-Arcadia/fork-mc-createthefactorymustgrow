@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Une bobine pleine contient $(item)1000 tours$() de fil. Il en existe trois : $(item)cuivre$(), $(item)aluminium$() et $(item)constantan$(). $(l)Fabriquer des bobines - $(item)Bobine vide$() :$() coupez des $(item)planches durcies$() au tailleur de pierre. $(li)Fabrication :"
+      "text": "Une bobine pleine contient $(item)1000 tours$() de fil. Il en existe trois : $(item)cuivre$(), $(item)aluminium$() et $(item)constantan$().$(br2)$(l)Fabriquer des bobines$()$(li)$(item)Bobine vide$() : coupez des $(item)planches durcies$() au tailleur de pierre."
     },
     {
       "type": "patchouli:text",
-      "text": "entourez une bobine vide de $(item)8 fils$() d'un même métal. La bobine sort pleine, 1000 tours. $(li)Enroulement : mettez du $(item)fil$() comme pièce dans l'enrouleuse, avec une bobine vide ou une bobine du même métal montée. Chaque fil donne $(item)125 tours$(), enroulés un par tick, jusqu'à 1000. Le fil entre un par un, alors alimentez-la avec un entonnoir."
+      "text": "$(li)Fabrication : entourez une bobine vide de $(item)8 fils$() d'un même métal. La bobine sort pleine, 1000 tours."
     },
     {
       "type": "patchouli:text",
-      "text": "Une bobine dont les tours s'épuisent redevient une $(item)bobine vide$(), prête à être remplie.$(br2)$(l)Poser des câbles$()$(br)Les bobines servent aussi à tirer des câbles entre connecteurs : cliquez un connecteur, puis l'autre. Une liaison coûte $(item)125 tours par tranche de 8 blocs$() de longueur. Si la bobine n'a plus assez de tours pour cette liaison, elle vous le dit et rien n'est posé."
+      "text": "$(li)Enroulement : mettez du $(item)fil$() comme pièce dans l'enrouleuse, avec une bobine vide ou une bobine du même métal montée. Chaque fil donne $(item)125 tours$(), enroulés un par tick, jusqu'à 1000. Le fil entre un par un, alors alimentez-la avec un entonnoir."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une bobine dont les tours s'épuisent redevient une $(item)bobine vide$(), prête à être remplie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Poser des câbles$()$(br)Les bobines servent aussi à tirer des câbles entre connecteurs : cliquez un connecteur, puis l'autre. Une liaison coûte $(item)125 tours par tranche de 8 blocs$() de longueur. Si la bobine n'a plus assez de tours pour cette liaison, elle vous le dit et rien n'est posé."
     },
     {
       "type": "patchouli:text",

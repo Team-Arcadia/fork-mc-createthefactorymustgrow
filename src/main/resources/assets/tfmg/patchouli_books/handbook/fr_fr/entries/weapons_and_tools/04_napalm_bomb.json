@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Allumez-la avec un $(item)briquet$() ou une $(item)boule de feu$(), alimentez-la en $(item)redstone$(), ou touchez-la avec un $(item)projectile enflammé$() (une flèche enflammée par exemple). $(li)Elle devient alors une bombe allumée avec une $(item)mèche de 4 secondes$(). $(li)Prise dans une autre explosion, elle part avec une mèche bien plus courte : une rangée de bombes s'enchaîne."
+      "text": "$(li)Allumez-la avec un $(item)briquet$() ou une $(item)boule de feu$(), alimentez-la en $(item)redstone$(), ou touchez-la avec un $(item)projectile enflammé$() (une flèche enflammée par exemple).$(li)Elle devient alors une bombe allumée avec une $(item)mèche de 4 secondes$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Prise dans une autre explosion, elle part avec une mèche bien plus courte : une rangée de bombes s'enchaîne."
     },
     {
       "type": "patchouli:text",

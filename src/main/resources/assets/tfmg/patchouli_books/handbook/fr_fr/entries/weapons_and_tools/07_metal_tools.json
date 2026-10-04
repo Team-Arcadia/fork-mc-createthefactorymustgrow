@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Trois métaux donnent un jeu complet d'épée, pioche, hache, pelle et houe. Il n'y a pas d'armure TFMG. $(li)$(item)Acier$() : 1000 utilisations, vitesse de minage 7,5, mine tout ce que mine un outil en diamant, enchantabilité 12."
+      "text": "Trois métaux donnent un jeu complet d'épée, pioche, hache, pelle et houe. Il n'y a pas d'armure TFMG."
     },
     {
       "type": "patchouli:text",
-      "text": "Le meilleur jeu au quotidien une fois le haut fourneau lancé. $(li)$(item)Aluminium$() : 220 utilisations, vitesse de minage 6, mine comme le fer, mais enchantabilité de $(item)22$(), bien plus que le fer. Idéal pour enchanter. $(li)$(item)Plomb$() : 32 utilisations, vitesse de minage 2, mine comme la pierre."
+      "text": "$(li)$(item)Acier$() : 1000 utilisations, vitesse de minage 7,5, mine tout ce que mine un outil en diamant, enchantabilité 12. Le meilleur jeu au quotidien une fois le haut fourneau lancé."
     },
     {
       "type": "patchouli:text",
-      "text": "Faible et mou, mais l'$(item)épée en plomb empoisonne$() 5 secondes et la $(item)hache en plomb$() 8 secondes, en s'ajoutant au poison déjà présent. Chaque coup coûte 2 points de durabilité.$(br2)Tous se réparent avec leur propre lingot sur une enclume."
+      "text": "$(li)$(item)Aluminium$() : 220 utilisations, vitesse de minage 6, mine comme le fer, mais enchantabilité de $(item)22$(), bien plus que le fer. Idéal pour enchanter."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Outils pour moteurs$()$(br)Le $(item)tournevis$() retire les pièces et les cylindres d'un moteur. La $(item)burette d'huile$() et la $(item)bouteille de liquide de refroidissement$() apportent les fluides aux moteurs : voir le chapitre Moteurs."
+      "text": "$(li)$(item)Plomb$() : 32 utilisations, vitesse de minage 2, mine comme la pierre. Faible et mou, mais l'$(item)épée en plomb empoisonne$() 5 secondes et la $(item)hache en plomb$() 8 secondes, en s'ajoutant au poison déjà présent. Chaque coup coûte 2 points de durabilité."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Tous se réparent avec leur propre lingot sur une enclume.$(br2)$(l)Outils pour moteurs$()$(br)Le $(item)tournevis$() retire les pièces et les cylindres d'un moteur. La $(item)burette d'huile$() et la $(item)bouteille de liquide de refroidissement$() apportent les fluides aux moteurs : voir le chapitre Moteurs."
     },
     {
       "type": "patchouli:spotlight",

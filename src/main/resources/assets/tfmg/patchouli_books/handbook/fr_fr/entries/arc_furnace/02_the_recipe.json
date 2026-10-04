@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)144 mB d'acier en fusion$(), exactement un lingot d'acier dans un bassin de coulée,$(li)$(item)288 mB de laitier en fusion$().$(br2)$(l)Le faire tourner$()$(br)Amenez les trois objets par des entonnoirs sur la cuve. La cuve a 4 emplacements d'entrée et chacun contient une seule sorte d'objet, donc le fer concassé, le sable calcaire et la poussière de coke ont chacun le leur."
+      "text": "$(li)$(item)144 mB d'acier en fusion$(), exactement un lingot d'acier dans un bassin de coulée,$(li)$(item)288 mB de laitier en fusion$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le faire tourner$()$(br)Amenez les trois objets par des entonnoirs sur la cuve. La cuve a 4 emplacements d'entrée et chacun contient une seule sorte d'objet, donc le fer concassé, le sable calcaire et la poussière de coke ont chacun le leur."
     },
     {
       "type": "patchouli:text",

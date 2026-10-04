@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Colours$()$(br)Surround a dye with $(item)8 concrete$() in a crafting grid to get 8 coloured concrete. All sixteen colours exist, each with its own slab, stairs and wall from the stonecutter. Rebar concrete is dyed the same way.$(br2)$(l)Smokestacks$()$(br)Concrete with industrial pipes also crafts the $(item)concrete smokestack$() used to vent CO2."
+      "text": "$(l)Colours$()$(br)Surround a dye with $(item)8 concrete$() in a crafting grid to get 8 coloured concrete. All sixteen colours exist, each with its own slab, stairs and wall from the stonecutter. Rebar concrete is dyed the same way."
     },
     {
       "type": "patchouli:text",
-      "text": "For pillars, floors and the most industrial look, use rebar concrete, explained on the next page. It comes in the same sixteen colours."
+      "text": "$(l)Smokestacks$()$(br)Concrete with industrial pipes also crafts the $(item)concrete smokestack$() used to vent CO2.$(br2)For pillars, floors and the most industrial look, use rebar concrete, explained on the next page. It comes in the same sixteen colours."
     },
     {
       "type": "patchouli:spotlight",

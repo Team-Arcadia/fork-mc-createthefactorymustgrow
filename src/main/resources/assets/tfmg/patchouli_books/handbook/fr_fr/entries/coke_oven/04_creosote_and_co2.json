@@ -6,15 +6,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le contrôleur a deux réservoirs de $(item)8000 mB$() chacun, partagés par tout le carré. À chaque tick de cuisson, le four ajoute :$(br2)$(li)charbon : $(item)1 mB de créosote$() et $(item)30 mB de CO2$()$(li)bûches : $(item)2 mB de créosote$() et $(item)20 mB de CO2$()"
+      "text": "Le contrôleur a deux réservoirs de $(item)8000 mB$() chacun, partagés par tout le carré. À chaque tick de cuisson, le four ajoute :"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Où pomper$()$(li)La $(item)créosote$() sort par $(item)n'importe quel côté$() et par le dessous.$(li)Le $(item)CO2$() sort $(item)uniquement par la face du dessus$(). Placez une pompe sur le four.$(br2)Les deux réservoirs sont en $(item)vidange seule$() : impossible d'y faire entrer un fluide, donc une conduite d'eau égarée ne peut pas les boucher."
+      "text": "$(li)charbon : $(item)1 mB de créosote$() et $(item)30 mB de CO2$()$(li)bûches : $(item)2 mB de créosote$() et $(item)20 mB de CO2$()"
     },
     {
       "type": "patchouli:text",
-      "text": "Le CO2 monte vite : à 30 mB par tick, son réservoir est plein en moins de 15 secondes de cuisson. Envoyez-le depuis le dessus vers un $(item)échappement$() ou une $(item)cheminée$() pour vous en débarrasser (voir le chapitre Air chaud).$(br2)Gardez la créosote : c'est l'un des deux combustibles du $(item)fourneau à air chaud$(), qui chauffe l'air du haut fourneau."
+      "text": "$(l)Où pomper$()$(li)La $(item)créosote$() sort par $(item)n'importe quel côté$() et par le dessous.$(li)Le $(item)CO2$() sort $(item)uniquement par la face du dessus$(). Placez une pompe sur le four."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les deux réservoirs sont en $(item)vidange seule$() : impossible d'y faire entrer un fluide, donc une conduite d'eau égarée ne peut pas les boucher."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le CO2 monte vite : à 30 mB par tick, son réservoir est plein en moins de 15 secondes de cuisson. Envoyez-le depuis le dessus vers un $(item)échappement$() ou une $(item)cheminée$() pour vous en débarrasser (voir le chapitre Air chaud)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gardez la créosote : c'est l'un des deux combustibles du $(item)fourneau à air chaud$(), qui chauffe l'air du haut fourneau."
     },
     {
       "type": "patchouli:spotlight",

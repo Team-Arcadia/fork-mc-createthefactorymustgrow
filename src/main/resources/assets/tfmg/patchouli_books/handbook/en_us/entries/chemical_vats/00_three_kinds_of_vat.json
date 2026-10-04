@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The $(item)Chemical Vat$() is the mod's all-purpose reactor: it mixes, cracks, freezes, compresses and runs electrolysis. There are three kinds, and each recipe lists the kinds it accepts: $(li)$(item)Cast Iron Chemical Vat$(): the cheapest."
+      "text": "The $(item)Chemical Vat$() is the mod's all-purpose reactor: it mixes, cracks, freezes, compresses and runs electrolysis. There are three kinds, and each recipe lists the kinds it accepts:"
     },
     {
       "type": "patchouli:text",
-      "text": "Most mixing and freezing recipes accept it. $(li)$(item)Steel Chemical Vat$(): needed for pressure work and electrolysis. $(li)$(item)Fireproof Chemical Vat$() (firebrick-lined): accepts everything, and is the only one the $(item)arc furnace$() works in. Its windows cannot be opened."
+      "text": "$(li)$(item)Cast Iron Chemical Vat$(): the cheapest. Most mixing and freezing recipes accept it.$(li)$(item)Steel Chemical Vat$(): needed for pressure work and electrolysis."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Fireproof Chemical Vat$() (firebrick-lined): accepts everything, and is the only one the $(item)arc furnace$() works in. Its windows cannot be opened."
     },
     {
       "type": "patchouli:text",

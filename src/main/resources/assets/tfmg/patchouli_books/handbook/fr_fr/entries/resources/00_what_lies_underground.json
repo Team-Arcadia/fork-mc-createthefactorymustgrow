@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Avant la moindre machine, il vous faut des matériaux que Minecraft n'a pas. TFMG les ajoute à la génération du monde sous trois formes : $(li)$(item)Minerais$() : plomb, nickel et lithium, en filons classiques dans la pierre et l'ardoise des abîmes."
+      "text": "Avant la moindre machine, il vous faut des matériaux que Minecraft n'a pas. TFMG les ajoute à la génération du monde sous trois formes :"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Couches striées$() : d'épaisses bandes de bauxite, de galène, de lignite et d'argile réfractaire dans l'Overworld, de soufre et d'argile réfractaire dans le Nether. $(li)$(item)Pétrole$() : des gisements au fond de la bedrock de l'Overworld, et de rares puits de pétrole dans les déserts."
+      "text": "$(li)$(item)Minerais$() : plomb, nickel et lithium, en filons classiques dans la pierre et l'ardoise des abîmes.$(li)$(item)Couches striées$() : d'épaisses bandes de bauxite, de galène, de lignite et d'argile réfractaire dans l'Overworld, de soufre et d'argile réfractaire dans le Nether."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Pétrole$() : des gisements au fond de la bedrock de l'Overworld, et de rares puits de pétrole dans les déserts."
     },
     {
       "type": "patchouli:text",

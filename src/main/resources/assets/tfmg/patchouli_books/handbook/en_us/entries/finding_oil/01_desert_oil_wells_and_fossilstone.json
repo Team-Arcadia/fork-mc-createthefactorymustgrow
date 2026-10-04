@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)It is extremely tough: hardness $(item)100$(), twice that of obsidian, and blast resistance $(item)1200$().$(li)Any pickaxe drops it, but it takes a long time to break.$(br2)When a tunnel or a cave near bedrock runs into fossilstone, crude oil is right next to you. Mine around it, or simply build your pipe column beside it."
+      "text": "$(li)It is extremely tough: hardness $(item)100$(), twice that of obsidian, and blast resistance $(item)1200$().$(li)Any pickaxe drops it, but it takes a long time to break."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When a tunnel or a cave near bedrock runs into fossilstone, crude oil is right next to you. Mine around it, or simply build your pipe column beside it."
     },
     {
       "type": "patchouli:spotlight",

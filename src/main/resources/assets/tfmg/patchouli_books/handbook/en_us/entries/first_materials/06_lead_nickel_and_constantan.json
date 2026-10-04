@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The new ores also give early parts that need no steel.$(br2)$(l)Sheets$()$(br)A mechanical press on a depot or a belt turns one ingot into one sheet:$(br2)$(li)$(item)Lead ingot$() to $(item)lead sheet$().$(li)$(item)Nickel ingot$() to $(item)nickel sheet$()."
+      "text": "The new ores also give early parts that need no steel.$(br2)$(l)Sheets$()$(br)A mechanical press on a depot or a belt turns one ingot into one sheet:"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Constantan$()$(br)In a $(item)heated$() mixer (lit blaze burner), $(item)1 copper ingot + 1 nickel ingot$() give $(item)2 constantan ingots$(). Constantan is used later for wires and electrical parts."
+      "text": "$(li)$(item)Lead ingot$() to $(item)lead sheet$().$(li)$(item)Nickel ingot$() to $(item)nickel sheet$().$(br2)$(l)Constantan$()$(br)In a $(item)heated$() mixer (lit blaze burner), $(item)1 copper ingot + 1 nickel ingot$() give $(item)2 constantan ingots$(). Constantan is used later for wires and electrical parts."
     },
     {
       "type": "patchouli:text",

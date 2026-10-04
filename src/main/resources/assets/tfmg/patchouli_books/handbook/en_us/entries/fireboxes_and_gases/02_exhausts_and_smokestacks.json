@@ -14,11 +14,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Smokestacks$()$(br)Brick, concrete and metal smokestacks all work the same way and only differ in looks.$(li)Each holds $(item)8000 mB$().$(li)Stack them: each block passes its CO2 up to the one above, and only the $(item)top$() one vents.$(li)The top vents $(item)10 mB per tick$(), or $(item)50 mB per tick$() when less than 1000 mB of room is left."
+      "text": "$(l)Smokestacks$()$(br)Brick, concrete and metal smokestacks all work the same way and only differ in looks.$(li)Each holds $(item)8000 mB$().$(li)Stack them: each block passes its CO2 up to the one above, and only the $(item)top$() one vents."
     },
     {
       "type": "patchouli:text",
-      "text": "Smokestacks make a big buffer and a nice chimney. For a busy factory, feed several stacks or add exhausts next to them.$(br2)Carbon dioxide also has uses: 1000 mB fills a $(item)fire extinguisher$() or a $(item)carbon dioxide tank$() in a spout."
+      "text": "$(li)The top vents $(item)10 mB per tick$(), or $(item)50 mB per tick$() when less than 1000 mB of room is left.$(br2)Smokestacks make a big buffer and a nice chimney. For a busy factory, feed several stacks or add exhausts next to them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Carbon dioxide also has uses: 1000 mB fills a $(item)fire extinguisher$() or a $(item)carbon dioxide tank$() in a spout."
     },
     {
       "type": "patchouli:spotlight",

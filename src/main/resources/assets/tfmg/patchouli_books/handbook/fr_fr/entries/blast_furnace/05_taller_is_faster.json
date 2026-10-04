@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Un fer brut concassé (144 mB)$()$(li)$(item)3 couches$() : 340 ticks (17 s)$(li)$(item)4 couches$() : 320 ticks (16 s)$(li)$(item)5 couches$() : 300 ticks (15 s)$(li)$(item)6 couches$() : 280 ticks (14 s)$(li)$(item)8 couches$() : 240 ticks (12 s)$(li)$(item)10 couches$() : 200 ticks (10 s)$(br2)Un fourneau $(item)renforcé$() divise encore ces temps par deux : 170 ticks à 3 couches, $(item)100 ticks$() à 10."
+      "text": "$(l)Un fer brut concassé (144 mB)$()$(li)$(item)3 couches$() : 340 ticks (17 s)$(li)$(item)4 couches$() : 320 ticks (16 s)$(li)$(item)5 couches$() : 300 ticks (15 s)$(li)$(item)6 couches$() : 280 ticks (14 s)$(li)$(item)8 couches$() : 240 ticks (12 s)$(li)$(item)10 couches$() : 200 ticks (10 s)"
     },
     {
       "type": "patchouli:text",
-      "text": "L'air chaud est pris $(item)à chaque tick de travail$() : un fourneau plus rapide consomme moins d'air chaud et moins de coke par lingot, environ 6800 mB d'air chaud par lingot à 3 couches, 2000 mB à 10 couches renforcées.$(br2)Le fourneau ne compte que les couches complètes : des murs à moitié construits au-dessus ne servent à rien."
+      "text": "Un fourneau $(item)renforcé$() divise encore ces temps par deux : 170 ticks à 3 couches, $(item)100 ticks$() à 10."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'air chaud est pris $(item)à chaque tick de travail$() : un fourneau plus rapide consomme moins d'air chaud et moins de coke par lingot, environ 6800 mB d'air chaud par lingot à 3 couches, 2000 mB à 10 couches renforcées."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le fourneau ne compte que les couches complètes : des murs à moitié construits au-dessus ne servent à rien."
     },
     {
       "type": "patchouli:spotlight",

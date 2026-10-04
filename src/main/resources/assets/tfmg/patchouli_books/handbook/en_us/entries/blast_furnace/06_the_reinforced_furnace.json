@@ -6,7 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A furnace built $(item)entirely from reinforced blocks$() works twice as fast.$(br2)$(li)$(item)Corners$(): Blast Furnace Reinforcement (rusted works too) or Blocks of Steel.$(li)$(item)Edges$(): Reinforced Fireproof Bricks or Blocks of Steel. The hatch counts as reinforced."
+      "text": "A furnace built $(item)entirely from reinforced blocks$() works twice as fast."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Corners$(): Blast Furnace Reinforcement (rusted works too) or Blocks of Steel.$(li)$(item)Edges$(): Reinforced Fireproof Bricks or Blocks of Steel. The hatch counts as reinforced."
     },
     {
       "type": "patchouli:text",
@@ -14,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Because of that, a reinforcement placed against the side of a fireproof brick always becomes a plate. Place the $(item)corner$() blocks first, or on top of the corner below, never by clicking a neighbouring brick.$(br2)One regular block anywhere in the walls makes the whole furnace regular. The output and the bottom centre do not count. The goggles show $(item)Reinforced$() when it worked."
+      "text": "Because of that, a reinforcement placed against the side of a fireproof brick always becomes a plate. Place the $(item)corner$() blocks first, or on top of the corner below, never by clicking a neighbouring brick."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "One regular block anywhere in the walls makes the whole furnace regular. The output and the bottom centre do not count. The goggles show $(item)Reinforced$() when it worked."
     },
     {
       "type": "patchouli:text",

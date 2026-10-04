@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "The controller also needs at least the recipe input times that multiplier in its own tank before it starts a tick. Its tank holds 8000 mB, which is plenty for any heat you can fit under a tank.$(br2)Even a small heater processes oil much faster than a single pumpjack delivers it, so heat rarely limits a refinery. Use more heat when several pumpjacks feed the same tower."
+      "text": "The controller also needs at least the recipe input times that multiplier in its own tank before it starts a tick. Its tank holds 8000 mB, which is plenty for any heat you can fit under a tank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Even a small heater processes oil much faster than a single pumpjack delivers it, so heat rarely limits a refinery. Use more heat when several pumpjacks feed the same tower."
     },
     {
       "type": "patchouli:spotlight",

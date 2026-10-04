@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Blast stove blocks join like Create fluid tanks: place them next to and on top of each other and they merge into one stove.$(br2)$(li)$(item)Width$(): 1x1 or $(item)2x2$() at most.$(li)$(item)Height$(): as tall as Create's fluid tank height limit (server config, 32 by default)."
+      "text": "Blast stove blocks join like Create fluid tanks: place them next to and on top of each other and they merge into one stove."
     },
     {
       "type": "patchouli:text",
-      "text": "Whatever its size, the stove has four tanks of $(item)8000 mB$(): air in, fuel in, hot air out, CO2 out. Goggles show all four."
+      "text": "$(li)$(item)Width$(): 1x1 or $(item)2x2$() at most.$(li)$(item)Height$(): as tall as Create's fluid tank height limit (server config, 32 by default).$(br2)Whatever its size, the stove has four tanks of $(item)8000 mB$(): air in, fuel in, hot air out, CO2 out. Goggles show all four."
     },
     {
       "type": "patchouli:text",

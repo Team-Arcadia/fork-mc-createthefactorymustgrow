@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "La puissance d'un grand moteur dépend du facteur de couple du carburant (voir le tableau des carburants du chapitre Moteurs). Avec les réglages de contrainte par défaut, à 128 RPM : $(li)$(item)Grand moteur$() : environ 26 400 su x facteur de couple."
+      "text": "La puissance d'un grand moteur dépend du facteur de couple du carburant (voir le tableau des carburants du chapitre Moteurs). Avec les réglages de contrainte par défaut, à 128 RPM :"
     },
     {
       "type": "patchouli:text",
-      "text": "Diesel ou kérosène : environ 37 000 su. Naphta : environ 34 300 su. Gaz de four : environ 7 900 su. $(li)$(item)Grand moteur simple$() : environ 19 200 su x facteur de couple. Diesel : environ 26 900 su. Gaz de four : environ 5 800 su."
+      "text": "$(li)$(item)Grand moteur$() : environ 26 400 su x facteur de couple. Diesel ou kérosène : environ 37 000 su. Naphta : environ 34 300 su. Gaz de four : environ 7 900 su.$(li)$(item)Grand moteur simple$() : environ 19 200 su x facteur de couple. Diesel : environ 26 900 su. Gaz de four : environ 5 800 su."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Lignes des lunettes (depuis la 1.3.0)$()$(li)$(item)Il faut un arbre motorisé 2 blocs devant$() : posez ou tournez l'arbre.$(li)$(item)Il faut de l'air dans son réservoir d'air$() : amenez de l'air.$(li)$(item)Pas de carburant$() : envoyez du carburant.$(li)$(item)Carburant non pris en charge$() : videz le réservoir et changez de carburant.$(li)$(item)Échappement plein : évacuez le CO2$()."
+      "text": "$(l)Lignes des lunettes (depuis la 1.3.0)$()$(li)$(item)Il faut un arbre motorisé 2 blocs devant$() : posez ou tournez l'arbre.$(li)$(item)Il faut de l'air dans son réservoir d'air$() : amenez de l'air.$(li)$(item)Pas de carburant$() : envoyez du carburant."
     },
     {
       "type": "patchouli:text",
-      "text": "Sous ces lignes, les lunettes listent les trois réservoirs, pour voir lequel est vide ou plein."
+      "text": "$(li)$(item)Carburant non pris en charge$() : videz le réservoir et changez de carburant.$(li)$(item)Échappement plein : évacuez le CO2$().$(br2)Sous ces lignes, les lunettes listent les trois réservoirs, pour voir lequel est vide ou plein."
     },
     {
       "type": "patchouli:spotlight",

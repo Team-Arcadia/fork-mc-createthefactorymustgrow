@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Liquid air$()$(br)1000 mB Air gives 250 mB Cooling Fluid in 6 seconds.$(li)A $(item)Freezer$() and a $(item)Compressor$(), $(item)pressure 1$().$(li)$(item)Steel$() or $(item)Fireproof$() vat.$(br2)A steel vat built for liquid air (freezer plus compressor) can run all four recipes, since extra working machines never hurt. Just keep each vat to one kind of input fluid so it always does the job you expect."
+      "text": "$(l)Liquid air$()$(br)1000 mB Air gives 250 mB Cooling Fluid in 6 seconds.$(li)A $(item)Freezer$() and a $(item)Compressor$(), $(item)pressure 1$().$(li)$(item)Steel$() or $(item)Fireproof$() vat."
     },
     {
       "type": "patchouli:text",
-      "text": "Sizes: every recipe on this page works from a single 1x1 vat."
+      "text": "A steel vat built for liquid air (freezer plus compressor) can run all four recipes, since extra working machines never hurt. Just keep each vat to one kind of input fluid so it always does the job you expect.$(br2)Sizes: every recipe on this page works from a single 1x1 vat."
     },
     {
       "type": "patchouli:spotlight",

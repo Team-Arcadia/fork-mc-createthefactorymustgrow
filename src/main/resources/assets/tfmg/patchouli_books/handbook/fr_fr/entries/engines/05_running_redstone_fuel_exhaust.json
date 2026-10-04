@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)La redstone règle les gaz Envoyez un signal de redstone à n'importe quel bloc du moteur.$() Le signal le plus fort de la rangée compte : 15 donne la pleine puissance, 0 l'arrête."
+      "text": "$(l)La redstone règle les gaz$()"
     },
     {
       "type": "patchouli:text",
-      "text": "La vitesse de sortie vaut $(item)100 RPM x vitesse du type x vitesse du carburant x améliorations x signal / 15$(), plafonnée à 256 RPM.$(br2)$(l)Carburant$()$(br)Envoyez le carburant par tuyau dans n'importe quel bloc du moteur. Il doit faire partie des carburants acceptés par les cylindres. Quand le réservoir est vide, le moteur s'arrête."
+      "text": "Envoyez un signal de redstone à n'importe quel bloc du moteur. Le signal le plus fort de la rangée compte : 15 donne la pleine puissance, 0 l'arrête. La vitesse de sortie vaut $(item)100 RPM x vitesse du type x vitesse du carburant x améliorations x signal / 15$(), plafonnée à 256 RPM."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Échappement$()$(br)Un moteur en marche remplit son $(item)réservoir d'échappement (8000 mB) de CO2$(). Quand il est plein, le moteur s'arrête. Pompez le CO2 hors du moteur avec un tuyau vers un bloc $(item)Échappement$(), qui le rejette en fumée, ou vers un réservoir.$(br2)Le moteur s'arrête aussi tant qu'il manque un composant ou un cylindre : regardez d'abord les lunettes quand rien ne tourne."
+      "text": "$(l)Carburant$()$(br)Envoyez le carburant par tuyau dans n'importe quel bloc du moteur. Il doit faire partie des carburants acceptés par les cylindres. Quand le réservoir est vide, le moteur s'arrête."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Échappement$()$(br)Un moteur en marche remplit son $(item)réservoir d'échappement (8000 mB) de CO2$(). Quand il est plein, le moteur s'arrête. Pompez le CO2 hors du moteur avec un tuyau vers un bloc $(item)Échappement$(), qui le rejette en fumée, ou vers un réservoir."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le moteur s'arrête aussi tant qu'il manque un composant ou un cylindre : regardez d'abord les lunettes quand rien ne tourne."
     },
     {
       "type": "patchouli:spotlight",

@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Séparation$()$(br)$(item)1000 mB de GPL$() donnent $(item)500 mB de butane + 500 mB de propane$(). Utilisez n'importe quelle cuve chimique équipée d'un $(item)congélateur$().$(br2)$(l)Compression$()$(br)$(item)500 mB de butane + 500 mB de propane$() donnent $(item)1000 mB de GPL$(). Il faut un $(item)compresseur$() qui met la cuve sous pression, et cela ne marche que dans une cuve chimique $(item)en acier$() ou $(item)ignifugée$()."
+      "text": "$(l)Séparation$()$(br)$(item)1000 mB de GPL$() donnent $(item)500 mB de butane + 500 mB de propane$(). Utilisez n'importe quelle cuve chimique équipée d'un $(item)congélateur$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Usages$()$(li)Les trois sont des carburants de foyer et brûlent dans les torches d'évacuation et les lampes à gaz.$(li)Un bec verseur remplit un $(item)cylindre de moteur$() avec 250 mB de butane ou de propane, pour faire tourner un moteur avec ce gaz.$(li)Un bec verseur transforme un seau vide et 1000 mB de GPL en $(item)réservoir de GPL$(), pratique pour transporter du gaz à la main."
+      "text": "$(l)Compression$()$(br)$(item)500 mB de butane + 500 mB de propane$() donnent $(item)1000 mB de GPL$(). Il faut un $(item)compresseur$() qui met la cuve sous pression, et cela ne marche que dans une cuve chimique $(item)en acier$() ou $(item)ignifugée$().$(br2)$(l)Usages$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les trois sont des carburants de foyer et brûlent dans les torches d'évacuation et les lampes à gaz.$(li)Un bec verseur remplit un $(item)cylindre de moteur$() avec 250 mB de butane ou de propane, pour faire tourner un moteur avec ce gaz."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un bec verseur transforme un seau vide et 1000 mB de GPL en $(item)réservoir de GPL$(), pratique pour transporter du gaz à la main."
     },
     {
       "type": "patchouli:text",

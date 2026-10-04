@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Steel casing$()$(br)Use a $(item)steel ingot$() on hardened planks: right-click the placed block, or let a deployer do it. It is the base of transformers, polarizers, engine gearboxes and steel doors.$(br2)$(l)Heavy machinery casing$()$(br)Use a $(item)heavy plate$() on a steel casing the same way. Engines, pumpjacks, the industrial mixer, machine inputs and many electrical parts need it."
+      "text": "$(l)Steel casing$()$(br)Use a $(item)steel ingot$() on hardened planks: right-click the placed block, or let a deployer do it. It is the base of transformers, polarizers, engine gearboxes and steel doors."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Aluminium casing$()$(br)An $(item)aluminium sheet$() on a steel casing gives an aluminium casing.$(br2)Like Create's casings, these item applications work by hand on a placed block or with a deployer over a belt or depot, so they automate easily once you have a steady supply of plates."
+      "text": "$(l)Heavy machinery casing$()$(br)Use a $(item)heavy plate$() on a steel casing the same way. Engines, pumpjacks, the industrial mixer, machine inputs and many electrical parts need it.$(br2)$(l)Aluminium casing$()$(br)An $(item)aluminium sheet$() on a steel casing gives an aluminium casing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Like Create's casings, these item applications work by hand on a placed block or with a deployer over a belt or depot, so they automate easily once you have a steady supply of plates."
     },
     {
       "type": "patchouli:spotlight",

@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Steel pipe$()$(br)$(item)Heavy plate, steel ingot, heavy plate$() in a row or a column: $(item)4 pipes$().$(br2)From the steel pipe you get the rest of the family:$(li)$(item)Steel mechanical pump$(): a steel pipe and a cogwheel.$(li)$(item)Steel fluid valve$(): a steel pipe and an iron sheet.$(li)$(item)Steel smart fluid pipe$(): a steel pipe, an aluminium sheet and an electron tube."
+      "text": "$(l)Steel pipe$()$(br)$(item)Heavy plate, steel ingot, heavy plate$() in a row or a column: $(item)4 pipes$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "From the steel pipe you get the rest of the family:$(li)$(item)Steel mechanical pump$(): a steel pipe and a cogwheel.$(li)$(item)Steel fluid valve$(): a steel pipe and an iron sheet.$(li)$(item)Steel smart fluid pipe$(): a steel pipe, an aluminium sheet and an electron tube."
     },
     {
       "type": "patchouli:text",

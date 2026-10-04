@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A quick map of where your first finds go: $(li)$(item)Fireclay$(): fireproof bricks, for every hot machine. $(li)$(item)Limesand$(): cement, and the $(item)flux$() of the blast furnace that makes steel. $(li)$(item)Lead$():"
+      "text": "A quick map of where your first finds go:$(br2)$(li)$(item)Fireclay$(): fireproof bricks, for every hot machine.$(li)$(item)Limesand$(): cement, and the $(item)flux$() of the blast furnace that makes steel."
     },
     {
       "type": "patchouli:text",
-      "text": "lead sheets (mechanical press), the cast iron chemical vat, lead tools. $(li)$(item)Nickel$(): nickel sheets, and $(item)constantan$() (copper + nickel in a heated mixer). $(li)$(item)Lithium$(): accumulators, lithium charges and lithium torches. $(li)$(item)Bauxite powder$():"
+      "text": "$(li)$(item)Lead$(): lead sheets (mechanical press), the cast iron chemical vat, lead tools.$(li)$(item)Nickel$(): nickel sheets, and $(item)constantan$() (copper + nickel in a heated mixer).$(li)$(item)Lithium$(): accumulators, lithium charges and lithium torches."
     },
     {
       "type": "patchouli:text",
-      "text": "aluminium, by electrolysis in a vat, or 4 powder + 1 coal coke dust in a $(item)superheated$() mixer for the first ingots. $(li)$(item)Sulfur and nitrate dust$(): 3 nitrate + 2 charcoal + 1 sulfur in a mixer give 3 gunpowder; in a vat they make sulfuric acid. $(li)$(item)Lignite$(): crushed into coal. $(li)$(item)Crude oil$(): everything in the oil chapter:"
+      "text": "$(li)$(item)Bauxite powder$(): aluminium, by electrolysis in a vat, or 4 powder + 1 coal coke dust in a $(item)superheated$() mixer for the first ingots.$(li)$(item)Sulfur and nitrate dust$(): 3 nitrate + 2 charcoal + 1 sulfur in a mixer give 3 gunpowder; in a vat they make sulfuric acid."
     },
     {
       "type": "patchouli:text",
-      "text": "fuels, plastic, asphalt.$(br2)Next chapter: turning these into the first factory materials."
+      "text": "$(li)$(item)Lignite$(): crushed into coal.$(li)$(item)Crude oil$(): everything in the oil chapter: fuels, plastic, asphalt.$(br2)Next chapter: turning these into the first factory materials."
     },
     {
       "type": "patchouli:spotlight",

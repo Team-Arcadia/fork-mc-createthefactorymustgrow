@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Oil Can$() for lubrication oil, $(item)Cooling Fluid Bottle$() for cooling fluid. Each holds 4000 mB. Right-click a tank, a vat or any fluid container to fill it; sneak-right-click a container to pour it back.$(li)Right-click the engine with the full item to top the engine up to 2000 mB."
+      "text": "$(li)$(item)Oil Can$() for lubrication oil, $(item)Cooling Fluid Bottle$() for cooling fluid. Each holds 4000 mB. Right-click a tank, a vat or any fluid container to fill it; sneak-right-click a container to pour it back."
     },
     {
       "type": "patchouli:text",
-      "text": "A running engine uses both fluids up slowly. The goggles show $(item)Oil$() and $(item)Cooling Fluid$() while any is left."
+      "text": "$(li)Right-click the engine with the full item to top the engine up to 2000 mB.$(br2)A running engine uses both fluids up slowly. The goggles show $(item)Oil$() and $(item)Cooling Fluid$() while any is left."
     },
     {
       "type": "patchouli:spotlight",

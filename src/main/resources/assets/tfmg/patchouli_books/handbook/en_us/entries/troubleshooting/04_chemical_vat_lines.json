@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(li)**An attached machine is not working: no recipe can run**: every machine on the vat must work, even the ones the current recipe does not use."
+      "text": "$(li)**An attached machine is not working:$(br)no recipe can run**:$(br)every machine on the vat must work, even the ones the current recipe does not use."
     },
     {
       "type": "patchouli:text",
-      "text": "An industrial mixer needs rotation, electrode holders need power from their top face, and every other machine must be running too. Fix it or remove it. $(li)**No recipe matches: check size, vat type and machines in JEI**: the inputs fit no recipe for this vat."
+      "text": "An industrial mixer needs rotation, electrode holders need power from their top face, and every other machine must be running too.$(br)Fix it or remove it."
     },
     {
       "type": "patchouli:text",
-      "text": "Recipes can ask for a minimum vat size (up to 3x3), a vat type (steel, cast iron or firebrick-lined) and particular machines. JEI shows all of these on each recipe. $(li)$(item)Not hot enough for this recipe$(): put fireboxes or blaze burners under the vat, and feed them. $(li)$(item)Pressure too low for this recipe$():"
+      "text": "$(li)$(item)No recipe matches: check size, vat type and machines in JEI$(): the inputs fit no recipe for this vat. Recipes can ask for a minimum vat size (up to 3x3), a vat type (steel, cast iron or firebrick-lined) and particular machines. JEI shows all of these on each recipe."
     },
     {
       "type": "patchouli:text",
-      "text": "the recipe needs a pressure the vat does not have. A compressor on the vat changes its pressure; JEI shows the pressure each recipe needs.$(br2)Remember that pipes can only fill the vat's inputs and drain its outputs. The arc furnace is a firebrick-lined vat of at least 3x3 with three powered electrode holders on top."
+      "text": "$(li)$(item)Not hot enough for this recipe$(): put fireboxes or blaze burners under the vat, and feed them.$(li)$(item)Pressure too low for this recipe$(): the recipe needs a pressure the vat does not have. A compressor on the vat changes its pressure; JEI shows the pressure each recipe needs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Remember that pipes can only fill the vat's inputs and drain its outputs. The arc furnace is a firebrick-lined vat of at least 3x3 with three powered electrode holders on top."
     },
     {
       "type": "patchouli:spotlight",

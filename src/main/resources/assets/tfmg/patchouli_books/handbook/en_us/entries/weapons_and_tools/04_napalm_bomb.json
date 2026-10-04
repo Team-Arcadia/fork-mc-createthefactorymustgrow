@@ -6,15 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The $(item)Napalm Bomb$() is a block, made from 6 plastic sheets and 3 buckets of napalm. It behaves like TNT: $(li)Light it with $(item)Flint and Steel$() or a $(item)Fire Charge$(), power it with $(item)redstone$(), or hit it with a $(item)burning projectile$() (a flaming arrow, for instance)."
+      "text": "The $(item)Napalm Bomb$() is a block, made from 6 plastic sheets and 3 buckets of napalm. It behaves like TNT:"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)It then falls as a lit bomb with a $(item)4 second fuse$(). $(li)Caught in another explosion, it goes off on a much shorter fuse, so a row of bombs chains.$(br2)When it goes off it throws $(item)40 fire sparks$() around it and explodes with a blast that $(item)breaks blocks$(). Everything flammable nearby will burn: keep it far from your wooden buildings and from anything you want to keep."
+      "text": "$(li)Light it with $(item)Flint and Steel$() or a $(item)Fire Charge$(), power it with $(item)redstone$(), or hit it with a $(item)burning projectile$() (a flaming arrow, for instance).$(li)It then falls as a lit bomb with a $(item)4 second fuse$().$(li)Caught in another explosion, it goes off on a much shorter fuse, so a row of bombs chains."
     },
     {
       "type": "patchouli:text",
-      "text": "A Fire Extinguisher cleans up after it (see the next pages)."
+      "text": "When it goes off it throws $(item)40 fire sparks$() around it and explodes with a blast that $(item)breaks blocks$(). Everything flammable nearby will burn: keep it far from your wooden buildings and from anything you want to keep.$(br2)A Fire Extinguisher cleans up after it (see the next pages)."
     },
     {
       "type": "patchouli:spotlight",

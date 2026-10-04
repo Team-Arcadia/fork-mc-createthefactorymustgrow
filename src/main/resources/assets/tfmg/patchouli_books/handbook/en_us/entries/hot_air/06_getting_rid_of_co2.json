@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Exhaust$()$(br)A small vent that mounts on any face of a block. It holds $(item)1000 mB$() and vents $(item)10 mB per tick$(), rising to $(item)100 mB per tick$() once it holds more than 700 mB. One exhaust can keep up with a coke oven or a 2x2x5 stove."
+      "text": "$(l)Exhaust$()$(br)A small vent that mounts on any face of a block. It holds $(item)1000 mB$() and vents $(item)10 mB per tick$(), rising to $(item)100 mB per tick$() once it holds more than 700 mB. One exhaust can keep up with a coke oven or a 2x2x5 stove.$(br2)$(l)Smokestack$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Smokestack$()$(br)Brick, concrete and metal smokestacks stack into a chimney; build each chimney from a single kind. Each block holds $(item)8000 mB$() and pushes its gas into the block above; only the $(item)top block$() vents, $(item)10 mB per tick$(), rising to $(item)50 mB per tick$() when it holds more than 7000 mB. Pipe the CO2 into the bottom block."
+      "text": "Brick, concrete and metal smokestacks stack into a chimney; build each chimney from a single kind. Each block holds $(item)8000 mB$() and pushes its gas into the block above; only the $(item)top block$() vents, $(item)10 mB per tick$(), rising to $(item)50 mB per tick$() when it holds more than 7000 mB. Pipe the CO2 into the bottom block."
     },
     {
       "type": "patchouli:text",

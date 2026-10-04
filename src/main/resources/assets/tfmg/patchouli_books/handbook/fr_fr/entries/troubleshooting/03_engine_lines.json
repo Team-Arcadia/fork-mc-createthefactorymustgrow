@@ -6,19 +6,31 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Grands moteurs - $(item)Il faut un arbre motorisé 2 blocs devant$() :$() un clic droit sur le moteur avec un arbre le pose au bon endroit, en travers de la direction du moteur. $(li)$(item)Il faut de l'air dans son réservoir d'air$() : amenez de l'air depuis une prise d'air."
+      "text": "$(l)Grands moteurs$()$(li)$(item)Il faut un arbre motorisé 2 blocs devant$() : un clic droit sur le moteur avec un arbre le pose au bon endroit, en travers de la direction du moteur."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Pas de carburant$() : envoyez du carburant. $(li)**Carburant non pris en charge : diesel, kérosène, naphta ou gaz de haut fourneau** : videz le réservoir puis remplissez-le avec l'un d'eux. $(li)**Échappement plein : évacuez le CO2**. $(l)Petits moteurs - $(item)Moteur inachevé$() avec $(item)Prochain composant$() :$()"
+      "text": "$(li)$(item)Il faut de l'air dans son réservoir d'air$() : amenez de l'air depuis une prise d'air.$(li)$(item)Pas de carburant$() : envoyez du carburant."
     },
     {
       "type": "patchouli:text",
-      "text": "continuez à poser les pièces, un jeu complet par bloc. $(li)$(item)Pistons manquants$() / $(item)Turbines manquantes$() : ajoutez des cylindres ou des pales de turbine. $(li)Ligne dorée $(item)Aucun arbre de sortie$() : faites un clic droit sur un bloc d'extrémité avec un arbre (moteurs ordinaires seulement ; les moteurs radial et à turbine ont le leur intégré)."
+      "text": "$(li)$(item)Carburant non pris en charge : diesel, kérosène, naphta ou gaz de haut fourneau$() : videz le réservoir puis remplissez-le avec l'un d'eux.$(li)$(item)Échappement plein : évacuez le CO2$().$(br2)$(l)Petits moteurs$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)**Signal : 0** : pas de redstone, donc pas de rotation. Alimentez n'importe quel bloc du moteur, ou liez un contrôleur de moteur.$(br2)Un petit moteur s'arrête aussi, sans ligne dédiée, quand son réservoir d'échappement est plein ou quand son carburant n'est pas accepté par ses cylindres."
+      "text": "$(li)$(item)Moteur inachevé$() avec $(item)Prochain composant$() : continuez à poser les pièces, un jeu complet par bloc.$(li)$(item)Pistons manquants$() / $(item)Turbines manquantes$() : ajoutez des cylindres ou des pales de turbine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Ligne dorée $(item)Aucun arbre de sortie$() : faites un clic droit sur un bloc d'extrémité avec un arbre (moteurs ordinaires seulement ; les moteurs radial et à turbine ont le leur intégré)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Signal : 0$() : pas de redstone, donc pas de rotation. Alimentez n'importe quel bloc du moteur, ou liez un contrôleur de moteur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un petit moteur s'arrête aussi, sans ligne dédiée, quand son réservoir d'échappement est plein ou quand son carburant n'est pas accepté par ses cylindres."
     },
     {
       "type": "patchouli:spotlight",

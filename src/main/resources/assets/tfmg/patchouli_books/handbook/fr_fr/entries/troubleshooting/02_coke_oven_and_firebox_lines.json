@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "N'importe lequel des deux réservoirs plein $(item)met tout le four en pause$(). Envoyez le CO2 vers un échappement ou une cheminée, et gardez la créosote pour les moteurs simples ou le fourneau à air chaud. $(l)Foyer - $(item)Pas assez de carburant pour brûler$() :$() le réservoir contient moins qu'une combustion. Ajoutez du carburant. $(li)$(item)Ce fluide n'est pas un carburant de foyer$() :"
+      "text": "N'importe lequel des deux réservoirs plein $(item)met tout le four en pause$(). Envoyez le CO2 vers un échappement ou une cheminée, et gardez la créosote pour les moteurs simples ou le fourneau à air chaud.$(br2)$(l)Foyer$()"
     },
     {
       "type": "patchouli:text",
-      "text": "les foyers brûlent le GPL, le butane, le propane, l'hydrogène, le diesel, le kérosène et le naphta. Videz le réservoir et changez de fluide. $(li)**Échappement plein : évacuez le CO2** : comme les moteurs, un foyer s'arrête quand son CO2 n'a nulle part où aller."
+      "text": "$(li)$(item)Pas assez de carburant pour brûler$() : le réservoir contient moins qu'une combustion. Ajoutez du carburant."
     },
     {
       "type": "patchouli:text",
-      "text": "Un foyer froid signifie une cuve ou une tour de distillation froide au-dessus : vérifiez d'abord le foyer quand l'une d'elles ralentit."
+      "text": "$(li)$(item)Ce fluide n'est pas un carburant de foyer$() : les foyers brûlent le GPL, le butane, le propane, l'hydrogène, le diesel, le kérosène et le naphta. Videz le réservoir et changez de fluide."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Échappement plein : évacuez le CO2$() : comme les moteurs, un foyer s'arrête quand son CO2 n'a nulle part où aller.$(br2)Un foyer froid signifie une cuve ou une tour de distillation froide au-dessus : vérifiez d'abord le foyer quand l'une d'elles ralentit."
     },
     {
       "type": "patchouli:spotlight",

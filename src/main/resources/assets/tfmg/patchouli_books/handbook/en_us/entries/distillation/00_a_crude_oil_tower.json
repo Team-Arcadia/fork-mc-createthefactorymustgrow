@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Oil goes into the steel tank like any Create fluid tank. The controller draws it from the tank block right behind it into its own 8000 mB tank, and each output collects one product in its own 8000 mB tank. Pump the products out of the outputs from any side.$(br2)A tank takes only $(item)one$() controller: a second one will not stay on a tank that already has one."
+      "text": "Oil goes into the steel tank like any Create fluid tank. The controller draws it from the tank block right behind it into its own 8000 mB tank, and each output collects one product in its own 8000 mB tank. Pump the products out of the outputs from any side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A tank takes only $(item)one$() controller: a second one will not stay on a tank that already has one."
     },
     {
       "type": "patchouli:multiblock",

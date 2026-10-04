@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Stand right next to the controller and right-click it (not sneaking) to take the controls; right-click again to let go. Your keys now drive the engine: $(li)$(item)Start Engine$() (default $(item)I$()): starts or stops the engine."
+      "text": "Stand right next to the controller and right-click it (not sneaking) to take the controls; right-click again to let go. Your keys now drive the engine:"
     },
     {
       "type": "patchouli:text",
-      "text": "It starts at idle, about a quarter of full power. $(li)$(item)Forward$(): throttle. Held, it raises power step by step up to full. Released, the engine falls back to idle. $(li)$(item)Back$(): brake, back to idle quickly. $(li)$(item)Shift Up$() / $(item)Shift Down$() (default $(item)V$() / $(item)C$()): change gear."
+      "text": "$(li)$(item)Start Engine$() (default $(item)I$()): starts or stops the engine. It starts at idle, about a quarter of full power.$(li)$(item)Forward$(): throttle. Held, it raises power step by step up to full. Released, the engine falls back to idle.$(li)$(item)Back$(): brake, back to idle quickly."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Left$(), $(item)Right$() and the $(item)Custom Button$() (default $(item)B$()): send the redstone link frequencies set in the controller menu while held.$(br2)$(l)Gears$()$(br)Reverse, Neutral, then gears 1 to 6. On an engine with a shaft at $(item)both ends$(), the gear scales the output: reverse 30% backwards, neutral 0, gears 1 to 6 give 20, 40, 60, 80, 100 and 120%."
+      "text": "$(li)$(item)Shift Up$() / $(item)Shift Down$() (default $(item)V$() / $(item)C$()): change gear.$(li)$(item)Left$(), $(item)Right$() and the $(item)Custom Button$() (default $(item)B$()): send the redstone link frequencies set in the controller menu while held."
     },
     {
       "type": "patchouli:text",
-      "text": "The keys can be changed in the Controls menu."
+      "text": "$(l)Gears$()$(br)Reverse, Neutral, then gears 1 to 6. On an engine with a shaft at $(item)both ends$(), the gear scales the output: reverse 30% backwards, neutral 0, gears 1 to 6 give 20, 40, 60, 80, 100 and 120%.$(br2)The keys can be changed in the Controls menu."
     },
     {
       "type": "patchouli:spotlight",

@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Chaque couche$()$(li)Les $(item)4 coins$() : renfort en briques réfractaires.$(li)Les $(item)4 milieux de côté$() : briques réfractaires.$(li)Le $(item)centre$() : de l'air.$(br2)$(l)La couche du bas$()$(li)Son $(item)centre$() est un bloc de $(item)briques réfractaires$() : le fond du puits.$(li)Une brique de côté est remplacée par la $(item)sortie de haut fourneau$()."
+      "text": "$(l)Chaque couche$()$(li)Les $(item)4 coins$() : renfort en briques réfractaires.$(li)Les $(item)4 milieux de côté$() : briques réfractaires.$(li)Le $(item)centre$() : de l'air."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La couche du bas$()$(li)Son $(item)centre$() est un bloc de $(item)briques réfractaires$() : le fond du puits.$(li)Une brique de côté est remplacée par la $(item)sortie de haut fourneau$()."
     },
     {
       "type": "patchouli:text",

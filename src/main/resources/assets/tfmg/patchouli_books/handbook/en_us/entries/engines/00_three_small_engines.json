@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Engines burn the fuels of your refinery and turn them into $(item)rotation$(). There are three small engines, all built the same way: $(li)$(item)Regular Engine$(): the all-rounder. Its layout can be changed between five types (I, V, W, U and Boxer)."
+      "text": "Engines burn the fuels of your refinery and turn them into $(item)rotation$(). There are three small engines, all built the same way:"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Radial Engine$(): a fixed radial layout with eight cylinders and a built-in output. $(li)$(item)Turbine Engine$(): the fastest and strongest type, runs on turbine blades instead of cylinders."
+      "text": "$(li)$(item)Regular Engine$(): the all-rounder. Its layout can be changed between five types (I, V, W, U and Boxer).$(li)$(item)Radial Engine$(): a fixed radial layout with eight cylinders and a built-in output.$(li)$(item)Turbine Engine$(): the fastest and strongest type, runs on turbine blades instead of cylinders."
     },
     {
       "type": "patchouli:text",

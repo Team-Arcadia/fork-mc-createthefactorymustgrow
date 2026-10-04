@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Traffic light It cycles on its own through red, then orange, then green, and starts again.$() Set the length of the cycle with its value box. It connects through its $(item)top$() and $(item)bottom$() faces, so you can stack it on a post, and it is a $(item)175 ohm$() consumer."
+      "text": "$(l)Traffic light$()$(br)It cycles on its own through red, then orange, then green, and starts again. Set the length of the cycle with its value box. It connects through its $(item)top$() and $(item)bottom$() faces, so you can stack it on a post, and it is a $(item)175 ohm$() consumer. It only lights up while powered."
     },
     {
       "type": "patchouli:text",
-      "text": "It only lights up while powered.$(br2)$(l)Freezer$()$(br)Cools a chemical vat. It connects on $(item)any face$() and is a $(item)75 ohm$() consumer. It only works with $(item)more than 3 A$(), which means above $(item)225 V$(), and burns above 400 A."
+      "text": "$(l)Freezer$()$(br)Cools a chemical vat. It connects on $(item)any face$() and is a $(item)75 ohm$() consumer. It only works with $(item)more than 3 A$(), which means above $(item)225 V$(), and burns above 400 A."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Electrode holder$()$(br)Holds an electrode in a chemical vat for electrolysis. It takes power through its $(item)top$() face and needs at least $(item)5 A$() to work; its resistance depends on the electrode inside.$(br2)Both are part of the vat multiblock. See the $(item)Chemical Vats$() chapter to build one, and the $(item)Aluminium$() chapter for electrolysis."
+      "text": "$(l)Electrode holder$()$(br)Holds an electrode in a chemical vat for electrolysis. It takes power through its $(item)top$() face and needs at least $(item)5 A$() to work; its resistance depends on the electrode inside."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Both are part of the vat multiblock. See the $(item)Chemical Vats$() chapter to build one, and the $(item)Aluminium$() chapter for electrolysis."
     },
     {
       "type": "patchouli:spotlight",

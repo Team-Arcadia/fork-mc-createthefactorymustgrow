@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Un aperçu rapide de l'usage de vos premières trouvailles : $(li)$(item)Argile réfractaire$() : briques réfractaires, pour toutes les machines chaudes. $(li)$(item)Sable calcaire$() : ciment, et $(item)fondant$() du haut fourneau qui produit l'acier. $(li)$(item)Plomb$() :"
+      "text": "Un aperçu rapide de l'usage de vos premières trouvailles :$(br2)$(li)$(item)Argile réfractaire$() : briques réfractaires, pour toutes les machines chaudes."
     },
     {
       "type": "patchouli:text",
-      "text": "plaques de plomb (presse mécanique), cuve chimique en fonte, outils en plomb. $(li)$(item)Nickel$() : plaques de nickel, et $(item)constantan$() (cuivre + nickel dans un malaxeur chauffé). $(li)$(item)Lithium$() : accumulateurs, charges de lithium et torches au lithium. $(li)$(item)Poudre de bauxite$() :"
+      "text": "$(li)$(item)Sable calcaire$() : ciment, et $(item)fondant$() du haut fourneau qui produit l'acier.$(li)$(item)Plomb$() : plaques de plomb (presse mécanique), cuve chimique en fonte, outils en plomb.$(li)$(item)Nickel$() : plaques de nickel, et $(item)constantan$() (cuivre + nickel dans un malaxeur chauffé)."
     },
     {
       "type": "patchouli:text",
-      "text": "aluminium, par électrolyse dans une cuve, ou 4 poudres + 1 poussière de coke dans un malaxeur $(item)surchauffé$() pour les premiers lingots. $(li)$(item)Soufre et nitrate$() : 3 nitrates + 2 charbons de bois + 1 soufre au malaxeur donnent 3 poudres à canon ; dans une cuve, ils font de l'acide sulfurique. $(li)$(item)Lignite$() : concassé en charbon. $(li)$(item)Pétrole brut$() :"
+      "text": "$(li)$(item)Lithium$() : accumulateurs, charges de lithium et torches au lithium.$(li)$(item)Poudre de bauxite$() : aluminium, par électrolyse dans une cuve, ou 4 poudres + 1 poussière de coke dans un malaxeur $(item)surchauffé$() pour les premiers lingots."
     },
     {
       "type": "patchouli:text",
-      "text": "tout le chapitre sur le pétrole : carburants, plastique, asphalte.$(br2)Chapitre suivant : transformer tout cela en premiers matériaux d'usine."
+      "text": "$(li)$(item)Soufre et nitrate$() : 3 nitrates + 2 charbons de bois + 1 soufre au malaxeur donnent 3 poudres à canon ; dans une cuve, ils font de l'acide sulfurique.$(li)$(item)Lignite$() : concassé en charbon."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Pétrole brut$() : tout le chapitre sur le pétrole : carburants, plastique, asphalte.$(br2)Chapitre suivant : transformer tout cela en premiers matériaux d'usine."
     },
     {
       "type": "patchouli:spotlight",

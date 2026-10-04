@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Un flocon qui touche un bloc $(item)éteint tous les feux$() dans un rayon d'un bloc autour de l'impact (option $(item)fireExtinguisherClearRadius$()). Cela inclut les feux vert et bleu des grenades. $(li)Un flocon qui touche une créature l'éteint, $(item)retire le Feu infernal$(), la ralentit et la gèle ; assez de flocons finissent par la blesser."
+      "text": "$(li)Un flocon qui touche un bloc $(item)éteint tous les feux$() dans un rayon d'un bloc autour de l'impact (option $(item)fireExtinguisherClearRadius$()). Cela inclut les feux vert et bleu des grenades."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un flocon qui touche une créature l'éteint, $(item)retire le Feu infernal$(), la ralentit et la gèle ; assez de flocons finissent par la blesser."
     },
     {
       "type": "patchouli:text",

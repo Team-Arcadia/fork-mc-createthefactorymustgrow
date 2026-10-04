@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Un fourneau à air chaud $(item)2x2x5$() (pages suivantes) consomme près de $(item)28 mB d'air par tick$(). Une prise 2x2 à pleine vitesse est un peu juste : prévoyez une prise $(item)3x3$(), ou deux prises 2x2 sur le même tuyau, pour chaque fourneau de ce type.$(br2)Quand rien ne pompe l'air, le réservoir reste simplement plein : une prise à l'arrêt ne gêne rien."
+      "text": "Un fourneau à air chaud $(item)2x2x5$() (pages suivantes) consomme près de $(item)28 mB d'air par tick$(). Une prise 2x2 à pleine vitesse est un peu juste : prévoyez une prise $(item)3x3$(), ou deux prises 2x2 sur le même tuyau, pour chaque fourneau de ce type."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quand rien ne pompe l'air, le réservoir reste simplement plein : une prise à l'arrêt ne gêne rien."
     },
     {
       "type": "patchouli:spotlight",

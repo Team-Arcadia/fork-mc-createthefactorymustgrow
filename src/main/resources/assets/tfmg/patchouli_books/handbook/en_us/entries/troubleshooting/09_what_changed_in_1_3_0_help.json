@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "1.3.0 puts a lot of effort into telling you what is going on. $(li)$(item)Goggle problem lines$():"
+      "text": "1.3.0 puts a lot of effort into telling you what is going on."
     },
     {
       "type": "patchouli:text",
-      "text": "the blast furnace, coke oven, firebox, chemical vat and engines now show a red line naming whatever stops them, and the large engine and the blast furnace finally say why they are idle. All of them are listed in this chapter. $(li)$(item)JEI info pages$():"
+      "text": "$(li)$(item)Goggle problem lines$(): the blast furnace, coke oven, firebox, chemical vat and engines now show a red line naming whatever stops them, and the large engine and the blast furnace finally say why they are idle. All of them are listed in this chapter."
     },
     {
       "type": "patchouli:text",
-      "text": "the blast furnace, blast stove, air intake, coke oven, casting basin, arc furnace, chemical vat, distillation tower, firebox, surface scanner, large generator and coal coke dust have an information page in JEI explaining how to build and feed them. $(li)$(item)Factory Inspector$(): a new tool. Right-click a machine for a report of what works, what blocks it and what to do;"
+      "text": "$(li)$(item)JEI info pages$(): the blast furnace, blast stove, air intake, coke oven, casting basin, arc furnace, chemical vat, distillation tower, firebox, surface scanner, large generator and coal coke dust have an information page in JEI explaining how to build and feed them."
     },
     {
       "type": "patchouli:text",
-      "text": "right-click the air for a progression checklist and your next step. $(li)$(item)The Factory Handbook$(): this book, with a chapter for each stage of the mod, from the first ores to engines and weapons.$(br2)If a machine still stops without a word, check it with the Factory Inspector, then report it as a bug."
+      "text": "$(li)$(item)Factory Inspector$(): a new tool. Right-click a machine for a report of what works, what blocks it and what to do; right-click the air for a progression checklist and your next step."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)The Factory Handbook$(): this book, with a chapter for each stage of the mod, from the first ores to engines and weapons.$(br2)If a machine still stops without a word, check it with the Factory Inspector, then report it as a bug."
     },
     {
       "type": "patchouli:spotlight",

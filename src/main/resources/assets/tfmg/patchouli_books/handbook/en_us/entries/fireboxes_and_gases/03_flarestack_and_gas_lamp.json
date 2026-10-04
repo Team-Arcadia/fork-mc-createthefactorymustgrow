@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Flarestack The flarestack destroys what you pump into it, with a tall flame.$() Use it on the products your refinery makes but you do not need yet. $(li)Holds $(item)2500 mB$(). $(li)Burns $(item)30 mB per tick$(), or $(item)100 mB per tick$() while it holds more than 1000 mB. $(li)Gives off light level 15 while burning."
+      "text": "$(l)Flarestack$()$(br)The flarestack destroys what you pump into it, with a tall flame. Use it on the products your refinery makes but you do not need yet.$(li)Holds $(item)2500 mB$().$(li)Burns $(item)30 mB per tick$(), or $(item)100 mB per tick$() while it holds more than 1000 mB.$(li)Gives off light level 15 while burning."
     },
     {
       "type": "patchouli:text",

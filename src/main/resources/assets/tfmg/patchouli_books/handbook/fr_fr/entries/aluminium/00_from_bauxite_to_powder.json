@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Concassage$()$(br)Passez la bauxite dans les $(item)roues de concassage$() de Create. Chaque bloc donne :$(br2)$(li)$(item)2 poudres de bauxite$() avec 75 % de chance,$(li)$(item)1 poudre de plus$() avec 20 % de chance.$(br2)Cela fait environ 1,7 poudre par bloc en moyenne : minez-en beaucoup."
+      "text": "$(l)Concassage$()$(br)Passez la bauxite dans les $(item)roues de concassage$() de Create. Chaque bloc donne :$(br2)$(li)$(item)2 poudres de bauxite$() avec 75 % de chance,$(li)$(item)1 poudre de plus$() avec 20 % de chance."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Deux chemins vers l'aluminium$()$(li)Le $(item)mélange surchauffé$() dans un bassin de Create : facile à construire, sans électricité, mais il coûte de la poussière de coke et ne donne qu'un lingot par fournée.$(li)L'$(item)électrolyse$() dans une cuve chimique : il faut du courant et une cuve chauffée, mais elle donne plus de métal pour la même poudre."
+      "text": "Cela fait environ 1,7 poudre par bloc en moyenne : minez-en beaucoup.$(br2)$(l)Deux chemins vers l'aluminium$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Le $(item)mélange surchauffé$() dans un bassin de Create : facile à construire, sans électricité, mais il coûte de la poussière de coke et ne donne qu'un lingot par fournée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)L'$(item)électrolyse$() dans une cuve chimique : il faut du courant et une cuve chauffée, mais elle donne plus de métal pour la même poudre."
     },
     {
       "type": "patchouli:text",

@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le $(item)tuyau à béton$() fonctionne comme la poulie à tuyau de Create, mais verse du béton liquide dans les armatures. $(li)Placez-le au-dessus de votre structure d'armatures et amenez le béton liquide par son côté tuyau. Il contient $(item)1500 mB$()."
+      "text": "Le $(item)tuyau à béton$() fonctionne comme la poulie à tuyau de Create, mais verse du béton liquide dans les armatures."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Faites-le tourner : un sens descend le tuyau, l'autre le remonte. Il s'arrête tout seul sur le premier bloc solide en dessous. $(li)$(item)Arrêtez la rotation.$() Le tuyau ne verse que lorsqu'il est immobile."
+      "text": "$(li)Placez-le au-dessus de votre structure d'armatures et amenez le béton liquide par son côté tuyau. Il contient $(item)1500 mB$().$(li)Faites-le tourner : un sens descend le tuyau, l'autre le remonte. Il s'arrête tout seul sur le premier bloc solide en dessous."
     },
     {
       "type": "patchouli:text",
-      "text": "Une fois arrêté avec au moins $(item)1000 mB$() dedans, il remplit un cadre par seau, en partant d'à côté du bout du tuyau et en s'étendant $(item)sur les côtés et vers le bas$(), jamais vers le haut. Il ne passe que par les blocs qui acceptent du béton (cadres d'armature, tuyaux industriels, tubes de câbles, poteaux électriques) ; tout autre bloc arrête la propagation, et l'air n'est jamais rempli."
+      "text": "$(li)$(item)Arrêtez la rotation.$() Le tuyau ne verse que lorsqu'il est immobile.$(br2)Une fois arrêté avec au moins $(item)1000 mB$() dedans, il remplit un cadre par seau, en partant d'à côté du bout du tuyau et en s'étendant $(item)sur les côtés et vers le bas$(), jamais vers le haut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il ne passe que par les blocs qui acceptent du béton (cadres d'armature, tuyaux industriels, tubes de câbles, poteaux électriques) ;$(br)tout autre bloc arrête la propagation, et l'air n'est jamais rempli."
     },
     {
       "type": "patchouli:text",

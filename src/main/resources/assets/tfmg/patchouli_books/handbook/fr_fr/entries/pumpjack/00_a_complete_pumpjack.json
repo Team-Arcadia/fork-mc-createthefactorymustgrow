@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "La pompe à pétrole remonte le pétrole brut d'un gisement jusqu'à un réservoir en surface. Elle se construit avec des blocs séparés qui forment un balancier : $(li)$(item)Base de pompe$() : posée sur la colonne de tuyaux, elle stocke le pétrole."
+      "text": "La pompe à pétrole remonte le pétrole brut d'un gisement jusqu'à un réservoir en surface. Elle se construit avec des blocs séparés qui forment un balancier :"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Tuyaux industriels$() : une colonne droite de la base jusqu'au gisement (seuls trois sont montrés ici). $(li)$(item)Support de marteau$() : le pivot. Le balancier repose dessus. $(li)$(item)Balancier$() : une ligne de $(item)pièces de marteau$() avec une $(item)tête de marteau$() à un bout et un $(item)connecteur de marteau$() à l'autre. $(li)$(item)Manivelle$() :"
+      "text": "$(li)$(item)Base de pompe$() : posée sur la colonne de tuyaux, elle stocke le pétrole.$(li)$(item)Tuyaux industriels$() : une colonne droite de la base jusqu'au gisement (seuls trois sont montrés ici).$(li)$(item)Support de marteau$() : le pivot. Le balancier repose dessus."
     },
     {
       "type": "patchouli:text",
-      "text": "sous le connecteur, elle entraîne le balancier. $(li)$(item)Entrée de machine$() : sous la manivelle, elle reçoit la rotation.$(br2)Sur cette vue, la tête surplombe la base à l'ouest, le connecteur surplombe la manivelle à l'est, et le support se dresse au milieu sur deux poutres en acier. L'arbre côté nord de l'entrée de machine amène la rotation."
+      "text": "$(li)$(item)Balancier$() : une ligne de $(item)pièces de marteau$() avec une $(item)tête de marteau$() à un bout et un $(item)connecteur de marteau$() à l'autre.$(li)$(item)Manivelle$() : sous le connecteur, elle entraîne le balancier.$(li)$(item)Entrée de machine$() : sous la manivelle, elle reçoit la rotation."
     },
     {
       "type": "patchouli:text",
-      "text": "Utilisez $(item)-$() et $(item)+$() pour la voir couche par couche."
+      "text": "Sur cette vue, la tête surplombe la base à l'ouest, le connecteur surplombe la manivelle à l'est, et le support se dresse au milieu sur deux poutres en acier. L'arbre côté nord de l'entrée de machine amène la rotation.$(br2)Utilisez $(item)-$() et $(item)+$() pour la voir couche par couche."
     },
     {
       "type": "patchouli:multiblock",

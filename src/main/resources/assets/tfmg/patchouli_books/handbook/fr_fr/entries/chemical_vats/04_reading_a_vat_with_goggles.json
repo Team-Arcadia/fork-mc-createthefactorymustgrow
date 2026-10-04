@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Quand la cuve reste inactive, une ligne rouge vous dit pourquoi : $(li)**Une machine attachée ne fonctionne pas : aucune recette ne peut tourner.** Trouvez la machine trop lente ou sans courant. $(li)**Aucune recette ne correspond : vérifiez taille, type de cuve et machines dans JEI.** Les ingrédients sont là mais rien ne convient :"
+      "text": "Quand la cuve reste inactive, une ligne rouge vous dit pourquoi :$(br2)$(li)$(item)Une machine attachée ne fonctionne pas : aucune recette ne peut tourner.$() Trouvez la machine trop lente ou sans courant."
     },
     {
       "type": "patchouli:text",
-      "text": "mauvaise sorte de cuve, trop petite, ou machine manquante. $(li)$(item)Pas assez chaud pour cette recette.$() Ajoutez ou allumez un foyer sous la cuve, ou retirez un congélateur. $(li)$(item)Pression trop faible pour cette recette.$() Ajoutez un compresseur, faites-le tourner au-delà de 120 RPM, ou inversez-le."
+      "text": "$(li)$(item)Aucune recette ne correspond : vérifiez taille, type de cuve et machines dans JEI.$() Les ingrédients sont là mais rien ne convient : mauvaise sorte de cuve, trop petite, ou machine manquante."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Pas assez chaud pour cette recette.$() Ajoutez ou allumez un foyer sous la cuve, ou retirez un congélateur.$(li)$(item)Pression trop faible pour cette recette.$() Ajoutez un compresseur, faites-le tourner au-delà de 120 RPM, ou inversez-le."
     },
     {
       "type": "patchouli:text",

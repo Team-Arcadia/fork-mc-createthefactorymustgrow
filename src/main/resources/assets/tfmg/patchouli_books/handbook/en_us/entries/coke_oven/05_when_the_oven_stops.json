@@ -10,15 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Look at any oven block with $(item)Engineer's Goggles$() to see what is happening. Besides the progress and both tanks, a red line tells you which tank blocks the oven:$(br2)$(li)$(item)CO2 tank full: pump it out from the TOP face$()$(li)$(item)Creosote tank full: pump it out from a side$() $(l)Checklist - No progress at all:$()"
+      "text": "Look at any oven block with $(item)Engineer's Goggles$() to see what is happening. Besides the progress and both tanks, a red line tells you which tank blocks the oven:$(br2)$(li)$(item)CO2 tank full: pump it out from the TOP face$()$(li)$(item)Creosote tank full: pump it out from a side$()"
     },
     {
       "type": "patchouli:text",
-      "text": "is the slot empty, or does it hold something that is not coal or a log? $(li)Stuck at the same time left: a tank is full, read the red line. $(li)Coke piling up in front: the drop zone is blocked or nothing collects it. $(li)The oven is slower than expected: a block faces another way or is missing, so the square is smaller."
+      "text": "$(l)Checklist$()$(li)No progress at all: is the slot empty, or does it hold something that is not coal or a log?$(li)Stuck at the same time left: a tank is full, read the red line.$(li)Coke piling up in front: the drop zone is blocked or nothing collects it."
     },
     {
       "type": "patchouli:text",
-      "text": "Break and replace it facing the front."
+      "text": "$(li)The oven is slower than expected: a block faces another way or is missing, so the square is smaller. Break and replace it facing the front."
     },
     {
       "type": "patchouli:spotlight",

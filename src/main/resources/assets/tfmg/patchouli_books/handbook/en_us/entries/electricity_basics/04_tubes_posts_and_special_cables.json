@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Cable tube and electric post Both are thin pillars that connect $(item)only at their two ends$(), along the axis they are placed on.$() They are good for long straight runs and handle up to $(item)10,000 V$()."
+      "text": "$(l)Cable tube and electric post$()"
     },
     {
       "type": "patchouli:text",
-      "text": "Placed inside liquid concrete, they dry into a $(item)concrete encased$() version, perfect for burying a line in a floor or a wall.$(br2)$(l)Copycat cable block$()$(br)Connects on $(item)all six faces$(), like a cable hub, but takes the look of any block you apply to it, in the same way as Create's copycat blocks. Use it to hide wiring inside a building. It keeps the standard $(item)1,000 V$() limit."
+      "text": "Both are thin pillars that connect $(item)only at their two ends$(), along the axis they are placed on. They are good for long straight runs and handle up to $(item)10,000 V$(). Placed inside liquid concrete, they dry into a $(item)concrete encased$() version, perfect for burying a line in a floor or a wall."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Diagonal cable block$()$(br)Links one side face with the face $(item)above$() or $(item)below$() it, so a line can climb a slope or a staircase without a stack of hubs. It handles up to $(item)100,000 V$().$(br2)None of these has a current limit: only cable hubs burn out from too much current."
+      "text": "$(l)Copycat cable block$()$(br)Connects on $(item)all six faces$(), like a cable hub, but takes the look of any block you apply to it, in the same way as Create's copycat blocks. Use it to hide wiring inside a building. It keeps the standard $(item)1,000 V$() limit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Diagonal cable block$()$(br)Links one side face with the face $(item)above$() or $(item)below$() it, so a line can climb a slope or a staircase without a stack of hubs. It handles up to $(item)100,000 V$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "None of these has a current limit: only cable hubs burn out from too much current."
     },
     {
       "type": "patchouli:spotlight",

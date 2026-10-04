@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Bauxite$() avec basalte lisse, granite et andésite. La bauxite est le minerai de l'aluminium. $(li)$(item)Galène$() avec basalte lisse, bloc de spéléothème et ardoise des abîmes. La galène est une pierre qui contient du plomb. $(li)$(item)Lignite$() avec tuf, ardoise des abîmes et scorie. Le lignite est un charbon brun et tendre."
+      "text": "$(li)$(item)Bauxite$() avec basalte lisse, granite et andésite. La bauxite est le minerai de l'aluminium.$(li)$(item)Galène$() avec basalte lisse, bloc de spéléothème et ardoise des abîmes. La galène est une pierre qui contient du plomb."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Argile réfractaire$() avec sable, gravier et crimsite.$(br2)La bauxite et la galène sont de vraies pierres de construction : passez-les au tailleur de pierre pour obtenir des variantes taillées, polies et en briques. Le lignite et le soufre se récupèrent tels quels une fois minés. Un amas est grand : quand vous voyez une bande dans une paroi, creusez le long de celle-ci."
+      "text": "$(li)$(item)Lignite$() avec tuf, ardoise des abîmes et scorie. Le lignite est un charbon brun et tendre.$(li)$(item)Argile réfractaire$() avec sable, gravier et crimsite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La bauxite et la galène sont de vraies pierres de construction : passez-les au tailleur de pierre pour obtenir des variantes taillées, polies et en briques. Le lignite et le soufre se récupèrent tels quels une fois minés. Un amas est grand : quand vous voyez une bande dans une paroi, creusez le long de celle-ci."
     },
     {
       "type": "patchouli:text",

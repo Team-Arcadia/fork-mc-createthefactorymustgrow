@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Sizes$()$(li)Alone, as a $(item)1x1$().$(li)As a $(item)2x2$() or $(item)3x3$() square: all blocks side by side in one flat square, $(item)all facing the same way$(). The square turns into one big fan.$(br2)In a square, only $(item)one block needs to turn$(): the fastest block sets the speed of the whole fan. All of its air goes into one shared tank."
+      "text": "$(l)Sizes$()$(li)Alone, as a $(item)1x1$().$(li)As a $(item)2x2$() or $(item)3x3$() square: all blocks side by side in one flat square, $(item)all facing the same way$(). The square turns into one big fan."
     },
     {
       "type": "patchouli:text",
-      "text": "Using a wrench on the $(item)back face$() removes or restores the shaft socket, so you can choose which blocks of a square take the shaft.$(br2)The view shows a $(item)2x2$() intake facing south, ready to take a shaft from the north."
+      "text": "In a square, only $(item)one block needs to turn$(): the fastest block sets the speed of the whole fan. All of its air goes into one shared tank.$(br2)Using a wrench on the $(item)back face$() removes or restores the shaft socket, so you can choose which blocks of a square take the shaft."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The view shows a $(item)2x2$() intake facing south, ready to take a shaft from the north."
     },
     {
       "type": "patchouli:multiblock",

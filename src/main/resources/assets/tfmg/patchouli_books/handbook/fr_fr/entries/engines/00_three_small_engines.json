@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Les moteurs brûlent les carburants de votre raffinerie et les transforment en $(item)rotation$(). Il existe trois petits moteurs, tous construits de la même façon : $(li)$(item)Moteur ordinaire$() : le polyvalent."
+      "text": "Les moteurs brûlent les carburants de votre raffinerie et les transforment en $(item)rotation$(). Il existe trois petits moteurs, tous construits de la même façon :"
     },
     {
       "type": "patchouli:text",
-      "text": "Sa disposition peut passer entre cinq types (I, V, W, U et Boxer). $(li)$(item)Moteur radial$() : une disposition radiale fixe à huit cylindres, avec une sortie intégrée. $(li)$(item)Moteur à turbine$() : le type le plus rapide et le plus puissant, il fonctionne avec des pales de turbine au lieu de cylindres."
+      "text": "$(li)$(item)Moteur ordinaire$() : le polyvalent. Sa disposition peut passer entre cinq types (I, V, W, U et Boxer).$(li)$(item)Moteur radial$() : une disposition radiale fixe à huit cylindres, avec une sortie intégrée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Moteur à turbine$() : le type le plus rapide et le plus puissant, il fonctionne avec des pales de turbine au lieu de cylindres."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Un moteur ne démarre jamais avec le seul carburant. Il lui faut aussi un $(item)signal de redstone$() (ou un contrôleur de moteur), un $(item)arbre de sortie$() et de la place dans son réservoir d'échappement. Portez les lunettes d'ingénieur pendant la construction : le moteur indique toujours ce qu'il attend."
+      "text": "Un moteur ne démarre jamais avec le seul carburant.$(br)Il lui faut aussi un $(item)signal de redstone$() (ou un contrôleur de moteur), un $(item)arbre de sortie$() et de la place dans son réservoir d'échappement.$(br)Portez les lunettes d'ingénieur pendant la construction :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "le moteur indique toujours ce qu'il attend."
     },
     {
       "type": "patchouli:spotlight",

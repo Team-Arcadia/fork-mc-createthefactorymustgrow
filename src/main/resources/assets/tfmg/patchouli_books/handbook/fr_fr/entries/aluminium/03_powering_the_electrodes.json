@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Un porte-électrode ne prend le courant que par sa $(item)face du haut$(). Amenez votre câble sur le dessus de chaque porte-électrode."
+      "text": "Un porte-électrode ne prend le courant que par sa $(item)face du haut$(). Amenez votre câble sur le dessus de chaque porte-électrode.$(br2)$(l)L'intensité, pas seulement la tension$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)L'intensité, pas seulement la tension Un porte-électrode ne fonctionne que si au moins $(item)5 A$() le traversent (le réglage serveur electrolysisMinimumCurrent, 5 par défaut).$() L'intensité est la tension divisée par la résistance, et les électrodes en cuivre ou en zinc font $(item)10 ohms$() :"
+      "text": "Un porte-électrode ne fonctionne que si au moins $(item)5 A$() le traversent (le réglage serveur electrolysisMinimumCurrent, 5 par défaut). L'intensité est la tension divisée par la résistance, et les électrodes en cuivre ou en zinc font $(item)10 ohms$() :"
     },
     {
       "type": "patchouli:text",

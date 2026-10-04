@@ -6,19 +6,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Placez-vous tout contre le contrôleur et faites un clic droit (sans vous accroupir) pour prendre les commandes ; un nouveau clic droit les lâche. Vos touches pilotent alors le moteur : $(li)$(item)Démarrer le moteur$() (par défaut $(item)I$()) : démarre ou arrête le moteur."
+      "text": "Placez-vous tout contre le contrôleur et faites un clic droit (sans vous accroupir) pour prendre les commandes ; un nouveau clic droit les lâche. Vos touches pilotent alors le moteur :"
     },
     {
       "type": "patchouli:text",
-      "text": "Il démarre au ralenti, environ un quart de la pleine puissance. $(li)$(item)Avancer$() : accélérateur. Maintenu, il monte la puissance par paliers jusqu'au maximum. Relâché, le moteur retombe au ralenti. $(li)$(item)Reculer$() : frein, retour rapide au ralenti. $(li)$(item)Monter une vitesse$() / $(item)Rétrograder$() (par défaut $(item)V$() / $(item)C$()) :"
+      "text": "$(li)$(item)Démarrer le moteur$() (par défaut $(item)I$()) : démarre ou arrête le moteur. Il démarre au ralenti, environ un quart de la pleine puissance.$(li)$(item)Avancer$() : accélérateur. Maintenu, il monte la puissance par paliers jusqu'au maximum. Relâché, le moteur retombe au ralenti."
     },
     {
       "type": "patchouli:text",
-      "text": "change de rapport. $(li)$(item)Gauche$(), $(item)Droite$() et le $(item)bouton personnalisé$() (par défaut $(item)B$()) : émettent, tant qu'ils sont maintenus, les fréquences de liaison redstone réglées dans le menu du contrôleur."
+      "text": "$(li)$(item)Reculer$() : frein, retour rapide au ralenti.$(li)$(item)Monter une vitesse$() / $(item)Rétrograder$() (par défaut $(item)V$() / $(item)C$()) : change de rapport."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Les rapports$()$(br)Marche arrière, point mort, puis rapports 1 à 6. Sur un moteur avec un arbre $(item)aux deux bouts$(), le rapport règle la sortie : marche arrière à 30 % en sens inverse, point mort à 0, rapports 1 à 6 à 20, 40, 60, 80, 100 et 120 %.$(br2)Les touches se changent dans le menu Commandes."
+      "text": "$(li)$(item)Gauche$(), $(item)Droite$() et le $(item)bouton personnalisé$() (par défaut $(item)B$()) : émettent, tant qu'ils sont maintenus, les fréquences de liaison redstone réglées dans le menu du contrôleur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les rapports$()$(br)Marche arrière, point mort, puis rapports 1 à 6. Sur un moteur avec un arbre $(item)aux deux bouts$(), le rapport règle la sortie : marche arrière à 30 % en sens inverse, point mort à 0, rapports 1 à 6 à 20, 40, 60, 80, 100 et 120 %."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les touches se changent dans le menu Commandes."
     },
     {
       "type": "patchouli:spotlight",

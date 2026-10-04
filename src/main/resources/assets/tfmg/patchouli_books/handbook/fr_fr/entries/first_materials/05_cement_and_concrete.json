@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le béton est le matériau de construction solide de TFMG, et chaque étape se fait au malaxeur mécanique au-dessus d'un bassin, sans chaleur. 1. $(item)Ciment$() : 1 boule d'argile + 1 sable calcaire donnent $(item)4 ciments$(). 2."
+      "text": "Le béton est le matériau de construction solide de TFMG, et chaque étape se fait au malaxeur mécanique au-dessus d'un bassin, sans chaleur."
     },
     {
       "type": "patchouli:text",
-      "text": "$(item)Mélange à béton$() : 1 sable + 1 ciment + 1 gravier donnent $(item)16 mélanges à béton$(). Avec du $(item)laitier$() du haut fourneau à la place du sable, vous en obtenez $(item)32$(). 3. $(item)Béton liquide$() : 1 mélange à béton + 250 mB d'eau donnent $(item)1000 mB de béton liquide$()."
+      "text": "1. $(item)Ciment$() : 1 boule d'argile + 1 sable calcaire donnent $(item)4 ciments$().$(br)2. $(item)Mélange à béton$() : 1 sable + 1 ciment + 1 gravier donnent $(item)16 mélanges à béton$(). Avec du $(item)laitier$() du haut fourneau à la place du sable, vous en obtenez $(item)32$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Le faire prendre$()$(li)Versez le béton liquide dans le monde, au seau ou par un tuyau : il $(item)durcit en blocs de béton$() au bout d'un moment.$(li)Dans un $(item)bassin de coulée$(), 144 mB de béton liquide coulent un $(item)parpaing$().$(li)8 blocs de béton autour d'une teinture donnent 8 bétons colorés."
+      "text": "3. $(item)Béton liquide$() : 1 mélange à béton + 250 mB d'eau donnent $(item)1000 mB de béton liquide$().$(br2)$(l)Le faire prendre$()$(li)Versez le béton liquide dans le monde, au seau ou par un tuyau : il $(item)durcit en blocs de béton$() au bout d'un moment."
     },
     {
       "type": "patchouli:text",
-      "text": "Le ciment est aussi un bloc soumis à la gravité, comme le sable, si vous le posez."
+      "text": "$(li)Dans un $(item)bassin de coulée$(), 144 mB de béton liquide coulent un $(item)parpaing$().$(li)8 blocs de béton autour d'une teinture donnent 8 bétons colorés.$(br2)Le ciment est aussi un bloc soumis à la gravité, comme le sable, si vous le posez."
     },
     {
       "type": "patchouli:spotlight",

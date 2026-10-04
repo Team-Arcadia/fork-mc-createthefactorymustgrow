@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "If consumption is $(item)higher$() than generation, the whole network is marked $(item)Not Enough Power$(). Every machine on it stops at once: motors stop turning, lamps go dark, the polarizer stops charging. It is not only the last machine you placed that fails."
+      "text": "If consumption is $(item)higher$() than generation, the whole network is marked $(item)Not Enough Power$(). Every machine on it stops at once: motors stop turning, lamps go dark, the polarizer stops charging. It is not only the last machine you placed that fails.$(br2)$(l)How to fix it$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)How to fix it$()$(li)Add generators, or spin the ones you have faster.$(li)Remove or switch off consumers. When a block is removed, the network is checked again right away.$(li)Split the factory into separate networks with switches, diodes or transformers (see $(item)Network Control$()), so one hungry machine cannot stall everything."
+      "text": "$(li)Add generators, or spin the ones you have faster.$(li)Remove or switch off consumers. When a block is removed, the network is checked again right away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Split the factory into separate networks with switches, diodes or transformers (see $(item)Network Control$()), so one hungry machine cannot stall everything."
     },
     {
       "type": "patchouli:text",

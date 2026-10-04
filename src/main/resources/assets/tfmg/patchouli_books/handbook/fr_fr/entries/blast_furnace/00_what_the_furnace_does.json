@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le haut fourneau fond le minerai de fer en $(item)acier en fusion$(). C'est une tour creuse en briques avec une $(item)sortie de haut fourneau$() à sa base. $(l)Ce qui entre - $(item)Minerai$() :$() fer brut concassé, fer brut ou quartz. $(li)$(item)Fondant$() :"
+      "text": "Le haut fourneau fond le minerai de fer en $(item)acier en fusion$(). C'est une tour creuse en briques avec une $(item)sortie de haut fourneau$() à sa base.$(br2)$(l)Ce qui entre$()$(li)$(item)Minerai$() : fer brut concassé, fer brut ou quartz."
     },
     {
       "type": "patchouli:text",
-      "text": "sable calcaire, un par objet de fer. $(li)$(item)Combustible$() : poussière de coke de charbon, le seul qu'il brûle. $(li)$(item)Air chaud$() : envoyé par tuyau dans une trappe de la paroi, depuis un fourneau à air chaud."
+      "text": "$(li)$(item)Fondant$() : sable calcaire, un par objet de fer.$(li)$(item)Combustible$() : poussière de coke de charbon, le seul qu'il brûle.$(li)$(item)Air chaud$() : envoyé par tuyau dans une trappe de la paroi, depuis un fourneau à air chaud."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Avant de commencer, ayez un four à coke qui produit du coke, des roues de concassage qui changent le coke en poussière et le calcaire en sable calcaire, et une ligne d'air chaud qui marche (chapitres précédents). L'acier est ensuite coulé en lingots dans un bassin de coulée (chapitre suivant)."
+      "text": "Avant de commencer, ayez un four à coke qui produit du coke, des roues de concassage qui changent le coke en poussière et le calcaire en sable calcaire, et une ligne d'air chaud qui marche (chapitres précédents)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'acier est ensuite coulé en lingots dans un bassin de coulée (chapitre suivant)."
     },
     {
       "type": "patchouli:spotlight",

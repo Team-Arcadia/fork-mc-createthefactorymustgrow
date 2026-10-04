@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Lingot de plomb$() en $(item)plaque de plomb$().$(li)$(item)Lingot de nickel$() en $(item)plaque de nickel$().$(br2)$(l)Constantan$()$(br)Dans un malaxeur $(item)chauffé$() (brûleur à blaze allumé), $(item)1 lingot de cuivre + 1 lingot de nickel$() donnent $(item)2 lingots de constantan$(). Le constantan sert plus tard aux fils et aux pièces électriques."
+      "text": "$(li)$(item)Lingot de plomb$() en $(item)plaque de plomb$().$(li)$(item)Lingot de nickel$() en $(item)plaque de nickel$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Constantan$()$(br)Dans un malaxeur $(item)chauffé$() (brûleur à blaze allumé), $(item)1 lingot de cuivre + 1 lingot de nickel$() donnent $(item)2 lingots de constantan$(). Le constantan sert plus tard aux fils et aux pièces électriques."
     },
     {
       "type": "patchouli:text",

@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Large engines - $(item)Needs a Powered Shaft 2 blocks in front$():$() right-click the engine with a shaft to place it at the right spot, crossing the engine's direction. $(li)$(item)Needs Air in its air tank$(): pipe air from an Air Intake. $(li)$(item)No fuel$():"
+      "text": "$(l)Large engines$()$(li)$(item)Needs a Powered Shaft 2 blocks in front$(): right-click the engine with a shaft to place it at the right spot, crossing the engine's direction.$(li)$(item)Needs Air in its air tank$(): pipe air from an Air Intake."
     },
     {
       "type": "patchouli:text",
-      "text": "pipe fuel in. $(li)**Unsupported fuel: use diesel, kerosene, naphtha or furnace gas**: drain the tank, then refill with one of those. $(li)**Exhaust full: pump the CO2 away**. $(l)Small engines - $(item)Engine Unfinished$() with $(item)Next Component$():$() keep right-clicking parts in, one full set per block."
+      "text": "$(li)$(item)No fuel$(): pipe fuel in.$(li)$(item)Unsupported fuel: use diesel, kerosene, naphtha or furnace gas$(): drain the tank, then refill with one of those.$(li)$(item)Exhaust full: pump the CO2 away$().$(br2)$(l)Small engines$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Pistons Missing$() / $(item)Turbines Missing$(): add cylinders or turbine blades. $(li)Gold line $(item)No output shaft$(): right-click an end block with a shaft (regular engines only; radial and turbine engines have theirs built in). $(li)**Signal: 0**: no redstone, so no rotation."
+      "text": "$(li)$(item)Engine Unfinished$() with $(item)Next Component$(): keep right-clicking parts in, one full set per block.$(li)$(item)Pistons Missing$() / $(item)Turbines Missing$(): add cylinders or turbine blades."
     },
     {
       "type": "patchouli:text",
-      "text": "Power any block of the engine, or link an engine controller.$(br2)A small engine also stops, without a line of its own, when its exhaust tank is full or its fuel is not one its cylinders accept."
+      "text": "$(li)Gold line $(item)No output shaft$(): right-click an end block with a shaft (regular engines only; radial and turbine engines have theirs built in).$(li)$(item)Signal: 0$(): no redstone, so no rotation. Power any block of the engine, or link an engine controller."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A small engine also stops, without a line of its own, when its exhaust tank is full or its fuel is not one its cylinders accept."
     },
     {
       "type": "patchouli:spotlight",

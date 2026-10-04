@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Un lance-flammes vide prend n'importe quel carburant accepté.$(li)Un lance-flammes entamé ne se complète qu'avec le $(item)même carburant$(). Videz-le avant d'en changer.$(li)Depuis la 1.3.0, seul le carburant qui sort vraiment du réservoir est crédité. Les blocs qui refusent l'extraction, comme les moteurs, ne donnent rien."
+      "text": "$(li)Un lance-flammes vide prend n'importe quel carburant accepté.$(li)Un lance-flammes entamé ne se complète qu'avec le $(item)même carburant$(). Videz-le avant d'en changer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Depuis la 1.3.0, seul le carburant qui sort vraiment du réservoir est crédité. Les blocs qui refusent l'extraction, comme les moteurs, ne donnent rien."
     },
     {
       "type": "patchouli:text",

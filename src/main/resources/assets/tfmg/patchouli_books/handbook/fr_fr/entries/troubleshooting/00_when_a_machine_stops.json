@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Lunettes d'ingénieur$()$(br)Regardez la machine. Sous ses réservoirs et sa progression, une $(item)ligne rouge$() nomme ce qui la bloque. Les pages suivantes listent chacune de ces lignes, ce qu'elle signifie et comment y remédier."
+      "text": "$(l)Lunettes d'ingénieur$()$(br)Regardez la machine. Sous ses réservoirs et sa progression, une $(item)ligne rouge$() nomme ce qui la bloque. Les pages suivantes listent chacune de ces lignes, ce qu'elle signifie et comment y remédier.$(br2)$(l)Inspecteur d'usine$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Inspecteur d'usine$()$(br)Un clic droit sur une machine avec l'$(item)inspecteur d'usine$() donne un rapport complet : ce qui est en place (vert), ce qui bloque la machine (rouge) et quoi faire (doré). Un clic droit dans le vide donne une $(item)liste de progression$() : où vous en êtes dans la chaîne de production du mod et ce que demande l'étape suivante."
+      "text": "Un clic droit sur une machine avec l'$(item)inspecteur d'usine$() donne un rapport complet :$(br)ce qui est en place (vert), ce qui bloque la machine (rouge) et quoi faire (doré).$(br)Un clic droit dans le vide donne une $(item)liste de progression$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "où vous en êtes dans la chaîne de production du mod et ce que demande l'étape suivante."
     },
     {
       "type": "patchouli:text",

@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Tuyau en acier$()$(br)$(item)Plaque lourde, lingot d'acier, plaque lourde$() en ligne ou en colonne : $(item)4 tuyaux$()."
+      "text": "$(l)Tuyau en acier$()$(br)$(item)Plaque lourde, lingot d'acier, plaque lourde$() en ligne ou en colonne : $(item)4 tuyaux$().$(br2)Le tuyau en acier donne le reste de la famille :$(li)$(item)Pompe mécanique en acier$() : un tuyau en acier et une roue dentée."
     },
     {
       "type": "patchouli:text",
-      "text": "Le tuyau en acier donne le reste de la famille :$(li)$(item)Pompe mécanique en acier$() : un tuyau en acier et une roue dentée.$(li)$(item)Vanne à fluide en acier$() : un tuyau en acier et une plaque de fer.$(li)$(item)Tuyau à fluide intelligent en acier$() : un tuyau en acier, une feuille d'aluminium et un tube électronique."
+      "text": "$(li)$(item)Vanne à fluide en acier$() : un tuyau en acier et une plaque de fer.$(li)$(item)Tuyau à fluide intelligent en acier$() : un tuyau en acier, une feuille d'aluminium et un tube électronique.$(br2)$(l)Pour la suite$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Pour la suite$()$(br)Avec les lingots d'acier, les plaques lourdes, les vis, les mécanismes et les carters, vous pouvez construire presque toutes les machines du mod. Avant les chapitres sur l'électricité et le pétrole, assurez-vous que votre four à coke, votre ligne d'air chaud et votre haut fourneau tournent seuls : tout ce qui suit consomme de l'acier."
+      "text": "Avec les lingots d'acier, les plaques lourdes, les vis, les mécanismes et les carters, vous pouvez construire presque toutes les machines du mod."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Avant les chapitres sur l'électricité et le pétrole, assurez-vous que votre four à coke, votre ligne d'air chaud et votre haut fourneau tournent seuls :$(br)tout ce qui suit consomme de l'acier."
     },
     {
       "type": "patchouli:spotlight",

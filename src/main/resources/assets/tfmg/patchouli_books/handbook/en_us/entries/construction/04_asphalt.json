@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Bitumen$()$(br)In a mechanical press over a $(item)heated$() basin, $(item)1000 mB of heavy oil$() compacts into one $(item)bitumen$(). A burning firebox or a lit blaze burner under the basin is enough.$(br2)$(l)Asphalt mixture$()$(br)In a mixer: $(item)sand + bitumen + gravel$() gives $(item)16 asphalt mixture$(). With $(item)slag$() instead of sand, you get $(item)32$()."
+      "text": "$(l)Bitumen$()$(br)In a mechanical press over a $(item)heated$() basin, $(item)1000 mB of heavy oil$() compacts into one $(item)bitumen$(). A burning firebox or a lit blaze burner under the basin is enough."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Liquid asphalt$()$(br)$(item)Asphalt mixture + 250 mB water$() gives $(item)1000 mB liquid asphalt$(), in a Create mixer or in a chemical vat with an industrial mixer.$(br2)$(l)Laying it$()$(br)Pour liquid asphalt like liquid concrete: it $(item)hardens into asphalt blocks$() after a short random delay. Spread it with a bucket for small paths, or with a Create hose pulley for long roads."
+      "text": "$(l)Asphalt mixture$()$(br)In a mixer: $(item)sand + bitumen + gravel$() gives $(item)16 asphalt mixture$(). With $(item)slag$() instead of sand, you get $(item)32$().$(br2)$(l)Liquid asphalt$()$(br)$(item)Asphalt mixture + 250 mB water$() gives $(item)1000 mB liquid asphalt$(), in a Create mixer or in a chemical vat with an industrial mixer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Laying it$()$(br)Pour liquid asphalt like liquid concrete: it $(item)hardens into asphalt blocks$() after a short random delay. Spread it with a bucket for small paths, or with a Create hose pulley for long roads."
     },
     {
       "type": "patchouli:text",

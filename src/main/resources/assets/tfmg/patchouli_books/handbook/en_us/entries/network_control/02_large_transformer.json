@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The large transformer handles the output of a large generator: up to $(item)100,000 V$() and $(item)500 A$(). $(l)Building it - Wind two $(item)large coils$() on the winding machine, from laminated magnetic alloy blocks and a copper spool.$() The machine's dial sets the number of turns."
+      "text": "The large transformer handles the output of a large generator: up to $(item)100,000 V$() and $(item)500 A$().$(br2)$(l)Building it$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Place the two coils side by side. $(li)Right-click one of them with a $(item)laminated magnetic alloy block$(). The coil you click becomes the $(item)input$() half, the other one the $(item)output$() half.$(br2)Output voltage = $(item)input voltage x output turns / input turns$()."
+      "text": "$(li)Wind two $(item)large coils$() on the winding machine, from laminated magnetic alloy blocks and a copper spool. The machine's dial sets the number of turns.$(li)Place the two coils side by side."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Connections$()$(br)Each half connects on its $(item)top face only$(): the incoming line on top of the input half, the outgoing line on top of the output half.$(br2)$(l)Cooling raises its power$()$(li)As built, it passes up to $(item)30 kW$().$(li)Right-click it with a $(item)block of steel$(): $(item)50 kW$().$(li)Then right-click with a $(item)bucket of lubrication oil$(): $(item)100 kW$()."
+      "text": "$(li)Right-click one of them with a $(item)laminated magnetic alloy block$(). The coil you click becomes the $(item)input$() half, the other one the $(item)output$() half.$(br2)Output voltage = $(item)input voltage x output turns / input turns$()."
     },
     {
       "type": "patchouli:text",
-      "text": "The multimeter shows which stage it has reached."
+      "text": "$(l)Connections$()$(br)Each half connects on its $(item)top face only$(): the incoming line on top of the input half, the outgoing line on top of the output half."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Cooling raises its power$()$(li)As built, it passes up to $(item)30 kW$().$(li)Right-click it with a $(item)block of steel$(): $(item)50 kW$().$(li)Then right-click with a $(item)bucket of lubrication oil$(): $(item)100 kW$().$(br2)The multimeter shows which stage it has reached."
     },
     {
       "type": "patchouli:spotlight",

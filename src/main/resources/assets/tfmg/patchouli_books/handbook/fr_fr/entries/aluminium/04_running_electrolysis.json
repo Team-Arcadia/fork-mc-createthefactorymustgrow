@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)1 lingot d'aluminium$(),$(li)$(item)4 pépites d'aluminium$() avec 50 % de chance,$(li)$(item)2 pépites d'aluminium$() avec 25 % de chance,$(li)$(item)500 mB de dioxyde de carbone$().$(br2)En moyenne cela fait un lingot plus 2,5 pépites par fournée, contre un seul lingot par le mélange surchauffé."
+      "text": "$(li)$(item)1 lingot d'aluminium$(),$(li)$(item)4 pépites d'aluminium$() avec 50 % de chance,$(li)$(item)2 pépites d'aluminium$() avec 25 % de chance,$(li)$(item)500 mB de dioxyde de carbone$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Garder le flux$()$(li)Envoyez la poudre dans la cuve avec un entonnoir ou une glissière. Les objets ne peuvent aller qu'en entrée.$(li)Récupérez lingots et pépites côté sortie avec un entonnoir.$(li)$(item)Pompez le dioxyde de carbone.$() Il arrive dans les réservoirs de sortie, et dès qu'il n'y a plus la place pour 500 mB de plus, la cuve s'arrête."
+      "text": "En moyenne cela fait un lingot plus 2,5 pépites par fournée, contre un seul lingot par le mélange surchauffé.$(br2)$(l)Garder le flux$()$(li)Envoyez la poudre dans la cuve avec un entonnoir ou une glissière. Les objets ne peuvent aller qu'en entrée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Récupérez lingots et pépites côté sortie avec un entonnoir.$(li)$(item)Pompez le dioxyde de carbone.$() Il arrive dans les réservoirs de sortie, et dès qu'il n'y a plus la place pour 500 mB de plus, la cuve s'arrête."
     },
     {
       "type": "patchouli:text",

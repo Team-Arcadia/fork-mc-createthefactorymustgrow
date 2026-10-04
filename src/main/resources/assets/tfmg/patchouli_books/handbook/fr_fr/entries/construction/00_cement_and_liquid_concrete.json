@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le béton commence par le $(item)sable calcaire$() : broyez le $(item)calcaire$() de Create avec des roues de concassage. $(l)Au mélangeur Chaque étape se fait dans un mélangeur mécanique de Create au-dessus d'un bassin, sans chaleur :$()"
+      "text": "Le béton commence par le $(item)sable calcaire$() : broyez le $(item)calcaire$() de Create avec des roues de concassage.$(br2)$(l)Au mélangeur$()$(br)Chaque étape se fait dans un mélangeur mécanique de Create au-dessus d'un bassin, sans chaleur :"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)boule d'argile + sable calcaire$() donne $(item)4 ciments$(), - $(item)sable + ciment + gravier$() donne $(item)16 mélanges à béton$() (avec du $(item)laitier$() à la place du sable : $(item)32$()), - $(item)mélange à béton + 250 mB d'eau$() donne $(item)1000 mB de béton liquide$()."
+      "text": "$(li)$(item)boule d'argile + sable calcaire$() donne $(item)4 ciments$(),$(li)$(item)sable + ciment + gravier$() donne $(item)16 mélanges à béton$() (avec du $(item)laitier$() à la place du sable : $(item)32$()),$(li)$(item)mélange à béton + 250 mB d'eau$() donne $(item)1000 mB de béton liquide$()."
     },
     {
       "type": "patchouli:text",

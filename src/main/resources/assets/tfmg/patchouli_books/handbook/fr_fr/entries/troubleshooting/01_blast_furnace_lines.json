@@ -6,19 +6,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "À lire sur la $(item)sortie de haut fourneau$() : $(li)**Structure incomplète : au moins 3 couches complètes** : la tour fait moins de 3 couches complètes, elle ne fait donc rien. Comparez chaque couche à la page d'info JEI :"
+      "text": "À lire sur la $(item)sortie de haut fourneau$() :$(br2)$(li)**Structure incomplète :$(br)au moins 3 couches complètes** :$(br)la tour fait moins de 3 couches complètes, elle ne fait donc rien."
     },
     {
       "type": "patchouli:text",
-      "text": "briques réfractaires sur les côtés, renforts aux coins, une brique réfractaire au centre de la couche du bas. $(li)**Pas de combustible : ajoutez de la poussière de coke** : broyez du coke et versez la poussière par le haut du puits, ou par entonnoir dans la sortie. $(li)**Pas de fondant : ajoutez du sable calcaire**."
+      "text": "Comparez chaque couche à la page d'info JEI :$(br)briques réfractaires sur les côtés, renforts aux coins, une brique réfractaire au centre de la couche du bas."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Aucune trappe de haut fourneau dans les murs pour l'air chaud$() : une brique du mur doit être une trappe de haut fourneau. $(li)$(item)La trappe ne contient pas d'air chaud$() : amenez l'air chaud d'un fourneau à air chaud dans cette trappe. $(li)**Réservoir de sortie plein : pompez le résultat** :"
+      "text": "$(li)$(item)Pas de combustible : ajoutez de la poussière de coke$() : broyez du coke et versez la poussière par le haut du puits, ou par entonnoir dans la sortie.$(li)$(item)Pas de fondant : ajoutez du sable calcaire$()."
     },
     {
       "type": "patchouli:text",
-      "text": "pompez le métal en fusion et le laitier hors de la sortie ; il faut de la place pour 144 mB dans chaque réservoir.$(br2)Les lignes de combustible, de fondant et d'air chaud n'apparaissent que si du minerai attend dedans : un fourneau vide paraît calme."
+      "text": "$(li)$(item)Aucune trappe de haut fourneau dans les murs pour l'air chaud$() : une brique du mur doit être une trappe de haut fourneau.$(li)$(item)La trappe ne contient pas d'air chaud$() : amenez l'air chaud d'un fourneau à air chaud dans cette trappe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Réservoir de sortie plein : pompez le résultat$() : pompez le métal en fusion et le laitier hors de la sortie ; il faut de la place pour 144 mB dans chaque réservoir."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les lignes de combustible, de fondant et d'air chaud n'apparaissent que si du minerai attend dedans : un fourneau vide paraît calme."
     },
     {
       "type": "patchouli:spotlight",

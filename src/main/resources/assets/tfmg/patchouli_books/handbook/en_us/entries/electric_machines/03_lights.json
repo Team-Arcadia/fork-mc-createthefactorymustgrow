@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)200 ohm$() consumer, light level = voltage / 10.$(li)$(item)Burns above 1 A$(), so above $(item)200 V$(). This is the lowest limit of all electric blocks: give neon its own low voltage network, through a transformer or a potentiometer.$(br2)Right-click any lamp or neon tube with a $(item)dye$() to change its color. Black and grays are refused."
+      "text": "$(li)$(item)200 ohm$() consumer, light level = voltage / 10.$(li)$(item)Burns above 1 A$(), so above $(item)200 V$(). This is the lowest limit of all electric blocks: give neon its own low voltage network, through a transformer or a potentiometer."
     },
     {
       "type": "patchouli:text",
-      "text": "A lamp burning out drops nothing, like every overloaded block."
+      "text": "Right-click any lamp or neon tube with a $(item)dye$() to change its color. Black and grays are refused.$(br2)A lamp burning out drops nothing, like every overloaded block."
     },
     {
       "type": "patchouli:spotlight",

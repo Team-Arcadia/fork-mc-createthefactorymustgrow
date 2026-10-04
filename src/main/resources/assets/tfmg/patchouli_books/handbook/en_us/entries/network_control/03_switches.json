@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Electric switch A small bridge driven by $(item)redstone$():$() power in at the back, out at the front. With no signal it is open and the front network is dead. The output voltage follows the signal strength: $(item)input voltage x signal / 15$()."
+      "text": "$(l)Electric switch$()$(br)A small bridge driven by $(item)redstone$(): power in at the back, out at the front. With no signal it is open and the front network is dead. The output voltage follows the signal strength: $(item)input voltage x signal / 15$(). A full signal passes everything, a weaker one acts as a dimmer."
     },
     {
       "type": "patchouli:text",
-      "text": "A full signal passes everything, a weaker one acts as a dimmer.$(br2)$(l)Large switch$()$(br)A two block switch for heavy lines, rated $(item)100,000 V$() and $(item)1,000 A$(), passing up to $(item)10 kW$(). Placing it puts down both halves, so leave room. Power enters at the back of the first half and leaves at the front of the second."
+      "text": "$(l)Large switch$()$(br)A two block switch for heavy lines, rated $(item)100,000 V$() and $(item)1,000 A$(), passing up to $(item)10 kW$(). Placing it puts down both halves, so leave room. Power enters at the back of the first half and leaves at the front of the second."
     },
     {
       "type": "patchouli:text",
-      "text": "It is driven by $(item)rotation$(), not redstone: turning its shaft one way swings the arm closed, the other way opens it, faster at higher speed. Stop the shaft and the arm stays where it is. Put a clutch or a gearshift on the input to control it from redstone.$(br2)The large switch cannot be moved by contraptions."
+      "text": "It is driven by $(item)rotation$(), not redstone: turning its shaft one way swings the arm closed, the other way opens it, faster at higher speed. Stop the shaft and the arm stays where it is. Put a clutch or a gearshift on the input to control it from redstone."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The large switch cannot be moved by contraptions."
     },
     {
       "type": "patchouli:spotlight",

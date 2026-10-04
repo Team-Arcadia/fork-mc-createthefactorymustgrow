@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Before any machine, you need materials Minecraft does not have. TFMG adds them to world generation in three forms: $(li)$(item)Ores$(): lead, nickel and lithium, as classic veins in stone and deepslate. $(li)$(item)Striated layers$():"
+      "text": "Before any machine, you need materials Minecraft does not have. TFMG adds them to world generation in three forms:"
     },
     {
       "type": "patchouli:text",
-      "text": "thick bands of bauxite, galena, lignite and fireclay in the Overworld, sulfur and fireclay in the Nether. $(li)$(item)Oil$(): deposits on the bedrock floor of the Overworld, and rare oil wells in deserts.$(br2)Some resources are not found at all, you make them. $(item)Limesand$() comes from crushing Create's limestone, and $(item)nitrate dust$() (saltpeter) from crushing dirt."
+      "text": "$(li)$(item)Ores$(): lead, nickel and lithium, as classic veins in stone and deepslate.$(li)$(item)Striated layers$(): thick bands of bauxite, galena, lignite and fireclay in the Overworld, sulfur and fireclay in the Nether.$(li)$(item)Oil$(): deposits on the bedrock floor of the Overworld, and rare oil wells in deserts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Some resources are not found at all, you make them. $(item)Limesand$() comes from crushing Create's limestone, and $(item)nitrate dust$() (saltpeter) from crushing dirt."
     },
     {
       "type": "patchouli:text",

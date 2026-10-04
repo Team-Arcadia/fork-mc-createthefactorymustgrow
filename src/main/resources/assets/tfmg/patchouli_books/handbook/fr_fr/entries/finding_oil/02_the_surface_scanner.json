@@ -14,11 +14,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Une fois par seconde, le scanner examine une $(item)grille de 5 x 5 chunks$() centrée sur son propre chunk. Les 25 cases de son dessus s'allument pour chaque chunk qui contient un gisement ou du pétrole brut entre le fond du monde et Y 64. Appuyez sur $(item)F3 + G$() pour voir les limites de chunks et faire correspondre les cases au terrain."
+      "text": "Une fois par seconde, le scanner examine une $(item)grille de 5 x 5 chunks$() centrée sur son propre chunk.$(br)Les 25 cases de son dessus s'allument pour chaque chunk qui contient un gisement ou du pétrole brut entre le fond du monde et Y 64."
     },
     {
       "type": "patchouli:text",
-      "text": "Regardez-le avec les $(item)lunettes d'ingénieur$() :$(li)$(item)Not Enough Rotation (Needs 64rpm)$() : l'entrée manque ou tourne trop lentement.$(li)$(item)No Deposits Found$() : rien dans les 25 chunks, allez plus loin.$(li)$(item)N Chunks With Oil Deposits Found$() : rendez-vous dans un chunk allumé et creusez."
+      "text": "Appuyez sur $(item)F3 + G$() pour voir les limites de chunks et faire correspondre les cases au terrain.$(br2)Regardez-le avec les $(item)lunettes d'ingénieur$() :$(li)$(item)Not Enough Rotation (Needs 64rpm)$() : l'entrée manque ou tourne trop lentement."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)No Deposits Found$() : rien dans les 25 chunks, allez plus loin.$(li)$(item)N Chunks With Oil Deposits Found$() : rendez-vous dans un chunk allumé et creusez."
     },
     {
       "type": "patchouli:text",

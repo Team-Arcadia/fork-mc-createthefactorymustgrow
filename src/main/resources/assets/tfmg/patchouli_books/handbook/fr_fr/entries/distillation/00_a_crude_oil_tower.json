@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)une $(item)cuve à fluide en acier$(), remplie du pétrole à séparer, - un $(item)contrôleur de distillation en acier$() sur le côté de cette cuve, - des $(item)sorties de distillation en acier$() empilées au-dessus du contrôleur, avec un $(item)tuyau industriel$() entre chaque paire, - de la $(item)chaleur$() sous la cuve."
+      "text": "$(li)une $(item)cuve à fluide en acier$(), remplie du pétrole à séparer,$(li)un $(item)contrôleur de distillation en acier$() sur le côté de cette cuve,$(li)des $(item)sorties de distillation en acier$() empilées au-dessus du contrôleur, avec un $(item)tuyau industriel$() entre chaque paire,$(li)de la $(item)chaleur$() sous la cuve."
     },
     {
       "type": "patchouli:text",
@@ -18,11 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Le pétrole entre dans la cuve en acier comme dans n'importe quel réservoir de Create. Le contrôleur le tire du bloc de cuve juste derrière lui vers son propre réservoir de 8000 mB, et chaque sortie recueille un produit dans son propre réservoir de 8000 mB. Pompez les produits par n'importe quel côté des sorties."
+      "text": "Le pétrole entre dans la cuve en acier comme dans n'importe quel réservoir de Create.$(br)Le contrôleur le tire du bloc de cuve juste derrière lui vers son propre réservoir de 8000 mB, et chaque sortie recueille un produit dans son propre réservoir de 8000 mB."
     },
     {
       "type": "patchouli:text",
-      "text": "Une cuve n'accepte qu'$(item)un seul$() contrôleur : un second ne tient pas sur une cuve qui en a déjà un."
+      "text": "Pompez les produits par n'importe quel côté des sorties.$(br2)Une cuve n'accepte qu'$(item)un seul$() contrôleur : un second ne tient pas sur une cuve qui en a déjà un."
     },
     {
       "type": "patchouli:multiblock",

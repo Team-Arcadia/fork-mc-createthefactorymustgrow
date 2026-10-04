@@ -6,19 +6,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Chaque sortie a une case de réglage Create sur ses côtés. Utilisez-la, comme sur toute machine de Create, pour choisir ce qui se passe $(item)When Internal Tank is Full$() : $(li)$(item)Stop Distillation Process$() (par défaut) : une sortie pleine cesse de recevoir son produit."
+      "text": "Chaque sortie a une case de réglage Create sur ses côtés. Utilisez-la, comme sur toute machine de Create, pour choisir ce qui se passe $(item)When Internal Tank is Full$() :"
     },
     {
       "type": "patchouli:text",
-      "text": "Les autres sorties continuent, et seul le pétrole des produits réellement stockés est consommé. $(li)$(item)Void Excess Fluid$() : la sortie continue d'accepter sa part et détruit ce qui ne rentre pas. La tour ne ralentit jamais."
+      "text": "$(li)$(item)Stop Distillation Process$() (par défaut) : une sortie pleine cesse de recevoir son produit. Les autres sorties continuent, et seul le pétrole des produits réellement stockés est consommé."
     },
     {
       "type": "patchouli:text",
-      "text": "Utilisez la destruction sur les produits dont vous n'avez pas encore besoin, pour qu'ils ne bloquent rien, et le mode par défaut sur les carburants que vous vendez ou brûlez. Quelques habitudes pour qu'une raffinerie tourne : $(li)Pompez chaque sortie quelque part, même dans un simple réservoir, et ajoutez du stockage à mesure que l'usine grandit."
+      "text": "$(li)$(item)Void Excess Fluid$() : la sortie continue d'accepter sa part et détruit ce qui ne rentre pas. La tour ne ralentit jamais."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Envoyez le pétrole lourd de la sortie du bas vers une tour à pétrole lourd, vers le bitume, ou de nouveau dans la cuve. $(li)Brûlez les gaz en trop dans une $(item)torche d'évacuation$() (voir le chapitre suivant) plutôt que de les détruire. $(li)Gardez la cuve en acier remplie : c'est une cuve vide qui arrête la tour, pas une pleine."
+      "text": "Utilisez la destruction sur les produits dont vous n'avez pas encore besoin, pour qu'ils ne bloquent rien, et le mode par défaut sur les carburants que vous vendez ou brûlez.$(br2)Quelques habitudes pour qu'une raffinerie tourne :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Pompez chaque sortie quelque part, même dans un simple réservoir, et ajoutez du stockage à mesure que l'usine grandit.$(li)Envoyez le pétrole lourd de la sortie du bas vers une tour à pétrole lourd, vers le bitume, ou de nouveau dans la cuve."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Brûlez les gaz en trop dans une $(item)torche d'évacuation$() (voir le chapitre suivant) plutôt que de les détruire.$(li)Gardez la cuve en acier remplie : c'est une cuve vide qui arrête la tour, pas une pleine."
     },
     {
       "type": "patchouli:spotlight",

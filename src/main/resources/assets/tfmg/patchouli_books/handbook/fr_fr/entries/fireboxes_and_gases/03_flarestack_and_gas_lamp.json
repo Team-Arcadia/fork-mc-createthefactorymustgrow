@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Torche d'évacuation La torche d'évacuation détruit ce que vous y pompez, avec une grande flamme.$() Utilisez-la pour les produits de la raffinerie dont vous n'avez pas encore besoin. $(li)Contient $(item)2500 mB$(). $(li)Brûle $(item)30 mB par tick$(), ou $(item)100 mB par tick$() tant qu'elle contient plus de 1000 mB. $(li)Éclaire au niveau 15 pendant qu'elle brûle."
+      "text": "$(l)Torche d'évacuation$()$(br)La torche d'évacuation détruit ce que vous y pompez, avec une grande flamme. Utilisez-la pour les produits de la raffinerie dont vous n'avez pas encore besoin.$(li)Contient $(item)2500 mB$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Lampe à gaz$()$(br)Une source de lumière qui ne demande aucun câble.$(li)Contient $(item)4000 mB$() de n'importe lequel des fluides ci-dessus.$(li)Brûle environ $(item)1 mB par seconde$() : une lampe pleine dure plus d'une heure.$(li)Éclaire au niveau 15 tant qu'elle a du carburant, et reste allumée 5 secondes après la dernière goutte."
+      "text": "$(li)Brûle $(item)30 mB par tick$(), ou $(item)100 mB par tick$() tant qu'elle contient plus de 1000 mB.$(li)Éclaire au niveau 15 pendant qu'elle brûle.$(br2)$(l)Lampe à gaz$()$(br)Une source de lumière qui ne demande aucun câble.$(li)Contient $(item)4000 mB$() de n'importe lequel des fluides ci-dessus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Brûle environ $(item)1 mB par seconde$() : une lampe pleine dure plus d'une heure.$(li)Éclaire au niveau 15 tant qu'elle a du carburant, et reste allumée 5 secondes après la dernière goutte."
     },
     {
       "type": "patchouli:text",

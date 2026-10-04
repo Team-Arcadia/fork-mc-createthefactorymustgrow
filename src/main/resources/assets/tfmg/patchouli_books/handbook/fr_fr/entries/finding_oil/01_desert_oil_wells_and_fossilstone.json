@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Les puits de pétrole Les déserts (les biomes où peuvent apparaître des pyramides du désert) cachent parfois un $(item)puits de pétrole$() :$() en moyenne une fois tous les $(item)500 chunks$()."
+      "text": "$(l)Les puits de pétrole$()"
     },
     {
       "type": "patchouli:text",
-      "text": "C'est un pilier de pétrole brut qui part d'un gisement à Y -64 et monte jusqu'à environ $(item)70 à 80 blocs au-dessus du sol$(), visible de très loin.$(br2)Un puits, c'est du pétrole brut gratuit pour un seau ou une pompe, et sa base est un gisement ordinaire que vous pourrez exploiter plus tard avec une pompe à pétrole."
+      "text": "Les déserts (les biomes où peuvent apparaître des pyramides du désert) cachent parfois un $(item)puits de pétrole$() : en moyenne une fois tous les $(item)500 chunks$(). C'est un pilier de pétrole brut qui part d'un gisement à Y -64 et monte jusqu'à environ $(item)70 à 80 blocs au-dessus du sol$(), visible de très loin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un puits, c'est du pétrole brut gratuit pour un seau ou une pompe, et sa base est un gisement ordinaire que vous pourrez exploiter plus tard avec une pompe à pétrole."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Elle est extrêmement solide : dureté $(item)100$(), le double de l'obsidienne, et résistance aux explosions $(item)1200$().$(li)N'importe quelle pioche la récupère, mais il faut longtemps pour la casser.$(br2)Quand un tunnel ou une grotte près de la bedrock tombe sur de la pierre fossile, le pétrole brut est tout proche. Contournez-la, ou montez simplement votre colonne de tuyaux à côté."
+      "text": "$(li)Elle est extrêmement solide : dureté $(item)100$(), le double de l'obsidienne, et résistance aux explosions $(item)1200$().$(li)N'importe quelle pioche la récupère, mais il faut longtemps pour la casser."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quand un tunnel ou une grotte près de la bedrock tombe sur de la pierre fossile, le pétrole brut est tout proche. Contournez-la, ou montez simplement votre colonne de tuyaux à côté."
     },
     {
       "type": "patchouli:spotlight",

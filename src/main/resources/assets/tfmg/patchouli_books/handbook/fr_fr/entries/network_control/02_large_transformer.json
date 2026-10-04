@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le grand transformateur encaisse la production d'un grand générateur : jusqu'à $(item)100 000 V$() et $(item)500 A$(). $(l)Le construire - Bobinez deux $(item)grandes bobines$() sur l'enrouleuse, à partir de blocs d'alliage magnétique laminé et d'une bobine de cuivre.$()"
+      "text": "Le grand transformateur encaisse la production d'un grand générateur : jusqu'à $(item)100 000 V$() et $(item)500 A$().$(br2)$(l)Le construire$()"
     },
     {
       "type": "patchouli:text",
-      "text": "Le cadran de la machine règle le nombre de tours. $(li)Posez les deux bobines côte à côte. $(li)Faites un clic droit sur l'une d'elles avec un $(item)bloc d'alliage magnétique laminé$(). La bobine cliquée devient la moitié $(item)entrée$(), l'autre la moitié $(item)sortie$().$(br2)Tension de sortie = $(item)tension d'entrée x tours de sortie / tours d'entrée$()."
+      "text": "$(li)Bobinez deux $(item)grandes bobines$() sur l'enrouleuse, à partir de blocs d'alliage magnétique laminé et d'une bobine de cuivre. Le cadran de la machine règle le nombre de tours.$(li)Posez les deux bobines côte à côte."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Faites un clic droit sur l'une d'elles avec un $(item)bloc d'alliage magnétique laminé$(). La bobine cliquée devient la moitié $(item)entrée$(), l'autre la moitié $(item)sortie$().$(br2)Tension de sortie = $(item)tension d'entrée x tours de sortie / tours d'entrée$()."
     },
     {
       "type": "patchouli:text",

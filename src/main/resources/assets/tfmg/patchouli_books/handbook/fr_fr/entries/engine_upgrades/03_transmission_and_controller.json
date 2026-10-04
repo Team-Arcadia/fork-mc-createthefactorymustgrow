@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le $(item)contrôleur de moteur$() permet de piloter un moteur comme un véhicule plutôt qu'à la redstone. Une $(item)transmission$() fait le lien entre les deux. 1. Faites un clic droit sur le contrôleur avec la transmission."
+      "text": "Le $(item)contrôleur de moteur$() permet de piloter un moteur comme un véhicule plutôt qu'à la redstone. Une $(item)transmission$() fait le lien entre les deux."
     },
     {
       "type": "patchouli:text",
-      "text": "Son infobulle affiche alors le contrôleur lié. Un clic droit accroupi dans le vide efface le lien. 2. Faites un clic droit sur le moteur avec la transmission liée. Elle se pose comme amélioration du moteur et attache le moteur au contrôleur."
+      "text": "1. Faites un clic droit sur le contrôleur avec la transmission. Son infobulle affiche alors le contrôleur lié. Un clic droit accroupi dans le vide efface le lien.$(br)2. Faites un clic droit sur le moteur avec la transmission liée. Elle se pose comme amélioration du moteur et attache le moteur au contrôleur."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Tant qu'un contrôleur le pilote, le moteur $(item)ignore la redstone$(). Retirez la transmission avec une clé pour revenir à la redstone : l'objet rendu garde son lien, vous pourrez la reposer plus tard sans refaire la liaison.$(br2)Un clic droit sur le contrôleur avec une clé ouvre son menu, où l'on règle des fréquences de liaison redstone."
+      "text": "Tant qu'un contrôleur le pilote, le moteur $(item)ignore la redstone$(). Retirez la transmission avec une clé pour revenir à la redstone : l'objet rendu garde son lien, vous pourrez la reposer plus tard sans refaire la liaison."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un clic droit sur le contrôleur avec une clé ouvre son menu, où l'on règle des fréquences de liaison redstone."
     },
     {
       "type": "patchouli:spotlight",

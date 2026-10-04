@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Potentiomètre$()$(br)Un pont avec un cadran : il laisse passer de $(item)0 à 100 %$() de sa tension d'entrée, 100 % par défaut. C'est aussi une source pour $(item)liaison d'affichage$() pour la tension.$(br2)Faites un clic droit sur une diode ou un potentiomètre avec un $(item)carter de machinerie lourde$() pour l'encastrer."
+      "text": "$(l)Potentiomètre$()$(br)Un pont avec un cadran : il laisse passer de $(item)0 à 100 %$() de sa tension d'entrée, 100 % par défaut. C'est aussi une source pour $(item)liaison d'affichage$() pour la tension."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Faites un clic droit sur une diode ou un potentiomètre avec un $(item)carter de machinerie lourde$() pour l'encastrer."
     },
     {
       "type": "patchouli:text",

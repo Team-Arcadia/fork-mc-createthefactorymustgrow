@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Production approximative d'air chaud, toutes les entrées étant fournies : $(li)$(item)2x2x1$() (4 blocs) : environ 1 mB par tick - $(item)2x2x2$() (8 blocs) : environ 5 mB par tick - $(item)2x2x3$() (12 blocs) : environ 10 mB par tick - $(item)2x2x4$() (16 blocs) :"
+      "text": "Production approximative d'air chaud, toutes les entrées étant fournies :$(br2)$(li)$(item)2x2x1$() (4 blocs) : environ 1 mB par tick$(li)$(item)2x2x2$() (8 blocs) : environ 5 mB par tick"
     },
     {
       "type": "patchouli:text",
-      "text": "environ 18 mB par tick - $(item)2x2x5$() (20 blocs) : environ $(item)28 mB par tick$() - $(item)2x2x6$() (24 blocs) : environ 40 mB par tick$(br2)Un haut fourneau qui produit de l'acier brûle $(item)20 mB d'air chaud par tick$() pendant qu'il travaille. Un fourneau $(item)2x2x5$() suffit à un haut fourneau avec de la marge ; montez plus haut pour deux."
+      "text": "$(li)$(item)2x2x3$() (12 blocs) : environ 10 mB par tick$(li)$(item)2x2x4$() (16 blocs) : environ 18 mB par tick$(li)$(item)2x2x5$() (20 blocs) : environ $(item)28 mB par tick$()$(li)$(item)2x2x6$() (24 blocs) : environ 40 mB par tick"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un haut fourneau qui produit de l'acier brûle $(item)20 mB d'air chaud par tick$() pendant qu'il travaille. Un fourneau $(item)2x2x5$() suffit à un haut fourneau avec de la marge ; montez plus haut pour deux."
     },
     {
       "type": "patchouli:text",

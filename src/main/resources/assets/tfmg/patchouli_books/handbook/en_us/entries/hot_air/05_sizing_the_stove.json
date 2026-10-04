@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Approximate hot air output with all inputs supplied: $(li)$(item)2x2x1$() (4 blocks): about 1 mB per tick - $(item)2x2x2$() (8 blocks): about 5 mB per tick - $(item)2x2x3$() (12 blocks): about 10 mB per tick - $(item)2x2x4$() (16 blocks):"
+      "text": "Approximate hot air output with all inputs supplied:"
     },
     {
       "type": "patchouli:text",
-      "text": "about 18 mB per tick - $(item)2x2x5$() (20 blocks): about $(item)28 mB per tick$() - $(item)2x2x6$() (24 blocks): about 40 mB per tick$(br2)A blast furnace making steel burns $(item)20 mB of hot air per tick$() while it works. A $(item)2x2x5$() stove covers one furnace with a margin; go higher for two."
+      "text": "$(li)$(item)2x2x1$() (4 blocks): about 1 mB per tick$(li)$(item)2x2x2$() (8 blocks): about 5 mB per tick$(li)$(item)2x2x3$() (12 blocks): about 10 mB per tick$(li)$(item)2x2x4$() (16 blocks): about 18 mB per tick$(li)$(item)2x2x5$() (20 blocks): about $(item)28 mB per tick$()$(li)$(item)2x2x6$() (24 blocks): about 40 mB per tick"
     },
     {
       "type": "patchouli:text",
-      "text": "At that size the stove also needs about $(item)28 mB of air$(), $(item)6 mB of fuel$() and gives $(item)28 mB of CO2$() per tick.$(br2)The stove pauses when its $(item)hot air$() or $(item)CO2$() tank is full, and when an input tank is empty. A full hot air tank is fine: it means the furnace has all it needs. A full CO2 tank means your exhaust cannot keep up."
+      "text": "A blast furnace making steel burns $(item)20 mB of hot air per tick$() while it works. A $(item)2x2x5$() stove covers one furnace with a margin; go higher for two.$(br2)At that size the stove also needs about $(item)28 mB of air$(), $(item)6 mB of fuel$() and gives $(item)28 mB of CO2$() per tick."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The stove pauses when its $(item)hot air$() or $(item)CO2$() tank is full, and when an input tank is empty. A full hot air tank is fine: it means the furnace has all it needs. A full CO2 tank means your exhaust cannot keep up."
     },
     {
       "type": "patchouli:spotlight",

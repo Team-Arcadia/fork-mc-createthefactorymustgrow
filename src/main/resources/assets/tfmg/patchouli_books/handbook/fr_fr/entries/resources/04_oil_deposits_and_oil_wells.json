@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Gisements de pétrole Dans tous les biomes de l'Overworld, environ un chunk sur seize cache un champ pétrolifère sur le $(item)fond de bedrock, à Y -64$().$() Il se compose d'un ou plusieurs blocs de $(item)gisement de pétrole$() séparés de quelques blocs."
+      "text": "$(l)Gisements de pétrole$()$(br)Dans tous les biomes de l'Overworld, environ un chunk sur seize cache un champ pétrolifère sur le $(item)fond de bedrock, à Y -64$()."
     },
     {
       "type": "patchouli:text",
-      "text": "Au-dessus de chaque gisement monte une colonne de $(item)pétrole brut$() haute de 24 blocs au plus, bordée de $(item)pierre fossile$() dans sa partie basse."
+      "text": "Il se compose d'un ou plusieurs blocs de $(item)gisement de pétrole$() séparés de quelques blocs.$(br)Au-dessus de chaque gisement monte une colonne de $(item)pétrole brut$() haute de 24 blocs au plus, bordée de $(item)pierre fossile$() dans sa partie basse."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Un gisement ne peut être ni miné, ni détruit par une explosion, ni déplacé, et ne donne jamais rien. Il reste en place et vous le pompez avec un chevalet de pompage.$(li)Chaque gisement contient une réserve aléatoire, entre 1000 et le maximum du serveur (10000 par défaut).$(li)La pierre fossile est deux fois plus dure que l'obsidienne : minez-la à la pioche, avec patience."
+      "text": "$(li)Un gisement ne peut être ni miné, ni détruit par une explosion, ni déplacé, et ne donne jamais rien. Il reste en place et vous le pompez avec un chevalet de pompage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Chaque gisement contient une réserve aléatoire, entre 1000 et le maximum du serveur (10000 par défaut).$(li)La pierre fossile est deux fois plus dure que l'obsidienne : minez-la à la pioche, avec patience."
     },
     {
       "type": "patchouli:text",

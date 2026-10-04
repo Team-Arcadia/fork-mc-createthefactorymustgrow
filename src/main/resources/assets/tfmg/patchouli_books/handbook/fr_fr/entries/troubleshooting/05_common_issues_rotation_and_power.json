@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Une machine ne tourne pas Regardez son arbre avec les lunettes.$() Aucune vitesse veut dire que rien n'arrive : vérifiez chaque arbre et engrenage sur le chemin. Si le réseau est $(item)en surcharge$(), tout s'arrête :"
+      "text": "$(l)Une machine ne tourne pas$()$(br)Regardez son arbre avec les lunettes.$(br)Aucune vitesse veut dire que rien n'arrive :$(br)vérifiez chaque arbre et engrenage sur le chemin.$(br)Si le réseau est $(item)en surcharge$(), tout s'arrête :"
     },
     {
       "type": "patchouli:text",
-      "text": "ajoutez une source ou retirez des consommateurs. Certaines machines demandent aussi une vitesse minimale : une prise d'air seule demande 40 RPM, le scanner de surface 64 RPM."
+      "text": "ajoutez une source ou retirez des consommateurs.$(br)Certaines machines demandent aussi une vitesse minimale :$(br)une prise d'air seule demande 40 RPM, le scanner de surface 64 RPM."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Un accessoire de cuve ne fait rien$()$(br)Voir la page de la cuve : une seule machine arrêtée sur une cuve bloque toutes les recettes, donnez-lui de la rotation ou du courant, ou retirez-la. $(l)L'électricité détruit des blocs Chaque bloc électrique a une $(item)tension maximale$() (1000 V pour la plupart) et certains une intensité maximale.$()"
+      "text": "$(l)Un accessoire de cuve ne fait rien$()$(br)Voir la page de la cuve : une seule machine arrêtée sur une cuve bloque toutes les recettes, donnez-lui de la rotation ou du courant, ou retirez-la.$(br2)$(l)L'électricité détruit des blocs$()"
     },
     {
       "type": "patchouli:text",
-      "text": "Au-delà pendant un instant, le bloc $(item)est détruit sans rien laisser tomber$(). Les lunettes et le multimètre préviennent d'abord avec $(item)Surtension imminente$() ou $(item)Surintensité imminente$() à 80 % de la limite. Abaissez la tension avec un transformateur ou une résistance avant les petites machines, et utilisez des câbles adaptés à l'intensité."
+      "text": "Chaque bloc électrique a une $(item)tension maximale$() (1000 V pour la plupart) et certains une intensité maximale.$(br)Au-delà pendant un instant, le bloc $(item)est détruit sans rien laisser tomber$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les lunettes et le multimètre préviennent d'abord avec $(item)Surtension imminente$() ou $(item)Surintensité imminente$() à 80 % de la limite.$(br)Abaissez la tension avec un transformateur ou une résistance avant les petites machines, et utilisez des câbles adaptés à l'intensité."
     },
     {
       "type": "patchouli:spotlight",

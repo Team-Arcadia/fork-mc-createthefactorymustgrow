@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Les recettes chauffées de la cuve demandent une $(item)chaleur de 2$() : un seul foyer allumé sous la cuve suffit. Pensez qu'un compresseur ou un congélateur placé dessous prend une place qu'une source de chaleur pourrait occuper."
+      "text": "Les recettes chauffées de la cuve demandent une $(item)chaleur de 2$() : un seul foyer allumé sous la cuve suffit. Pensez qu'un compresseur ou un congélateur placé dessous prend une place qu'une source de chaleur pourrait occuper.$(br2)$(l)Pression$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Pression$()$(br)Chaque $(item)compresseur$() en marche ajoute $(item)1$() de pression. Faites tourner son arbre dans l'autre sens et il en retire 1 (les lunettes indiquent Pressurisation ou Dépressurisation). Les recettes sous pression demandent une $(item)pression de 1$(), donc un compresseur qui tourne dans le bon sens suffit."
+      "text": "Chaque $(item)compresseur$() en marche ajoute $(item)1$() de pression. Faites tourner son arbre dans l'autre sens et il en retire 1 (les lunettes indiquent Pressurisation ou Dépressurisation). Les recettes sous pression demandent une $(item)pression de 1$(), donc un compresseur qui tourne dans le bon sens suffit."
     },
     {
       "type": "patchouli:text",

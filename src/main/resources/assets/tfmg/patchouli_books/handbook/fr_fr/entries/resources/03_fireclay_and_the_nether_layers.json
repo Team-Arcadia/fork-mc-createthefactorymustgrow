@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Un bloc d'argile réfractaire donne $(item)1 boule d'argile réfractaire$(), et quatre boules redonnent un bloc : minez la couche sans compter.$(br2)$(l)Le Nether$()$(br)Dans le Nether, les amas apparaissent entre $(item)Y 40 et Y 90$(), eux aussi dans environ un chunk sur 18. Il existe deux motifs :"
+      "text": "$(li)Un bloc d'argile réfractaire donne $(item)1 boule d'argile réfractaire$(), et quatre boules redonnent un bloc : minez la couche sans compter."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Soufre$() avec scorchia, roche noire, magma et basalte. C'est le $(item)seul endroit où le soufre apparaît$().$(li)$(item)Argile réfractaire$() avec scorchia, gravier, magma, sable et terre des âmes.$(br2)Le soufre servira plus tard à la poudre à canon, à l'acide sulfurique et au caoutchouc : rapportez-en une bonne pile dès votre premier voyage."
+      "text": "$(l)Le Nether$()$(br)Dans le Nether, les amas apparaissent entre $(item)Y 40 et Y 90$(), eux aussi dans environ un chunk sur 18. Il existe deux motifs :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Soufre$() avec scorchia, roche noire, magma et basalte. C'est le $(item)seul endroit où le soufre apparaît$().$(li)$(item)Argile réfractaire$() avec scorchia, gravier, magma, sable et terre des âmes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le soufre servira plus tard à la poudre à canon, à l'acide sulfurique et au caoutchouc : rapportez-en une bonne pile dès votre premier voyage."
     },
     {
       "type": "patchouli:spotlight",

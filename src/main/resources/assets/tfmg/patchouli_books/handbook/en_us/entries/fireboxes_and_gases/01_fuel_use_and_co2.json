@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Exhaust$()$(br)With the server setting $(item)fireboxExhaustRequirement$() on (the default), each block also puts $(item)500 mB of carbon dioxide$() into the exhaust tank every 3 seconds, about 167 mB per second per block.$(br2)When the exhaust tank is full, the firebox stops and goggles show $(item)Exhaust full: pump the CO2 away$(). So every firebox needs a way out for its CO2:"
+      "text": "$(l)Exhaust$()$(br)With the server setting $(item)fireboxExhaustRequirement$() on (the default), each block also puts $(item)500 mB of carbon dioxide$() into the exhaust tank every 3 seconds, about 167 mB per second per block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When the exhaust tank is full, the firebox stops and goggles show $(item)Exhaust full: pump the CO2 away$(). So every firebox needs a way out for its CO2:"
     },
     {
       "type": "patchouli:text",

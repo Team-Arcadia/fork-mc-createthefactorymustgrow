@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "C'est le point qui trouble tout le monde, alors lisez attentivement.$(br2)Chaque fournée $(item)consomme une poussière de coke de charbon$(). Ensuite, $(item)90 % du temps$(), une poussière est $(item)rendue à l'entrée de la cuve$(), pas à la sortie."
+      "text": "C'est le point qui trouble tout le monde, alors lisez attentivement."
     },
     {
       "type": "patchouli:text",
-      "text": "Donc en regardant la cuve :$(br2)$(li)le nombre de poussières $(item)reste en général le même$() d'une fournée à l'autre,$(li)il $(item)baisse de 1 environ une fois toutes les 10 fournées$(),$(li)la poussière de coke $(item)ne sort jamais$() côté sortie."
+      "text": "Chaque fournée $(item)consomme une poussière de coke de charbon$(). Ensuite, $(item)90 % du temps$(), une poussière est $(item)rendue à l'entrée de la cuve$(), pas à la sortie.$(br2)Donc en regardant la cuve :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)le nombre de poussières $(item)reste en général le même$() d'une fournée à l'autre,$(li)il $(item)baisse de 1 environ une fois toutes les 10 fournées$(),$(li)la poussière de coke $(item)ne sort jamais$() côté sortie."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Gardez quelques poussières en entrée et complétez de temps en temps, ou laissez un entonnoir en ajouter lentement. Si l'emplacement d'entrée est plein quand une poussière revient, elle part en sortie pour ne jamais être supprimée.$(br2)JEI montre la même chose sur la recette : la poussière y est indiquée comme rendue à l'entrée de la cuve, avec environ 10 % consommés par cycle."
+      "text": "Gardez quelques poussières en entrée et complétez de temps en temps, ou laissez un entonnoir en ajouter lentement. Si l'emplacement d'entrée est plein quand une poussière revient, elle part en sortie pour ne jamais être supprimée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "JEI montre la même chose sur la recette : la poussière y est indiquée comme rendue à l'entrée de la cuve, avec environ 10 % consommés par cycle."
     },
     {
       "type": "patchouli:spotlight",

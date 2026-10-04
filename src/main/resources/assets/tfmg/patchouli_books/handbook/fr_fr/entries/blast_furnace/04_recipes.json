@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Fer brut concassé + 1 sable calcaire$()$(br)$(item)144 mB$() d'acier en fusion, 144 mB de laitier, du gaz de haut fourneau. Base 400 ticks.$(br2)$(l)Fer brut + 1 sable calcaire$()$(br)$(item)288 mB$() d'acier en fusion, 288 mB de laitier, du gaz. Base 800 ticks : même vitesse par lingot, mais concasser d'abord permet de profiter du traitement des minerais de Create."
+      "text": "$(l)Fer brut concassé + 1 sable calcaire$()$(br)$(item)144 mB$() d'acier en fusion, 144 mB de laitier, du gaz de haut fourneau. Base 400 ticks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fer brut + 1 sable calcaire$()$(br)$(item)288 mB$() d'acier en fusion, 288 mB de laitier, du gaz. Base 800 ticks : même vitesse par lingot, mais concasser d'abord permet de profiter du traitement des minerais de Create."
     },
     {
       "type": "patchouli:text",

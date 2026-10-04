@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Advanced Potato Cannon Fires only $(item)Napalm Potatoes$():$() a potato filled with 500 mB of napalm by a spout. On impact it bursts into a shower of fire sparks and an explosion that $(item)breaks blocks$()."
+      "text": "$(l)Advanced Potato Cannon$()"
     },
     {
       "type": "patchouli:text",
-      "text": "It reloads in 75 ticks (under 4 seconds) and has 500 durability. Like Create's cannon, a filled backtank absorbs the wear."
+      "text": "Fires only $(item)Napalm Potatoes$(): a potato filled with 500 mB of napalm by a spout. On impact it bursts into a shower of fire sparks and an explosion that $(item)breaks blocks$(). It reloads in 75 ticks (under 4 seconds) and has 500 durability. Like Create's cannon, a filled backtank absorbs the wear."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Quad Potato Cannon$()$(br)Takes the same ammunition as Create's Potato Cannon, but each shot fires $(item)four times$() as many projectiles in a spray, for one ammo item. Reload time depends on the ammo, as in Create. It has 100 durability, uses backtank air the same way, and accepts Power, Punch, Flame, Looting and Potato Recovery."
+      "text": "$(l)Quad Potato Cannon$()$(br)Takes the same ammunition as Create's Potato Cannon, but each shot fires $(item)four times$() as many projectiles in a spray, for one ammo item.$(br)Reload time depends on the ammo, as in Create."
     },
     {
       "type": "patchouli:text",
-      "text": "Both cannons look for ammo anywhere in your inventory. Hold the cannon and read its tooltip to see the damage, reload and knockback of the ammo it will use."
+      "text": "It has 100 durability, uses backtank air the same way, and accepts Power, Punch, Flame, Looting and Potato Recovery.$(br2)Both cannons look for ammo anywhere in your inventory. Hold the cannon and read its tooltip to see the damage, reload and knockback of the ammo it will use."
     },
     {
       "type": "patchouli:spotlight",

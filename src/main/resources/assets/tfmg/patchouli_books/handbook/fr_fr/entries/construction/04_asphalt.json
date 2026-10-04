@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Le bitume$()$(br)Dans une presse mécanique au-dessus d'un bassin $(item)chauffé$(), $(item)1000 mB de pétrole lourd$() se compactent en un $(item)bitume$(). Un foyer allumé ou un brûleur à blaze allumé sous le bassin suffit.$(br2)$(l)Le mélange à asphalte$()$(br)Au mélangeur : $(item)sable + bitume + gravier$() donne $(item)16 mélanges à asphalte$(). Avec du $(item)laitier$() à la place du sable, vous en obtenez $(item)32$()."
+      "text": "$(l)Le bitume$()$(br)Dans une presse mécanique au-dessus d'un bassin $(item)chauffé$(), $(item)1000 mB de pétrole lourd$() se compactent en un $(item)bitume$(). Un foyer allumé ou un brûleur à blaze allumé sous le bassin suffit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le mélange à asphalte$()$(br)Au mélangeur : $(item)sable + bitume + gravier$() donne $(item)16 mélanges à asphalte$(). Avec du $(item)laitier$() à la place du sable, vous en obtenez $(item)32$()."
     },
     {
       "type": "patchouli:text",
@@ -18,11 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)La pose$()$(br)Versez l'asphalte liquide comme le béton liquide : il $(item)durcit en blocs d'asphalte$() après un court délai aléatoire. Étalez-le au seau pour les petits chemins, ou avec une poulie à tuyau de Create pour les longues routes.$(br2)Au tailleur de pierre, un bloc d'asphalte donne $(item)2 dalles$(), ou un escalier, ou un muret, pour les bordures et les rampes."
+      "text": "$(l)La pose$()$(br)Versez l'asphalte liquide comme le béton liquide : il $(item)durcit en blocs d'asphalte$() après un court délai aléatoire. Étalez-le au seau pour les petits chemins, ou avec une poulie à tuyau de Create pour les longues routes."
     },
     {
       "type": "patchouli:text",
-      "text": "Un bitume devient 16 à 32 blocs de route : un seul réservoir de pétrole lourd mène loin."
+      "text": "Au tailleur de pierre, un bloc d'asphalte donne $(item)2 dalles$(), ou un escalier, ou un muret, pour les bordures et les rampes.$(br2)Un bitume devient 16 à 32 blocs de route : un seul réservoir de pétrole lourd mène loin."
     },
     {
       "type": "patchouli:spotlight",

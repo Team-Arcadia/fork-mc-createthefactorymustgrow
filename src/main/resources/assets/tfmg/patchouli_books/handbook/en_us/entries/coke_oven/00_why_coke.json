@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "The oven bakes one input at a time and gives:$(li)$(item)Coal$() becomes $(item)coal coke$(), plus creosote and CO2.$(li)Any $(item)log that burns$() becomes $(item)charcoal$(), plus creosote and CO2.$(br2)The solid result drops out of the front door as an item. The two by-products are fluids that stay in the oven until you pump them out."
+      "text": "The oven bakes one input at a time and gives:$(li)$(item)Coal$() becomes $(item)coal coke$(), plus creosote and CO2.$(li)Any $(item)log that burns$() becomes $(item)charcoal$(), plus creosote and CO2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The solid result drops out of the front door as an item. The two by-products are fluids that stay in the oven until you pump them out."
     },
     {
       "type": "patchouli:text",

@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Les formes$()$(br)Au tailleur de pierre, un bloc de béton donne :$(li)$(item)2 dalles de béton$(), ou un escalier, ou un muret,$(li)$(item)8 parpaings$(), les petites briques grises.$(br2)Six de ces parpaings autour de deux armatures et d'un seau de béton liquide donnent $(item)8 blocs de parpaing$(), le bloc de mur pleine taille."
+      "text": "$(l)Les formes$()$(br)Au tailleur de pierre, un bloc de béton donne :$(li)$(item)2 dalles de béton$(), ou un escalier, ou un muret,$(li)$(item)8 parpaings$(), les petites briques grises."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Six de ces parpaings autour de deux armatures et d'un seau de béton liquide donnent $(item)8 blocs de parpaing$(), le bloc de mur pleine taille."
     },
     {
       "type": "patchouli:text",

@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Since 1.3.0 the upgrade asks the engine first and drains only that amount. Before, it could drain fuel the engine refused and void it, and a full source tank never fed anything.$(br2)The upgrade finds a new tank by itself when you place or replace one next to the engine. Place the tank against the block that carries the pipe, not against another block of the row."
+      "text": "Since 1.3.0 the upgrade asks the engine first and drains only that amount. Before, it could drain fuel the engine refused and void it, and a full source tank never fed anything."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The upgrade finds a new tank by itself when you place or replace one next to the engine. Place the tank against the block that carries the pipe, not against another block of the row."
     },
     {
       "type": "patchouli:spotlight",

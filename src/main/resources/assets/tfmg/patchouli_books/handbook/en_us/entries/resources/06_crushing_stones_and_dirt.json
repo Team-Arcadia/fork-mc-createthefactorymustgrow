@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The layered stones and a few common blocks are crushed too. Chances are per block: $(li)$(item)Bauxite$(): 75% chance of 2 bauxite powder, plus 20% chance of 1 more. $(li)$(item)Galena$(): 40% chance of 1 crushed raw lead, 10% chance of 2 lead nuggets."
+      "text": "The layered stones and a few common blocks are crushed too. Chances are per block:$(br2)$(li)$(item)Bauxite$(): 75% chance of 2 bauxite powder, plus 20% chance of 1 more."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Lignite$(): 75% chance of 1 coal, plus 20% chance of 1 more. $(li)$(item)Sulfur$(): 20% chance of 1 sulfur dust, plus 10% chance of 1 more. $(li)$(item)Limestone$() (Create): always 1 $(item)limesand$(). $(li)$(item)Dirt$(): 5% chance of 1 $(item)nitrate dust$() (saltpeter). Crush dirt in bulk."
+      "text": "$(li)$(item)Galena$(): 40% chance of 1 crushed raw lead, 10% chance of 2 lead nuggets.$(li)$(item)Lignite$(): 75% chance of 1 coal, plus 20% chance of 1 more.$(li)$(item)Sulfur$(): 20% chance of 1 sulfur dust, plus 10% chance of 1 more.$(li)$(item)Limestone$() (Create): always 1 $(item)limesand$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Dirt$(): 5% chance of 1 $(item)nitrate dust$() (saltpeter). Crush dirt in bulk."
     },
     {
       "type": "patchouli:text",

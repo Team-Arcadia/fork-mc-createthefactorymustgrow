@@ -6,19 +6,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Les $(item)armatures$() sortent du tailleur de pierre : un lingot d'acier donne $(item)4 armatures$(). Neuf armatures se rangent en $(item)pile d'armature$(), et inversement. Les armatures donnent des cadres à poser dans le monde : $(li)$(item)bloc d'armature$() :"
+      "text": "Les $(item)armatures$() sortent du tailleur de pierre : un lingot d'acier donne $(item)4 armatures$(). Neuf armatures se rangent en $(item)pile d'armature$(), et inversement.$(br2)Les armatures donnent des cadres à poser dans le monde :"
     },
     {
       "type": "patchouli:text",
-      "text": "4 armatures dans les coins en donnent 4, - $(item)sol d'armature$() : une ligne de 3 en donne 3, - $(item)pilier d'armature$() : une colonne de 3 en donne 3, - $(item)escalier d'armature$() : 3 en forme de marche en donnent 3, - $(item)muret d'armature$() : deux lignes de 3 en donnent 6."
+      "text": "$(li)$(item)bloc d'armature$() : 4 armatures dans les coins en donnent 4,$(li)$(item)sol d'armature$() : une ligne de 3 en donne 3,$(li)$(item)pilier d'armature$() : une colonne de 3 en donne 3,$(li)$(item)escalier d'armature$() : 3 en forme de marche en donnent 3,"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Les remplir Faites un clic droit sur un cadre d'armature avec un $(item)seau de béton liquide$() pour le remplir ;$() un seau vide reprend le béton. Chaque cadre contient un seau. Les cadres remplis $(item)sèchent tout seuls$() après un court délai aléatoire :"
+      "text": "$(li)$(item)muret d'armature$() : deux lignes de 3 en donnent 6.$(br2)$(l)Les remplir$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)le bloc d'armature devient du $(item)béton armé$(), - le sol, le pilier, l'escalier et le muret deviennent la forme de $(item)béton armé$() correspondante.$(br2)Les tuyaux industriels, les tubes de câbles et les poteaux électriques se remplissent de la même façon et sèchent en version $(item)encastrée dans du béton$(), parfait pour enterrer un tuyau ou un câble dans un sol."
+      "text": "Faites un clic droit sur un cadre d'armature avec un $(item)seau de béton liquide$() pour le remplir ; un seau vide reprend le béton. Chaque cadre contient un seau. Les cadres remplis $(item)sèchent tout seuls$() après un court délai aléatoire :$(li)le bloc d'armature devient du $(item)béton armé$(),"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)le sol, le pilier, l'escalier et le muret deviennent la forme de $(item)béton armé$() correspondante."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les tuyaux industriels, les tubes de câbles et les poteaux électriques se remplissent de la même façon et sèchent en version $(item)encastrée dans du béton$(), parfait pour enterrer un tuyau ou un câble dans un sol."
     },
     {
       "type": "patchouli:text",

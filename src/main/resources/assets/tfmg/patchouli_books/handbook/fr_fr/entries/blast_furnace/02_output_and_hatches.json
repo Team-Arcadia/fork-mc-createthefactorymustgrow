@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)La sortie Elle prend la place d'une $(item)brique de côté de la couche du bas$() et doit $(item)regarder vers l'extérieur$(), le dos contre le centre.$() Elle vous fait face quand vous la posez : posez-la depuis l'extérieur de la tour."
+      "text": "$(l)La sortie$()$(br)Elle prend la place d'une $(item)brique de côté de la couche du bas$() et doit $(item)regarder vers l'extérieur$(), le dos contre le centre. Elle vous fait face quand vous la posez : posez-la depuis l'extérieur de la tour. L'acier et le laitier en fusion se pompent par n'importe laquelle de ses faces."
     },
     {
       "type": "patchouli:text",
-      "text": "L'acier et le laitier en fusion se pompent par n'importe laquelle de ses faces.$(br2)$(l)La trappe d'air chaud$()$(br)Placez $(item)une$() trappe de haut fourneau à la place d'une $(item)brique de côté$(), sur n'importe quelle couche, et envoyez-y l'air chaud. Le fourneau ne prend son air chaud que dans cette trappe."
+      "text": "$(l)La trappe d'air chaud$()$(br)Placez $(item)une$() trappe de haut fourneau à la place d'une $(item)brique de côté$(), sur n'importe quelle couche, et envoyez-y l'air chaud. Le fourneau ne prend son air chaud que dans cette trappe."
     },
     {
       "type": "patchouli:text",

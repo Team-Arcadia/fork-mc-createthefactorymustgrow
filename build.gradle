@@ -76,6 +76,8 @@ neoForge {
         // each spread to run/screenshots/handbook_*.png for review.
         clientGuideShots {
             client()
+            // Separate game directory so it can run next to a normal client.
+            gameDirectory = project.file('run-shots')
             systemProperty 'tfmg.guide.screenshots', 'true'
             systemProperty 'tfmg.guide.screenshots.filter', System.getProperty('handbookFilter', '')
             systemProperty 'tfmg.gametest.exit', 'true'

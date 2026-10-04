@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Feu de circulation Il passe tout seul du rouge à l'orange puis au vert, et recommence.$() Réglez la durée du cycle avec sa boîte de valeur. Il se connecte par ses faces $(item)du dessus$() et $(item)du dessous$(), pour l'empiler sur un poteau, et c'est un consommateur de $(item)175 ohms$()."
+      "text": "$(l)Feu de circulation$()$(br)Il passe tout seul du rouge à l'orange puis au vert, et recommence. Réglez la durée du cycle avec sa boîte de valeur. Il se connecte par ses faces $(item)du dessus$() et $(item)du dessous$(), pour l'empiler sur un poteau, et c'est un consommateur de $(item)175 ohms$(). Il ne s'allume que lorsqu'il est alimenté."
     },
     {
       "type": "patchouli:text",
-      "text": "Il ne s'allume que lorsqu'il est alimenté.$(br2)$(l)Congélateur$()$(br)Il refroidit une cuve chimique. Il se connecte sur $(item)toutes ses faces$() et c'est un consommateur de $(item)75 ohms$(). Il ne fonctionne qu'avec $(item)plus de 3 A$(), donc au-dessus de $(item)225 V$(), et grille au-delà de 400 A."
+      "text": "$(l)Congélateur$()$(br)Il refroidit une cuve chimique. Il se connecte sur $(item)toutes ses faces$() et c'est un consommateur de $(item)75 ohms$(). Il ne fonctionne qu'avec $(item)plus de 3 A$(), donc au-dessus de $(item)225 V$(), et grille au-delà de 400 A."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Porte-électrode$()$(br)Il tient une électrode dans une cuve chimique pour l'électrolyse. Il reçoit le courant par sa face $(item)du dessus$() et demande au moins $(item)5 A$() pour fonctionner ; sa résistance dépend de l'électrode installée.$(br2)Les deux font partie du multibloc de la cuve. Voir le chapitre $(item)Cuves chimiques$() pour en construire une, et le chapitre $(item)L'aluminium$() pour l'électrolyse."
+      "text": "$(l)Porte-électrode$()$(br)Il tient une électrode dans une cuve chimique pour l'électrolyse. Il reçoit le courant par sa face $(item)du dessus$() et demande au moins $(item)5 A$() pour fonctionner ; sa résistance dépend de l'électrode installée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les deux font partie du multibloc de la cuve. Voir le chapitre $(item)Cuves chimiques$() pour en construire une, et le chapitre $(item)L'aluminium$() pour l'électrolyse."
     },
     {
       "type": "patchouli:spotlight",

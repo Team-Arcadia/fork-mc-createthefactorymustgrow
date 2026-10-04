@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Look at any block of a vat with $(item)Engineer's Goggles$(). You see its pressure and heat bars, its contents, then the list of $(item)attachments$(): every machine the vat has counted.$(br2)When the vat sits idle, a red line tells you why:"
+      "text": "Look at any block of a vat with $(item)Engineer's Goggles$(). You see its pressure and heat bars, its contents, then the list of $(item)attachments$(): every machine the vat has counted."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)**An attached machine is not working: no recipe can run.** Find the machine that is too slow or unpowered. $(li)**No recipe matches: check size, vat type and machines in JEI.** The inputs are there but nothing fits: wrong vat kind, too small, or a machine missing."
+      "text": "When the vat sits idle, a red line tells you why:$(br2)$(li)$(item)An attached machine is not working: no recipe can run.$() Find the machine that is too slow or unpowered."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Not hot enough for this recipe.$() Add or light a firebox under the vat, or remove a freezer. $(li)$(item)Pressure too low for this recipe.$() Add a compressor, speed it up past 120 RPM, or reverse it.$(br2)If a machine does not appear in the attachments at all, it is in the wrong place (outside the footprint, or a mixer off-centre on a 3x3), or it has no blade or electrode."
+      "text": "$(li)$(item)No recipe matches: check size, vat type and machines in JEI.$() The inputs are there but nothing fits: wrong vat kind, too small, or a machine missing.$(li)$(item)Not hot enough for this recipe.$() Add or light a firebox under the vat, or remove a freezer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Pressure too low for this recipe.$() Add a compressor, speed it up past 120 RPM, or reverse it.$(br2)If a machine does not appear in the attachments at all, it is in the wrong place (outside the footprint, or a mixer off-centre on a 3x3), or it has no blade or electrode."
     },
     {
       "type": "patchouli:spotlight",

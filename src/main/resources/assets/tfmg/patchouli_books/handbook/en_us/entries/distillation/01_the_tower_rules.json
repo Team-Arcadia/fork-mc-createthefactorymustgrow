@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The controller checks these rules every tick. If one fails, nothing happens at all, so build carefully. $(l)Outputs - The first output sits $(item)directly on top$() of the controller.$() Then pipe, output, pipe, output, up to $(item)six outputs$()."
+      "text": "The controller checks these rules every tick. If one fails, nothing happens at all, so build carefully.$(br2)$(l)Outputs$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)The stack stops at the first block that breaks the pattern, so a missing pipe hides every output above it. $(li)The number of outputs must $(item)exactly$() equal the number of products of a recipe. That is how you choose the recipe: add or remove an output to switch."
+      "text": "$(li)The first output sits $(item)directly on top$() of the controller. Then pipe, output, pipe, output, up to $(item)six outputs$().$(li)The stack stops at the first block that breaks the pattern, so a missing pipe hides every output above it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)The number of outputs must $(item)exactly$() equal the number of products of a recipe. That is how you choose the recipe: add or remove an output to switch."
     },
     {
       "type": "patchouli:text",

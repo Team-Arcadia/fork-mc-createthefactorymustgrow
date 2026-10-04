@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Crush $(item)bauxite$() with crushing wheels or a millstone to get bauxite powder.$(li)Put a $(item)mechanical mixer$() over a $(item)basin$() on a $(item)blaze burner$(), and feed the burner a $(item)blaze cake$() to make it superheated.$(li)Drop the powder and the dust into the basin.$(br2)Later, a chemical vat with electrodes gives aluminium from bauxite powder alone, with extra nuggets."
+      "text": "$(li)Crush $(item)bauxite$() with crushing wheels or a millstone to get bauxite powder.$(li)Put a $(item)mechanical mixer$() over a $(item)basin$() on a $(item)blaze burner$(), and feed the burner a $(item)blaze cake$() to make it superheated.$(li)Drop the powder and the dust into the basin."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)The screwdriver$()$(br)Craft it from $(item)rebar over an aluminium ingot$() (a brass ingot works too). It has $(item)256 uses$(): a deployer holding it wears it down instead of using it up."
+      "text": "Later, a chemical vat with electrodes gives aluminium from bauxite powder alone, with extra nuggets.$(br2)$(l)The screwdriver$()$(br)Craft it from $(item)rebar over an aluminium ingot$() (a brass ingot works too). It has $(item)256 uses$(): a deployer holding it wears it down instead of using it up."
     },
     {
       "type": "patchouli:spotlight",

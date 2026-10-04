@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le contrôleur vérifie ces règles à chaque tick. Si l'une d'elles échoue, il ne se passe rien du tout : construisez avec soin. $(l)Les sorties - La première sortie se pose $(item)juste au-dessus$() du contrôleur.$() Ensuite tuyau, sortie, tuyau, sortie, jusqu'à $(item)six sorties$()."
+      "text": "Le contrôleur vérifie ces règles à chaque tick. Si l'une d'elles échoue, il ne se passe rien du tout : construisez avec soin.$(br2)$(l)Les sorties$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)La pile s'arrête au premier bloc qui casse le motif : un tuyau manquant cache toutes les sorties au-dessus. $(li)Le nombre de sorties doit être $(item)exactement$() égal au nombre de produits d'une recette. C'est ainsi que vous choisissez la recette : ajoutez ou retirez une sortie pour en changer."
+      "text": "$(li)La première sortie se pose $(item)juste au-dessus$() du contrôleur. Ensuite tuyau, sortie, tuyau, sortie, jusqu'à $(item)six sorties$().$(li)La pile s'arrête au premier bloc qui casse le motif : un tuyau manquant cache toutes les sorties au-dessus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Le nombre de sorties doit être $(item)exactement$() égal au nombre de produits d'une recette. C'est ainsi que vous choisissez la recette : ajoutez ou retirez une sortie pour en changer."
     },
     {
       "type": "patchouli:text",

@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Concassez de la $(item)bauxite$() avec des roues de concassage ou une meule pour obtenir la poudre de bauxite. $(li)Placez un $(item)mélangeur mécanique$() au-dessus d'un $(item)bassin$() posé sur un $(item)brûleur à blaze$(), et donnez au brûleur un $(item)gâteau de blaze$() pour le surchauffer. $(li)Mettez la poudre et la poussière dans le bassin."
+      "text": "$(li)Concassez de la $(item)bauxite$() avec des roues de concassage ou une meule pour obtenir la poudre de bauxite."
     },
     {
       "type": "patchouli:text",
-      "text": "Plus tard, une cuve chimique avec des électrodes donne de l'aluminium à partir de la seule poudre de bauxite, avec des pépites en plus.$(br2)$(l)Le tournevis$()$(br)Fabriquez-le avec une $(item)armature au-dessus d'un lingot d'aluminium$() (un lingot de laiton marche aussi). Il a $(item)256 utilisations$() : un déployeur qui le tient l'use au lieu de le consommer."
+      "text": "$(li)Placez un $(item)mélangeur mécanique$() au-dessus d'un $(item)bassin$() posé sur un $(item)brûleur à blaze$(), et donnez au brûleur un $(item)gâteau de blaze$() pour le surchauffer.$(li)Mettez la poudre et la poussière dans le bassin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Plus tard, une cuve chimique avec des électrodes donne de l'aluminium à partir de la seule poudre de bauxite, avec des pépites en plus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le tournevis$()$(br)Fabriquez-le avec une $(item)armature au-dessus d'un lingot d'aluminium$() (un lingot de laiton marche aussi). Il a $(item)256 utilisations$() : un déployeur qui le tient l'use au lieu de le consommer."
     },
     {
       "type": "patchouli:spotlight",

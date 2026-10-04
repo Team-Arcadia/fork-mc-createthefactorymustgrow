@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The three TFMG ores generate in every Overworld biome, with a stone and a deepslate variant. Mine them with at least a $(item)stone pickaxe$().$(br2)$(l)Lead$()$(br)Veins of up to 12 blocks, 5 attempts per chunk, between $(item)Y -15 and Y 80$(). The easiest to find."
+      "text": "The three TFMG ores generate in every Overworld biome, with a stone and a deepslate variant. Mine them with at least a $(item)stone pickaxe$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Nickel$()$(br)Veins of up to 10 blocks, 5 attempts per chunk, between $(item)Y -63 and Y 20$().$(br2)$(l)Lithium$()$(br)Smaller veins of up to 7 blocks, 3 attempts per chunk, deep between $(item)Y -63 and Y -5$(). Expect deepslate lithium ore most of the time."
+      "text": "$(l)Lead$()$(br)Veins of up to 12 blocks, 5 attempts per chunk, between $(item)Y -15 and Y 80$(). The easiest to find.$(br2)$(l)Nickel$()$(br)Veins of up to 10 blocks, 5 attempts per chunk, between $(item)Y -63 and Y 20$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Lithium$()$(br)Smaller veins of up to 7 blocks, 3 attempts per chunk, deep between $(item)Y -63 and Y -5$(). Expect deepslate lithium ore most of the time."
     },
     {
       "type": "patchouli:text",

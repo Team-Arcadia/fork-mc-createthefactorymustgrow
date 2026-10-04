@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Un clic droit sur le moteur avec un $(item)arbre$() le pose au bon endroit. L'arbre doit croiser la direction du moteur, pas pointer vers lui."
+      "text": "Un clic droit sur le moteur avec un $(item)arbre$() le pose au bon endroit. L'arbre doit croiser la direction du moteur, pas pointer vers lui.$(br2)$(l)Ce qu'il leur faut$()$(li)$(item)Carburant$() : diesel, kérosène, naphta ou gaz de four (réservoir de 2000 mB)."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Ce qu'il leur faut$()$(li)$(item)Carburant$() : diesel, kérosène, naphta ou gaz de four (réservoir de 2000 mB).$(li)De l'$(item)air$() dans un réservoir d'air séparé de 1000 mB. Amenez-le depuis une $(item)prise d'air$().$(li)De la place dans le réservoir d'$(item)échappement$() de 2000 mB : évacuez le CO2."
+      "text": "$(li)De l'$(item)air$() dans un réservoir d'air séparé de 1000 mB. Amenez-le depuis une $(item)prise d'air$().$(li)De la place dans le réservoir d'$(item)échappement$() de 2000 mB : évacuez le CO2."
     },
     {
       "type": "patchouli:text",

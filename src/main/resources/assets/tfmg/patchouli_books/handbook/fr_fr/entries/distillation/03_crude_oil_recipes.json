@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)6 sorties : 340 mB de pétrole brut$()$(li)120 mB de pétrole lourd$(li)60 mB de diesel$(li)30 mB de kérosène$(li)10 mB de naphta$(li)60 mB d'essence$(li)60 mB de GPL$(br2)$(l)5 sorties : 330 mB de pétrole brut$()$(br)Comme ci-dessus $(item)sans naphta$() : 120 pétrole lourd, 60 diesel, 30 kérosène, 60 essence, 60 GPL."
+      "text": "$(l)6 sorties : 340 mB de pétrole brut$()$(li)120 mB de pétrole lourd$(li)60 mB de diesel$(li)30 mB de kérosène$(li)10 mB de naphta$(li)60 mB d'essence$(li)60 mB de GPL"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)3 sorties : 200 mB de pétrole brut (distillation légère)$()$(br)150 mB de pétrole lourd, 45 mB de diesel, 5 mB d'essence."
+      "text": "$(l)5 sorties : 330 mB de pétrole brut$()$(br)Comme ci-dessus $(item)sans naphta$() : 120 pétrole lourd, 60 diesel, 30 kérosène, 60 essence, 60 GPL.$(br2)$(l)3 sorties : 200 mB de pétrole brut (distillation légère)$()$(br)150 mB de pétrole lourd, 45 mB de diesel, 5 mB d'essence."
     },
     {
       "type": "patchouli:text",

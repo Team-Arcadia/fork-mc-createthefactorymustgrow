@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A coke oven is a $(item)square slice$() of oven blocks: as many blocks $(item)high$() as it is $(item)deep$(), and only $(item)one block wide$(). Think of it as a row of long chambers running back from the doors. $(li)Every block must face the $(item)same way$()."
+      "text": "A coke oven is a $(item)square slice$() of oven blocks: as many blocks $(item)high$() as it is $(item)deep$(), and only $(item)one block wide$(). Think of it as a row of long chambers running back from the doors."
     },
     {
       "type": "patchouli:text",
-      "text": "A block faces you when you place it, so place them all while looking at the future front. $(li)The $(item)controller$() is the $(item)bottom front$() block. Only the front column shows doors. $(li)Sizes go from $(item)1x1$() to $(item)6x6$() (the server setting cokeOvenMaxSize, 5 by default, sets the limit). $(li)Extra blocks above or behind a full-size square stay separate ovens."
+      "text": "$(li)Every block must face the $(item)same way$(). A block faces you when you place it, so place them all while looking at the future front.$(li)The $(item)controller$() is the $(item)bottom front$() block. Only the front column shows doors."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Sizes go from $(item)1x1$() to $(item)6x6$() (the server setting cokeOvenMaxSize, 5 by default, sets the limit).$(li)Extra blocks above or behind a full-size square stay separate ovens."
     },
     {
       "type": "patchouli:text",

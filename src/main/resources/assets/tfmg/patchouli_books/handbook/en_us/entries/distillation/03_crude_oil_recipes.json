@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)3 outputs: 200 mB crude oil (light distillation)$()$(br)150 mB heavy oil, 45 mB diesel, 5 mB gasoline.$(br2)All amounts are per run at a heat of 2. The six-output tower gives the widest range of fuels, plus naphtha, which you need for plastics. The three-output tower is cheap to build but turns most of the oil into heavy oil."
+      "text": "$(l)3 outputs: 200 mB crude oil (light distillation)$()$(br)150 mB heavy oil, 45 mB diesel, 5 mB gasoline."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "All amounts are per run at a heat of 2. The six-output tower gives the widest range of fuels, plus naphtha, which you need for plastics. The three-output tower is cheap to build but turns most of the oil into heavy oil."
     },
     {
       "type": "patchouli:spotlight",

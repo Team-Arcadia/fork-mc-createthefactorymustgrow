@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)A machine does not turn Look at its shaft with goggles.$() No speed means nothing reaches it: check every shaft and cogwheel on the way. If the network is $(item)overstressed$(), everything on it stops: add a source or remove consumers."
+      "text": "$(l)A machine does not turn$()$(br)Look at its shaft with goggles.$(br)No speed means nothing reaches it:$(br)check every shaft and cogwheel on the way.$(br)If the network is $(item)overstressed$(), everything on it stops:"
     },
     {
       "type": "patchouli:text",
-      "text": "Some machines also need a minimum speed: a single air intake needs 40 RPM, the surface scanner 64 RPM.$(br2)$(l)A vat attachment does nothing$()$(br)See the vat page: one stopped machine on a vat blocks every recipe, so give it rotation or power, or take it off."
+      "text": "add a source or remove consumers.$(br)Some machines also need a minimum speed:$(br)a single air intake needs 40 RPM, the surface scanner 64 RPM."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Electricity destroys blocks Every electrical block has a $(item)maximum voltage$() (1000 V for most of them) and some have a maximum current.$() Above it for a moment, the block $(item)is destroyed and drops nothing$(). The goggles and the multimeter warn first with $(item)Approaching Overvoltage$() or $(item)Approaching Overcurrent$() at 80% of the limit."
+      "text": "$(l)A vat attachment does nothing$()$(br)See the vat page: one stopped machine on a vat blocks every recipe, so give it rotation or power, or take it off.$(br2)$(l)Electricity destroys blocks$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Every electrical block has a $(item)maximum voltage$() (1000 V for most of them) and some have a maximum current.$(br)Above it for a moment, the block $(item)is destroyed and drops nothing$().$(br)The goggles and the multimeter warn first with $(item)Approaching Overvoltage$() or $(item)Approaching Overcurrent$() at 80% of the limit."
     },
     {
       "type": "patchouli:text",

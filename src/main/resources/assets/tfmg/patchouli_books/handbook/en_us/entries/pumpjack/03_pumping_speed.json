@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(item)RPM x (connector distance / 5) x sin(crank angle)$() mB"
+      "text": "$(item)RPM x (connector distance / 5) x sin(crank angle)$() mB$(br2)$(li)$(item)RPM$() is the speed of the machine input, in either direction.$(li)$(item)Connector distance$() is the number of blocks between the holder and the connector along the beam."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)RPM$() is the speed of the machine input, in either direction.$(li)$(item)Connector distance$() is the number of blocks between the holder and the connector along the beam.$(li)The sine follows the stroke, so the flow pulses: highest mid-stroke, zero at the top and bottom. On average you get about $(item)two thirds$() of the peak."
+      "text": "$(li)The sine follows the stroke, so the flow pulses: highest mid-stroke, zero at the top and bottom. On average you get about $(item)two thirds$() of the peak."
     },
     {
       "type": "patchouli:text",
-      "text": "Example: the pumpjack on the first page has its connector 3 blocks from the holder. At 64 RPM it peaks at about 38 mB per tick, roughly $(item)490 mB per second$() on average.$(br2)To pump faster, spin the input faster or move the connector further from the holder. The machine input has a stress impact of $(item)4 per RPM$(), so 64 RPM costs 256 SU."
+      "text": "Example: the pumpjack on the first page has its connector 3 blocks from the holder. At 64 RPM it peaks at about 38 mB per tick, roughly $(item)490 mB per second$() on average."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "To pump faster, spin the input faster or move the connector further from the holder. The machine input has a stress impact of $(item)4 per RPM$(), so 64 RPM costs 256 SU."
     },
     {
       "type": "patchouli:spotlight",

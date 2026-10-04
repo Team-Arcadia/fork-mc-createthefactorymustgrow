@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Since 1.3.0 there is a way to get aluminium $(item)without electricity$(), so you are never stuck before your first generator.$(br2)$(l)The recipe$()$(br)In a Create $(item)Mechanical Mixer$() over a $(item)Basin$():$(br2)$(li)4 $(item)Bauxite Powder$()$(li)1 $(item)Coal Coke Dust$()"
+      "text": "Since 1.3.0 there is a way to get aluminium $(item)without electricity$(), so you are never stuck before your first generator.$(br2)$(l)The recipe$()$(br)In a Create $(item)Mechanical Mixer$() over a $(item)Basin$():"
     },
     {
       "type": "patchouli:text",
-      "text": "give $(item)1 Aluminum Ingot$(). The basin must be $(item)superheated$(): put a Blaze Burner under it and feed the blaze a $(item)Blaze Cake$().$(br2)$(l)Coal Coke Dust$()$(br)Crush $(item)Coal Coke$() in Crushing Wheels: one coke gives one dust. Coal coke comes from the coke oven, covered in the steel chapters."
+      "text": "$(li)4 $(item)Bauxite Powder$()$(li)1 $(item)Coal Coke Dust$()$(br2)give $(item)1 Aluminum Ingot$(). The basin must be $(item)superheated$(): put a Blaze Burner under it and feed the blaze a $(item)Blaze Cake$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Coal Coke Dust$()$(br)Crush $(item)Coal Coke$() in Crushing Wheels: one coke gives one dust. Coal coke comes from the coke oven, covered in the steel chapters."
     },
     {
       "type": "patchouli:text",

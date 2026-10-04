@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Current, not just voltage$()$(br)A holder works only when at least $(item)5 A$() flows through it (the server setting electrolysisMinimumCurrent, 5 by default). Current is voltage divided by resistance, and copper and zinc electrodes are $(item)10 ohm$() each:$(br2)$(li)$(item)50 V$() gives exactly 5 A, the minimum,$(li)below 50 V the holder idles and its multimeter line says not enough current."
+      "text": "$(l)Current, not just voltage$()$(br)A holder works only when at least $(item)5 A$() flows through it (the server setting electrolysisMinimumCurrent, 5 by default). Current is voltage divided by resistance, and copper and zinc electrodes are $(item)10 ohm$() each:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)50 V$() gives exactly 5 A, the minimum,$(li)below 50 V the holder idles and its multimeter line says not enough current."
     },
     {
       "type": "patchouli:text",

@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Sulfur$() with scorchia, blackstone, magma and basalt. This is the $(item)only place sulfur generates$().$(li)$(item)Fireclay$() with scorchia, gravel, magma, soul sand and soul soil.$(br2)Sulfur feeds gunpowder, sulfuric acid and rubber later on, so bring back a good stack on your first trip."
+      "text": "$(li)$(item)Sulfur$() with scorchia, blackstone, magma and basalt. This is the $(item)only place sulfur generates$().$(li)$(item)Fireclay$() with scorchia, gravel, magma, soul sand and soul soil."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sulfur feeds gunpowder, sulfuric acid and rubber later on, so bring back a good stack on your first trip."
     },
     {
       "type": "patchouli:spotlight",

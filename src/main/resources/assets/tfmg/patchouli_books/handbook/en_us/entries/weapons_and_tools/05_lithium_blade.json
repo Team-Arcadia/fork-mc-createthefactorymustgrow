@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Lighting it Carry a $(item)Lithium Charge$() (a plastic sheet, 3 lithium ingots and an aluminium sheet) and right-click with the blade.$() One charge is used and the blade lights for about $(item)100 seconds$(). It goes out by itself when the charge runs dry, and keeps its enchantments both ways."
+      "text": "$(l)Lighting it$()$(br)Carry a $(item)Lithium Charge$() (a plastic sheet, 3 lithium ingots and an aluminium sheet) and right-click with the blade. One charge is used and the blade lights for about $(item)100 seconds$(). It goes out by itself when the charge runs dry, and keeps its enchantments both ways."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)While lit$()$(li)Every hit sets $(item)Hellfire$() on the target for 7 seconds, adding to any Hellfire it already has. Hellfire keeps the target burning for its whole duration. Each hit costs 2 durability.$(li)Right-click to throw a fan of $(item)10 lithium sparks$(). They give Hellfire for 3 seconds but do not set blocks on fire. It costs 5 seconds of charge and has a 3 second cooldown."
+      "text": "$(l)While lit$()$(li)Every hit sets $(item)Hellfire$() on the target for 7 seconds, adding to any Hellfire it already has. Hellfire keeps the target burning for its whole duration. Each hit costs 2 durability."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Right-click to throw a fan of $(item)10 lithium sparks$(). They give Hellfire for 3 seconds but do not set blocks on fire. It costs 5 seconds of charge and has a 3 second cooldown."
     },
     {
       "type": "patchouli:spotlight",

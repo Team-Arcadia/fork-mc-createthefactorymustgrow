@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le haut fourneau ne fonctionne que s'il reçoit de $(item)l'air chaud$(). Pour en produire, il faut trois machines : $(li)Une $(item)prise d'air$() transforme la rotation en $(item)air$(). $(li)Un $(item)fourneau à air chaud$() brûle un combustible pour chauffer cet air en $(item)air chaud$()."
+      "text": "Le haut fourneau ne fonctionne que s'il reçoit de $(item)l'air chaud$(). Pour en produire, il faut trois machines :$(br2)$(li)Une $(item)prise d'air$() transforme la rotation en $(item)air$()."
     },
     {
       "type": "patchouli:text",
-      "text": "Son combustible est la $(item)créosote$() (du four à coke) ou le $(item)gaz de haut fourneau$() (du haut fourneau lui-même). $(li)Un $(item)échappement$() ou une $(item)cheminée$() évacue le $(item)CO2$() rejeté par le fourneau.$(br2)$(l)La recette$()$(br)Chaque part de la recette prend $(item)25 mB d'air$() et $(item)5 mB de combustible$(), et donne $(item)25 mB d'air chaud$() et $(item)25 mB de CO2$()."
+      "text": "$(li)Un $(item)fourneau à air chaud$() brûle un combustible pour chauffer cet air en $(item)air chaud$(). Son combustible est la $(item)créosote$() (du four à coke) ou le $(item)gaz de haut fourneau$() (du haut fourneau lui-même).$(li)Un $(item)échappement$() ou une $(item)cheminée$() évacue le $(item)CO2$() rejeté par le fourneau."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La recette$()$(br)Chaque part de la recette prend $(item)25 mB d'air$() et $(item)5 mB de combustible$(), et donne $(item)25 mB d'air chaud$() et $(item)25 mB de CO2$()."
     },
     {
       "type": "patchouli:text",

@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Several machines are built by $(item)sequenced assembly$(), with a winding step in the loop. Put a Winding Machine on the belt line, with the right spool mounted, where the sequence asks for winding. $(li)$(item)Electric Motor$(): starts from a shaft, 3 loops."
+      "text": "Several machines are built by $(item)sequenced assembly$(), with a winding step in the loop. Put a Winding Machine on the belt line, with the right spool mounted, where the sequence asks for winding."
     },
     {
       "type": "patchouli:text",
-      "text": "The winding step takes $(item)75 turns$() of a $(item)Copper Spool$(), then a magnet, a steel mechanism and a screwdriver. $(li)$(item)Generator$(): starts from a shaft, 3 loops. Capacitor, steel plate, then $(item)75 turns$() of a $(item)Copper Spool$(), then a magnet, a steel mechanism and a screwdriver. $(li)$(item)Potentiometer$(): starts from a Heavy Machinery Casing, 3 loops."
+      "text": "$(li)$(item)Electric Motor$(): starts from a shaft, 3 loops. The winding step takes $(item)75 turns$() of a $(item)Copper Spool$(), then a magnet, a steel mechanism and a screwdriver."
     },
     {
       "type": "patchouli:text",
-      "text": "$(item)100 turns$() of a $(item)Constantan Spool$(), then a steel cogwheel, copper wire and lubrication oil.$(br2)For these steps the target value box does not matter: the recipe sets the number of turns."
+      "text": "$(li)$(item)Generator$(): starts from a shaft, 3 loops. Capacitor, steel plate, then $(item)75 turns$() of a $(item)Copper Spool$(), then a magnet, a steel mechanism and a screwdriver."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Potentiometer$(): starts from a Heavy Machinery Casing, 3 loops. $(item)100 turns$() of a $(item)Constantan Spool$(), then a steel cogwheel, copper wire and lubrication oil.$(br2)For these steps the target value box does not matter: the recipe sets the number of turns."
     },
     {
       "type": "patchouli:text",

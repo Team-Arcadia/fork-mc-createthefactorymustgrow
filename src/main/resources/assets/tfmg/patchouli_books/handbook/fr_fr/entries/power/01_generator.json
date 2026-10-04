@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Il se connecte sur $(item)toutes ses faces$() et impose un impact de contrainte de 50 à son axe, comme n'importe quelle machine de Create.$(br2)$(l)Plusieurs générateurs$()$(br)Leurs puissances s'additionnent, mais le réseau ne garde que la tension $(item)la plus haute$(). Faites-les tous tourner à la même vitesse, sinon les plus lents ajoutent de la puissance sans ajouter de tension."
+      "text": "Il se connecte sur $(item)toutes ses faces$() et impose un impact de contrainte de 50 à son axe, comme n'importe quelle machine de Create."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Plusieurs générateurs$()$(br)Leurs puissances s'additionnent, mais le réseau ne garde que la tension $(item)la plus haute$(). Faites-les tous tourner à la même vitesse, sinon les plus lents ajoutent de la puissance sans ajouter de tension."
     },
     {
       "type": "patchouli:text",

@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Elle se pose orientée dans la direction de votre regard, comme la plupart des blocs de Create. $(l)Conseils pour les petits moteurs - Commencez par un moteur de type I à la créosote ou au gaz de four avec des cylindres simples :$() les deux carburants arrivent tôt, par le four à coke et le haut fourneau. $(li)Passez au diesel ou au kérosène pour les machines lourdes :"
+      "text": "Elle se pose orientée dans la direction de votre regard, comme la plupart des blocs de Create.$(br2)$(l)Conseils pour les petits moteurs$()"
     },
     {
       "type": "patchouli:text",
-      "text": "leur facteur de couple est de 1,4. $(li)La longueur ajoute du couple, le signal et les facteurs de vitesse ajoutent des RPM. Dimensionnez la rangée pour la contrainte voulue, puis choisissez carburant et améliorations pour la vitesse. $(li)L'huile de lubrification et le liquide de refroidissement ensemble divisent à peu près par deux la consommation."
+      "text": "$(li)Commencez par un moteur de type I à la créosote ou au gaz de four avec des cylindres simples : les deux carburants arrivent tôt, par le four à coke et le haut fourneau.$(li)Passez au diesel ou au kérosène pour les machines lourdes : leur facteur de couple est de 1,4."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)La longueur ajoute du couple, le signal et les facteurs de vitesse ajoutent des RPM. Dimensionnez la rangée pour la contrainte voulue, puis choisissez carburant et améliorations pour la vitesse."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)L'huile de lubrification et le liquide de refroidissement ensemble divisent à peu près par deux la consommation."
     },
     {
       "type": "patchouli:text",

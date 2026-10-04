@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Coke oven paused$()$(br)Its CO2 tank is full. CO2 only leaves through the $(item)top face$(); pipe it from there."
+      "text": "$(l)Coke oven paused$()$(br)Its CO2 tank is full. CO2 only leaves through the $(item)top face$(); pipe it from there.$(br2)$(l)Distillation tower does nothing$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Distillation tower does nothing$()$(br)The number of $(item)Distillation Outputs must equal the number of products$() of the recipe, with an Industrial Pipe between each output. The steel tank must be at least $(item)twice as tall$() as the number of outputs, and $(item)2 wide$() when there are more than 3 outputs. Heat it from below."
+      "text": "The number of $(item)Distillation Outputs must equal the number of products$() of the recipe, with an Industrial Pipe between each output. The steel tank must be at least $(item)twice as tall$() as the number of outputs, and $(item)2 wide$() when there are more than 3 outputs. Heat it from below."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Pumpjack says Machine Invalid$()$(br)The Pumpjack Base looks straight down for the oil deposit through an unbroken column of $(item)Industrial Pipes$(). Any other block in the column, or a column that misses the deposit, makes it invalid. Find the deposit with the surface scanner first, then pipe straight down to it."
+      "text": "$(l)Pumpjack says Machine Invalid$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Pumpjack Base looks straight down for the oil deposit through an unbroken column of $(item)Industrial Pipes$(). Any other block in the column, or a column that misses the deposit, makes it invalid. Find the deposit with the surface scanner first, then pipe straight down to it."
     },
     {
       "type": "patchouli:spotlight",

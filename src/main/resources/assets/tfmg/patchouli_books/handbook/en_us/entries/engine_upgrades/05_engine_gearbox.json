@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "It is placed facing the way you look, like most Create blocks. $(l)Tips for small engines - Start with a type I engine on creosote or furnace gas with simple cylinders:$() both fuels come early, from the coke oven and the blast furnace. $(li)Move to diesel or kerosene for heavy machines: their torque factor is 1.4."
+      "text": "It is placed facing the way you look, like most Create blocks.$(br2)$(l)Tips for small engines$()$(li)Start with a type I engine on creosote or furnace gas with simple cylinders: both fuels come early, from the coke oven and the blast furnace."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Length adds torque, the signal and the speed factors add RPM. Plan the row for the stress you need, then pick fuel and upgrades for the speed. $(li)Lubrication oil and cooling fluid together roughly halve fuel use. $(li)A piping upgrade plus a big tank makes an engine that runs for hours unattended, as long as the exhaust is pumped away."
+      "text": "$(li)Move to diesel or kerosene for heavy machines: their torque factor is 1.4.$(li)Length adds torque, the signal and the speed factors add RPM. Plan the row for the stress you need, then pick fuel and upgrades for the speed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Lubrication oil and cooling fluid together roughly halve fuel use.$(li)A piping upgrade plus a big tank makes an engine that runs for hours unattended, as long as the exhaust is pumped away."
     },
     {
       "type": "patchouli:spotlight",

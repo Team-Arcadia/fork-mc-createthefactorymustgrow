@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Les réservoirs d'entrée acceptent $(item)n'importe quel fluide$(). De l'air envoyé par le dessus va dans le réservoir de combustible, du combustible envoyé par un côté va dans le réservoir d'air, et plus aucune recette ne correspond : le fourneau s'arrête. Les réservoirs d'entrée ne se vident pas à la pompe : vérifiez chaque tuyau avant d'ouvrir la ligne. Les lunettes montrent le contenu de chaque réservoir."
+      "text": "Les réservoirs d'entrée acceptent $(item)n'importe quel fluide$().$(br)De l'air envoyé par le dessus va dans le réservoir de combustible, du combustible envoyé par un côté va dans le réservoir d'air, et plus aucune recette ne correspond :$(br)le fourneau s'arrête."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les réservoirs d'entrée ne se vident pas à la pompe :$(br)vérifiez chaque tuyau avant d'ouvrir la ligne.$(br)Les lunettes montrent le contenu de chaque réservoir."
     },
     {
       "type": "patchouli:text",

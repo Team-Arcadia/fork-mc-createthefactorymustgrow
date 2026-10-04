@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)La tension fixe sa force - C'est un consommateur de $(item)100 ohms$() :$() à 200 V, elle tire 2 A et consomme 400 W. $(li)Sa $(item)pression$() vaut deux fois la tension, jusqu'à un maximum atteint à $(item)750 V$(). $(li)Sa $(item)portée$() le long des tuyaux augmente aussi avec la tension, jusqu'à 6,7 fois celle d'une pompe mécanique, atteinte vers $(item)335 V$()."
+      "text": "$(l)La tension fixe sa force$()$(li)C'est un consommateur de $(item)100 ohms$() : à 200 V, elle tire 2 A et consomme 400 W.$(li)Sa $(item)pression$() vaut deux fois la tension, jusqu'à un maximum atteint à $(item)750 V$()."
     },
     {
       "type": "patchouli:text",
-      "text": "Une tension basse donne une pompe faible et courte. Si une longue conduite ne se remplit pas, vérifiez la tension au multimètre avant d'ajouter des pompes.$(br2)Comme tout consommateur, elle s'arrête quand son réseau manque de puissance. Une pompe électrique au milieu d'une ligne de carburant est une bonne raison de séparer ce réseau des machines lourdes."
+      "text": "$(li)Sa $(item)portée$() le long des tuyaux augmente aussi avec la tension, jusqu'à 6,7 fois celle d'une pompe mécanique, atteinte vers $(item)335 V$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une tension basse donne une pompe faible et courte. Si une longue conduite ne se remplit pas, vérifiez la tension au multimètre avant d'ajouter des pompes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Comme tout consommateur, elle s'arrête quand son réseau manque de puissance. Une pompe électrique au milieu d'une ligne de carburant est une bonne raison de séparer ce réseau des machines lourdes."
     },
     {
       "type": "patchouli:spotlight",

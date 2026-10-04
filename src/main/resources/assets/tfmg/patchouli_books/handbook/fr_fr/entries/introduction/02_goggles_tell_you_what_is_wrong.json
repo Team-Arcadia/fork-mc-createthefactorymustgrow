@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)une structure incomplète,$(li)un combustible, un fondant ou de l'air chaud manquant,$(li)un réservoir de sortie ou d'échappement plein,$(li)une recette de cuve qui demande plus de chaleur ou de pression.$(br2)Quand une machine reste inactive, regardez-la d'abord avec les lunettes. Le dernier chapitre, $(item)Dépannage$(), liste chaque message et comment le régler."
+      "text": "$(li)une structure incomplète,$(li)un combustible, un fondant ou de l'air chaud manquant,$(li)un réservoir de sortie ou d'échappement plein,$(li)une recette de cuve qui demande plus de chaleur ou de pression."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quand une machine reste inactive, regardez-la d'abord avec les lunettes. Le dernier chapitre, $(item)Dépannage$(), liste chaque message et comment le régler."
     },
     {
       "type": "patchouli:spotlight",

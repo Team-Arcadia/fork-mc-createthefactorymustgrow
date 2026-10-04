@@ -17,3 +17,4 @@ TEST_PROCEDURE_*.html
 # Local assistant workspace (never push)
 .claude/
 CLAUDE.md
+run-shots/

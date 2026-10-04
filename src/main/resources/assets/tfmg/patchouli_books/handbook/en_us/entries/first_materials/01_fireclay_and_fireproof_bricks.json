@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Fireproof brick$() (item): the casting basin.$(li)$(item)Fireproof bricks$() (block): the blast stove, the blast furnace output and hatch, and the walls of the blast furnace itself.$(li)Six blocks give six $(item)fireproof brick reinforcement$() walls.$(br2)A blast furnace eats many brick blocks, so set up an automatic fireclay line early."
+      "text": "$(li)$(item)Fireproof brick$() (item): the casting basin.$(li)$(item)Fireproof bricks$() (block): the blast stove, the blast furnace output and hatch, and the walls of the blast furnace itself.$(li)Six blocks give six $(item)fireproof brick reinforcement$() walls."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A blast furnace eats many brick blocks, so set up an automatic fireclay line early."
     },
     {
       "type": "patchouli:spotlight",

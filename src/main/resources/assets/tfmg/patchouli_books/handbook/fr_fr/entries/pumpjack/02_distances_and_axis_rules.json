@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)La tête et le connecteur doivent chacun être à $(item)6 blocs$() au plus du support le long du balancier, avec uniquement des pièces de marteau entre eux. $(li)Chaque pièce, le connecteur et la manivelle doivent être orientés selon le $(item)même axe$() que le support. Une pièce tournée de travers arrête le balancier à cet endroit."
+      "text": "$(li)La tête et le connecteur doivent chacun être à $(item)6 blocs$() au plus du support le long du balancier, avec uniquement des pièces de marteau entre eux."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)La $(item)base$() doit être dans la même colonne que la tête, $(item)1 à 8 blocs$() en dessous. $(li)La $(item)manivelle$() doit être dans la même colonne que le connecteur, $(item)1 à 7 blocs$() en dessous. $(li)Une base ne peut être entraînée que par une seule pompe.$(br2)Si vous retirez la base ou la manivelle, le balancier se redécompose en blocs. Remettez la pièce et il se réassemble tout seul."
+      "text": "$(li)Chaque pièce, le connecteur et la manivelle doivent être orientés selon le $(item)même axe$() que le support. Une pièce tournée de travers arrête le balancier à cet endroit.$(li)La $(item)base$() doit être dans la même colonne que la tête, $(item)1 à 8 blocs$() en dessous."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)La $(item)manivelle$() doit être dans la même colonne que le connecteur, $(item)1 à 7 blocs$() en dessous.$(li)Une base ne peut être entraînée que par une seule pompe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Si vous retirez la base ou la manivelle, le balancier se redécompose en blocs. Remettez la pièce et il se réassemble tout seul."
     },
     {
       "type": "patchouli:text",

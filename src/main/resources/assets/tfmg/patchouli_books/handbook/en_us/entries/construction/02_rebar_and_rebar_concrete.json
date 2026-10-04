@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(item)Rebar$() comes from the stonecutter: one steel ingot gives $(item)4 rebar$(). Nine rebar pack into a $(item)rebar pile$() and back. Rebar crafts frames you place in the world: $(li)$(item)rebar block$(): 4 rebar in the corners give 4, - $(item)rebar floor$():"
+      "text": "$(item)Rebar$() comes from the stonecutter: one steel ingot gives $(item)4 rebar$(). Nine rebar pack into a $(item)rebar pile$() and back."
     },
     {
       "type": "patchouli:text",
-      "text": "a row of 3 gives 3, - $(item)rebar pillar$(): a column of 3 gives 3, - $(item)rebar stairs$(): 3 in a step shape give 3, - $(item)rebar wall$(): two rows of 3 give 6."
+      "text": "Rebar crafts frames you place in the world:$(li)$(item)rebar block$(): 4 rebar in the corners give 4,$(li)$(item)rebar floor$(): a row of 3 gives 3,$(li)$(item)rebar pillar$(): a column of 3 gives 3,$(li)$(item)rebar stairs$(): 3 in a step shape give 3,$(li)$(item)rebar wall$(): two rows of 3 give 6.$(br2)$(l)Filling them$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Filling them$()$(br)Right-click a rebar frame with a $(item)bucket of liquid concrete$() to fill it; an empty bucket takes the concrete back out. Each frame holds one bucket. Filled frames $(item)dry by themselves$() after a short random delay:$(li)rebar block into $(item)rebar concrete$(),$(li)floor, pillar, stairs and wall into the matching $(item)rebar concrete$() shape."
+      "text": "Right-click a rebar frame with a $(item)bucket of liquid concrete$() to fill it; an empty bucket takes the concrete back out. Each frame holds one bucket. Filled frames $(item)dry by themselves$() after a short random delay:$(li)rebar block into $(item)rebar concrete$(),"
     },
     {
       "type": "patchouli:text",
-      "text": "Industrial pipes, cable tubes and electric posts can be filled the same way and dry into their $(item)concrete encased$() versions, perfect to bury a pipe or a cable in a floor.$(br2)Filling every frame by hand is slow on a big build: that is the job of the concrete hose."
+      "text": "$(li)floor, pillar, stairs and wall into the matching $(item)rebar concrete$() shape.$(br2)Industrial pipes, cable tubes and electric posts can be filled the same way and dry into their $(item)concrete encased$() versions, perfect to bury a pipe or a cable in a floor."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Filling every frame by hand is slow on a big build: that is the job of the concrete hose."
     },
     {
       "type": "patchouli:spotlight",

@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The diode, the electric switch, the potentiometer and the transformer are $(item)bridges$(). Each one takes power in on one side (the $(item)back$() for the diode, switch and potentiometer) and feeds a $(item)separate network$() on its output side."
+      "text": "The diode, the electric switch, the potentiometer and the transformer are $(item)bridges$()."
     },
     {
       "type": "patchouli:text",
-      "text": "The large switch and the large transformer work the same way across their two halves. $(li)The input network sees the bridge as one consumer that uses what the output network uses. $(li)The output network gets its voltage from the bridge, and at most $(item)10 kW$() of power from the small bridges and the large switch. The large transformer passes more."
+      "text": "Each one takes power in on one side (the $(item)back$() for the diode, switch and potentiometer) and feeds a $(item)separate network$() on its output side.$(br)The large switch and the large transformer work the same way across their two halves."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Small bridges burn above $(item)100 A$() and above the usual 1,000 V. $(li)If the input network runs short of power, the output one stops too.$(br2)$(l)Never close a loop$()$(br)If a chain of bridges feeds power back into a network it comes from, the bridge you just placed is $(item)destroyed without dropping$(). Always keep power flowing one way, from generators towards machines."
+      "text": "$(li)The input network sees the bridge as one consumer that uses what the output network uses.$(li)The output network gets its voltage from the bridge, and at most $(item)10 kW$() of power from the small bridges and the large switch. The large transformer passes more."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Small bridges burn above $(item)100 A$() and above the usual 1,000 V.$(li)If the input network runs short of power, the output one stops too."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Never close a loop$()$(br)If a chain of bridges feeds power back into a network it comes from, the bridge you just placed is $(item)destroyed without dropping$(). Always keep power flowing one way, from generators towards machines."
     },
     {
       "type": "patchouli:text",

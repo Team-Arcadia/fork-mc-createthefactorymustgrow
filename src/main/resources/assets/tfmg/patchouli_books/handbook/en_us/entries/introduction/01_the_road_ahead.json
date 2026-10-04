@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)2. Parts and machines$()$(br)Steel gives heavy plates, screws, casings and the $(item)steel mechanism$() that most machines need.$(br2)$(l)3. Electricity$()$(br)Generators turn rotation into power for motors, vats, the polarizer and the winding machine. Aluminium comes from electrolysis."
+      "text": "$(l)2. Parts and machines$()$(br)Steel gives heavy plates, screws, casings and the $(item)steel mechanism$() that most machines need."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)3. Electricity$()$(br)Generators turn rotation into power for motors, vats, the polarizer and the winding machine. Aluminium comes from electrolysis."
     },
     {
       "type": "patchouli:text",

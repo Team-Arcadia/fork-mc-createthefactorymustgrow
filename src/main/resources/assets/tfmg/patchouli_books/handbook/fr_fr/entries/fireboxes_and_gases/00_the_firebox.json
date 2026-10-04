@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le $(item)foyer$() brûle des carburants liquides pour chauffer ce qui est posé dessus. C'est l'équivalent au carburant du brûleur à blaze. Des foyers posés côte à côte fusionnent en un seul, comme les réservoirs de Create :"
+      "text": "Le $(item)foyer$() brûle des carburants liquides pour chauffer ce qui est posé dessus. C'est l'équivalent au carburant du brûleur à blaze.$(br2)Des foyers posés côte à côte fusionnent en un seul, comme les réservoirs de Create :"
     },
     {
       "type": "patchouli:text",
-      "text": "un carré de $(item)1 x 1, 2 x 2 ou 3 x 3$(), haut d'un bloc. Le foyer fusionné partage un seul réservoir de carburant et un seul réservoir d'échappement, chacun de $(item)8000 mB par bloc$() avec la taille de réservoir par défaut de Create."
+      "text": "un carré de $(item)1 x 1, 2 x 2 ou 3 x 3$(), haut d'un bloc.$(br)Le foyer fusionné partage un seul réservoir de carburant et un seul réservoir d'échappement, chacun de $(item)8000 mB par bloc$() avec la taille de réservoir par défaut de Create."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Chaleur$()$(br)Un foyer qui brûle compte comme un chauffage allumé :$(li)$(item)2 de chaleur$() par bloc pour les tours de distillation, les cuves chimiques et les chaudières à vapeur de Create, comme un brûleur à blaze surchauffé,$(li)$(item)chauffé$(), mais pas surchauffé, pour un bassin de Create posé dessus.$(br2)Quand il s'éteint, sa chaleur tombe à zéro."
+      "text": "$(l)Chaleur$()$(br)Un foyer qui brûle compte comme un chauffage allumé :$(li)$(item)2 de chaleur$() par bloc pour les tours de distillation, les cuves chimiques et les chaudières à vapeur de Create, comme un brûleur à blaze surchauffé,"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)chauffé$(), mais pas surchauffé, pour un bassin de Create posé dessus.$(br2)Quand il s'éteint, sa chaleur tombe à zéro."
     },
     {
       "type": "patchouli:multiblock",

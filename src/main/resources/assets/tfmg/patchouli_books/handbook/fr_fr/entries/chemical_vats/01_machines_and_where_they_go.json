@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Une cuve ne compte que les machines posées $(item)juste au-dessus de sa couche du haut$() ou $(item)juste sous sa couche du bas$(), dans son emprise. $(li)$(item)Mélangeur industriel$() : au-dessus, au $(item)centre$() d'une cuve 3x3 (n'importe où sur une cuve plus petite)."
+      "text": "Une cuve ne compte que les machines posées $(item)juste au-dessus de sa couche du haut$() ou $(item)juste sous sa couche du bas$(), dans son emprise."
     },
     {
       "type": "patchouli:text",
-      "text": "Donnez-lui une $(item)pale de mélangeur$() pour mélanger ou une $(item)centrifugeuse$() pour centrifuger, par clic droit. Entraîné par son arbre du haut, il lui faut au moins $(item)30 RPM$(). $(li)$(item)Porte-électrode$() : au-dessus, alimenté par sa $(item)face du haut$(). Clic droit avec une électrode, clic accroupi main vide pour la retirer. Il lui faut au moins $(item)5 A$() (config serveur)."
+      "text": "$(li)$(item)Mélangeur industriel$() : au-dessus, au $(item)centre$() d'une cuve 3x3 (n'importe où sur une cuve plus petite). Donnez-lui une $(item)pale de mélangeur$() pour mélanger ou une $(item)centrifugeuse$() pour centrifuger, par clic droit. Entraîné par son arbre du haut, il lui faut au moins $(item)30 RPM$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Compresseur$() : au-dessus ou en dessous, entraîné par un arbre horizontal à $(item)120 RPM ou plus$(). $(li)$(item)Congélateur$() : au-dessus ou en dessous, alimenté en électricité sur n'importe quelle face, il lui faut $(item)plus de 3 A$() (75 ohms, donc plus de 225 V)."
+      "text": "$(li)$(item)Porte-électrode$() : au-dessus, alimenté par sa $(item)face du haut$(). Clic droit avec une électrode, clic accroupi main vide pour la retirer. Il lui faut au moins $(item)5 A$() (config serveur).$(li)$(item)Compresseur$() : au-dessus ou en dessous, entraîné par un arbre horizontal à $(item)120 RPM ou plus$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Congélateur$() : au-dessus ou en dessous, alimenté en électricité sur n'importe quelle face, il lui faut $(item)plus de 3 A$() (75 ohms, donc plus de 225 V)."
     },
     {
       "type": "patchouli:text",

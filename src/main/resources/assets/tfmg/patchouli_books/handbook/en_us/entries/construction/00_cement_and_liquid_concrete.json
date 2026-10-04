@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Concrete starts with $(item)limesand$(): crush Create's $(item)limestone$() with crushing wheels. $(l)In a mixer Every step runs in a Create mechanical mixer over a basin, no heat needed:$()"
+      "text": "Concrete starts with $(item)limesand$(): crush Create's $(item)limestone$() with crushing wheels.$(br2)$(l)In a mixer$()$(br)Every step runs in a Create mechanical mixer over a basin, no heat needed:$(li)$(item)clay ball + limesand$() gives $(item)4 cement$(),"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)clay ball + limesand$() gives $(item)4 cement$(), - $(item)sand + cement + gravel$() gives $(item)16 concrete mixture$() (with $(item)slag$() instead of sand: $(item)32$()), - $(item)concrete mixture + 250 mB water$() gives $(item)1000 mB liquid concrete$()."
+      "text": "$(li)$(item)sand + cement + gravel$() gives $(item)16 concrete mixture$() (with $(item)slag$() instead of sand: $(item)32$()),$(li)$(item)concrete mixture + 250 mB water$() gives $(item)1000 mB liquid concrete$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)In a chemical vat$()$(br)With an industrial mixer, any chemical vat turns $(item)sand + gravel + limesand + 250 mB water$() straight into liquid concrete. JEI lists $(item)32000 mB$() for one batch, far more than the mixer route.$(br2)Cement is also a block of its own that falls like sand. Slag, from crushing the slag blocks of your steel line, doubles every batch of mixture."
+      "text": "$(l)In a chemical vat$()$(br)With an industrial mixer, any chemical vat turns $(item)sand + gravel + limesand + 250 mB water$() straight into liquid concrete. JEI lists $(item)32000 mB$() for one batch, far more than the mixer route."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cement is also a block of its own that falls like sand. Slag, from crushing the slag blocks of your steel line, doubles every batch of mixture."
     },
     {
       "type": "patchouli:text",

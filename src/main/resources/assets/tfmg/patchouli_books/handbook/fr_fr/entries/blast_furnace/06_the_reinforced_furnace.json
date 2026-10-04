@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "De ce fait, un renfort posé contre le côté d'une brique réfractaire devient toujours une plaque. Posez d'abord les $(item)coins$(), ou posez-les sur le coin du dessous, jamais en cliquant sur une brique voisine.$(br2)Un seul bloc normal dans les parois rend tout le fourneau normal. La sortie et le centre du bas ne comptent pas. Les lunettes affichent $(item)Renforcé$() quand c'est réussi."
+      "text": "De ce fait, un renfort posé contre le côté d'une brique réfractaire devient toujours une plaque. Posez d'abord les $(item)coins$(), ou posez-les sur le coin du dessous, jamais en cliquant sur une brique voisine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un seul bloc normal dans les parois rend tout le fourneau normal. La sortie et le centre du bas ne comptent pas. Les lunettes affichent $(item)Renforcé$() quand c'est réussi."
     },
     {
       "type": "patchouli:text",

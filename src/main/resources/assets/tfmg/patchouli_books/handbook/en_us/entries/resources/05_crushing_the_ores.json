@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Crushing wheels turn ores into $(item)crushed ore$(), which smelts into ingots. Crushing the ore block gives more than mining it. $(li)$(item)Lead ore$(): 1 crushed raw lead, plus 75% chance of a second, and 75% chance of an experience nugget. $(li)$(item)Nickel ore$():"
+      "text": "Crushing wheels turn ores into $(item)crushed ore$(), which smelts into ingots. Crushing the ore block gives more than mining it."
     },
     {
       "type": "patchouli:text",
-      "text": "the same, with crushed raw nickel. $(li)$(item)Lithium ore$(): 1 crushed raw lithium, plus 25% chance of another, 75% experience nugget, 12% cobblestone. $(li)$(item)Deepslate lithium ore$(): 2 crushed raw lithium, plus 25% chance of a third. $(li)$(item)Raw lead, raw nickel, raw lithium$(): 1 crushed ore each, plus 75% chance of an experience nugget."
+      "text": "$(li)$(item)Lead ore$(): 1 crushed raw lead, plus 75% chance of a second, and 75% chance of an experience nugget.$(li)$(item)Nickel ore$(): the same, with crushed raw nickel.$(li)$(item)Lithium ore$(): 1 crushed raw lithium, plus 25% chance of another, 75% experience nugget, 12% cobblestone."
     },
     {
       "type": "patchouli:text",
-      "text": "A raw lithium block gives 9.$(br2)Smelt crushed ore in a furnace (10 seconds) or a vanilla blast furnace (5 seconds) for one ingot each. Raw items smelt to ingots too, but crushing first is the better yield.$(br2)TFMG adds no washing recipe for these crushed ores: send them straight to the furnace."
+      "text": "$(li)$(item)Deepslate lithium ore$(): 2 crushed raw lithium, plus 25% chance of a third.$(li)$(item)Raw lead, raw nickel, raw lithium$(): 1 crushed ore each, plus 75% chance of an experience nugget. A raw lithium block gives 9."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Smelt crushed ore in a furnace (10 seconds) or a vanilla blast furnace (5 seconds) for one ingot each. Raw items smelt to ingots too, but crushing first is the better yield.$(br2)TFMG adds no washing recipe for these crushed ores: send them straight to the furnace."
     },
     {
       "type": "patchouli:spotlight",

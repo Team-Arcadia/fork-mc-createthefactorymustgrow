@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Right-click a regular engine with an $(item)Empty Schematic$() to switch its type. The order is I, V, W, U, Boxer, then back to I. The whole row changes together, and any cylinders already inside drop out. Multipliers (speed / torque / efficiency) and cylinders per block:"
+      "text": "Right-click a regular engine with an $(item)Empty Schematic$() to switch its type. The order is I, V, W, U, Boxer, then back to I. The whole row changes together, and any cylinders already inside drop out."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)I$(): 1 / 1 / 1, 2 cylinders - $(item)V$(): 1.2 / 1.3 / 0.8, 4 cylinders - $(item)W$(): 1.3 / 1.1 / 0.5, 8 cylinders - $(item)U$(): 1 / 1.5 / 0.9, 4 cylinders - $(item)Boxer$(): 1 / 0.8 / 1.2, 4 cylinders - $(item)Radial$(): 1 / 0.8 / 1.2, 8 cylinders - $(item)Turbine$(): 1.5 / 1.5 / 0.5, 4 blades"
+      "text": "Multipliers (speed / torque / efficiency) and cylinders per block:$(li)$(item)I$(): 1 / 1 / 1, 2 cylinders$(li)$(item)V$(): 1.2 / 1.3 / 0.8, 4 cylinders$(li)$(item)W$(): 1.3 / 1.1 / 0.5, 8 cylinders$(li)$(item)U$(): 1 / 1.5 / 0.9, 4 cylinders$(li)$(item)Boxer$(): 1 / 0.8 / 1.2, 4 cylinders"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Radial$(): 1 / 0.8 / 1.2, 8 cylinders$(li)$(item)Turbine$(): 1.5 / 1.5 / 0.5, 4 blades"
     },
     {
       "type": "patchouli:text",

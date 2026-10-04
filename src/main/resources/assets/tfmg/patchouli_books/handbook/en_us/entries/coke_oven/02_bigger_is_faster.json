@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "The oven still cooks $(item)one item at a time$(): a bigger oven gives the same coke per coal, only sooner. The by-products are made $(item)every tick$() the oven cooks, whatever its size, so a fast oven makes the same flow of fluid per second as a slow one, just less of it per coal.$(br2)Watch the progress with Engineer's Goggles: it counts down the seconds left on the current item."
+      "text": "The oven still cooks $(item)one item at a time$(): a bigger oven gives the same coke per coal, only sooner. The by-products are made $(item)every tick$() the oven cooks, whatever its size, so a fast oven makes the same flow of fluid per second as a slow one, just less of it per coal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Watch the progress with Engineer's Goggles: it counts down the seconds left on the current item."
     },
     {
       "type": "patchouli:spotlight",

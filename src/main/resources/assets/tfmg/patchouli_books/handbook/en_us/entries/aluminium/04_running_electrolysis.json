@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "On average that is one ingot plus 2.5 nuggets per batch, against a single ingot from superheated mixing."
+      "text": "On average that is one ingot plus 2.5 nuggets per batch, against a single ingot from superheated mixing.$(br2)$(l)Keep it flowing$()$(li)Feed powder into the vat with a funnel or a chute. Items can only go into the inputs."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Keep it flowing$()$(li)Feed powder into the vat with a funnel or a chute. Items can only go into the inputs.$(li)Pull ingots and nuggets out of the output side with a funnel.$(li)$(item)Pump the carbon dioxide out.$() It lands in the output tanks, and once there is no room for another 500 mB the vat stops."
+      "text": "$(li)Pull ingots and nuggets out of the output side with a funnel.$(li)$(item)Pump the carbon dioxide out.$() It lands in the output tanks, and once there is no room for another 500 mB the vat stops."
     },
     {
       "type": "patchouli:text",

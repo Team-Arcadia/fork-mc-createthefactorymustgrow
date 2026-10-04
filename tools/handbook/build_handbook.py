@@ -26,11 +26,14 @@ OUT = os.path.join(ROOT, 'src', 'main', 'resources', 'assets', 'tfmg', 'patchoul
 LANGS = ['en_us', 'fr_fr']
 NAMESPACE = 'tfmg'
 
-# Rough capacity of a Patchouli text page, in characters of plain text. The
-# first page of an entry also carries the entry title, so it holds less.
-FIRST_PAGE = 300
-OTHER_PAGE = 420
-LINE_COST = 14  # a forced line break wastes about half a line
+# Patchouli text pages are 116 px wide. The first page of an entry carries
+# the entry title, so it holds fewer lines. Line counts come from wrapping the
+# text with the real widths of Minecraft's font (glyph_widths.json).
+PAGE_WIDTH = 116
+BULLET_INDENT = 10
+FIRST_PAGE_LINES = 12
+OTHER_PAGE_LINES = 15
+GLYPHS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'glyph_widths.json'), encoding='utf-8'))
 
 ITEMS_TEXT = {
     'en_us': 'The items this page talks about. Hover for details; JEI shows their recipes.',
@@ -55,8 +58,28 @@ def inline(text):
     return re.sub(r'\*\*(.+?)\*\*', r'$(item)\1$()', text)
 
 
-def plain_len(text):
-    return len(re.sub(r'\$\([^)]*\)', '', text))
+def text_width(text, bold=False):
+    return sum(GLYPHS.get(c, 6) + (1 if bold else 0) for c in text)
+
+
+def wrapped_lines(text, width, bold=False):
+    """How many lines Patchouli needs for this text at this width."""
+    plain = re.sub(r'\*\*', '', text)
+    lines, current = 1, 0
+    space = text_width(' ', bold)
+    for word in plain.split(' '):
+        w = text_width(word, bold)
+        if current == 0:
+            current = w
+        elif current + space + w <= width:
+            current += space + w
+        else:
+            lines += 1
+            current = w
+        while current > width:  # a single word wider than the page
+            lines += 1
+            current -= width
+    return lines
 
 
 def blocks_of(text):
@@ -79,69 +102,86 @@ def blocks_of(text):
     return blocks
 
 
-def render_block(lines):
-    out = []
-    cost = 0
-    for line in lines:
-        if line.startswith('## '):
-            piece = '$(l)' + inline(line[3:]) + '$()'
-            out.append(piece)
-            cost += plain_len(piece) + LINE_COST
-        elif line.startswith('- '):
-            piece = '$(li)' + inline(line[2:])
-            out.append(piece)
-            cost += plain_len(piece) + LINE_COST
-        else:
-            piece = inline(line)
-            out.append(piece)
-            cost += plain_len(piece) + LINE_COST
-    # Bullets start their own line; other lines need an explicit break.
+def render_line(line):
+    """Patchouli markup for one source line and the number of lines it takes."""
+    if line.startswith('## '):
+        return '$(l)' + inline(line[3:]) + '$()', wrapped_lines(line[3:], PAGE_WIDTH, bold=True)
+    if line.startswith('- '):
+        return '$(li)' + inline(line[2:]), wrapped_lines(line[2:], PAGE_WIDTH - BULLET_INDENT)
+    return inline(line), wrapped_lines(line, PAGE_WIDTH)
+
+
+def join(pieces):
     text = ''
-    for i, piece in enumerate(out):
+    for i, piece in enumerate(pieces):
         if i == 0 or piece.startswith('$(li)'):
             text += piece
         else:
             text += '$(br)' + piece
-    return text, cost
+    return text
+
+
+def paginate(text):
+    """Splits the text over book pages by real line count."""
+    pages = []
+    current, used = [], 0
+
+    def capacity():
+        return FIRST_PAGE_LINES if not pages else OTHER_PAGE_LINES
+
+    def flush():
+        nonlocal current, used
+        if current:
+            pages.append('$(br2)'.join(current))
+        current, used = [], 0
+
+    for block in blocks_of(text):
+        rendered = [render_line(l) for l in block]
+        need = sum(n for _, n in rendered)
+        gap = 1 if current else 0
+        if used + gap + need <= capacity():
+            current.append(join([t for t, _ in rendered]))
+            used += gap + need
+            continue
+        # Does not fit: start a new page with it if it fits a whole page,
+        # otherwise spill it line by line (sentence by sentence when a single
+        # line is longer than a page).
+        if need <= OTHER_PAGE_LINES:
+            flush()
+            current.append(join([t for t, _ in rendered]))
+            used = need
+            continue
+        # A block taller than a page: spill it line by line, and a line taller
+        # than a page sentence by sentence (keeping its bullet or heading).
+        pieces = []
+        for source in block:
+            markup, lines = render_line(source)
+            if lines <= OTHER_PAGE_LINES:
+                pieces.append((markup, lines))
+                continue
+            prefix = '- ' if source.startswith('- ') else ''
+            body = source[2:] if prefix else source
+            for i, sentence in enumerate(split_sentences(body)):
+                pieces.append(render_line((prefix if i == 0 else '') + sentence))
+        part = []
+        for markup, lines in pieces:
+            gap = 1 if (current and not part) else 0
+            if used + gap + lines > capacity():
+                if part:
+                    current.append(join(part))
+                flush()
+                part, gap = [], 0
+            part.append(markup)
+            used += gap + lines
+        if part:
+            current.append(join(part))
+    flush()
+    return pages or ['']
 
 
 def split_sentences(text):
     parts = re.split(r'(?<=[.!?;:])\s+', text)
     return [p for p in parts if p]
-
-
-def paginate(text):
-    pages = []
-    current = ''
-    current_cost = 0
-
-    def capacity():
-        return FIRST_PAGE if not pages else OTHER_PAGE
-
-    def flush():
-        nonlocal current, current_cost
-        if current:
-            pages.append(current)
-        current = ''
-        current_cost = 0
-
-    for block in blocks_of(text):
-        rendered, cost = render_block(block)
-        if cost > capacity():
-            # Too big for any page: break the block at sentence boundaries.
-            for sentence in split_sentences(' '.join(block)):
-                piece, piece_cost = render_block([sentence])
-                if current and current_cost + piece_cost > capacity():
-                    flush()
-                current = (current + ' ' + piece) if current else piece
-                current_cost += piece_cost
-            continue
-        if current and current_cost + cost + LINE_COST > capacity():
-            flush()
-        current = (current + '$(br2)' + rendered) if current else rendered
-        current_cost += cost + (LINE_COST if current_cost else 0)
-    flush()
-    return pages or ['']
 
 
 def multiblock(schematic):

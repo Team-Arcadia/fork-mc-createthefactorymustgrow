@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Each fuel multiplies the engine's speed, efficiency and torque (speed / efficiency / torque): $(li)$(item)Gasoline$(): 1 / 1 / 1 - $(item)Diesel$(): 0.8 / 0.8 / 1.4 - $(item)Kerosene$(): 0.7 / 1 / 1.4 - $(item)Naphtha$(): 1 / 0.7 / 1.3 - $(item)LPG$():"
+      "text": "Each fuel multiplies the engine's speed, efficiency and torque (speed / efficiency / torque):$(br2)$(li)$(item)Gasoline$(): 1 / 1 / 1$(li)$(item)Diesel$(): 0.8 / 0.8 / 1.4$(li)$(item)Kerosene$(): 0.7 / 1 / 1.4$(li)$(item)Naphtha$(): 1 / 0.7 / 1.3"
     },
     {
       "type": "patchouli:text",
-      "text": "1.2 / 0.7 / 0.7 - $(item)Butane$(): 1.3 / 0.6 / 0.6 - $(item)Propane$(): 1.1 / 0.9 / 0.8 - $(item)Hydrogen$(): 1.4 / 0.5 / 0.6 - $(item)Creosote$(): 0.7 / 0.4 / 0.5 - $(item)Furnace Gas$(): 0.5 / 0.3 / 0.3"
+      "text": "$(li)$(item)LPG$(): 1.2 / 0.7 / 0.7$(li)$(item)Butane$(): 1.3 / 0.6 / 0.6$(li)$(item)Propane$(): 1.1 / 0.9 / 0.8$(li)$(item)Hydrogen$(): 1.4 / 0.5 / 0.6$(li)$(item)Creosote$(): 0.7 / 0.4 / 0.5$(li)$(item)Furnace Gas$(): 0.5 / 0.3 / 0.3"
     },
     {
       "type": "patchouli:text",

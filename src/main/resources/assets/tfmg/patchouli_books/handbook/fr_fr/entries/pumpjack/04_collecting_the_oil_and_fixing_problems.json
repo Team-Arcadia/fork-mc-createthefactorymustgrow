@@ -14,11 +14,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)la colonne sous la base a un trou ou un bloc qui n'est pas un $(item)tuyau industriel$() (les tuyaux encastrés dans du béton conviennent),$(li)la colonne ne se termine pas sur un gisement de pétrole,$(li)la base n'est pas exactement au-dessus de la colonne,$(li)le balancier n'est pas encore assemblé."
+      "text": "$(li)la colonne sous la base a un trou ou un bloc qui n'est pas un $(item)tuyau industriel$() (les tuyaux encastrés dans du béton conviennent),$(li)la colonne ne se termine pas sur un gisement de pétrole,$(li)la base n'est pas exactement au-dessus de la colonne,"
     },
     {
       "type": "patchouli:text",
-      "text": "En marche, la base réanalyse sa colonne toutes les quelques secondes : une colonne réparée est prise en compte sans rien reconstruire.$(br2)Si le balancier ne bouge pas du tout, vérifiez la colle, l'axe de chaque pièce, les distances de la tête et du connecteur, et que l'entrée de machine tourne vraiment."
+      "text": "$(li)le balancier n'est pas encore assemblé.$(br2)En marche, la base réanalyse sa colonne toutes les quelques secondes : une colonne réparée est prise en compte sans rien reconstruire."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Si le balancier ne bouge pas du tout, vérifiez la colle, l'axe de chaque pièce, les distances de la tête et du connecteur, et que l'entrée de machine tourne vraiment."
     },
     {
       "type": "patchouli:text",

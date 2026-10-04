@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le réseau additionne la puissance consommée par chaque consommateur et la compare à la puissance produite. Si la consommation est $(item)supérieure$() à la production, tout le réseau passe en $(item)puissance insuffisante$(). Toutes ses machines s'arrêtent d'un coup :"
+      "text": "Le réseau additionne la puissance consommée par chaque consommateur et la compare à la puissance produite."
     },
     {
       "type": "patchouli:text",
-      "text": "les moteurs ne tournent plus, les lampes s'éteignent, le polariseur cesse de charger. Ce n'est pas seulement la dernière machine posée qui tombe en panne."
+      "text": "Si la consommation est $(item)supérieure$() à la production, tout le réseau passe en $(item)puissance insuffisante$(). Toutes ses machines s'arrêtent d'un coup : les moteurs ne tournent plus, les lampes s'éteignent, le polariseur cesse de charger. Ce n'est pas seulement la dernière machine posée qui tombe en panne."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Comment corriger$()$(li)Ajoutez des générateurs, ou faites tourner plus vite ceux que vous avez.$(li)Retirez ou coupez des consommateurs. Quand un bloc est retiré, le réseau est revérifié immédiatement.$(li)Découpez l'usine en réseaux séparés avec des interrupteurs, des diodes ou des transformateurs (voir $(item)Contrôle du réseau$()), pour qu'une machine gourmande ne bloque pas tout."
+      "text": "$(l)Comment corriger$()$(li)Ajoutez des générateurs, ou faites tourner plus vite ceux que vous avez.$(li)Retirez ou coupez des consommateurs. Quand un bloc est retiré, le réseau est revérifié immédiatement."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Découpez l'usine en réseaux séparés avec des interrupteurs, des diodes ou des transformateurs (voir $(item)Contrôle du réseau$()), pour qu'une machine gourmande ne bloque pas tout."
     },
     {
       "type": "patchouli:text",

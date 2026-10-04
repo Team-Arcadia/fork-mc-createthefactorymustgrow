@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "S'il en trouve un, la barre d'action affiche $(item)Oil Reserves: N$() en jaune. Bon à savoir : $(li)Un gisement n'a de chiffre de réserve qu'une fois qu'une $(item)pompe à pétrole a commencé à le pomper$(). Avant cela, le marteau trouve le gisement mais ne dit rien. $(li)Le chiffre est tiré la première fois, entre 1000 et le réglage serveur $(item)depositMaxReserves$() (10000 par défaut)."
+      "text": "S'il en trouve un, la barre d'action affiche $(item)Oil Reserves: N$() en jaune.$(br2)Bon à savoir :$(li)Un gisement n'a de chiffre de réserve qu'une fois qu'une $(item)pompe à pétrole a commencé à le pomper$(). Avant cela, le marteau trouve le gisement mais ne dit rien."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Les gisements à moins de 32 blocs les uns des autres partagent $(item)une seule réserve$(). $(li)Dans cette version, pomper ne vide $(item)pas$() la réserve : un gisement ne s'épuise jamais. Un serveur peut aussi activer $(item)infiniteDeposits$()."
+      "text": "$(li)Le chiffre est tiré la première fois, entre 1000 et le réglage serveur $(item)depositMaxReserves$() (10000 par défaut).$(li)Les gisements à moins de 32 blocs les uns des autres partagent $(item)une seule réserve$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Dans cette version, pomper ne vide $(item)pas$() la réserve : un gisement ne s'épuise jamais. Un serveur peut aussi activer $(item)infiniteDeposits$()."
     },
     {
       "type": "patchouli:text",

@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)The recipe$()$(br)Each share of the stove recipe takes $(item)25 mB air$() and $(item)5 mB fuel$(), and gives $(item)25 mB hot air$() and $(item)25 mB CO2$().$(br2)Hot air then goes through pipes into a $(item)blast furnace hatch$() set in the furnace wall. Build this line before the furnace: start the stove on creosote, and once the furnace runs you can feed the stove with the furnace gas it collects."
+      "text": "$(l)The recipe$()$(br)Each share of the stove recipe takes $(item)25 mB air$() and $(item)5 mB fuel$(), and gives $(item)25 mB hot air$() and $(item)25 mB CO2$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hot air then goes through pipes into a $(item)blast furnace hatch$() set in the furnace wall. Build this line before the furnace: start the stove on creosote, and once the furnace runs you can feed the stove with the furnace gas it collects."
     },
     {
       "type": "patchouli:spotlight",

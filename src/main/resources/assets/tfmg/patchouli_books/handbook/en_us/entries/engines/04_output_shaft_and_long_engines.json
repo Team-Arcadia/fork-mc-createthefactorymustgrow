@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Engine blocks join when they are the same block, face the same way and, for regular engines, have the same type. A row holds up to $(item)5 blocks$() by default (config $(item)engineMaxLength$()). Torque grows with every block in the row.$(br2)The 3D view shows a three-block I engine facing north, its shaft in front. Pipe fuel into any block: the row shares one fuel tank of 4000 mB."
+      "text": "Engine blocks join when they are the same block, face the same way and, for regular engines, have the same type. A row holds up to $(item)5 blocks$() by default (config $(item)engineMaxLength$()). Torque grows with every block in the row."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The 3D view shows a three-block I engine facing north, its shaft in front. Pipe fuel into any block: the row shares one fuel tank of 4000 mB."
     },
     {
       "type": "patchouli:multiblock",

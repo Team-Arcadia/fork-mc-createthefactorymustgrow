@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Chemical vat$(): breaking the controller drops its items, and a vat absorbed when you build a bigger one hands its items and fluids over instead of losing them. $(li)$(item)Arc furnace$():"
+      "text": "$(li)$(item)Chemical vat$(): breaking the controller drops its items, and a vat absorbed when you build a bigger one hands its items and fluids over instead of losing them."
     },
     {
       "type": "patchouli:text",
-      "text": "JEI now shows that coal coke dust is a $(item)catalyst$() that returns to the vat input, with only about 10% used per batch. This was the cause of the \"nothing is produced\" reports. $(li)$(item)Blast furnace$(): the hatch keeps its items, and the furnace saves its fuel and gives it back when broken. $(li)$(item)Casting basin$():"
+      "text": "$(li)$(item)Arc furnace$(): JEI now shows that coal coke dust is a $(item)catalyst$() that returns to the vat input, with only about 10% used per batch. This was the cause of the \"nothing is produced\" reports."
     },
     {
       "type": "patchouli:text",
-      "text": "take the cast ingot out $(item)with an empty hand$(), no funnel needed. $(li)$(item)Flamethrower$(): only fuel that really leaves a tank is credited, so it can no longer refuel for free from an engine. $(li)$(item)Piping upgrade$(): never voids fuel any more and moves only what the engine accepts. $(li)$(item)Large engine$(): the goggles now explain why it is idle."
+      "text": "$(li)$(item)Blast furnace$(): the hatch keeps its items, and the furnace saves its fuel and gives it back when broken.$(li)$(item)Casting basin$(): take the cast ingot out $(item)with an empty hand$(), no funnel needed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Flamethrower$(): only fuel that really leaves a tank is credited, so it can no longer refuel for free from an engine.$(li)$(item)Piping upgrade$(): never voids fuel any more and moves only what the engine accepts.$(li)$(item)Large engine$(): the goggles now explain why it is idle."
     },
     {
       "type": "patchouli:text",

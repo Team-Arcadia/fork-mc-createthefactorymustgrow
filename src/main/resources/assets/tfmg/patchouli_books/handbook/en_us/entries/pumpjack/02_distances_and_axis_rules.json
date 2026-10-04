@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)The head and the connector must each be within $(item)6 blocks$() of the holder along the beam, with only hammer parts in between. $(li)Every part, the connector and the crank must face along the $(item)same axis$() as the holder. A part turned sideways ends the beam there. $(li)The $(item)base$() must be in the same column as the head, $(item)1 to 8 blocks$() below it."
+      "text": "$(li)The head and the connector must each be within $(item)6 blocks$() of the holder along the beam, with only hammer parts in between.$(li)Every part, the connector and the crank must face along the $(item)same axis$() as the holder. A part turned sideways ends the beam there."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)The $(item)crank$() must be in the same column as the connector, $(item)1 to 7 blocks$() below it. $(li)Only one pumpjack can drive a given base.$(br2)If you remove the base or the crank, the beam disassembles back into blocks. Put the piece back and it reassembles on its own."
+      "text": "$(li)The $(item)base$() must be in the same column as the head, $(item)1 to 8 blocks$() below it.$(li)The $(item)crank$() must be in the same column as the connector, $(item)1 to 7 blocks$() below it.$(li)Only one pumpjack can drive a given base."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "If you remove the base or the crank, the beam disassembles back into blocks. Put the piece back and it reassembles on its own."
     },
     {
       "type": "patchouli:text",

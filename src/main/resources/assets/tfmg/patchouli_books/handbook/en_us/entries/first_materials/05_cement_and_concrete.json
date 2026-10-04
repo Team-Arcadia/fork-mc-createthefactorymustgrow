@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Concrete is TFMG's strong building material, and every step uses a mechanical mixer over a basin, no heat needed. 1. $(item)Cement$(): 1 clay ball + 1 limesand give $(item)4 cement$(). 2. $(item)Concrete mixture$():"
+      "text": "Concrete is TFMG's strong building material, and every step uses a mechanical mixer over a basin, no heat needed."
     },
     {
       "type": "patchouli:text",
-      "text": "1 sand + 1 cement + 1 gravel give $(item)16 concrete mixture$(). With $(item)slag$() from the blast furnace instead of sand you get $(item)32$(). 3. $(item)Liquid concrete$(): 1 concrete mixture + 250 mB of water give $(item)1000 mB of liquid concrete$()."
+      "text": "1. $(item)Cement$(): 1 clay ball + 1 limesand give $(item)4 cement$().$(br)2. $(item)Concrete mixture$(): 1 sand + 1 cement + 1 gravel give $(item)16 concrete mixture$(). With $(item)slag$() from the blast furnace instead of sand you get $(item)32$().$(br)3. $(item)Liquid concrete$(): 1 concrete mixture + 250 mB of water give $(item)1000 mB of liquid concrete$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Setting it$()$(li)Pour liquid concrete in the world, with a bucket or a pipe: it $(item)hardens into concrete blocks$() after a while.$(li)In a $(item)casting basin$(), 144 mB of liquid concrete casts a $(item)cinderblock$().$(li)8 concrete blocks around a dye give 8 colored concrete.$(br2)Cement is also a falling block, like sand, if you place it."
+      "text": "$(l)Setting it$()$(li)Pour liquid concrete in the world, with a bucket or a pipe: it $(item)hardens into concrete blocks$() after a while.$(li)In a $(item)casting basin$(), 144 mB of liquid concrete casts a $(item)cinderblock$().$(li)8 concrete blocks around a dye give 8 colored concrete."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cement is also a falling block, like sand, if you place it."
     },
     {
       "type": "patchouli:spotlight",

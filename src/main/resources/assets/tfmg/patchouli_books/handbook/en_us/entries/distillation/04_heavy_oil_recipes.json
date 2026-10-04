@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)5 outputs$()$(br)100 mB heavy oil, 25 mB lubrication oil, 50 mB diesel, 20 mB kerosene, 5 mB naphtha.$(br2)$(l)4 outputs$()$(br)100 mB heavy oil, 30 mB lubrication oil, 50 mB diesel, 20 mB kerosene.$(br2)$(l)3 outputs (light distillation)$()$(br)100 mB heavy oil, 50 mB diesel, 50 mB lubrication oil."
+      "text": "$(l)5 outputs$()$(br)100 mB heavy oil, 25 mB lubrication oil, 50 mB diesel, 20 mB kerosene, 5 mB naphtha.$(br2)$(l)4 outputs$()$(br)100 mB heavy oil, 30 mB lubrication oil, 50 mB diesel, 20 mB kerosene."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)3 outputs (light distillation)$()$(br)100 mB heavy oil, 50 mB diesel, 50 mB lubrication oil."
     },
     {
       "type": "patchouli:text",

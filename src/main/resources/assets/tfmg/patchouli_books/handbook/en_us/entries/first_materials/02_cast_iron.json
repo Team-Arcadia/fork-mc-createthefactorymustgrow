@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Making it$()$(br)Put a $(item)mechanical press$() over a $(item)basin$(), with a lit $(item)blaze burner$() under the basin. Drop in $(item)1 iron ingot + 1 coal$(): the press compacts them into $(item)1 cast iron ingot$(). The recipe needs heat, a cold basin does nothing.$(br2)Charcoal does not work here, it must be coal. Crushing lignite is a good source of extra coal."
+      "text": "$(l)Making it$()$(br)Put a $(item)mechanical press$() over a $(item)basin$(), with a lit $(item)blaze burner$() under the basin. Drop in $(item)1 iron ingot + 1 coal$(): the press compacts them into $(item)1 cast iron ingot$(). The recipe needs heat, a cold basin does nothing."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Storage and shapes$()$(li)9 cast iron nuggets make an ingot, and an ingot gives 9 nuggets back.$(li)9 ingots make a $(item)block of cast iron$(), which the blast furnace output needs.$(li)Press an ingot with a mechanical press on a depot or a belt for a $(item)cast iron sheet$()."
+      "text": "Charcoal does not work here, it must be coal. Crushing lignite is a good source of extra coal.$(br2)$(l)Storage and shapes$()$(li)9 cast iron nuggets make an ingot, and an ingot gives 9 nuggets back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)9 ingots make a $(item)block of cast iron$(), which the blast furnace output needs.$(li)Press an ingot with a mechanical press on a depot or a belt for a $(item)cast iron sheet$()."
     },
     {
       "type": "patchouli:text",

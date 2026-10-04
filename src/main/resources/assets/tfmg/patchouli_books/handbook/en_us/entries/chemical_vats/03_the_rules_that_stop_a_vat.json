@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)One broken machine stops everything If $(item)any$() attached machine is not working, $(item)no recipe runs at all$(), even one that does not need that machine.$()"
+      "text": "$(l)One broken machine stops everything$()"
     },
     {
       "type": "patchouli:text",
-      "text": "A mixer below 30 RPM, a compressor below 120 RPM, an unpowered freezer or an electrode holder with too little current all freeze the whole vat. Remove the machine or get it running.$(br2)Extra working machines are fine: a recipe needs $(item)at least$() the machines it lists."
+      "text": "If $(item)any$() attached machine is not working, $(item)no recipe runs at all$(), even one that does not need that machine. A mixer below 30 RPM, a compressor below 120 RPM, an unpowered freezer or an electrode holder with too little current all freeze the whole vat. Remove the machine or get it running."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Extra working machines are fine: a recipe needs $(item)at least$() the machines it lists."
     },
     {
       "type": "patchouli:text",

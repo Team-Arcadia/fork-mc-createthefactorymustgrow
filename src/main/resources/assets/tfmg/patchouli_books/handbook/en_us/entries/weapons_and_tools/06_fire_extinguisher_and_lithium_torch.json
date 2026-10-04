@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Fire Extinguisher$()$(br)Hold right-click to spray $(item)dry ice flakes$(), one per tick. A full extinguisher holds $(item)500 flakes$(), about 25 seconds of spraying. $(li)A flake that hits a block $(item)puts out every fire$() within 1 block of the impact (config $(item)fireExtinguisherClearRadius$())."
+      "text": "$(l)Fire Extinguisher$()$(br)Hold right-click to spray $(item)dry ice flakes$(), one per tick. A full extinguisher holds $(item)500 flakes$(), about 25 seconds of spraying."
     },
     {
       "type": "patchouli:text",
-      "text": "That includes the green and blue fires of the grenades. $(li)A flake that hits a creature puts it out, $(item)removes Hellfire$(), slows it and freezes it; enough flakes start to hurt.$(br2)Refill it with a $(item)spout$() and 1000 mB of carbon dioxide: the CO2 your engines, fireboxes and coke ovens produce finally has a use."
+      "text": "$(li)A flake that hits a block $(item)puts out every fire$() within 1 block of the impact (config $(item)fireExtinguisherClearRadius$()). That includes the green and blue fires of the grenades.$(li)A flake that hits a creature puts it out, $(item)removes Hellfire$(), slows it and freezes it; enough flakes start to hurt."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Refill it with a $(item)spout$() and 1000 mB of carbon dioxide: the CO2 your engines, fireboxes and coke ovens produce finally has a use."
     },
     {
       "type": "patchouli:text",

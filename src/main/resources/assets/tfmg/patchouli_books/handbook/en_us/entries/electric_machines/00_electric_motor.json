@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Speed and draw$()$(li)Speed: $(item)voltage x 0.8 RPM$(), up to $(item)255 RPM$(), reached at about 319 V.$(li)Resistance: $(item)30 ohms$(), so it draws $(item)V / 30$() amps.$(li)At 300 V it turns at 240 RPM and uses 10 A, that is $(item)3,000 W$().$(br2)Its stress capacity grows with its speed. Choose the direction of rotation with its value box."
+      "text": "$(l)Speed and draw$()$(li)Speed: $(item)voltage x 0.8 RPM$(), up to $(item)255 RPM$(), reached at about 319 V.$(li)Resistance: $(item)30 ohms$(), so it draws $(item)V / 30$() amps.$(li)At 300 V it turns at 240 RPM and uses 10 A, that is $(item)3,000 W$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Its stress capacity grows with its speed. Choose the direction of rotation with its value box."
     },
     {
       "type": "patchouli:text",

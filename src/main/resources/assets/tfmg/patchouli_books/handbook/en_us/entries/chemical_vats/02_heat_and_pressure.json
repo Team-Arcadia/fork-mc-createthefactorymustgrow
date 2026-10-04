@@ -6,7 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Heat$()$(br)Heat is the sum of every heater $(item)directly under the vat$():$(br2)$(li)a burning $(item)Firebox$() block gives $(item)2$(),$(li)a lit $(item)Blaze Burner$() gives $(item)1$(), or $(item)2$() when superheated,$(li)each working $(item)Freezer$() attached to the vat takes $(item)1$() away."
+      "text": "$(l)Heat$()$(br)Heat is the sum of every heater $(item)directly under the vat$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)a burning $(item)Firebox$() block gives $(item)2$(),$(li)a lit $(item)Blaze Burner$() gives $(item)1$(), or $(item)2$() when superheated,$(li)each working $(item)Freezer$() attached to the vat takes $(item)1$() away."
     },
     {
       "type": "patchouli:text",
@@ -14,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Pressure$()$(br)Each running $(item)Compressor$() adds $(item)1$() pressure. Turn its shaft the other way and it removes 1 instead (goggles say Pressurizing or Depressurizing). Pressure recipes ask for $(item)pressure 1$(), so one compressor turning the right way does it.$(br2)Goggles show the vat's $(item)Heat$() and $(item)Pressure$() as bars, so you can check both before blaming the recipe."
+      "text": "$(l)Pressure$()$(br)Each running $(item)Compressor$() adds $(item)1$() pressure. Turn its shaft the other way and it removes 1 instead (goggles say Pressurizing or Depressurizing). Pressure recipes ask for $(item)pressure 1$(), so one compressor turning the right way does it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Goggles show the vat's $(item)Heat$() and $(item)Pressure$() as bars, so you can check both before blaming the recipe."
     },
     {
       "type": "patchouli:spotlight",

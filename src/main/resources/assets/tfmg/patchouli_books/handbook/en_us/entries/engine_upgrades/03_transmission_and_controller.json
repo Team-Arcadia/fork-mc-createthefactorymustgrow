@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The $(item)Engine Controller$() lets you drive an engine like a vehicle instead of with redstone. A $(item)Transmission$() is the link between the two. 1. Right-click the engine controller with the transmission. Its tooltip now shows the linked controller."
+      "text": "The $(item)Engine Controller$() lets you drive an engine like a vehicle instead of with redstone. A $(item)Transmission$() is the link between the two."
     },
     {
       "type": "patchouli:text",
-      "text": "Sneak-right-click in the air to clear the link. 2. Right-click the engine with the linked transmission. It mounts as the engine's upgrade and binds the engine to the controller."
+      "text": "1. Right-click the engine controller with the transmission. Its tooltip now shows the linked controller. Sneak-right-click in the air to clear the link.$(br)2. Right-click the engine with the linked transmission. It mounts as the engine's upgrade and binds the engine to the controller."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "While a controller drives it, the engine $(item)ignores redstone$(). Take the transmission off with a wrench to go back to redstone control: the item you get back keeps its link, so you can mount it again later without re-binding.$(br2)Right-click the controller with a wrench to open its menu and set redstone link frequencies."
+      "text": "While a controller drives it, the engine $(item)ignores redstone$(). Take the transmission off with a wrench to go back to redstone control: the item you get back keeps its link, so you can mount it again later without re-binding."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Right-click the controller with a wrench to open its menu and set redstone link frequencies."
     },
     {
       "type": "patchouli:spotlight",

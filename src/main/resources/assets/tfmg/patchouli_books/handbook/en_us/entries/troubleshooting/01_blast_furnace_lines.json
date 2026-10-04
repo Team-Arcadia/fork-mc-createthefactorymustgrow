@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Read on the $(item)Blast Furnace Output$(): $(li)**Structure incomplete: at least 3 full layers needed**: the tower is shorter than 3 complete layers, so it does nothing at all. Check every layer against the JEI info page:"
+      "text": "Read on the $(item)Blast Furnace Output$():"
     },
     {
       "type": "patchouli:text",
-      "text": "fireproof bricks on the edges, reinforcements on the corners, a fireproof brick in the bottom centre. $(li)**No fuel: add Coal Coke Dust**: crush coal coke and drop the dust in the top of the shaft or funnel it into the output. $(li)**No flux: add Limesand**. $(li)$(item)No Blast Furnace Hatch in the walls for hot air$():"
+      "text": "$(li)$(item)Structure incomplete: at least 3 full layers needed$(): the tower is shorter than 3 complete layers, so it does nothing at all. Check every layer against the JEI info page: fireproof bricks on the edges, reinforcements on the corners, a fireproof brick in the bottom centre."
     },
     {
       "type": "patchouli:text",
-      "text": "one wall brick must be a Blast Furnace Hatch. $(li)$(item)The hatch holds no Hot Air$(): pipe hot air from a blast stove into that hatch. $(li)**Output tank full: pump the result out**: pump the molten metal and the slag out of the output; it needs room for 144 mB in each tank."
+      "text": "$(li)$(item)No fuel: add Coal Coke Dust$(): crush coal coke and drop the dust in the top of the shaft or funnel it into the output.$(li)$(item)No flux: add Limesand$().$(li)$(item)No Blast Furnace Hatch in the walls for hot air$(): one wall brick must be a Blast Furnace Hatch."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)The hatch holds no Hot Air$(): pipe hot air from a blast stove into that hatch.$(li)$(item)Output tank full: pump the result out$(): pump the molten metal and the slag out of the output; it needs room for 144 mB in each tank."
     },
     {
       "type": "patchouli:text",

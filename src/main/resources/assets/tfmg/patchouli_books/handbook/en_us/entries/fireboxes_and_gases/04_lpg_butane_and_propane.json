@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(item)LPG$() comes from the top output of a crude oil tower: 60 mB per run. In a chemical vat it can be split and put back together:$(br2)$(l)Separation$()$(br)$(item)1000 mB LPG$() gives $(item)500 mB butane + 500 mB propane$(). Use any chemical vat with a $(item)Freezer$() attached."
+      "text": "$(item)LPG$() comes from the top output of a crude oil tower: 60 mB per run. In a chemical vat it can be split and put back together:"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Compression$()$(br)$(item)500 mB butane + 500 mB propane$() give $(item)1000 mB LPG$(). This needs a $(item)Compressor$() pressurising the vat, and only works in a $(item)steel$() or $(item)fireproof$() chemical vat."
+      "text": "$(l)Separation$()$(br)$(item)1000 mB LPG$() gives $(item)500 mB butane + 500 mB propane$(). Use any chemical vat with a $(item)Freezer$() attached."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Uses$()$(li)All three are firebox fuels and burn in flarestacks and gas lamps.$(li)A spout fills an $(item)engine cylinder$() with 250 mB of butane or propane, to run an engine on that gas.$(li)A spout turns an empty bucket and 1000 mB of LPG into an $(item)LPG tank$(), handy to carry gas by hand."
+      "text": "$(l)Compression$()$(br)$(item)500 mB butane + 500 mB propane$() give $(item)1000 mB LPG$(). This needs a $(item)Compressor$() pressurising the vat, and only works in a $(item)steel$() or $(item)fireproof$() chemical vat.$(br2)$(l)Uses$()$(li)All three are firebox fuels and burn in flarestacks and gas lamps."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)A spout fills an $(item)engine cylinder$() with 250 mB of butane or propane, to run an engine on that gas.$(li)A spout turns an empty bucket and 1000 mB of LPG into an $(item)LPG tank$(), handy to carry gas by hand."
     },
     {
       "type": "patchouli:text",

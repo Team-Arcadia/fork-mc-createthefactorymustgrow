@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)One crushed raw iron (144 mB)$()$(li)$(item)3 layers$(): 340 ticks (17 s)$(li)$(item)4 layers$(): 320 ticks (16 s)$(li)$(item)5 layers$(): 300 ticks (15 s)$(li)$(item)6 layers$(): 280 ticks (14 s)$(li)$(item)8 layers$(): 240 ticks (12 s)$(li)$(item)10 layers$(): 200 ticks (10 s)$(br2)A $(item)reinforced$() furnace halves these times again: 170 ticks at 3 layers, $(item)100 ticks$() at 10."
+      "text": "$(l)One crushed raw iron (144 mB)$()$(li)$(item)3 layers$(): 340 ticks (17 s)$(li)$(item)4 layers$(): 320 ticks (16 s)$(li)$(item)5 layers$(): 300 ticks (15 s)$(li)$(item)6 layers$(): 280 ticks (14 s)$(li)$(item)8 layers$(): 240 ticks (12 s)$(li)$(item)10 layers$(): 200 ticks (10 s)"
     },
     {
       "type": "patchouli:text",
-      "text": "Hot air is drawn $(item)per tick of work$(), so a faster furnace uses less hot air and less coke per ingot: about 6800 mB of hot air per ingot at 3 layers, 2000 mB at 10 reinforced layers.$(br2)The furnace only counts complete layers, so extra half-built walls on top do nothing."
+      "text": "A $(item)reinforced$() furnace halves these times again: 170 ticks at 3 layers, $(item)100 ticks$() at 10.$(br2)Hot air is drawn $(item)per tick of work$(), so a faster furnace uses less hot air and less coke per ingot: about 6800 mB of hot air per ingot at 3 layers, 2000 mB at 10 reinforced layers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The furnace only counts complete layers, so extra half-built walls on top do nothing."
     },
     {
       "type": "patchouli:spotlight",

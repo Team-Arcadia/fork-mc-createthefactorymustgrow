@@ -10,11 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "If it finds one, the action bar shows $(item)Oil Reserves: N$() in yellow. Good to know: $(li)A deposit only gets a reserve figure once a $(item)pumpjack has started pumping it$(). Before that, the hammer finds the deposit but stays silent. $(li)The figure is rolled the first time, between 1000 and the server setting $(item)depositMaxReserves$() (10000 by default)."
+      "text": "If it finds one, the action bar shows $(item)Oil Reserves: N$() in yellow.$(br2)Good to know:$(li)A deposit only gets a reserve figure once a $(item)pumpjack has started pumping it$(). Before that, the hammer finds the deposit but stays silent."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Deposits within 32 blocks of each other share $(item)one reserve$(). $(li)In this version pumping does $(item)not$() drain the reserve, so a deposit never runs dry. A server can also turn on $(item)infiniteDeposits$().$(br2)In practice the hammer is most useful to check that a pipe column really ends on a deposit: hit the top of the column, and a message means the column is right above one."
+      "text": "$(li)The figure is rolled the first time, between 1000 and the server setting $(item)depositMaxReserves$() (10000 by default).$(li)Deposits within 32 blocks of each other share $(item)one reserve$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)In this version pumping does $(item)not$() drain the reserve, so a deposit never runs dry. A server can also turn on $(item)infiniteDeposits$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In practice the hammer is most useful to check that a pipe column really ends on a deposit: hit the top of the column, and a message means the column is right above one."
     },
     {
       "type": "patchouli:spotlight",

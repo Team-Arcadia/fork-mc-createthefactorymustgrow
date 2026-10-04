@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Crude oil comes from $(item)oil deposits$(), generated in every Overworld biome at the very bottom of the world, $(item)Y -64$(), in the bedrock layer. $(li)A field appears on average in $(item)one chunk out of 16$()."
+      "text": "Crude oil comes from $(item)oil deposits$(), generated in every Overworld biome at the very bottom of the world, $(item)Y -64$(), in the bedrock layer.$(br2)$(li)A field appears on average in $(item)one chunk out of 16$()."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)A field holds $(item)one to six$() deposit blocks, spread up to 12 blocks around its centre. $(li)Above each deposit sits a column of $(item)crude oil$() source blocks, up to about two dozen blocks tall, with a few sources leaking sideways. $(li)$(item)Fossilstone$() sits beside the lowest four blocks of each column."
+      "text": "$(li)A field holds $(item)one to six$() deposit blocks, spread up to 12 blocks around its centre.$(li)Above each deposit sits a column of $(item)crude oil$() source blocks, up to about two dozen blocks tall, with a few sources leaking sideways."
     },
     {
       "type": "patchouli:text",
-      "text": "The deposit block itself cannot be broken, not even by the Wither or the Ender Dragon. You never mine it: you pump it from above, through a column of industrial pipes, with a pumpjack.$(br2)Digging down blindly is slow and dangerous, so use the tools on the next pages to find a field first, then plan a straight shaft from the surface down to it."
+      "text": "$(li)$(item)Fossilstone$() sits beside the lowest four blocks of each column.$(br2)The deposit block itself cannot be broken, not even by the Wither or the Ender Dragon. You never mine it: you pump it from above, through a column of industrial pipes, with a pumpjack."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Digging down blindly is slow and dangerous, so use the tools on the next pages to find a field first, then plan a straight shaft from the surface down to it."
     },
     {
       "type": "patchouli:spotlight",

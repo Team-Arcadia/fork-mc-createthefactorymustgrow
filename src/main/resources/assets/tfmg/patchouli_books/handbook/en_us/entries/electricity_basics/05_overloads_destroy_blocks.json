@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Every electric block has a $(item)maximum voltage$(), $(item)1,000 V$() by default, and some also have a $(item)maximum current$(). While a block is over its limit, a damage counter rises every half second."
+      "text": "Every electric block has a $(item)maximum voltage$(), $(item)1,000 V$() by default, and some also have a $(item)maximum current$(). While a block is over its limit, a damage counter rises every half second. After a few seconds of overload, and even short overloads count, the block is $(item)destroyed and drops nothing$(). The block is lost for good."
     },
     {
       "type": "patchouli:text",
-      "text": "After a few seconds of overload, and even short overloads count, the block is $(item)destroyed and drops nothing$(). The block is lost for good.$(br2)A multimeter shows a red warning once a block reaches $(item)80%$() of a limit. Check new setups before you leave them running."
+      "text": "A multimeter shows a red warning once a block reaches $(item)80%$() of a limit. Check new setups before you leave them running."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Current limits$()$(li)Lamps and neon tubes: 1 A$(li)Diode, switch, potentiometer and transformer: 100 A$(li)Freezer and electrode holder: 400 A$(li)Large transformer: 500 A, large switch: 1,000 A$(br2)A large generator can go well above 1,000 V. Step it down before it reaches ordinary machines."
+      "text": "$(l)Current limits$()$(li)Lamps and neon tubes: 1 A$(li)Diode, switch, potentiometer and transformer: 100 A$(li)Freezer and electrode holder: 400 A$(li)Large transformer: 500 A, large switch: 1,000 A"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A large generator can go well above 1,000 V. Step it down before it reaches ordinary machines."
     },
     {
       "type": "patchouli:spotlight",

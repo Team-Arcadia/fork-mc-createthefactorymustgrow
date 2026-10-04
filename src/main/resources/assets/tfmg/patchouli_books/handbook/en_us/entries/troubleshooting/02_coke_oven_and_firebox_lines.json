@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Either full tank $(item)pauses the whole oven$(). Send the CO2 to an Exhaust or a smokestack, and keep the creosote for simple engines or the blast stove."
+      "text": "Either full tank $(item)pauses the whole oven$(). Send the CO2 to an Exhaust or a smokestack, and keep the creosote for simple engines or the blast stove.$(br2)$(l)Firebox$()$(li)$(item)Not enough fuel to burn$(): the tank holds less than one burn's worth. Pipe more fuel in."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Firebox$()$(li)$(item)Not enough fuel to burn$(): the tank holds less than one burn's worth. Pipe more fuel in.$(li)$(item)This fluid is not a firebox fuel$(): fireboxes burn LPG, butane, propane, hydrogen, diesel, kerosene and naphtha. Empty the tank and change the fluid.$(li)$(item)Exhaust full: pump the CO2 away$(): like engines, a firebox stops when its CO2 has nowhere to go."
+      "text": "$(li)$(item)This fluid is not a firebox fuel$(): fireboxes burn LPG, butane, propane, hydrogen, diesel, kerosene and naphtha. Empty the tank and change the fluid.$(li)$(item)Exhaust full: pump the CO2 away$(): like engines, a firebox stops when its CO2 has nowhere to go."
     },
     {
       "type": "patchouli:text",

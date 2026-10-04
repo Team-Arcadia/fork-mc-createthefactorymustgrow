@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Bobinez les bobines sur l'$(item)enrouleuse$() avec une bobine de cuivre. Son cadran règle le nombre de tours par pas de 10, jusqu'à 1 000.$(br2)$(l)Limites$()$(br)Jusqu'à $(item)10 kW$() en sortie, $(item)100 A$(), et les $(item)1 000 V$() habituels sur le transformateur lui-même. Au-delà, passez au grand transformateur."
+      "text": "Bobinez les bobines sur l'$(item)enrouleuse$() avec une bobine de cuivre. Son cadran règle le nombre de tours par pas de 10, jusqu'à 1 000."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Limites$()$(br)Jusqu'à $(item)10 kW$() en sortie, $(item)100 A$(), et les $(item)1 000 V$() habituels sur le transformateur lui-même. Au-delà, passez au grand transformateur."
     },
     {
       "type": "patchouli:spotlight",

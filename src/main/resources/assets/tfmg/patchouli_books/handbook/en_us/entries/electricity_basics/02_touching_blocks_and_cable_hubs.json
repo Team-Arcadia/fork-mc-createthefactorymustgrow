@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Copper Cable Hub: $(item)16 A$()$(li)Brass Cable Hub: $(item)50 A$()$(li)Aluminum Cable Hub: $(item)80 A$()$(li)Steel Casing Cable Hub and Heavy Cable Hub: $(item)100 A$()$(li)Steel Cable Hub: $(item)250 A$()$(br2)Copper hubs are the cheapest, two per craft from copper ingots and copper wire. Upgrade them before your network grows past their limit, or they will burn out (see $(item)Overloads$())."
+      "text": "$(li)Copper Cable Hub: $(item)16 A$()$(li)Brass Cable Hub: $(item)50 A$()$(li)Aluminum Cable Hub: $(item)80 A$()$(li)Steel Casing Cable Hub and Heavy Cable Hub: $(item)100 A$()$(li)Steel Cable Hub: $(item)250 A$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Copper hubs are the cheapest, two per craft from copper ingots and copper wire. Upgrade them before your network grows past their limit, or they will burn out (see $(item)Overloads$())."
     },
     {
       "type": "patchouli:spotlight",

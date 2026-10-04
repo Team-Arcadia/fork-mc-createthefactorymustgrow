@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Chains$()$(br)Line accumulators up end to end, all facing the same way, to build a chain of up to $(item)15$(). Each block adds $(item)12 V$() and $(item)100,000$() of storage: a chain of 10 outputs 120 V and holds 1,000,000."
+      "text": "$(l)Chains$()$(br)Line accumulators up end to end, all facing the same way, to build a chain of up to $(item)15$(). Each block adds $(item)12 V$() and $(item)100,000$() of storage: a chain of 10 outputs 120 V and holds 1,000,000.$(br2)$(l)Charging and discharging$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Charging and discharging$()$(li)When the network voltage is $(item)above$() the chain's voltage and the network has spare power, it charges at up to $(item)100 per tick$().$(li)When the network voltage is $(item)at or below$() its own, it powers the network, up to $(item)20 A$() (so 240 W per block of the chain).$(li)A $(item)redstone signal$() stops it from discharging."
+      "text": "$(li)When the network voltage is $(item)above$() the chain's voltage and the network has spare power, it charges at up to $(item)100 per tick$().$(li)When the network voltage is $(item)at or below$() its own, it powers the network, up to $(item)20 A$() (so 240 W per block of the chain)."
     },
     {
       "type": "patchouli:text",
-      "text": "A broken accumulator keeps its charge in the item.$(br2)Its other faces expose the stored energy as $(item)Forge Energy$() for machines from other mods, and push it into them. It is also a $(item)display link$() source for voltage and network figures."
+      "text": "$(li)A $(item)redstone signal$() stops it from discharging.$(br2)A broken accumulator keeps its charge in the item."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Its other faces expose the stored energy as $(item)Forge Energy$() for machines from other mods, and push it into them. It is also a $(item)display link$() source for voltage and network figures."
     },
     {
       "type": "patchouli:spotlight",

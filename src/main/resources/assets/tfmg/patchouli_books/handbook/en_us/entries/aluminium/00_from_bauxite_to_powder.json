@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Aluminium is everywhere in the electrical age: the $(item)steel mechanism$() needs it, and so do aluminium wire, pipes and the centrifuge. It all starts with $(item)Bauxite$(), a stone block.$(br2)$(l)Crushing$()$(br)Run Bauxite through Create's $(item)Crushing Wheels$(). Each block gives:"
+      "text": "Aluminium is everywhere in the electrical age: the $(item)steel mechanism$() needs it, and so do aluminium wire, pipes and the centrifuge. It all starts with $(item)Bauxite$(), a stone block."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)2 Bauxite Powder$() with a 75% chance,$(li)$(item)1 more$() Bauxite Powder with a 20% chance.$(br2)That is about 1.7 powder per block on average, so mine plenty."
+      "text": "$(l)Crushing$()$(br)Run Bauxite through Create's $(item)Crushing Wheels$(). Each block gives:$(br2)$(li)$(item)2 Bauxite Powder$() with a 75% chance,$(li)$(item)1 more$() Bauxite Powder with a 20% chance."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That is about 1.7 powder per block on average, so mine plenty."
     },
     {
       "type": "patchouli:text",

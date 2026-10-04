@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)La valeur cible$()$(br)La case de valeur à l'avant de la machine règle une cible de 1 à 100, $(item)multipliée par 10$() : de $(item)10 à 1000$() tours (200 par défaut). Un tour de fil vaut $(item)1 ohm$() sur une résistance et $(item)1 tour$() sur une bobine."
+      "text": "$(l)La valeur cible$()$(br)La case de valeur à l'avant de la machine règle une cible de 1 à 100, $(item)multipliée par 10$() : de $(item)10 à 1000$() tours (200 par défaut). Un tour de fil vaut $(item)1 ohm$() sur une résistance et $(item)1 tour$() sur une bobine.$(br2)$(l)Résistances$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Résistances Fabriquez une $(item)résistance inachevée$() (fil de cuivre, plaque de plastique ou boule de slime, fil de cuivre, en colonne).$() Enroulez-la avec une $(item)bobine de constantan$() : elle devient une $(item)résistance$() dont la valeur est la cible. Remettez une résistance finie et elle est enroulée jusqu'à une cible plus haute."
+      "text": "Fabriquez une $(item)résistance inachevée$() (fil de cuivre, plaque de plastique ou boule de slime, fil de cuivre, en colonne). Enroulez-la avec une $(item)bobine de constantan$() : elle devient une $(item)résistance$() dont la valeur est la cible. Remettez une résistance finie et elle est enroulée jusqu'à une cible plus haute."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Grandes bobines$()$(br)Enroulez un $(item)bloc d'alliage magnétique laminé$() (9 plaques d'alliage magnétique) avec une $(item)bobine de cuivre$(). La $(item)grande bobine$() reçoit les tours de la cible.$(br2)Réglez la cible $(item)avant$() de commencer : un travail prend à la bobine autant de tours que la cible le demande."
+      "text": "$(l)Grandes bobines$()$(br)Enroulez un $(item)bloc d'alliage magnétique laminé$() (9 plaques d'alliage magnétique) avec une $(item)bobine de cuivre$(). La $(item)grande bobine$() reçoit les tours de la cible."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Réglez la cible $(item)avant$() de commencer : un travail prend à la bobine autant de tours que la cible le demande."
     },
     {
       "type": "patchouli:spotlight",

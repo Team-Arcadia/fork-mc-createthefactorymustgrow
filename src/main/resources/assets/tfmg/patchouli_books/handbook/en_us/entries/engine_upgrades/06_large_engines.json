@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Right-click the engine with a $(item)Shaft$() to put it in the right spot. The shaft must cross the engine's direction, not point at it.$(br2)$(l)What they need$()$(li)$(item)Fuel$(): diesel, kerosene, naphtha or furnace gas (2000 mB tank).$(li)$(item)Air$() in a separate 1000 mB air tank. Pipe it from an $(item)Air Intake$().$(li)Room in the 2000 mB $(item)exhaust$() tank: pump the CO2 away."
+      "text": "Right-click the engine with a $(item)Shaft$() to put it in the right spot. The shaft must cross the engine's direction, not point at it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)What they need$()$(li)$(item)Fuel$(): diesel, kerosene, naphtha or furnace gas (2000 mB tank).$(li)$(item)Air$() in a separate 1000 mB air tank. Pipe it from an $(item)Air Intake$().$(li)Room in the 2000 mB $(item)exhaust$() tank: pump the CO2 away."
     },
     {
       "type": "patchouli:text",

@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)2. Pièces et machines$()$(br)L'acier donne des plaques lourdes, des vis, des carters et le $(item)mécanisme en acier$() dont la plupart des machines ont besoin.$(br2)$(l)3. L'électricité$()$(br)Les générateurs transforment la rotation en courant pour les moteurs, les cuves, le polariseur et la machine à bobiner. L'aluminium vient de l'électrolyse."
+      "text": "$(l)2. Pièces et machines$()$(br)L'acier donne des plaques lourdes, des vis, des carters et le $(item)mécanisme en acier$() dont la plupart des machines ont besoin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)3. L'électricité$()$(br)Les générateurs transforment la rotation en courant pour les moteurs, les cuves, le polariseur et la machine à bobiner. L'aluminium vient de l'électrolyse."
     },
     {
       "type": "patchouli:text",

@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Une machine en panne bloque tout Si $(item)une seule$() machine reliée ne fonctionne pas, $(item)aucune recette ne tourne$(), même une qui n'a pas besoin de cette machine.$()"
+      "text": "$(l)Une machine en panne bloque tout$()$(br)Si $(item)une seule$() machine reliée ne fonctionne pas, $(item)aucune recette ne tourne$(), même une qui n'a pas besoin de cette machine."
     },
     {
       "type": "patchouli:text",
-      "text": "Un mélangeur sous 30 RPM, un compresseur sous 120 RPM, un congélateur sans courant ou un porte-électrode avec trop peu d'intensité bloquent toute la cuve. Retirez la machine ou faites-la fonctionner.$(br2)Les machines en plus qui fonctionnent ne gênent pas : une recette demande $(item)au moins$() les machines qu'elle liste."
+      "text": "Un mélangeur sous 30 RPM, un compresseur sous 120 RPM, un congélateur sans courant ou un porte-électrode avec trop peu d'intensité bloquent toute la cuve.$(br)Retirez la machine ou faites-la fonctionner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les machines en plus qui fonctionnent ne gênent pas : une recette demande $(item)au moins$() les machines qu'elle liste."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +22,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Sorties pleines$()$(br)Une recette ne démarre que si $(item)tous$() ses produits ont la place. Un sous-produit laissé en sortie (dioxyde de carbone, laitier) finira par bloquer la cuve : videz-le.$(br2)$(l)Casser une cuve$()$(br)Casser une cuve $(item)fait tomber les objets$() qu'elle contenait. Ses fluides passent dans les blocs qui restent du multibloc."
+      "text": "$(l)Sorties pleines$()$(br)Une recette ne démarre que si $(item)tous$() ses produits ont la place. Un sous-produit laissé en sortie (dioxyde de carbone, laitier) finira par bloquer la cuve : videz-le."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Casser une cuve$()$(br)Casser une cuve $(item)fait tomber les objets$() qu'elle contenait. Ses fluides passent dans les blocs qui restent du multibloc."
     },
     {
       "type": "patchouli:spotlight",

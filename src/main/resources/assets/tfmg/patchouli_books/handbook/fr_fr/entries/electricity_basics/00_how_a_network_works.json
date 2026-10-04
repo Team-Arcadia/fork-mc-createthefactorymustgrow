@@ -6,15 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Les blocs électriques qui se touchent par des faces capables de transmettre le courant forment un $(item)réseau$(). Un réseau a une seule tension et un seul budget de puissance. $(li)La $(item)tension (V)$() est la plus haute tension proposée par un générateur du réseau."
+      "text": "Les blocs électriques qui se touchent par des faces capables de transmettre le courant forment un $(item)réseau$(). Un réseau a une seule tension et un seul budget de puissance."
     },
     {
       "type": "patchouli:text",
-      "text": "Deux générateurs n'additionnent pas leurs tensions. $(li)La $(item)puissance produite (W)$() est la somme de ce que chaque générateur peut fournir. $(li)Tous les consommateurs sont branchés $(item)en parallèle$() : chacun reçoit la tension complète du réseau."
+      "text": "$(li)La $(item)tension (V)$() est la plus haute tension proposée par un générateur du réseau. Deux générateurs n'additionnent pas leurs tensions.$(li)La $(item)puissance produite (W)$() est la somme de ce que chaque générateur peut fournir."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Les formules$()$(br)Chaque consommateur a une $(item)résistance R$() en ohms. Il tire alors un courant $(item)I = V / R$() et consomme une puissance $(item)P = V x I$(), soit $(item)V x V / R$().$(br2)Exemple : une ampoule fait 400 ohms. À 200 V, elle tire 0,5 A et consomme 100 W. À 400 V, elle tirerait 1 A et consommerait 400 W."
+      "text": "$(li)Tous les consommateurs sont branchés $(item)en parallèle$() : chacun reçoit la tension complète du réseau.$(br2)$(l)Les formules$()$(br)Chaque consommateur a une $(item)résistance R$() en ohms. Il tire alors un courant $(item)I = V / R$() et consomme une puissance $(item)P = V x I$(), soit $(item)V x V / R$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Exemple : une ampoule fait 400 ohms. À 200 V, elle tire 0,5 A et consomme 100 W. À 400 V, elle tirerait 1 A et consommerait 400 W."
     },
     {
       "type": "patchouli:text",

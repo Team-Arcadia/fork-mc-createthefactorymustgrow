@@ -14,11 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Goggle lines (since 1.3.0)$()$(li)$(item)Needs a Powered Shaft 2 blocks in front$(): place or turn the shaft.$(li)$(item)Needs Air in its air tank$(): feed it air.$(li)$(item)No fuel$(): pipe fuel in.$(li)$(item)Unsupported fuel: use diesel, kerosene, naphtha or furnace gas$(): drain the tank and change fuel.$(li)$(item)Exhaust full: pump the CO2 away$()."
+      "text": "$(l)Goggle lines (since 1.3.0)$()$(li)$(item)Needs a Powered Shaft 2 blocks in front$(): place or turn the shaft.$(li)$(item)Needs Air in its air tank$(): feed it air.$(li)$(item)No fuel$(): pipe fuel in.$(li)$(item)Unsupported fuel: use diesel, kerosene, naphtha or furnace gas$(): drain the tank and change fuel."
     },
     {
       "type": "patchouli:text",
-      "text": "Below these lines the goggles list the three tanks, so you can see which one is empty or full."
+      "text": "$(li)$(item)Exhaust full: pump the CO2 away$().$(br2)Below these lines the goggles list the three tanks, so you can see which one is empty or full."
     },
     {
       "type": "patchouli:spotlight",

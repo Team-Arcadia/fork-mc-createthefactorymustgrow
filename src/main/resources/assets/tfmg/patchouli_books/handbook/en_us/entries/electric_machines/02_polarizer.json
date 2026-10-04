@@ -10,11 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Power$()$(li)It connects through its $(item)back$() face.$(li)While working it is a $(item)30 ohm$() consumer and needs at least $(item)2,000 W$(), which means about $(item)245 V$() or more.$(li)A single generator reaches that above roughly 215 RPM.$(br2)Below 2,000 W, goggles show a red $(item)not enough power$() line and the charge does not move."
+      "text": "$(l)Power$()$(li)It connects through its $(item)back$() face.$(li)While working it is a $(item)30 ohm$() consumer and needs at least $(item)2,000 W$(), which means about $(item)245 V$() or more.$(li)A single generator reaches that above roughly 215 RPM."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Cycle$()$(br)It charges for $(item)10 seconds$(), then the item is converted with a burst of sparks. Its goggle tooltip shows the charge.$(br2)Before you have a polarizer, see $(item)The first magnet$() in the $(item)Making Power$() chapter for the hand recipe."
+      "text": "Below 2,000 W, goggles show a red $(item)not enough power$() line and the charge does not move.$(br2)$(l)Cycle$()$(br)It charges for $(item)10 seconds$(), then the item is converted with a burst of sparks. Its goggle tooltip shows the charge."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Before you have a polarizer, see $(item)The first magnet$() in the $(item)Making Power$() chapter for the hand recipe."
     },
     {
       "type": "patchouli:spotlight",

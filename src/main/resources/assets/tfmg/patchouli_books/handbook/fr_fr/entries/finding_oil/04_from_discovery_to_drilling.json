@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Une fois qu'une case du scanner s'allume, voici le plan habituel : $(li)Allez dans le chunk et creusez un $(item)puits de 1 x 1$() tout droit jusqu'à la couche de bedrock. Cherchez la pierre fossile et le pétrole brut vers Y -60."
+      "text": "Une fois qu'une case du scanner s'allume, voici le plan habituel :$(br2)$(li)Allez dans le chunk et creusez un $(item)puits de 1 x 1$() tout droit jusqu'à la couche de bedrock. Cherchez la pierre fossile et le pétrole brut vers Y -60."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Trouvez un bloc de gisement et notez ses coordonnées $(item)X et Z$(). La base de la pompe à pétrole doit se trouver exactement au-dessus. $(li)Remplissez le puits depuis le gisement avec des $(item)tuyaux industriels$(), sans rien d'autre entre eux. Un lingot d'acier donne $(item)8 tuyaux$() au tailleur de pierre : un puits depuis Y 64 demande environ 16 lingots."
+      "text": "$(li)Trouvez un bloc de gisement et notez ses coordonnées $(item)X et Z$(). La base de la pompe à pétrole doit se trouver exactement au-dessus."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Les blocs de pétrole brut dans le puits peuvent simplement être remplacés par des tuyaux.$(br2)Les tuyaux industriels peuvent être remplis de béton liquide et sèchent en $(item)tuyaux industriels encastrés dans du béton$(). Ils comptent toujours comme une colonne valide : vous pouvez sceller le puits pour de bon. Cassés, ils rendent un tuyau industriel normal."
+      "text": "$(li)Remplissez le puits depuis le gisement avec des $(item)tuyaux industriels$(), sans rien d'autre entre eux. Un lingot d'acier donne $(item)8 tuyaux$() au tailleur de pierre : un puits depuis Y 64 demande environ 16 lingots."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les blocs de pétrole brut dans le puits peuvent simplement être remplacés par des tuyaux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les tuyaux industriels peuvent être remplis de béton liquide et sèchent en $(item)tuyaux industriels encastrés dans du béton$(). Ils comptent toujours comme une colonne valide : vous pouvez sceller le puits pour de bon. Cassés, ils rendent un tuyau industriel normal."
     },
     {
       "type": "patchouli:text",

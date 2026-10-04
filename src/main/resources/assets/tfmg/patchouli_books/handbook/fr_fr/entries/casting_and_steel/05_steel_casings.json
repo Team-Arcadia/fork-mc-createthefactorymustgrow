@@ -14,7 +14,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Carter de machinerie lourd$()$(br)Appliquez une $(item)plaque lourde$() sur un carter en acier de la même façon. Moteurs, chevalets de pompage, mélangeur industriel, entrées de machine et beaucoup de pièces électriques en ont besoin.$(br2)$(l)Carter en aluminium$()$(br)Une $(item)feuille d'aluminium$() sur un carter en acier donne un carter en aluminium."
+      "text": "$(l)Carter de machinerie lourd$()$(br)Appliquez une $(item)plaque lourde$() sur un carter en acier de la même façon. Moteurs, chevalets de pompage, mélangeur industriel, entrées de machine et beaucoup de pièces électriques en ont besoin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Carter en aluminium$()$(br)Une $(item)feuille d'aluminium$() sur un carter en acier donne un carter en aluminium."
     },
     {
       "type": "patchouli:text",

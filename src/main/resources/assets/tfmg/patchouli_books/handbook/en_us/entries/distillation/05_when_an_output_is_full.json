@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Each output has a Create value box on its sides. Use it, as on any Create machine, to choose what happens $(item)When Internal Tank is Full$(): $(li)$(item)Stop Distillation Process$() (default): a full output stops taking its product."
+      "text": "Each output has a Create value box on its sides. Use it, as on any Create machine, to choose what happens $(item)When Internal Tank is Full$():"
     },
     {
       "type": "patchouli:text",
-      "text": "The other outputs keep working, and only the oil for the products actually stored is used. $(li)$(item)Void Excess Fluid$(): the output keeps accepting its share and destroys whatever does not fit. The tower never slows down."
+      "text": "$(li)$(item)Stop Distillation Process$() (default): a full output stops taking its product. The other outputs keep working, and only the oil for the products actually stored is used."
     },
     {
       "type": "patchouli:text",
-      "text": "Use the void mode on products you do not want yet, so they never block anything, and the default mode on the fuels you sell or burn. A few habits keep a refinery running: $(li)Pump every output somewhere, even into a plain tank, and add more storage as the factory grows."
+      "text": "$(li)$(item)Void Excess Fluid$(): the output keeps accepting its share and destroys whatever does not fit. The tower never slows down.$(br2)Use the void mode on products you do not want yet, so they never block anything, and the default mode on the fuels you sell or burn."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Send the heavy oil from the bottom output to a heavy oil tower, to bitumen, or back into the crude tank. $(li)Burn surplus gases in a $(item)flarestack$() (see the next chapter) instead of voiding them. $(li)Keep the steel tank topped up: an empty tank stops the tower, not a full one."
+      "text": "A few habits keep a refinery running:$(li)Pump every output somewhere, even into a plain tank, and add more storage as the factory grows.$(li)Send the heavy oil from the bottom output to a heavy oil tower, to bitumen, or back into the crude tank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Burn surplus gases in a $(item)flarestack$() (see the next chapter) instead of voiding them.$(li)Keep the steel tank topped up: an empty tank stops the tower, not a full one."
     },
     {
       "type": "patchouli:spotlight",

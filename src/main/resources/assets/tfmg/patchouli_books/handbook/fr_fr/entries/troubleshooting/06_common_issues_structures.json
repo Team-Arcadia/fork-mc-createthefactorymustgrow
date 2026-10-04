@@ -10,15 +10,19 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Le four à coke est en pause$()$(br)Son réservoir de CO2 est plein. Le CO2 ne sort que par la $(item)face du haut$() ; pompez-le par là."
+      "text": "$(l)Le four à coke est en pause$()$(br)Son réservoir de CO2 est plein. Le CO2 ne sort que par la $(item)face du haut$() ; pompez-le par là.$(br2)$(l)La tour de distillation ne fait rien$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)La tour de distillation ne fait rien$()$(br)Le nombre de $(item)sorties de distillation doit égaler le nombre de produits$() de la recette, avec un tuyau industriel entre chaque sortie. La cuve en acier doit être au moins $(item)deux fois plus haute$() que le nombre de sorties, et $(item)large de 2$() au-delà de 3 sorties. Chauffez-la par en dessous."
+      "text": "Le nombre de $(item)sorties de distillation doit égaler le nombre de produits$() de la recette, avec un tuyau industriel entre chaque sortie. La cuve en acier doit être au moins $(item)deux fois plus haute$() que le nombre de sorties, et $(item)large de 2$() au-delà de 3 sorties. Chauffez-la par en dessous."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Le chevalet de pompage indique Machine invalide$()$(br)La base de pompe regarde droit vers le bas, à la recherche du gisement, à travers une colonne continue de $(item)tuyaux industriels$(). Tout autre bloc dans la colonne, ou une colonne qui manque le gisement, la rend invalide. Trouvez d'abord le gisement avec le scanner de surface, puis descendez tout droit jusqu'à lui."
+      "text": "$(l)Le chevalet de pompage indique Machine invalide$()$(br)La base de pompe regarde droit vers le bas, à la recherche du gisement, à travers une colonne continue de $(item)tuyaux industriels$().$(br)Tout autre bloc dans la colonne, ou une colonne qui manque le gisement, la rend invalide."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Trouvez d'abord le gisement avec le scanner de surface, puis descendez tout droit jusqu'à lui."
     },
     {
       "type": "patchouli:spotlight",

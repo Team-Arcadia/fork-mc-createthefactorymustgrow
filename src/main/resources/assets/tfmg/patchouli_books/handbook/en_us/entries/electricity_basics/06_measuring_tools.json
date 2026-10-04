@@ -10,7 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Electric Gauge Place it against an electric block:$() its needle reads the block behind it. Use a Create $(item)wrench$() on it to cycle the mode and scale: voltage (500 V), high voltage (10,000 V), current (16 A), resistance (500 ohms), power (5,000 W), network usage and generation (50,000 W) and accumulator charge. It is also a $(item)display link$() source."
+      "text": "$(l)Electric Gauge$()$(br)Place it against an electric block:$(br)its needle reads the block behind it.$(br)Use a Create $(item)wrench$() on it to cycle the mode and scale:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "voltage (500 V), high voltage (10,000 V), current (16 A), resistance (500 ohms), power (5,000 W), network usage and generation (50,000 W) and accumulator charge.$(br)It is also a $(item)display link$() source."
     },
     {
       "type": "patchouli:text",

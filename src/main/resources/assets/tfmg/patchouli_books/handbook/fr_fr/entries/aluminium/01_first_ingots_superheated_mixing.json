@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Depuis la 1.3.0, il existe un moyen d'obtenir de l'aluminium $(item)sans électricité$(), pour ne jamais rester bloqué avant votre premier générateur.$(br2)$(l)La recette$()$(br)Dans un $(item)mélangeur mécanique$() de Create au-dessus d'un $(item)bassin$() :"
+      "text": "Depuis la 1.3.0, il existe un moyen d'obtenir de l'aluminium $(item)sans électricité$(), pour ne jamais rester bloqué avant votre premier générateur."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)4 $(item)poudres de bauxite$()$(li)1 $(item)poussière de coke de charbon$()$(br2)donnent $(item)1 lingot d'aluminium$(). Le bassin doit être $(item)surchauffé$() : placez un brûleur à blaze dessous et donnez au blaze un $(item)gâteau au blaze$()."
+      "text": "$(l)La recette$()$(br)Dans un $(item)mélangeur mécanique$() de Create au-dessus d'un $(item)bassin$() :$(br2)$(li)4 $(item)poudres de bauxite$()$(li)1 $(item)poussière de coke de charbon$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "donnent $(item)1 lingot d'aluminium$(). Le bassin doit être $(item)surchauffé$() : placez un brûleur à blaze dessous et donnez au blaze un $(item)gâteau au blaze$()."
     },
     {
       "type": "patchouli:text",

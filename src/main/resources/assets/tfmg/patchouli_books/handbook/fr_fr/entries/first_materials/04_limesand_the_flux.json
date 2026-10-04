@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le haut fourneau ne fond pas le fer tout seul : chaque recette demande un $(item)fondant$(), et dans TFMG le fondant est le $(item)sable calcaire$(). $(l)Obtenir du sable calcaire 1.$() Fabriquez du $(item)calcaire$() de Create : faites couler du miel dans de la lave qui coule."
+      "text": "Le haut fourneau ne fond pas le fer tout seul : chaque recette demande un $(item)fondant$(), et dans TFMG le fondant est le $(item)sable calcaire$().$(br2)$(l)Obtenir du sable calcaire$()"
     },
     {
       "type": "patchouli:text",
-      "text": "Une source de lave devient de l'obsidienne à la place, gardez donc la lave en mouvement. 2. Minez le calcaire, idéalement avec une perceuse mécanique qui le casse dès qu'il se forme. 3. Passez-le aux $(item)roues de concassage$() : chaque bloc de calcaire donne toujours $(item)1 sable calcaire$()."
+      "text": "1. Fabriquez du $(item)calcaire$() de Create : faites couler du miel dans de la lave qui coule. Une source de lave devient de l'obsidienne à la place, gardez donc la lave en mouvement.$(br)2. Minez le calcaire, idéalement avec une perceuse mécanique qui le casse dès qu'il se forme."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "3. Passez-le aux $(item)roues de concassage$() : chaque bloc de calcaire donne toujours $(item)1 sable calcaire$()."
     },
     {
       "type": "patchouli:text",

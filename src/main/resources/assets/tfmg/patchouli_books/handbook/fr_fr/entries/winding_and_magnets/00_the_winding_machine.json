@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)L'installer - Entraînez-la par un arbre sur son $(item)côté$().$() N'importe quelle vitesse convient : elle enroule un tour par tick tant qu'elle tourne. $(li)$(item)Bobine$() : clic droit sur la machine avec une bobine pour la monter (l'ancienne vous revient). Clic droit main vide pour retirer la bobine. $(li)$(item)Pièce$() :"
+      "text": "$(l)L'installer$()$(li)Entraînez-la par un arbre sur son $(item)côté$(). N'importe quelle vitesse convient : elle enroule un tour par tick tant qu'elle tourne.$(li)$(item)Bobine$() : clic droit sur la machine avec une bobine pour la monter (l'ancienne vous revient). Clic droit main vide pour retirer la bobine."
     },
     {
       "type": "patchouli:text",
-      "text": "clic droit avec n'importe quel autre objet pour en placer $(item)un seul$(). Clic droit accroupi main vide pour le reprendre."
+      "text": "$(li)$(item)Pièce$() : clic droit avec n'importe quel autre objet pour en placer $(item)un seul$(). Clic droit accroupi main vide pour le reprendre."
     },
     {
       "type": "patchouli:text",

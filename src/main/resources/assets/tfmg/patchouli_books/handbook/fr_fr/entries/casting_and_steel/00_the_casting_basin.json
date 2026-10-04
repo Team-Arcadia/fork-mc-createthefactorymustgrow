@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le bassin de coulée transforme une matière en fusion en objets solides. Envoyez-y le fluide par n'importe quelle face ; il contient $(item)1000 mB$(). $(l)Comment se passe une coulée - Dès que le bassin contient assez de fluide pour une recette, il commence à compter.$()"
+      "text": "Le bassin de coulée transforme une matière en fusion en objets solides. Envoyez-y le fluide par n'importe quelle face ; il contient $(item)1000 mB$().$(br2)$(l)Comment se passe une coulée$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Pour l'acier : $(item)144 mB$() et $(item)200 ticks$() (10 s) donnent $(item)un lingot d'acier$(). $(li)Le lingot reste dans le bassin. Le bassin contient $(item)un seul objet$() et ne lance pas la coulée suivante tant qu'il n'a pas été retiré."
+      "text": "$(li)Dès que le bassin contient assez de fluide pour une recette, il commence à compter.$(li)Pour l'acier : $(item)144 mB$() et $(item)200 ticks$() (10 s) donnent $(item)un lingot d'acier$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Le lingot reste dans le bassin. Le bassin contient $(item)un seul objet$() et ne lance pas la coulée suivante tant qu'il n'a pas été retiré."
     },
     {
       "type": "patchouli:text",

@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Oil deposits In every Overworld biome, roughly one chunk in sixteen hides an oil field on the $(item)bedrock floor, at Y -64$().$() It is made of one or more $(item)oil deposit$() blocks a few blocks apart."
+      "text": "$(l)Oil deposits$()$(br)In every Overworld biome, roughly one chunk in sixteen hides an oil field on the $(item)bedrock floor, at Y -64$(). It is made of one or more $(item)oil deposit$() blocks a few blocks apart. Above each deposit rises a column of $(item)crude oil$() up to 24 blocks high, with $(item)fossilstone$() beside its lower part."
     },
     {
       "type": "patchouli:text",
-      "text": "Above each deposit rises a column of $(item)crude oil$() up to 24 blocks high, with $(item)fossilstone$() beside its lower part."
+      "text": "$(li)An oil deposit cannot be mined, blown up or moved, and never drops anything. It stays where it is and you pump it with a pumpjack.$(li)Each deposit holds a random reserve, between 1000 and the server's maximum (10000 by default)."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)An oil deposit cannot be mined, blown up or moved, and never drops anything. It stays where it is and you pump it with a pumpjack.$(li)Each deposit holds a random reserve, between 1000 and the server's maximum (10000 by default).$(li)Fossilstone is twice as hard as obsidian: mine it with a pickaxe and patience."
+      "text": "$(li)Fossilstone is twice as hard as obsidian: mine it with a pickaxe and patience."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Oil wells$()$(br)In biomes that can hold a desert pyramid, about one chunk in 500 has an $(item)oil well$(): an oil deposit with a column of crude oil climbing from bedrock to about $(item)70 blocks above the surface$(). You cannot miss it.$(br2)The oil hammer and the surface scanner, which find deposits for you, need steel: they are covered in the oil chapter."
+      "text": "$(l)Oil wells$()$(br)In biomes that can hold a desert pyramid, about one chunk in 500 has an $(item)oil well$(): an oil deposit with a column of crude oil climbing from bedrock to about $(item)70 blocks above the surface$(). You cannot miss it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The oil hammer and the surface scanner, which find deposits for you, need steel: they are covered in the oil chapter."
     },
     {
       "type": "patchouli:spotlight",

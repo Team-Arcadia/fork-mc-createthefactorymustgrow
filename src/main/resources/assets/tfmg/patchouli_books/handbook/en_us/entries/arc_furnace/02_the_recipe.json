@@ -6,11 +6,15 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Each batch takes $(item)1 second$() and uses:$(br2)$(li)1 $(item)Crushed Iron Ore$() (crush raw iron in Crushing Wheels),$(li)1 $(item)flux$(): $(item)Limesand$(), made by crushing limestone,$(li)1 $(item)Coal Coke Dust$(), which works as a catalyst (next page).$(br2)It gives:"
+      "text": "Each batch takes $(item)1 second$() and uses:$(br2)$(li)1 $(item)Crushed Iron Ore$() (crush raw iron in Crushing Wheels),$(li)1 $(item)flux$(): $(item)Limesand$(), made by crushing limestone,$(li)1 $(item)Coal Coke Dust$(), which works as a catalyst (next page)."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)144 mB Molten Steel$(), exactly one steel ingot in a casting basin,$(li)$(item)288 mB Molten Slag$().$(br2)$(l)Running it$()$(br)Feed the three items through funnels on the vat. The vat has 4 input slots and each holds one kind of item, so crushed iron, limesand and coke dust each take their own slot."
+      "text": "It gives:$(br2)$(li)$(item)144 mB Molten Steel$(), exactly one steel ingot in a casting basin,$(li)$(item)288 mB Molten Slag$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Running it$()$(br)Feed the three items through funnels on the vat. The vat has 4 input slots and each holds one kind of item, so crushed iron, limesand and coke dust each take their own slot."
     },
     {
       "type": "patchouli:text",

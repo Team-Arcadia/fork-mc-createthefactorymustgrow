@@ -6,15 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Once a scanner cell lights up, here is the usual plan: $(li)Go to the chunk and dig a $(item)1 x 1 shaft$() straight down to the bedrock layer. Look for fossilstone and crude oil near Y -60. $(li)Find a deposit block and note its $(item)X and Z$()."
+      "text": "Once a scanner cell lights up, here is the usual plan:$(br2)$(li)Go to the chunk and dig a $(item)1 x 1 shaft$() straight down to the bedrock layer. Look for fossilstone and crude oil near Y -60."
     },
     {
       "type": "patchouli:text",
-      "text": "The pumpjack base must sit exactly above it. $(li)Fill the shaft from the deposit up with $(item)industrial pipes$(), with nothing else in between. One steel ingot gives $(item)8 pipes$() in a stonecutter, so a shaft from Y 64 needs about 16 ingots. $(li)Crude oil blocks in the shaft can simply be replaced by pipes."
+      "text": "$(li)Find a deposit block and note its $(item)X and Z$(). The pumpjack base must sit exactly above it.$(li)Fill the shaft from the deposit up with $(item)industrial pipes$(), with nothing else in between. One steel ingot gives $(item)8 pipes$() in a stonecutter, so a shaft from Y 64 needs about 16 ingots."
     },
     {
       "type": "patchouli:text",
-      "text": "Industrial pipes can be filled with liquid concrete and dry into $(item)concrete encased industrial pipes$(). They still count as a valid column, so you can seal the shaft for good. Broken, they give back a normal industrial pipe.$(br2)With the column built, put the pumpjack base on top of it at the surface. The next chapter explains the rest of the pumpjack."
+      "text": "$(li)Crude oil blocks in the shaft can simply be replaced by pipes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Industrial pipes can be filled with liquid concrete and dry into $(item)concrete encased industrial pipes$(). They still count as a valid column, so you can seal the shaft for good. Broken, they give back a normal industrial pipe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "With the column built, put the pumpjack base on top of it at the surface. The next chapter explains the rest of the pumpjack."
     },
     {
       "type": "patchouli:spotlight",

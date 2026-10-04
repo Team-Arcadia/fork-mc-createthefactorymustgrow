@@ -6,19 +6,23 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Regardez n'importe quel bloc du moteur avec les lunettes. Pendant la construction : $(li)$(item)Moteur inachevé$(), $(item)Construction du moteur X sur Y$() et $(item)Prochain composant$() : continuez à poser les pièces. $(li)$(item)Pistons manquants$() / $(item)Turbines manquantes$() :"
+      "text": "Regardez n'importe quel bloc du moteur avec les lunettes. Pendant la construction :$(li)$(item)Moteur inachevé$(), $(item)Construction du moteur X sur Y$() et $(item)Prochain composant$() : continuez à poser les pièces."
     },
     {
       "type": "patchouli:text",
-      "text": "ajoutez des cylindres ou des pales.$(br2)Une fois terminé, il affiche son $(item)Type$(), sa $(item)Vitesse$() en RPM, le $(item)Signal$() (0 veut dire pas de redstone, donc pas de rotation), le $(item)Couple$(), la $(item)Production$() en unités de contrainte et la $(item)Consommation de carburant$() en mB/s, puis ses réservoirs de carburant et d'échappement."
+      "text": "$(li)$(item)Pistons manquants$() / $(item)Turbines manquantes$() : ajoutez des cylindres ou des pales."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)Une ligne dorée $(item)Aucun arbre de sortie$() signifie qu'il brûle du carburant pour rien : ajoutez un arbre.$(li)Une ligne bleue $(item)Améliorations : vitesse x, couple x, rendement x$() montre ce que multiplient les améliorations posées.$(li)$(item)Contrôleur$() donne la position du contrôleur de moteur qui le pilote."
+      "text": "Une fois terminé, il affiche son $(item)Type$(), sa $(item)Vitesse$() en RPM, le $(item)Signal$() (0 veut dire pas de redstone, donc pas de rotation), le $(item)Couple$(), la $(item)Production$() en unités de contrainte et la $(item)Consommation de carburant$() en mB/s, puis ses réservoirs de carburant et d'échappement."
     },
     {
       "type": "patchouli:text",
-      "text": "Si la vitesse reste à 0 alors que tout est construit, vérifiez dans l'ordre : le signal, un carburant accepté par les cylindres, un échappement pas plein."
+      "text": "$(li)Une ligne dorée $(item)Aucun arbre de sortie$() signifie qu'il brûle du carburant pour rien : ajoutez un arbre.$(li)Une ligne bleue $(item)Améliorations : vitesse x, couple x, rendement x$() montre ce que multiplient les améliorations posées."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Contrôleur$() donne la position du contrôleur de moteur qui le pilote.$(br2)Si la vitesse reste à 0 alors que tout est construit, vérifiez dans l'ordre : le signal, un carburant accepté par les cylindres, un échappement pas plein."
     },
     {
       "type": "patchouli:spotlight",

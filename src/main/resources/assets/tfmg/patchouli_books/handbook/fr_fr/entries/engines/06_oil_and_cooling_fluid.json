@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Deux fluides facultatifs rendent un moteur moins gourmand. Chacun ramène la consommation de carburant à $(item)70 %$(), et avec les deux le moteur brûle à peu près moitié moins.$(br2)$(li)$(item)Huile de lubrification$()$(li)$(item)Liquide de refroidissement$()"
+      "text": "Deux fluides facultatifs rendent un moteur moins gourmand. Chacun ramène la consommation de carburant à $(item)70 %$(), et avec les deux le moteur brûle à peu près moitié moins."
     },
     {
       "type": "patchouli:text",
-      "text": "Chacun est stocké à part dans le moteur, jusqu'à $(item)2000 mB$(). Un clic droit avec un $(item)seau$() ajoute 1000 mB (refusé s'il en contient déjà plus de 1000), ou utilisez les objets rechargeables :"
+      "text": "$(li)$(item)Huile de lubrification$()$(li)$(item)Liquide de refroidissement$()$(br2)Chacun est stocké à part dans le moteur, jusqu'à $(item)2000 mB$(). Un clic droit avec un $(item)seau$() ajoute 1000 mB (refusé s'il en contient déjà plus de 1000), ou utilisez les objets rechargeables :"
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Burette d'huile$() pour l'huile, $(item)bouteille de liquide de refroidissement$() pour le liquide. Chacune contient 4000 mB. Un clic droit sur un réservoir, une cuve ou tout conteneur de fluide la remplit ; un clic droit accroupi sur un conteneur la vide dedans.$(li)Un clic droit sur le moteur avec l'objet plein remet le moteur à 2000 mB."
+      "text": "$(li)$(item)Burette d'huile$() pour l'huile, $(item)bouteille de liquide de refroidissement$() pour le liquide. Chacune contient 4000 mB. Un clic droit sur un réservoir, une cuve ou tout conteneur de fluide la remplit ; un clic droit accroupi sur un conteneur la vide dedans."
     },
     {
       "type": "patchouli:text",
-      "text": "Un moteur en marche consomme lentement les deux fluides. Les lunettes affichent $(item)Huile$() et $(item)Liquide de refroidissement$() tant qu'il en reste."
+      "text": "$(li)Un clic droit sur le moteur avec l'objet plein remet le moteur à 2000 mB.$(br2)Un moteur en marche consomme lentement les deux fluides. Les lunettes affichent $(item)Huile$() et $(item)Liquide de refroidissement$() tant qu'il en reste."
     },
     {
       "type": "patchouli:spotlight",
