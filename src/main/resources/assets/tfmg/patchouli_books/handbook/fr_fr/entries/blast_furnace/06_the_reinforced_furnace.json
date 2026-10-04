@@ -1,5 +1,5 @@
 {
-  "name": "Le haut fourneau renforcé",
+  "name": "Fourneau renforcé",
   "icon": "tfmg:blast_furnace_reinforcement",
   "category": "tfmg:blast_furnace",
   "sortnum": 6,
@@ -30,7 +30,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Le haut fourneau renforcé",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

@@ -1,5 +1,5 @@
 {
-  "name": "Diode, potentiomètre et résistance",
+  "name": "Diodes et résistances",
   "icon": "tfmg:electric_diode",
   "category": "tfmg:network_control",
   "sortnum": 4,
@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Potentiomètre$()$(br)Un pont avec un cadran : il laisse passer de $(item)0 à 100 %$() de sa tension d'entrée, 100 % par défaut. C'est aussi une source pour $(item)liaison d'affichage$() pour la tension."
+      "text": "$(l)Potentiomètre$()$(br)Un pont avec un cadran : il laisse passer de $(item)0 à 100 %%$() de sa tension d'entrée, 100 %% par défaut. C'est aussi une source pour $(item)liaison d'affichage$() pour la tension."
     },
     {
       "type": "patchouli:text",

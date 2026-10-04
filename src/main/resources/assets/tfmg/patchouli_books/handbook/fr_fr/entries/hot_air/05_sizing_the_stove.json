@@ -1,5 +1,5 @@
 {
-  "name": "Dimensionner le fourneau",
+  "name": "Taille du fourneau",
   "icon": "tfmg:blast_stove",
   "category": "tfmg:hot_air",
   "sortnum": 5,

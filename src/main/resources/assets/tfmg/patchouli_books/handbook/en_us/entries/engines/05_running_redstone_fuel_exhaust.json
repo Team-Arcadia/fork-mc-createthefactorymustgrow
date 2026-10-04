@@ -1,5 +1,5 @@
 {
-  "name": "Running: redstone, fuel, exhaust",
+  "name": "Running an engine",
   "icon": "minecraft:lever",
   "category": "tfmg:engines",
   "sortnum": 5,

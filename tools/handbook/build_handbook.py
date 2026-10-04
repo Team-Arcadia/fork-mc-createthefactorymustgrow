@@ -63,7 +63,7 @@ GROUPS = [
      {'en_us': 'Finding oil, pumping it, refining it and burning the gases.',
       'fr_fr': 'Trouver le pétrole, le pomper, le raffiner et brûler les gaz.'},
      ['finding_oil', 'pumpjack', 'distillation', 'fireboxes_and_gases']),
-    ('engines', 'tfmg:regular_engine', {'en_us': 'Engines', 'fr_fr': 'Moteurs'},
+    ('engine_room', 'tfmg:regular_engine', {'en_us': 'Engines', 'fr_fr': 'Moteurs'},
      {'en_us': 'Engines, their fuels, upgrades and large engines.',
       'fr_fr': 'Les moteurs, leurs carburants, leurs améliorations et les grands moteurs.'},
      ['engines', 'engine_upgrades']),
@@ -73,6 +73,8 @@ GROUPS = [
      ['construction', 'weapons_and_tools']),
 ]
 GROUP_OF = {chapter: group[0] for group in GROUPS for chapter in group[4]}
+# A group sharing a chapter's id would be overwritten by that chapter.
+assert not set(GROUP_OF) & {group[0] for group in GROUPS}, 'a group id clashes with a chapter id'
 
 ITEMS_TITLE = {'en_us': 'Items', 'fr_fr': 'Objets'}
 LANG_FILES = {
@@ -97,6 +99,20 @@ def item_name(item, lang):
         if name:
             return name
     return ''
+
+
+# Entry titles are drawn on one line above the first (left) page and stop at
+# the spine: longer ones get the short form from short_titles.json.
+TITLE_WIDTH = 124
+SHORT_TITLES = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'short_titles.json'), encoding='utf-8'))
+
+
+def entry_title(title, lang):
+    short = SHORT_TITLES.get(lang, {}).get(title, title)
+    if text_width(short) > TITLE_WIDTH:
+        sys.exit('entry title too wide for the book (%d > %d), add a short form to short_titles.json: [%s] %s'
+                 % (text_width(short), TITLE_WIDTH, lang, short))
+    return short
 
 
 VIEW_NAME = {'en_us': 'Structure', 'fr_fr': 'Structure'}
@@ -320,7 +336,7 @@ def build():
         os.makedirs(cat_dir, exist_ok=True)
         entries = 0
         for order, (gid, icon, name, description, _) in enumerate(GROUPS):
-            write(os.path.join(cat_dir, gid + '.json'), {
+            write_book(os.path.join(cat_dir, gid + '.json'), {
                 'name': name[lang],
                 'description': description[lang],
                 'icon': icon,
@@ -340,7 +356,7 @@ def build():
                 'sortnum': chapter.get('order', 1000),
                 'parent': '%s:%s' % (NAMESPACE, GROUP_OF[cid]),
             }
-            write(os.path.join(cat_dir, cid + '.json'), category)
+            write_book(os.path.join(cat_dir, cid + '.json'), category)
             entry_dir = os.path.join(OUT, lang, 'entries', cid)
             os.makedirs(entry_dir, exist_ok=True)
             for index, page in enumerate(chapter['pages']):
@@ -349,7 +365,8 @@ def build():
                 if page.get('schematic'):
                     patch_pages.append({
                         'type': 'patchouli:multiblock',
-                        'name': page_title,
+                        # Titles are never wrapped: fall back to a short one.
+                        'name': page_title if text_width(page_title) <= PAGE_WIDTH - 4 else VIEW_NAME[lang],
                         'multiblock': multiblock(page['schematic']),
                         'enable_visualize': True,
                     })
@@ -366,13 +383,13 @@ def build():
                         spotlight['title'] = ITEMS_TITLE[lang]
                     patch_pages.append(spotlight)
                 entry = {
-                    'name': page_title,
+                    'name': entry_title(page_title, lang),
                     'icon': items[0] if items else chapter.get('icon', 'minecraft:book'),
                     'category': '%s:%s' % (NAMESPACE, cid),
                     'sortnum': index,
                     'pages': patch_pages,
                 }
-                write(os.path.join(entry_dir, slug(localized(page.get('title'), 'en_us') or cid, index) + '.json'), entry)
+                write_book(os.path.join(entry_dir, slug(localized(page.get('title'), 'en_us') or cid, index) + '.json'), entry)
                 entries += 1
         stats[lang] = entries
     print('chapters: %d, entries per language: %s' % (len(chapters), stats))
@@ -424,6 +441,22 @@ def build_blueprints(chapters):
             })
             count += 1
     print('blueprints: %d' % count)
+
+
+def format_safe(value):
+    """The book uses i18n, so Patchouli runs every string through
+    String.format: a lone '%' turns the whole page into "Format error"."""
+    if isinstance(value, str):
+        return value.replace('%', '%%')
+    if isinstance(value, list):
+        return [format_safe(v) for v in value]
+    if isinstance(value, dict):
+        return {k: format_safe(v) for k, v in value.items()}
+    return value
+
+
+def write_book(path, data):
+    write(path, format_safe(data))
 
 
 def write(path, data):

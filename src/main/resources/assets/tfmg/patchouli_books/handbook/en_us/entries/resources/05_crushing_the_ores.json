@@ -10,11 +10,11 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Lead ore$(): 1 crushed raw lead, plus 75% chance of a second, and 75% chance of an experience nugget.$(li)$(item)Nickel ore$(): the same, with crushed raw nickel.$(li)$(item)Lithium ore$(): 1 crushed raw lithium, plus 25% chance of another, 75% experience nugget, 12% cobblestone."
+      "text": "$(li)$(item)Lead ore$(): 1 crushed raw lead, plus 75%% chance of a second, and 75%% chance of an experience nugget.$(li)$(item)Nickel ore$(): the same, with crushed raw nickel.$(li)$(item)Lithium ore$(): 1 crushed raw lithium, plus 25%% chance of another, 75%% experience nugget, 12%% cobblestone."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Deepslate lithium ore$(): 2 crushed raw lithium, plus 25% chance of a third.$(li)$(item)Raw lead, raw nickel, raw lithium$(): 1 crushed ore each, plus 75% chance of an experience nugget. A raw lithium block gives 9."
+      "text": "$(li)$(item)Deepslate lithium ore$(): 2 crushed raw lithium, plus 25%% chance of a third.$(li)$(item)Raw lead, raw nickel, raw lithium$(): 1 crushed ore each, plus 75%% chance of an experience nugget. A raw lithium block gives 9."
     },
     {
       "type": "patchouli:text",

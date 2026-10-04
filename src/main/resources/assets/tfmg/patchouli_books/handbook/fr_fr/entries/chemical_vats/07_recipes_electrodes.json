@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Aluminium (électrolyse)$()$(br)4 poudres de bauxite donnent 1 lingot d'aluminium, plus 4 pépites d'aluminium (50 % de chance), 2 pépites de plus (25 % de chance) et 500 mB de dioxyde de carbone, en 5 secondes."
+      "text": "$(l)Aluminium (électrolyse)$()$(br)4 poudres de bauxite donnent 1 lingot d'aluminium, plus 4 pépites d'aluminium (50 %% de chance), 2 pépites de plus (25 %% de chance) et 500 mB de dioxyde de carbone, en 5 secondes."
     },
     {
       "type": "patchouli:text",
@@ -22,7 +22,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)La poussière de coke est un catalyseur : 90 % du temps elle retourne en entrée.$(br2)Les chapitres Aluminium et Four à arc détaillent ces deux montages."
+      "text": "$(li)La poussière de coke est un catalyseur : 90 %% du temps elle retourne en entrée.$(br2)Les chapitres Aluminium et Four à arc détaillent ces deux montages."
     },
     {
       "type": "patchouli:spotlight",

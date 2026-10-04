@@ -1,5 +1,5 @@
 {
-  "name": "Faire tourner l'électrolyse",
+  "name": "Lancer l'électrolyse",
   "icon": "tfmg:bauxite_powder",
   "category": "tfmg:aluminium",
   "sortnum": 4,
@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)1 lingot d'aluminium$(),$(li)$(item)4 pépites d'aluminium$() avec 50 % de chance,$(li)$(item)2 pépites d'aluminium$() avec 25 % de chance,$(li)$(item)500 mB de dioxyde de carbone$()."
+      "text": "$(li)$(item)1 lingot d'aluminium$(),$(li)$(item)4 pépites d'aluminium$() avec 50 %% de chance,$(li)$(item)2 pépites d'aluminium$() avec 25 %% de chance,$(li)$(item)500 mB de dioxyde de carbone$()."
     },
     {
       "type": "patchouli:text",

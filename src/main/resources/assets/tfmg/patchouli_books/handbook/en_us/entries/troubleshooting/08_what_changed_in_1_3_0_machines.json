@@ -1,5 +1,5 @@
 {
-  "name": "What changed in 1.3.0: machines",
+  "name": "New in 1.3.0: machines",
   "icon": "tfmg:steel_chemical_vat",
   "category": "tfmg:troubleshooting",
   "sortnum": 8,
@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Arc furnace$(): JEI now shows that coal coke dust is a $(item)catalyst$() that returns to the vat input, with only about 10% used per batch. This was the cause of the \"nothing is produced\" reports."
+      "text": "$(li)$(item)Arc furnace$(): JEI now shows that coal coke dust is a $(item)catalyst$() that returns to the vat input, with only about 10%% used per batch. This was the cause of the \"nothing is produced\" reports."
     },
     {
       "type": "patchouli:text",

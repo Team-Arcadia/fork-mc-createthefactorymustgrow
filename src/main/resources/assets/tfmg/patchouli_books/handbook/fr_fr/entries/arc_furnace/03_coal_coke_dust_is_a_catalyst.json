@@ -1,5 +1,5 @@
 {
-  "name": "La poussière de coke est un catalyseur",
+  "name": "Coke : un catalyseur",
   "icon": "tfmg:coal_coke_dust",
   "category": "tfmg:arc_furnace",
   "sortnum": 3,
@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Chaque fournée $(item)consomme une poussière de coke de charbon$(). Ensuite, $(item)90 % du temps$(), une poussière est $(item)rendue à l'entrée de la cuve$(), pas à la sortie.$(br2)Donc en regardant la cuve :"
+      "text": "Chaque fournée $(item)consomme une poussière de coke de charbon$(). Ensuite, $(item)90 %% du temps$(), une poussière est $(item)rendue à l'entrée de la cuve$(), pas à la sortie.$(br2)Donc en regardant la cuve :"
     },
     {
       "type": "patchouli:text",
@@ -26,7 +26,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "JEI montre la même chose sur la recette : la poussière y est indiquée comme rendue à l'entrée de la cuve, avec environ 10 % consommés par cycle."
+      "text": "JEI montre la même chose sur la recette : la poussière y est indiquée comme rendue à l'entrée de la cuve, avec environ 10 %% consommés par cycle."
     },
     {
       "type": "patchouli:spotlight",

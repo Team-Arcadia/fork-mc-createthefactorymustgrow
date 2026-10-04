@@ -1,5 +1,5 @@
 {
-  "name": "En marche : redstone, carburant, échappement",
+  "name": "Faire tourner un moteur",
   "icon": "minecraft:lever",
   "category": "tfmg:engines",
   "sortnum": 5,

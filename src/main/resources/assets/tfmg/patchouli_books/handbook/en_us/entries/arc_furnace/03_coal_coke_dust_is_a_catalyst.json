@@ -1,12 +1,12 @@
 {
-  "name": "Coal coke dust is a catalyst",
+  "name": "Coke dust is a catalyst",
   "icon": "tfmg:coal_coke_dust",
   "category": "tfmg:arc_furnace",
   "sortnum": 3,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "This is the part that confuses everyone, so read it carefully.$(br2)Every batch $(item)uses one Coal Coke Dust$(). Then, $(item)90% of the time$(), one dust is given $(item)back to the vat input$(), not to the output."
+      "text": "This is the part that confuses everyone, so read it carefully.$(br2)Every batch $(item)uses one Coal Coke Dust$(). Then, $(item)90%% of the time$(), one dust is given $(item)back to the vat input$(), not to the output."
     },
     {
       "type": "patchouli:text",
@@ -22,7 +22,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "JEI shows the same thing on the recipe: the dust is marked as returned to the vat input, with about 10% used up per cycle."
+      "text": "JEI shows the same thing on the recipe: the dust is marked as returned to the vat input, with about 10%% used up per cycle."
     },
     {
       "type": "patchouli:spotlight",

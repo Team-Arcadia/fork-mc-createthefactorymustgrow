@@ -10,15 +10,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Minerai de plomb$() : 1 plomb brut concassé, plus 75 % de chance d'un second, et 75 % de chance d'une pépite d'expérience.$(li)$(item)Minerai de nickel$() : la même chose, avec du nickel brut concassé."
+      "text": "$(li)$(item)Minerai de plomb$() : 1 plomb brut concassé, plus 75 %% de chance d'un second, et 75 %% de chance d'une pépite d'expérience.$(li)$(item)Minerai de nickel$() : la même chose, avec du nickel brut concassé."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Minerai de lithium$() : 1 lithium brut concassé, plus 25 % de chance d'un autre, 75 % de pépite d'expérience, 12 % de pierre taillée.$(li)$(item)Minerai de lithium des abîmes$() : 2 lithium brut concassé, plus 25 % de chance d'un troisième."
+      "text": "$(li)$(item)Minerai de lithium$() : 1 lithium brut concassé, plus 25 %% de chance d'un autre, 75 %% de pépite d'expérience, 12 %% de pierre taillée.$(li)$(item)Minerai de lithium des abîmes$() : 2 lithium brut concassé, plus 25 %% de chance d'un troisième."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Plomb, nickel et lithium bruts$() : 1 minerai concassé chacun, plus 75 % de chance d'une pépite d'expérience. Un bloc de lithium brut en donne 9."
+      "text": "$(li)$(item)Plomb, nickel et lithium bruts$() : 1 minerai concassé chacun, plus 75 %% de chance d'une pépite d'expérience. Un bloc de lithium brut en donne 9."
     },
     {
       "type": "patchouli:text",

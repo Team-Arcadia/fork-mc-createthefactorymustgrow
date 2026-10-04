@@ -1,5 +1,5 @@
 {
-  "name": "Machines and where they go",
+  "name": "Vat machines",
   "icon": "tfmg:industrial_mixer",
   "category": "tfmg:chemical_vats",
   "sortnum": 1,
@@ -26,7 +26,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Machines and where they go",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

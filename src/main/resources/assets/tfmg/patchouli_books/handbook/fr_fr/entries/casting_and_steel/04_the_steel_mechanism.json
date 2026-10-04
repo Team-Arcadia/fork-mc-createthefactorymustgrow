@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)1. un $(item)lingot d'acier$()$(li)2. un $(item)lingot d'aluminium$()$(li)3. des $(item)vis$()$(li)4. le $(item)tournevis$() (usé, pas consommé)$(br2)Un seul passage suffit. Le résultat est un $(item)mécanisme en acier 80 %$() du temps, et une $(item)pépite de fer$() sinon."
+      "text": "$(li)1. un $(item)lingot d'acier$()$(li)2. un $(item)lingot d'aluminium$()$(li)3. des $(item)vis$()$(li)4. le $(item)tournevis$() (usé, pas consommé)$(br2)Un seul passage suffit. Le résultat est un $(item)mécanisme en acier 80 %%$() du temps, et une $(item)pépite de fer$() sinon."
     },
     {
       "type": "patchouli:text",

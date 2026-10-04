@@ -1,5 +1,5 @@
 {
-  "name": "Les surcharges détruisent les blocs",
+  "name": "Les surcharges",
   "icon": "tfmg:multimeter",
   "category": "tfmg:electricity_basics",
   "sortnum": 5,
@@ -14,7 +14,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Un multimètre affiche un avertissement rouge dès qu'un bloc atteint $(item)80 %$() d'une limite. Vérifiez vos nouvelles installations avant de les laisser tourner.$(br2)$(l)Blocs à tension maximale plus élevée$()$(li)Concentrateurs de câbles : 5 000 V"
+      "text": "Un multimètre affiche un avertissement rouge dès qu'un bloc atteint $(item)80 %%$() d'une limite. Vérifiez vos nouvelles installations avant de les laisser tourner.$(br2)$(l)Blocs à tension maximale plus élevée$()$(li)Concentrateurs de câbles : 5 000 V"
     },
     {
       "type": "patchouli:text",

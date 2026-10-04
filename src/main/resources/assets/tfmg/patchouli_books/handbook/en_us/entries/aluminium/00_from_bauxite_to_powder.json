@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Crushing$()$(br)Run Bauxite through Create's $(item)Crushing Wheels$(). Each block gives:$(br2)$(li)$(item)2 Bauxite Powder$() with a 75% chance,$(li)$(item)1 more$() Bauxite Powder with a 20% chance."
+      "text": "$(l)Crushing$()$(br)Run Bauxite through Create's $(item)Crushing Wheels$(). Each block gives:$(br2)$(li)$(item)2 Bauxite Powder$() with a 75%% chance,$(li)$(item)1 more$() Bauxite Powder with a 20%% chance."
     },
     {
       "type": "patchouli:text",

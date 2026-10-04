@@ -30,7 +30,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Le scanner de surface",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

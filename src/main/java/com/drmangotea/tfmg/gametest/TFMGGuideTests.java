@@ -73,6 +73,15 @@ public class TFMGGuideTests {
             parents.forEach((id, parent) -> {
                 if (!categories.contains(parent))
                     problems.add(lang + " category " + id + ": unknown parent " + parent);
+                // Walk up: a category must reach the top without looping.
+                String at = parent;
+                for (int depth = 0; at != null; depth++) {
+                    if (depth > 8 || at.equals(TFMG.MOD_ID + ":" + id)) {
+                        problems.add(lang + " category " + id + ": parent chain loops");
+                        break;
+                    }
+                    at = parents.get(at.substring(at.indexOf(':') + 1));
+                }
             });
             // The landing page shows top-level categories in rows of four and
             // only has room for a few rows: more would spill off the page.
@@ -105,10 +114,30 @@ public class TFMGGuideTests {
         helper.succeed();
     }
 
+    /**
+     * The book is i18n, so Patchouli passes every string through
+     * String.format: a lone '%' shows "Format error" instead of the page.
+     */
+    private static void checkFormat(String where, JsonElement element, List<String> problems) {
+        if (element.isJsonObject()) {
+            element.getAsJsonObject().entrySet().forEach(e -> checkFormat(where, e.getValue(), problems));
+        } else if (element.isJsonArray()) {
+            element.getAsJsonArray().forEach(e -> checkFormat(where, e, problems));
+        } else if (element.isJsonPrimitive() && element.getAsJsonPrimitive().isString()) {
+            String text = element.getAsString();
+            try {
+                String.format(text);
+            } catch (java.util.IllegalFormatException e) {
+                problems.add(where + ": not format safe (" + e.getMessage() + "): " + text.substring(0, Math.min(60, text.length())));
+            }
+        }
+    }
+
     private static void checkEntry(String where, JsonObject entry, Set<String> categories, List<String> problems) {
         if (!entry.has("category") || !categories.contains(entry.get("category").getAsString()))
             problems.add(where + ": unknown category " + entry.get("category"));
         checkItem(where + " icon", entry.get("icon"), problems);
+        checkFormat(where, entry, problems);
         if (!entry.has("pages") || entry.getAsJsonArray("pages").isEmpty()) {
             problems.add(where + ": no pages");
             return;

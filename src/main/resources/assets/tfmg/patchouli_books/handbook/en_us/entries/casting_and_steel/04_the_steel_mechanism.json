@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)1. a $(item)steel ingot$()$(li)2. an $(item)aluminium ingot$()$(li)3. $(item)screws$()$(li)4. the $(item)screwdriver$() (worn, not consumed)$(br2)One pass is enough. The result is a $(item)steel mechanism 80%$() of the time, and an $(item)iron nugget$() otherwise."
+      "text": "$(li)1. a $(item)steel ingot$()$(li)2. an $(item)aluminium ingot$()$(li)3. $(item)screws$()$(li)4. the $(item)screwdriver$() (worn, not consumed)$(br2)One pass is enough. The result is a $(item)steel mechanism 80%%$() of the time, and an $(item)iron nugget$() otherwise."
     },
     {
       "type": "patchouli:text",

@@ -1,5 +1,5 @@
 {
-  "name": "Diode, potentiometer and resistor",
+  "name": "Diodes and resistors",
   "icon": "tfmg:electric_diode",
   "category": "tfmg:network_control",
   "sortnum": 4,
@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Potentiometer$()$(br)A bridge with a dial: it passes from $(item)0 to 100%$() of its input voltage, 100% by default. It is also a $(item)display link$() source for voltage.$(br2)Right-click a diode or a potentiometer with $(item)heavy machinery casing$() to encase it."
+      "text": "$(l)Potentiometer$()$(br)A bridge with a dial: it passes from $(item)0 to 100%%$() of its input voltage, 100%% by default. It is also a $(item)display link$() source for voltage.$(br2)Right-click a diode or a potentiometer with $(item)heavy machinery casing$() to encase it."
     },
     {
       "type": "patchouli:text",

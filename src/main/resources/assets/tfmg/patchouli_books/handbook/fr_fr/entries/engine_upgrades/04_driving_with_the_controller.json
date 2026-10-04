@@ -1,5 +1,5 @@
 {
-  "name": "Conduire avec le contrôleur",
+  "name": "Conduire",
   "icon": "tfmg:engine_controller",
   "category": "tfmg:engine_upgrades",
   "sortnum": 4,
@@ -22,7 +22,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Les rapports$()$(br)Marche arrière, point mort, puis rapports 1 à 6. Sur un moteur avec un arbre $(item)aux deux bouts$(), le rapport règle la sortie : marche arrière à 30 % en sens inverse, point mort à 0, rapports 1 à 6 à 20, 40, 60, 80, 100 et 120 %."
+      "text": "$(l)Les rapports$()$(br)Marche arrière, point mort, puis rapports 1 à 6. Sur un moteur avec un arbre $(item)aux deux bouts$(), le rapport règle la sortie : marche arrière à 30 %% en sens inverse, point mort à 0, rapports 1 à 6 à 20, 40, 60, 80, 100 et 120 %%."
     },
     {
       "type": "patchouli:text",

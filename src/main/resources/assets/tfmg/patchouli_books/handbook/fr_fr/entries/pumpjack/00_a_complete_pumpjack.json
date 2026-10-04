@@ -1,5 +1,5 @@
 {
-  "name": "Une pompe à pétrole complète",
+  "name": "Pompe complète",
   "icon": "tfmg:pumpjack_base",
   "category": "tfmg:pumpjack",
   "sortnum": 0,
@@ -22,7 +22,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Une pompe à pétrole complète",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

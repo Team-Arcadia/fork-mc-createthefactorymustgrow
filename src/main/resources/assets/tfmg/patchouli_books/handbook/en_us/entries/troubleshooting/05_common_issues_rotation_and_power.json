@@ -1,5 +1,5 @@
 {
-  "name": "Common issues: rotation and power",
+  "name": "Issues: rotation, power",
   "icon": "create:goggles",
   "category": "tfmg:troubleshooting",
   "sortnum": 5,
@@ -18,7 +18,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Every electrical block has a $(item)maximum voltage$() (1000 V for most of them) and some have a maximum current.$(br)Above it for a moment, the block $(item)is destroyed and drops nothing$().$(br)The goggles and the multimeter warn first with $(item)Approaching Overvoltage$() or $(item)Approaching Overcurrent$() at 80% of the limit."
+      "text": "Every electrical block has a $(item)maximum voltage$() (1000 V for most of them) and some have a maximum current.$(br)Above it for a moment, the block $(item)is destroyed and drops nothing$().$(br)The goggles and the multimeter warn first with $(item)Approaching Overvoltage$() or $(item)Approaching Overcurrent$() at 80%% of the limit."
     },
     {
       "type": "patchouli:text",

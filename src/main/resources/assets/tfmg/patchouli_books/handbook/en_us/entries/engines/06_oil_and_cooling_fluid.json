@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Two optional fluids make an engine cheaper to run. Each one cuts fuel consumption to $(item)70%$(), and with both the engine burns about half the fuel.$(br2)$(li)$(item)Lubrication Oil$()$(li)$(item)Cooling Fluid$()"
+      "text": "Two optional fluids make an engine cheaper to run. Each one cuts fuel consumption to $(item)70%%$(), and with both the engine burns about half the fuel.$(br2)$(li)$(item)Lubrication Oil$()$(li)$(item)Cooling Fluid$()"
     },
     {
       "type": "patchouli:text",

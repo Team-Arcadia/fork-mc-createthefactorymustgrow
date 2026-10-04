@@ -1,5 +1,5 @@
 {
-  "name": "Arbre de sortie et moteurs longs",
+  "name": "Moteurs longs",
   "icon": "create:shaft",
   "category": "tfmg:engines",
   "sortnum": 4,
@@ -22,7 +22,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Arbre de sortie et moteurs longs",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

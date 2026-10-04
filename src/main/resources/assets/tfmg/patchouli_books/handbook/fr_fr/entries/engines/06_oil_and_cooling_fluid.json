@@ -1,12 +1,12 @@
 {
-  "name": "Huile et liquide de refroidissement",
+  "name": "Huile et refroidissement",
   "icon": "tfmg:oil_can",
   "category": "tfmg:engines",
   "sortnum": 6,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Deux fluides facultatifs rendent un moteur moins gourmand. Chacun ramène la consommation de carburant à $(item)70 %$(), et avec les deux le moteur brûle à peu près moitié moins."
+      "text": "Deux fluides facultatifs rendent un moteur moins gourmand. Chacun ramène la consommation de carburant à $(item)70 %%$(), et avec les deux le moteur brûle à peu près moitié moins."
     },
     {
       "type": "patchouli:text",

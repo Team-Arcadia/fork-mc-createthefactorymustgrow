@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)The recipe$()$(br)Every 5 seconds the vat turns $(item)4 Bauxite Powder$() into:$(br2)$(li)$(item)1 Aluminum Ingot$(),$(li)$(item)4 Aluminum Nuggets$() with a 50% chance,$(li)$(item)2 Aluminum Nuggets$() with a 25% chance,$(li)$(item)500 mB Carbon Dioxide$()."
+      "text": "$(l)The recipe$()$(br)Every 5 seconds the vat turns $(item)4 Bauxite Powder$() into:$(br2)$(li)$(item)1 Aluminum Ingot$(),$(li)$(item)4 Aluminum Nuggets$() with a 50%% chance,$(li)$(item)2 Aluminum Nuggets$() with a 25%% chance,$(li)$(item)500 mB Carbon Dioxide$()."
     },
     {
       "type": "patchouli:text",

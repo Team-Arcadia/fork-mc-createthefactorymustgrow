@@ -1,5 +1,5 @@
 {
-  "name": "De la bauxite à la poudre",
+  "name": "Bauxite en poudre",
   "icon": "tfmg:bauxite",
   "category": "tfmg:aluminium",
   "sortnum": 0,
@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Concassage$()$(br)Passez la bauxite dans les $(item)roues de concassage$() de Create. Chaque bloc donne :$(br2)$(li)$(item)2 poudres de bauxite$() avec 75 % de chance,$(li)$(item)1 poudre de plus$() avec 20 % de chance."
+      "text": "$(l)Concassage$()$(br)Passez la bauxite dans les $(item)roues de concassage$() de Create. Chaque bloc donne :$(br2)$(li)$(item)2 poudres de bauxite$() avec 75 %% de chance,$(li)$(item)1 poudre de plus$() avec 20 %% de chance."
     },
     {
       "type": "patchouli:text",

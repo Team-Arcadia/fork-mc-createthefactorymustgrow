@@ -1,5 +1,5 @@
 {
-  "name": "Alimenter le haut fourneau",
+  "name": "Alimenter le fourneau",
   "icon": "create:andesite_funnel",
   "category": "tfmg:blast_furnace",
   "sortnum": 3,

@@ -1,5 +1,5 @@
 {
-  "name": "Le fourneau à air chaud",
+  "name": "Fourneau à air chaud",
   "icon": "tfmg:blast_stove",
   "category": "tfmg:hot_air",
   "sortnum": 3,
@@ -26,7 +26,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Le fourneau à air chaud",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Aluminium (electrolysis)$()$(br)4 Bauxite Powder give 1 Aluminum Ingot, plus 4 Aluminum Nuggets (50% chance), 2 more nuggets (25% chance) and 500 mB Carbon Dioxide, in 5 seconds.$(li)2 Electrode Holders with $(item)copper or zinc$() electrodes, $(item)heat 2$().$(li)$(item)Steel$() or $(item)Fireproof$() vat, size 1 and up. Not cast iron."
+      "text": "$(l)Aluminium (electrolysis)$()$(br)4 Bauxite Powder give 1 Aluminum Ingot, plus 4 Aluminum Nuggets (50%% chance), 2 more nuggets (25%% chance) and 500 mB Carbon Dioxide, in 5 seconds.$(li)2 Electrode Holders with $(item)copper or zinc$() electrodes, $(item)heat 2$().$(li)$(item)Steel$() or $(item)Fireproof$() vat, size 1 and up. Not cast iron."
     },
     {
       "type": "patchouli:text",
@@ -14,7 +14,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "1 Crushed Iron Ore, 1 Limesand (flux) and 1 Coal Coke Dust give 144 mB Molten Steel and 288 mB Molten Slag in 1 second.$(li)3 Electrode Holders with $(item)graphite$() electrodes, no heat.$(li)$(item)Fireproof$() vat only, at least $(item)9 blocks$().$(li)The coal coke dust is a catalyst: 90% of the time it goes back to the input."
+      "text": "1 Crushed Iron Ore, 1 Limesand (flux) and 1 Coal Coke Dust give 144 mB Molten Steel and 288 mB Molten Slag in 1 second.$(li)3 Electrode Holders with $(item)graphite$() electrodes, no heat.$(li)$(item)Fireproof$() vat only, at least $(item)9 blocks$().$(li)The coal coke dust is a catalyst: 90%% of the time it goes back to the input."
     },
     {
       "type": "patchouli:text",

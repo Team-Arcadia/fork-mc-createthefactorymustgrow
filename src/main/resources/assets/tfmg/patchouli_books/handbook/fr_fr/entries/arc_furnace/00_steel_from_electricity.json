@@ -1,5 +1,5 @@
 {
-  "name": "De l'acier par l'électricité",
+  "name": "Acier électrique",
   "icon": "tfmg:fireproof_chemical_vat",
   "category": "tfmg:arc_furnace",
   "sortnum": 0,
@@ -26,7 +26,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "De l'acier par l'électricité",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

@@ -1,5 +1,5 @@
 {
-  "name": "Problèmes courants : rotation et courant",
+  "name": "Rotation et courant",
   "icon": "create:goggles",
   "category": "tfmg:troubleshooting",
   "sortnum": 5,
@@ -22,7 +22,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Les lunettes et le multimètre préviennent d'abord avec $(item)Surtension imminente$() ou $(item)Surintensité imminente$() à 80 % de la limite.$(br)Abaissez la tension avec un transformateur ou une résistance avant les petites machines, et utilisez des câbles adaptés à l'intensité."
+      "text": "Les lunettes et le multimètre préviennent d'abord avec $(item)Surtension imminente$() ou $(item)Surintensité imminente$() à 80 %% de la limite.$(br)Abaissez la tension avec un transformateur ou une résistance avant les petites machines, et utilisez des câbles adaptés à l'intensité."
     },
     {
       "type": "patchouli:spotlight",

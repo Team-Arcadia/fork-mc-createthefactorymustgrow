@@ -1,5 +1,5 @@
 {
-  "name": "Output shaft and long engines",
+  "name": "Long engines",
   "icon": "create:shaft",
   "category": "tfmg:engines",
   "sortnum": 4,
@@ -22,7 +22,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Output shaft and long engines",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

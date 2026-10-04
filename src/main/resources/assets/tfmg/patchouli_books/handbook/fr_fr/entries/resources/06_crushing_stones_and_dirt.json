@@ -1,20 +1,20 @@
 {
-  "name": "Concasser les pierres et la terre",
+  "name": "Concasser la pierre",
   "icon": "tfmg:bauxite_powder",
   "category": "tfmg:resources",
   "sortnum": 6,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Les pierres en couches et quelques blocs courants se concassent aussi. Les chances sont données par bloc :$(br2)$(li)$(item)Bauxite$() : 75 % de chance de 2 poudres de bauxite, plus 20 % de chance d'une de plus."
+      "text": "Les pierres en couches et quelques blocs courants se concassent aussi. Les chances sont données par bloc :$(br2)$(li)$(item)Bauxite$() : 75 %% de chance de 2 poudres de bauxite, plus 20 %% de chance d'une de plus."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Galène$() : 40 % de chance d'1 plomb brut concassé, 10 % de chance de 2 pépites de plomb.$(li)$(item)Lignite$() : 75 % de chance d'1 charbon, plus 20 % de chance d'un de plus.$(li)$(item)Soufre$() : 20 % de chance d'1 poudre de soufre, plus 10 % de chance d'une de plus."
+      "text": "$(li)$(item)Galène$() : 40 %% de chance d'1 plomb brut concassé, 10 %% de chance de 2 pépites de plomb.$(li)$(item)Lignite$() : 75 %% de chance d'1 charbon, plus 20 %% de chance d'un de plus.$(li)$(item)Soufre$() : 20 %% de chance d'1 poudre de soufre, plus 10 %% de chance d'une de plus."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)Calcaire$() (Create) : toujours 1 $(item)sable calcaire$().$(li)$(item)Terre$() : 5 % de chance d'1 $(item)poudre de nitrate$() (salpêtre). Broyez la terre en grande quantité."
+      "text": "$(li)$(item)Calcaire$() (Create) : toujours 1 $(item)sable calcaire$().$(li)$(item)Terre$() : 5 %% de chance d'1 $(item)poudre de nitrate$() (salpêtre). Broyez la terre en grande quantité."
     },
     {
       "type": "patchouli:text",

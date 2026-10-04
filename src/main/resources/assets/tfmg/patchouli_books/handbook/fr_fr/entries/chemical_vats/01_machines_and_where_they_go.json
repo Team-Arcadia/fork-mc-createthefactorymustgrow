@@ -1,5 +1,5 @@
 {
-  "name": "Les machines et leur place",
+  "name": "Machines de cuve",
   "icon": "tfmg:industrial_mixer",
   "category": "tfmg:chemical_vats",
   "sortnum": 1,
@@ -26,7 +26,7 @@
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Les machines et leur place",
+      "name": "Structure",
       "multiblock": {
         "pattern": [
           [

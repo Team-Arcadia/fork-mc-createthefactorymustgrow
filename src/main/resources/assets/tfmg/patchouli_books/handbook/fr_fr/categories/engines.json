@@ -3,5 +3,5 @@
   "description": "Les moteurs brûlent les carburants de votre raffinerie et les transforment en rotation. Il existe trois petits moteurs, tous construits de la même façon :",
   "icon": "tfmg:regular_engine",
   "sortnum": 200,
-  "parent": "tfmg:engines"
+  "parent": "tfmg:engine_room"
 }

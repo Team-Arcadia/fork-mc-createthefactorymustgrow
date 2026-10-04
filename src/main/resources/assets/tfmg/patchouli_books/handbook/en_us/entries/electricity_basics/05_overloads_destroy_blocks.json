@@ -1,5 +1,5 @@
 {
-  "name": "Overloads destroy blocks",
+  "name": "Overloads",
   "icon": "tfmg:multimeter",
   "category": "tfmg:electricity_basics",
   "sortnum": 5,
@@ -10,7 +10,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "A multimeter shows a red warning once a block reaches $(item)80%$() of a limit. Check new setups before you leave them running."
+      "text": "A multimeter shows a red warning once a block reaches $(item)80%%$() of a limit. Check new setups before you leave them running."
     },
     {
       "type": "patchouli:text",

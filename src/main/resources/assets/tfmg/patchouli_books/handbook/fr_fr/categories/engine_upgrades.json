@@ -3,5 +3,5 @@
   "description": "Les petits moteurs (ordinaire, radial et à turbine) acceptent des améliorations. Un clic droit sur un bloc moteur avec l'objet d'amélioration la pose.",
   "icon": "tfmg:turbo",
   "sortnum": 210,
-  "parent": "tfmg:engines"
+  "parent": "tfmg:engine_room"
 }
