@@ -19,6 +19,9 @@ base {
 // Append an "arcadia-fix" classifier to the output jar name (mod version stays untouched).
 tasks.named('jar') {
     archiveClassifier = 'arcadia-fix'
+    // Game tests and their templates only run from the dev run configs.
+    exclude 'com/drmangotea/tfmg/gametest/**'
+    exclude 'data/tfmg/structure/gametest/**'
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -39,12 +42,14 @@ neoForge {
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enableGameTest', 'true'
         }
 
         server {
             server()
             programArgument '--nogui'
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enableGameTest', 'true'
         }
 
         // This run config launches GameTestServer and runs all registered gametests, then exits.
@@ -53,6 +58,28 @@ neoForge {
         gameTestServer {
             type = "gameTestServer"
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        // Singleplayer pass: boots the client straight into the
+        // 'tfmg_gametest' world, runs every TFMG game test on the integrated
+        // server, writes run/tfmg-gametest-result.txt and exits.
+        clientGameTest {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enableGameTest', 'true'
+            systemProperty 'tfmg.gametest.autorun', 'true'
+            systemProperty 'tfmg.gametest.exit', 'true'
+            programArguments.addAll '--quickPlaySingleplayer', 'tfmg_gametest'
+        }
+
+        // Same pass on a regular dedicated server with a normal world.
+        serverGameTest {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'neoforge.enableGameTest', 'true'
+            systemProperty 'tfmg.gametest.autorun', 'true'
+            systemProperty 'tfmg.gametest.exit', 'true'
         }
 
         data {
