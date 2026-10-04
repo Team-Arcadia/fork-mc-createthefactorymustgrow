@@ -79,6 +79,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Flamethrower** - Refuelling from a tank that held no more than the flamethrower could take emptied the tank and gave no fuel at all. A flamethrower that runs dry now also lets go of the trigger instead of staying in use.
 - **Quad potato cannon duplicated ammo** - With Potato Recovery each of the four projectiles could give the ammo back, turning one potato into up to four. Only the first one can now, as on Create's cannon.
 - **Grenades** - Copper grenades set no fire at all (their blue fire was lost in the 1.21 port), and thermite and zinc grenades turned into copper ones when their chunk was saved in flight.
+- **Napalm potato and napalm bomb** - On negative coordinates their blast went off one block away from where they hit.
 
 ### Performance
 
@@ -144,6 +145,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Lance-flammes** - Faire le plein sur un reservoir qui ne contenait pas plus que ce que le lance-flammes pouvait prendre vidait le reservoir sans rien donner. Un lance-flammes a sec relache aussi la detente au lieu de rester en cours d'utilisation.
 - **Le quadruple canon a patates dupliquait les munitions** - Avec Recuperation de patates, chacun des quatre projectiles pouvait rendre la munition : une patate en donnait jusqu'a quatre. Seul le premier le peut desormais, comme sur le canon de Create.
 - **Grenades** - Les grenades au cuivre n'allumaient aucun feu (leur feu bleu avait disparu au portage en 1.21), et les grenades a thermite et au zinc devenaient des grenades au cuivre quand leur chunk etait sauvegarde en plein vol.
+- **Patate et bombe au napalm** - Aux coordonnees negatives, leur explosion partait un bloc a cote du point d'impact.
 
 ### Performances
 

@@ -338,3 +338,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** In the 1.21 refactor of the sparks into one `Spark` class, `BlueSpark.getFireState` returned `Optional.empty()` (as `LithiumSpark` does) instead of the blue fire 1.20.1 placed.
 **Fix:** `BlueSpark` returns `BlueFireBlock.getState` again, and its blue particle trail is back.
 **Prevention:** When subclasses are folded into a template method, test each subclass's override, not only the base.
+
+## [2026-10-04 20:49] - Napalm blasts one block off on negative coordinates
+**Context:** Reading the napalm potato and napalm bomb while writing their game tests.
+**Error:** The fire explosion was centred on `new BlockPos((int) x, (int) y, (int) z)`.
+**Root cause:** An `(int)` cast rounds towards zero, so on negative coordinates the blast moved one block towards the origin.
+**Fix:** Both use `BlockPos.containing`, which floors.
+**Prevention:** Never build a BlockPos from casts of entity coordinates; use `blockPosition()` or `BlockPos.containing`.

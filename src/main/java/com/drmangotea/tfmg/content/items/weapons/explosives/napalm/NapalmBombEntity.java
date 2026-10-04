@@ -82,7 +82,9 @@ public class NapalmBombEntity extends Entity {
 
     protected void explode() {
 
-        TFMGUtils.createFireExplosion(level(),this,new BlockPos((int) getX(), (int) getY(), (int) getZ()),40,2.5f);
+        // containing() floors; an (int) cast rounds towards zero and put the
+        // blast one block off on negative coordinates.
+        TFMGUtils.createFireExplosion(level(),this,BlockPos.containing(getX(), getY(), getZ()),40,2.5f);
 
        // float f = 4.0F;
        // for (int i=0; i<40;i++){
