@@ -33,6 +33,10 @@ public class LithiumTorchBlock extends WallMountBlock implements SimpleWaterlogg
     private static final Map<Direction, VoxelShape> SHAPE = Maps.newEnumMap(ImmutableMap.of(Direction.NORTH, Block.box(5.5D, 3.0D, 11.0D, 10.5D, 13.0D, 16.0D), Direction.SOUTH, Block.box(5.5D, 3.0D, 0.0D, 10.5D, 13.0D, 5.0D), Direction.WEST, Block.box(11.0D, 3.0D, 5.5D, 16.0D, 13.0D, 10.5D), Direction.EAST, Block.box(0.0D, 3.0D, 5.5D, 5.0D, 13.0D, 10.5D),Direction.UP,Block.box(6.0D, 0.0D, 6.0D, 10.0D, 10.0D, 10.0D),Direction.DOWN,Block.box(6.0D, 6.0D, 6.0D, 10.0D, 16.0D, 10.0D)));
     public LithiumTorchBlock(Properties pProperties) {
         super(pProperties);
+        // Without a default, WATERLOGGED took the first value of the property,
+        // true: a torch placed by a command, a structure or a schematic stood in
+        // water and left a water source behind when it broke.
+        registerDefaultState(defaultBlockState().setValue(WATERLOGGED, false));
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
