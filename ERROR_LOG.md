@@ -149,3 +149,17 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Patchouli draws an anchored ghost through `simulate(..., forView = true)`, which adds one block on Y, while `IMultiblock.validate` uses `forView = false`. The projector checked one block below the drawn ghost, so the layer never matched; Patchouli then reported it complete and the projector read that as the player closing it. On top of that, `strictBlockMatcher` compares against the block's default state, so any block placed with another facing (coke oven, hatches) never matched.
 **Fix:** The projector checks the layer through the same view simulation the visualizer renders, and anchors one block lower so the ghost sits on the clicked face. Each position matches on the block only (`predicateMatcher` with the drawn state for display). The client showcase now places each layer where it is drawn and fails if the projector does not move on.
 **Prevention:** When checking a Patchouli multiblock shown with `showMultiblock`, use `simulate(level, anchor, rotation, true)`, never `validate`.
+
+## [2026-10-04 18:25] - Hoppers pulled the workpiece out of the polarizer and the winding machine
+**Context:** Functional game tests feeding each machine from a chest through a hopper and emptying it with a hopper into a chest.
+**Error:** The output hopper took the magnetic alloy ingot out of the polarizer, and the unfinished coil out of the winding machine, on its first pass; nothing was ever polarised or wound.
+**Root cause:** Both machines keep the workpiece and the product in the same single slot, and both published that slot to automation with extraction open (the winding machine only kept wire in).
+**Fix:** The polarizer's item capability only lets out an item no polarizing recipe accepts; the winding machine only lets out a workpiece it has finished (`isWorkpieceDone`: resistor or coil at its target, or no winding recipe left for it).
+**Prevention:** A machine whose one slot holds both input and output must gate extraction on "is this the product", like the vat, coke oven and casting basin already do.
+
+## [2026-10-04 18:28] - A hopper could not deliver coke dust to a loaded blast furnace
+**Context:** Same game tests, loading a reinforced blast furnace through a hopper on its output block.
+**Error:** The furnace held ore and flux but no fuel; the coke dust stayed in the hopper.
+**Root cause:** The output block's item handler showed two slots (ore, flux). A hopper only inserts into an empty slot or onto a matching stack, so once both held other items it never offered the dust, although the router would have accepted it as fuel.
+**Fix:** The handler shows a third slot holding the fuel counter as a stack of coal coke dust (still extraction-proof), so hoppers see where fuel goes.
+**Prevention:** A routing item handler must expose a slot a hopper can match for every kind of item it accepts; test automation with a real hopper, not only with direct `insertItem` calls.
