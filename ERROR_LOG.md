@@ -324,3 +324,17 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** `QuadPotatoCannonItem.use` copies Create's split-shot loop but dropped its `if (i != 0) projectile.recoveryChance = 0;`. The field is protected in Create's package, so the copy could not write it and the line was lost.
 **Fix:** A new accessor mixin (`PotatoProjectileEntityAccessor`) clears the recovery chance of every projectile but the first.
 **Prevention:** When copying a Create method into TFMG, check every statement that touches a non-public member: it is the one that silently disappears. One ammo spent must never be recoverable more than once.
+
+## [2026-10-04 20:32] - Thermite and zinc grenades turned blue when reloaded
+**Context:** New game test saving a thrown grenade of each kind and loading it back, as a chunk unload does.
+**Error:** A thermite or zinc grenade came back as a blue (copper) grenade.
+**Root cause:** The colour is a final field set by the thrower's constructor and never saved; the entity type constructor, used for every loaded or client-side grenade, hard-coded BLUE.
+**Fix:** The type constructor derives the colour from the entity type (`ThermiteGrenade.colorOf`).
+**Prevention:** State that is not saved must be derivable from what is: the entity type is always known when an entity is rebuilt.
+
+## [2026-10-04 20:48] - Copper grenade sparks set no fire
+**Context:** New game test dropping each kind of spark on the floor.
+**Error:** Plain and green sparks set their fire; blue sparks set nothing, so copper grenades burnt nothing.
+**Root cause:** In the 1.21 refactor of the sparks into one `Spark` class, `BlueSpark.getFireState` returned `Optional.empty()` (as `LithiumSpark` does) instead of the blue fire 1.20.1 placed.
+**Fix:** `BlueSpark` returns `BlueFireBlock.getState` again, and its blue particle trail is back.
+**Prevention:** When subclasses are folded into a template method, test each subclass's override, not only the base.
