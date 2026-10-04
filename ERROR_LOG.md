@@ -142,3 +142,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** `Screenshot.grab` hands the PNG write to a worker thread; `Runtime.halt` right after killed the JVM before the write finished.
 **Fix:** Wait 60 ticks after the last screenshot before halting.
 **Prevention:** Any dev tool that exits the game must leave time for asynchronous writes (screenshots, logs, saves) after its last action.
+
+## [2026-10-04 10:30] - Factory Blueprint never advanced to the next layer
+**Context:** Building the first layer of a projected multiblock with the Factory Blueprint.
+**Error:** Once the shown blocks were placed, the next layer never appeared and the projection vanished.
+**Root cause:** Patchouli draws an anchored ghost through `simulate(..., forView = true)`, which adds one block on Y, while `IMultiblock.validate` uses `forView = false`. The projector checked one block below the drawn ghost, so the layer never matched; Patchouli then reported it complete and the projector read that as the player closing it. On top of that, `strictBlockMatcher` compares against the block's default state, so any block placed with another facing (coke oven, hatches) never matched.
+**Fix:** The projector checks the layer through the same view simulation the visualizer renders, and anchors one block lower so the ghost sits on the clicked face. Each position matches on the block only (`predicateMatcher` with the drawn state for display). The client showcase now places each layer where it is drawn and fails if the projector does not move on.
+**Prevention:** When checking a Patchouli multiblock shown with `showMultiblock`, use `simulate(level, anchor, rotation, true)`, never `validate`.

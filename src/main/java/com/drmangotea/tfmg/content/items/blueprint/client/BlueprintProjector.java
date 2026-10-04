@@ -16,6 +16,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
@@ -105,7 +107,8 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
             say(player, Component.translatable("tfmg.blueprint.none"));
             return;
         }
-        anchor = pos.relative(face);
+        // Patchouli draws the ghost one block above the anchor it is given.
+        anchor = pos.relative(face).below();
         rotation = rotationFor(player.getDirection());
         showLayer(player, 0);
     }
@@ -119,13 +122,14 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
         Minecraft mc = Minecraft.getInstance();
         if (mc.level == null || mc.player == null)
             return;
-        if (PatchouliAPI.get().getCurrentMultiblock() != shown && !shown.validate(mc.level, anchor, rotation)) {
+        boolean built = isBuilt(mc.level);
+        if (PatchouliAPI.get().getCurrentMultiblock() != shown && !built) {
             // The player closed the projection with Patchouli's own control.
             layer = -1;
             shown = null;
             return;
         }
-        if (!shown.validate(mc.level, anchor, rotation))
+        if (!built)
             return;
         Blueprint b = inLine.get(selected);
         if (layer + 1 >= b.layers().size()) {
@@ -138,12 +142,46 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
 
     // ------------------------------------------------------------ helpers
 
+    /**
+     * Whether the shown layer is built where the ghost is drawn. Patchouli's
+     * {@code validate} checks one block below the drawn ghost, so the check
+     * goes through the same view simulation the visualizer renders.
+     */
+    private boolean isBuilt(Level level) {
+        for (IMultiblock.SimulateResult result : shown.simulate(level, anchor, rotation, true).getSecond())
+            if (!result.test(level, rotation))
+                return false;
+        return true;
+    }
+
+    /** Index of the projected layer, or -1 when nothing is projected. */
+    public int currentLayer() {
+        return layer;
+    }
+
+    /** World positions and states of the projected layer, as drawn. */
+    public Map<BlockPos, BlockState> currentLayerInWorld(Level level) {
+        Map<BlockPos, BlockState> out = new LinkedHashMap<>();
+        if (layer < 0 || shown == null)
+            return out;
+        Map<BlockPos, BlockState> states = inLine.get(selected).layers().get(layer);
+        BlockPos origin = shown.simulate(level, anchor, rotation, true).getFirst();
+        for (Map.Entry<BlockPos, BlockState> e : states.entrySet())
+            out.put(origin.offset(e.getKey().rotate(rotation)), e.getValue().rotate(rotation));
+        return out;
+    }
+
     private void showLayer(Player player, int index) {
         Blueprint b = inLine.get(selected);
         layer = index;
         Map<BlockPos, IStateMatcher> positions = new HashMap<>();
-        for (Map.Entry<BlockPos, BlockState> e : b.layers().get(index).entrySet())
-            positions.put(e.getKey(), PatchouliAPI.get().strictBlockMatcher(e.getValue().getBlock()));
+        // Match on the block only: facing and other properties depend on how
+        // the player places it, and Patchouli's strict matcher would demand
+        // the default state. The ghost still shows the drawn orientation.
+        for (Map.Entry<BlockPos, BlockState> e : b.layers().get(index).entrySet()) {
+            Block block = e.getValue().getBlock();
+            positions.put(e.getKey(), PatchouliAPI.get().predicateMatcher(e.getValue(), state -> state.is(block)));
+        }
         shown = PatchouliAPI.get().makeSparseMultiblock(positions);
         Component title = Component.translatable("tfmg.blueprint.layer", name(b), index + 1, b.layers().size());
         PatchouliAPI.get().showMultiblock(shown, title, anchor, rotation);

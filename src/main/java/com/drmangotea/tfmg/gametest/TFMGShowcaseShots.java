@@ -42,11 +42,12 @@ public final class TFMGShowcaseShots {
 
     private static final int SPACING = 10;
 
-    private enum Step { BUILD, VIEW, SHOOT_VIEW, INSPECT, SHOOT_INSPECT, BLUEPRINT, SHOOT_BLUEPRINT, EXIT, DONE }
+    private enum Step { BUILD, VIEW, SHOOT_VIEW, INSPECT, SHOOT_INSPECT, BLUEPRINT, SHOOT_BLUEPRINT, BUILD_LAYER, CHECK_LAYER, EXIT, DONE }
 
     private static Step step = Step.BUILD;
     private static int wait = 120;
     private static int index;
+    private static int builtLayer;
     private static BlockPos origin;
     private static List<Map.Entry<String, JsonObject>> structures;
 
@@ -139,9 +140,42 @@ public final class TFMGShowcaseShots {
             }
             case SHOOT_BLUEPRINT -> {
                 shoot(mc, "showcase_blueprint_projection.png");
-                // Screenshots are written off-thread: give the last one time.
-                step = Step.EXIT;
-                wait = 60;
+                step = Step.BUILD_LAYER;
+                wait = 20;
+            }
+            case BUILD_LAYER -> {
+                // Place the shown layer exactly where the ghost is drawn: the
+                // projector must then move on to the next layer by itself.
+                builtLayer = BlueprintProjector.INSTANCE.currentLayer();
+                if (builtLayer < 0) {
+                    TFMG.LOGGER.info("[showcase] blueprint walkthrough finished");
+                    step = Step.EXIT;
+                    wait = 60;
+                    return;
+                }
+                Map<BlockPos, BlockState> layer = BlueprintProjector.INSTANCE.currentLayerInWorld(mc.level);
+                // Default states, as a player would place them: the facing must not matter.
+                server.execute(() -> layer.forEach((pos, state) ->
+                        server.overworld().setBlock(pos, state.getBlock().defaultBlockState(), 2)));
+                step = Step.CHECK_LAYER;
+                wait = 20;
+            }
+            case CHECK_LAYER -> {
+                int now = BlueprintProjector.INSTANCE.currentLayer();
+                if (now == builtLayer) {
+                    TFMG.LOGGER.error("[showcase] blueprint stuck on layer {}", builtLayer + 1);
+                    BlueprintProjector.INSTANCE.currentLayerInWorld(mc.level).forEach((pos, state) ->
+                            TFMG.LOGGER.error("[showcase]   {} wants {} has {}", pos, state, mc.level.getBlockState(pos)));
+                    step = Step.EXIT;
+                    wait = 60;
+                    return;
+                }
+                TFMG.LOGGER.info("[showcase] blueprint layer {} built, projector moved to {}", builtLayer + 1,
+                        now < 0 ? "done" : "layer " + (now + 1));
+                shoot(mc, String.format("showcase_blueprint_layer_%02d.png", builtLayer + 1));
+                // Screenshots are written off-thread: give each one time.
+                step = Step.BUILD_LAYER;
+                wait = 20;
             }
             case EXIT -> {
                 step = Step.DONE;
