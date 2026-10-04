@@ -41,6 +41,9 @@ public class TFMGFillingRecipeGen extends FillingRecipeGen {
             .require(SizedFluidIngredient.of(lpg(), 1000))
             .output(lpgTank())
     ),
+    // Butane and propane came back as fuels with their own tanks, but these
+    // two stayed commented out, so neither tank could be filled: the handbook
+    // showed both and survival had no way to make them.
     BUTANE_TANK = create(TFMG.asResource("butane_tank"), b -> b
             .require(Items.BUCKET)
             .require(SizedFluidIngredient.of(butane(), 1000))

@@ -69,7 +69,11 @@ public class VoltMeterBlockEntity extends SmartBlockEntity implements IHaveGoggl
     @Override
     protected void read(CompoundTag tag, HolderLookup.Provider registries, boolean clientPacket) {
         super.read(tag, registries, clientPacket);
+        // write() leaves the key out for the default mode, so a missing key
+        // means VOLTAGE. Keeping the old mode instead left other players'
+        // meters on the previous mode once one was wrenched back to voltage.
         String modeName = tag.getString("mode");
+        mode = MeasureMode.VOLTAGE;
         if (!modeName.isEmpty()) {
             try {
                 mode = MeasureMode.valueOf(modeName);

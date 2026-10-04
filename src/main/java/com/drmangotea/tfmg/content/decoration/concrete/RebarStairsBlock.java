@@ -24,6 +24,11 @@ public class RebarStairsBlock extends StairBlock implements ConcreteloggedBlock{
 
     public RebarStairsBlock(BlockState state,Properties p_56863_) {
         super(state, p_56863_);
+        // StairBlock sets its own defaults but not this one, so CONCRETELOGGED
+        // took the first value of the property, true: stairs placed by a
+        // command, a structure or a schematic came out full of liquid concrete,
+        // refused a concrete bucket and set on their own.
+        registerDefaultState(defaultBlockState().setValue(CONCRETELOGGED, false));
     }
 
     @Override
