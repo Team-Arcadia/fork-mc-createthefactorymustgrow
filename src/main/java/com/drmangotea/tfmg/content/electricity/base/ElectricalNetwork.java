@@ -98,8 +98,11 @@ public class ElectricalNetwork {
             maxVoltage = Math.max(member.voltageGeneration(), maxVoltage);
             if (member.resistance() != 0)
                 resistance += 1f / member.resistance();
-            powerGeneration += member.powerGeneration();
         }
+        // Power is summed once the network voltage is known: a storage block
+        // charged by a higher voltage supplies nothing (see powerGeneration(int)).
+        for (IElectric member : members)
+            powerGeneration += member.powerGeneration(maxVoltage);
         /**
          *  Phase II:
          * 1) informs blocks about voltage and power change

@@ -402,9 +402,9 @@ public interface IElectric {
 
     default int getNetworkPowerGeneration() {
         int power = 0;
+        int voltage = getData().getVoltage();
         for (IElectric member : getOrCreateElectricNetwork().members)
-
-            power += member.powerGeneration();
+            power += member.powerGeneration(voltage);
         return power;
     }
 
@@ -500,6 +500,16 @@ public interface IElectric {
         return voltageGeneration;
     }
 
+
+    /**
+     * Power this block adds to its own network when that network runs at
+     * {@code networkVoltage}. Sources answer {@link #powerGeneration()}; a
+     * storage block overrides it to supply nothing while a higher voltage is
+     * charging it, otherwise it counts as a source and as a load at once.
+     */
+    default int powerGeneration(int networkVoltage) {
+        return powerGeneration();
+    }
 
     default int powerGeneration() {
 

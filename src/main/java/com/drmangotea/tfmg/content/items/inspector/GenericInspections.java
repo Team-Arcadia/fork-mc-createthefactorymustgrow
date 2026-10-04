@@ -55,9 +55,10 @@ public final class GenericInspections {
         int maxVoltage = electric.getMaxVoltage();
         float current = electric.getCurrent();
         int maxCurrent = electric.getMaxCurrent();
-        boolean generator = electric.voltageGeneration() > 0 || electric.powerGeneration() > 0;
+        int power = electric.powerGeneration(voltage);
+        boolean generator = electric.voltageGeneration() > 0 || power > 0;
         if (generator)
-            report.info("electric.generating", electric.voltageGeneration(), electric.powerGeneration());
+            report.info("electric.generating", electric.voltageGeneration(), power);
         if (voltage <= 0 && !generator) {
             report.problem("electric.no_voltage");
             report.fix("electric.no_voltage.fix");

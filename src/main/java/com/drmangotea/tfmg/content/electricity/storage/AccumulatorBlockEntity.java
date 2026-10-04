@@ -506,6 +506,17 @@ public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVolt
         return canExposeVoltage() ? maxPowerOutput() : 0;
     }
 
+    /**
+     * A bank driven above its own voltage is charging, not discharging (see
+     * tick), so it supplies nothing. Counting its full output anyway let a
+     * network run loads its generators could not feed while the bank kept
+     * filling up: energy out of nowhere.
+     */
+    @Override
+    public int powerGeneration(int networkVoltage) {
+        return networkVoltage > getOutputVoltage() ? 0 : powerGeneration();
+    }
+
     public int maxPowerOutput() {
         return getOutputVoltage() * TFMGConfigs.common().machines.accumulatorMaxAmpOutput.get();
     }
