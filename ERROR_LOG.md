@@ -149,3 +149,17 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Patchouli draws an anchored ghost through `simulate(..., forView = true)`, which adds one block on Y, while `IMultiblock.validate` uses `forView = false`. The projector checked one block below the drawn ghost, so the layer never matched; Patchouli then reported it complete and the projector read that as the player closing it. On top of that, `strictBlockMatcher` compares against the block's default state, so any block placed with another facing (coke oven, hatches) never matched.
 **Fix:** The projector checks the layer through the same view simulation the visualizer renders, and anchors one block lower so the ghost sits on the clicked face. Each position matches on the block only (`predicateMatcher` with the drawn state for display). The client showcase now places each layer where it is drawn and fails if the projector does not move on.
 **Prevention:** When checking a Patchouli multiblock shown with `showMultiblock`, use `simulate(level, anchor, rotation, true)`, never `validate`.
+
+## [2026-10-04 18:20] - Handbook pages showing "Format error"
+**Context:** Reviewing every handbook page in French through the screenshot run.
+**Error:** 13 entries per language displayed "Format error: ..." instead of their text.
+**Root cause:** book.json sets `i18n: true`, so Patchouli passes every string through `I18n.get`, which formats it with `String.format`. A lone `%` ("50 % de chance", "25% chance") is an invalid format specifier and the whole string is replaced.
+**Fix:** The converter escapes `%` as `%%` in every book string; TFMGGuideTests runs `String.format` on every string of every entry.
+**Prevention:** Any text that reaches an i18n Patchouli book must be format safe. Check new literal strings with the guide test.
+
+## [2026-10-04 18:20] - Handbook landing page and titles overflowing the book
+**Context:** User report "les 3d dans le book déborde parfois", with a screenshot of the landing page.
+**Error:** The landing page showed a sixth row of category icons below the page; some 3D views and many entry titles ran past the frame or the spine.
+**Root cause:** 24 top-level categories need six rows where five fit. Patchouli scales a multiblock by `90 / max(diagonal, height)` but draws it tilted 30 degrees, so tall narrow structures exceed the frame. Titles are drawn on one line with no wrapping or scaling. A group named like a chapter (`engines`) was overwritten by it and became its own parent.
+**Fix:** Seven top-level groups with chapters as subcategories; symmetric empty padding around tall multiblocks; short titles from `tools/handbook/short_titles.json`, enforced by the converter; group ids asserted distinct from chapter ids; the guide test checks parents, loops and the number of top-level categories.
+**Prevention:** After changing the handbook, run `runClientGuideShots` in both languages and scan the bottom margin of every page.
