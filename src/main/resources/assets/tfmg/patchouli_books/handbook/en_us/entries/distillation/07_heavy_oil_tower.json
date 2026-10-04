@@ -1,0 +1,140 @@
+{
+  "name": "Heavy oil tower",
+  "icon": "tfmg:steel_distillation_output",
+  "category": "tfmg:distillation",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Four outputs$() on a 2x2 tank eight blocks high. Four outputs only match a $(item)heavy oil$() recipe, so this tower is the second stage of a refinery: feed it the heavy oil of a crude oil tower."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "More than three outputs need a tank at least two blocks wide, and the tank must be twice as tall as the number of outputs."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Heavy oil tower",
+      "multiblock": {
+        "pattern": [
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   UU   ",
+            "   UU   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   P    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   P    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   P    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   C    ",
+            "   AA   ",
+            "   AA   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "   F0   ",
+            "   FF   ",
+            "        ",
+            "        ",
+            "        "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_distillation_output,tfmg:steel_fluid_tank,tfmg:heavy_oil_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

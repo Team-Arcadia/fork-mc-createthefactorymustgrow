@@ -1,0 +1,23 @@
+{
+  "line": "electricity",
+  "order": 9006,
+  "name": {
+    "en_us": "Network Control: Transformer setup",
+    "fr_fr": "Contrôle du réseau : Montage transformateur"
+  },
+  "layers": [
+    [
+      "HXHGS"
+    ],
+    [
+      "L    "
+    ]
+  ],
+  "key": {
+    "H": "tfmg:steel_cable_hub",
+    "X": "tfmg:transformer[facing=north]",
+    "G": "tfmg:generator[facing=east]",
+    "S": "create:shaft[axis=x]",
+    "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+  }
+}

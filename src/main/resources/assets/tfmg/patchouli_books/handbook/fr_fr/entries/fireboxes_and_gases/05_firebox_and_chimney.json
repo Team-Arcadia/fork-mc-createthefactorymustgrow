@@ -1,0 +1,62 @@
+{
+  "name": "Foyer et cheminée",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un $(item)foyer 2x2$() avec sa ligne d'échappement : une $(item)pompe mécanique$() contre lui, entraînée par une roue dentée, pousse le CO2 dans une colonne de quatre $(item)cheminées en métal$(). Seule celle du haut rejette."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quatre blocs allumés font environ 670 mB de CO2 par seconde ; la colonne en stocke 32000 mB et en rejette jusqu'à 1000 mB par seconde quand elle est presque pleine."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Foyer et cheminée",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "    K ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "    K ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "    K ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            " FFQK ",
+            " FF0  ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "Q": "create:mechanical_pump[facing=east,waterlogged=false]",
+          "c": "create:cogwheel[axis=x,waterlogged=false]",
+          "K": "tfmg:metal_smokestack",
+          "0": "create:cogwheel[axis=x,waterlogged=false]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,create:mechanical_pump,create:cogwheel,tfmg:metal_smokestack",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

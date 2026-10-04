@@ -1,0 +1,58 @@
+{
+  "name": "Générateur couché",
+  "icon": "tfmg:rotor",
+  "category": "tfmg:power",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le rotor peut être couché : ici il tourne sur l'axe est-ouest et ses huit stators forment un anneau vertical autour de lui."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les stators prennent leur forme tout seuls, quel que soit l'axe. Ce montage se branche directement sur une ligne d'arbres horizontale."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Générateur couché",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " X  ",
+            " X  ",
+            " X  ",
+            "    "
+          ],
+          [
+            "    ",
+            " X  ",
+            " RS ",
+            " X  ",
+            "    "
+          ],
+          [
+            "    ",
+            " X  ",
+            " X0 ",
+            " X  ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "X": "tfmg:stator",
+          "R": "tfmg:rotor[axis=x]",
+          "S": "create:shaft[axis=x]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:rotor,tfmg:stator,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

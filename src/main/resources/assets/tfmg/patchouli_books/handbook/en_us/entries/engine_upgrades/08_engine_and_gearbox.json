@@ -1,0 +1,45 @@
+{
+  "name": "Engine and gearbox",
+  "icon": "tfmg:engine_gearbox",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A two-block engine drives an $(item)engine gearbox$() through a short shaft. The gearbox faces the engine and sends the rotation out of $(item)both sides$(), to two machines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Place the gearbox while looking at the engine. Its two side outputs turn in opposite directions."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Engine and gearbox",
+      "multiblock": {
+        "pattern": [
+          [
+            "XGX",
+            " S ",
+            " 0 ",
+            " E "
+          ]
+        ],
+        "mapping": {
+          "X": "create:shaft[axis=x,waterlogged=false]",
+          "G": "tfmg:engine_gearbox[facing=south]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+          "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]",
+          "0": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:engine_gearbox,tfmg:regular_engine,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

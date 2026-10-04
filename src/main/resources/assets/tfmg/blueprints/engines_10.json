@@ -1,0 +1,23 @@
+{
+  "line": "engines",
+  "order": 20010,
+  "name": {
+    "en_us": "Engines: Radial engine row",
+    "fr_fr": "Les moteurs : Rangée radiale"
+  },
+  "layers": [
+    [
+      "S",
+      "F",
+      "E",
+      "B",
+      "S"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "F": "tfmg:radial_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+    "E": "tfmg:radial_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+    "B": "tfmg:radial_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]"
+  }
+}

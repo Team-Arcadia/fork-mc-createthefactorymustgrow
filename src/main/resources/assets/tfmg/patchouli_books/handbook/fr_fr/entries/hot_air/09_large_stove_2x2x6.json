@@ -1,0 +1,83 @@
+{
+  "name": "Grand fourneau, 2x2x6",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)24 blocs$(), 2x2 de large et six de haut : environ $(item)40 mB d'air chaud par tick$(), de quoi alimenter $(item)deux$() hauts fourneaux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il lui faut aussi environ 40 mB d'air par tick : associez-le à une prise d'air 3x3, et à une pompe assez forte pour évacuer son CO2."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Structure",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  S0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "S": "tfmg:blast_stove",
+          "0": "tfmg:blast_stove"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove,tfmg:air_intake",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

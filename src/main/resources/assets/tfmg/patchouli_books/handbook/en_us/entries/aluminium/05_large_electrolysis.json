@@ -1,0 +1,58 @@
+{
+  "name": "Large electrolysis",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:aluminium",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)3x3$() steel vat holds nine times the fluid of a single block, so it runs longer between refills."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Recipes still need only $(item)two holders$(), anywhere on top, and $(item)heat 2$(): one burning firebox under the centre is enough. Each holder still needs its own 5 A through its top face."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large electrolysis",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " E   ",
+            "     ",
+            "   E ",
+            "     "
+          ],
+          [
+            "     ",
+            " VVV ",
+            " VVV ",
+            " VVV ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  0  ",
+            "     ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:electrode_holder,tfmg:copper_electrode,tfmg:firebox",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

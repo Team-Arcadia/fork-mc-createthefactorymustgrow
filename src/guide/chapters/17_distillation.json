@@ -277,6 +277,185 @@
         ]
       },
       "items": ["tfmg:steel_distillation_output", "tfmg:flarestack", "create:fluid_tank", "create:mechanical_pump"]
+    },
+    {
+      "title": {
+        "en_us": "Light tower, 3 outputs",
+        "fr_fr": "Tour légère, 3 sorties"
+      },
+      "text": {
+        "en_us": [
+          "The cheapest tower: a **1x1** steel tank six blocks high, the controller on its side, **three outputs** with two pipes between them, one firebox under the tank.",
+          "",
+          "It runs the light crude oil recipe (heavy oil, diesel, a little gasoline) and the three-output heavy oil recipe. Three outputs or fewer fit on a tank one block wide."
+        ],
+        "fr_fr": [
+          "La tour la moins chère : un réservoir en acier **1x1** haut de six blocs, le contrôleur sur son côté, **trois sorties** séparées par deux tuyaux, un foyer sous le réservoir.",
+          "",
+          "Elle fait la recette légère du pétrole brut (fioul lourd, diesel, un peu d'essence) et la recette à trois sorties du fioul lourd. Jusqu'à trois sorties, un réservoir d'un bloc de large suffit."
+        ]
+      },
+      "items": [
+        "tfmg:steel_distillation_controller",
+        "tfmg:steel_distillation_output",
+        "tfmg:industrial_pipe",
+        "tfmg:steel_fluid_tank",
+        "tfmg:firebox"
+      ],
+      "schematic": {
+        "layers": [
+          [" ", "F"],
+          ["C", "A"],
+          ["O", "T"],
+          ["P", "T"],
+          ["O", "T"],
+          ["P", "T"],
+          ["O", "U"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Heavy oil tower",
+        "fr_fr": "Tour à fioul lourd"
+      },
+      "text": {
+        "en_us": [
+          "**Four outputs** on a 2x2 tank eight blocks high. Four outputs only match a **heavy oil** recipe, so this tower is the second stage of a refinery: feed it the heavy oil of a crude oil tower.",
+          "",
+          "More than three outputs need a tank at least two blocks wide, and the tank must be twice as tall as the number of outputs."
+        ],
+        "fr_fr": [
+          "**Quatre sorties** sur un réservoir 2x2 haut de huit blocs. Quatre sorties ne correspondent qu'à une recette de **fioul lourd** : cette tour est le second étage d'une raffinerie, nourrie avec le fioul lourd d'une tour à pétrole brut.",
+          "",
+          "Au-delà de trois sorties, le réservoir doit faire au moins deux blocs de large, et sa hauteur doit valoir deux fois le nombre de sorties."
+        ]
+      },
+      "items": ["tfmg:steel_distillation_output", "tfmg:steel_fluid_tank", "tfmg:heavy_oil_bucket"],
+      "schematic": {
+        "layers": [
+          ["  ", "FF", "FF"],
+          ["C ", "AA", "AA"],
+          ["O ", "TT", "TT"],
+          ["P ", "TT", "TT"],
+          ["O ", "TT", "TT"],
+          ["P ", "TT", "TT"],
+          ["O ", "TT", "TT"],
+          ["P ", "TT", "TT"],
+          ["O ", "UU", "UU"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Five-output tower",
+        "fr_fr": "Tour à cinq sorties"
+      },
+      "text": {
+        "en_us": [
+          "**Five outputs** on a 2x2 tank ten blocks high. With crude oil it makes everything the six-output tower makes except naphtha; with heavy oil it runs the five-output heavy oil recipe.",
+          "",
+          "Adding or removing the top output is how you switch a tower between recipes."
+        ],
+        "fr_fr": [
+          "**Cinq sorties** sur un réservoir 2x2 haut de dix blocs. Avec du pétrole brut, elle donne tout ce que donne la tour à six sorties sauf le naphta ; avec du fioul lourd, elle fait la recette à cinq sorties.",
+          "",
+          "Ajouter ou retirer la sortie du haut, c'est ainsi qu'on change la recette d'une tour."
+        ]
+      },
+      "items": ["tfmg:steel_distillation_output", "tfmg:steel_fluid_tank", "tfmg:crude_oil_bucket"],
+      "schematic": {
+        "layers": [
+          ["  ", "FF", "FF"],
+          ["C ", "AA", "AA"],
+          ["O ", "TT", "TT"],
+          ["P ", "TT", "TT"],
+          ["O ", "TT", "TT"],
+          ["P ", "TT", "TT"],
+          ["O ", "TT", "TT"],
+          ["P ", "TT", "TT"],
+          ["O ", "TT", "TT"],
+          ["P ", "TT", "TT"],
+          ["O ", "UU", "UU"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Big tower, 3x3",
+        "fr_fr": "Grande tour, 3x3"
+      },
+      "text": {
+        "en_us": [
+          "The full crude oil tower on the widest tank: **3x3**, twelve high, six outputs, a 3x3 firebox underneath.",
+          "",
+          "Nine fireboxes give heat 18, so it runs the recipe nine times per tick. That is enough for many pumpjacks; the 72 blocks of tank also buffer a lot of oil."
+        ],
+        "fr_fr": [
+          "La tour complète à pétrole brut sur le réservoir le plus large : **3x3**, haut de douze, six sorties, un foyer 3x3 dessous.",
+          "",
+          "Neuf foyers donnent une chaleur de 18 : elle fait la recette neuf fois par tick. De quoi suivre beaucoup de pompes ; les 72 blocs de réservoir stockent aussi beaucoup de pétrole."
+        ]
+      },
+      "items": [
+        "tfmg:steel_distillation_controller",
+        "tfmg:steel_distillation_output",
+        "tfmg:steel_fluid_tank",
+        "tfmg:firebox"
+      ],
+      "schematic": {
+        "layers": [
+          ["   ", "FFF", "FFF", "FFF"],
+          ["C  ", "AAA", "AAA", "AAA"],
+          ["O  ", "TTT", "TTT", "TTT"],
+          ["P  ", "TTT", "TTT", "TTT"],
+          ["O  ", "TTT", "TTT", "TTT"],
+          ["P  ", "TTT", "TTT", "TTT"],
+          ["O  ", "TTT", "TTT", "TTT"],
+          ["P  ", "TTT", "TTT", "TTT"],
+          ["O  ", "TTT", "TTT", "TTT"],
+          ["P  ", "TTT", "TTT", "TTT"],
+          ["O  ", "TTT", "TTT", "TTT"],
+          ["P  ", "TTT", "TTT", "TTT"],
+          ["O  ", "UUU", "UUU", "UUU"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,79 @@
+{
+  "name": "Large stove, 2x2x6",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)24 blocks$(), 2x2 wide and six high: about $(item)40 mB of hot air per tick$(), enough for $(item)two$() blast furnaces.$(br2)It also needs about 40 mB of air per tick, so pair it with a 3x3 air intake, and a pump strong enough to clear its CO2."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large stove, 2x2x6",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  SS  ",
+            "  S0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "S": "tfmg:blast_stove",
+          "0": "tfmg:blast_stove"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove,tfmg:air_intake",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

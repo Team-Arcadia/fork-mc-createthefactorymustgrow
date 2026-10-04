@@ -1,0 +1,22 @@
+{
+  "line": "aluminium",
+  "order": 12008,
+  "name": {
+    "en_us": "Aluminium: Hydrogen cell",
+    "fr_fr": "L'aluminium : Cellule à hydrogène"
+  },
+  "layers": [
+    [
+      "WW",
+      "WW"
+    ],
+    [
+      "E ",
+      " E"
+    ]
+  ],
+  "key": {
+    "W": "tfmg:cast_iron_chemical_vat",
+    "E": "tfmg:electrode_holder"
+  }
+}

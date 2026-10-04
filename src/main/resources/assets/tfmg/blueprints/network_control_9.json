@@ -1,0 +1,29 @@
+{
+  "line": "electricity",
+  "order": 9009,
+  "name": {
+    "en_us": "Network Control: Large transformer",
+    "fr_fr": "Contrôle du réseau : Grand transformateur"
+  },
+  "layers": [
+    [
+      "CC"
+    ],
+    [
+      "TT"
+    ],
+    [
+      "GM"
+    ],
+    [
+      "S "
+    ]
+  ],
+  "key": {
+    "C": "tfmg:large_coil",
+    "T": "tfmg:cable_tube[axis=y,concretelogged=false]",
+    "G": "tfmg:generator[facing=up]",
+    "M": "tfmg:electric_motor[facing=up]",
+    "S": "create:shaft[axis=y]"
+  }
+}

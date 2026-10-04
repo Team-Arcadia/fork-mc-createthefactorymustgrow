@@ -324,6 +324,96 @@
         ]
       },
       "items": ["tfmg:gasoline_bucket", "tfmg:diesel_bucket", "tfmg:kerosene_bucket", "tfmg:naphtha_bucket", "tfmg:lpg_bucket", "tfmg:hydrogen_bucket", "tfmg:creosote_bucket", "tfmg:furnace_gas_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Five-block engine",
+        "fr_fr": "Moteur à cinq blocs"
+      },
+      "text": {
+        "en_us": [
+          "The longest row with default settings: **5 regular engines**, all facing north. A shaft on **both ends** splits the power between two lines.",
+          "",
+          "Put a shaft item into each end block. Torque grows with every block, so this row gives far more stress capacity than a single block on the same fuel."
+        ],
+        "fr_fr": [
+          "La plus longue rangée avec les réglages par défaut : **5 moteurs ordinaires**, tous tournés vers le nord. Un arbre à **chaque bout** partage la puissance entre deux lignes.",
+          "",
+          "Mettez un arbre dans chaque bloc d'extrémité. Le couple grandit à chaque bloc : cette rangée donne bien plus de capacité de contrainte qu'un bloc seul avec le même carburant."
+        ]
+      },
+      "items": ["tfmg:regular_engine", "create:shaft", "tfmg:engine_cylinder"],
+      "schematic": {
+        "layers": [
+          ["S", "F", "E", "E", "E", "K", "S"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+          "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]",
+          "K": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=south]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Radial engine row",
+        "fr_fr": "Rangée radiale"
+      },
+      "text": {
+        "en_us": [
+          "Three **radial engines** in a row. Their outputs are built in at **both ends**: no shaft item needed, just connect a shaft line on either side.",
+          "",
+          "A radial engine holds 8 cylinders per block and has the best efficiency of the small engines, with the Boxer."
+        ],
+        "fr_fr": [
+          "Trois **moteurs radiaux** en rangée. Leurs sorties sont intégrées aux **deux bouts** : pas besoin d'arbre à insérer, raccordez simplement une ligne d'arbres d'un côté ou de l'autre.",
+          "",
+          "Un moteur radial contient 8 cylindres par bloc et a le meilleur rendement des petits moteurs, avec le Boxer."
+        ]
+      },
+      "items": ["tfmg:radial_engine", "create:shaft", "tfmg:engine_cylinder"],
+      "schematic": {
+        "layers": [
+          ["S", "F", "E", "B", "S"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:radial_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+          "E": "tfmg:radial_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+          "B": "tfmg:radial_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Turbine engine row",
+        "fr_fr": "Rangée de turbines"
+      },
+      "text": {
+        "en_us": [
+          "Three **turbine engines** facing north. A turbine row outputs at its **back** end only, here on the south side.",
+          "",
+          "Turbines take turbine blades instead of cylinders. They are the fastest and strongest small engines, but burn fuel the fastest too."
+        ],
+        "fr_fr": [
+          "Trois **moteurs à turbine** tournés vers le nord. Une rangée de turbines ne sort qu'à son extrémité **arrière**, ici côté sud.",
+          "",
+          "Les turbines prennent des aubes de turbine au lieu de cylindres. Ce sont les petits moteurs les plus rapides et les plus forts, mais aussi les plus gourmands."
+        ]
+      },
+      "items": ["tfmg:turbine_engine", "tfmg:turbine_blade", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["F", "E", "B", "S"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:turbine_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+          "E": "tfmg:turbine_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+          "B": "tfmg:turbine_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]"
+        }
+      }
     }
   ]
 }

@@ -232,6 +232,149 @@
         ]
       },
       "items": ["create:goggles", "tfmg:coke_oven", "create:mechanical_pump"]
+    },
+    {
+      "title": {
+        "en_us": "Small oven, 2x2",
+        "fr_fr": "Petit four, 2x2"
+      },
+      "text": {
+        "en_us": [
+          "The smallest real oven: **4 coke oven blocks**, two high and two deep, all facing the same way.",
+          "",
+          "It cooks no faster than a single block, but it is a cheap way to learn the shape. The bottom front block is the controller: the coke drops out in front of it.",
+          "",
+          "Add a layer on top and a column behind to grow it into a 3x3 later."
+        ],
+        "fr_fr": [
+          "Le plus petit vrai four : **4 blocs de four à coke**, deux de haut et deux de profondeur, tous tournés dans le même sens.",
+          "",
+          "Il ne cuit pas plus vite qu'un bloc seul, mais c'est une façon peu chère d'apprendre la forme. Le bloc en bas à l'avant est le contrôleur : le coke tombe devant lui.",
+          "",
+          "Ajoutez une couche dessus et une colonne derrière pour en faire un 3x3 plus tard."
+        ]
+      },
+      "items": ["tfmg:coke_oven", "minecraft:coal"],
+      "schematic": {
+        "layers": [
+          ["C", "B"],
+          ["C", "T"]
+        ],
+        "key": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Large oven, 4x4",
+        "fr_fr": "Grand four, 4x4"
+      },
+      "text": {
+        "en_us": [
+          "**16 blocks**: four high and four deep. It cooks a coal in **30 s**, twice as fast as a single block.",
+          "",
+          "- Place the back columns first, the front column last, all facing the front.",
+          "- Only the front column shows doors once it forms.",
+          "- One slot and one pair of tanks serve the whole oven."
+        ],
+        "fr_fr": [
+          "**16 blocs** : quatre de haut et quatre de profondeur. Il cuit un charbon en **30 s**, deux fois plus vite qu'un bloc seul.",
+          "",
+          "- Posez d'abord les colonnes du fond, la colonne avant en dernier, toutes tournées vers l'avant.",
+          "- Seule la colonne avant montre des portes une fois formé.",
+          "- Un seul emplacement et une paire de réservoirs servent tout le four."
+        ]
+      },
+      "items": ["tfmg:coke_oven", "minecraft:coal"],
+      "schematic": {
+        "layers": [
+          ["C", "C", "C", "B"],
+          ["C", "C", "C", "M"],
+          ["C", "C", "C", "M"],
+          ["C", "C", "C", "T"]
+        ],
+        "key": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Largest oven, 6x6",
+        "fr_fr": "Four maximal, 6x6"
+      },
+      "text": {
+        "en_us": [
+          "With the default settings an oven stops growing at **6x6**: 36 blocks, six high and six deep. It cooks a coal in **20 s**, three times faster than a single block.",
+          "",
+          "Blocks added above or behind a full 6x6 stay separate small ovens. A server can lower the limit with cokeOvenMaxSize.",
+          "",
+          "One big oven still cooks one item at a time, so feed it with a funnel and empty its fluids often."
+        ],
+        "fr_fr": [
+          "Avec les réglages par défaut, un four cesse de grandir à **6x6** : 36 blocs, six de haut et six de profondeur. Il cuit un charbon en **20 s**, trois fois plus vite qu'un bloc seul.",
+          "",
+          "Les blocs ajoutés au-dessus ou derrière un 6x6 complet restent de petits fours séparés. Un serveur peut baisser la limite avec cokeOvenMaxSize.",
+          "",
+          "Un grand four cuit toujours un objet à la fois : alimentez-le avec un entonnoir et videz souvent ses fluides."
+        ]
+      },
+      "items": ["tfmg:coke_oven", "create:andesite_funnel"],
+      "schematic": {
+        "layers": [
+          ["C", "C", "C", "C", "C", "B"],
+          ["C", "C", "C", "C", "C", "M"],
+          ["C", "C", "C", "C", "C", "M"],
+          ["C", "C", "C", "C", "C", "M"],
+          ["C", "C", "C", "C", "C", "M"],
+          ["C", "C", "C", "C", "C", "T"]
+        ],
+        "key": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Oven battery",
+        "fr_fr": "Batterie de fours"
+      },
+      "text": {
+        "en_us": [
+          "Three **3x3** slices built side by side make three separate ovens, each with its own controller, slot and tanks.",
+          "",
+          "A battery cooks three coals at once, where one big oven cooks only one. Run a belt with funnels along the front to feed every slice, and catch the coke falling out of the three doors."
+        ],
+        "fr_fr": [
+          "Trois tranches **3x3** posées côte à côte forment trois fours séparés, chacun avec son contrôleur, son emplacement et ses réservoirs.",
+          "",
+          "Une batterie cuit trois charbons à la fois, là où un grand four n'en cuit qu'un. Faites passer un tapis avec des entonnoirs devant pour alimenter chaque tranche, et récupérez le coke qui tombe des trois portes."
+        ]
+      },
+      "items": ["tfmg:coke_oven", "create:belt_connector", "create:andesite_funnel"],
+      "schematic": {
+        "layers": [
+          ["CCC", "CCC", "BBB"],
+          ["CCC", "CCC", "MMM"],
+          ["CCC", "CCC", "TTT"]
+        ],
+        "key": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,49 @@
+{
+  "name": "Large switch",
+  "icon": "tfmg:large_switch",
+  "category": "tfmg:network_control",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)large switch$() facing east: power enters at the back of the first half and leaves at the front of the second."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The shaft on the north side of the first half drives its arm: one direction closes it, the other opens it. Placing the item puts down both halves."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large switch",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "    L"
+          ],
+          [
+            "S X  ",
+            "GH0BH"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "X": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:large_switch[facing=east,is_main_part=true]",
+          "B": "tfmg:large_switch[facing=east,is_main_part=false]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:large_switch[facing=east,is_main_part=true]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_switch,tfmg:steel_cable_hub,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

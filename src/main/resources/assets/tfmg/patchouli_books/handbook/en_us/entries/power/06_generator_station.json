@@ -1,0 +1,52 @@
+{
+  "name": "Generator station",
+  "icon": "tfmg:generator",
+  "category": "tfmg:power",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The simplest power plant: a $(item)generator$() turned by a shaft on its front, a $(item)steel cable hub$() behind it and a $(item)light bulb$() on the hub."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The generator connects on every face. Above 40 RPM the bulb lights up; at 256 RPM the generator gives 302 V."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Generator station",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            "   ",
+            "   ",
+            " L ",
+            "   "
+          ],
+          [
+            "   ",
+            " S ",
+            " 0 ",
+            " H ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:generator[facing=north]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,tfmg:steel_cable_hub,tfmg:light_bulb,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

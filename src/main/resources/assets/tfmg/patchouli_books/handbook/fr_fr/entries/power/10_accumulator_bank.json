@@ -1,0 +1,42 @@
+{
+  "name": "Banc d'accumulateurs",
+  "icon": "tfmg:accumulator",
+  "category": "tfmg:power",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Trois chaînes de cinq côte à côte, reliées aux deux bouts par une rangée de $(item)moyeux de câbles$(). Des chaînes voisines ne se connectent pas par leurs côtés : les moyeux les réunissent en un seul banc."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chaque chaîne sort 60 V et jusqu'à 20 A : le banc fournit trois fois le courant d'une chaîne."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Banc d'accumulateurs",
+      "multiblock": {
+        "pattern": [
+          [
+            "HAAAAAH",
+            "HAA0AAH",
+            "HAAAAAH"
+          ]
+        ],
+        "mapping": {
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:accumulator[facing=east]",
+          "0": "tfmg:accumulator[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:accumulator,tfmg:steel_cable_hub",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

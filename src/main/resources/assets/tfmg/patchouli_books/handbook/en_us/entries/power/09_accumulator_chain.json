@@ -1,0 +1,35 @@
+{
+  "name": "Accumulator chain",
+  "icon": "tfmg:accumulator",
+  "category": "tfmg:power",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Eight $(item)accumulators$() end to end, all facing east, between two cable hubs. The chain holds 800,000 and outputs 96 V.$(br2)A chain connects only at its two ends, along its axis. Up to 15 blocks join one chain."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Accumulator chain",
+      "multiblock": {
+        "pattern": [
+          [
+            "HAAAA0AAAH"
+          ]
+        ],
+        "mapping": {
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:accumulator[facing=east]",
+          "0": "tfmg:accumulator[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:accumulator,tfmg:steel_cable_hub",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

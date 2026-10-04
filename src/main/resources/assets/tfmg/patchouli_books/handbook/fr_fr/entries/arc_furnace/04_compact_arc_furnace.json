@@ -1,0 +1,61 @@
+{
+  "name": "Four à arc compact",
+  "icon": "tfmg:fireproof_chemical_vat",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le four à arc demande au moins $(item)9 blocs de cuve$(), pas une emprise 3x3. Une cuve réfractaire $(item)2x2 haute de trois$() (12 blocs) convient aussi, avec ses trois porte-électrodes sur la couche du dessus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il prend moins de place au sol, mais chaque porte-électrode demande toujours $(item)1500 V$() ou plus avec une électrode en graphite."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Four à arc compact",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " EE ",
+            " E  ",
+            "    "
+          ],
+          [
+            "    ",
+            " RR ",
+            " RR ",
+            "    "
+          ],
+          [
+            "    ",
+            " RR ",
+            " RR ",
+            "    "
+          ],
+          [
+            "    ",
+            " RR ",
+            " R0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "R": "tfmg:fireproof_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:fireproof_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_chemical_vat,tfmg:electrode_holder,tfmg:graphite_electrode",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

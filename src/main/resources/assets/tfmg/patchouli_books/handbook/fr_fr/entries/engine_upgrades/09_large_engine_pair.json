@@ -1,0 +1,51 @@
+{
+  "name": "Deux grands moteurs",
+  "icon": "tfmg:simple_large_engine",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Deux $(item)grands moteurs simples$() au sol, séparés par un bloc, entraînent une même ligne d'arbres deux blocs au-dessus. Chaque moteur change son bloc d'arbre en arbre motorisé, et leurs puissances s'additionnent sur la ligne."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Laissez vide le bloc entre le moteur et l'arbre : le piston s'y déplace."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Deux grands moteurs",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " SSS ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            " E0E ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "E": "tfmg:simple_large_engine[face=floor,facing=north,waterlogged=false]",
+          "S": "create:shaft[axis=x,waterlogged=false]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:simple_large_engine,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

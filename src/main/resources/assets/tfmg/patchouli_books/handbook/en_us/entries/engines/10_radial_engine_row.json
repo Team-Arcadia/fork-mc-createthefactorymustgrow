@@ -1,0 +1,45 @@
+{
+  "name": "Radial engine row",
+  "icon": "tfmg:radial_engine",
+  "category": "tfmg:engines",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Three $(item)radial engines$() in a row. Their outputs are built in at $(item)both ends$(): no shaft item needed, just connect a shaft line on either side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A radial engine holds 8 cylinders per block and has the best efficiency of the small engines, with the Boxer."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Radial engine row",
+      "multiblock": {
+        "pattern": [
+          [
+            "S",
+            "F",
+            "0",
+            "B",
+            "S"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:radial_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+          "E": "tfmg:radial_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+          "B": "tfmg:radial_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]",
+          "0": "tfmg:radial_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:radial_engine,create:shaft,tfmg:engine_cylinder",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

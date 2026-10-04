@@ -1,0 +1,44 @@
+{
+  "name": "Rangée de turbines",
+  "icon": "tfmg:turbine_engine",
+  "category": "tfmg:engines",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Trois $(item)moteurs à turbine$() tournés vers le nord. Une rangée de turbines ne sort qu'à son extrémité $(item)arrière$(), ici côté sud."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les turbines prennent des aubes de turbine au lieu de cylindres. Ce sont les petits moteurs les plus rapides et les plus forts, mais aussi les plus gourmands."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Rangée de turbines",
+      "multiblock": {
+        "pattern": [
+          [
+            "F",
+            "E",
+            "0",
+            "S"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:turbine_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+          "E": "tfmg:turbine_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+          "B": "tfmg:turbine_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]",
+          "0": "tfmg:turbine_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:turbine_engine,tfmg:turbine_blade,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

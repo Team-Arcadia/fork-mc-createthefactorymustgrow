@@ -1,0 +1,17 @@
+{
+  "line": "power",
+  "order": 8009,
+  "name": {
+    "en_us": "Making Power: Accumulator chain",
+    "fr_fr": "Produire de l'électricité : Chaîne d'accumulateurs"
+  },
+  "layers": [
+    [
+      "HAAAAAAAAH"
+    ]
+  ],
+  "key": {
+    "H": "tfmg:steel_cable_hub",
+    "A": "tfmg:accumulator[facing=east]"
+  }
+}

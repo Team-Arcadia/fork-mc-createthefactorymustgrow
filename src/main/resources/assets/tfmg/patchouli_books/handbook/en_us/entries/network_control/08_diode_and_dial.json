@@ -1,0 +1,48 @@
+{
+  "name": "Diode and dial",
+  "icon": "tfmg:electric_diode",
+  "category": "tfmg:network_control",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)diode$() then a $(item)potentiometer$(), both facing east. The diode lets power flow one way only; the potentiometer passes 0 to 100%% of its input voltage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each bridge starts a new network: generator side, between the two, and bulb side."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Diode and dial",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "    L"
+          ],
+          [
+            "S    ",
+            "GH0PH"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "D": "tfmg:electric_diode[facing=east]",
+          "P": "tfmg:potentiometer[facing=east]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:electric_diode[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_diode,tfmg:potentiometer,tfmg:steel_cable_hub",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

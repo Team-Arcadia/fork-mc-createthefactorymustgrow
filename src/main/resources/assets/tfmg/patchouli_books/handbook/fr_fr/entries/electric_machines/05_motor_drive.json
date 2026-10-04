@@ -1,0 +1,42 @@
+{
+  "name": "Entraînement électrique",
+  "icon": "tfmg:electric_motor",
+  "category": "tfmg:electric_machines",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un $(item)générateur$() alimente un $(item)moteur électrique$() par un moyeu de câbles. Le moteur prend le courant par sa face arrière et fait tourner l'arbre devant lui."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La rotation changée en électricité puis de nouveau en rotation peut aller loin par des câbles, là où une ligne d'arbres ne le pourrait pas."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Structure",
+      "multiblock": {
+        "pattern": [
+          [
+            "SG0MS"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=x]",
+          "G": "tfmg:generator[facing=west]",
+          "H": "tfmg:steel_cable_hub",
+          "M": "tfmg:electric_motor[facing=east]",
+          "0": "tfmg:steel_cable_hub"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_motor,tfmg:generator,tfmg:steel_cable_hub,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

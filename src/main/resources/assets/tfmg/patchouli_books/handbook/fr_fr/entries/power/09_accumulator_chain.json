@@ -1,0 +1,40 @@
+{
+  "name": "Chaîne d'accumulateurs",
+  "icon": "tfmg:accumulator",
+  "category": "tfmg:power",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Huit $(item)accumulateurs$() bout à bout, tous tournés vers l'est, entre deux moyeux de câbles. La chaîne stocke 800 000 et sort 96 V."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une chaîne ne se connecte qu'à ses deux bouts, dans son axe. Jusqu'à 15 blocs forment une seule chaîne."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Structure",
+      "multiblock": {
+        "pattern": [
+          [
+            "HAAAA0AAAH"
+          ]
+        ],
+        "mapping": {
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:accumulator[facing=east]",
+          "0": "tfmg:accumulator[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:accumulator,tfmg:steel_cable_hub",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

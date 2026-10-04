@@ -233,6 +233,171 @@
         ]
       },
       "items": ["tfmg:voltage_observer", "minecraft:comparator", "create:display_link", "tfmg:voltmeter", "tfmg:accumulator", "tfmg:segmented_display"]
+    },
+    {
+      "title": {
+        "en_us": "Transformer setup",
+        "fr_fr": "Montage transformateur"
+      },
+      "text": {
+        "en_us": [
+          "A **transformer** facing north takes power on its **east** side and feeds a separate network on its **west** side.",
+          "",
+          "Here a generator and a hub make the input network, and a hub with a bulb the output one. Fit a coil of 50 turns or more on each side to get any voltage out."
+        ],
+        "fr_fr": [
+          "Un **transformateur** tourné vers le nord prend le courant par son côté **est** et alimente un réseau séparé par son côté **ouest**.",
+          "",
+          "Ici un générateur et un moyeu forment le réseau d'entrée, un moyeu et une ampoule le réseau de sortie. Posez une bobine de 50 tours ou plus de chaque côté pour obtenir une tension."
+        ]
+      },
+      "items": ["tfmg:transformer", "tfmg:electromagnetic_coil", "tfmg:steel_cable_hub", "tfmg:generator"],
+      "schematic": {
+        "layers": [
+          ["HXHGS"],
+          ["L    "]
+        ],
+        "key": {
+          "H": "tfmg:steel_cable_hub",
+          "X": "tfmg:transformer[facing=north]",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Switched line",
+        "fr_fr": "Ligne commandée"
+      },
+      "text": {
+        "en_us": [
+          "An **electric switch** facing east between two hubs: power comes in at its back from the generator side and leaves at its front toward the bulb.",
+          "",
+          "Give the switch a redstone signal to close it. A weaker signal passes less voltage, like a dimmer."
+        ],
+        "fr_fr": [
+          "Un **interrupteur électrique** tourné vers l'est entre deux moyeux : le courant entre par l'arrière côté générateur et sort par l'avant vers l'ampoule.",
+          "",
+          "Donnez un signal de redstone à l'interrupteur pour le fermer. Un signal plus faible laisse passer moins de tension, comme un variateur."
+        ]
+      },
+      "items": ["tfmg:electrical_switch", "tfmg:steel_cable_hub", "minecraft:lever"],
+      "schematic": {
+        "layers": [
+          ["S   ", "GHWH"],
+          ["    ", "   L"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "W": "tfmg:electrical_switch[facing=east]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Diode and dial",
+        "fr_fr": "Diode et potentiomètre"
+      },
+      "text": {
+        "en_us": [
+          "A **diode** then a **potentiometer**, both facing east. The diode lets power flow one way only; the potentiometer passes 0 to 100% of its input voltage.",
+          "",
+          "Each bridge starts a new network: generator side, between the two, and bulb side."
+        ],
+        "fr_fr": [
+          "Une **diode** puis un **potentiomètre**, tous deux tournés vers l'est. La diode ne laisse passer le courant que dans un sens ; le potentiomètre laisse passer de 0 à 100 % de sa tension d'entrée.",
+          "",
+          "Chaque pont démarre un nouveau réseau : côté générateur, entre les deux, et côté ampoule."
+        ]
+      },
+      "items": ["tfmg:electric_diode", "tfmg:potentiometer", "tfmg:steel_cable_hub"],
+      "schematic": {
+        "layers": [
+          ["S    ", "GHDPH"],
+          ["     ", "    L"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "D": "tfmg:electric_diode[facing=east]",
+          "P": "tfmg:potentiometer[facing=east]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Large transformer",
+        "fr_fr": "Grand transformateur"
+      },
+      "text": {
+        "en_us": [
+          "Two wound **large coils** side by side. Right-click the west one with a **laminated magnetic alloy block**: it becomes the input half, the other the output half.",
+          "",
+          "Each half connects on its **top only**. A cable tube rises from each: the generator on the input, a motor on the output."
+        ],
+        "fr_fr": [
+          "Deux **grandes bobines** enroulées côte à côte. Clic droit sur celle de l'ouest avec un **bloc d'alliage magnétique laminé** : elle devient la moitié d'entrée, l'autre la moitié de sortie.",
+          "",
+          "Chaque moitié ne se connecte que par **le dessus**. Un tube à câbles monte de chacune : le générateur sur l'entrée, un moteur sur la sortie."
+        ]
+      },
+      "items": ["tfmg:large_coil", "tfmg:laminated_magnetic_alloy_block", "tfmg:cable_tube", "tfmg:electric_motor"],
+      "schematic": {
+        "layers": [
+          ["CC"],
+          ["TT"],
+          ["GM"],
+          ["S "]
+        ],
+        "key": {
+          "C": "tfmg:large_coil",
+          "T": "tfmg:cable_tube[axis=y,concretelogged=false]",
+          "G": "tfmg:generator[facing=up]",
+          "M": "tfmg:electric_motor[facing=up]",
+          "S": "create:shaft[axis=y]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Large switch",
+        "fr_fr": "Grand interrupteur"
+      },
+      "text": {
+        "en_us": [
+          "The **large switch** facing east: power enters at the back of the first half and leaves at the front of the second.",
+          "",
+          "The shaft on the north side of the first half drives its arm: one direction closes it, the other opens it. Placing the item puts down both halves."
+        ],
+        "fr_fr": [
+          "Le **grand interrupteur** tourné vers l'est : le courant entre à l'arrière de la première moitié et sort à l'avant de la seconde.",
+          "",
+          "L'arbre côté nord de la première moitié actionne son bras : un sens le ferme, l'autre l'ouvre. Poser l'objet met en place les deux moitiés."
+        ]
+      },
+      "items": ["tfmg:large_switch", "tfmg:steel_cable_hub", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["S X  ", "GHABH"],
+          ["     ", "    L"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z]",
+          "X": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:large_switch[facing=east,is_main_part=true]",
+          "B": "tfmg:large_switch[facing=east,is_main_part=false]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+        }
+      }
     }
   ]
 }

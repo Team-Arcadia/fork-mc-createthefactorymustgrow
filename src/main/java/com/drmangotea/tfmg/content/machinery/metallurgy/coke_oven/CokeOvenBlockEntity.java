@@ -292,7 +292,7 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
             return;
         }
 
-        int maxSize = TFMGConfigs.common().machines.cokeOvenMaxSize.get();
+        int maxSize = maxFormableSize();
         float speed = Math.max(size / 2f, 1f);
         if (size > 1)
             report.ok("coke_oven.formed", size, size, maxSize, String.format("%.1f", speed));
@@ -561,7 +561,29 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
         return dy >= 0 && dy < size && along >= 0 && along < size && perpendicular == 0;
     }
 
+    /**
+     * The largest square an oven forms. The scan in {@link #createMultiblock}
+     * starts at size 1 and grows once per step up to cokeOvenMaxSize, so the
+     * default setting of 5 forms ovens up to 6x6, as the handbook says. The
+     * inspector used to report the setting itself as the maximum.
+     */
+    public static int maxFormableSize() {
+        return TFMGConfigs.common().machines.cokeOvenMaxSize.get() + 1;
+    }
+
     public void setBlockStates(int size){
+
+        // Only the front column shows doors. A smaller oven formed further
+        // back before this one grew over it kept its own door states, so
+        // doors and a second "top" were drawn in the middle of the wall.
+        Direction back = getBlockState().getValue(FACING).getOpposite();
+        for(int depth = 1; depth < size; depth++)
+            for(int i = 0; i < size; i++) {
+                BlockPos pos = getBlockPos().relative(back, depth).above(i);
+                BlockState state = level.getBlockState(pos);
+                if(state.is(TFMGBlocks.COKE_OVEN.get()) && state.getValue(CokeOvenBlock.CONTROLLER_TYPE) != CokeOvenBlock.ControllerType.CASUAL)
+                    level.setBlock(pos, state.setValue(CokeOvenBlock.CONTROLLER_TYPE, CokeOvenBlock.ControllerType.CASUAL), 2);
+            }
 
         if(size>1){
             level.setBlock(getBlockPos(), getBlockState().setValue(CokeOvenBlock.CONTROLLER_TYPE ,CokeOvenBlock.ControllerType.BOTTOM_ON), 2);

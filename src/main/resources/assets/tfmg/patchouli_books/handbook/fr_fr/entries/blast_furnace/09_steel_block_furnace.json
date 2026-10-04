@@ -1,0 +1,83 @@
+{
+  "name": "Fourneau en acier",
+  "icon": "tfmg:steel_block",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Les $(item)blocs d'acier$() comptent à la fois comme coins renforcés et comme parois renforcées : un fourneau fait uniquement de ces blocs, de la sortie et des trappes est un fourneau $(item)renforcé$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Celui-ci fait 4 couches : 160 ticks par fer brut concassé. Pas de plaques à poser, mais il coûte 31 blocs d'acier."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Fourneau en acier",
+      "multiblock": {
+        "pattern": [
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   H   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  K K  ",
+            "  KKK  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  K K  ",
+            "  KKK  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  H K  ",
+            "  KKK  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  K0K  ",
+            "  KOK  ",
+            "       ",
+            "       "
+          ]
+        ],
+        "mapping": {
+          "K": "tfmg:steel_block",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "0": "tfmg:steel_block"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_block,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

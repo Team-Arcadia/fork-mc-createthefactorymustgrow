@@ -224,6 +224,140 @@
         ]
       },
       "items": ["tfmg:bauxite_powder", "tfmg:aluminum_ingot", "tfmg:aluminum_nugget", "tfmg:carbon_dioxide_bucket", "tfmg:hydrogen_bucket", "create:andesite_funnel"]
+    },
+    {
+      "title": {
+        "en_us": "Large electrolysis",
+        "fr_fr": "Grande électrolyse"
+      },
+      "text": {
+        "en_us": [
+          "A **3x3** steel vat holds nine times the fluid of a single block, so it runs longer between refills.",
+          "",
+          "Recipes still need only **two holders**, anywhere on top, and **heat 2**: one burning firebox under the centre is enough. Each holder still needs its own 5 A through its top face."
+        ],
+        "fr_fr": [
+          "Une cuve en acier **3x3** contient neuf fois plus de fluide qu'un bloc seul : elle tourne plus longtemps entre deux remplissages.",
+          "",
+          "Les recettes ne demandent toujours que **deux porte-électrodes**, n'importe où dessus, et **une chaleur de 2** : un seul foyer allumé sous le centre suffit. Chaque porte-électrode doit toujours recevoir ses 5 A par sa face du dessus."
+        ]
+      },
+      "items": ["tfmg:steel_chemical_vat", "tfmg:electrode_holder", "tfmg:copper_electrode", "tfmg:firebox"],
+      "schematic": {
+        "layers": [
+          ["   ", " F ", "   "],
+          ["VVV", "VVV", "VVV"],
+          ["E  ", "   ", "  E"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Tall electrolysis",
+        "fr_fr": "Électrolyse haute"
+      },
+      "text": {
+        "en_us": [
+          "A **2x2** steel vat three blocks high: 12 blocks of tank for long runs, on the footprint of the basic build.",
+          "",
+          "The holders go on the **top layer**, the firebox under the bottom one. Machines only count on the top and the bottom of a vat, never on its sides."
+        ],
+        "fr_fr": [
+          "Une cuve en acier **2x2** haute de trois blocs : 12 blocs de réservoir pour de longues séries, sur l'emprise du montage de base.",
+          "",
+          "Les porte-électrodes vont sur la **couche du dessus**, le foyer sous celle du bas. Les machines ne comptent que dessus et dessous une cuve, jamais sur ses côtés."
+        ]
+      },
+      "items": ["tfmg:steel_chemical_vat", "tfmg:electrode_holder", "tfmg:firebox"],
+      "schematic": {
+        "layers": [
+          ["F ", "  "],
+          ["VV", "VV"],
+          ["VV", "VV"],
+          ["VV", "VV"],
+          ["E ", " E"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Wired electrolysis",
+        "fr_fr": "Électrolyse câblée"
+      },
+      "text": {
+        "en_us": [
+          "The basic electrolysis vat with its power line: a **steel cable hub** on top of each holder, a third hub joining them, and a **generator** on the end, turned by a shaft.",
+          "",
+          "Steel hubs take 250 A, so two holders at 30 A each are safe. Copper hubs would burn out at 16 A. From about 76 RPM the generator gives the 50 V the holders need."
+        ],
+        "fr_fr": [
+          "La cuve d'électrolyse de base avec sa ligne électrique : un **moyeu de câbles en acier** sur chaque porte-électrode, un troisième moyeu qui les relie, et un **générateur** au bout, entraîné par un arbre.",
+          "",
+          "Les moyeux en acier supportent 250 A : deux porte-électrodes à 30 A chacun ne risquent rien. Des moyeux en cuivre brûleraient à 16 A. À partir d'environ 76 RPM, le générateur donne les 50 V dont ils ont besoin."
+        ]
+      },
+      "items": ["tfmg:steel_cable_hub", "tfmg:generator", "tfmg:electrode_holder", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["F   ", "    "],
+          ["VV  ", "VV  "],
+          ["E   ", " E  "],
+          ["HHGS", " H  "]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "H": "tfmg:steel_cable_hub",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Hydrogen cell",
+        "fr_fr": "Cellule à hydrogène"
+      },
+      "text": {
+        "en_us": [
+          "Two electrode holders also split **water** into **hydrogen**: 1000 mB of water gives 500 mB of hydrogen.",
+          "",
+          "That recipe accepts **any vat**, cast iron included, and needs **no heat**. A 2x2 cast iron vat with two copper or zinc electrodes is the cheapest hydrogen maker. Hydrogen is a firebox fuel."
+        ],
+        "fr_fr": [
+          "Deux porte-électrodes décomposent aussi l'**eau** en **hydrogène** : 1000 mB d'eau donnent 500 mB d'hydrogène.",
+          "",
+          "Cette recette accepte **toutes les cuves**, fonte comprise, et ne demande **aucune chaleur**. Une cuve en fonte 2x2 avec deux électrodes de cuivre ou de zinc est la façon la moins chère de faire de l'hydrogène. L'hydrogène est un combustible de foyer."
+        ]
+      },
+      "items": [
+        "tfmg:cast_iron_chemical_vat",
+        "tfmg:electrode_holder",
+        "tfmg:zinc_electrode",
+        "minecraft:water_bucket",
+        "tfmg:hydrogen_bucket"
+      ],
+      "schematic": {
+        "layers": [
+          ["WW", "WW"],
+          ["E ", " E"]
+        ],
+        "key": {
+          "W": "tfmg:cast_iron_chemical_vat",
+          "E": "tfmg:electrode_holder"
+        }
+      }
     }
   ]
 }

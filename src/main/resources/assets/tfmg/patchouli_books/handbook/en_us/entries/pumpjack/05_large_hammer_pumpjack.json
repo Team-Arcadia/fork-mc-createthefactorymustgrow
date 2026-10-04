@@ -1,0 +1,118 @@
+{
+  "name": "Large hammer pumpjack",
+  "icon": "tfmg:large_pumpjack_hammer_part",
+  "category": "tfmg:pumpjack",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The same pumpjack built with the $(item)large$() hammer parts, head and connector. They work exactly like the small ones; the holder widens by itself under a large part."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Glue the whole beam with $(item)Super Glue$() before you drive it: unglued blocks stay behind."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Structure",
+      "multiblock": {
+        "pattern": [
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  HRRRRRN  ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "     O     ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "     T  C  ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "        S  ",
+            "  B  T  M  ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  D  0     ",
+            "           ",
+            "           ",
+            "           "
+          ]
+        ],
+        "mapping": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=true]",
+          "H": "tfmg:large_pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:large_pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:large_pumpjack_hammer_connector[facing=east]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_pumpjack_hammer_part,tfmg:large_pumpjack_hammer_head,tfmg:large_pumpjack_hammer_connector,tfmg:pumpjack_hammer,create:super_glue",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
+    }
+  ]
+}

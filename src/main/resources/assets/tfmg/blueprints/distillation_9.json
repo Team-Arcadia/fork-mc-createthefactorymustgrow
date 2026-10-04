@@ -1,0 +1,97 @@
+{
+  "line": "refining",
+  "order": 17009,
+  "name": {
+    "en_us": "Distillation: Big tower, 3x3",
+    "fr_fr": "La distillation : Grande tour, 3x3"
+  },
+  "layers": [
+    [
+      "   ",
+      "FFF",
+      "FFF",
+      "FFF"
+    ],
+    [
+      "C  ",
+      "AAA",
+      "AAA",
+      "AAA"
+    ],
+    [
+      "O  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "P  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "O  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "P  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "O  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "P  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "O  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "P  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "O  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "P  ",
+      "TTT",
+      "TTT",
+      "TTT"
+    ],
+    [
+      "O  ",
+      "UUU",
+      "UUU",
+      "UUU"
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "C": "tfmg:steel_distillation_controller[facing=north]",
+    "O": "tfmg:steel_distillation_output",
+    "P": "tfmg:industrial_pipe[concretelogged=false]",
+    "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+    "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+    "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]"
+  }
+}

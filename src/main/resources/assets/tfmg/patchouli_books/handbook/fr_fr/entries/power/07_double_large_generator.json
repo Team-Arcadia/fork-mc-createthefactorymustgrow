@@ -1,0 +1,65 @@
+{
+  "name": "Générateur double",
+  "icon": "tfmg:rotor",
+  "category": "tfmg:power",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Deux grands générateurs empilés sur un même axe vertical : deux $(item)rotors$(), chacun avec son anneau de huit stators. L'arbre du haut fait tourner les deux rotors."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chaque unité fonctionne seule, et les deux anneaux se touchent : leurs puissances s'additionnent sur un même réseau. Les rotors imposent 480 de contrainte à la ligne."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Générateur double",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "  S  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            " ABC ",
+            " DRE ",
+            " FGH ",
+            "     "
+          ],
+          [
+            "     ",
+            " ABC ",
+            " D0E ",
+            " FGH ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:stator[facing=north,stator_state=corner_horizontal,value=true]",
+          "B": "tfmg:stator[facing=south,stator_state=side,value=true]",
+          "C": "tfmg:stator[facing=east,stator_state=corner_horizontal,value=true]",
+          "D": "tfmg:stator[facing=east,stator_state=side,value=true]",
+          "R": "tfmg:rotor[axis=y]",
+          "E": "tfmg:stator[facing=west,stator_state=side,value=true]",
+          "F": "tfmg:stator[facing=west,stator_state=corner_horizontal,value=true]",
+          "G": "tfmg:stator[facing=north,stator_state=side,value=true]",
+          "H": "tfmg:stator[facing=south,stator_state=corner_horizontal,value=true]",
+          "S": "create:shaft[axis=y]",
+          "0": "tfmg:rotor[axis=y]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:rotor,tfmg:stator,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

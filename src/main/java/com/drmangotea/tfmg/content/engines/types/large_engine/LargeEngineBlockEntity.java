@@ -103,6 +103,22 @@ public class LargeEngineBlockEntity extends AbstractEngineBlockEntity implements
     }
 
     @Override
+    public void lazyTick() {
+        super.lazyTick();
+        // The engine only turned a shaft into a powered shaft when the engine
+        // itself was placed. A shaft placed afterwards, as a blueprint or any
+        // bottom-up build does, stayed a plain shaft and the engine never ran:
+        // Create's own shaft placement only knows the steam engine.
+        if (level == null || level.isClientSide || getShaft() != null)
+            return;
+        BlockState state = getBlockState();
+        BlockPos shaftPos = LargeEngineBlock.getShaftPos(state, worldPosition);
+        BlockState shaftState = level.getBlockState(shaftPos);
+        if (com.simibubi.create.AllBlocks.SHAFT.has(shaftState) && LargeEngineBlock.isShaftValid(state, shaftState))
+            level.setBlock(shaftPos, com.simibubi.create.content.kinetics.steamEngine.PoweredShaftBlock.getEquivalent(shaftState), 3);
+    }
+
+    @Override
     public void tick() {
         super.tick();
 

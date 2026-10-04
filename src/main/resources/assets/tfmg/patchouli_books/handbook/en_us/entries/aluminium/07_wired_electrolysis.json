@@ -1,0 +1,64 @@
+{
+  "name": "Wired electrolysis",
+  "icon": "tfmg:steel_cable_hub",
+  "category": "tfmg:aluminium",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The basic electrolysis vat with its power line: a $(item)steel cable hub$() on top of each holder, a third hub joining them, and a $(item)generator$() on the end, turned by a shaft."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Steel hubs take 250 A, so two holders at 30 A each are safe. Copper hubs would burn out at 16 A. From about 76 RPM the generator gives the 50 V the holders need."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Wired electrolysis",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            " HHGS ",
+            "  H   ",
+            "      "
+          ],
+          [
+            "      ",
+            " E    ",
+            "  E   ",
+            "      "
+          ],
+          [
+            "      ",
+            " VV   ",
+            " VV   ",
+            "      "
+          ],
+          [
+            "      ",
+            " F    ",
+            "   0  ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "H": "tfmg:steel_cable_hub",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_cable_hub,tfmg:generator,tfmg:electrode_holder,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

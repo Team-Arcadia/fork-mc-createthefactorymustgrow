@@ -226,6 +226,73 @@
         ]
       },
       "items": ["tfmg:lpg_bucket", "tfmg:butane_bucket", "tfmg:propane_bucket", "tfmg:freezer", "tfmg:compressor", "tfmg:steel_chemical_vat", "tfmg:engine_cylinder", "create:spout"]
+    },
+    {
+      "title": {
+        "en_us": "Firebox and chimney",
+        "fr_fr": "Foyer et cheminée"
+      },
+      "text": {
+        "en_us": [
+          "A **2x2 firebox** with its exhaust line: a **mechanical pump** against it, driven by a cogwheel, pushes the CO2 into a column of four **metal smokestacks**. Only the top one vents.",
+          "",
+          "Four blocks burning make about 670 mB of CO2 per second; the stack buffers 32000 mB and vents up to 1000 mB per second when nearly full."
+        ],
+        "fr_fr": [
+          "Un **foyer 2x2** avec sa ligne d'échappement : une **pompe mécanique** contre lui, entraînée par une roue dentée, pousse le CO2 dans une colonne de quatre **cheminées en métal**. Seule celle du haut rejette.",
+          "",
+          "Quatre blocs allumés font environ 670 mB de CO2 par seconde ; la colonne en stocke 32000 mB et en rejette jusqu'à 1000 mB par seconde quand elle est presque pleine."
+        ]
+      },
+      "items": ["tfmg:firebox", "create:mechanical_pump", "create:cogwheel", "tfmg:metal_smokestack"],
+      "schematic": {
+        "layers": [
+          ["FFQK", "FFc "],
+          ["   K", "    "],
+          ["   K", "    "],
+          ["   K", "    "]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "Q": "create:mechanical_pump[facing=east,waterlogged=false]",
+          "c": "create:cogwheel[axis=x,waterlogged=false]",
+          "K": "tfmg:metal_smokestack"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Flarestack stand",
+        "fr_fr": "Torche sur réservoir"
+      },
+      "text": {
+        "en_us": [
+          "A **flarestack** burns what a refinery makes too much of. Here a small steel tank holds the surplus, and a **mechanical pump** facing up, turned by a cogwheel, feeds the flare on top.",
+          "",
+          "The flare burns up to 100 mB per tick while it holds more than 1000 mB, and needs no exhaust."
+        ],
+        "fr_fr": [
+          "Une **torche d'évacuation** brûle ce qu'une raffinerie produit en trop. Ici un petit réservoir en acier garde le surplus, et une **pompe mécanique** tournée vers le haut, entraînée par une roue dentée, alimente la torche au-dessus.",
+          "",
+          "La torche brûle jusqu'à 100 mB par tick tant qu'elle contient plus de 1000 mB, et n'a besoin d'aucun échappement."
+        ]
+      },
+      "items": ["tfmg:flarestack", "tfmg:steel_fluid_tank", "create:mechanical_pump", "create:cogwheel"],
+      "schematic": {
+        "layers": [
+          ["A "],
+          ["U "],
+          ["Qc"],
+          ["L "]
+        ],
+        "key": {
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "Q": "create:mechanical_pump[facing=up,waterlogged=false]",
+          "c": "create:cogwheel[axis=y,waterlogged=false]",
+          "L": "tfmg:flarestack"
+        }
+      }
     }
   ]
 }

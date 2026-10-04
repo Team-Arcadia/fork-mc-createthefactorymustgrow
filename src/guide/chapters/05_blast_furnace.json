@@ -365,6 +365,84 @@
         ]
       },
       "items": ["create:goggles", "tfmg:blast_furnace_output", "tfmg:blast_furnace_hatch", "tfmg:molten_slag_bucket", "tfmg:slag_block"]
+    },
+    {
+      "title": {
+        "en_us": "Tallest furnace",
+        "fr_fr": "Le plus haut fourneau"
+      },
+      "text": {
+        "en_us": [
+          "The same ring of bricks and reinforcements, stacked **10 layers** high, the default maximum. A recipe takes **half** its base time: 200 ticks for a crushed raw iron.",
+          "",
+          "The output sits in the bottom layer, the hot air hatch in the wall just above it and the gas hatch on top of the shaft. Keep the centre of every layer above the floor empty."
+        ],
+        "fr_fr": [
+          "Le même anneau de briques et de renforts, empilé sur **10 couches**, le maximum par défaut. Une recette prend **la moitié** de son temps de base : 200 ticks pour un fer brut concassé.",
+          "",
+          "La sortie est dans la couche du bas, la trappe à air chaud dans la paroi juste au-dessus et la trappe à gaz au sommet du puits. Laissez vide le centre de chaque couche au-dessus du plancher."
+        ]
+      },
+      "items": [
+        "tfmg:fireproof_bricks",
+        "tfmg:fireproof_brick_reinforcement",
+        "tfmg:blast_furnace_output",
+        "tfmg:blast_furnace_hatch"
+      ],
+      "schematic": {
+        "layers": [
+          ["SFS", "FFF", "SOS"],
+          ["SFS", "H F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["SFS", "F F", "SFS"],
+          ["   ", " H ", "   "]
+        ],
+        "key": {
+          "S": "tfmg:fireproof_brick_reinforcement",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Steel block furnace",
+        "fr_fr": "Fourneau en acier"
+      },
+      "text": {
+        "en_us": [
+          "**Blocks of Steel** count both as reinforced corners and as reinforced walls, so a furnace built only from them, the output and the hatches is a **reinforced** furnace.",
+          "",
+          "This one is 4 layers high: 160 ticks per crushed raw iron. No plates to place, but it costs 31 blocks of steel."
+        ],
+        "fr_fr": [
+          "Les **blocs d'acier** comptent à la fois comme coins renforcés et comme parois renforcées : un fourneau fait uniquement de ces blocs, de la sortie et des trappes est un fourneau **renforcé**.",
+          "",
+          "Celui-ci fait 4 couches : 160 ticks par fer brut concassé. Pas de plaques à poser, mais il coûte 31 blocs d'acier."
+        ]
+      },
+      "items": ["tfmg:steel_block", "tfmg:blast_furnace_output", "tfmg:blast_furnace_hatch"],
+      "schematic": {
+        "layers": [
+          ["KKK", "KKK", "KOK"],
+          ["KKK", "H K", "KKK"],
+          ["KKK", "K K", "KKK"],
+          ["KKK", "K K", "KKK"],
+          ["   ", " H ", "   "]
+        ],
+        "key": {
+          "K": "tfmg:steel_block",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch"
+        }
+      }
     }
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "name": "Five-block engine",
+  "icon": "tfmg:regular_engine",
+  "category": "tfmg:engines",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The longest row with default settings: $(item)5 regular engines$(), all facing north. A shaft on $(item)both ends$() splits the power between two lines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Put a shaft item into each end block. Torque grows with every block, so this row gives far more stress capacity than a single block on the same fuel."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Five-block engine",
+      "multiblock": {
+        "pattern": [
+          [
+            "S",
+            "F",
+            "E",
+            "0",
+            "E",
+            "K",
+            "S"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+          "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]",
+          "K": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=south]",
+          "0": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:regular_engine,create:shaft,tfmg:engine_cylinder",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -3,6 +3,11 @@ package com.drmangotea.tfmg.gametest;
 import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.content.items.blueprint.BlueprintLines;
 import com.drmangotea.tfmg.registry.TFMGItems;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import net.minecraft.commands.arguments.blocks.BlockStateParser;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
@@ -22,8 +27,12 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 /**
  * Factory Blueprints must stay rare and only come from villages: about 5% of
@@ -37,13 +46,15 @@ import java.util.Set;
 public class TFMGBlueprintTests {
 
     private static final int ROLLS = 4000;
+    private static final int MIN_STRUCTURES_PER_LINE = 3;
 
     @GameTest(template = "gametest/platform", batch = "tfmg_data")
     public static void blueprintsAreRareVillageLoot(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
         Set<String> lines = new HashSet<>();
         int village = roll(level, "chests/village/village_toolsmith", lines);
-        // 5% of 4000 is 200; the bounds leave room for chance on both sides.
+        // 9 in 180 (5%) of 4000 is 200; the bounds leave room for chance on
+        // both sides. More lines must never mean more blueprints.
         TFMGGameTestUtil.check(helper, village >= 120 && village <= 300,
                 "village toolsmith chests gave " + village + " blueprints in " + ROLLS + " rolls, expected about 200");
         TFMGGameTestUtil.check(helper, lines.containsAll(BlueprintLines.LINES), "not every line dropped: " + lines);
@@ -72,6 +83,61 @@ public class TFMGBlueprintTests {
             }
         }
         TFMGGameTestUtil.check(helper, found, "master cartographers do not sell blueprints");
+        helper.succeed();
+    }
+
+    /**
+     * Every line has enough structures to be worth collecting, and every
+     * generated blueprint is well formed: a known line, names in both
+     * languages, symbols that all have a valid block state.
+     */
+    @GameTest(template = "gametest/platform", batch = "tfmg_data")
+    public static void everyLineHasValidStructures(GameTestHelper helper) {
+        List<String> problems = new ArrayList<>();
+        Map<String, Integer> perLine = new TreeMap<>();
+        Map<String, JsonObject> blueprints = TFMGStructureTests.readBlueprints();
+        if (blueprints.isEmpty())
+            problems.add("no blueprint found in the mod file");
+        for (Map.Entry<String, JsonObject> e : blueprints.entrySet()) {
+            String id = e.getKey();
+            JsonObject json = e.getValue();
+            String line = json.has("line") ? json.get("line").getAsString() : null;
+            if (line == null || !BlueprintLines.LINES.contains(line))
+                problems.add(id + ": unknown line " + line);
+            else
+                perLine.merge(line, 1, Integer::sum);
+            JsonObject name = json.getAsJsonObject("name");
+            for (String lang : new String[]{"en_us", "fr_fr"})
+                if (name == null || !name.has(lang) || name.get(lang).getAsString().isBlank())
+                    problems.add(id + ": no " + lang + " name");
+            JsonObject key = json.getAsJsonObject("key");
+            for (String symbol : key.keySet()) {
+                try {
+                    BlockStateParser.parseForBlock(BuiltInRegistries.BLOCK.asLookup(), key.get(symbol).getAsString(), false);
+                } catch (Exception ex) {
+                    problems.add(id + ": symbol " + symbol + " has an invalid block state " + key.get(symbol).getAsString());
+                }
+            }
+            // An all-air layer is fine (the large engine needs room for its
+            // piston): the projector skips it and keeps the heights.
+            JsonArray layers = json.getAsJsonArray("layers");
+            int blocks = 0;
+            for (int y = 0; y < layers.size(); y++)
+                for (JsonElement row : layers.get(y).getAsJsonArray())
+                    for (char c : row.getAsString().toCharArray()) {
+                        if (c == ' ')
+                            continue;
+                        blocks++;
+                        if (!key.has(String.valueOf(c)))
+                            problems.add(id + ": layer " + y + " uses symbol '" + c + "' missing from the key");
+                    }
+            if (blocks == 0)
+                problems.add(id + ": no block at all");
+        }
+        for (String line : BlueprintLines.LINES)
+            if (perLine.getOrDefault(line, 0) < MIN_STRUCTURES_PER_LINE)
+                problems.add("line " + line + " has only " + perLine.getOrDefault(line, 0) + " structures");
+        TFMGGameTestUtil.check(helper, problems.isEmpty(), "blueprint problems: " + problems);
         helper.succeed();
     }
 

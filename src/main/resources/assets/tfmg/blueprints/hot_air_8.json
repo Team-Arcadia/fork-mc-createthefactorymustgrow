@@ -1,0 +1,25 @@
+{
+  "line": "steel",
+  "order": 4008,
+  "name": {
+    "en_us": "Hot Air: Starter stove, 2x2x3",
+    "fr_fr": "L'air chaud : Petit fourneau, 2x2x3"
+  },
+  "layers": [
+    [
+      "SS",
+      "SS"
+    ],
+    [
+      "SS",
+      "SS"
+    ],
+    [
+      "SS",
+      "SS"
+    ]
+  ],
+  "key": {
+    "S": "tfmg:blast_stove"
+  }
+}

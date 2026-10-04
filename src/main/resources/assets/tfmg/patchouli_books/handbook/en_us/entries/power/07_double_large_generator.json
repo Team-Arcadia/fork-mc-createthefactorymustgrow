@@ -1,0 +1,65 @@
+{
+  "name": "Double large generator",
+  "icon": "tfmg:rotor",
+  "category": "tfmg:power",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two large generators stacked on one vertical axis: two $(item)rotors$(), each with its own ring of eight stators. The shaft on top turns both rotors."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each unit works on its own, and the two rings touch, so their power adds up on one network. The rotors put 480 stress on the line."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Structure",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "  S  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            " ABC ",
+            " DRE ",
+            " FGH ",
+            "     "
+          ],
+          [
+            "     ",
+            " ABC ",
+            " D0E ",
+            " FGH ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:stator[facing=north,stator_state=corner_horizontal,value=true]",
+          "B": "tfmg:stator[facing=south,stator_state=side,value=true]",
+          "C": "tfmg:stator[facing=east,stator_state=corner_horizontal,value=true]",
+          "D": "tfmg:stator[facing=east,stator_state=side,value=true]",
+          "R": "tfmg:rotor[axis=y]",
+          "E": "tfmg:stator[facing=west,stator_state=side,value=true]",
+          "F": "tfmg:stator[facing=west,stator_state=corner_horizontal,value=true]",
+          "G": "tfmg:stator[facing=north,stator_state=side,value=true]",
+          "H": "tfmg:stator[facing=south,stator_state=corner_horizontal,value=true]",
+          "S": "create:shaft[axis=y]",
+          "0": "tfmg:rotor[axis=y]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:rotor,tfmg:stator,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

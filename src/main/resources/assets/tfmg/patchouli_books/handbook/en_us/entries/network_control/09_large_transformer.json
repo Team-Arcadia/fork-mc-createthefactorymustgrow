@@ -1,0 +1,68 @@
+{
+  "name": "Large transformer",
+  "icon": "tfmg:large_coil",
+  "category": "tfmg:network_control",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two wound $(item)large coils$() side by side. Right-click the west one with a $(item)laminated magnetic alloy block$(): it becomes the input half, the other the output half."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each half connects on its $(item)top only$(). A cable tube rises from each: the generator on the input, a motor on the output."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large transformer",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  S   ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  GM  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  TT  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  C0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:large_coil",
+          "T": "tfmg:cable_tube[axis=y,concretelogged=false]",
+          "G": "tfmg:generator[facing=up]",
+          "M": "tfmg:electric_motor[facing=up]",
+          "S": "create:shaft[axis=y]",
+          "0": "tfmg:large_coil"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_coil,tfmg:laminated_magnetic_alloy_block,tfmg:cable_tube,tfmg:electric_motor",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
+    }
+  ]
+}

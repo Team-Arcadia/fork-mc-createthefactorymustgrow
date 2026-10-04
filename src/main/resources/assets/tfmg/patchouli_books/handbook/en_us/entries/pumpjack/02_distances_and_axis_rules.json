@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The holder scans its beam every half second, and the pumpjack assembles by itself as soon as every rule below is met. Nothing needs a click or a redstone signal."
+      "text": "The holder scans its beam every half second, and the pumpjack assembles by itself as soon as the beam is glued and every rule below is met. Nothing needs a click or a redstone signal."
     },
     {
       "type": "patchouli:text",

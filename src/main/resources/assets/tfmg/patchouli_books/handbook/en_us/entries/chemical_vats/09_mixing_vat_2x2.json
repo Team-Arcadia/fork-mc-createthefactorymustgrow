@@ -1,0 +1,66 @@
+{
+  "name": "Mixing vat, 2x2",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)2x2$() steel vat on a $(item)2x2 firebox$(), with an industrial mixer on one of its top blocks and a shaft driving the mixer from above."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The merged firebox burns four blocks of fuel at once and gives heat 8, far more than the heat 2 recipes ask for. Give the mixer a $(item)mixer blade$() and at least 30 RPM."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Mixing vat, 2x2",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " S  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            " M  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            " VV ",
+            " VV ",
+            "    "
+          ],
+          [
+            "    ",
+            " FF ",
+            " F0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:firebox,tfmg:industrial_mixer,tfmg:mixer_blade",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "name": "Big tower, 3x3",
+  "icon": "tfmg:steel_distillation_controller",
+  "category": "tfmg:distillation",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The full crude oil tower on the widest tank: $(item)3x3$(), twelve high, six outputs, a 3x3 firebox underneath."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nine fireboxes give heat 18, so it runs the recipe nine times per tick. That is enough for many pumpjacks; the 72 blocks of tank also buffer a lot of oil."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Big tower, 3x3",
+      "multiblock": {
+        "pattern": [
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    O      ",
+            "    UUU    ",
+            "    UUU    ",
+            "    UUU    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    P      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    O      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    P      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    O      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    P      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    O      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    P      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    O      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    P      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    O      ",
+            "    TTT    ",
+            "    TTT    ",
+            "    TTT    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    C      ",
+            "    AAA    ",
+            "    AAA    ",
+            "    AAA    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    FFF    ",
+            "    F0F    ",
+            "    FFF    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:steel_fluid_tank,tfmg:firebox",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
+    }
+  ]
+}

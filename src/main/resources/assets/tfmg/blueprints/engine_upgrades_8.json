@@ -1,0 +1,23 @@
+{
+  "line": "engines",
+  "order": 21008,
+  "name": {
+    "en_us": "Engine Upgrades and Large Engines: Engine and gearbox",
+    "fr_fr": "Améliorations et grands moteurs : Moteur et boîte"
+  },
+  "layers": [
+    [
+      "XGX",
+      " S ",
+      " F ",
+      " E "
+    ]
+  ],
+  "key": {
+    "X": "create:shaft[axis=x,waterlogged=false]",
+    "G": "tfmg:engine_gearbox[facing=south]",
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+    "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]"
+  }
+}

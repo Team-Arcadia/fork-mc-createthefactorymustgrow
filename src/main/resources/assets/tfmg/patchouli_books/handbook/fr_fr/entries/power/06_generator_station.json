@@ -1,0 +1,53 @@
+{
+  "name": "Poste générateur",
+  "icon": "tfmg:generator",
+  "category": "tfmg:power",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La centrale la plus simple : un $(item)générateur$() entraîné par un arbre sur sa face avant, un $(item)moyeu de câbles en acier$() derrière lui et une $(item)ampoule$() sur le moyeu."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le générateur se connecte par toutes ses faces. Au-dessus de 40 RPM l'ampoule s'allume ; à 256 RPM le générateur donne 302 V."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Poste générateur",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            "   ",
+            "   ",
+            " L ",
+            "   "
+          ],
+          [
+            "   ",
+            " S ",
+            " 0 ",
+            " H ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:generator[facing=north]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,tfmg:steel_cable_hub,tfmg:light_bulb,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

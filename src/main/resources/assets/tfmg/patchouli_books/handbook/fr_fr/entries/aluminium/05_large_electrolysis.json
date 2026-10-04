@@ -1,0 +1,58 @@
+{
+  "name": "Grande électrolyse",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:aluminium",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une cuve en acier $(item)3x3$() contient neuf fois plus de fluide qu'un bloc seul : elle tourne plus longtemps entre deux remplissages."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les recettes ne demandent toujours que $(item)deux porte-électrodes$(), n'importe où dessus, et $(item)une chaleur de 2$() : un seul foyer allumé sous le centre suffit. Chaque porte-électrode doit toujours recevoir ses 5 A par sa face du dessus."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Grande électrolyse",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " E   ",
+            "     ",
+            "   E ",
+            "     "
+          ],
+          [
+            "     ",
+            " VVV ",
+            " VVV ",
+            " VVV ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  0  ",
+            "     ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:electrode_holder,tfmg:copper_electrode,tfmg:firebox",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

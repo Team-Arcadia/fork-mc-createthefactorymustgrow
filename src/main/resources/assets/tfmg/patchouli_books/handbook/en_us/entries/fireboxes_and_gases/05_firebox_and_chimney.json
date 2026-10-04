@@ -1,0 +1,62 @@
+{
+  "name": "Firebox and chimney",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)2x2 firebox$() with its exhaust line: a $(item)mechanical pump$() against it, driven by a cogwheel, pushes the CO2 into a column of four $(item)metal smokestacks$(). Only the top one vents."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Four blocks burning make about 670 mB of CO2 per second; the stack buffers 32000 mB and vents up to 1000 mB per second when nearly full."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Firebox and chimney",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "    K ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "    K ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "    K ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            " FFQK ",
+            " FF0  ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "Q": "create:mechanical_pump[facing=east,waterlogged=false]",
+          "c": "create:cogwheel[axis=x,waterlogged=false]",
+          "K": "tfmg:metal_smokestack",
+          "0": "create:cogwheel[axis=x,waterlogged=false]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,create:mechanical_pump,create:cogwheel,tfmg:metal_smokestack",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

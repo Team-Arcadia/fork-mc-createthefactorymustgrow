@@ -1,0 +1,46 @@
+{
+  "name": "Montage transformateur",
+  "icon": "tfmg:transformer",
+  "category": "tfmg:network_control",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un $(item)transformateur$() tourné vers le nord prend le courant par son côté $(item)est$() et alimente un réseau séparé par son côté $(item)ouest$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ici un générateur et un moyeu forment le réseau d'entrée, un moyeu et une ampoule le réseau de sortie. Posez une bobine de 50 tours ou plus de chaque côté pour obtenir une tension."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Structure",
+      "multiblock": {
+        "pattern": [
+          [
+            "L    "
+          ],
+          [
+            "HX0GS"
+          ]
+        ],
+        "mapping": {
+          "H": "tfmg:steel_cable_hub",
+          "X": "tfmg:transformer[facing=north]",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:steel_cable_hub"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:transformer,tfmg:electromagnetic_coil,tfmg:steel_cable_hub,tfmg:generator",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

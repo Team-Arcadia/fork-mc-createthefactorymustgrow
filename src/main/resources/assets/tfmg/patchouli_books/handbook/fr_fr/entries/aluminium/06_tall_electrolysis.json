@@ -1,0 +1,77 @@
+{
+  "name": "Électrolyse haute",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:aluminium",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une cuve en acier $(item)2x2$() haute de trois blocs : 12 blocs de réservoir pour de longues séries, sur l'emprise du montage de base."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les porte-électrodes vont sur la $(item)couche du dessus$(), le foyer sous celle du bas. Les machines ne comptent que dessus et dessous une cuve, jamais sur ses côtés."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Électrolyse haute",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  E   ",
+            "   E  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  VV  ",
+            "  VV  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  VV  ",
+            "  VV  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  VV  ",
+            "  VV  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  F   ",
+            "   0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:electrode_holder,tfmg:firebox",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

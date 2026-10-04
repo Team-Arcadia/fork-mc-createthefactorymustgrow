@@ -40,6 +40,20 @@ Schematic layers go from the bottom up; in a layer, each string is a row from
 north to south and each character a block from west to east. Space and `.` are
 air.
 
+## Factory Blueprints
+
+Every schematic also becomes a Factory Blueprint structure in
+`src/main/resources/assets/tfmg/blueprints/<chapter>_<page index>.json`. Its
+assembly line comes from `LINE_OF_CHAPTER` in the script, or from a
+`"blueprint_line"` field on the page, so a chapter can feed several lines. The
+lines must match `BlueprintLines.LINES`: coke, steel, aluminium, chemistry, oil,
+refining, engines, power, electricity. Add new pages at the end of a chapter so
+existing blueprint ids keep their index.
+
+A schematic must be a build that really forms: the `structure.*` game tests
+place each one, fit what a player adds by hand (mixer blade, electrodes, glue,
+laminated block), and check that every machine formed.
+
 ## Le Manuel de l'Usine
 
 Le guide en jeu (un livre Patchouli) s'écrit une seule fois, en anglais et en
@@ -48,3 +62,10 @@ au format Patchouli dans
 `src/main/resources/assets/tfmg/patchouli_books/handbook/<langue>/`. Lancez le
 script après chaque modification d'un chapitre et commitez le chapitre et les
 fichiers générés. Le test en jeu `handbookIsValid` vérifie le livre généré.
+
+Chaque schéma devient aussi une structure de Plan d'usine dans
+`src/main/resources/assets/tfmg/blueprints/`. Sa ligne vient de
+`LINE_OF_CHAPTER` dans le script, ou d'un champ `"blueprint_line"` sur la page.
+Les lignes doivent correspondre à `BlueprintLines.LINES`. Ajoutez les nouvelles
+pages en fin de chapitre pour garder les identifiants existants. Les tests en
+jeu `structure.*` construisent chaque schéma et vérifient qu'il se forme.

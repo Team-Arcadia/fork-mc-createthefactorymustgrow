@@ -1,0 +1,35 @@
+{
+  "line": "aluminium",
+  "order": 12006,
+  "name": {
+    "en_us": "Aluminium: Tall electrolysis",
+    "fr_fr": "L'aluminium : Électrolyse haute"
+  },
+  "layers": [
+    [
+      "F ",
+      "  "
+    ],
+    [
+      "VV",
+      "VV"
+    ],
+    [
+      "VV",
+      "VV"
+    ],
+    [
+      "VV",
+      "VV"
+    ],
+    [
+      "E ",
+      " E"
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "V": "tfmg:steel_chemical_vat",
+    "E": "tfmg:electrode_holder"
+  }
+}

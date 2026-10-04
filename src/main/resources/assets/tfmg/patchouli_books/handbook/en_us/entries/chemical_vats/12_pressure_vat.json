@@ -1,0 +1,56 @@
+{
+  "name": "Pressure vat",
+  "icon": "tfmg:compressor",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)compressor$() on top of a 2x2 steel vat, driven by a horizontal shaft on its front at $(item)120 RPM or more$(). It adds 1 pressure; turned the other way it removes 1."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Pressure recipes, such as butane and propane back into LPG, need a $(item)steel$() or $(item)fireproof$() vat. A cast iron vat never takes them."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Pressure vat",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " Q  ",
+            " K  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " V0 ",
+            " VV ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "tfmg:steel_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:compressor,tfmg:steel_chemical_vat,create:shaft,tfmg:butane_bucket,tfmg:propane_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

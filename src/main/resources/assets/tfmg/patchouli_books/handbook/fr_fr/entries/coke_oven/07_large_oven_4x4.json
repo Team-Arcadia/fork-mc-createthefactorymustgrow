@@ -1,0 +1,70 @@
+{
+  "name": "Grand four, 4x4",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)16 blocs$() : quatre de haut et quatre de profondeur. Il cuit un charbon en $(item)30 s$(), deux fois plus vite qu'un bloc seul."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Posez d'abord les colonnes du fond, la colonne avant en dernier, toutes tournées vers l'avant.$(li)Seule la colonne avant montre des portes une fois formé.$(li)Un seul emplacement et une paire de réservoirs servent tout le four."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Grand four, 4x4",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " C ",
+            " C ",
+            " C ",
+            " T ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " C ",
+            " C ",
+            " M ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " C ",
+            " C ",
+            " M ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " C ",
+            " 0 ",
+            " B ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

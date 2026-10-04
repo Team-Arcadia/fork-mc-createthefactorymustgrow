@@ -1,0 +1,46 @@
+{
+  "name": "Moteur et boîte",
+  "icon": "tfmg:engine_gearbox",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un moteur de deux blocs entraîne une $(item)boîte de vitesses moteur$() par un court arbre. La boîte fait face au moteur et renvoie la rotation par $(item)ses deux côtés$(), vers deux machines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Posez la boîte en regardant le moteur. Ses deux sorties latérales tournent en sens opposés."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Moteur et boîte",
+      "multiblock": {
+        "pattern": [
+          [
+            "XGX",
+            " S ",
+            " 0 ",
+            " E "
+          ]
+        ],
+        "mapping": {
+          "X": "create:shaft[axis=x,waterlogged=false]",
+          "G": "tfmg:engine_gearbox[facing=south]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+          "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]",
+          "0": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:engine_gearbox,tfmg:regular_engine,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

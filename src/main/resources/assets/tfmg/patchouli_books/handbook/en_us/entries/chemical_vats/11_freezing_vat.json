@@ -1,0 +1,57 @@
+{
+  "name": "Freezing vat",
+  "icon": "tfmg:freezer",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)freezer$() under a cast iron vat. Freezing recipes, such as cooling fluid or splitting LPG into butane and propane, accept every kind of vat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The freezer takes power on any side and needs $(item)more than 3 A$(): above 225 V at its 75 ohm. Each working freezer also takes 1 heat away from the vat."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Freezing vat",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " W ",
+            "   "
+          ],
+          [
+            "   ",
+            " W ",
+            "   "
+          ],
+          [
+            "   ",
+            " 0 ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "tfmg:freezer"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:freezer,tfmg:cast_iron_chemical_vat,tfmg:cooling_fluid_bucket,tfmg:lpg_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

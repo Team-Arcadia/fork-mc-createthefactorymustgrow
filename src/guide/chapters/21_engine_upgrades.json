@@ -292,6 +292,67 @@
         ]
       },
       "items": ["tfmg:large_engine", "tfmg:simple_large_engine", "create:goggles", "tfmg:kerosene_bucket", "tfmg:naphtha_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Engine and gearbox",
+        "fr_fr": "Moteur et boîte"
+      },
+      "text": {
+        "en_us": [
+          "A two-block engine drives an **engine gearbox** through a short shaft. The gearbox faces the engine and sends the rotation out of **both sides**, to two machines.",
+          "",
+          "Place the gearbox while looking at the engine. Its two side outputs turn in opposite directions."
+        ],
+        "fr_fr": [
+          "Un moteur de deux blocs entraîne une **boîte de vitesses moteur** par un court arbre. La boîte fait face au moteur et renvoie la rotation par **ses deux côtés**, vers deux machines.",
+          "",
+          "Posez la boîte en regardant le moteur. Ses deux sorties latérales tournent en sens opposés."
+        ]
+      },
+      "items": ["tfmg:engine_gearbox", "tfmg:regular_engine", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["XGX", " S ", " F ", " E "]
+        ],
+        "key": {
+          "X": "create:shaft[axis=x,waterlogged=false]",
+          "G": "tfmg:engine_gearbox[facing=south]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+          "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Large engine pair",
+        "fr_fr": "Deux grands moteurs"
+      },
+      "text": {
+        "en_us": [
+          "Two **simple large engines** on the floor, one block apart, drive one shaft line two blocks above them. Each engine turns its own shaft block into a powered shaft, and their power adds up on the line.",
+          "",
+          "Leave the block between engine and shaft empty: the piston moves there."
+        ],
+        "fr_fr": [
+          "Deux **grands moteurs simples** au sol, séparés par un bloc, entraînent une même ligne d'arbres deux blocs au-dessus. Chaque moteur change son bloc d'arbre en arbre motorisé, et leurs puissances s'additionnent sur la ligne.",
+          "",
+          "Laissez vide le bloc entre le moteur et l'arbre : le piston s'y déplace."
+        ]
+      },
+      "items": ["tfmg:simple_large_engine", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["E E"],
+          ["   "],
+          ["SSS"]
+        ],
+        "key": {
+          "E": "tfmg:simple_large_engine[face=floor,facing=north,waterlogged=false]",
+          "S": "create:shaft[axis=x,waterlogged=false]"
+        }
+      }
     }
   ]
 }

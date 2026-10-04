@@ -1,0 +1,70 @@
+{
+  "name": "Liquid air vat",
+  "icon": "tfmg:freezer",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Liquid air needs both a $(item)freezer$() and a $(item)compressor$() on the same steel vat. Here the freezer sits under a 2x2x2 vat and the compressor on top, with its shaft on the north side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Both machines must work: a compressor below 120 RPM or a freezer short of current stops every recipe in the vat."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Liquid air vat",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " Q  ",
+            " K  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " VV ",
+            " VV ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " VV ",
+            " VV ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " Z0 ",
+            "    ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:freezer,tfmg:compressor,tfmg:steel_chemical_vat,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

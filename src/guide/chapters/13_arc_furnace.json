@@ -175,6 +175,37 @@
         ]
       },
       "items": ["tfmg:coal_coke_dust", "tfmg:coal_coke", "create:crushing_wheel"]
+    },
+    {
+      "title": {
+        "en_us": "Compact arc furnace",
+        "fr_fr": "Four à arc compact"
+      },
+      "text": {
+        "en_us": [
+          "The arc furnace needs **9 vat blocks** at least, not a 3x3 footprint. A fireproof vat **2x2 and three high** (12 blocks) works too, with its three holders on the top layer.",
+          "",
+          "It takes less floor space, but every holder still needs **1500 V** or more with a graphite electrode."
+        ],
+        "fr_fr": [
+          "Le four à arc demande au moins **9 blocs de cuve**, pas une emprise 3x3. Une cuve réfractaire **2x2 haute de trois** (12 blocs) convient aussi, avec ses trois porte-électrodes sur la couche du dessus.",
+          "",
+          "Il prend moins de place au sol, mais chaque porte-électrode demande toujours **1500 V** ou plus avec une électrode en graphite."
+        ]
+      },
+      "items": ["tfmg:fireproof_chemical_vat", "tfmg:electrode_holder", "tfmg:graphite_electrode"],
+      "schematic": {
+        "layers": [
+          ["RR", "RR"],
+          ["RR", "RR"],
+          ["RR", "RR"],
+          ["EE", "E "]
+        ],
+        "key": {
+          "R": "tfmg:fireproof_chemical_vat",
+          "E": "tfmg:electrode_holder"
+        }
+      }
     }
   ]
 }

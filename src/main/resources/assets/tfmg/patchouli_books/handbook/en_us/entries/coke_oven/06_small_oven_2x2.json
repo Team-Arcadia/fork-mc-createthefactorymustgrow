@@ -1,0 +1,50 @@
+{
+  "name": "Small oven, 2x2",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The smallest real oven: $(item)4 coke oven blocks$(), two high and two deep, all facing the same way."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It cooks no faster than a single block, but it is a cheap way to learn the shape. The bottom front block is the controller: the coke drops out in front of it.$(br2)Add a layer on top and a column behind to grow it into a 3x3 later."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Small oven, 2x2",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " C ",
+            " T ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " 0 ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south,controller_type=bottom_on]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

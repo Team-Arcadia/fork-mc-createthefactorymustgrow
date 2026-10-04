@@ -1,0 +1,70 @@
+{
+  "name": "Large oven, 4x4",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)16 blocks$(): four high and four deep. It cooks a coal in $(item)30 s$(), twice as fast as a single block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Place the back columns first, the front column last, all facing the front.$(li)Only the front column shows doors once it forms.$(li)One slot and one pair of tanks serve the whole oven."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large oven, 4x4",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " C ",
+            " C ",
+            " C ",
+            " T ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " C ",
+            " C ",
+            " M ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " C ",
+            " C ",
+            " M ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " C ",
+            " 0 ",
+            " B ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

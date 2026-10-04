@@ -1,0 +1,23 @@
+{
+  "line": "engines",
+  "order": 21009,
+  "name": {
+    "en_us": "Engine Upgrades and Large Engines: Large engine pair",
+    "fr_fr": "Améliorations et grands moteurs : Deux grands moteurs"
+  },
+  "layers": [
+    [
+      "E E"
+    ],
+    [
+      "   "
+    ],
+    [
+      "SSS"
+    ]
+  ],
+  "key": {
+    "E": "tfmg:simple_large_engine[face=floor,facing=north,waterlogged=false]",
+    "S": "create:shaft[axis=x,waterlogged=false]"
+  }
+}

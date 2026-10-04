@@ -1,0 +1,50 @@
+{
+  "name": "Big air intake, 3x3",
+  "icon": "tfmg:air_intake",
+  "category": "tfmg:hot_air",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Nine air intakes in one flat $(item)3x3$() square, all facing the same way, make one big fan."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "At 256 RPM it gives $(item)57 mB of air per tick$(), enough for two 2x2x5 blast stoves. Only one block needs a shaft in its back socket; the fastest block sets the speed of the whole fan."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Big air intake, 3x3",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " AAA ",
+            "     "
+          ],
+          [
+            "     ",
+            " AAA ",
+            "     "
+          ],
+          [
+            "     ",
+            " A0A ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:air_intake[facing=south]",
+          "0": "tfmg:air_intake[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:air_intake,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

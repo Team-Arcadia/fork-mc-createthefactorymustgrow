@@ -1,0 +1,24 @@
+{
+  "line": "electricity",
+  "order": 7007,
+  "name": {
+    "en_us": "Electricity Basics: Cable run",
+    "fr_fr": "Bases de l'électricité : Ligne de câbles"
+  },
+  "layers": [
+    [
+      "SGHTTPH"
+    ],
+    [
+      "      L"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=x]",
+    "G": "tfmg:generator[facing=west]",
+    "H": "tfmg:steel_cable_hub",
+    "T": "tfmg:cable_tube[axis=x,concretelogged=false]",
+    "P": "tfmg:electric_post[axis=x,concretelogged=false]",
+    "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+  }
+}

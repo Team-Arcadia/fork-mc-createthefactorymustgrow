@@ -1,0 +1,34 @@
+{
+  "line": "aluminium",
+  "order": 12007,
+  "name": {
+    "en_us": "Aluminium: Wired electrolysis",
+    "fr_fr": "L'aluminium : Électrolyse câblée"
+  },
+  "layers": [
+    [
+      "F   ",
+      "    "
+    ],
+    [
+      "VV  ",
+      "VV  "
+    ],
+    [
+      "E   ",
+      " E  "
+    ],
+    [
+      "HHGS",
+      " H  "
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "V": "tfmg:steel_chemical_vat",
+    "E": "tfmg:electrode_holder",
+    "H": "tfmg:steel_cable_hub",
+    "G": "tfmg:generator[facing=east]",
+    "S": "create:shaft[axis=x]"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Transformer setup",
+  "icon": "tfmg:transformer",
+  "category": "tfmg:network_control",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)transformer$() facing north takes power on its $(item)east$() side and feeds a separate network on its $(item)west$() side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Here a generator and a hub make the input network, and a hub with a bulb the output one. Fit a coil of 50 turns or more on each side to get any voltage out."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Transformer setup",
+      "multiblock": {
+        "pattern": [
+          [
+            "L    "
+          ],
+          [
+            "HX0GS"
+          ]
+        ],
+        "mapping": {
+          "H": "tfmg:steel_cable_hub",
+          "X": "tfmg:transformer[facing=north]",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:steel_cable_hub"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:transformer,tfmg:electromagnetic_coil,tfmg:steel_cable_hub,tfmg:generator",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

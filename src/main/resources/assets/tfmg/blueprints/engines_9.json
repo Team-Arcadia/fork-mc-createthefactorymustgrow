@@ -1,0 +1,25 @@
+{
+  "line": "engines",
+  "order": 20009,
+  "name": {
+    "en_us": "Engines: Five-block engine",
+    "fr_fr": "Les moteurs : Moteur à cinq blocs"
+  },
+  "layers": [
+    [
+      "S",
+      "F",
+      "E",
+      "E",
+      "E",
+      "K",
+      "S"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+    "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]",
+    "K": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=south]"
+  }
+}

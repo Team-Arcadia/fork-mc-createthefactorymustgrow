@@ -1,0 +1,82 @@
+{
+  "name": "Steel block furnace",
+  "icon": "tfmg:steel_block",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Blocks of Steel$() count both as reinforced corners and as reinforced walls, so a furnace built only from them, the output and the hatches is a $(item)reinforced$() furnace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "This one is 4 layers high: 160 ticks per crushed raw iron. No plates to place, but it costs 31 blocks of steel."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Steel block furnace",
+      "multiblock": {
+        "pattern": [
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   H   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  K K  ",
+            "  KKK  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  K K  ",
+            "  KKK  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  H K  ",
+            "  KKK  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  KKK  ",
+            "  K0K  ",
+            "  KOK  ",
+            "       ",
+            "       "
+          ]
+        ],
+        "mapping": {
+          "K": "tfmg:steel_block",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "0": "tfmg:steel_block"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_block,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}
