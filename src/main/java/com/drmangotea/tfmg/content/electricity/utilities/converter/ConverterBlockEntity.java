@@ -46,7 +46,48 @@ public class ConverterBlockEntity extends ElectricBlockEntity implements IVoltag
 
     public ConverterBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
-        energyCapability = energy;
+        energyCapability = new ModePort();
+    }
+
+    /**
+     * The FE face as other mods see it, one way according to the mode: FE
+     * comes out when TFMG power is turned into FE, and goes in when FE is
+     * turned into TFMG power. Exposing the raw storage both ways let any
+     * pushing FE neighbour (an accumulator, a battery) send the converted FE
+     * straight back in, so the two traded it every tick and the neighbour
+     * never filled; in the other mode a pulling cable could drain FE meant
+     * for the TFMG network.
+     */
+    private class ModePort implements IEnergyStorage {
+        @Override
+        public int receiveEnergy(int maxReceive, boolean simulate) {
+            return canReceive() ? energy.receiveEnergy(maxReceive, simulate) : 0;
+        }
+
+        @Override
+        public int extractEnergy(int maxExtract, boolean simulate) {
+            return canExtract() ? energy.extractEnergy(maxExtract, simulate) : 0;
+        }
+
+        @Override
+        public int getEnergyStored() {
+            return energy.getEnergyStored();
+        }
+
+        @Override
+        public int getMaxEnergyStored() {
+            return energy.getMaxEnergyStored();
+        }
+
+        @Override
+        public boolean canExtract() {
+            return isInput();
+        }
+
+        @Override
+        public boolean canReceive() {
+            return !isInput();
+        }
     }
 
     public TFMGForgeEnergyStorage createEnergyStorage() {
