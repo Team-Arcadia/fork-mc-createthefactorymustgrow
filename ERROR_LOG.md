@@ -352,3 +352,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Since 1.21 vanilla wears weapons in `postHurtEnemy` (sword 1, digger 2) and only calls `hurtEnemy` for effects. The ported overrides still wore the item in `hurtEnemy`, so both ran; the lead sword also passed the target's hand slot.
 **Fix:** `hurtEnemy` only applies the effects; the lead sword and lit blade wear 2 in `postHurtEnemy`, the lead axe keeps the axe's own 2.
 **Prevention:** When porting a 1.20 `hurtEnemy` that wears the item, move the wear to `postHurtEnemy`.
+
+## [2026-10-04 20:34] - TFMG pickaxes, shovels and hoes attacked five times a second
+**Context:** New tool tier game tests reading each tool's attribute modifiers.
+**Error:** Steel, aluminum and lead pickaxes, shovels and hoes had an attack speed modifier of +1.0 (vanilla tools: -2.8 to -3.0); lead tools even used the axe's helper.
+**Root cause:** The 1.21 port replaced the 1.20.1 constructors with `createAttributes(tier, 1, 1)` placeholders.
+**Fix:** The 1.20.1 values are back: pickaxe (1, -2.8), shovel (1.5, -3.0), hoe (0, -3.0), each with its own helper.
+**Prevention:** A tool's attack speed modifier is always negative; the tier test now checks every TFMG tool's attributes.

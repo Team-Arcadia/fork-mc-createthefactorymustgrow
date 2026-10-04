@@ -81,6 +81,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Grenades** - Copper grenades set no fire at all (their blue fire was lost in the 1.21 port), and thermite and zinc grenades turned into copper ones when their chunk was saved in flight.
 - **Napalm potato and napalm bomb** - On negative coordinates their blast went off one block away from where they hit.
 - **Lead sword, lead axe and lit lithium blade wore out too fast** - Each hit took 3 or 4 durability instead of 2 since the 1.21 port.
+- **Pickaxes, shovels and hoes** - Steel, aluminum and lead ones swung five times a second and hit harder than any sword (the 1.21 port left placeholder attack values). They have their 1.20.1 attack speed and damage again.
 
 ### Performance
 
@@ -148,6 +149,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Grenades** - Les grenades au cuivre n'allumaient aucun feu (leur feu bleu avait disparu au portage en 1.21), et les grenades a thermite et au zinc devenaient des grenades au cuivre quand leur chunk etait sauvegarde en plein vol.
 - **Patate et bombe au napalm** - Aux coordonnees negatives, leur explosion partait un bloc a cote du point d'impact.
 - **L'epee et la hache en plomb et la lame au lithium allumee s'usaient trop vite** - Chaque coup retirait 3 ou 4 points de durabilite au lieu de 2 depuis le portage en 1.21.
+- **Pioches, pelles et houes** - Celles en acier, aluminium et plomb frappaient cinq fois par seconde et plus fort que n'importe quelle epee (le portage en 1.21 avait laisse des valeurs provisoires). Elles retrouvent leur vitesse et leurs degats de la 1.20.1.
 
 ### Performances
 
