@@ -26,10 +26,14 @@
       "multiblock": {
         "pattern": [
           [
-            "AA"
+            "    ",
+            " AA ",
+            "    "
           ],
           [
-            "A0"
+            "    ",
+            " A0 ",
+            "    "
           ]
         ],
         "mapping": {

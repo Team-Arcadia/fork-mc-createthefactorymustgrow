@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:lead_ore,tfmg:deepslate_lead_ore,tfmg:nickel_ore,tfmg:deepslate_nickel_ore,tfmg:lithium_ore,tfmg:deepslate_lithium_ore,tfmg:raw_lead,tfmg:raw_nickel",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

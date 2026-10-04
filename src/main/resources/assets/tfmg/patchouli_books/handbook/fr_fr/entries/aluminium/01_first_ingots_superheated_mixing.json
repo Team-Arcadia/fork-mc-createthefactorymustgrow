@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "create:mechanical_mixer,create:basin,create:blaze_burner,create:blaze_cake,tfmg:bauxite_powder,tfmg:coal_coke,tfmg:coal_coke_dust,tfmg:aluminum_ingot",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

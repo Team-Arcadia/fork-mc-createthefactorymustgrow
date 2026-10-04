@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "create:andesite_funnel,minecraft:hopper,create:chute,tfmg:coal_coke_dust,tfmg:limesand,create:crushed_raw_iron,create:crushing_wheel,create:limestone",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

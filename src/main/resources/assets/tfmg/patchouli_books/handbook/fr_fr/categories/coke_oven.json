@@ -2,5 +2,6 @@
   "name": "Le four à coke",
   "description": "L'acier commence par le coke de charbon. Broyé en poussière de coke de charbon, c'est le seul combustible du haut fourneau : le four à coke est donc la première machine de votre chaîne de l'acier.",
   "icon": "tfmg:coke_oven",
-  "sortnum": 30
+  "sortnum": 30,
+  "parent": "tfmg:steel"
 }

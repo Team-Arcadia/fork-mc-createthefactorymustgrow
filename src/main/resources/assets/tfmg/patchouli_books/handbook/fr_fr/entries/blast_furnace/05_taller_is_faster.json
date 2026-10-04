@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:fireproof_bricks,tfmg:fireproof_brick_reinforcement,tfmg:blast_furnace_reinforcement",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

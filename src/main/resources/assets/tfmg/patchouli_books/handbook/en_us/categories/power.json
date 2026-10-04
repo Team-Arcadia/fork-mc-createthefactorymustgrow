@@ -2,5 +2,6 @@
   "name": "Making Power",
   "description": "The generator and the electric motor both need a magnet in their assembly, and so does the electric gauge. The polarizer, the machine that makes magnets, needs an electric gauge in its recipe and electricity to run. So where does the first magnet come from?",
   "icon": "tfmg:generator",
-  "sortnum": 80
+  "sortnum": 80,
+  "parent": "tfmg:electricity"
 }

@@ -2,5 +2,6 @@
   "name": "Fireboxes and Gases",
   "description": "The firebox burns fuel fluids to heat whatever sits on top of it. It is the fuel-powered answer to the blaze burner.",
   "icon": "tfmg:firebox",
-  "sortnum": 180
+  "sortnum": 180,
+  "parent": "tfmg:oil"
 }

@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:polarizer,tfmg:magnetic_alloy_ingot,tfmg:magnet,tfmg:generator,create:goggles",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

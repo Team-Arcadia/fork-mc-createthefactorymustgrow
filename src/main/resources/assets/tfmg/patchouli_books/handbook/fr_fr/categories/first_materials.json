@@ -2,5 +2,6 @@
   "name": "Premiers matériaux",
   "description": "L'acier est le cœur de TFMG, mais les machines qui le produisent se construisent avec des matériaux plus simples. Ce chapitre couvre tout ce que vous pouvez fabriquer avant votre premier lingot d'acier :",
   "icon": "tfmg:cast_iron_ingot",
-  "sortnum": 20
+  "sortnum": 20,
+  "parent": "tfmg:getting_started"
 }

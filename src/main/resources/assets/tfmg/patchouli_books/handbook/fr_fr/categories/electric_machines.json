@@ -2,5 +2,6 @@
   "name": "Machines électriques",
   "description": "Le moteur électrique retransforme l'électricité en rotation : une seule centrale peut ainsi entraîner des machines dans toute la base grâce aux fils. Il se fabrique par assemblage séquencé sur un axe : une bobine de cuivre sur l'enrouleuse, un aimant, un mécanisme en acier et un tournevis, trois fois de suite.",
   "icon": "tfmg:electric_motor",
-  "sortnum": 100
+  "sortnum": 100,
+  "parent": "tfmg:electricity"
 }

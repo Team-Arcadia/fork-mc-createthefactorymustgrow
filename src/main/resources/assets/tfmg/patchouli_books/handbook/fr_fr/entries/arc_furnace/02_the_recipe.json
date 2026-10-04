@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "create:crushed_raw_iron,tfmg:limesand,tfmg:coal_coke_dust,tfmg:molten_steel_bucket,tfmg:molten_slag_bucket,tfmg:casting_basin,tfmg:steel_ingot",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

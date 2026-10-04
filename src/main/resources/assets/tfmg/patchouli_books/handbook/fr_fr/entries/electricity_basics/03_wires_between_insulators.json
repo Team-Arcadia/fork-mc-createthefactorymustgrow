@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:cable_connector,tfmg:glass_cable_insulator,tfmg:empty_spool,tfmg:copper_spool,tfmg:aluminum_spool,tfmg:constantan_spool,tfmg:winding_machine,tfmg:copper_wire",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

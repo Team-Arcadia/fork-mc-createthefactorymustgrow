@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:heavy_oil_bucket,tfmg:lubrication_oil_bucket,tfmg:diesel_bucket,tfmg:kerosene_bucket,tfmg:naphtha_bucket,tfmg:bitumen,tfmg:rubber_sheet",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

@@ -30,24 +30,32 @@
       "multiblock": {
         "pattern": [
           [
-            "   ",
-            " H ",
-            "   "
+            "     ",
+            "     ",
+            "  H  ",
+            "     ",
+            "     "
           ],
           [
-            "eFf",
-            "F F",
-            "gFh"
+            "     ",
+            " eFf ",
+            " F F ",
+            " gFh ",
+            "     "
           ],
           [
-            "aFb",
-            "H F",
-            "cFd"
+            "     ",
+            " aFb ",
+            " H F ",
+            " cFd ",
+            "     "
           ],
           [
-            "aFb",
-            "F0F",
-            "cOd"
+            "     ",
+            " aFb ",
+            " F0F ",
+            " cOd ",
+            "     "
           ]
         ],
         "mapping": {
@@ -71,7 +79,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:fireproof_brick_reinforcement,tfmg:fireproof_bricks,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
       "link_recipe": false,
-      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
     }
   ]
 }

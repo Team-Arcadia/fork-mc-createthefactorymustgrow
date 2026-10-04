@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:pumpjack_hammer,tfmg:large_pumpjack_hammer_part,tfmg:large_pumpjack_hammer_head,tfmg:large_pumpjack_hammer_connector,tfmg:pumpjack_crank,tfmg:pumpjack_base",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

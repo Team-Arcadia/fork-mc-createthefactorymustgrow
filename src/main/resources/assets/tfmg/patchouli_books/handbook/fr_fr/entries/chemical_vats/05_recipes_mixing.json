@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:mixer_blade,tfmg:limesand,tfmg:liquid_concrete_bucket,tfmg:asphalt_mixture,tfmg:sulfuric_acid_bucket,tfmg:rubber_sheet,tfmg:naphtha_bucket",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

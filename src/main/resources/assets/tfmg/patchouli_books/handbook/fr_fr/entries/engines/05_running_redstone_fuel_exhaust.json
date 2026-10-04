@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:lever,tfmg:exhaust,create:mechanical_pump,tfmg:gasoline_bucket,tfmg:diesel_bucket,tfmg:carbon_dioxide_bucket",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

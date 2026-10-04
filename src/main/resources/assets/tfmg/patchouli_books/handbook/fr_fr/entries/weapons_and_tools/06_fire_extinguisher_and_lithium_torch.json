@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:fire_extinguisher,create:spout,tfmg:carbon_dioxide_bucket,tfmg:lithium_torch,tfmg:lithium_ingot,tfmg:aluminum_ingot",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

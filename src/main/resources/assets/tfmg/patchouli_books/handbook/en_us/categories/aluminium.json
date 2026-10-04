@@ -2,5 +2,6 @@
   "name": "Aluminium",
   "description": "Aluminium is everywhere in the electrical age: the steel mechanism needs it, and so do aluminium wire, pipes and the centrifuge. It all starts with Bauxite, a stone block.",
   "icon": "tfmg:aluminum_ingot",
-  "sortnum": 120
+  "sortnum": 120,
+  "parent": "tfmg:chemistry"
 }

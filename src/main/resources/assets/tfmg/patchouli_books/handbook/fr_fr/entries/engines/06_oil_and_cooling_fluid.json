@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:oil_can,tfmg:cooling_fluid_bottle,tfmg:lubrication_oil_bucket,tfmg:cooling_fluid_bucket",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

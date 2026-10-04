@@ -2,5 +2,6 @@
   "name": "Dépannage",
   "description": "La plupart des machines de TFMG ne s'arrêtent jamais sans raison, et elles vous disent laquelle. Vous avez deux façons de demander.",
   "icon": "create:goggles",
-  "sortnum": 990
+  "sortnum": 990,
+  "parent": "tfmg:getting_started"
 }

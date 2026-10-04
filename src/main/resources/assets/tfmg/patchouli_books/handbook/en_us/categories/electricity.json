@@ -1,0 +1,6 @@
+{
+  "name": "Electricity",
+  "description": "Making power, carrying it and using it in machines.",
+  "icon": "tfmg:generator",
+  "sortnum": 2
+}

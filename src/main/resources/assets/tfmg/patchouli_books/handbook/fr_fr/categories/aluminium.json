@@ -2,5 +2,6 @@
   "name": "L'aluminium",
   "description": "L'aluminium est partout à l'ère électrique : le mécanisme en acier en a besoin, tout comme le fil d'aluminium, les tuyaux et la centrifugeuse. Tout commence avec la bauxite, un bloc de pierre.",
   "icon": "tfmg:aluminum_ingot",
-  "sortnum": 120
+  "sortnum": 120,
+  "parent": "tfmg:chemistry"
 }

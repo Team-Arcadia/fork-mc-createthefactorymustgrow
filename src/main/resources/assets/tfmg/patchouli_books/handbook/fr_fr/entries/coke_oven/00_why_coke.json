@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:coke_oven,minecraft:coal,tfmg:coal_coke,tfmg:coal_coke_dust,minecraft:oak_log,minecraft:charcoal",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

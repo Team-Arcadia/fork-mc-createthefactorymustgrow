@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:transformer,tfmg:electromagnetic_coil,tfmg:winding_machine,tfmg:copper_spool",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

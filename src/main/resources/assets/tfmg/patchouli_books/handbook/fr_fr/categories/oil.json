@@ -1,0 +1,6 @@
+{
+  "name": "Pétrole",
+  "description": "Trouver le pétrole, le pomper, le raffiner et brûler les gaz.",
+  "icon": "tfmg:pumpjack_base",
+  "sortnum": 4
+}

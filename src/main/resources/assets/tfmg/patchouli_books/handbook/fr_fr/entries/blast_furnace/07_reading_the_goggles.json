@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "create:goggles,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch,tfmg:molten_slag_bucket,tfmg:slag_block",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

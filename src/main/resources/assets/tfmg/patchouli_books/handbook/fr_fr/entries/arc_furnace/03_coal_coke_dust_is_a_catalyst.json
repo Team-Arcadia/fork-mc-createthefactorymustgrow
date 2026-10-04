@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:coal_coke_dust,tfmg:coal_coke,create:crushing_wheel",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

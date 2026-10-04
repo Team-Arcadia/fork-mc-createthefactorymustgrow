@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:diesel_engine_cylinder,tfmg:engine_cylinder,tfmg:simple_engine_cylinder,tfmg:turbine_blade,tfmg:spark_plug,tfmg:brass_pipe",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

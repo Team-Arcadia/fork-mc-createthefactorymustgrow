@@ -2,5 +2,6 @@
   "name": "Engines",
   "description": "Engines burn the fuels of your refinery and turn them into rotation. There are three small engines, all built the same way:",
   "icon": "tfmg:regular_engine",
-  "sortnum": 200
+  "sortnum": 200,
+  "parent": "tfmg:engines"
 }

@@ -2,5 +2,6 @@
   "name": "The Arc Furnace",
   "description": "The arc furnace is not a block of its own: it is a chemical vat set up to melt iron with electric arcs. It makes molten steel without a blast furnace or hot air.",
   "icon": "tfmg:graphite_electrode",
-  "sortnum": 130
+  "sortnum": 130,
+  "parent": "tfmg:chemistry"
 }

@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:fireclay,tfmg:fireclay_ball,tfmg:fireproof_brick,tfmg:fireproof_bricks,tfmg:fireproof_brick_reinforcement",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

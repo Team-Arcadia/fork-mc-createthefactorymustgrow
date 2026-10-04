@@ -2,5 +2,6 @@
   "name": "Bienvenue à l'usine",
   "description": "The Factory Must Grow apporte l'ère de l'acier, du pétrole et de l'électricité à Create.",
   "icon": "tfmg:factory_guide",
-  "sortnum": 0
+  "sortnum": 0,
+  "parent": "tfmg:getting_started"
 }

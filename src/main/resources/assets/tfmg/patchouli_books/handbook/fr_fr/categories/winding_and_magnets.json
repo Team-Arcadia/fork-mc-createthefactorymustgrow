@@ -2,5 +2,6 @@
   "name": "Bobinage et aimants",
   "description": "L'enrouleuse enroule le fil d'une bobine autour d'une pièce, un tour par tick. Elle fabrique résistances et bobines électromagnétiques, rembobine du fil sur les bobines, et sert d'étape dans plusieurs assemblages séquencés.",
   "icon": "tfmg:winding_machine",
-  "sortnum": 140
+  "sortnum": 140,
+  "parent": "tfmg:electricity"
 }

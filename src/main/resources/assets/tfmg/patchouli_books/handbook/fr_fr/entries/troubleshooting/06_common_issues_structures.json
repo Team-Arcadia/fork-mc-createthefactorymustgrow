@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:blast_furnace_output,tfmg:coke_oven,tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:industrial_pipe,tfmg:pumpjack_base,tfmg:surface_scanner",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

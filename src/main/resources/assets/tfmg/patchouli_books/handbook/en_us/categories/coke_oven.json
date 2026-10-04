@@ -2,5 +2,6 @@
   "name": "The Coke Oven",
   "description": "Steel starts with coal coke. Crushed into coal coke dust, it is the only fuel the blast furnace burns, so the coke oven is the first machine of your steel line.",
   "icon": "tfmg:coke_oven",
-  "sortnum": 30
+  "sortnum": 30,
+  "parent": "tfmg:steel"
 }

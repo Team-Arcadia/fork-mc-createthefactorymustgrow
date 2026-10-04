@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:machine_input,tfmg:pumpjack_crank,tfmg:pumpjack_hammer_connector,create:shaft",
       "link_recipe": false,
-      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
     }
   ]
 }

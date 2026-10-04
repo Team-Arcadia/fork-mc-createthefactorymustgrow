@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:steel_fluid_tank,minecraft:barrel,tfmg:steel_pipe,tfmg:steel_mechanical_pump,tfmg:steel_fluid_valve,tfmg:steel_smart_fluid_pipe,tfmg:heavy_plate,tfmg:steel_ingot",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

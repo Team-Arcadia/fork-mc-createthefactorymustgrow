@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:heavy_plate,tfmg:unprocessed_heavy_plate,create:mechanical_press,create:depot,tfmg:screw,tfmg:rebar,create:mechanical_saw,tfmg:industrial_pipe",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

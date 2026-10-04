@@ -2,5 +2,6 @@
   "name": "Winding and Magnets",
   "description": "The Winding Machine wraps wire from a spool around a workpiece, one turn per tick. It makes resistors and coils, winds wire onto spools, and is a step in several sequenced assemblies.",
   "icon": "tfmg:winding_machine",
-  "sortnum": 140
+  "sortnum": 140,
+  "parent": "tfmg:electricity"
 }

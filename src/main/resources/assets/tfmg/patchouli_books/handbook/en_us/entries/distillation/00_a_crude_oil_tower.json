@@ -30,69 +30,173 @@
       "multiblock": {
         "pattern": [
           [
-            "O ",
-            "UU",
-            "UU"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    UU    ",
+            "    UU    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "P ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "O ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "P ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "O ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "P ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "O ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "P ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "O ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "P ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "O ",
-            "TT",
-            "TT"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "C ",
-            "AA",
-            "AA"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    C     ",
+            "    AA    ",
+            "    AA    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ],
           [
-            "  ",
-            "F0",
-            "FF"
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    F0    ",
+            "    FF    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
           ]
         ],
         "mapping": {
@@ -112,7 +216,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:steel_fluid_tank,tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:industrial_pipe,tfmg:firebox,tfmg:crude_oil_bucket",
       "link_recipe": false,
-      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
     }
   ]
 }

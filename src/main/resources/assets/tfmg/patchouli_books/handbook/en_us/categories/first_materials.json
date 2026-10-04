@@ -2,5 +2,6 @@
   "name": "First Materials",
   "description": "Steel is the heart of TFMG, but the machines that make it are built from simpler materials. This chapter covers everything you can make before your first steel ingot:",
   "icon": "tfmg:cast_iron_ingot",
-  "sortnum": 20
+  "sortnum": 20,
+  "parent": "tfmg:getting_started"
 }

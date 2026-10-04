@@ -19,7 +19,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Stream;
 
@@ -37,6 +39,8 @@ import java.util.stream.Stream;
 public class TFMGGuideTests {
 
     private static final String[] LANGS = {"en_us", "fr_fr"};
+    // Two rows of four icons: a third row runs past the bottom of the page.
+    private static final int MAX_TOP_LEVEL_CATEGORIES = 8;
 
     @GameTest(template = "gametest/platform", batch = "tfmg_data")
     public static void handbookIsValid(GameTestHelper helper) {
@@ -50,18 +54,31 @@ public class TFMGGuideTests {
             Path root = file.findResource("assets", TFMG.MOD_ID, "patchouli_books", "handbook", lang);
             Set<String> categories = new TreeSet<>();
             Set<String> entries = new TreeSet<>();
+            Map<String, String> parents = new TreeMap<>();
             try (Stream<Path> files = Files.walk(root.resolve("categories"))) {
                 for (Path f : files.filter(p -> p.toString().endsWith(".json")).toList()) {
                     String id = f.getFileName().toString().replace(".json", "");
                     categories.add(TFMG.MOD_ID + ":" + id);
                     JsonObject json = read(f, problems);
-                    if (json != null)
-                        checkItem(lang + " category " + id + " icon", json.get("icon"), problems);
+                    if (json == null)
+                        continue;
+                    checkItem(lang + " category " + id + " icon", json.get("icon"), problems);
+                    if (json.has("parent"))
+                        parents.put(id, json.get("parent").getAsString());
                 }
             } catch (Exception e) {
                 problems.add(lang + ": cannot list categories (" + e.getMessage() + ")");
                 continue;
             }
+            parents.forEach((id, parent) -> {
+                if (!categories.contains(parent))
+                    problems.add(lang + " category " + id + ": unknown parent " + parent);
+            });
+            // The landing page shows top-level categories in rows of four and
+            // only has room for a few rows: more would spill off the page.
+            long topLevel = categories.size() - parents.size();
+            if (topLevel > MAX_TOP_LEVEL_CATEGORIES)
+                problems.add(lang + ": " + topLevel + " top-level categories, the landing page fits " + MAX_TOP_LEVEL_CATEGORIES);
             Path entryRoot = root.resolve("entries");
             try (Stream<Path> files = Files.walk(entryRoot)) {
                 for (Path f : files.filter(p -> p.toString().endsWith(".json")).sorted().toList()) {

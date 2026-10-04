@@ -2,5 +2,6 @@
   "name": "Casting and Steel Parts",
   "description": "The casting basin turns molten material into solid items. Pipe the fluid into it from any face; it holds 1000 mB.",
   "icon": "tfmg:steel_ingot",
-  "sortnum": 60
+  "sortnum": 60,
+  "parent": "tfmg:steel"
 }

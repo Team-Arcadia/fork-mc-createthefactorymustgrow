@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:flarestack,tfmg:gas_lamp,tfmg:lpg_bucket,tfmg:creosote_bucket,tfmg:naphtha_bucket,tfmg:furnace_gas_bucket",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

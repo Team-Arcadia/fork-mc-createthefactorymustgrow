@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:nickel_ingot,tfmg:silicon_ingot,tfmg:magnetic_alloy_ingot,tfmg:magnetic_alloy_sheet,tfmg:polarizer,tfmg:magnet,tfmg:voltmeter,minecraft:compass",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

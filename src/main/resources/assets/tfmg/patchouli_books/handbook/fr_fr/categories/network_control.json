@@ -2,5 +2,6 @@
   "name": "Contrôle du réseau",
   "description": "La diode, l'interrupteur électrique, le potentiomètre et le transformateur sont des ponts. Chacun reçoit le courant d'un côté (l'arrière pour la diode, l'interrupteur et le potentiomètre) et alimente un réseau séparé côté sortie. Le grand interrupteur et le grand transformateur fonctionnent de la même façon entre leurs deux moitiés.",
   "icon": "tfmg:transformer",
-  "sortnum": 90
+  "sortnum": 90,
+  "parent": "tfmg:electricity"
 }

@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:exhaust,tfmg:brick_smokestack,tfmg:concrete_smokestack,tfmg:metal_smokestack,tfmg:carbon_dioxide_bucket,tfmg:fire_extinguisher,create:spout",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

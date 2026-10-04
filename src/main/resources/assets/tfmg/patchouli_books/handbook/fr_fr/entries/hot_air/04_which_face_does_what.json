@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:blast_stove,create:mechanical_pump,create:fluid_pipe,tfmg:air_bucket,tfmg:creosote_bucket,tfmg:furnace_gas_bucket,tfmg:hot_air_bucket,tfmg:carbon_dioxide_bucket",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:pumpjack_base,tfmg:crude_oil_bucket,create:mechanical_pump,create:fluid_pipe,create:goggles,tfmg:industrial_pipe",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

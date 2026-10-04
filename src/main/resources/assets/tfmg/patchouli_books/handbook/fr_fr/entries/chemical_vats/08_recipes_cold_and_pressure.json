@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:butane_bucket,tfmg:propane_bucket,tfmg:lpg_bucket,tfmg:lubrication_oil_bucket,tfmg:cooling_fluid_bucket,tfmg:air_bucket,tfmg:compressor,tfmg:freezer",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

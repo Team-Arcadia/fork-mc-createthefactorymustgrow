@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:advanced_potato_cannon,tfmg:napalm_potato,tfmg:quad_potato_cannon,minecraft:potato,create:spout,create:copper_backtank",
       "link_recipe": false,
-      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
     }
   ]
 }

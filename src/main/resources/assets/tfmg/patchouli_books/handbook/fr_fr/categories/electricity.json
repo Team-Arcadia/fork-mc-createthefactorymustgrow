@@ -1,0 +1,6 @@
+{
+  "name": "Électricité",
+  "description": "Produire l'énergie, la transporter et l'utiliser dans les machines.",
+  "icon": "tfmg:generator",
+  "sortnum": 2
+}

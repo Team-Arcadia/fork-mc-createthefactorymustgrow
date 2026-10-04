@@ -2,5 +2,6 @@
   "name": "Hot Air",
   "description": "The blast furnace only works while it receives hot air. Making it takes three machines:",
   "icon": "tfmg:blast_stove",
-  "sortnum": 40
+  "sortnum": 40,
+  "parent": "tfmg:steel"
 }

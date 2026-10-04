@@ -2,5 +2,6 @@
   "name": "Construction",
   "description": "Le béton commence par le sable calcaire : broyez le calcaire de Create avec des roues de concassage.",
   "icon": "tfmg:rebar_concrete",
-  "sortnum": 190
+  "sortnum": 190,
+  "parent": "tfmg:building_and_tools"
 }

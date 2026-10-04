@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:yellow_caution_block,tfmg:factory_floor,tfmg:steel_bars,tfmg:steel_ladder,tfmg:steel_scaffolding,tfmg:heavy_plated_door,tfmg:steel_door,tfmg:steel_trapdoor",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

@@ -15,6 +15,7 @@ Run it after editing a chapter:  python tools/handbook/build_handbook.py
 Author: vyrriox
 """
 import json
+import math
 import os
 import re
 import shutil
@@ -39,6 +40,65 @@ ITEMS_TEXT = {
     'en_us': 'The items this page talks about. Hover for details; JEI shows their recipes.',
     'fr_fr': 'Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.',
 }
+# Patchouli's landing page only fits about three rows of category icons, so
+# the chapters are grouped under a few top-level categories.
+GROUPS = [
+    ('getting_started', 'tfmg:factory_guide', {'en_us': 'Getting Started', 'fr_fr': 'Premiers pas'},
+     {'en_us': 'The first steps, raw resources and what to do when a machine refuses to work.',
+      'fr_fr': 'Les premiers pas, les ressources brutes et que faire quand une machine refuse de marcher.'},
+     ['introduction', 'resources', 'first_materials', 'troubleshooting']),
+    ('steel', 'tfmg:steel_ingot', {'en_us': 'Steel', 'fr_fr': 'Acier'},
+     {'en_us': 'From coal and iron to steel: coke oven, hot air, blast furnace and casting.',
+      'fr_fr': "Du charbon et du fer jusqu'à l'acier : four à coke, air chaud, haut fourneau et moulage."},
+     ['coke_oven', 'hot_air', 'blast_furnace', 'casting_and_steel']),
+    ('electricity', 'tfmg:generator', {'en_us': 'Electricity', 'fr_fr': 'Électricité'},
+     {'en_us': 'Making power, carrying it and using it in machines.',
+      'fr_fr': "Produire l'énergie, la transporter et l'utiliser dans les machines."},
+     ['electricity_basics', 'power', 'network_control', 'electric_machines', 'winding_and_magnets']),
+    ('chemistry', 'tfmg:steel_chemical_vat', {'en_us': 'Chemistry', 'fr_fr': 'Chimie'},
+     {'en_us': 'Chemical vats, aluminium electrolysis and the arc furnace.',
+      'fr_fr': "Cuves chimiques, électrolyse de l'aluminium et four à arc."},
+     ['chemical_vats', 'aluminium', 'arc_furnace']),
+    ('oil', 'tfmg:pumpjack_base', {'en_us': 'Oil', 'fr_fr': 'Pétrole'},
+     {'en_us': 'Finding oil, pumping it, refining it and burning the gases.',
+      'fr_fr': 'Trouver le pétrole, le pomper, le raffiner et brûler les gaz.'},
+     ['finding_oil', 'pumpjack', 'distillation', 'fireboxes_and_gases']),
+    ('engines', 'tfmg:regular_engine', {'en_us': 'Engines', 'fr_fr': 'Moteurs'},
+     {'en_us': 'Engines, their fuels, upgrades and large engines.',
+      'fr_fr': 'Les moteurs, leurs carburants, leurs améliorations et les grands moteurs.'},
+     ['engines', 'engine_upgrades']),
+    ('building_and_tools', 'tfmg:flamethrower', {'en_us': 'Building and Tools', 'fr_fr': 'Construction et outils'},
+     {'en_us': 'Concrete, construction blocks, weapons and tools.',
+      'fr_fr': 'Béton, blocs de construction, armes et outils.'},
+     ['construction', 'weapons_and_tools']),
+]
+GROUP_OF = {chapter: group[0] for group in GROUPS for chapter in group[4]}
+
+ITEMS_TITLE = {'en_us': 'Items', 'fr_fr': 'Objets'}
+LANG_FILES = {
+    'en_us': [os.path.join(ROOT, 'src', 'generated', 'resources', 'assets', 'tfmg', 'lang', 'en_us.json')],
+    'fr_fr': [os.path.join(ROOT, 'src', 'main', 'resources', 'assets', 'tfmg', 'lang', 'fr_fr.json')],
+}
+_names = {}
+
+
+def item_name(item, lang):
+    """Display name of an item id, from the mod's lang files (TFMG items only)."""
+    if lang not in _names:
+        _names[lang] = {}
+        for path in LANG_FILES[lang]:
+            if os.path.exists(path):
+                with open(path, encoding='utf-8') as f:
+                    _names[lang].update(json.load(f))
+    item = item.split('{')[0].split('[')[0]
+    namespace, _, path = item.partition(':')
+    for kind in ('item', 'block'):
+        name = _names[lang].get('%s.%s.%s' % (kind, namespace, path))
+        if name:
+            return name
+    return ''
+
+
 VIEW_NAME = {'en_us': 'Structure', 'fr_fr': 'Structure'}
 
 
@@ -209,7 +269,33 @@ def multiblock(schematic):
     row = grid[0][cz]
     grid[0][cz] = row[:cx] + '0' + row[cx + 1:]
     # Patchouli lists layers top first.
+    pad = view_padding(size_x, len(grid), size_z)
+    if pad:
+        grid = [[' ' * (size_x + 2 * pad)] * pad
+                + [' ' * pad + row + ' ' * pad for row in layer]
+                + [' ' * (size_x + 2 * pad)] * pad for layer in grid]
     return {'pattern': list(reversed(grid)), 'mapping': mapping}
+
+
+# Patchouli fits a multiblock page by scaling 90 / max(horizontal diagonal,
+# height), but draws it tilted 30 degrees: a tall, narrow structure then comes
+# out taller than the frame. Empty columns around it shrink the scale without
+# moving it (the padding is symmetric and spaces match anything).
+VIEW_FRAME = 90
+VIEW_LIMIT = 82
+
+
+def view_scale(size_x, size_y, size_z, pad):
+    diag = math.hypot(size_x + 2 * pad, size_z + 2 * pad)
+    return VIEW_FRAME / max(diag, size_y)
+
+
+def view_padding(size_x, size_y, size_z):
+    drawn = size_y * math.cos(math.radians(30)) + math.hypot(size_x, size_z) * math.sin(math.radians(30))
+    pad = 0
+    while view_scale(size_x, size_y, size_z, pad) * drawn > VIEW_LIMIT:
+        pad += 1
+    return pad
 
 
 def slug(text, index):
@@ -233,8 +319,17 @@ def build():
         cat_dir = os.path.join(OUT, lang, 'categories')
         os.makedirs(cat_dir, exist_ok=True)
         entries = 0
+        for order, (gid, icon, name, description, _) in enumerate(GROUPS):
+            write(os.path.join(cat_dir, gid + '.json'), {
+                'name': name[lang],
+                'description': description[lang],
+                'icon': icon,
+                'sortnum': order,
+            })
         for chapter_id, chapter in chapters:
             cid = re.sub(r'^\d+_', '', chapter_id)
+            if cid not in GROUP_OF:
+                sys.exit('chapter %s has no group in GROUPS' % cid)
             title = localized(chapter.get('title'), lang)
             first_text = localized(chapter['pages'][0].get('text'), lang)
             description = re.sub(r'\*\*(.+?)\*\*', r'\1', next((l for l in first_text.split('\n') if l.strip() and not l.startswith('## ')), title))
@@ -243,6 +338,7 @@ def build():
                 'description': description,
                 'icon': chapter.get('icon', 'minecraft:book'),
                 'sortnum': chapter.get('order', 1000),
+                'parent': '%s:%s' % (NAMESPACE, GROUP_OF[cid]),
             }
             write(os.path.join(cat_dir, cid + '.json'), category)
             entry_dir = os.path.join(OUT, lang, 'entries', cid)
@@ -259,12 +355,16 @@ def build():
                     })
                 items = page.get('items') or []
                 if items:
-                    patch_pages.append({
+                    spotlight = {
                         'type': 'patchouli:spotlight',
                         'item': ','.join(items),
                         'link_recipe': False,
                         'text': ITEMS_TEXT[lang],
-                    })
+                    }
+                    # The title defaults to the item name and is never wrapped.
+                    if any(text_width(item_name(i, lang)) > PAGE_WIDTH for i in items):
+                        spotlight['title'] = ITEMS_TITLE[lang]
+                    patch_pages.append(spotlight)
                 entry = {
                     'name': page_title,
                     'icon': items[0] if items else chapter.get('icon', 'minecraft:book'),

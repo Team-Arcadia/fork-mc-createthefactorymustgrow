@@ -2,5 +2,6 @@
   "name": "Armes et outils",
   "description": "Le lance-flammes projette du carburant enflammé. Maintenez le clic droit pour tirer : à chaque tick il lance une gerbe d'étincelles qui mettent le feu au bloc touché et enflamment les créatures pendant 4 secondes. L'eau et la pluie éteignent les étincelles.",
   "icon": "tfmg:flamethrower",
-  "sortnum": 220
+  "sortnum": 220,
+  "parent": "tfmg:building_and_tools"
 }

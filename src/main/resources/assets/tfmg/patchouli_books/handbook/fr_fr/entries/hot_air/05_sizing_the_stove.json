@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:blast_stove,tfmg:hot_air_bucket,tfmg:blast_furnace_hatch",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

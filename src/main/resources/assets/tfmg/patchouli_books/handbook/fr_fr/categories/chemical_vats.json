@@ -2,5 +2,6 @@
   "name": "Cuves chimiques",
   "description": "La cuve chimique est le réacteur à tout faire du mod : elle mélange, craque, congèle, compresse et fait de l'électrolyse. Il en existe trois sortes, et chaque recette indique celles qu'elle accepte :",
   "icon": "tfmg:steel_chemical_vat",
-  "sortnum": 110
+  "sortnum": 110,
+  "parent": "tfmg:chemistry"
 }

@@ -2,5 +2,6 @@
   "name": "Le four à arc",
   "description": "Le four à arc n'est pas un bloc à part : c'est une cuve chimique montée pour fondre le fer avec des arcs électriques. Il produit de l'acier en fusion sans haut fourneau ni air chaud.",
   "icon": "tfmg:graphite_electrode",
-  "sortnum": 130
+  "sortnum": 130,
+  "parent": "tfmg:chemistry"
 }

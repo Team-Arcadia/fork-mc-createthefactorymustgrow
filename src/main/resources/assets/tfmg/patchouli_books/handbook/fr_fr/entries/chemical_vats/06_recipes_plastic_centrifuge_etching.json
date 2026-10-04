@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:ethylene_bucket,tfmg:propylene_bucket,tfmg:molten_plastic_bucket,tfmg:centrifuge,tfmg:air_bucket,tfmg:neon_bucket,tfmg:coated_circuit_board,tfmg:etched_circuit_board",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

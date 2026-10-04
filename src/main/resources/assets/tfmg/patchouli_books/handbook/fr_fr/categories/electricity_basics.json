@@ -2,5 +2,6 @@
   "name": "Bases de l'électricité",
   "description": "Les blocs électriques qui se touchent par des faces capables de transmettre le courant forment un réseau. Un réseau a une seule tension et un seul budget de puissance.",
   "icon": "tfmg:multimeter",
-  "sortnum": 70
+  "sortnum": 70,
+  "parent": "tfmg:electricity"
 }

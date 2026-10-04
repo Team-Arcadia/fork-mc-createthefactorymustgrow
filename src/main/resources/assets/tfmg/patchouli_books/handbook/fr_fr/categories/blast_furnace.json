@@ -2,5 +2,6 @@
   "name": "Le haut fourneau",
   "description": "Le haut fourneau fond le minerai de fer en acier en fusion. C'est une tour creuse en briques avec une sortie de haut fourneau à sa base.",
   "icon": "tfmg:blast_furnace_output",
-  "sortnum": 50
+  "sortnum": 50,
+  "parent": "tfmg:steel"
 }

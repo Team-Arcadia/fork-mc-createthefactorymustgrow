@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "create:blaze_burner,tfmg:firebox,tfmg:steel_fluid_tank,tfmg:steel_distillation_controller",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

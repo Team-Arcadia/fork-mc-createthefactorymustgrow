@@ -28,7 +28,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:large_coil,tfmg:laminated_magnetic_alloy_block,tfmg:steel_block,tfmg:lubrication_oil_bucket,tfmg:winding_machine,tfmg:copper_spool",
       "link_recipe": false,
-      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
     }
   ]
 }

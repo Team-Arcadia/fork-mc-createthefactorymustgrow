@@ -2,5 +2,6 @@
   "name": "Electricity Basics",
   "description": "Electric blocks that touch through faces able to carry power form one network. A network has a single voltage and a single power budget.",
   "icon": "tfmg:multimeter",
-  "sortnum": 70
+  "sortnum": 70,
+  "parent": "tfmg:electricity"
 }

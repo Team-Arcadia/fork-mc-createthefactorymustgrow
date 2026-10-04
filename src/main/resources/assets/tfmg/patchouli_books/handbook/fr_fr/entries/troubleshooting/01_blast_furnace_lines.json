@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:blast_furnace_output,tfmg:blast_furnace_hatch,tfmg:coal_coke_dust,tfmg:limesand,tfmg:hot_air_bucket,tfmg:molten_steel_bucket",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

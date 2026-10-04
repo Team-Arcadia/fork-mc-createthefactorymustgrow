@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:multimeter,tfmg:copper_cable_hub,tfmg:cable_tube,tfmg:cable_connector,tfmg:light_bulb,tfmg:transformer,tfmg:large_coil",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

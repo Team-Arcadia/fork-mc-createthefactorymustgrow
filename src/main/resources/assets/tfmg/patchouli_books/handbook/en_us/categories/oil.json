@@ -1,0 +1,6 @@
+{
+  "name": "Oil",
+  "description": "Finding oil, pumping it, refining it and burning the gases.",
+  "icon": "tfmg:pumpjack_base",
+  "sortnum": 4
+}

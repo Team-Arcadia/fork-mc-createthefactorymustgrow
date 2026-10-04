@@ -26,44 +26,76 @@
       "multiblock": {
         "pattern": [
           [
-            "       ",
-            "HRRRRRN",
-            "       "
+            "           ",
+            "           ",
+            "           ",
+            "  HRRRRRN  ",
+            "           ",
+            "           ",
+            "           "
           ],
           [
-            "       ",
-            "   O   ",
-            "       "
+            "           ",
+            "           ",
+            "           ",
+            "     O     ",
+            "           ",
+            "           ",
+            "           "
           ],
           [
-            "       ",
-            "   T  C",
-            "       "
+            "           ",
+            "           ",
+            "           ",
+            "     T  C  ",
+            "           ",
+            "           ",
+            "           "
           ],
           [
-            "      S",
-            "B  T  M",
-            "       "
+            "           ",
+            "           ",
+            "        S  ",
+            "  B  T  M  ",
+            "           ",
+            "           ",
+            "           "
           ],
           [
-            "       ",
-            "P      ",
-            "       "
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
           ],
           [
-            "       ",
-            "P      ",
-            "       "
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
           ],
           [
-            "       ",
-            "P      ",
-            "       "
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
           ],
           [
-            "       ",
-            "D  0   ",
-            "       "
+            "           ",
+            "           ",
+            "           ",
+            "  D  0     ",
+            "           ",
+            "           ",
+            "           "
           ]
         ],
         "mapping": {
@@ -87,7 +119,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:pumpjack_base,tfmg:pumpjack_hammer,tfmg:pumpjack_hammer_part,tfmg:pumpjack_hammer_head,tfmg:pumpjack_hammer_connector,tfmg:pumpjack_crank,tfmg:machine_input,tfmg:industrial_pipe",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

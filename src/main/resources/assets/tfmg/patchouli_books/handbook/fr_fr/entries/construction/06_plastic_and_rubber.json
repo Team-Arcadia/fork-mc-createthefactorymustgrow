@@ -36,7 +36,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:naphtha_bucket,tfmg:ethylene_bucket,tfmg:molten_plastic_bucket,tfmg:plastic_sheet,tfmg:plastic_block,tfmg:plastic_pipe,tfmg:rubber_sheet,tfmg:synthetic_leather",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

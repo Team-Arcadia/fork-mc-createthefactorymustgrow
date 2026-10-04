@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:cast_iron_chemical_vat,tfmg:steel_chemical_vat,tfmg:fireproof_chemical_vat,create:wrench",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

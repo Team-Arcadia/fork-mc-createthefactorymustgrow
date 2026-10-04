@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:firebox,tfmg:carbon_dioxide_bucket,create:mechanical_pump,create:fluid_pipe,tfmg:exhaust,tfmg:metal_smokestack",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

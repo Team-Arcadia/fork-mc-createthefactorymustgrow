@@ -32,7 +32,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:fireproof_bricks,tfmg:cast_iron_ingot,tfmg:cast_iron_pipe,tfmg:coke_oven,tfmg:coal_coke_dust,tfmg:limesand,minecraft:raw_iron,tfmg:casting_basin",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }

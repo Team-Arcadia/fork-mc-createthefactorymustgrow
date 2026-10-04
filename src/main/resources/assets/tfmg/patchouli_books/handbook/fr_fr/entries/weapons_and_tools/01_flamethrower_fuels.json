@@ -24,7 +24,8 @@
       "type": "patchouli:spotlight",
       "item": "tfmg:flamethrower,tfmg:gasoline_bucket,tfmg:diesel_bucket,tfmg:kerosene_bucket,tfmg:naphtha_bucket,tfmg:lpg_bucket,tfmg:napalm_bucket,tfmg:molten_slag_bucket",
       "link_recipe": false,
-      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
     }
   ]
 }
