@@ -70,6 +70,13 @@ public class LargeCoilBlockEntity extends SmartBlockEntity implements IInspectab
 
                 level.setBlock(getBlockPos(), TFMGBlocks.LARGE_TRANSFORMER.getDefaultState().setValue(LargeTransformerBlock.HORIZONTAL_FACING, otherCoilDirection), 3);
             }
+            // The input part carries the ratio too: its inspector report and
+            // multimeter read it, and they showed the default 1.00 whatever
+            // the coils were until a steel block happened to copy it over.
+            if (level.getBlockEntity(getBlockPos()) instanceof LargeTransformerBlockEntity mainBe) {
+                mainBe.turnRatio = turnRatio;
+                mainBe.setChanged();
+            }
 
 
 

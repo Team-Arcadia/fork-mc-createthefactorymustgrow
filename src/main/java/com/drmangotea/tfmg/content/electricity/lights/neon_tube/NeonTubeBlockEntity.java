@@ -34,10 +34,15 @@ public class NeonTubeBlockEntity extends ElectricBlockEntity implements com.drma
         super.tick();
 
 
-            glow.chase(getPowerUsage()*1.5, 0.4, LerpedFloat.Chaser.EXP);
+            // Dark on a network that cannot feed its loads, like the light
+            // bulb: it used to shine at full voltage while everything else on
+            // an overloaded network had stopped.
+            boolean lit = canWork();
+            glow.chase(lit ? getPowerUsage()*1.5 : 0, 0.4, LerpedFloat.Chaser.EXP);
             glow.tickChaser();
-            if (!level.isClientSide && Math.min(getData().getVoltage() / 10, 15) != getBlockState().getValue(LIGHT))
-                level.setBlock(getBlockPos(), getBlockState().setValue(LIGHT, (int) Math.min(getData().getVoltage() / 10, 15)), 2);
+            int light = lit ? Math.min(getData().getVoltage() / 10, 15) : 0;
+            if (!level.isClientSide && light != getBlockState().getValue(LIGHT))
+                level.setBlock(getBlockPos(), getBlockState().setValue(LIGHT, light), 2);
 
     }
     @Override
