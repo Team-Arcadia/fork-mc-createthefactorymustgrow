@@ -1,0 +1,30 @@
+{
+  "name": "Les ponts entre réseaux",
+  "icon": "tfmg:electric_diode",
+  "category": "tfmg:network_control",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La diode, l'interrupteur électrique, le potentiomètre et le transformateur sont des $(item)ponts$(). Chacun reçoit le courant d'un côté (l'$(item)arrière$() pour la diode, l'interrupteur et le potentiomètre) et alimente un $(item)réseau séparé$() côté sortie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le grand interrupteur et le grand transformateur fonctionnent de la même façon entre leurs deux moitiés. $(li)Le réseau d'entrée voit le pont comme un seul consommateur qui utilise ce qu'utilise le réseau de sortie. $(li)Le réseau de sortie reçoit sa tension du pont, et au plus $(item)10 kW$() de puissance avec les petits ponts et le grand interrupteur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le grand transformateur en laisse passer davantage. $(li)Les petits ponts grillent au-dessus de $(item)100 A$() et au-dessus des 1 000 V habituels. $(li)Si le réseau d'entrée manque de puissance, celui de sortie s'arrête aussi."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Ne fermez jamais de boucle$()$(br)Si une chaîne de ponts renvoie du courant vers un réseau dont elle vient, le pont que vous venez de poser est $(item)détruit sans rien laisser tomber$(). Gardez toujours un sens unique, des générateurs vers les machines.$(br2)Découper une usine en plusieurs réseaux permet de couper des sections entières et empêche une machine gourmande de tout bloquer."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_diode,tfmg:electrical_switch,tfmg:potentiometer,tfmg:transformer,tfmg:large_switch,tfmg:large_coil",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

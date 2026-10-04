@@ -1,0 +1,48 @@
+{
+  "order": 5006,
+  "name": {
+    "en_us": "The reinforced furnace",
+    "fr_fr": "Le haut fourneau renforcé"
+  },
+  "layers": [
+    [
+      "  n  ",
+      " RBR ",
+      "wBFBe",
+      " ROR ",
+      "     "
+    ],
+    [
+      "  n  ",
+      " RBR ",
+      " H Be",
+      " RBR ",
+      "  s  "
+    ],
+    [
+      "  n  ",
+      " RBR ",
+      "wB Be",
+      " RBR ",
+      "  s  "
+    ],
+    [
+      "     ",
+      "     ",
+      "  H  ",
+      "     ",
+      "     "
+    ]
+  ],
+  "key": {
+    "R": "tfmg:blast_furnace_reinforcement",
+    "B": "tfmg:reinforced_fireproof_bricks",
+    "F": "tfmg:fireproof_bricks",
+    "O": "tfmg:blast_furnace_output[facing=south]",
+    "H": "tfmg:blast_furnace_hatch",
+    "n": "tfmg:blast_furnace_reinforcement_wall[facing=north]",
+    "s": "tfmg:blast_furnace_reinforcement_wall[facing=south]",
+    "e": "tfmg:blast_furnace_reinforcement_wall[facing=east]",
+    "w": "tfmg:blast_furnace_reinforcement_wall[facing=west]"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Chaleur et pression",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Chaleur$()$(br)La chaleur est la somme de toutes les sources $(item)juste sous la cuve$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)un bloc de $(item)foyer$() allumé donne $(item)2$(),$(li)un $(item)brûleur à blaze$() allumé donne $(item)1$(), ou $(item)2$() quand il est surchauffé,$(li)chaque $(item)congélateur$() en marche relié à la cuve retire $(item)1$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les recettes chauffées de la cuve demandent une $(item)chaleur de 2$() : un seul foyer allumé sous la cuve suffit. Pensez qu'un compresseur ou un congélateur placé dessous prend une place qu'une source de chaleur pourrait occuper."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Pression$()$(br)Chaque $(item)compresseur$() en marche ajoute $(item)1$() de pression. Faites tourner son arbre dans l'autre sens et il en retire 1 (les lunettes indiquent Pressurisation ou Dépressurisation). Les recettes sous pression demandent une $(item)pression de 1$(), donc un compresseur qui tourne dans le bon sens suffit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les lunettes affichent la $(item)chaleur$() et la $(item)pression$() de la cuve en barres : vérifiez les deux avant d'accuser la recette."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,create:blaze_burner,tfmg:compressor,tfmg:freezer,create:goggles",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

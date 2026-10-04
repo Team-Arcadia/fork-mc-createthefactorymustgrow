@@ -1,0 +1,26 @@
+{
+  "name": "Pourquoi du coke ?",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "L'acier commence par le $(item)coke de charbon$(). Broyé en $(item)poussière de coke de charbon$(), c'est le seul combustible du haut fourneau : le four à coke est donc la première machine de votre chaîne de l'acier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le four cuit une entrée à la fois et donne :$(li)Le $(item)charbon$() devient du $(item)coke de charbon$(), avec de la créosote et du CO2.$(li)Toute $(item)bûche qui brûle$() devient du $(item)charbon de bois$(), avec de la créosote et du CO2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le résultat solide tombe par la porte avant sous forme d'objet. Les deux sous-produits sont des fluides qui restent dans le four jusqu'à ce que vous les pompiez.$(br2)Un seul bloc de four à coke fonctionne déjà tout seul. En assembler plusieurs en carré donne un four plus grand qui cuit plus vite. Les pages suivantes montrent la forme, puis comment le remplir et le vider."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal,tfmg:coal_coke,tfmg:coal_coke_dust,minecraft:oak_log,minecraft:charcoal",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

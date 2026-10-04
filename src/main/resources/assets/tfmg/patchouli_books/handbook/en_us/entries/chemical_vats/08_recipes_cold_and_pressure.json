@@ -1,0 +1,30 @@
+{
+  "name": "Recipes: cold and pressure",
+  "icon": "tfmg:butane_bucket",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Compressed LPG$()$(br)500 mB Butane and 500 mB Propane give 1000 mB LPG in 3 seconds.$(li)A $(item)Compressor$(), $(item)pressure 1$().$(li)$(item)Steel$() or $(item)Fireproof$() vat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)LPG separation$()$(br)1000 mB LPG gives 500 mB Butane and 500 mB Propane in 4 seconds.$(li)A $(item)Freezer$(). Every vat kind.$(br2)$(l)Cooling Fluid$()$(br)500 mB Water and 250 mB Lubrication Oil give 500 mB Cooling Fluid in 4 seconds.$(li)A $(item)Freezer$(). Every vat kind."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Liquid air$()$(br)1000 mB Air gives 250 mB Cooling Fluid in 6 seconds.$(li)A $(item)Freezer$() and a $(item)Compressor$(), $(item)pressure 1$().$(li)$(item)Steel$() or $(item)Fireproof$() vat.$(br2)A steel vat built for liquid air (freezer plus compressor) can run all four recipes, since extra working machines never hurt. Just keep each vat to one kind of input fluid so it always does the job you expect."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sizes: every recipe on this page works from a single 1x1 vat."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:butane_bucket,tfmg:propane_bucket,tfmg:lpg_bucket,tfmg:lubrication_oil_bucket,tfmg:cooling_fluid_bucket,tfmg:air_bucket,tfmg:compressor,tfmg:freezer",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

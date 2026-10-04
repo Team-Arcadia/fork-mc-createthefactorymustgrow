@@ -1,0 +1,30 @@
+{
+  "name": "Fuel use and CO2",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Every $(item)3 seconds$(), each block of a burning firebox takes $(item)50 mB$() of fuel from the shared tank. A 3 x 3 firebox therefore burns 450 mB every 3 seconds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It only burns while it holds at least the server setting $(item)fireboxFuelConsumption$() of fuel, $(item)100 mB$() by default. Below that it goes out and goggles show $(item)Not enough fuel to burn$(). Keep a pump feeding it rather than filling it once."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Exhaust$()$(br)With the server setting $(item)fireboxExhaustRequirement$() on (the default), each block also puts $(item)500 mB of carbon dioxide$() into the exhaust tank every 3 seconds, about 167 mB per second per block.$(br2)When the exhaust tank is full, the firebox stops and goggles show $(item)Exhaust full: pump the CO2 away$(). So every firebox needs a way out for its CO2:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)attach a mechanical pump to the firebox and pull the CO2 out through pipes,$(li)send it to an $(item)exhaust$() or a $(item)smokestack$() that vents it into the air,$(li)or keep it in tanks for later use.$(br2)Fuel can be pumped in, and only CO2 can be pumped out."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,tfmg:carbon_dioxide_bucket,create:mechanical_pump,create:fluid_pipe,tfmg:exhaust,tfmg:metal_smokestack",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

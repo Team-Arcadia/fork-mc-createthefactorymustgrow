@@ -1,0 +1,26 @@
+{
+  "order": 12002,
+  "name": {
+    "en_us": "The electrolysis vat",
+    "fr_fr": "La cuve d'électrolyse"
+  },
+  "layers": [
+    [
+      "F ",
+      "  "
+    ],
+    [
+      "VV",
+      "VV"
+    ],
+    [
+      "E ",
+      " E"
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "V": "tfmg:steel_chemical_vat",
+    "E": "tfmg:electrode_holder"
+  }
+}

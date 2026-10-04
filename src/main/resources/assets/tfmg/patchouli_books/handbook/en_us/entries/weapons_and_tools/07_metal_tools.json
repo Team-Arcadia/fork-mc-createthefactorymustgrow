@@ -1,0 +1,26 @@
+{
+  "name": "Metal tools",
+  "icon": "tfmg:steel_pickaxe",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Three metals give a full set of sword, pickaxe, axe, shovel and hoe. There is no TFMG armor. $(li)$(item)Steel$(): 1000 uses, mining speed 7.5, mines everything a diamond tool mines, enchantability 12. The best everyday set once the blast furnace runs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Aluminium$(): 220 uses, mining speed 6, mines like iron, but enchantability $(item)22$(), much higher than iron. Good for enchanting. $(li)$(item)Lead$(): 32 uses, mining speed 2, mines like stone. Weak and soft, but the $(item)lead sword poisons$() for 5 seconds and the $(item)lead axe$() for 8 seconds, adding to any poison already there. Each hit costs 2 durability."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "All of them are repaired with their own ingot on an anvil.$(br2)$(l)Engine tools$()$(br)The $(item)Screwdriver$() takes parts and cylinders back out of an engine. The $(item)Oil Can$() and $(item)Cooling Fluid Bottle$() carry fluid to engines: see the Engines chapter."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_pickaxe,tfmg:steel_sword,tfmg:aluminum_pickaxe,tfmg:lead_sword,tfmg:lead_axe,tfmg:screwdriver,tfmg:oil_can,tfmg:cooling_fluid_bottle",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

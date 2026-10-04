@@ -1,0 +1,30 @@
+{
+  "name": "Problèmes courants : structures",
+  "icon": "tfmg:blast_furnace_output",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le haut fourneau ne fait rien$()$(br)Sous $(item)3 couches complètes$(), il ne fait rien du tout. Les lunettes affichent sa hauteur : un coin ou un bord manquant la réduit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le four à coke est en pause$()$(br)Son réservoir de CO2 est plein. Le CO2 ne sort que par la $(item)face du haut$() ; pompez-le par là."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La tour de distillation ne fait rien$()$(br)Le nombre de $(item)sorties de distillation doit égaler le nombre de produits$() de la recette, avec un tuyau industriel entre chaque sortie. La cuve en acier doit être au moins $(item)deux fois plus haute$() que le nombre de sorties, et $(item)large de 2$() au-delà de 3 sorties. Chauffez-la par en dessous."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le chevalet de pompage indique Machine invalide$()$(br)La base de pompe regarde droit vers le bas, à la recherche du gisement, à travers une colonne continue de $(item)tuyaux industriels$(). Tout autre bloc dans la colonne, ou une colonne qui manque le gisement, la rend invalide. Trouvez d'abord le gisement avec le scanner de surface, puis descendez tout droit jusqu'à lui."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_output,tfmg:coke_oven,tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:industrial_pipe,tfmg:pumpjack_base,tfmg:surface_scanner",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Ciment et béton",
+  "icon": "tfmg:cement",
+  "category": "tfmg:first_materials",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le béton est le matériau de construction solide de TFMG, et chaque étape se fait au malaxeur mécanique au-dessus d'un bassin, sans chaleur. 1. $(item)Ciment$() : 1 boule d'argile + 1 sable calcaire donnent $(item)4 ciments$(). 2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Mélange à béton$() : 1 sable + 1 ciment + 1 gravier donnent $(item)16 mélanges à béton$(). Avec du $(item)laitier$() du haut fourneau à la place du sable, vous en obtenez $(item)32$(). 3. $(item)Béton liquide$() : 1 mélange à béton + 250 mB d'eau donnent $(item)1000 mB de béton liquide$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le faire prendre$()$(li)Versez le béton liquide dans le monde, au seau ou par un tuyau : il $(item)durcit en blocs de béton$() au bout d'un moment.$(li)Dans un $(item)bassin de coulée$(), 144 mB de béton liquide coulent un $(item)parpaing$().$(li)8 blocs de béton autour d'une teinture donnent 8 bétons colorés."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le ciment est aussi un bloc soumis à la gravité, comme le sable, si vous le posez."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cement,tfmg:concrete_mixture,tfmg:slag,tfmg:liquid_concrete_bucket,tfmg:concrete,tfmg:cinderblock,tfmg:limesand",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

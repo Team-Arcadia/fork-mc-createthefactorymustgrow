@@ -1,0 +1,30 @@
+{
+  "name": "Lire une cuve avec les lunettes",
+  "icon": "create:goggles",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Regardez n'importe quel bloc d'une cuve avec les $(item)lunettes d'ingénieur$(). Vous voyez les barres de pression et de chaleur, le contenu, puis la liste des $(item)modules$() : chaque machine que la cuve a comptée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quand la cuve reste inactive, une ligne rouge vous dit pourquoi : $(li)**Une machine attachée ne fonctionne pas : aucune recette ne peut tourner.** Trouvez la machine trop lente ou sans courant. $(li)**Aucune recette ne correspond : vérifiez taille, type de cuve et machines dans JEI.** Les ingrédients sont là mais rien ne convient :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "mauvaise sorte de cuve, trop petite, ou machine manquante. $(li)$(item)Pas assez chaud pour cette recette.$() Ajoutez ou allumez un foyer sous la cuve, ou retirez un congélateur. $(li)$(item)Pression trop faible pour cette recette.$() Ajoutez un compresseur, faites-le tourner au-delà de 120 RPM, ou inversez-le."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Si une machine n'apparaît pas du tout dans les modules, elle est mal placée (hors de l'emprise, ou mélangeur décentré sur une 3x3), ou elle n'a ni pale ni électrode."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:industrial_mixer,tfmg:electrode_holder",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

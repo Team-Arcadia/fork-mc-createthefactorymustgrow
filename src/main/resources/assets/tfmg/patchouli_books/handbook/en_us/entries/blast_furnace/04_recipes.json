@@ -1,0 +1,26 @@
+{
+  "name": "Recipes",
+  "icon": "create:crushed_raw_iron",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Every recipe needs fuel and draws $(item)20 mB of hot air per tick$() while it works. Base times are for a short furnace; see the next page for height.$(br2)$(l)Crushed raw iron + 1 limesand$()$(br)$(item)144 mB$() molten steel, 144 mB slag, furnace gas. Base 400 ticks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Raw iron + 1 limesand$()$(br)$(item)288 mB$() molten steel, 288 mB slag, furnace gas. Base 800 ticks: same speed per ingot, but crushing the ore first lets you use Create's ore processing.$(br2)$(l)Iron dust + 1 limesand$()$(br)Only when another mod adds iron dust: 144 mB steel and slag. Base 400 ticks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Quartz$()$(br)$(item)40 mB liquid silicon$(), no flux. Base 100 ticks. Cast it into silicon ingots.$(br2)The two output tanks hold $(item)4000 mB$() each and only accept the fluid already in them. Pump them empty before switching from steel to silicon, or the furnace will wait."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:crushed_raw_iron,minecraft:raw_iron,minecraft:quartz,tfmg:limesand,tfmg:molten_steel_bucket,tfmg:molten_slag_bucket,tfmg:liquid_silicon_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

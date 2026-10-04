@@ -1,0 +1,79 @@
+{
+  "name": "The reinforced furnace",
+  "icon": "tfmg:blast_furnace_reinforcement",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A furnace built $(item)entirely from reinforced blocks$() works twice as fast.$(br2)$(li)$(item)Corners$(): Blast Furnace Reinforcement (rusted works too) or Blocks of Steel.$(li)$(item)Edges$(): Reinforced Fireproof Bricks or Blocks of Steel. The hatch counts as reinforced."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Making reinforced bricks$()$(br)Build the edge as Fireproof Bricks, then place a $(item)Blast Furnace Reinforcement against its outer face$(). It becomes a thin plate and turns the brick behind it into Reinforced Fireproof Bricks. Removing the plate turns it back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Because of that, a reinforcement placed against the side of a fireproof brick always becomes a plate. Place the $(item)corner$() blocks first, or on top of the corner below, never by clicking a neighbouring brick.$(br2)One regular block anywhere in the walls makes the whole furnace regular. The output and the bottom centre do not count. The goggles show $(item)Reinforced$() when it worked."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The block list under the view skips the bricks and plates: add 10 Fireproof Bricks and 10 Blast Furnace Reinforcements."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "The reinforced furnace",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "  H  ",
+            "     ",
+            "     "
+          ],
+          [
+            "  n  ",
+            " RBR ",
+            "wB Be",
+            " RBR ",
+            "  s  "
+          ],
+          [
+            "  n  ",
+            " RBR ",
+            " H Be",
+            " RBR ",
+            "  s  "
+          ],
+          [
+            "  n  ",
+            " RBR ",
+            "wB0Be",
+            " ROR ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "R": "tfmg:blast_furnace_reinforcement",
+          "B": "tfmg:reinforced_fireproof_bricks",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "n": "tfmg:blast_furnace_reinforcement_wall[facing=north]",
+          "s": "tfmg:blast_furnace_reinforcement_wall[facing=south]",
+          "e": "tfmg:blast_furnace_reinforcement_wall[facing=east]",
+          "w": "tfmg:blast_furnace_reinforcement_wall[facing=west]",
+          "0": "tfmg:fireproof_bricks"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_reinforcement,tfmg:rusted_blast_furnace_reinforcement,tfmg:fireproof_bricks,tfmg:steel_block,tfmg:heavy_plate",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

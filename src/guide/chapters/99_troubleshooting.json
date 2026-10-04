@@ -1,0 +1,421 @@
+{
+  "order": 990,
+  "icon": "create:goggles",
+  "title": {
+    "en_us": "Troubleshooting",
+    "fr_fr": "Dépannage"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "When a machine stops",
+        "fr_fr": "Quand une machine s'arrête"
+      },
+      "text": {
+        "en_us": [
+          "Most TFMG machines never stop without a reason, and they tell you the reason. You have two ways to ask.",
+          "",
+          "## Engineer's Goggles",
+          "Look at the machine. Under its tanks and progress, a **red line** names what stops it. The next pages list every one of these lines, what it means and how to fix it.",
+          "",
+          "## Factory Inspector",
+          "Right-click a machine with the **Factory Inspector** for a full report: what is in place (green), what blocks the machine (red) and what to do about it (gold). Right-click the air instead for a **progression checklist**: how far you are along the mod's production chain and what the next step needs.",
+          "",
+          "## Also check",
+          "- The **JEI info pages**: look up a machine in JEI to read how it is built and fed.",
+          "- The chapters of this handbook, to compare with what you built.",
+          "",
+          "One general line exists for every machine with an output tank: **Output tank full: pump the result out**. Pipe the product away and the machine resumes by itself."
+        ],
+        "fr_fr": [
+          "La plupart des machines de TFMG ne s'arrêtent jamais sans raison, et elles vous disent laquelle. Vous avez deux façons de demander.",
+          "",
+          "## Lunettes d'ingénieur",
+          "Regardez la machine. Sous ses réservoirs et sa progression, une **ligne rouge** nomme ce qui la bloque. Les pages suivantes listent chacune de ces lignes, ce qu'elle signifie et comment y remédier.",
+          "",
+          "## Inspecteur d'usine",
+          "Un clic droit sur une machine avec l'**inspecteur d'usine** donne un rapport complet : ce qui est en place (vert), ce qui bloque la machine (rouge) et quoi faire (doré). Un clic droit dans le vide donne une **liste de progression** : où vous en êtes dans la chaîne de production du mod et ce que demande l'étape suivante.",
+          "",
+          "## À vérifier aussi",
+          "- Les **pages d'info JEI** : cherchez une machine dans JEI pour lire comment la construire et l'alimenter.",
+          "- Les chapitres de ce manuel, à comparer avec votre construction.",
+          "",
+          "Une ligne générale existe pour toute machine avec un réservoir de sortie : **Réservoir de sortie plein : pompez le résultat**. Évacuez le produit par tuyau et la machine repart seule."
+        ]
+      },
+      "items": [
+        "create:goggles",
+        "tfmg:factory_inspector",
+        "tfmg:factory_guide"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Blast furnace lines",
+        "fr_fr": "Lignes du haut fourneau"
+      },
+      "text": {
+        "en_us": [
+          "Read on the **Blast Furnace Output**:",
+          "",
+          "- **Structure incomplete: at least 3 full layers needed**: the tower is shorter than 3 complete layers, so it does nothing at all. Check every layer against the JEI info page: fireproof bricks on the edges, reinforcements on the corners, a fireproof brick in the bottom centre.",
+          "- **No fuel: add Coal Coke Dust**: crush coal coke and drop the dust in the top of the shaft or funnel it into the output.",
+          "- **No flux: add Limesand**.",
+          "- **No Blast Furnace Hatch in the walls for hot air**: one wall brick must be a Blast Furnace Hatch.",
+          "- **The hatch holds no Hot Air**: pipe hot air from a blast stove into that hatch.",
+          "- **Output tank full: pump the result out**: pump the molten metal and the slag out of the output; it needs room for 144 mB in each tank.",
+          "",
+          "The fuel, flux and hot air lines only appear while ore is waiting inside, so an empty furnace looks calm."
+        ],
+        "fr_fr": [
+          "À lire sur la **sortie de haut fourneau** :",
+          "",
+          "- **Structure incomplète : au moins 3 couches complètes** : la tour fait moins de 3 couches complètes, elle ne fait donc rien. Comparez chaque couche à la page d'info JEI : briques réfractaires sur les côtés, renforts aux coins, une brique réfractaire au centre de la couche du bas.",
+          "- **Pas de combustible : ajoutez de la poussière de coke** : broyez du coke et versez la poussière par le haut du puits, ou par entonnoir dans la sortie.",
+          "- **Pas de fondant : ajoutez du sable calcaire**.",
+          "- **Aucune trappe de haut fourneau dans les murs pour l'air chaud** : une brique du mur doit être une trappe de haut fourneau.",
+          "- **La trappe ne contient pas d'air chaud** : amenez l'air chaud d'un fourneau à air chaud dans cette trappe.",
+          "- **Réservoir de sortie plein : pompez le résultat** : pompez le métal en fusion et le laitier hors de la sortie ; il faut de la place pour 144 mB dans chaque réservoir.",
+          "",
+          "Les lignes de combustible, de fondant et d'air chaud n'apparaissent que si du minerai attend dedans : un fourneau vide paraît calme."
+        ]
+      },
+      "items": [
+        "tfmg:blast_furnace_output",
+        "tfmg:blast_furnace_hatch",
+        "tfmg:coal_coke_dust",
+        "tfmg:limesand",
+        "tfmg:hot_air_bucket",
+        "tfmg:molten_steel_bucket"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Coke oven and firebox lines",
+        "fr_fr": "Lignes du four à coke et du foyer"
+      },
+      "text": {
+        "en_us": [
+          "## Coke oven",
+          "- **CO2 tank full: pump it out from the TOP face**: the CO2 by-product only leaves through the top of the oven. A pipe on a side will never drain it.",
+          "- **Creosote tank full: pump it out from a side**.",
+          "",
+          "Either full tank **pauses the whole oven**. Send the CO2 to an Exhaust or a smokestack, and keep the creosote for simple engines or the blast stove.",
+          "",
+          "## Firebox",
+          "- **Not enough fuel to burn**: the tank holds less than one burn's worth. Pipe more fuel in.",
+          "- **This fluid is not a firebox fuel**: fireboxes burn LPG, butane, propane, hydrogen, diesel, kerosene and naphtha. Empty the tank and change the fluid.",
+          "- **Exhaust full: pump the CO2 away**: like engines, a firebox stops when its CO2 has nowhere to go.",
+          "",
+          "A cold firebox means a cold vat or distillation tower above it, so check the firebox first when one of those slows down."
+        ],
+        "fr_fr": [
+          "## Four à coke",
+          "- **Réservoir de CO2 plein : pompez-le par la face du HAUT** : le CO2 ne sort que par le dessus du four. Un tuyau sur un côté ne le videra jamais.",
+          "- **Réservoir de créosote plein : pompez-le par un côté**.",
+          "",
+          "N'importe lequel des deux réservoirs plein **met tout le four en pause**. Envoyez le CO2 vers un échappement ou une cheminée, et gardez la créosote pour les moteurs simples ou le fourneau à air chaud.",
+          "",
+          "## Foyer",
+          "- **Pas assez de carburant pour brûler** : le réservoir contient moins qu'une combustion. Ajoutez du carburant.",
+          "- **Ce fluide n'est pas un carburant de foyer** : les foyers brûlent le GPL, le butane, le propane, l'hydrogène, le diesel, le kérosène et le naphta. Videz le réservoir et changez de fluide.",
+          "- **Échappement plein : évacuez le CO2** : comme les moteurs, un foyer s'arrête quand son CO2 n'a nulle part où aller.",
+          "",
+          "Un foyer froid signifie une cuve ou une tour de distillation froide au-dessus : vérifiez d'abord le foyer quand l'une d'elles ralentit."
+        ]
+      },
+      "items": [
+        "tfmg:coke_oven",
+        "tfmg:firebox",
+        "tfmg:exhaust",
+        "tfmg:creosote_bucket",
+        "tfmg:carbon_dioxide_bucket",
+        "tfmg:lpg_bucket"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Engine lines",
+        "fr_fr": "Lignes des moteurs"
+      },
+      "text": {
+        "en_us": [
+          "## Large engines",
+          "- **Needs a Powered Shaft 2 blocks in front**: right-click the engine with a shaft to place it at the right spot, crossing the engine's direction.",
+          "- **Needs Air in its air tank**: pipe air from an Air Intake.",
+          "- **No fuel**: pipe fuel in.",
+          "- **Unsupported fuel: use diesel, kerosene, naphtha or furnace gas**: drain the tank, then refill with one of those.",
+          "- **Exhaust full: pump the CO2 away**.",
+          "",
+          "## Small engines",
+          "- **Engine Unfinished** with **Next Component**: keep right-clicking parts in, one full set per block.",
+          "- **Pistons Missing** / **Turbines Missing**: add cylinders or turbine blades.",
+          "- Gold line **No output shaft**: right-click an end block with a shaft (regular engines only; radial and turbine engines have theirs built in).",
+          "- **Signal: 0**: no redstone, so no rotation. Power any block of the engine, or link an engine controller.",
+          "",
+          "A small engine also stops, without a line of its own, when its exhaust tank is full or its fuel is not one its cylinders accept."
+        ],
+        "fr_fr": [
+          "## Grands moteurs",
+          "- **Il faut un arbre motorisé 2 blocs devant** : un clic droit sur le moteur avec un arbre le pose au bon endroit, en travers de la direction du moteur.",
+          "- **Il faut de l'air dans son réservoir d'air** : amenez de l'air depuis une prise d'air.",
+          "- **Pas de carburant** : envoyez du carburant.",
+          "- **Carburant non pris en charge : diesel, kérosène, naphta ou gaz de haut fourneau** : videz le réservoir puis remplissez-le avec l'un d'eux.",
+          "- **Échappement plein : évacuez le CO2**.",
+          "",
+          "## Petits moteurs",
+          "- **Moteur inachevé** avec **Prochain composant** : continuez à poser les pièces, un jeu complet par bloc.",
+          "- **Pistons manquants** / **Turbines manquantes** : ajoutez des cylindres ou des pales de turbine.",
+          "- Ligne dorée **Aucun arbre de sortie** : faites un clic droit sur un bloc d'extrémité avec un arbre (moteurs ordinaires seulement ; les moteurs radial et à turbine ont le leur intégré).",
+          "- **Signal : 0** : pas de redstone, donc pas de rotation. Alimentez n'importe quel bloc du moteur, ou liez un contrôleur de moteur.",
+          "",
+          "Un petit moteur s'arrête aussi, sans ligne dédiée, quand son réservoir d'échappement est plein ou quand son carburant n'est pas accepté par ses cylindres."
+        ]
+      },
+      "items": [
+        "tfmg:large_engine",
+        "tfmg:regular_engine",
+        "create:shaft",
+        "tfmg:air_intake",
+        "tfmg:exhaust",
+        "minecraft:lever"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Chemical vat lines",
+        "fr_fr": "Lignes de la cuve chimique"
+      },
+      "text": {
+        "en_us": [
+          "- **An attached machine is not working: no recipe can run**: every machine on the vat must work, even the ones the current recipe does not use. An industrial mixer needs rotation, electrode holders need power from their top face, and every other machine must be running too. Fix it or remove it.",
+          "- **No recipe matches: check size, vat type and machines in JEI**: the inputs fit no recipe for this vat. Recipes can ask for a minimum vat size (up to 3x3), a vat type (steel, cast iron or firebrick-lined) and particular machines. JEI shows all of these on each recipe.",
+          "- **Not hot enough for this recipe**: put fireboxes or blaze burners under the vat, and feed them.",
+          "- **Pressure too low for this recipe**: the recipe needs a pressure the vat does not have. A compressor on the vat changes its pressure; JEI shows the pressure each recipe needs.",
+          "",
+          "Remember that pipes can only fill the vat's inputs and drain its outputs. The arc furnace is a firebrick-lined vat of at least 3x3 with three powered electrode holders on top."
+        ],
+        "fr_fr": [
+          "- **Une machine attachée ne fonctionne pas : aucune recette ne peut tourner** : toutes les machines de la cuve doivent fonctionner, même celles que la recette en cours n'utilise pas. Un mélangeur industriel a besoin de rotation, les porte-électrodes de courant par leur face du haut, et toute autre machine doit tourner aussi. Réparez-la ou retirez-la.",
+          "- **Aucune recette ne correspond : vérifiez taille, type de cuve et machines dans JEI** : les entrées ne correspondent à aucune recette de cette cuve. Une recette peut exiger une taille minimale (jusqu'à 3x3), un type de cuve (acier, fonte ou revêtement réfractaire) et des machines précises. JEI les affiche sur chaque recette.",
+          "- **Pas assez chaud pour cette recette** : placez des foyers ou des brûleurs à blaze sous la cuve, et alimentez-les.",
+          "- **Pression trop faible pour cette recette** : la recette demande une pression que la cuve n'a pas. Un compresseur sur la cuve change sa pression ; JEI indique la pression demandée par chaque recette.",
+          "",
+          "Les tuyaux ne peuvent que remplir les entrées de la cuve et vider ses sorties. Le four à arc est une cuve à revêtement réfractaire d'au moins 3x3 avec trois porte-électrodes alimentés dessus."
+        ]
+      },
+      "items": [
+        "tfmg:steel_chemical_vat",
+        "tfmg:industrial_mixer",
+        "tfmg:electrode_holder",
+        "tfmg:compressor",
+        "tfmg:freezer",
+        "tfmg:firebox"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Common issues: rotation and power",
+        "fr_fr": "Problèmes courants : rotation et courant"
+      },
+      "text": {
+        "en_us": [
+          "## A machine does not turn",
+          "Look at its shaft with goggles. No speed means nothing reaches it: check every shaft and cogwheel on the way. If the network is **overstressed**, everything on it stops: add a source or remove consumers. Some machines also need a minimum speed: a single air intake needs 40 RPM, the surface scanner 64 RPM.",
+          "",
+          "## A vat attachment does nothing",
+          "See the vat page: one stopped machine on a vat blocks every recipe, so give it rotation or power, or take it off.",
+          "",
+          "## Electricity destroys blocks",
+          "Every electrical block has a **maximum voltage** (1000 V for most of them) and some have a maximum current. Above it for a moment, the block **is destroyed and drops nothing**. The goggles and the multimeter warn first with **Approaching Overvoltage** or **Approaching Overcurrent** at 80% of the limit. Lower the voltage with a transformer or a resistor before it reaches small machines, and use cables rated for the current."
+        ],
+        "fr_fr": [
+          "## Une machine ne tourne pas",
+          "Regardez son arbre avec les lunettes. Aucune vitesse veut dire que rien n'arrive : vérifiez chaque arbre et engrenage sur le chemin. Si le réseau est **en surcharge**, tout s'arrête : ajoutez une source ou retirez des consommateurs. Certaines machines demandent aussi une vitesse minimale : une prise d'air seule demande 40 RPM, le scanner de surface 64 RPM.",
+          "",
+          "## Un accessoire de cuve ne fait rien",
+          "Voir la page de la cuve : une seule machine arrêtée sur une cuve bloque toutes les recettes, donnez-lui de la rotation ou du courant, ou retirez-la.",
+          "",
+          "## L'électricité détruit des blocs",
+          "Chaque bloc électrique a une **tension maximale** (1000 V pour la plupart) et certains une intensité maximale. Au-delà pendant un instant, le bloc **est détruit sans rien laisser tomber**. Les lunettes et le multimètre préviennent d'abord avec **Surtension imminente** ou **Surintensité imminente** à 80 % de la limite. Abaissez la tension avec un transformateur ou une résistance avant les petites machines, et utilisez des câbles adaptés à l'intensité."
+        ]
+      },
+      "items": [
+        "create:goggles",
+        "tfmg:multimeter",
+        "tfmg:transformer",
+        "tfmg:resistor",
+        "tfmg:air_intake",
+        "tfmg:surface_scanner"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Common issues: structures",
+        "fr_fr": "Problèmes courants : structures"
+      },
+      "text": {
+        "en_us": [
+          "## Blast furnace does nothing",
+          "Below **3 full layers** it does nothing at all. The goggles show its height: a missing corner or edge brick shortens it.",
+          "",
+          "## Coke oven paused",
+          "Its CO2 tank is full. CO2 only leaves through the **top face**; pipe it from there.",
+          "",
+          "## Distillation tower does nothing",
+          "The number of **Distillation Outputs must equal the number of products** of the recipe, with an Industrial Pipe between each output. The steel tank must be at least **twice as tall** as the number of outputs, and **2 wide** when there are more than 3 outputs. Heat it from below.",
+          "",
+          "## Pumpjack says Machine Invalid",
+          "The Pumpjack Base looks straight down for the oil deposit through an unbroken column of **Industrial Pipes**. Any other block in the column, or a column that misses the deposit, makes it invalid. Find the deposit with the surface scanner first, then pipe straight down to it."
+        ],
+        "fr_fr": [
+          "## Le haut fourneau ne fait rien",
+          "Sous **3 couches complètes**, il ne fait rien du tout. Les lunettes affichent sa hauteur : un coin ou un bord manquant la réduit.",
+          "",
+          "## Le four à coke est en pause",
+          "Son réservoir de CO2 est plein. Le CO2 ne sort que par la **face du haut** ; pompez-le par là.",
+          "",
+          "## La tour de distillation ne fait rien",
+          "Le nombre de **sorties de distillation doit égaler le nombre de produits** de la recette, avec un tuyau industriel entre chaque sortie. La cuve en acier doit être au moins **deux fois plus haute** que le nombre de sorties, et **large de 2** au-delà de 3 sorties. Chauffez-la par en dessous.",
+          "",
+          "## Le chevalet de pompage indique Machine invalide",
+          "La base de pompe regarde droit vers le bas, à la recherche du gisement, à travers une colonne continue de **tuyaux industriels**. Tout autre bloc dans la colonne, ou une colonne qui manque le gisement, la rend invalide. Trouvez d'abord le gisement avec le scanner de surface, puis descendez tout droit jusqu'à lui."
+        ]
+      },
+      "items": [
+        "tfmg:blast_furnace_output",
+        "tfmg:coke_oven",
+        "tfmg:steel_distillation_controller",
+        "tfmg:steel_distillation_output",
+        "tfmg:industrial_pipe",
+        "tfmg:pumpjack_base",
+        "tfmg:surface_scanner"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Common issues: engines",
+        "fr_fr": "Problèmes courants : moteurs"
+      },
+      "text": {
+        "en_us": [
+          "## Built, fuelled, but nothing turns",
+          "- **No redstone signal**: a small engine never runs on fuel alone. Signal 0 means 0 RPM. Put a lever or any redstone source against any block of it.",
+          "- **Exhaust full**: the engine filled its 8000 mB CO2 tank and stopped. Pump the CO2 into an Exhaust block.",
+          "- **Wrong fuel**: the fuel must be in the list on the cylinders' tooltip.",
+          "- **No output shaft**: a regular engine needs a shaft clicked onto an end block.",
+          "",
+          "## Engine with a controller ignores redstone",
+          "That is expected: a linked transmission hands control to the engine controller. Start the engine with the start key, or take the transmission off with a wrench.",
+          "",
+          "## Engine row splits",
+          "Blocks only join when they are the same block, face the same way and share the same type, up to 5 blocks by default. A sixth block starts a new engine.",
+          "",
+          "## Upgrade refused",
+          "Each block takes one upgrade, and the same upgrade only once per engine."
+        ],
+        "fr_fr": [
+          "## Construit, alimenté, mais rien ne tourne",
+          "- **Pas de signal de redstone** : un petit moteur ne tourne jamais au seul carburant. Un signal de 0 donne 0 RPM. Posez un levier ou toute source de redstone contre n'importe lequel de ses blocs.",
+          "- **Échappement plein** : le moteur a rempli son réservoir de CO2 de 8000 mB et s'est arrêté. Pompez le CO2 vers un bloc Échappement.",
+          "- **Mauvais carburant** : le carburant doit figurer dans la liste de l'infobulle des cylindres.",
+          "- **Aucun arbre de sortie** : un moteur ordinaire a besoin d'un arbre posé sur un bloc d'extrémité.",
+          "",
+          "## Un moteur avec contrôleur ignore la redstone",
+          "C'est normal : une transmission liée confie la commande au contrôleur de moteur. Démarrez le moteur avec la touche de démarrage, ou retirez la transmission avec une clé.",
+          "",
+          "## La rangée de moteurs se coupe",
+          "Les blocs ne s'assemblent que s'ils sont du même modèle, orientés pareil et du même type, jusqu'à 5 blocs par défaut. Un sixième bloc commence un nouveau moteur.",
+          "",
+          "## Amélioration refusée",
+          "Chaque bloc prend une amélioration, et une même amélioration une seule fois par moteur."
+        ]
+      },
+      "items": [
+        "tfmg:regular_engine",
+        "minecraft:lever",
+        "tfmg:exhaust",
+        "tfmg:transmission",
+        "tfmg:engine_controller",
+        "create:wrench"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "What changed in 1.3.0: machines",
+        "fr_fr": "Nouveautés de la 1.3.0 : machines"
+      },
+      "text": {
+        "en_us": [
+          "- **Chemical vat**: breaking the controller drops its items, and a vat absorbed when you build a bigger one hands its items and fluids over instead of losing them.",
+          "- **Arc furnace**: JEI now shows that coal coke dust is a **catalyst** that returns to the vat input, with only about 10% used per batch. This was the cause of the \"nothing is produced\" reports.",
+          "- **Blast furnace**: the hatch keeps its items, and the furnace saves its fuel and gives it back when broken.",
+          "- **Casting basin**: take the cast ingot out **with an empty hand**, no funnel needed.",
+          "- **Flamethrower**: only fuel that really leaves a tank is credited, so it can no longer refuel for free from an engine.",
+          "- **Piping upgrade**: never voids fuel any more and moves only what the engine accepts.",
+          "- **Large engine**: the goggles now explain why it is idle.",
+          "",
+          "## New recipes",
+          "- A **Magnet by hand**: a magnetic alloy ingot, 3 redstone blocks and a compass, for the first magnet before you own a polarizer.",
+          "- **Aluminium from a superheated mixer**: 4 bauxite powder and 1 coal coke dust give an aluminium ingot, to get started before electrolysis."
+        ],
+        "fr_fr": [
+          "- **Cuve chimique** : casser le contrôleur rend ses objets, et une cuve absorbée quand vous en construisez une plus grande lui transmet ses objets et ses fluides au lieu de les perdre.",
+          "- **Four à arc** : JEI montre désormais que la poussière de coke est un **catalyseur** qui retourne à l'entrée de la cuve, dont seuls 10 % environ sont consommés par fournée. C'était la cause des signalements « rien n'est produit ».",
+          "- **Haut fourneau** : la trappe garde ses objets, et le fourneau sauvegarde son combustible et le rend quand on le casse.",
+          "- **Bassin de coulée** : récupérez le lingot coulé **à main nue**, sans entonnoir.",
+          "- **Lance-flammes** : seul le carburant qui sort vraiment d'un réservoir est crédité, il ne se remplit plus gratuitement sur un moteur.",
+          "- **Amélioration tuyauterie** : ne fait plus disparaître de carburant et ne transfère que ce que le moteur accepte.",
+          "- **Grand moteur** : les lunettes expliquent maintenant pourquoi il est à l'arrêt.",
+          "",
+          "## Nouvelles recettes",
+          "- Un **aimant à la main** : un lingot d'alliage magnétique, 3 blocs de redstone et une boussole, pour le premier aimant avant d'avoir un polariseur.",
+          "- **De l'aluminium au mélangeur surchauffé** : 4 poudres de bauxite et 1 poussière de coke donnent un lingot d'aluminium, pour démarrer avant l'électrolyse."
+        ]
+      },
+      "items": [
+        "tfmg:steel_chemical_vat",
+        "tfmg:casting_basin",
+        "tfmg:blast_furnace_hatch",
+        "tfmg:magnet",
+        "tfmg:bauxite_powder",
+        "tfmg:aluminum_ingot",
+        "create:mechanical_mixer",
+        "create:blaze_burner"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "What changed in 1.3.0: help",
+        "fr_fr": "Nouveautés de la 1.3.0 : aide"
+      },
+      "text": {
+        "en_us": [
+          "1.3.0 puts a lot of effort into telling you what is going on.",
+          "",
+          "- **Goggle problem lines**: the blast furnace, coke oven, firebox, chemical vat and engines now show a red line naming whatever stops them, and the large engine and the blast furnace finally say why they are idle. All of them are listed in this chapter.",
+          "- **JEI info pages**: the blast furnace, blast stove, air intake, coke oven, casting basin, arc furnace, chemical vat, distillation tower, firebox, surface scanner, large generator and coal coke dust have an information page in JEI explaining how to build and feed them.",
+          "- **Factory Inspector**: a new tool. Right-click a machine for a report of what works, what blocks it and what to do; right-click the air for a progression checklist and your next step.",
+          "- **The Factory Handbook**: this book, with a chapter for each stage of the mod, from the first ores to engines and weapons.",
+          "",
+          "If a machine still stops without a word, check it with the Factory Inspector, then report it as a bug."
+        ],
+        "fr_fr": [
+          "La 1.3.0 met beaucoup d'efforts à vous dire ce qui se passe.",
+          "",
+          "- **Lignes de problème des lunettes** : le haut fourneau, le four à coke, le foyer, la cuve chimique et les moteurs affichent une ligne rouge qui nomme ce qui les bloque, et le grand moteur et le haut fourneau disent enfin pourquoi ils sont à l'arrêt. Toutes sont listées dans ce chapitre.",
+          "- **Pages d'info JEI** : le haut fourneau, le fourneau à air chaud, la prise d'air, le four à coke, le bassin de coulée, le four à arc, la cuve chimique, la tour de distillation, le foyer, le scanner de surface, le grand générateur et la poussière de coke ont une page d'information dans JEI qui explique comment les construire et les alimenter.",
+          "- **Inspecteur d'usine** : un nouvel outil. Un clic droit sur une machine donne un rapport de ce qui marche, de ce qui la bloque et de quoi faire ; un clic droit dans le vide donne une liste de progression et votre prochaine étape.",
+          "- **Le Manuel de l'Usine** : ce livre, avec un chapitre par étape du mod, des premiers minerais aux moteurs et aux armes.",
+          "",
+          "Si une machine s'arrête encore sans un mot, passez-la à l'inspecteur d'usine, puis signalez-la comme bug."
+        ]
+      },
+      "items": [
+        "create:goggles",
+        "tfmg:factory_inspector",
+        "tfmg:factory_guide"
+      ]
+    }
+  ]
+}

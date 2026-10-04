@@ -1,0 +1,30 @@
+{
+  "name": "Les surcharges détruisent les blocs",
+  "icon": "tfmg:multimeter",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Chaque bloc électrique a une $(item)tension maximale$(), $(item)1 000 V$() par défaut, et certains ont aussi un $(item)courant maximal$(). Tant qu'un bloc dépasse sa limite, un compteur de dégâts monte toutes les demi-secondes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Après quelques secondes de surcharge, et même de courtes surcharges comptent, le bloc est $(item)détruit sans rien laisser tomber$(). Il est perdu pour de bon.$(br2)Un multimètre affiche un avertissement rouge dès qu'un bloc atteint $(item)80 %$() d'une limite. Vérifiez vos nouvelles installations avant de les laisser tourner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Blocs à tension maximale plus élevée$()$(li)Concentrateurs de câbles : 5 000 V$(li)Tubes de câble, poteaux, stators et rotor du grand générateur : 10 000 V$(li)Isolateurs, câbles diagonaux, grand interrupteur et grand transformateur : 100 000 V"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Limites de courant$()$(li)Lampes et tubes néon : 1 A$(li)Diode, interrupteur, potentiomètre et transformateur : 100 A$(li)Congélateur et porte-électrode : 400 A$(li)Grand transformateur : 500 A, grand interrupteur : 1 000 A$(br2)Un grand générateur peut dépasser largement 1 000 V. Abaissez sa tension avant qu'elle n'atteigne des machines ordinaires."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:multimeter,tfmg:copper_cable_hub,tfmg:cable_tube,tfmg:cable_connector,tfmg:light_bulb,tfmg:transformer,tfmg:large_coil",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

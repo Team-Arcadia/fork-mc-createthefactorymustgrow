@@ -1,0 +1,20 @@
+{
+  "order": 20004,
+  "name": {
+    "en_us": "Output shaft and long engines",
+    "fr_fr": "Arbre de sortie et moteurs longs"
+  },
+  "layers": [
+    [
+      "S",
+      "F",
+      "E",
+      "E"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z]",
+    "F": "tfmg:regular_engine[facing=north,engine_state=front,shaft_facing=north,extended=true]",
+    "E": "tfmg:regular_engine[facing=north,engine_state=normal,shaft_facing=south,extended=true]"
+  }
+}

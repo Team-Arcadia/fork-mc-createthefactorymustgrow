@@ -1,0 +1,26 @@
+{
+  "name": "Polariseur",
+  "icon": "tfmg:polarizer",
+  "category": "tfmg:electric_machines",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le polariseur aimante les objets. Son rôle principal est de transformer les $(item)lingots d'alliage magnétique$() en $(item)aimants$(), un à la fois. Clic droit avec un objet pour l'insérer, main vide pour le reprendre, ou alimentez-le avec des entonnoirs et des glissières."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Alimentation$()$(li)Il se connecte par sa face $(item)arrière$().$(li)Pendant le travail, c'est un consommateur de $(item)30 ohms$() qui demande au moins $(item)2 000 W$(), soit environ $(item)245 V$() ou plus.$(li)Un seul générateur y arrive au-dessus de 215 tr/min environ.$(br2)En dessous de 2 000 W, les lunettes affichent une ligne rouge de puissance insuffisante et la charge n'avance pas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Cycle$()$(br)Il se charge pendant $(item)10 secondes$(), puis l'objet est converti dans une gerbe d'étincelles. Son infobulle aux lunettes affiche la charge.$(br2)Avant d'avoir un polariseur, voyez $(item)Le premier aimant$() dans le chapitre $(item)Produire de l'électricité$() pour la recette à la main."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:polarizer,tfmg:magnetic_alloy_ingot,tfmg:magnet,tfmg:generator,create:goggles",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

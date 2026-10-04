@@ -1,0 +1,30 @@
+{
+  "name": "Asphalt",
+  "icon": "tfmg:heavy_oil_bucket",
+  "category": "tfmg:construction",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Asphalt makes dark, clean roads and floors. It is made from the heaviest part of crude oil."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Bitumen$()$(br)In a mechanical press over a $(item)heated$() basin, $(item)1000 mB of heavy oil$() compacts into one $(item)bitumen$(). A burning firebox or a lit blaze burner under the basin is enough.$(br2)$(l)Asphalt mixture$()$(br)In a mixer: $(item)sand + bitumen + gravel$() gives $(item)16 asphalt mixture$(). With $(item)slag$() instead of sand, you get $(item)32$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Liquid asphalt$()$(br)$(item)Asphalt mixture + 250 mB water$() gives $(item)1000 mB liquid asphalt$(), in a Create mixer or in a chemical vat with an industrial mixer.$(br2)$(l)Laying it$()$(br)Pour liquid asphalt like liquid concrete: it $(item)hardens into asphalt blocks$() after a short random delay. Spread it with a bucket for small paths, or with a Create hose pulley for long roads."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In a stonecutter, one asphalt block gives $(item)2 slabs$(), or stairs, or a wall, for kerbs and ramps.$(br2)One bitumen becomes 16 to 32 blocks of road, so a single heavy oil tank goes a long way."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:heavy_oil_bucket,tfmg:bitumen,tfmg:asphalt_mixture,tfmg:liquid_asphalt_bucket,tfmg:asphalt,tfmg:asphalt_slab,create:mechanical_press,create:basin",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

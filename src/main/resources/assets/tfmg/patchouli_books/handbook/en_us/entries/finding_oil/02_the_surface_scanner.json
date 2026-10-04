@@ -1,0 +1,57 @@
+{
+  "name": "The surface scanner",
+  "icon": "tfmg:surface_scanner",
+  "category": "tfmg:finding_oil",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)surface scanner$() tells you which chunks around you contain oil, without digging."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Place a $(item)Machine Input$() and put the scanner $(item)directly on top$() of it.$(li)Feed the machine input rotation through its shaft side. It must turn at $(item)64 RPM or more$(), in either direction."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Once a second, the scanner checks a $(item)5 x 5 grid of chunks$() centred on its own chunk. The 25 cells on its top light up for every chunk that holds an oil deposit or crude oil anywhere between the bottom of the world and Y 64. Press $(item)F3 + G$() to see chunk borders and match the cells to the ground."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Look at it with $(item)Engineer's Goggles$():$(li)$(item)Not Enough Rotation (Needs 64rpm)$(): the input is missing or too slow.$(li)$(item)No Deposits Found$(): nothing in the 25 chunks, move on.$(li)$(item)N Chunks With Oil Deposits Found$(): go to a lit chunk and dig."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "To sweep a large area, break the scanner and its input, walk five chunks, and set them up again: each new spot covers 25 fresh chunks."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "The surface scanner",
+      "multiblock": {
+        "pattern": [
+          [
+            " ",
+            "U"
+          ],
+          [
+            "S",
+            "0"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "U": "tfmg:surface_scanner",
+          "0": "tfmg:machine_input[facing=north]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:surface_scanner,tfmg:machine_input,create:shaft,create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

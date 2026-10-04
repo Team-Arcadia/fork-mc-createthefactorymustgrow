@@ -3,6 +3,8 @@ package com.drmangotea.tfmg.content.electricity.utilities.converter;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.electricity.base.ElectricBlockEntity;
 import com.drmangotea.tfmg.content.electricity.base.IElectric;
 import com.drmangotea.tfmg.content.electricity.base.IVoltageSource;
@@ -32,7 +34,7 @@ import static com.drmangotea.tfmg.content.electricity.utilities.converter.Conver
 import static com.simibubi.create.content.kinetics.base.HorizontalKineticBlock.HORIZONTAL_FACING;
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
-public class ConverterBlockEntity extends ElectricBlockEntity implements IVoltageSource {
+public class ConverterBlockEntity extends ElectricBlockEntity implements IVoltageSource, IInspectable {
 
     public final TFMGForgeEnergyStorage energy = createEnergyStorage();
     private IEnergyStorage energyCapability;
@@ -258,6 +260,44 @@ public class ConverterBlockEntity extends ElectricBlockEntity implements IVoltag
         TFMGTexts.electricalMaxCapacity(getMaxCapacity()).forGoggles(tooltip, 1);
 
         return true;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        Component tfmgSide = Component.translatable("tfmg.inspector.dir." + getBlockState().getValue(FACING).getClockWise().getName());
+        report.info("converter.stored", energy.getEnergyStored(), getMaxCapacity());
+        if (isInput()) {
+            report.info("converter.mode_input", tfmgSide);
+            int minimum = TFMGConfigs.common().machines.accumulatorVoltage.get();
+            int voltage = getData().getVoltage();
+            if (energy.getEnergyStored() >= getMaxCapacity()) {
+                report.ok("converter.full");
+            } else if (voltage <= minimum) {
+                report.problem("converter.voltage_low", voltage, minimum + 1);
+                report.fix("converter.voltage_low.fix", minimum + 1);
+            } else if (voltage < voltageGenerated.getValue()) {
+                report.problem("converter.dial_high", voltage, voltageGenerated.getValue());
+                report.fix("converter.dial_high.fix", voltage);
+            } else if (data.notEnoughPower) {
+                report.problem("converter.no_spare_power");
+            } else {
+                report.ok("converter.charging", getChargingRate());
+            }
+        } else {
+            report.info("converter.mode_output", tfmgSide, voltageGenerated.getValue());
+            if (timer > 0) {
+                report.problem("converter.cooldown", (timer + 19) / 20);
+                report.fix("converter.no_fe.fix");
+            } else if (energy.getEnergyStored() <= 0) {
+                report.problem("converter.no_fe");
+                report.fix("converter.no_fe.fix");
+            } else if (canPower()) {
+                report.ok("converter.supplying", voltageGenerated.getValue());
+            } else {
+                report.info("converter.no_load");
+            }
+        }
+        report.fix("converter.mode.fix");
     }
 
     public int getMaxCapacity() {

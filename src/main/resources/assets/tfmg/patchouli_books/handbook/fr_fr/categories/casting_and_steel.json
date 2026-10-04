@@ -1,0 +1,6 @@
+{
+  "name": "Coulée et pièces en acier",
+  "description": "Le bassin de coulée transforme une matière en fusion en objets solides. Envoyez-y le fluide par n'importe quelle face ; il contient 1000 mB.",
+  "icon": "tfmg:steel_ingot",
+  "sortnum": 60
+}

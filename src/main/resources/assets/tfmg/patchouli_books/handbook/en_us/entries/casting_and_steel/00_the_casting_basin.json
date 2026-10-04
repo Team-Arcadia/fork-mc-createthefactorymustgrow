@@ -1,0 +1,26 @@
+{
+  "name": "The casting basin",
+  "icon": "tfmg:casting_basin",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The casting basin turns molten material into solid items. Pipe the fluid into it from any face; it holds $(item)1000 mB$(). $(l)How a cast works - Once the basin holds enough fluid for a recipe, it starts counting.$() $(li)For steel:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)144 mB$() and $(item)200 ticks$() (10 s) make $(item)one steel ingot$(). $(li)The ingot stays in the basin. The basin holds $(item)one item$() and does not start the next cast until it is taken out.$(br2)$(l)Taking the result$()$(li)By hand: $(item)right-click with an empty hand$().$(li)Automatically: a $(item)funnel$() or a $(item)hopper$() pulls it out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The basin $(item)refuses inserted items$(): it only takes fluids, so a funnel next to it only ever extracts.$(br2)The tank takes any fluid. Fluid with no casting recipe just sits there, so keep each basin on a clean line."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:casting_basin,tfmg:molten_steel_bucket,tfmg:steel_ingot,create:andesite_funnel,minecraft:hopper",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

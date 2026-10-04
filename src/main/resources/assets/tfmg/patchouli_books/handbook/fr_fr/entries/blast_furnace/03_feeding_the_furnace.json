@@ -1,0 +1,30 @@
+{
+  "name": "Alimenter le haut fourneau",
+  "icon": "create:andesite_funnel",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Il y a trois entrées, et le fourneau trie ce qu'il reçoit : la poussière de coke va au combustible, le sable calcaire à l'emplacement du fondant, le minerai à l'emplacement du minerai. $(li)$(item)Jetez les objets dans le puits$() par le haut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ils sont ramassés là où ils tombent, dans l'espace juste au-dessus du centre du bas. $(li)$(item)Insérez dans la sortie$() avec un entonnoir, un entonnoir vanilla ou une glissière, par n'importe quel côté. $(li)$(item)Insérez dans la trappe à gaz du sommet$() : les objets tombent dans le puits."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Limites$()$(li)$(item)Minerai$() : un seul type à la fois, jusqu'à 64. Seul un minerai qu'une recette du fourneau sait fondre est pris ; le reste ne bouge pas, si bien qu'un objet égaré ne peut plus bloquer le fourneau.$(li)$(item)Fondant$() : jusqu'à 64 sable calcaire.$(li)$(item)Combustible$() : jusqu'à 64 poussières de coke. Le fourneau en brûle $(item)une toutes les 600 ticks$() (30 s) de travail."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Rien ne peut être retiré de la sortie : elle ne donne que des fluides.$(br2)Ne restez pas dans le puits. Un fourneau en marche brûle tout ce qui s'y trouve."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:andesite_funnel,minecraft:hopper,create:chute,tfmg:coal_coke_dust,tfmg:limesand,create:crushed_raw_iron,create:crushing_wheel,create:limestone",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

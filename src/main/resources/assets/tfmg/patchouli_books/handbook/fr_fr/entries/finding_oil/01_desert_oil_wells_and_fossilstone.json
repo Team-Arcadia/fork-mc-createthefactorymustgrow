@@ -1,0 +1,30 @@
+{
+  "name": "Puits du désert et pierre fossile",
+  "icon": "tfmg:fossilstone",
+  "category": "tfmg:finding_oil",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les puits de pétrole Les déserts (les biomes où peuvent apparaître des pyramides du désert) cachent parfois un $(item)puits de pétrole$() :$() en moyenne une fois tous les $(item)500 chunks$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "C'est un pilier de pétrole brut qui part d'un gisement à Y -64 et monte jusqu'à environ $(item)70 à 80 blocs au-dessus du sol$(), visible de très loin.$(br2)Un puits, c'est du pétrole brut gratuit pour un seau ou une pompe, et sa base est un gisement ordinaire que vous pourrez exploiter plus tard avec une pompe à pétrole."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La pierre fossile$()$(br)La pierre fossile est une roche sombre qui n'apparaît qu'à côté du pétrole : autour du bas des colonnes de gisement et par plaques le long du puits d'un puits de pétrole."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Elle est extrêmement solide : dureté $(item)100$(), le double de l'obsidienne, et résistance aux explosions $(item)1200$().$(li)N'importe quelle pioche la récupère, mais il faut longtemps pour la casser.$(br2)Quand un tunnel ou une grotte près de la bedrock tombe sur de la pierre fossile, le pétrole brut est tout proche. Contournez-la, ou montez simplement votre colonne de tuyaux à côté."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fossilstone,tfmg:crude_oil_bucket,minecraft:bucket,minecraft:sand",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -6,6 +6,8 @@ import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.electricity.base.ElectricBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.machinery.vat.base.IVatMachine;
 import com.drmangotea.tfmg.content.machinery.vat.base.VatBlock;
 import com.drmangotea.tfmg.content.machinery.vat.base.VatBlockEntity;
@@ -26,7 +28,7 @@ import net.minecraft.world.phys.AABB;
 
 import java.util.List;
 
-public class ElectrodeHolderBlockEntity extends ElectricBlockEntity implements IVatMachine {
+public class ElectrodeHolderBlockEntity extends ElectricBlockEntity implements IVatMachine, IInspectable {
 
     Electrode electrode = TFMGUtils.getElectrode(TFMG.asResource("none"));
 
@@ -176,6 +178,26 @@ public class ElectrodeHolderBlockEntity extends ElectricBlockEntity implements I
     @Override
     public void vatUpdated(VatBlockEntity be) {
         IVatMachine.super.vatUpdated(be);
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (electrode.getItem() == null || getOperationId().isEmpty()) {
+            report.problem("electrode.none");
+            report.fix("electrode.none.fix");
+        } else {
+            report.info("electrode.installed", electrode.getStack().getHoverName());
+        }
+        report.info("electrode.faces");
+        int minimum = TFMGConfigs.common().machines.electrolysisMinimumCurrent.get();
+        // Power shortage is reported by the generic electricity check.
+        if (canWork())
+            report.check(getCurrent() >= minimum, "electrode.current_ok", "electrode.low_current", "electrode.low_current.fix",
+                    String.format("%.1f", getCurrent()), minimum);
+        if (VatBlockEntity.appendVatReport(level, getBlockPos(), report, Direction.DOWN) == null) {
+            report.problem("electrode.no_vat");
+            report.fix("electrode.no_vat.fix");
+        }
     }
 
 

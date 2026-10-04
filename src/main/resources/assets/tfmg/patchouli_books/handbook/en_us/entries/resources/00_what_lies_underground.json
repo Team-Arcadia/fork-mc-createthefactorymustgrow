@@ -1,0 +1,26 @@
+{
+  "name": "What lies underground",
+  "icon": "tfmg:lead_ore",
+  "category": "tfmg:resources",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Before any machine, you need materials Minecraft does not have. TFMG adds them to world generation in three forms: $(li)$(item)Ores$(): lead, nickel and lithium, as classic veins in stone and deepslate. $(li)$(item)Striated layers$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "thick bands of bauxite, galena, lignite and fireclay in the Overworld, sulfur and fireclay in the Nether. $(li)$(item)Oil$(): deposits on the bedrock floor of the Overworld, and rare oil wells in deserts.$(br2)Some resources are not found at all, you make them. $(item)Limesand$() comes from crushing Create's limestone, and $(item)nitrate dust$() (saltpeter) from crushing dirt."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Most of these blocks are worth more once crushed: a pair of Create $(item)crushing wheels$() is the first machine to build. The following pages tell you where each resource is, then what crushing gives."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lead_ore,tfmg:nickel_ore,tfmg:lithium_ore,tfmg:bauxite,tfmg:galena,tfmg:fireclay,tfmg:sulfur,create:crushing_wheel",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

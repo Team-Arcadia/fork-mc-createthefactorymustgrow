@@ -1,0 +1,30 @@
+{
+  "name": "The rules that stop a vat",
+  "icon": "create:mechanical_pump",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)One broken machine stops everything If $(item)any$() attached machine is not working, $(item)no recipe runs at all$(), even one that does not need that machine.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A mixer below 30 RPM, a compressor below 120 RPM, an unpowered freezer or an electrode holder with too little current all freeze the whole vat. Remove the machine or get it running.$(br2)Extra working machines are fine: a recipe needs $(item)at least$() the machines it lists."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Pipes and funnels$()$(br)Pipes, funnels and hoppers can only $(item)fill the inputs$() and $(item)drain the outputs$(). You cannot pull an ingredient back out, and nothing can be pushed into an output. Ingredients are only read from the input side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Full outputs$()$(br)A recipe only starts when $(item)all$() its products fit. A by-product left in the output (carbon dioxide, slag) will stall the vat sooner or later, so drain it.$(br2)$(l)Breaking a vat$()$(br)Breaking a vat $(item)drops the items$() it held. Its fluids move to the blocks that remain in the multiblock."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_pump,create:fluid_pipe,create:andesite_funnel,tfmg:steel_chemical_vat",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

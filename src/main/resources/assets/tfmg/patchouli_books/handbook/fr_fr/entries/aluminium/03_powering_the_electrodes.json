@@ -1,0 +1,34 @@
+{
+  "name": "Alimenter les électrodes",
+  "icon": "tfmg:electrode_holder",
+  "category": "tfmg:aluminium",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un porte-électrode ne prend le courant que par sa $(item)face du haut$(). Amenez votre câble sur le dessus de chaque porte-électrode."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)L'intensité, pas seulement la tension Un porte-électrode ne fonctionne que si au moins $(item)5 A$() le traversent (le réglage serveur electrolysisMinimumCurrent, 5 par défaut).$() L'intensité est la tension divisée par la résistance, et les électrodes en cuivre ou en zinc font $(item)10 ohms$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)50 V$() donnent exactement 5 A, le minimum,$(li)sous 50 V le porte-électrode reste inactif et son multimètre indique un courant insuffisant."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)N'en faites pas trop$()$(br)Un porte-électrode casse s'il reçoit plus de $(item)400 A$() ou plus de $(item)20000 V$(), même un instant. Avec une électrode de 10 ohms, 400 A sont atteints à $(item)4000 V$() : restez bien en dessous avec le cuivre et le zinc."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un porte-électrode vide n'a pas de résistance et ne consomme rien. Rappelez-vous la règle des cuves : un porte-électrode équipé mais sans assez d'intensité bloque toutes les recettes de la cuve, pas seulement l'électrolyse."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electrode_holder,tfmg:copper_electrode,tfmg:zinc_electrode",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

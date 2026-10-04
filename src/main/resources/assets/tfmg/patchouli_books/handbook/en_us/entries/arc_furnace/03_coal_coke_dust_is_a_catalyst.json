@@ -1,0 +1,26 @@
+{
+  "name": "Coal coke dust is a catalyst",
+  "icon": "tfmg:coal_coke_dust",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "This is the part that confuses everyone, so read it carefully.$(br2)Every batch $(item)uses one Coal Coke Dust$(). Then, $(item)90% of the time$(), one dust is given $(item)back to the vat input$(), not to the output.$(br2)So when you watch the vat:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)the coke dust count $(item)usually stays the same$() from one batch to the next,$(li)it $(item)drops by 1 about once every 10 batches$(),$(li)coke dust $(item)never comes out$() of the output side.$(br2)Nothing is broken, and the dust is not being duplicated or lost: it behaves like a catalyst. A stack of 64 dust lasts for about 640 batches, that is 640 ingots of steel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Keep a few dust in the input and top it up from time to time, or leave a funnel feeding it slowly. If the input slot is full when a dust comes back, it goes to the output instead so it is never deleted.$(br2)JEI shows the same thing on the recipe: the dust is marked as returned to the vat input, with about 10% used up per cycle."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coal_coke_dust,tfmg:coal_coke,create:crushing_wheel",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

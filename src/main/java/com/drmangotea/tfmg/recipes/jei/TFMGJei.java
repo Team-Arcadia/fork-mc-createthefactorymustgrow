@@ -154,64 +154,16 @@ public class TFMGJei implements IModPlugin {
         ingredientManager = registration.getIngredientManager();
 
         allCategories.forEach(c -> c.registerRecipes(registration));
+        // Create's own plugin already registers its toolbox recipes, transfer
+        // handlers, potion fluids and GUI handlers. Registering them a second
+        // time here doubled JEI entries and made JEI log an error on load.
 
-        registration.addRecipes(RecipeTypes.CRAFTING, ToolboxColoringRecipeMaker.createRecipes().toList());
+        TFMGJeiInfo.register(registration);
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         allCategories.forEach(c -> c.registerCatalysts(registration));
-    }
-
-    @Override
-    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-        registration.addRecipeTransferHandler(new BlueprintTransferHandler(), RecipeTypes.CRAFTING);
-        registration.addUniversalRecipeTransferHandler(new StockKeeperTransferHandler(registration.getJeiHelpers()));
-    }
-
-    @Override
-    public <T> void registerFluidSubtypes(ISubtypeRegistration registration, IPlatformFluidHelper<T> platformFluidHelper) {
-        PotionFluidSubtypeInterpreter interpreter = new PotionFluidSubtypeInterpreter();
-        PotionFluid potionFluid = AllFluids.POTION.get();
-        registration.registerSubtypeInterpreter(NeoForgeTypes.FLUID_STACK, potionFluid.getSource(), interpreter);
-        registration.registerSubtypeInterpreter(NeoForgeTypes.FLUID_STACK, potionFluid.getFlowing(), interpreter);
-    }
-
-    @Override
-    public void registerExtraIngredients(IExtraIngredientRegistration registration) {
-        RegistryAccess registryAccess = Minecraft.getInstance().level.registryAccess();
-        List<Holder.Reference<Potion>> potions = registryAccess.lookupOrThrow(Registries.POTION)
-                .listElements()
-                .toList();
-        Collection<FluidStack> potionFluids = new ArrayList<>(potions.size() * 3);
-        Set<Set<Holder<MobEffect>>> visitedEffects = new HashSet<>();
-        for (Holder.Reference<Potion> potion : potions) {
-
-            PotionContents potionContents = new PotionContents(potion);
-
-            if (potionContents.hasEffects()) {
-                Set<Holder<MobEffect>> effectSet = new HashSet<>();
-                potionContents.forEachEffect(mei -> effectSet.add(mei.getEffect()));
-                if (!visitedEffects.add(effectSet))
-                    continue;
-            }
-
-            potionFluids.add(PotionFluid.of(1000, potionContents, PotionFluid.BottleType.REGULAR));
-        }
-        registration.addExtraIngredients(NeoForgeTypes.FLUID_STACK, potionFluids);
-    }
-
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    @Override
-    public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        registration.addGenericGuiContainerHandler(AbstractSimiContainerScreen.class, new SlotMover());
-
-        registration.addGhostIngredientHandler(AbstractFilterScreen.class, new GhostIngredientHandler());
-        registration.addGhostIngredientHandler(BlueprintScreen.class, new GhostIngredientHandler());
-        registration.addGhostIngredientHandler(LinkedControllerScreen.class, new GhostIngredientHandler());
-        registration.addGhostIngredientHandler(ScheduleScreen.class, new GhostIngredientHandler());
-        registration.addGhostIngredientHandler(RedstoneRequesterScreen.class, new GhostIngredientHandler());
-        registration.addGhostIngredientHandler(FactoryPanelSetItemScreen.class, new GhostIngredientHandler());
     }
 
     private class CategoryBuilder<T extends Recipe<?>> extends CreateRecipeCategory.Builder<T> {

@@ -1,0 +1,317 @@
+{
+  "order": 190,
+  "icon": "tfmg:rebar_concrete",
+  "title": {
+    "en_us": "Construction",
+    "fr_fr": "Construction"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Cement and liquid concrete",
+        "fr_fr": "Ciment et béton liquide"
+      },
+      "text": {
+        "en_us": [
+          "Concrete starts with **limesand**: crush Create's **limestone** with crushing wheels.",
+          "",
+          "## In a mixer",
+          "Every step runs in a Create mechanical mixer over a basin, no heat needed:",
+          "- **clay ball + limesand** gives **4 cement**,",
+          "- **sand + cement + gravel** gives **16 concrete mixture** (with **slag** instead of sand: **32**),",
+          "- **concrete mixture + 250 mB water** gives **1000 mB liquid concrete**.",
+          "",
+          "## In a chemical vat",
+          "With an industrial mixer, any chemical vat turns **sand + gravel + limesand + 250 mB water** straight into liquid concrete. JEI lists **32000 mB** for one batch, far more than the mixer route.",
+          "",
+          "Cement is also a block of its own that falls like sand. Slag, from crushing the slag blocks of your steel line, doubles every batch of mixture.",
+          "",
+          "Liquid concrete moves through pipes like any fluid and fills buckets. Poured into the world, it **hardens into concrete blocks** after a short random delay. The next pages show the three ways to use it: plain blocks, rebar, and the concrete hose."
+        ],
+        "fr_fr": [
+          "Le béton commence par le **sable calcaire** : broyez le **calcaire** de Create avec des roues de concassage.",
+          "",
+          "## Au mélangeur",
+          "Chaque étape se fait dans un mélangeur mécanique de Create au-dessus d'un bassin, sans chaleur :",
+          "- **boule d'argile + sable calcaire** donne **4 ciments**,",
+          "- **sable + ciment + gravier** donne **16 mélanges à béton** (avec du **laitier** à la place du sable : **32**),",
+          "- **mélange à béton + 250 mB d'eau** donne **1000 mB de béton liquide**.",
+          "",
+          "## En cuve chimique",
+          "Avec un mélangeur industriel, n'importe quelle cuve chimique transforme **sable + gravier + sable calcaire + 250 mB d'eau** directement en béton liquide. JEI indique **32000 mB** par fournée, bien plus que la voie du mélangeur.",
+          "",
+          "Le ciment est aussi un bloc à part entière qui tombe comme le sable. Le laitier, obtenu en broyant les blocs de laitier de votre chaîne de l'acier, double chaque fournée de mélange.",
+          "",
+          "Le béton liquide circule dans les tuyaux comme tout fluide et remplit les seaux. Versé dans le monde, il **durcit en blocs de béton** après un court délai aléatoire. Les pages suivantes montrent les trois façons de l'utiliser : blocs simples, armatures et tuyau à béton."
+        ]
+      },
+      "items": ["tfmg:limesand", "create:limestone", "tfmg:cement", "tfmg:concrete_mixture", "tfmg:slag", "tfmg:liquid_concrete_bucket", "create:mechanical_mixer", "tfmg:industrial_mixer"]
+    },
+    {
+      "title": {
+        "en_us": "Concrete blocks",
+        "fr_fr": "Les blocs de béton"
+      },
+      "text": {
+        "en_us": [
+          "Pour liquid concrete from a bucket into a mould of any shape: the liquid turns into **concrete** blocks on its own. This is the easiest way to cast walls and floors without crafting.",
+          "",
+          "## Shapes",
+          "In a stonecutter, one concrete block gives:",
+          "- **2 concrete slabs**, or stairs, or a wall,",
+          "- **8 cinderblocks**, the small grey bricks.",
+          "",
+          "Six cinderblocks around two rebar and a bucket of liquid concrete craft **8 cinder blocks**, the full-size wall block.",
+          "",
+          "## Colours",
+          "Surround a dye with **8 concrete** in a crafting grid to get 8 coloured concrete. All sixteen colours exist, each with its own slab, stairs and wall from the stonecutter. Rebar concrete is dyed the same way.",
+          "",
+          "## Smokestacks",
+          "Concrete with industrial pipes also crafts the **concrete smokestack** used to vent CO2.",
+          "",
+          "For pillars, floors and the most industrial look, use rebar concrete, explained on the next page. It comes in the same sixteen colours."
+        ],
+        "fr_fr": [
+          "Versez du béton liquide avec un seau dans un moule de n'importe quelle forme : le liquide se change tout seul en blocs de **béton**. C'est la façon la plus simple de couler murs et sols sans fabrication.",
+          "",
+          "## Les formes",
+          "Au tailleur de pierre, un bloc de béton donne :",
+          "- **2 dalles de béton**, ou un escalier, ou un muret,",
+          "- **8 parpaings**, les petites briques grises.",
+          "",
+          "Six de ces parpaings autour de deux armatures et d'un seau de béton liquide donnent **8 blocs de parpaing**, le bloc de mur pleine taille.",
+          "",
+          "## Les couleurs",
+          "Entourez une teinture de **8 bétons** dans une grille d'artisanat pour obtenir 8 bétons colorés. Les seize couleurs existent, chacune avec sa dalle, son escalier et son muret au tailleur de pierre. Le béton armé se teint de la même façon.",
+          "",
+          "## Les cheminées",
+          "Le béton avec des tuyaux industriels donne aussi la **cheminée en béton** qui sert à rejeter le CO2.",
+          "",
+          "Pour les piliers, les sols et l'aspect le plus industriel, utilisez le béton armé, expliqué page suivante. Il existe dans les mêmes seize couleurs."
+        ]
+      },
+      "items": ["tfmg:concrete", "tfmg:concrete_slab", "tfmg:concrete_stairs", "tfmg:concrete_wall", "tfmg:cinderblock", "tfmg:cinder_block", "tfmg:white_concrete", "tfmg:concrete_smokestack"]
+    },
+    {
+      "title": {
+        "en_us": "Rebar and rebar concrete",
+        "fr_fr": "Armatures et béton armé"
+      },
+      "text": {
+        "en_us": [
+          "**Rebar** comes from the stonecutter: one steel ingot gives **4 rebar**. Nine rebar pack into a **rebar pile** and back.",
+          "",
+          "Rebar crafts frames you place in the world:",
+          "- **rebar block**: 4 rebar in the corners give 4,",
+          "- **rebar floor**: a row of 3 gives 3,",
+          "- **rebar pillar**: a column of 3 gives 3,",
+          "- **rebar stairs**: 3 in a step shape give 3,",
+          "- **rebar wall**: two rows of 3 give 6.",
+          "",
+          "## Filling them",
+          "Right-click a rebar frame with a **bucket of liquid concrete** to fill it; an empty bucket takes the concrete back out. Each frame holds one bucket. Filled frames **dry by themselves** after a short random delay:",
+          "- rebar block into **rebar concrete**,",
+          "- floor, pillar, stairs and wall into the matching **rebar concrete** shape.",
+          "",
+          "Industrial pipes, cable tubes and electric posts can be filled the same way and dry into their **concrete encased** versions, perfect to bury a pipe or a cable in a floor.",
+          "",
+          "Filling every frame by hand is slow on a big build: that is the job of the concrete hose."
+        ],
+        "fr_fr": [
+          "Les **armatures** sortent du tailleur de pierre : un lingot d'acier donne **4 armatures**. Neuf armatures se rangent en **pile d'armature**, et inversement.",
+          "",
+          "Les armatures donnent des cadres à poser dans le monde :",
+          "- **bloc d'armature** : 4 armatures dans les coins en donnent 4,",
+          "- **sol d'armature** : une ligne de 3 en donne 3,",
+          "- **pilier d'armature** : une colonne de 3 en donne 3,",
+          "- **escalier d'armature** : 3 en forme de marche en donnent 3,",
+          "- **muret d'armature** : deux lignes de 3 en donnent 6.",
+          "",
+          "## Les remplir",
+          "Faites un clic droit sur un cadre d'armature avec un **seau de béton liquide** pour le remplir ; un seau vide reprend le béton. Chaque cadre contient un seau. Les cadres remplis **sèchent tout seuls** après un court délai aléatoire :",
+          "- le bloc d'armature devient du **béton armé**,",
+          "- le sol, le pilier, l'escalier et le muret deviennent la forme de **béton armé** correspondante.",
+          "",
+          "Les tuyaux industriels, les tubes de câbles et les poteaux électriques se remplissent de la même façon et sèchent en version **encastrée dans du béton**, parfait pour enterrer un tuyau ou un câble dans un sol.",
+          "",
+          "Remplir chaque cadre à la main est long sur un grand chantier : c'est le travail du tuyau à béton."
+        ]
+      },
+      "items": ["tfmg:rebar", "tfmg:rebar_pile", "tfmg:rebar_block", "tfmg:rebar_floor", "tfmg:rebar_pillar", "tfmg:rebar_stairs", "tfmg:rebar_wall", "tfmg:rebar_concrete"]
+    },
+    {
+      "title": {
+        "en_us": "The concrete hose",
+        "fr_fr": "Le tuyau à béton"
+      },
+      "text": {
+        "en_us": [
+          "The **concrete hose** works like Create's hose pulley, but pours liquid concrete into rebar.",
+          "",
+          "- Place it above your rebar structure and pipe liquid concrete into its pipe side. It holds **1500 mB**.",
+          "- Turn it: one direction lowers the hose, the other raises it. The hose stops by itself at the first solid block below it.",
+          "- **Stop the rotation.** The hose only pours while it stands still.",
+          "",
+          "Once stopped with at least **1000 mB** inside, it fills one frame per bucket, starting next to the tip of the hose and spreading **sideways and downwards**, never up. It only travels through blocks that can take concrete (rebar frames, industrial pipes, cable tubes, electric posts); any other block stops the spread, and empty air is never filled.",
+          "",
+          "So build the whole frame first, connected in one piece, and lower the hose until it rests on top of it. Filled frames then dry into rebar concrete like hand-filled ones.",
+          "",
+          "If rebar is added later next to a finished area, the hose finds it again after a short while without moving it. The reach is the same as Create's hose pulley, set in Create's server config."
+        ],
+        "fr_fr": [
+          "Le **tuyau à béton** fonctionne comme la poulie à tuyau de Create, mais verse du béton liquide dans les armatures.",
+          "",
+          "- Placez-le au-dessus de votre structure d'armatures et amenez le béton liquide par son côté tuyau. Il contient **1500 mB**.",
+          "- Faites-le tourner : un sens descend le tuyau, l'autre le remonte. Il s'arrête tout seul sur le premier bloc solide en dessous.",
+          "- **Arrêtez la rotation.** Le tuyau ne verse que lorsqu'il est immobile.",
+          "",
+          "Une fois arrêté avec au moins **1000 mB** dedans, il remplit un cadre par seau, en partant d'à côté du bout du tuyau et en s'étendant **sur les côtés et vers le bas**, jamais vers le haut. Il ne passe que par les blocs qui acceptent du béton (cadres d'armature, tuyaux industriels, tubes de câbles, poteaux électriques) ; tout autre bloc arrête la propagation, et l'air n'est jamais rempli.",
+          "",
+          "Construisez donc tout le cadre d'abord, d'un seul tenant, et descendez le tuyau jusqu'à ce qu'il repose dessus. Les cadres remplis sèchent ensuite en béton armé comme ceux remplis à la main.",
+          "",
+          "Si vous ajoutez des armatures plus tard à côté d'une zone finie, le tuyau les retrouve au bout d'un moment sans le déplacer. La portée est celle de la poulie à tuyau de Create, réglée dans la configuration serveur de Create."
+        ]
+      },
+      "items": ["tfmg:concrete_hose", "tfmg:liquid_concrete_bucket", "tfmg:rebar_block", "tfmg:rebar_concrete", "create:hose_pulley", "create:mechanical_pump", "create:fluid_pipe"]
+    },
+    {
+      "title": {
+        "en_us": "Asphalt",
+        "fr_fr": "L'asphalte"
+      },
+      "text": {
+        "en_us": [
+          "Asphalt makes dark, clean roads and floors. It is made from the heaviest part of crude oil.",
+          "",
+          "## Bitumen",
+          "In a mechanical press over a **heated** basin, **1000 mB of heavy oil** compacts into one **bitumen**. A burning firebox or a lit blaze burner under the basin is enough.",
+          "",
+          "## Asphalt mixture",
+          "In a mixer: **sand + bitumen + gravel** gives **16 asphalt mixture**. With **slag** instead of sand, you get **32**.",
+          "",
+          "## Liquid asphalt",
+          "**Asphalt mixture + 250 mB water** gives **1000 mB liquid asphalt**, in a Create mixer or in a chemical vat with an industrial mixer.",
+          "",
+          "## Laying it",
+          "Pour liquid asphalt like liquid concrete: it **hardens into asphalt blocks** after a short random delay. Spread it with a bucket for small paths, or with a Create hose pulley for long roads.",
+          "",
+          "In a stonecutter, one asphalt block gives **2 slabs**, or stairs, or a wall, for kerbs and ramps.",
+          "",
+          "One bitumen becomes 16 to 32 blocks of road, so a single heavy oil tank goes a long way."
+        ],
+        "fr_fr": [
+          "L'asphalte donne des routes et des sols sombres et propres. Il vient de la partie la plus lourde du pétrole brut.",
+          "",
+          "## Le bitume",
+          "Dans une presse mécanique au-dessus d'un bassin **chauffé**, **1000 mB de pétrole lourd** se compactent en un **bitume**. Un foyer allumé ou un brûleur à blaze allumé sous le bassin suffit.",
+          "",
+          "## Le mélange à asphalte",
+          "Au mélangeur : **sable + bitume + gravier** donne **16 mélanges à asphalte**. Avec du **laitier** à la place du sable, vous en obtenez **32**.",
+          "",
+          "## L'asphalte liquide",
+          "**Mélange à asphalte + 250 mB d'eau** donne **1000 mB d'asphalte liquide**, au mélangeur de Create ou dans une cuve chimique avec un mélangeur industriel.",
+          "",
+          "## La pose",
+          "Versez l'asphalte liquide comme le béton liquide : il **durcit en blocs d'asphalte** après un court délai aléatoire. Étalez-le au seau pour les petits chemins, ou avec une poulie à tuyau de Create pour les longues routes.",
+          "",
+          "Au tailleur de pierre, un bloc d'asphalte donne **2 dalles**, ou un escalier, ou un muret, pour les bordures et les rampes.",
+          "",
+          "Un bitume devient 16 à 32 blocs de route : un seul réservoir de pétrole lourd mène loin."
+        ]
+      },
+      "items": ["tfmg:heavy_oil_bucket", "tfmg:bitumen", "tfmg:asphalt_mixture", "tfmg:liquid_asphalt_bucket", "tfmg:asphalt", "tfmg:asphalt_slab", "create:mechanical_press", "create:basin"]
+    },
+    {
+      "title": {
+        "en_us": "Metal decorations",
+        "fr_fr": "Décorations en métal"
+      },
+      "text": {
+        "en_us": [
+          "Most metal decorations come from a **stonecutter**, one ingot at a time:",
+          "",
+          "- **Caution blocks**: 1 aluminium ingot gives **2**, in any of fifteen colours. They are directional and face the way you place them.",
+          "- **Factory floor**: 1 aluminium ingot gives **1** metal floor block.",
+          "- **Bars**: 1 ingot gives **4**, in steel, aluminium, cast iron, lead or nickel.",
+          "- **Ladders**: 1 ingot gives **2**, in steel, aluminium, cast iron, lead, nickel or constantan.",
+          "- **Scaffolding**: 1 ingot gives **2**, in steel or aluminium.",
+          "",
+          "## Doors",
+          "All four TFMG doors are **sliding doors**, like Create's train doors:",
+          "- **heavy plated door**: 6 steel ingots give 3,",
+          "- **aluminium door**: 6 aluminium ingots give 3,",
+          "- **steel door**: a steel casing with any wooden door,",
+          "- **heavy casing door**: a heavy machinery casing with any wooden door.",
+          "",
+          "The **steel trapdoor** takes a row of 3 steel ingots.",
+          "",
+          "Steel and aluminium storage blocks, trusses and frames round out the set for structural looks."
+        ],
+        "fr_fr": [
+          "La plupart des décorations en métal viennent du **tailleur de pierre**, un lingot à la fois :",
+          "",
+          "- **Blocs de signalisation** : 1 lingot d'aluminium en donne **2**, dans l'une des quinze couleurs. Ils sont orientables et suivent votre regard à la pose.",
+          "- **Sol d'usine** : 1 lingot d'aluminium donne **1** bloc de sol en métal.",
+          "- **Barreaux** : 1 lingot en donne **4**, en acier, aluminium, fonte, plomb ou nickel.",
+          "- **Échelles** : 1 lingot en donne **2**, en acier, aluminium, fonte, plomb, nickel ou constantan.",
+          "- **Échafaudages** : 1 lingot en donne **2**, en acier ou en aluminium.",
+          "",
+          "## Les portes",
+          "Les quatre portes de TFMG sont des **portes coulissantes**, comme les portes de train de Create :",
+          "- **porte blindée lourde** : 6 lingots d'acier en donnent 3,",
+          "- **porte en aluminium** : 6 lingots d'aluminium en donnent 3,",
+          "- **porte en acier** : un carter en acier avec n'importe quelle porte en bois,",
+          "- **porte de carter lourde** : un carter de machinerie lourde avec n'importe quelle porte en bois.",
+          "",
+          "La **trappe en acier** demande une ligne de 3 lingots d'acier.",
+          "",
+          "Les blocs de stockage d'acier et d'aluminium, les poutres et les cadres complètent l'ensemble pour un aspect structurel."
+        ]
+      },
+      "items": ["tfmg:yellow_caution_block", "tfmg:factory_floor", "tfmg:steel_bars", "tfmg:steel_ladder", "tfmg:steel_scaffolding", "tfmg:heavy_plated_door", "tfmg:steel_door", "tfmg:steel_trapdoor"]
+    },
+    {
+      "title": {
+        "en_us": "Plastic and rubber",
+        "fr_fr": "Plastique et caoutchouc"
+      },
+      "text": {
+        "en_us": [
+          "## Plastic",
+          "All steps but the last run in a chemical vat with an industrial mixer and a **heat of 2** (one burning firebox under the vat is enough):",
+          "- **500 mB naphtha** gives **250 mB ethylene + 250 mB propylene**,",
+          "- **500 mB ethylene** or **500 mB propylene** gives **500 mB molten plastic**.",
+          "",
+          "A **casting basin** turns **144 mB molten plastic** into one **plastic sheet**. Nine sheets make a **plastic block** and back.",
+          "",
+          "Three sheets in a row craft **4 plastic pipes**. Plastic also gives plastic versions of the mechanical pump, fluid valve and smart fluid pipe.",
+          "",
+          "## Rubber",
+          "In a chemical vat with an industrial mixer and a heat of 2, **sulfur dust + 250 mB heavy oil** gives a **rubber sheet**. Then:",
+          "- a mechanical press turns a rubber sheet into **synthetic leather**, which crafts into **leather**,",
+          "- a stonecutter turns a rubber sheet into **4 synthetic string**.",
+          "",
+          "Naphtha comes from the six-output crude oil tower and from the five-output heavy oil tower, so plan one of those before starting a plastic line."
+        ],
+        "fr_fr": [
+          "## Le plastique",
+          "Toutes les étapes sauf la dernière se font dans une cuve chimique avec un mélangeur industriel et une **chaleur de 2** (un foyer allumé sous la cuve suffit) :",
+          "- **500 mB de naphta** donnent **250 mB d'éthylène + 250 mB de propylène**,",
+          "- **500 mB d'éthylène** ou **500 mB de propylène** donnent **500 mB de plastique fondu**.",
+          "",
+          "Un **bassin de coulée** transforme **144 mB de plastique fondu** en une **plaque de plastique**. Neuf plaques font un **bloc de plastique**, et inversement.",
+          "",
+          "Trois plaques en ligne donnent **4 tuyaux en plastique**. Le plastique donne aussi des versions en plastique de la pompe mécanique, de la vanne et du tuyau intelligent.",
+          "",
+          "## Le caoutchouc",
+          "Dans une cuve chimique avec un mélangeur industriel et une chaleur de 2, **poudre de soufre + 250 mB de pétrole lourd** donnent une **plaque de caoutchouc**. Ensuite :",
+          "- une presse mécanique transforme une plaque de caoutchouc en **cuir synthétique**, qui donne du **cuir** à l'établi,",
+          "- un tailleur de pierre transforme une plaque de caoutchouc en **4 ficelles synthétiques**.",
+          "",
+          "Le naphta vient de la tour à pétrole brut à six sorties et de la tour à pétrole lourd à cinq sorties : prévoyez l'une des deux avant de lancer une chaîne de plastique."
+        ]
+      },
+      "items": ["tfmg:naphtha_bucket", "tfmg:ethylene_bucket", "tfmg:molten_plastic_bucket", "tfmg:plastic_sheet", "tfmg:plastic_block", "tfmg:plastic_pipe", "tfmg:rubber_sheet", "tfmg:synthetic_leather"]
+    }
+  ]
+}

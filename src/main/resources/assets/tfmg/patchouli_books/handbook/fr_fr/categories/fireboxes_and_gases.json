@@ -1,0 +1,6 @@
+{
+  "name": "Foyers et gaz",
+  "description": "Le foyer brûle des carburants liquides pour chauffer ce qui est posé dessus. C'est l'équivalent au carburant du brûleur à blaze.",
+  "icon": "tfmg:firebox",
+  "sortnum": 180
+}

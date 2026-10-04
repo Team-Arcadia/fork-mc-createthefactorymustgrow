@@ -1,0 +1,26 @@
+{
+  "name": "Heavy plates, screws, rebar",
+  "icon": "tfmg:heavy_plate",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Heavy plate$()$(br)The steel plate of this mod. It is a $(item)sequenced assembly$(): put a steel ingot on a belt or depot under a $(item)mechanical press$() and press it $(item)three times$(). Between presses it is an Unprocessed Heavy Plate."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A row of three presses over one belt does it in one pass. Heavy plates are used by steel pipes, tanks, the heavy machinery casing and the steel mechanism. They are also the steel plate of every recipe that asks for one.$(br2)$(l)Screws$()$(br)Cut a steel ingot in a stonecutter or with a $(item)mechanical saw$(): $(item)4 screws$() per ingot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Rebar$()$(br)Same way: $(item)4 rebar$() per steel ingot. You need rebar for the screwdriver.$(br2)The stonecutter also turns one steel ingot into $(item)8 industrial pipes$(), used by smokestacks and distillation towers."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:heavy_plate,tfmg:unprocessed_heavy_plate,create:mechanical_press,create:depot,tfmg:screw,tfmg:rebar,create:mechanical_saw,tfmg:industrial_pipe",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -26,6 +26,20 @@ public class TFMGMixingRecipeGen extends MixingRecipeGen {
 			.output(TFMGItems.THERMITE_POWDER)
 	),
 
+	// Bootstrap: aluminium otherwise only comes from electrolysis, yet the
+	// steel mechanism every generator needs is made with aluminium. A
+	// superheated mix gets the first ingots; electrolysis stays the better
+	// yield.
+	ALUMINUM_BOOTSTRAP = create("aluminum_ingot_from_bauxite", b -> b
+			.require(TFMGItems.BAUXITE_POWDER)
+			.require(TFMGItems.BAUXITE_POWDER)
+			.require(TFMGItems.BAUXITE_POWDER)
+			.require(TFMGItems.BAUXITE_POWDER)
+			.require(TFMGItems.COAL_COKE_DUST)
+			.output(TFMGItems.ALUMINUM_INGOT)
+			.requiresHeat(HeatCondition.SUPERHEATED)
+	),
+
 	CEMENT = create("cement", b -> b
 			.require(clayBall())
 			.require(limesand())

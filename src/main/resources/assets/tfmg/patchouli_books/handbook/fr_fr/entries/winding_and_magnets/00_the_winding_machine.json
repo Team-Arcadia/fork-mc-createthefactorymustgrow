@@ -1,0 +1,34 @@
+{
+  "name": "L'enrouleuse",
+  "icon": "tfmg:winding_machine",
+  "category": "tfmg:winding_and_magnets",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "L'$(item)enrouleuse$() enroule le fil d'une $(item)bobine$() autour d'une pièce, un tour par tick. Elle fabrique résistances et bobines électromagnétiques, rembobine du fil sur les bobines, et sert d'étape dans plusieurs assemblages séquencés."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)L'installer - Entraînez-la par un arbre sur son $(item)côté$().$() N'importe quelle vitesse convient : elle enroule un tour par tick tant qu'elle tourne. $(li)$(item)Bobine$() : clic droit sur la machine avec une bobine pour la monter (l'ancienne vous revient). Clic droit main vide pour retirer la bobine. $(li)$(item)Pièce$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "clic droit avec n'importe quel autre objet pour en placer $(item)un seul$(). Clic droit accroupi main vide pour le reprendre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Automatisation$()$(br)Entonnoirs et déployeurs peuvent insérer les deux : les bobines vont dans l'emplacement de bobine, le reste dans celui de la pièce. Seule une $(item)bobine vide, épuisée$() peut être retirée de son emplacement, et le fil placé comme pièce n'est jamais retiré."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Avec les lunettes, vous voyez la bobine montée, ses $(item)tours restants$() et la progression du travail en cours."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:winding_machine,tfmg:copper_spool,tfmg:constantan_spool,tfmg:aluminum_spool,tfmg:empty_spool,create:deployer",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

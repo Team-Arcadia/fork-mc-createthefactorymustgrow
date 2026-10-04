@@ -4,6 +4,8 @@ import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.electricity.base.ElectricBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.recipes.PolarizingRecipe;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGRecipeTypes;
@@ -34,7 +36,7 @@ import java.util.Optional;
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
 
-public class PolarizerBlockEntity extends ElectricBlockEntity implements IHaveGoggleInformation {
+public class PolarizerBlockEntity extends ElectricBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     public SmartInventory inventory = new SmartInventory(1, this, 1, false)
             .whenContentsChanged(this::onInventoryChanged);
@@ -112,6 +114,25 @@ public class PolarizerBlockEntity extends ElectricBlockEntity implements IHaveGo
         return true;
     }
 
+
+    @Override
+    public void inspect(InspectionReport report) {
+        report.info("polarizer.face", Component.translatable("tfmg.inspector.dir." + getBlockState().getValue(FACING).getOpposite().getName()));
+        ItemStack stack = inventory.getStackInSlot(0);
+        if (stack.isEmpty()) {
+            report.info("polarizer.empty");
+            report.fix("polarizer.empty.fix");
+            return;
+        }
+        if (getRecipe(stack).isEmpty()) {
+            report.problem("polarizer.no_recipe", stack.getHoverName());
+            report.fix("polarizer.no_recipe.fix");
+            return;
+        }
+        report.ok("polarizer.recipe", stack.getHoverName());
+        report.check(getPowerUsage() >= 2000, "polarizer.power_ok", "polarizer.power_low", "polarizer.power_low.fix", getPowerUsage(), 2000);
+        report.info("polarizer.charge", capacitorPercentage / 2);
+    }
 
     @Override
     public void tick() {

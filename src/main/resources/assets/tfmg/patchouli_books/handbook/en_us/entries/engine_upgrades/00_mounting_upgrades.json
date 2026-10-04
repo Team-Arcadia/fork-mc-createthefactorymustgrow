@@ -1,0 +1,26 @@
+{
+  "name": "Mounting upgrades",
+  "icon": "tfmg:turbo",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Small engines (regular, radial and turbine) take upgrades. Right-click an engine block with the upgrade item to mount it. $(li)Each block holds $(item)one$() upgrade. $(li)The same upgrade can only be mounted $(item)once per engine$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A turbo and a golden turbo on two blocks of the same row both count, and their multipliers stack. $(li)Right-click the block with a $(item)wrench$() to take the upgrade back. Breaking the block drops it too.$(br2)$(l)Turbo$()$(br)Speed x1.3, torque x1.2, efficiency x0.7. More power, but more fuel burnt."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Golden Turbo$()$(br)Speed x1.3, torque x1.4, efficiency unchanged. Made in a mechanical crafter from a turbo, turbine blades, gold, nickel sheets and constantan.$(br2)The goggles show the combined effect on an aqua line: $(item)Upgrades: speed x, torque x, efficiency x$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:turbo,tfmg:golden_turbo,create:wrench,create:mechanical_crafter",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

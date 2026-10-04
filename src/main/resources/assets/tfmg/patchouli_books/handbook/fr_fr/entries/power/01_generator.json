@@ -1,0 +1,30 @@
+{
+  "name": "Générateur",
+  "icon": "tfmg:generator",
+  "category": "tfmg:power",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le générateur transforme la rotation en électricité. Il se fabrique par assemblage séquencé sur un axe : un condensateur, une plaque d'acier, une bobine de cuivre sur l'enrouleuse, un aimant, un mécanisme en acier et un tournevis, trois fois de suite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Production$()$(li)Rien en dessous de $(item)40 tr/min$().$(li)Tension : $(item)(tr/min - 40) x 1,4$(), plafonnée à $(item)1 000 V$().$(li)Puissance : $(item)tension x 40 W$().$(br2)À 128 tr/min, il donne 123 V et 4 920 W. À 256 tr/min, la vitesse maximale d'un axe Create, il donne $(item)302 V$() et $(item)12 080 W$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il se connecte sur $(item)toutes ses faces$() et impose un impact de contrainte de 50 à son axe, comme n'importe quelle machine de Create.$(br2)$(l)Plusieurs générateurs$()$(br)Leurs puissances s'additionnent, mais le réseau ne garde que la tension $(item)la plus haute$(). Faites-les tous tourner à la même vitesse, sinon les plus lents ajoutent de la puissance sans ajouter de tension."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ce sont les valeurs par défaut ; un serveur peut les modifier dans la configuration."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,create:shaft,tfmg:capacitor_item,tfmg:copper_spool,tfmg:magnet,tfmg:steel_mechanism,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

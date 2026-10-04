@@ -1,0 +1,31 @@
+{
+  "order": 8002,
+  "name": {
+    "en_us": "Large generator",
+    "fr_fr": "Grand générateur"
+  },
+  "layers": [
+    [
+      "ABC",
+      "DRE",
+      "FGH"
+    ],
+    [
+      "   ",
+      " S ",
+      "   "
+    ]
+  ],
+  "key": {
+    "A": "tfmg:stator[facing=north,stator_state=corner_horizontal,value=true]",
+    "B": "tfmg:stator[facing=south,stator_state=side,value=true]",
+    "C": "tfmg:stator[facing=east,stator_state=corner_horizontal,value=true]",
+    "D": "tfmg:stator[facing=east,stator_state=side,value=true]",
+    "R": "tfmg:rotor[axis=y]",
+    "E": "tfmg:stator[facing=west,stator_state=side,value=true]",
+    "F": "tfmg:stator[facing=west,stator_state=corner_horizontal,value=true]",
+    "G": "tfmg:stator[facing=north,stator_state=side,value=true]",
+    "H": "tfmg:stator[facing=south,stator_state=corner_horizontal,value=true]",
+    "S": "create:shaft[axis=y]"
+  }
+}

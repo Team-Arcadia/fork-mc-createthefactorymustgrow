@@ -1,0 +1,30 @@
+{
+  "name": "Transformateur",
+  "icon": "tfmg:transformer",
+  "category": "tfmg:network_control",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le transformateur élève ou abaisse la tension. Le courant entre d'un côté et ressort du côté opposé ; le multimètre affiche son état."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les bobines$()$(br)Faites un clic droit sur un côté avec une $(item)bobine électromagnétique$() pour l'installer ; un contour montre le côté visé. La bobine du côté entrée est la $(item)primaire$(), celle du côté sortie la $(item)secondaire$(). Clic droit main vide pour reprendre une bobine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les deux bobines doivent avoir au moins $(item)50 tours$(), sinon rien ne sort.$(li)Tension de sortie = $(item)tension d'entrée x tours secondaires / tours primaires$().$(br2)Exemple : 300 V en entrée, 100 tours à l'entrée, 50 à la sortie : 150 V en sortie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bobinez les bobines sur l'$(item)enrouleuse$() avec une bobine de cuivre. Son cadran règle le nombre de tours par pas de 10, jusqu'à 1 000.$(br2)$(l)Limites$()$(br)Jusqu'à $(item)10 kW$() en sortie, $(item)100 A$(), et les $(item)1 000 V$() habituels sur le transformateur lui-même. Au-delà, passez au grand transformateur."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:transformer,tfmg:electromagnetic_coil,tfmg:winding_machine,tfmg:copper_spool",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

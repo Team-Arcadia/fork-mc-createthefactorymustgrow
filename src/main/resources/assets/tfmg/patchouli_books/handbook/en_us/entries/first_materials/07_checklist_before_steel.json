@@ -1,0 +1,26 @@
+{
+  "name": "Checklist before steel",
+  "icon": "tfmg:fireproof_bricks",
+  "category": "tfmg:first_materials",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Before moving on to the steel chapter, make sure you have: $(li)A steady supply of $(item)fireproof bricks$(), as blocks: the blast furnace walls, the blast stoves, the output and the hatch all use them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)A heated compacting line for $(item)cast iron ingots$(), and a press making $(item)cast iron sheets$(). $(li)A stack of $(item)cast iron pipes$() and a few $(item)cast iron fluid tanks$(). $(li)At least one $(item)coke oven$() and plenty of $(item)coal$(): the blast furnace burns $(item)coal coke dust$(), which is coal coke through crushing wheels. $(li)A $(item)limesand$() line: honey, flowing lava, a drill and crushing wheels."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Iron$() for the furnace: raw iron or crushed raw iron, both work. $(li)A $(item)casting basin$(), to turn molten steel into ingots.$(br2)The $(item)blast furnace reinforcement$() needs steel and heavy plates: build the furnace with plain fireproof bricks first, and reinforce it later.$(br2)Next chapter: coal coke, hot air and your first steel."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_bricks,tfmg:cast_iron_ingot,tfmg:cast_iron_pipe,tfmg:coke_oven,tfmg:coal_coke_dust,tfmg:limesand,minecraft:raw_iron,tfmg:casting_basin",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

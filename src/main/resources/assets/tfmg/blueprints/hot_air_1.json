@@ -1,0 +1,18 @@
+{
+  "order": 4001,
+  "name": {
+    "en_us": "The air intake",
+    "fr_fr": "La prise d'air"
+  },
+  "layers": [
+    [
+      "AA"
+    ],
+    [
+      "AA"
+    ]
+  ],
+  "key": {
+    "A": "tfmg:air_intake[facing=south]"
+  }
+}

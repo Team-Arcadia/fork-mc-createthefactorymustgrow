@@ -1,0 +1,26 @@
+{
+  "name": "First ingots: superheated mixing",
+  "icon": "create:mechanical_mixer",
+  "category": "tfmg:aluminium",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Since 1.3.0 there is a way to get aluminium $(item)without electricity$(), so you are never stuck before your first generator.$(br2)$(l)The recipe$()$(br)In a Create $(item)Mechanical Mixer$() over a $(item)Basin$():$(br2)$(li)4 $(item)Bauxite Powder$()$(li)1 $(item)Coal Coke Dust$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "give $(item)1 Aluminum Ingot$(). The basin must be $(item)superheated$(): put a Blaze Burner under it and feed the blaze a $(item)Blaze Cake$().$(br2)$(l)Coal Coke Dust$()$(br)Crush $(item)Coal Coke$() in Crushing Wheels: one coke gives one dust. Coal coke comes from the coke oven, covered in the steel chapters."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)When to stop$()$(br)This recipe is meant to start you off. Electrolysis turns the same 4 powder into an ingot plus extra nuggets and needs no coke dust, so once your first generators are running, move your bauxite to a vat."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_mixer,create:basin,create:blaze_burner,create:blaze_cake,tfmg:bauxite_powder,tfmg:coal_coke,tfmg:coal_coke_dust,tfmg:aluminum_ingot",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

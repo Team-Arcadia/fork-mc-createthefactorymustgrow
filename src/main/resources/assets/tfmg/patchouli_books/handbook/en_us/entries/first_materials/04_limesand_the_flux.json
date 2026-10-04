@@ -1,0 +1,30 @@
+{
+  "name": "Limesand, the flux",
+  "icon": "create:limestone",
+  "category": "tfmg:first_materials",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The blast furnace does not melt iron alone: every recipe needs one item of $(item)flux$(), and in TFMG the flux is $(item)limesand$(). $(l)Getting limesand 1.$() Make Create $(item)limestone$(): let honey flow into flowing lava."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A lava source turns into obsidian instead, so keep the lava flowing. 2. Mine the limestone, ideally with a mechanical drill that breaks it as it forms. 3. Send it through $(item)crushing wheels$(): each limestone block always gives $(item)1 limesand$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)What the blast furnace does with it$()$(li)$(item)Crushed raw iron + limesand$(): 144 mB of molten steel, 144 mB of molten slag and 200 mB of furnace gas.$(li)$(item)Raw iron + limesand$(): 288 mB of molten steel and 288 mB of slag, but it takes twice the time and hot air.$(br2)144 mB is one steel ingot in the casting basin. Plan about $(item)one limesand per steel ingot$() from crushed iron."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Limesand also makes $(item)cement$(), on the next page."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:limestone,tfmg:limesand,create:crushing_wheel,create:mechanical_drill,create:crushed_raw_iron,minecraft:raw_iron",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

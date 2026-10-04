@@ -1,0 +1,26 @@
+{
+  "name": "Fireclay and the Nether layers",
+  "icon": "tfmg:fireclay",
+  "category": "tfmg:resources",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fireclay$()$(br)Fireclay is the first wall of the progression: fireproof bricks for the casting basin, the blast stove and the blast furnace all come from it. Dig it with a $(item)shovel$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)A fireclay block drops $(item)1 fireclay ball$(), and four balls craft back into a block, so mine the layer generously.$(br2)$(l)The Nether$()$(br)In the Nether, clusters appear between $(item)Y 40 and Y 90$(), also in about one chunk out of 18. Two patterns exist:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Sulfur$() with scorchia, blackstone, magma and basalt. This is the $(item)only place sulfur generates$().$(li)$(item)Fireclay$() with scorchia, gravel, magma, soul sand and soul soil.$(br2)Sulfur feeds gunpowder, sulfuric acid and rubber later on, so bring back a good stack on your first trip."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireclay,tfmg:fireclay_ball,tfmg:sulfur,create:scorchia",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

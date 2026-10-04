@@ -44,7 +44,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-public class EngineControllerBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, MenuProvider {
+public class EngineControllerBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, MenuProvider, com.drmangotea.tfmg.content.items.inspector.IInspectable {
 
     private UUID user;
     private UUID prevUser;
@@ -323,6 +323,41 @@ public class EngineControllerBlockEntity extends SmartBlockEntity implements IHa
             if (!playerInRange(player, level, worldPosition) || !playerIsUsingEngineController(player))
                 stopUsing(player);
         }
+    }
+
+    @Override
+    public void inspect(com.drmangotea.tfmg.content.items.inspector.InspectionReport report) {
+        if (enginePos == null) {
+            report.problem("controller.no_engine");
+            report.fix("controller.no_engine.fix");
+            return;
+        }
+        String where = enginePos.getX() + " " + enginePos.getY() + " " + enginePos.getZ();
+        if (!level.isLoaded(enginePos)) {
+            report.info("controller.engine_unloaded", where);
+            return;
+        }
+        if (!(level.getBlockEntity(enginePos) instanceof AbstractSmallEngineBlockEntity linked)) {
+            report.problem("controller.engine_missing", where);
+            report.fix("controller.no_engine.fix");
+            return;
+        }
+        report.ok("controller.linked", where);
+        AbstractSmallEngineBlockEntity master = linked;
+        if (!linked.isController()) {
+            if (linked.controller == null || !level.isLoaded(linked.controller)
+                    || !(level.getBlockEntity(linked.controller) instanceof AbstractSmallEngineBlockEntity be))
+                return;
+            master = be;
+        }
+        if (!getBlockPos().equals(master.engineController)) {
+            report.problem("controller.link_lost");
+            report.fix("controller.no_engine.fix");
+        }
+        report.info("controller.state", net.minecraft.network.chat.Component.translatable("tfmg." + shift.langKey), accelerationRate);
+        report.info("engine.section");
+        // The engine's own report covers start, throttle and neutral gear.
+        master.inspect(report);
     }
 
     public void updateEngine() {

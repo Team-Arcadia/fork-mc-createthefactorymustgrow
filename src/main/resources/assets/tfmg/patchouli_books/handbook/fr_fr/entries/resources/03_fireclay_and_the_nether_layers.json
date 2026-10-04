@@ -1,0 +1,26 @@
+{
+  "name": "L'argile réfractaire et les couches du Nether",
+  "icon": "tfmg:fireclay",
+  "category": "tfmg:resources",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Argile réfractaire$()$(br)L'argile réfractaire est le premier obstacle de la progression : les briques réfractaires du bassin de coulée, du fourneau à air chaud et du haut fourneau en viennent toutes. Creusez-la à la $(item)pelle$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un bloc d'argile réfractaire donne $(item)1 boule d'argile réfractaire$(), et quatre boules redonnent un bloc : minez la couche sans compter.$(br2)$(l)Le Nether$()$(br)Dans le Nether, les amas apparaissent entre $(item)Y 40 et Y 90$(), eux aussi dans environ un chunk sur 18. Il existe deux motifs :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Soufre$() avec scorchia, roche noire, magma et basalte. C'est le $(item)seul endroit où le soufre apparaît$().$(li)$(item)Argile réfractaire$() avec scorchia, gravier, magma, sable et terre des âmes.$(br2)Le soufre servira plus tard à la poudre à canon, à l'acide sulfurique et au caoutchouc : rapportez-en une bonne pile dès votre premier voyage."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireclay,tfmg:fireclay_ball,tfmg:sulfur,create:scorchia",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

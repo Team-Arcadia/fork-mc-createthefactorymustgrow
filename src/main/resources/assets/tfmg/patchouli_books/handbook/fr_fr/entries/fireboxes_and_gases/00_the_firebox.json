@@ -1,0 +1,48 @@
+{
+  "name": "Le foyer",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)foyer$() brûle des carburants liquides pour chauffer ce qui est posé dessus. C'est l'équivalent au carburant du brûleur à blaze. Des foyers posés côte à côte fusionnent en un seul, comme les réservoirs de Create :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "un carré de $(item)1 x 1, 2 x 2 ou 3 x 3$(), haut d'un bloc. Le foyer fusionné partage un seul réservoir de carburant et un seul réservoir d'échappement, chacun de $(item)8000 mB par bloc$() avec la taille de réservoir par défaut de Create."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Carburants$()$(br)Seuls les fluides de la liste des carburants de foyer brûlent : $(item)GPL, butane, propane, hydrogène, diesel, naphta et kérosène$(). Le réservoir accepte n'importe quel fluide : en pomper un autre ne fait que le boucher, et les lunettes affichent alors $(item)This fluid is not a firebox fuel$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Chaleur$()$(br)Un foyer qui brûle compte comme un chauffage allumé :$(li)$(item)2 de chaleur$() par bloc pour les tours de distillation, les cuves chimiques et les chaudières à vapeur de Create, comme un brûleur à blaze surchauffé,$(li)$(item)chauffé$(), mais pas surchauffé, pour un bassin de Create posé dessus.$(br2)Quand il s'éteint, sa chaleur tombe à zéro."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Le foyer",
+      "multiblock": {
+        "pattern": [
+          [
+            "FFF",
+            "F0F",
+            "FFF"
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox[blaze=fading]",
+          "0": "tfmg:firebox[blaze=fading]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,tfmg:lpg_bucket,tfmg:butane_bucket,tfmg:propane_bucket,tfmg:hydrogen_bucket,tfmg:diesel_bucket,tfmg:naphtha_bucket,tfmg:kerosene_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "order": 200,
+  "icon": "tfmg:regular_engine",
+  "title": {
+    "en_us": "Engines",
+    "fr_fr": "Les moteurs"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Three small engines",
+        "fr_fr": "Trois petits moteurs"
+      },
+      "text": {
+        "en_us": [
+          "Engines burn the fuels of your refinery and turn them into **rotation**. There are three small engines, all built the same way:",
+          "",
+          "- **Regular Engine**: the all-rounder. Its layout can be changed between five types (I, V, W, U and Boxer).",
+          "- **Radial Engine**: a fixed radial layout with eight cylinders and a built-in output.",
+          "- **Turbine Engine**: the fastest and strongest type, runs on turbine blades instead of cylinders.",
+          "",
+          "Each one is a block you place, then **right-click with parts** until it is complete: first the components, then the cylinders. Blocks of the same kind placed in a row, facing the same way, join into one longer engine that gives more torque.",
+          "",
+          "An engine never starts on fuel alone. It also needs a **redstone signal** (or an engine controller), an **output shaft**, and room in its exhaust tank. Wear Engineer's Goggles while you build: the engine always tells you what it is waiting for."
+        ],
+        "fr_fr": [
+          "Les moteurs brûlent les carburants de votre raffinerie et les transforment en **rotation**. Il existe trois petits moteurs, tous construits de la même façon :",
+          "",
+          "- **Moteur ordinaire** : le polyvalent. Sa disposition peut passer entre cinq types (I, V, W, U et Boxer).",
+          "- **Moteur radial** : une disposition radiale fixe à huit cylindres, avec une sortie intégrée.",
+          "- **Moteur à turbine** : le type le plus rapide et le plus puissant, il fonctionne avec des pales de turbine au lieu de cylindres.",
+          "",
+          "Chacun est un bloc que vous posez, puis que vous **complétez par clic droit avec des pièces** : d'abord les composants, ensuite les cylindres. Des blocs du même modèle posés en ligne et orientés dans le même sens s'assemblent en un moteur plus long qui donne plus de couple.",
+          "",
+          "Un moteur ne démarre jamais avec le seul carburant. Il lui faut aussi un **signal de redstone** (ou un contrôleur de moteur), un **arbre de sortie** et de la place dans son réservoir d'échappement. Portez les lunettes d'ingénieur pendant la construction : le moteur indique toujours ce qu'il attend."
+        ]
+      },
+      "items": ["tfmg:regular_engine", "tfmg:radial_engine", "tfmg:turbine_engine", "create:goggles"]
+    },
+    {
+      "title": {
+        "en_us": "Step 1: the components",
+        "fr_fr": "Étape 1 : les composants"
+      },
+      "text": {
+        "en_us": [
+          "Place the engine block, then right-click it with each component it asks for. The goggles show **Engine Unfinished** and the **Next Component**.",
+          "",
+          "## Regular and radial engines",
+          "- 1 Crankshaft, 1 Steel Cogwheel, 1 Large Steel Cogwheel",
+          "- 1 Belt Connector, 2 Steel Pipes, 1 Steel Mechanism",
+          "",
+          "## Turbine engine",
+          "- 1 Shaft, 1 Steel Cogwheel, 2 Steel Pipes, 2 Steel Mechanisms",
+          "",
+          "**Every block of a long engine needs its own full set.** A three-block engine asks for three sets, one after the other; the goggles say which block you are on (**Building engine 2 of 3**). You can click any block of the row, the parts go where they are needed.",
+          "",
+          "Made a mistake? Right-click with a **Screwdriver** to take the last part back out. Breaking an engine block also drops every part that was in it."
+        ],
+        "fr_fr": [
+          "Posez le bloc moteur, puis faites un clic droit dessus avec chaque composant qu'il demande. Les lunettes affichent **Moteur inachevé** et le **Prochain composant**.",
+          "",
+          "## Moteurs ordinaire et radial",
+          "- 1 vilebrequin, 1 engrenage en acier, 1 grand engrenage en acier",
+          "- 1 tapis roulant, 2 tuyaux en acier, 1 mécanisme en acier",
+          "",
+          "## Moteur à turbine",
+          "- 1 arbre, 1 engrenage en acier, 2 tuyaux en acier, 2 mécanismes en acier",
+          "",
+          "**Chaque bloc d'un moteur long demande son propre jeu complet.** Un moteur de trois blocs réclame trois jeux, l'un après l'autre ; les lunettes indiquent le bloc en cours (**Construction du moteur 2 sur 3**). Vous pouvez cliquer sur n'importe quel bloc de la rangée, les pièces vont là où il faut.",
+          "",
+          "Une erreur ? Un clic droit avec un **tournevis** retire la dernière pièce posée. Casser un bloc moteur rend aussi toutes les pièces qu'il contenait."
+        ]
+      },
+      "items": ["tfmg:crankshaft", "tfmg:steel_cogwheel", "tfmg:large_steel_cogwheel", "create:belt_connector", "tfmg:steel_pipe", "tfmg:steel_mechanism", "create:shaft", "tfmg:screwdriver"]
+    },
+    {
+      "title": {
+        "en_us": "Step 2: cylinders and fuels",
+        "fr_fr": "Étape 2 : cylindres et carburants"
+      },
+      "text": {
+        "en_us": [
+          "Once all components are in, right-click with **cylinders** until every slot is filled (goggles: **Pistons Missing** or **Turbines Missing** until then). The cylinder decides which fuels the engine burns; its tooltip lists them under **Supported Fuels**.",
+          "",
+          "- **Diesel Engine Cylinder** (4 aluminium sheets): diesel.",
+          "- **Engine Cylinder** (diesel cylinder + Spark Plug): gasoline, kerosene, naphtha.",
+          "- **Engine Cylinder** + Brass Pipe: LPG.",
+          "- Engine Cylinder filled by a spout with 250 mB of **butane**, **propane** or **hydrogen**: that gas.",
+          "- **Simple Engine Cylinder** (4 iron sheets + Flint and Steel): creosote and furnace gas.",
+          "- **Turbine Blade** (8 iron sheets + Shaft): kerosene. Turbine engines only take blades.",
+          "",
+          "The fuel list is read from the cylinders, so keep one kind per engine; an Engine Cylinder whose fuels differ from those already inside is refused. Changing the engine type hands the cylinders back to you."
+        ],
+        "fr_fr": [
+          "Une fois tous les composants en place, faites un clic droit avec des **cylindres** jusqu'à remplir chaque emplacement (lunettes : **Pistons manquants** ou **Turbines manquantes** d'ici là). Le cylindre décide des carburants que le moteur brûle ; son infobulle les liste sous **Carburants supportés**.",
+          "",
+          "- **Cylindre de moteur diesel** (4 plaques d'aluminium) : diesel.",
+          "- **Cylindre de moteur** (cylindre diesel + bougie d'allumage) : essence, kérosène, naphta.",
+          "- **Cylindre de moteur** + tuyau en laiton : GPL.",
+          "- Cylindre de moteur rempli au bec verseur avec 250 mB de **butane**, **propane** ou **hydrogène** : ce gaz.",
+          "- **Cylindre de moteur simple** (4 plaques de fer + briquet) : créosote et gaz de four.",
+          "- **Pale de turbine** (8 plaques de fer + arbre) : kérosène. Les moteurs à turbine n'acceptent que des pales.",
+          "",
+          "La liste des carburants est lue sur les cylindres : gardez une seule sorte par moteur ; un cylindre de moteur dont les carburants diffèrent de ceux déjà posés est refusé. Changer le type du moteur vous rend les cylindres."
+        ]
+      },
+      "items": ["tfmg:diesel_engine_cylinder", "tfmg:engine_cylinder", "tfmg:simple_engine_cylinder", "tfmg:turbine_blade", "tfmg:spark_plug", "tfmg:brass_pipe"]
+    },
+    {
+      "title": {
+        "en_us": "Engine types",
+        "fr_fr": "Les types de moteur"
+      },
+      "text": {
+        "en_us": [
+          "Right-click a regular engine with an **Empty Schematic** to switch its type. The order is I, V, W, U, Boxer, then back to I. The whole row changes together, and any cylinders already inside drop out.",
+          "",
+          "Multipliers (speed / torque / efficiency) and cylinders per block:",
+          "- **I**: 1 / 1 / 1, 2 cylinders",
+          "- **V**: 1.2 / 1.3 / 0.8, 4 cylinders",
+          "- **W**: 1.3 / 1.1 / 0.5, 8 cylinders",
+          "- **U**: 1 / 1.5 / 0.9, 4 cylinders",
+          "- **Boxer**: 1 / 0.8 / 1.2, 4 cylinders",
+          "- **Radial**: 1 / 0.8 / 1.2, 8 cylinders",
+          "- **Turbine**: 1.5 / 1.5 / 0.5, 4 blades",
+          "",
+          "Radial and turbine engines keep their type, the schematic does nothing on them. Higher efficiency means less fuel burnt for the same work, so the Boxer and the radial are the thrifty choices, while the W and the turbine trade fuel for power."
+        ],
+        "fr_fr": [
+          "Un clic droit sur un moteur ordinaire avec un **schéma vide** change son type. L'ordre est I, V, W, U, Boxer, puis retour à I. Toute la rangée change ensemble, et les cylindres déjà posés tombent au sol.",
+          "",
+          "Multiplicateurs (vitesse / couple / rendement) et cylindres par bloc :",
+          "- **I** : 1 / 1 / 1, 2 cylindres",
+          "- **V** : 1,2 / 1,3 / 0,8, 4 cylindres",
+          "- **W** : 1,3 / 1,1 / 0,5, 8 cylindres",
+          "- **U** : 1 / 1,5 / 0,9, 4 cylindres",
+          "- **Boxer** : 1 / 0,8 / 1,2, 4 cylindres",
+          "- **Radial** : 1 / 0,8 / 1,2, 8 cylindres",
+          "- **Turbine** : 1,5 / 1,5 / 0,5, 4 pales",
+          "",
+          "Les moteurs radial et à turbine gardent leur type, le schéma n'a aucun effet sur eux. Un meilleur rendement signifie moins de carburant brûlé pour le même travail : le Boxer et le radial sont les choix économes, alors que le W et la turbine échangent du carburant contre de la puissance."
+        ]
+      },
+      "items": ["create:empty_schematic", "tfmg:regular_engine", "tfmg:radial_engine", "tfmg:turbine_engine"]
+    },
+    {
+      "title": {
+        "en_us": "Output shaft and long engines",
+        "fr_fr": "Arbre de sortie et moteurs longs"
+      },
+      "text": {
+        "en_us": [
+          "A **regular engine** delivers nothing until you right-click one of its end blocks with a **Shaft**. The shaft sticks out of the free end; a wrench takes it back off. You can put one at each end, the power is then split between the two.",
+          "",
+          "The **radial engine** has its outputs built in: at both ends of a row, and on both sides of a single block. The **turbine engine** also has a built-in output, at one end only: look for the shaft stub on its model. Neither needs a shaft item.",
+          "",
+          "Engine blocks join when they are the same block, face the same way and, for regular engines, have the same type. A row holds up to **5 blocks** by default (config **engineMaxLength**). Torque grows with every block in the row.",
+          "",
+          "The 3D view shows a three-block I engine facing north, its shaft in front. Pipe fuel into any block: the row shares one fuel tank of 4000 mB."
+        ],
+        "fr_fr": [
+          "Un **moteur ordinaire** ne délivre rien tant que vous n'avez pas fait un clic droit sur l'un de ses blocs d'extrémité avec un **arbre**. L'arbre dépasse du bout libre ; une clé le retire. Vous pouvez en mettre un à chaque bout, la puissance est alors partagée entre les deux.",
+          "",
+          "Le **moteur radial** a ses sorties intégrées : aux deux bouts d'une rangée, et des deux côtés d'un bloc seul. Le **moteur à turbine** a aussi une sortie intégrée, à un seul bout : repérez le bout d'arbre sur son modèle. Aucun des deux n'a besoin d'un arbre.",
+          "",
+          "Les blocs moteur s'assemblent s'ils sont du même modèle, orientés dans le même sens et, pour les moteurs ordinaires, du même type. Une rangée compte jusqu'à **5 blocs** par défaut (option **engineMaxLength**). Le couple augmente avec chaque bloc de la rangée.",
+          "",
+          "La vue 3D montre un moteur I de trois blocs tourné vers le nord, son arbre devant. Envoyez le carburant par tuyau dans n'importe quel bloc : la rangée partage un seul réservoir de 4000 mB."
+        ]
+      },
+      "items": ["create:shaft", "create:wrench", "tfmg:regular_engine"],
+      "schematic": {
+        "layers": [
+          ["S", "F", "E", "E"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z]",
+          "F": "tfmg:regular_engine[facing=north,engine_state=front,shaft_facing=north,extended=true]",
+          "E": "tfmg:regular_engine[facing=north,engine_state=normal,shaft_facing=south,extended=true]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Running: redstone, fuel, exhaust",
+        "fr_fr": "En marche : redstone, carburant, échappement"
+      },
+      "text": {
+        "en_us": [
+          "## Redstone sets the throttle",
+          "Give any block of the engine a redstone signal. The strongest signal on the row counts: signal 15 is full power, signal 0 stops it. The output speed is **100 RPM x type speed x fuel speed x upgrades x signal / 15**, capped at 256 RPM.",
+          "",
+          "## Fuel",
+          "Pipe fuel into any block of the engine. It must be one of the fuels the cylinders accept. When the tank runs dry the engine stops.",
+          "",
+          "## Exhaust",
+          "A running engine fills its **exhaust tank (8000 mB) with CO2**. When it is full the engine stops. Pump the CO2 out of the engine with a pipe into an **Exhaust** block, which vents it as smoke, or into a tank.",
+          "",
+          "The engine stops as well while a component or a cylinder is missing, so check the goggles first when nothing turns."
+        ],
+        "fr_fr": [
+          "## La redstone règle les gaz",
+          "Envoyez un signal de redstone à n'importe quel bloc du moteur. Le signal le plus fort de la rangée compte : 15 donne la pleine puissance, 0 l'arrête. La vitesse de sortie vaut **100 RPM x vitesse du type x vitesse du carburant x améliorations x signal / 15**, plafonnée à 256 RPM.",
+          "",
+          "## Carburant",
+          "Envoyez le carburant par tuyau dans n'importe quel bloc du moteur. Il doit faire partie des carburants acceptés par les cylindres. Quand le réservoir est vide, le moteur s'arrête.",
+          "",
+          "## Échappement",
+          "Un moteur en marche remplit son **réservoir d'échappement (8000 mB) de CO2**. Quand il est plein, le moteur s'arrête. Pompez le CO2 hors du moteur avec un tuyau vers un bloc **Échappement**, qui le rejette en fumée, ou vers un réservoir.",
+          "",
+          "Le moteur s'arrête aussi tant qu'il manque un composant ou un cylindre : regardez d'abord les lunettes quand rien ne tourne."
+        ]
+      },
+      "items": ["minecraft:lever", "tfmg:exhaust", "create:mechanical_pump", "tfmg:gasoline_bucket", "tfmg:diesel_bucket", "tfmg:carbon_dioxide_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Oil and cooling fluid",
+        "fr_fr": "Huile et liquide de refroidissement"
+      },
+      "text": {
+        "en_us": [
+          "Two optional fluids make an engine cheaper to run. Each one cuts fuel consumption to **70%**, and with both the engine burns about half the fuel.",
+          "",
+          "- **Lubrication Oil**",
+          "- **Cooling Fluid**",
+          "",
+          "Each is stored separately in the engine, up to **2000 mB**. Right-click the engine with a **bucket** to add 1000 mB (refused while it already holds more than 1000), or use the refillable items:",
+          "",
+          "- **Oil Can** for lubrication oil, **Cooling Fluid Bottle** for cooling fluid. Each holds 4000 mB. Right-click a tank, a vat or any fluid container to fill it; sneak-right-click a container to pour it back.",
+          "- Right-click the engine with the full item to top the engine up to 2000 mB.",
+          "",
+          "A running engine uses both fluids up slowly. The goggles show **Oil** and **Cooling Fluid** while any is left."
+        ],
+        "fr_fr": [
+          "Deux fluides facultatifs rendent un moteur moins gourmand. Chacun ramène la consommation de carburant à **70 %**, et avec les deux le moteur brûle à peu près moitié moins.",
+          "",
+          "- **Huile de lubrification**",
+          "- **Liquide de refroidissement**",
+          "",
+          "Chacun est stocké à part dans le moteur, jusqu'à **2000 mB**. Un clic droit avec un **seau** ajoute 1000 mB (refusé s'il en contient déjà plus de 1000), ou utilisez les objets rechargeables :",
+          "",
+          "- **Burette d'huile** pour l'huile, **bouteille de liquide de refroidissement** pour le liquide. Chacune contient 4000 mB. Un clic droit sur un réservoir, une cuve ou tout conteneur de fluide la remplit ; un clic droit accroupi sur un conteneur la vide dedans.",
+          "- Un clic droit sur le moteur avec l'objet plein remet le moteur à 2000 mB.",
+          "",
+          "Un moteur en marche consomme lentement les deux fluides. Les lunettes affichent **Huile** et **Liquide de refroidissement** tant qu'il en reste."
+        ]
+      },
+      "items": ["tfmg:oil_can", "tfmg:cooling_fluid_bottle", "tfmg:lubrication_oil_bucket", "tfmg:cooling_fluid_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "What the goggles say",
+        "fr_fr": "Ce que disent les lunettes"
+      },
+      "text": {
+        "en_us": [
+          "Look at any block of the engine with goggles. While it is being built:",
+          "- **Engine Unfinished**, **Building engine X of Y** and **Next Component**: keep clicking parts in.",
+          "- **Pistons Missing** / **Turbines Missing**: add cylinders or blades.",
+          "",
+          "Once complete it shows its **Type**, **Speed** in RPM, **Signal** (0 means no redstone, so no rotation), **Torque**, **Output** in stress units and **Fuel Consumption** in mB/s, then its fuel and exhaust tanks.",
+          "",
+          "- A gold line **No output shaft: the engine cannot deliver its power** means it burns fuel for nothing: add a shaft.",
+          "- An aqua **Upgrades: speed x, torque x, efficiency x** line shows what the mounted upgrades multiply.",
+          "- **Controller** gives the position of the engine controller driving it.",
+          "",
+          "If Speed stays at 0 with everything built, check in this order: signal, fuel matching the cylinders, exhaust tank not full."
+        ],
+        "fr_fr": [
+          "Regardez n'importe quel bloc du moteur avec les lunettes. Pendant la construction :",
+          "- **Moteur inachevé**, **Construction du moteur X sur Y** et **Prochain composant** : continuez à poser les pièces.",
+          "- **Pistons manquants** / **Turbines manquantes** : ajoutez des cylindres ou des pales.",
+          "",
+          "Une fois terminé, il affiche son **Type**, sa **Vitesse** en RPM, le **Signal** (0 veut dire pas de redstone, donc pas de rotation), le **Couple**, la **Production** en unités de contrainte et la **Consommation de carburant** en mB/s, puis ses réservoirs de carburant et d'échappement.",
+          "",
+          "- Une ligne dorée **Aucun arbre de sortie** signifie qu'il brûle du carburant pour rien : ajoutez un arbre.",
+          "- Une ligne bleue **Améliorations : vitesse x, couple x, rendement x** montre ce que multiplient les améliorations posées.",
+          "- **Contrôleur** donne la position du contrôleur de moteur qui le pilote.",
+          "",
+          "Si la vitesse reste à 0 alors que tout est construit, vérifiez dans l'ordre : le signal, un carburant accepté par les cylindres, un échappement pas plein."
+        ]
+      },
+      "items": ["create:goggles", "tfmg:regular_engine"]
+    },
+    {
+      "title": {
+        "en_us": "Fuel table",
+        "fr_fr": "Tableau des carburants"
+      },
+      "text": {
+        "en_us": [
+          "Each fuel multiplies the engine's speed, efficiency and torque (speed / efficiency / torque):",
+          "",
+          "- **Gasoline**: 1 / 1 / 1",
+          "- **Diesel**: 0.8 / 0.8 / 1.4",
+          "- **Kerosene**: 0.7 / 1 / 1.4",
+          "- **Naphtha**: 1 / 0.7 / 1.3",
+          "- **LPG**: 1.2 / 0.7 / 0.7",
+          "- **Butane**: 1.3 / 0.6 / 0.6",
+          "- **Propane**: 1.1 / 0.9 / 0.8",
+          "- **Hydrogen**: 1.4 / 0.5 / 0.6",
+          "- **Creosote**: 0.7 / 0.4 / 0.5",
+          "- **Furnace Gas**: 0.5 / 0.3 / 0.3",
+          "",
+          "Diesel and kerosene are the heavy-duty fuels, the gases spin fast but weak, and creosote and furnace gas are cheap by-products for a first engine. These values multiply those of the engine type and of the upgrades. Modpacks can change them with datapacks."
+        ],
+        "fr_fr": [
+          "Chaque carburant multiplie la vitesse, le rendement et le couple du moteur (vitesse / rendement / couple) :",
+          "",
+          "- **Essence** : 1 / 1 / 1",
+          "- **Diesel** : 0,8 / 0,8 / 1,4",
+          "- **Kérosène** : 0,7 / 1 / 1,4",
+          "- **Naphta** : 1 / 0,7 / 1,3",
+          "- **GPL** : 1,2 / 0,7 / 0,7",
+          "- **Butane** : 1,3 / 0,6 / 0,6",
+          "- **Propane** : 1,1 / 0,9 / 0,8",
+          "- **Hydrogène** : 1,4 / 0,5 / 0,6",
+          "- **Créosote** : 0,7 / 0,4 / 0,5",
+          "- **Gaz de four** : 0,5 / 0,3 / 0,3",
+          "",
+          "Le diesel et le kérosène sont les carburants de force, les gaz tournent vite mais sans couple, et la créosote et le gaz de four sont des sous-produits bon marché pour un premier moteur. Ces valeurs se multiplient avec celles du type de moteur et des améliorations. Les modpacks peuvent les modifier par datapack."
+        ]
+      },
+      "items": ["tfmg:gasoline_bucket", "tfmg:diesel_bucket", "tfmg:kerosene_bucket", "tfmg:naphtha_bucket", "tfmg:lpg_bucket", "tfmg:hydrogen_bucket", "tfmg:creosote_bucket", "tfmg:furnace_gas_bucket"]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Les recettes du pétrole lourd",
+  "icon": "tfmg:heavy_oil_bucket",
+  "category": "tfmg:distillation",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le pétrole lourd peut passer dans une seconde tour. Chaque recette utilise $(item)200 mB de pétrole lourd$() et en rend la moitié sous forme de pétrole lourd dans la sortie la plus basse, que vous pouvez renvoyer dans la cuve."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)5 sorties$()$(br)100 mB de pétrole lourd, 25 mB d'huile de lubrification, 50 mB de diesel, 20 mB de kérosène, 5 mB de naphta.$(br2)$(l)4 sorties$()$(br)100 mB de pétrole lourd, 30 mB d'huile de lubrification, 50 mB de diesel, 20 mB de kérosène."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)3 sorties (distillation légère)$()$(br)100 mB de pétrole lourd, 50 mB de diesel, 50 mB d'huile de lubrification."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le pétrole lourd a aussi ses propres usages :$(li)compacté avec de la chaleur, $(item)1000 mB$() donnent un $(item)bitume$(), la base de l'asphalte,$(li)avec de la poudre de soufre dans une cuve chimique chauffée équipée d'un mélangeur industriel, 250 mB donnent une $(item)plaque de caoutchouc$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une tour à pétrole brut et une tour à pétrole lourd avec le même nombre de sorties ne se mélangent jamais : le contrôleur choisit la recette qui correspond au fluide de son réservoir."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:heavy_oil_bucket,tfmg:lubrication_oil_bucket,tfmg:diesel_bucket,tfmg:kerosene_bucket,tfmg:naphtha_bucket,tfmg:bitumen,tfmg:rubber_sheet",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

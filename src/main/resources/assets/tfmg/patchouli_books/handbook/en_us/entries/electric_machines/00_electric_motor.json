@@ -1,0 +1,26 @@
+{
+  "name": "Electric motor",
+  "icon": "tfmg:electric_motor",
+  "category": "tfmg:electric_machines",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The electric motor turns electricity back into rotation, so one power plant can drive machines all over the base through wires. It is made by sequenced assembly on a shaft: a copper spool on the winding machine, a magnet, a steel mechanism and a screwdriver, three times over."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Speed and draw$()$(li)Speed: $(item)voltage x 0.8 RPM$(), up to $(item)255 RPM$(), reached at about 319 V.$(li)Resistance: $(item)30 ohms$(), so it draws $(item)V / 30$() amps.$(li)At 300 V it turns at 240 RPM and uses 10 A, that is $(item)3,000 W$().$(br2)Its stress capacity grows with its speed. Choose the direction of rotation with its value box."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Connecting it$()$(br)Power enters through its $(item)back$() face, opposite the shaft. Since 1.3.0, a motor lying on its side also takes power through its $(item)bottom$() face, so you can feed a row of motors from cables underneath.$(br2)If the network runs short of power, every motor on it stops at once."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_motor,create:shaft,tfmg:copper_spool,tfmg:magnet,tfmg:steel_mechanism,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

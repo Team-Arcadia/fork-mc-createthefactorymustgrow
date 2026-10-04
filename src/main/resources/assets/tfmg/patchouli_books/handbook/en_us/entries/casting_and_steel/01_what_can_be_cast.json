@@ -1,0 +1,26 @@
+{
+  "name": "What can be cast",
+  "icon": "tfmg:steel_ingot",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Molten steel$(), 144 mB: steel ingot, 200 ticks. $(li)$(item)Liquid silicon$(), 144 mB: silicon ingot, 200 ticks. $(li)$(item)Molten plastic$(), 144 mB: plastic sheet, 100 ticks. $(li)$(item)Liquid concrete$(), 144 mB: cinderblock, 50 ticks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Molten slag$(), 20 mB: slag block, 50 ticks.$(br2)$(l)Keeping up with the furnace$()$(br)A basin makes one steel ingot every 10 seconds. A short furnace makes one every 17 seconds, so $(item)one basin$() is enough at first. A tall reinforced furnace (one ingot every 5 seconds) needs $(item)two or more$(): feed a row of basins from one pipe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Steel and slag leave the furnace by the same output block. Keep them apart, for example with a $(item)smart fluid pipe$() set to one of them, so your steel basins never fill with slag. Slag has its own basins and becomes slag blocks.$(br2)Nine steel ingots craft a $(item)Block of Steel$(), which is also a reinforced blast furnace block."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_ingot,tfmg:silicon_ingot,tfmg:plastic_sheet,tfmg:cinderblock,tfmg:slag_block,tfmg:steel_block,create:smart_fluid_pipe,tfmg:casting_basin",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

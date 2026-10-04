@@ -1,0 +1,30 @@
+{
+  "name": "Which face does what",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The stove has no front; what matters is the face your pipe touches.$(br2)$(l)Sides of the bottom layer$()$(li)Pipe $(item)air in$().$(li)Pump $(item)CO2 out$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Top and bottom faces$()$(li)Pipe $(item)fuel in$() (creosote or furnace gas).$(li)Pump $(item)hot air out$().$(br2)The $(item)sides of the upper layers$() have no connection at all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The input tanks take $(item)any fluid$() pushed into them. Air pushed into the top goes into the fuel tank, fuel pushed into a side goes into the air tank, and no recipe matches any more: the stove stops. The input tanks cannot be pumped back out, so check every pipe before you open the line. Goggles show what each tank holds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A simple layout: air and CO2 pipes on two sides of the bottom, a fuel pipe under the stove, and the hot air pump on top, leading to the furnace hatch."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove,create:mechanical_pump,create:fluid_pipe,tfmg:air_bucket,tfmg:creosote_bucket,tfmg:furnace_gas_bucket,tfmg:hot_air_bucket,tfmg:carbon_dioxide_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

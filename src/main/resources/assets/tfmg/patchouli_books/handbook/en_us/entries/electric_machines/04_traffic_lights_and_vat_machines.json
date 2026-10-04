@@ -1,0 +1,26 @@
+{
+  "name": "Traffic lights and vat machines",
+  "icon": "tfmg:traffic_light",
+  "category": "tfmg:electric_machines",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Traffic light It cycles on its own through red, then orange, then green, and starts again.$() Set the length of the cycle with its value box. It connects through its $(item)top$() and $(item)bottom$() faces, so you can stack it on a post, and it is a $(item)175 ohm$() consumer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It only lights up while powered.$(br2)$(l)Freezer$()$(br)Cools a chemical vat. It connects on $(item)any face$() and is a $(item)75 ohm$() consumer. It only works with $(item)more than 3 A$(), which means above $(item)225 V$(), and burns above 400 A."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Electrode holder$()$(br)Holds an electrode in a chemical vat for electrolysis. It takes power through its $(item)top$() face and needs at least $(item)5 A$() to work; its resistance depends on the electrode inside.$(br2)Both are part of the vat multiblock. See the $(item)Chemical Vats$() chapter to build one, and the $(item)Aluminium$() chapter for electrolysis."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:traffic_light,tfmg:freezer,tfmg:electrode_holder,tfmg:copper_electrode,tfmg:zinc_electrode,tfmg:graphite_electrode",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

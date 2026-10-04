@@ -1,0 +1,191 @@
+{
+  "order": 140,
+  "icon": "tfmg:winding_machine",
+  "title": {
+    "en_us": "Winding and Magnets",
+    "fr_fr": "Bobinage et aimants"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "The Winding Machine",
+        "fr_fr": "L'enrouleuse"
+      },
+      "text": {
+        "en_us": [
+          "The **Winding Machine** wraps wire from a **spool** around a workpiece, one turn per tick. It makes resistors and coils, winds wire onto spools, and is a step in several sequenced assemblies.",
+          "",
+          "## Setting it up",
+          "- Drive it with a shaft on its **side**. Any speed works: it winds one turn per tick as long as it turns.",
+          "- **Spool**: right-click the machine with a spool to mount it (the old one comes back to you). Right-click with an empty hand to take the spool off.",
+          "- **Workpiece**: right-click with any other item to put **one** in. Sneak and right-click with an empty hand to take it back.",
+          "",
+          "## Automation",
+          "Funnels and deployers can insert both: spools go to the spool slot, everything else to the workpiece slot. Only a **used-up, empty spool** can be pulled out of the spool slot, and wire in the workpiece slot is never pulled out.",
+          "",
+          "With goggles you see the mounted spool, its **turns left**, and the progress of the current job."
+        ],
+        "fr_fr": [
+          "L'**enrouleuse** enroule le fil d'une **bobine** autour d'une pièce, un tour par tick. Elle fabrique résistances et bobines électromagnétiques, rembobine du fil sur les bobines, et sert d'étape dans plusieurs assemblages séquencés.",
+          "",
+          "## L'installer",
+          "- Entraînez-la par un arbre sur son **côté**. N'importe quelle vitesse convient : elle enroule un tour par tick tant qu'elle tourne.",
+          "- **Bobine** : clic droit sur la machine avec une bobine pour la monter (l'ancienne vous revient). Clic droit main vide pour retirer la bobine.",
+          "- **Pièce** : clic droit avec n'importe quel autre objet pour en placer **un seul**. Clic droit accroupi main vide pour le reprendre.",
+          "",
+          "## Automatisation",
+          "Entonnoirs et déployeurs peuvent insérer les deux : les bobines vont dans l'emplacement de bobine, le reste dans celui de la pièce. Seule une **bobine vide, épuisée** peut être retirée de son emplacement, et le fil placé comme pièce n'est jamais retiré.",
+          "",
+          "Avec les lunettes, vous voyez la bobine montée, ses **tours restants** et la progression du travail en cours."
+        ]
+      },
+      "items": ["tfmg:winding_machine", "tfmg:copper_spool", "tfmg:constantan_spool", "tfmg:aluminum_spool", "tfmg:empty_spool", "create:deployer"]
+    },
+    {
+      "title": {
+        "en_us": "Spools",
+        "fr_fr": "Les bobines"
+      },
+      "text": {
+        "en_us": [
+          "A full spool holds **1000 turns** of wire. There are three: **Copper**, **Aluminum** and **Constantan**.",
+          "",
+          "## Making spools",
+          "- **Empty Spool**: cut **Hardened Planks** in a Stonecutter.",
+          "- Crafting: surround an Empty Spool with **8 wires** of one metal. The spool comes out full, 1000 turns.",
+          "- Winding: put **wire** in the Winding Machine's workpiece slot with an empty spool, or a spool of the same metal, mounted. Each wire gives **125 turns**, wound one per tick, up to 1000. Wire goes in one at a time, so feed it with a funnel.",
+          "",
+          "A spool whose turns run out turns back into an **Empty Spool**, ready to be refilled.",
+          "",
+          "## Laying cables",
+          "Spools are also how you lay cables between connectors: click one connector, then the other. A run costs **125 turns per 8 blocks** of length. If the spool does not have enough turns left for that run, it tells you and nothing is placed.",
+          "",
+          "Copper wire makes the coils, constantan wire makes resistors."
+        ],
+        "fr_fr": [
+          "Une bobine pleine contient **1000 tours** de fil. Il en existe trois : **cuivre**, **aluminium** et **constantan**.",
+          "",
+          "## Fabriquer des bobines",
+          "- **Bobine vide** : coupez des **planches durcies** au tailleur de pierre.",
+          "- Fabrication : entourez une bobine vide de **8 fils** d'un même métal. La bobine sort pleine, 1000 tours.",
+          "- Enroulement : mettez du **fil** comme pièce dans l'enrouleuse, avec une bobine vide ou une bobine du même métal montée. Chaque fil donne **125 tours**, enroulés un par tick, jusqu'à 1000. Le fil entre un par un, alors alimentez-la avec un entonnoir.",
+          "",
+          "Une bobine dont les tours s'épuisent redevient une **bobine vide**, prête à être remplie.",
+          "",
+          "## Poser des câbles",
+          "Les bobines servent aussi à tirer des câbles entre connecteurs : cliquez un connecteur, puis l'autre. Une liaison coûte **125 tours par tranche de 8 blocs** de longueur. Si la bobine n'a plus assez de tours pour cette liaison, elle vous le dit et rien n'est posé.",
+          "",
+          "Le fil de cuivre fait les bobines électromagnétiques, le fil de constantan fait les résistances."
+        ]
+      },
+      "items": ["tfmg:empty_spool", "tfmg:hardened_planks", "tfmg:copper_wire", "tfmg:aluminum_wire", "tfmg:constantan_wire", "tfmg:copper_spool", "tfmg:aluminum_spool", "tfmg:constantan_spool"]
+    },
+    {
+      "title": {
+        "en_us": "Resistors and coils",
+        "fr_fr": "Résistances et bobines"
+      },
+      "text": {
+        "en_us": [
+          "## The target value",
+          "The value box on the machine's front sets a target from 1 to 100, **multiplied by 10**: from **10 to 1000** turns (200 by default). One turn of wire is **1 ohm** on a resistor and **1 turn** on a coil.",
+          "",
+          "## Resistors",
+          "Craft an **Unfinished Resistor** (copper wire, Plastic Sheet or Slime Ball, copper wire, in a column). Wind it with a **Constantan Spool**: it comes out as a **Resistor** whose resistance is the target. Put a finished resistor back in and it is wound up to a higher target.",
+          "",
+          "## Electromagnetic Coils",
+          "Craft **Unfinished Electromagnetic Coils** (steel nugget, Magnetic Alloy Ingot, steel nugget: gives 2). Wind one with a **Copper Spool** to get a coil with the target's number of turns. Transformers use these turns.",
+          "",
+          "## Large Coils",
+          "Wind a **Laminated Magnetic Alloy Block** (9 Magnetic Alloy Sheets) with a **Copper Spool**. The **Large Coil** gets the target's turns.",
+          "",
+          "Set the target **before** you start: a job takes as many turns from the spool as the target asks."
+        ],
+        "fr_fr": [
+          "## La valeur cible",
+          "La case de valeur à l'avant de la machine règle une cible de 1 à 100, **multipliée par 10** : de **10 à 1000** tours (200 par défaut). Un tour de fil vaut **1 ohm** sur une résistance et **1 tour** sur une bobine.",
+          "",
+          "## Résistances",
+          "Fabriquez une **résistance inachevée** (fil de cuivre, plaque de plastique ou boule de slime, fil de cuivre, en colonne). Enroulez-la avec une **bobine de constantan** : elle devient une **résistance** dont la valeur est la cible. Remettez une résistance finie et elle est enroulée jusqu'à une cible plus haute.",
+          "",
+          "## Bobines électromagnétiques",
+          "Fabriquez des **bobines électromagnétiques inachevées** (pépite d'acier, lingot d'alliage magnétique, pépite d'acier : en donne 2). Enroulez-en une avec une **bobine de cuivre** pour obtenir une bobine avec le nombre de tours de la cible. Les transformateurs utilisent ces tours.",
+          "",
+          "## Grandes bobines",
+          "Enroulez un **bloc d'alliage magnétique laminé** (9 plaques d'alliage magnétique) avec une **bobine de cuivre**. La **grande bobine** reçoit les tours de la cible.",
+          "",
+          "Réglez la cible **avant** de commencer : un travail prend à la bobine autant de tours que la cible le demande."
+        ]
+      },
+      "items": ["tfmg:unfinished_resistor", "tfmg:resistor", "tfmg:unfinished_electromagnetic_coil", "tfmg:electromagnetic_coil", "tfmg:laminated_magnetic_alloy_block", "tfmg:large_coil", "tfmg:plastic_sheet", "tfmg:steel_nugget"]
+    },
+    {
+      "title": {
+        "en_us": "Winding in sequenced assembly",
+        "fr_fr": "Le bobinage en assemblage séquencé"
+      },
+      "text": {
+        "en_us": [
+          "Several machines are built by **sequenced assembly**, with a winding step in the loop. Put a Winding Machine on the belt line, with the right spool mounted, where the sequence asks for winding.",
+          "",
+          "- **Electric Motor**: starts from a shaft, 3 loops. The winding step takes **75 turns** of a **Copper Spool**, then a magnet, a steel mechanism and a screwdriver.",
+          "- **Generator**: starts from a shaft, 3 loops. Capacitor, steel plate, then **75 turns** of a **Copper Spool**, then a magnet, a steel mechanism and a screwdriver.",
+          "- **Potentiometer**: starts from a Heavy Machinery Casing, 3 loops. **100 turns** of a **Constantan Spool**, then a steel cogwheel, copper wire and lubrication oil.",
+          "",
+          "For these steps the target value box does not matter: the recipe sets the number of turns.",
+          "",
+          "A winding step **waits** when the mounted spool is the wrong metal or out of turns. The item never skips the step, so a line that stops here usually just needs a fresh spool. A funnel can swap empty spools for full ones."
+        ],
+        "fr_fr": [
+          "Plusieurs machines se construisent par **assemblage séquencé**, avec une étape de bobinage dans la boucle. Placez une enrouleuse sur la ligne, avec la bonne bobine montée, à l'endroit où la séquence demande un bobinage.",
+          "",
+          "- **Moteur électrique** : part d'un arbre, 3 boucles. L'étape de bobinage prend **75 tours** d'une **bobine de cuivre**, puis un aimant, un mécanisme en acier et un tournevis.",
+          "- **Générateur** : part d'un arbre, 3 boucles. Condensateur, plaque d'acier, puis **75 tours** d'une **bobine de cuivre**, puis un aimant, un mécanisme en acier et un tournevis.",
+          "- **Potentiomètre** : part d'un carter de machinerie lourd, 3 boucles. **100 tours** d'une **bobine de constantan**, puis un engrenage en acier, du fil de cuivre et de l'huile de lubrification.",
+          "",
+          "Pour ces étapes, la case de valeur cible ne compte pas : c'est la recette qui fixe le nombre de tours.",
+          "",
+          "Une étape de bobinage **attend** quand la bobine montée est du mauvais métal ou n'a plus de tours. L'objet ne saute jamais l'étape, donc une ligne arrêtée ici demande juste une bobine neuve. Un entonnoir peut échanger les bobines vides contre des pleines."
+        ]
+      },
+      "items": ["tfmg:electric_motor", "tfmg:generator", "tfmg:potentiometer", "tfmg:copper_spool", "tfmg:constantan_spool", "tfmg:magnet", "tfmg:screwdriver"]
+    },
+    {
+      "title": {
+        "en_us": "Magnetic alloy and magnets",
+        "fr_fr": "Alliage magnétique et aimants"
+      },
+      "text": {
+        "en_us": [
+          "## Magnetic Alloy",
+          "Mix **2 Nickel Ingots**, **1 Silicon Ingot** and **2 Steel Ingots** in a **heated** basin: you get **2 Magnetic Alloy Ingots** (15 seconds). Press an ingot to get a **Magnetic Alloy Sheet**; nine sheets craft a Laminated Magnetic Alloy Block.",
+          "",
+          "## The Polarizer",
+          "The **Polarizer** turns a **Magnetic Alloy Ingot** into a **Magnet**. Right-click it with the ingot (or feed it with a funnel), then give it power on its **back face**.",
+          "",
+          "- It needs at least **2000 W**. While charging it is a 30 ohm load, so about **245 V** is the minimum.",
+          "- Charging takes **10 seconds**, then the ingot becomes a magnet. Goggles show the charge.",
+          "- Right-click with an empty hand to take the magnet out.",
+          "",
+          "## Your first magnet",
+          "The polarizer needs an **Electric Gauge**, and the gauge needs a magnet. Since 1.3.0 a hand recipe breaks that loop: a **Magnetic Alloy Ingot** in the middle, **Blocks of Redstone** above, left and right of it, and a **Compass** below. It is expensive on purpose: build a polarizer as soon as you can."
+        ],
+        "fr_fr": [
+          "## Alliage magnétique",
+          "Mélangez **2 lingots de nickel**, **1 lingot de silicium** et **2 lingots d'acier** dans un bassin **chauffé** : vous obtenez **2 lingots d'alliage magnétique** (15 secondes). Pressez un lingot pour obtenir une **plaque d'alliage magnétique** ; neuf plaques donnent un bloc d'alliage magnétique laminé.",
+          "",
+          "## Le polariseur",
+          "Le **polariseur** transforme un **lingot d'alliage magnétique** en **aimant**. Clic droit avec le lingot (ou alimentez-le par un entonnoir), puis branchez le courant sur sa **face arrière**.",
+          "",
+          "- Il lui faut au moins **2000 W**. Pendant la charge c'est une charge de 30 ohms, donc environ **245 V** au minimum.",
+          "- La charge dure **10 secondes**, puis le lingot devient un aimant. Les lunettes affichent la charge.",
+          "- Clic droit main vide pour reprendre l'aimant.",
+          "",
+          "## Votre premier aimant",
+          "Le polariseur demande une **jauge électrique**, et la jauge demande un aimant. Depuis la 1.3.0, une recette à la main casse cette boucle : un **lingot d'alliage magnétique** au centre, des **blocs de redstone** au-dessus, à gauche et à droite, et une **boussole** en dessous. Elle coûte cher exprès : construisez un polariseur dès que possible."
+        ]
+      },
+      "items": ["tfmg:nickel_ingot", "tfmg:silicon_ingot", "tfmg:magnetic_alloy_ingot", "tfmg:magnetic_alloy_sheet", "tfmg:polarizer", "tfmg:magnet", "tfmg:voltmeter", "minecraft:compass"]
+    }
+  ]
+}

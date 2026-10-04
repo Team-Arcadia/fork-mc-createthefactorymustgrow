@@ -1,0 +1,30 @@
+{
+  "name": "Les blocs de béton",
+  "icon": "tfmg:concrete",
+  "category": "tfmg:construction",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Versez du béton liquide avec un seau dans un moule de n'importe quelle forme : le liquide se change tout seul en blocs de $(item)béton$(). C'est la façon la plus simple de couler murs et sols sans fabrication."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les formes$()$(br)Au tailleur de pierre, un bloc de béton donne :$(li)$(item)2 dalles de béton$(), ou un escalier, ou un muret,$(li)$(item)8 parpaings$(), les petites briques grises.$(br2)Six de ces parpaings autour de deux armatures et d'un seau de béton liquide donnent $(item)8 blocs de parpaing$(), le bloc de mur pleine taille."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les couleurs$()$(br)Entourez une teinture de $(item)8 bétons$() dans une grille d'artisanat pour obtenir 8 bétons colorés. Les seize couleurs existent, chacune avec sa dalle, son escalier et son muret au tailleur de pierre. Le béton armé se teint de la même façon."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les cheminées$()$(br)Le béton avec des tuyaux industriels donne aussi la $(item)cheminée en béton$() qui sert à rejeter le CO2.$(br2)Pour les piliers, les sols et l'aspect le plus industriel, utilisez le béton armé, expliqué page suivante. Il existe dans les mêmes seize couleurs."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:concrete,tfmg:concrete_slab,tfmg:concrete_stairs,tfmg:concrete_wall,tfmg:cinderblock,tfmg:cinder_block,tfmg:white_concrete,tfmg:concrete_smokestack",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

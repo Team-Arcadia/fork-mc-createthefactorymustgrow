@@ -1,0 +1,30 @@
+{
+  "name": "Quelle face fait quoi",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le fourneau n'a pas d'avant : c'est la face que touche le tuyau qui compte.$(br2)$(l)Côtés de la couche du bas$()$(li)Envoyez $(item)l'air$() dedans.$(li)Pompez le $(item)CO2$() dehors."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Faces du dessus et du dessous$()$(li)Envoyez le $(item)combustible$() dedans (créosote ou gaz de haut fourneau).$(li)Pompez $(item)l'air chaud$() dehors.$(br2)Les $(item)côtés des couches supérieures$() n'ont aucune connexion."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les réservoirs d'entrée acceptent $(item)n'importe quel fluide$(). De l'air envoyé par le dessus va dans le réservoir de combustible, du combustible envoyé par un côté va dans le réservoir d'air, et plus aucune recette ne correspond : le fourneau s'arrête. Les réservoirs d'entrée ne se vident pas à la pompe : vérifiez chaque tuyau avant d'ouvrir la ligne. Les lunettes montrent le contenu de chaque réservoir."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une disposition simple : tuyaux d'air et de CO2 sur deux côtés du bas, tuyau de combustible sous le fourneau, et pompe d'air chaud au sommet, vers la trappe du haut fourneau."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove,create:mechanical_pump,create:fluid_pipe,tfmg:air_bucket,tfmg:creosote_bucket,tfmg:furnace_gas_bucket,tfmg:hot_air_bucket,tfmg:carbon_dioxide_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

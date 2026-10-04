@@ -1,0 +1,30 @@
+{
+  "name": "Diode, potentiometer and resistor",
+  "icon": "tfmg:electric_diode",
+  "category": "tfmg:network_control",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Diode$()$(br)Passes power $(item)one way only$(), from its back to its front, without changing the voltage. Use it to feed a network that must never send power back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Potentiometer$()$(br)A bridge with a dial: it passes from $(item)0 to 100%$() of its input voltage, 100% by default. It is also a $(item)display link$() source for voltage.$(br2)Right-click a diode or a potentiometer with $(item)heavy machinery casing$() to encase it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Resistor$()$(br)A plain $(item)consumer$() with a fixed resistance. It connects on its back face and turns power into nothing, which makes it a handy test load to check that your generators keep up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Wind it on the $(item)winding machine$() with a $(item)constantan spool$(). The dial sets its resistance in steps of 10 ohms, up to $(item)1,000 ohms$(). Remember that a lower resistance draws more: at 300 V, 100 ohms use 900 W, 1,000 ohms only 90 W."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_diode,tfmg:potentiometer,tfmg:heavy_machinery_casing,tfmg:resistor,tfmg:constantan_spool,tfmg:winding_machine",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

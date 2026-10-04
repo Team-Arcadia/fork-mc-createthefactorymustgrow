@@ -1,0 +1,34 @@
+{
+  "name": "Consommation et CO2",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Toutes les $(item)3 secondes$(), chaque bloc d'un foyer allumé prend $(item)50 mB$() de carburant dans le réservoir commun. Un foyer de 3 x 3 brûle donc 450 mB toutes les 3 secondes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il ne brûle que s'il contient au moins le réglage serveur $(item)fireboxFuelConsumption$() de carburant, $(item)100 mB$() par défaut. En dessous, il s'éteint et les lunettes affichent $(item)Not enough fuel to burn$(). Gardez une pompe qui l'alimente plutôt que de le remplir une fois."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Échappement$()$(br)Avec le réglage serveur $(item)fireboxExhaustRequirement$() actif (par défaut), chaque bloc ajoute aussi $(item)500 mB de dioxyde de carbone$() au réservoir d'échappement toutes les 3 secondes, soit environ 167 mB par seconde et par bloc."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quand le réservoir d'échappement est plein, le foyer s'arrête et les lunettes affichent $(item)Exhaust full: pump the CO2 away$(). Chaque foyer a donc besoin d'une sortie pour son CO2 :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)branchez une pompe mécanique sur le foyer et aspirez le CO2 par des tuyaux,$(li)envoyez-le vers un $(item)échappement$() ou une $(item)cheminée$() qui le rejette dans l'air,$(li)ou gardez-le dans des réservoirs pour plus tard.$(br2)Le carburant peut être pompé dedans, et seul le CO2 peut être pompé dehors."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,tfmg:carbon_dioxide_bucket,create:mechanical_pump,create:fluid_pipe,tfmg:exhaust,tfmg:metal_smokestack",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "L'air chaud",
+  "description": "Le haut fourneau ne fonctionne que s'il reçoit de l'air chaud. Pour en produire, il faut trois machines :",
+  "icon": "tfmg:blast_stove",
+  "sortnum": 40
+}

@@ -1,6 +1,8 @@
 package com.drmangotea.tfmg.content.electricity.base;
 
 import com.drmangotea.tfmg.base.blocks.TFMGHorizontalDirectionalBlock;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import net.createmod.catnip.platform.CatnipServices;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import static net.minecraft.world.level.block.DirectionalBlock.FACING;
 
-public class VoltageAlteringBlockEntity extends ElectricBlockEntity{
+public class VoltageAlteringBlockEntity extends ElectricBlockEntity implements IInspectable {
 
     public boolean updateInFront = false;
 
@@ -142,6 +144,37 @@ public class VoltageAlteringBlockEntity extends ElectricBlockEntity{
 
         super.onPlaced();
         updateInFront = true;
+    }
+
+    /** Diode by default: one face in, the facing face out. Subclasses add their own checks. */
+    @Override
+    public void inspect(InspectionReport report) {
+        inspectFaces(report);
+    }
+
+    protected void inspectFaces(InspectionReport report) {
+        Direction output = getDirection();
+        Direction input = null;
+        for (Direction direction : Direction.values())
+            if (hasElectricitySlot(direction))
+                input = direction;
+        if (input != null)
+            report.info("bridge.faces", dirName(input), dirName(output));
+        else
+            report.info("bridge.output_face", dirName(output));
+        BlockPos outPos = getBlockPos().relative(output);
+        boolean outputConnected = level.isLoaded(outPos) && level.getBlockEntity(outPos) instanceof IElectric be
+                && be.hasElectricitySlot(output.getOpposite());
+        if (!outputConnected) {
+            report.problem("bridge.no_output", dirName(output));
+            report.fix("bridge.no_output.fix", dirName(output));
+        } else {
+            report.info("bridge.output_voltage", getOutputVoltage());
+        }
+    }
+
+    protected static net.minecraft.network.chat.Component dirName(Direction direction) {
+        return net.minecraft.network.chat.Component.translatable("tfmg.inspector.dir." + direction.getName());
     }
 
     public void updateInFrontNextTick(){

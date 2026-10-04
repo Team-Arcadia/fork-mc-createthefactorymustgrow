@@ -7,6 +7,12 @@ import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.machinery.vat.compressor.CompressorBlockEntity;
 import com.drmangotea.tfmg.content.machinery.vat.freezer.FreezerBlockEntity;
+import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
+import com.drmangotea.tfmg.content.machinery.vat.electrode_holder.ElectrodeHolderBlockEntity;
+import com.drmangotea.tfmg.content.machinery.vat.industrial_mixer.IndustrialMixerBlockEntity;
+import com.simibubi.create.content.kinetics.base.IRotate;
 import com.drmangotea.tfmg.mixin.accessor.TankSegmentAccessor;
 import com.drmangotea.tfmg.recipes.VatMachineRecipe;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
@@ -63,7 +69,7 @@ import java.util.*;
 
 import static java.lang.Math.abs;
 
-public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IMultiBlockEntityContainer.Fluid {
+public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IMultiBlockEntityContainer.Fluid, IInspectable {
 
     private static final int MAX_SIZE = 3;
 
@@ -1472,6 +1478,38 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         operation.forGoggles(tooltip);
     }
 
+    /**
+     * Why the vat is not processing. Size, vat type, missing machines, heat
+     * and pressure all failed silently before, which made the vat the most
+     * opaque machine of the mod.
+     */
+    private void addRecipeProblems(List<Component> tooltip) {
+        if (!areMachinesValid) {
+            TFMGTexts.problem("vat.machine_down").forGoggles(tooltip);
+            return;
+        }
+        if (recipe == null) {
+            if (hasInputs())
+                TFMGTexts.problem("vat.no_recipe").forGoggles(tooltip);
+            return;
+        }
+        if (recipe.heatLevel > 0 && heatLevel < recipe.heatLevel)
+            TFMGTexts.problem("vat.heat").forGoggles(tooltip);
+        if ((recipe.pressure > 0 && pressure < recipe.pressure) || (recipe.pressure < 0 && pressure > recipe.pressure))
+            TFMGTexts.problem("vat.pressure").forGoggles(tooltip);
+    }
+
+    private boolean hasInputs() {
+        for (int i = 0; i < inputInventory.getSlots(); i++)
+            if (!inputInventory.getStackInSlot(i).isEmpty())
+                return true;
+        IFluidHandler tanks = inputTank.getCapability();
+        for (int i = 0; i < tanks.getTanks(); i++)
+            if (!tanks.getFluidInTank(i).isEmpty())
+                return true;
+        return false;
+    }
+
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
 
@@ -1497,6 +1535,8 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
             boolean operational = operationalMachinesMap.getOrDefault(machines.getKey(), true);
             addMachineTooltip(machines.getValue(), operational, tooltip);
         }
+
+        addRecipeProblems(tooltip);
 
 
 
@@ -1771,6 +1811,374 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         // a dummy on purpose — a real tank would trip ConnectivityHandler's
         // fluid-compatibility check and break vat formation.
         return inputTank.getPrimaryHandler().getFluid().copy();
+    }
+
+    // Factory Inspector
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        if (!isController()) {
+            if (controller == null || !level.isLoaded(controller)
+                    || !(level.getBlockEntity(controller) instanceof VatBlockEntity vat) || !vat.isController()) {
+                report.problem("vat.no_controller");
+                report.fix("vat.no_controller.fix");
+                return;
+            }
+            vat.inspect(report);
+            return;
+        }
+        inspectController(report);
+    }
+
+    /**
+     * Appends the report of the vat a machine is attached to, looking in the
+     * given directions in order. Returns the vat controller, or null when no
+     * loaded vat touches the machine.
+     */
+    @Nullable
+    public static VatBlockEntity appendVatReport(net.minecraft.world.level.Level level, BlockPos machinePos,
+                                                 InspectionReport report, Direction... directions) {
+        VatBlockEntity vat = findVat(level, machinePos, directions);
+        if (vat == null)
+            return null;
+        report.info("vat.section");
+        vat.inspect(report);
+        return vat;
+    }
+
+    /** The controller of a vat directly next to a machine, without loading chunks. */
+    @Nullable
+    public static VatBlockEntity findVat(net.minecraft.world.level.Level level, BlockPos machinePos, Direction... directions) {
+        if (level == null)
+            return null;
+        for (Direction direction : directions) {
+            BlockPos pos = machinePos.relative(direction);
+            if (!level.isLoaded(pos))
+                continue;
+            if (!(level.getBlockEntity(pos) instanceof VatBlockEntity vat))
+                continue;
+            if (vat.isController())
+                return vat;
+            BlockPos controllerPos = vat.getController();
+            if (controllerPos != null && level.isLoaded(controllerPos)
+                    && level.getBlockEntity(controllerPos) instanceof VatBlockEntity controllerVat)
+                return controllerVat;
+        }
+        return null;
+    }
+
+    public static Component operationName(String operationId) {
+        return Component.translatable("tfmg.inspector.vat.op." + operationId.replace(':', '.'));
+    }
+
+    private static String coords(BlockPos pos) {
+        return pos.getX() + " " + pos.getY() + " " + pos.getZ();
+    }
+
+    private void inspectController(InspectionReport report) {
+        report.info("vat.type", getBlockState().getBlock().getName(), width, width, height, getTotalTankSize());
+
+        if (machineMap.isEmpty())
+            report.info("vat.no_machines");
+        for (Map.Entry<BlockPos, String> machine : machineMap.entrySet())
+            inspectAttachedMachine(report, machine.getKey(), machine.getValue());
+        inspectIgnoredMachines(report);
+
+        report.info("vat.heat", heatLevel, Component.translatable("tfmg.inspector.heat." + heatCondition.name().toLowerCase(Locale.ROOT)));
+        report.info("vat.pressure", pressure);
+
+        if (!hasInputs()) {
+            report.info("vat.empty");
+            report.fix("vat.empty.fix");
+            return;
+        }
+
+        VatMachineRecipe active = recipe;
+        if (active != null) {
+            report.ok("vat.recipe", recipeName(active));
+            boolean blocked = checkHeatAndPressure(report, active);
+            if (!canFitAllOutputs(active)) {
+                report.problem("vat.outputs_full");
+                report.fix("vat.outputs_full.fix");
+                blocked = true;
+            }
+            if (!blocked) {
+                int duration = Math.max(1, active.getProcessingDuration());
+                report.info("vat.progress", Math.min(100, timer * 100 / duration));
+            }
+            return;
+        }
+
+        VatMachineRecipe closest = findClosestRecipe();
+        if (closest == null) {
+            report.problem("vat.no_recipe_for_inputs");
+            report.fix("vat.no_recipe_for_inputs.fix");
+            return;
+        }
+        report.problem("vat.no_recipe");
+        report.info("vat.closest", recipeName(closest));
+        reportFirstUnmet(report, closest);
+    }
+
+    private void inspectAttachedMachine(InspectionReport report, BlockPos pos, String operationId) {
+        Component name = operationName(operationId);
+        if (!level.isLoaded(pos)) {
+            report.info("vat.machine.unloaded", name, coords(pos));
+            return;
+        }
+        if (operationalMachinesMap.getOrDefault(pos, true)) {
+            report.ok("vat.machine.ok", name);
+            return;
+        }
+        report.problem("vat.machine.down", name, coords(pos));
+        BlockEntity be = level.getBlockEntity(pos);
+        if (be instanceof IndustrialMixerBlockEntity mixer) {
+            report.fix("vat.machine.mixer.fix", Math.abs((int) mixer.getSpeed()),
+                    (int) IRotate.SpeedLevel.MEDIUM.getSpeedValue());
+        } else if (be instanceof CompressorBlockEntity compressor) {
+            report.fix("vat.machine.compressor.fix", Math.abs((int) compressor.getSpeed()));
+        } else if (be instanceof FreezerBlockEntity freezer) {
+            if (freezer.getData().notEnoughPower)
+                report.fix("vat.machine.no_power.fix");
+            else
+                report.fix("vat.machine.freezer.fix", String.format("%.1f", freezer.getCurrent()));
+        } else if (be instanceof ElectrodeHolderBlockEntity holder) {
+            if (holder.getData().notEnoughPower)
+                report.fix("vat.machine.no_power.fix");
+            else
+                report.fix("vat.machine.electrode.fix", String.format("%.1f", holder.getCurrent()),
+                        TFMGConfigs.common().machines.electrolysisMinimumCurrent.get());
+        }
+    }
+
+    /**
+     * Mixers and electrode holders sitting on the vat that evaluate() leaves
+     * out of the machine list: no blade or electrode, or a mixer off the
+     * centre of a 3 wide vat.
+     */
+    private void inspectIgnoredMachines(InspectionReport report) {
+        int[] layers = {worldPosition.getY() - 1, worldPosition.getY() + height};
+        for (int y : layers) {
+            for (int x = 0; x < width; x++) {
+                for (int z = 0; z < width; z++) {
+                    BlockPos pos = new BlockPos(worldPosition.getX() + x, y, worldPosition.getZ() + z);
+                    if (machineMap.containsKey(pos) || !level.isLoaded(pos))
+                        continue;
+                    if (!level.getBlockState(pos).hasBlockEntity())
+                        continue;
+                    BlockEntity be = level.getBlockEntity(pos);
+                    if (be instanceof IndustrialMixerBlockEntity mixer) {
+                        if (mixer.getOperationId().isEmpty()) {
+                            report.problem("vat.ignored.mixer_empty", coords(pos));
+                            report.fix("vat.ignored.mixer_empty.fix");
+                        } else if (!isAtValidLocation(mixer.getPositionRequirement(), pos)) {
+                            report.problem("vat.ignored.mixer_position", coords(pos));
+                            report.fix("vat.ignored.mixer_position.fix",
+                                    coords(new BlockPos(worldPosition.getX() + 1, worldPosition.getY() + height, worldPosition.getZ() + 1)));
+                        }
+                    } else if (be instanceof ElectrodeHolderBlockEntity holder && holder.getOperationId().isEmpty()) {
+                        report.problem("vat.ignored.electrode_empty", coords(pos));
+                        report.fix("vat.ignored.electrode_empty.fix");
+                    }
+                }
+            }
+        }
+    }
+
+    /** Mirrors the heat and pressure gates of handleRecipe; true when one fails. */
+    private boolean checkHeatAndPressure(InspectionReport report, VatMachineRecipe r) {
+        boolean blocked = false;
+        int neededHeat = r.heatLevel > 0 ? r.heatLevel : 0;
+        if (r.getRequiredHeat() == HeatCondition.HEATED)
+            neededHeat = Math.max(neededHeat, 2);
+        if (r.getRequiredHeat() == HeatCondition.SUPERHEATED)
+            neededHeat = Math.max(neededHeat, 4);
+        if (neededHeat > 0 && heatLevel < neededHeat) {
+            report.problem("vat.heat_low", heatLevel, neededHeat);
+            report.fix("vat.heat_low.fix", neededHeat - heatLevel);
+            blocked = true;
+        }
+        if (r.pressure > 0 && pressure < r.pressure) {
+            report.problem("vat.pressure_low", pressure, r.pressure);
+            report.fix("vat.pressure_low.fix", r.pressure - pressure);
+            blocked = true;
+        }
+        if (r.pressure < 0 && pressure > r.pressure) {
+            report.problem("vat.pressure_high", pressure, r.pressure);
+            report.fix("vat.pressure_high.fix", pressure - r.pressure);
+            blocked = true;
+        }
+        return blocked;
+    }
+
+    private static Component recipeName(VatMachineRecipe r) {
+        for (ProcessingOutput output : r.getRollableResults())
+            if (!output.getStack().isEmpty())
+                return output.getStack().getHoverName();
+        for (FluidStack fluid : r.getFluidResults())
+            if (!fluid.isEmpty())
+                return fluid.getHoverName();
+        return Component.literal("?");
+    }
+
+    private static Component ingredientName(Ingredient ingredient) {
+        ItemStack[] items = ingredient.getItems();
+        return items.length > 0 ? items[0].getHoverName() : Component.literal("?");
+    }
+
+    private static Component ingredientName(SizedFluidIngredient ingredient) {
+        FluidStack[] fluids = ingredient.getFluids();
+        return fluids.length > 0 ? fluids[0].getHoverName() : Component.literal("?");
+    }
+
+    /**
+     * The recipe whose ingredients the vat holds the largest share of,
+     * counting a fluid as present when its kind is there in any amount.
+     */
+    @Nullable
+    private VatMachineRecipe findClosestRecipe() {
+        IFluidHandler fluids = inputTank.getCapability();
+        VatMachineRecipe best = null;
+        double bestShare = 0;
+        int bestMatched = 0;
+        for (RecipeHolder<? extends Recipe<?>> holder : RecipeFinder.get(getRecipeCacheKey(), level,
+                RecipeConditions.isOfType(TFMGRecipeTypes.VAT_MACHINE_RECIPE.getType()))) {
+            if (!(holder.value() instanceof VatMachineRecipe r))
+                continue;
+            int total = r.getIngredients().size() + r.getFluidIngredients().size();
+            if (total == 0)
+                continue;
+            int matched = 0;
+            for (SizedFluidIngredient ingredient : r.getFluidIngredients()) {
+                for (int i = 0; i < fluids.getTanks(); i++) {
+                    FluidStack stack = fluids.getFluidInTank(i);
+                    if (!stack.isEmpty() && ingredient.ingredient().test(stack)) {
+                        matched++;
+                        break;
+                    }
+                }
+            }
+            for (Ingredient ingredient : r.getIngredients()) {
+                for (int i = 0; i < inputInventory.getSlots(); i++) {
+                    if (ingredient.test(inputInventory.getStackInSlot(i))) {
+                        matched++;
+                        break;
+                    }
+                }
+            }
+            if (matched == 0)
+                continue;
+            double share = (double) matched / total;
+            if (share > bestShare || (share == bestShare && matched > bestMatched)) {
+                best = r;
+                bestShare = share;
+                bestMatched = matched;
+            }
+        }
+        return best;
+    }
+
+    /** Reports the first requirement of a recipe the vat does not meet, in getMatchingRecipe's order. */
+    private void reportFirstUnmet(InspectionReport report, VatMachineRecipe r) {
+        if (getTotalTankSize() < r.minSize) {
+            report.problem("vat.too_small", getTotalTankSize(), r.minSize);
+            report.fix("vat.too_small.fix", r.minSize);
+            return;
+        }
+        if (getBlockState().getBlock() instanceof VatBlock vatBlock && !r.allowedVatTypes.contains(vatBlock.vatType)) {
+            MutableComponent allowed = Component.empty();
+            for (int i = 0; i < r.allowedVatTypes.size(); i++) {
+                if (i > 0)
+                    allowed.append(", ");
+                allowed.append(vatTypeName(r.allowedVatTypes.get(i)));
+            }
+            report.problem("vat.wrong_type", getBlockState().getBlock().getName());
+            report.fix("vat.wrong_type.fix", allowed);
+            return;
+        }
+        List<String> have = new ArrayList<>(machineMap.values());
+        List<String> missing = new ArrayList<>();
+        for (String required : r.machines)
+            if (!have.remove(required))
+                missing.add(required);
+        if (!missing.isEmpty()) {
+            Set<String> reported = new LinkedHashSet<>();
+            for (String operation : missing) {
+                if (!reported.add(operation))
+                    continue;
+                report.problem("vat.missing_machine", Collections.frequency(missing, operation), operationName(operation));
+                report.fix("vat.op_fix." + operation.replace(':', '.'));
+            }
+            return;
+        }
+        if (!areMachinesValid) {
+            report.problem("vat.machines_down");
+            report.fix("vat.machines_down.fix");
+            return;
+        }
+        if (checkHeatAndPressure(report, r))
+            return;
+
+        boolean missingIngredient = false;
+        IFluidHandler fluids = inputTank.getCapability();
+        Set<Integer> usedTanks = new HashSet<>();
+        for (SizedFluidIngredient ingredient : r.getFluidIngredients()) {
+            Integer found = null;
+            int bestAmount = 0;
+            for (int i = 0; i < fluids.getTanks(); i++) {
+                if (usedTanks.contains(i))
+                    continue;
+                FluidStack stack = fluids.getFluidInTank(i);
+                if (ingredient.test(stack)) {
+                    found = i;
+                    break;
+                }
+                if (!stack.isEmpty() && ingredient.ingredient().test(stack))
+                    bestAmount = Math.max(bestAmount, stack.getAmount());
+            }
+            if (found != null) {
+                usedTanks.add(found);
+                continue;
+            }
+            report.problem("vat.missing_fluid", ingredient.amount(), ingredientName(ingredient), bestAmount);
+            missingIngredient = true;
+        }
+        ItemStack[] simulated = new ItemStack[inputInventory.getSlots()];
+        for (int i = 0; i < simulated.length; i++)
+            simulated[i] = inputInventory.getStackInSlot(i).copy();
+        for (Ingredient ingredient : r.getIngredients()) {
+            boolean found = false;
+            for (ItemStack stack : simulated) {
+                if (!stack.isEmpty() && ingredient.test(stack)) {
+                    stack.shrink(1);
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                report.problem("vat.missing_item", ingredientName(ingredient));
+                missingIngredient = true;
+            }
+        }
+        if (missingIngredient) {
+            report.fix("vat.missing_ingredient.fix");
+            return;
+        }
+        if (!canFitAllOutputs(r)) {
+            report.problem("vat.outputs_full");
+            report.fix("vat.outputs_full.fix");
+        }
+    }
+
+    private static Component vatTypeName(String vatType) {
+        return switch (vatType) {
+            case "tfmg:steel_vat" -> Component.translatable("block.tfmg.steel_chemical_vat");
+            case "tfmg:cast_iron_vat" -> Component.translatable("block.tfmg.cast_iron_chemical_vat");
+            case "tfmg:firebrick_lined_vat" -> Component.translatable("block.tfmg.fireproof_chemical_vat");
+            default -> Component.literal(vatType);
+        };
     }
 
 }

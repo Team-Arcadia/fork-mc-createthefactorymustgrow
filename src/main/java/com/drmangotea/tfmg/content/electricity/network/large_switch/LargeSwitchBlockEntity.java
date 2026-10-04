@@ -4,6 +4,8 @@ import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.content.electricity.base.IElectric;
 import com.drmangotea.tfmg.content.electricity.base.KineticElectricBlockEntity;
 import com.drmangotea.tfmg.content.electricity.base.UpdateInFrontPacket;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import net.createmod.catnip.animation.LerpedFloat;
 import net.createmod.catnip.platform.CatnipServices;
 import net.minecraft.core.BlockPos;
@@ -23,7 +25,7 @@ import java.util.List;
 import static com.drmangotea.tfmg.content.electricity.network.large_switch.LargeSwitchBlock.IS_MAIN_PART;
 import static com.simibubi.create.content.kinetics.base.HorizontalKineticBlock.HORIZONTAL_FACING;
 
-public class LargeSwitchBlockEntity extends KineticElectricBlockEntity {
+public class LargeSwitchBlockEntity extends KineticElectricBlockEntity implements IInspectable {
     public boolean updateInFront = false;
 
     public boolean closed = false;
@@ -225,6 +227,33 @@ public class LargeSwitchBlockEntity extends KineticElectricBlockEntity {
 
 
         return true;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        Direction facing = getBlockState().getValue(HORIZONTAL_FACING);
+        if (!isMainPart) {
+            BlockPos mainPos = getBlockPos().relative(facing.getOpposite());
+            if (level.isLoaded(mainPos) && level.getBlockEntity(mainPos) instanceof LargeSwitchBlockEntity main && main.isMainPart) {
+                report.info("large_switch.output_part");
+                main.inspect(report);
+            } else {
+                report.problem("large_switch.no_main");
+            }
+            return;
+        }
+        if (closed) {
+            report.ok("large_switch.closed");
+        } else {
+            report.problem("large_switch.open");
+            if (getSpeed() > 0)
+                report.info("large_switch.closing");
+            else if (getSpeed() < 0)
+                report.fix("large_switch.open.fix_reverse");
+            else
+                report.fix("large_switch.open.fix");
+        }
+        report.info("large_switch.faces");
     }
 
     public float getArmSpeed() {

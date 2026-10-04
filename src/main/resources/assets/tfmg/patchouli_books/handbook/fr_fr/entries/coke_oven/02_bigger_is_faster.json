@@ -1,0 +1,30 @@
+{
+  "name": "Plus grand, plus rapide",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le temps de cuisson est le temps de la recette divisé par $(item)la moitié de la taille$(), jamais par moins de 1. Un charbon prend 1200 ticks, une bûche 600 ticks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Temps par charbon / par bûche$()$(li)$(item)1x1$() et $(item)2x2$() : 60 s / 30 s$(li)$(item)3x3$() : 40 s / 20 s$(li)$(item)4x4$() : 30 s / 15 s$(li)$(item)5x5$() : 24 s / 12 s$(li)$(item)6x6$() : 20 s / 10 s$(br2)Un 2x2 ne va pas plus vite qu'un bloc seul : passez directement à $(item)3x3$() ou plus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le four cuit toujours $(item)un objet à la fois$() : un four plus grand donne autant de coke par charbon, simplement plus tôt. Les sous-produits sont créés $(item)à chaque tick$() de cuisson, quelle que soit la taille : un four rapide produit le même débit de fluide par seconde qu'un lent, mais moins par charbon."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Suivez la progression avec les lunettes d'ingénieur : elles affichent les secondes restantes sur l'objet en cours."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal,create:goggles",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Problèmes courants : rotation et courant",
+  "icon": "create:goggles",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Une machine ne tourne pas Regardez son arbre avec les lunettes.$() Aucune vitesse veut dire que rien n'arrive : vérifiez chaque arbre et engrenage sur le chemin. Si le réseau est $(item)en surcharge$(), tout s'arrête :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "ajoutez une source ou retirez des consommateurs. Certaines machines demandent aussi une vitesse minimale : une prise d'air seule demande 40 RPM, le scanner de surface 64 RPM."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Un accessoire de cuve ne fait rien$()$(br)Voir la page de la cuve : une seule machine arrêtée sur une cuve bloque toutes les recettes, donnez-lui de la rotation ou du courant, ou retirez-la. $(l)L'électricité détruit des blocs Chaque bloc électrique a une $(item)tension maximale$() (1000 V pour la plupart) et certains une intensité maximale.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Au-delà pendant un instant, le bloc $(item)est détruit sans rien laisser tomber$(). Les lunettes et le multimètre préviennent d'abord avec $(item)Surtension imminente$() ou $(item)Surintensité imminente$() à 80 % de la limite. Abaissez la tension avec un transformateur ou une résistance avant les petites machines, et utilisez des câbles adaptés à l'intensité."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:multimeter,tfmg:transformer,tfmg:resistor,tfmg:air_intake,tfmg:surface_scanner",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

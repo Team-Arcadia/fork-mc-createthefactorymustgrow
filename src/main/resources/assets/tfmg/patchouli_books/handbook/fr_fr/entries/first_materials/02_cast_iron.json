@@ -1,0 +1,34 @@
+{
+  "name": "La fonte",
+  "icon": "minecraft:iron_ingot",
+  "category": "tfmg:first_materials",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La fonte est le métal de vos premières machines lourdes : le four à coke, le fourneau à air chaud, les tuyaux et cuves en fonte."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La fabriquer$()$(br)Placez une $(item)presse mécanique$() au-dessus d'un $(item)bassin$(), avec un $(item)brûleur à blaze$() allumé sous le bassin. Mettez $(item)1 lingot de fer + 1 charbon$() : la presse les compacte en $(item)1 lingot de fonte$(). La recette demande de la chaleur, un bassin froid ne fait rien."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le charbon de bois ne marche pas ici, il faut du charbon. Concasser du lignite est une bonne source de charbon en plus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Stockage et formes$()$(li)9 pépites de fonte font un lingot, et un lingot redonne 9 pépites.$(li)9 lingots font un $(item)bloc de fonte$(), dont la sortie du haut fourneau a besoin.$(li)Pressez un lingot avec une presse mécanique sur un dépôt ou un tapis pour obtenir une $(item)plaque de fonte$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Automatisez tôt : un entonnoir qui verse fer et charbon dans le bassin chauffé, et une seconde presse qui fait les plaques, suffisent pour tout ce chapitre."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_ingot,minecraft:coal,tfmg:cast_iron_ingot,tfmg:cast_iron_nugget,tfmg:cast_iron_block,tfmg:cast_iron_sheet,create:blaze_burner",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

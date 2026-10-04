@@ -1,0 +1,30 @@
+{
+  "name": "Les règles qui bloquent une cuve",
+  "icon": "create:mechanical_pump",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Une machine en panne bloque tout Si $(item)une seule$() machine reliée ne fonctionne pas, $(item)aucune recette ne tourne$(), même une qui n'a pas besoin de cette machine.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un mélangeur sous 30 RPM, un compresseur sous 120 RPM, un congélateur sans courant ou un porte-électrode avec trop peu d'intensité bloquent toute la cuve. Retirez la machine ou faites-la fonctionner.$(br2)Les machines en plus qui fonctionnent ne gênent pas : une recette demande $(item)au moins$() les machines qu'elle liste."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Tuyaux et entonnoirs$()$(br)Tuyaux, entonnoirs et trémies peuvent seulement $(item)remplir les entrées$() et $(item)vider les sorties$(). Impossible de reprendre un ingrédient, et rien ne peut être poussé dans une sortie. Les ingrédients ne sont lus que côté entrée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Sorties pleines$()$(br)Une recette ne démarre que si $(item)tous$() ses produits ont la place. Un sous-produit laissé en sortie (dioxyde de carbone, laitier) finira par bloquer la cuve : videz-le.$(br2)$(l)Casser une cuve$()$(br)Casser une cuve $(item)fait tomber les objets$() qu'elle contenait. Ses fluides passent dans les blocs qui restent du multibloc."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_pump,create:fluid_pipe,create:andesite_funnel,tfmg:steel_chemical_vat",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

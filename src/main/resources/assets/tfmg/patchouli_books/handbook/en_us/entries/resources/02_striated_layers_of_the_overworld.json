@@ -1,0 +1,26 @@
+{
+  "name": "Striated layers of the Overworld",
+  "icon": "tfmg:bauxite",
+  "category": "tfmg:resources",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Like Create's striated ores, TFMG places large layered clusters in the Overworld, between $(item)Y -30 and Y 70$(), in about one chunk out of 18. Each cluster follows one of four patterns, with stone or deepslate between the bands: $(li)$(item)Bauxite$() with smooth basalt, granite and andesite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bauxite is the ore of aluminium. $(li)$(item)Galena$() with smooth basalt, dripstone and deepslate. Galena is a lead-bearing stone. $(li)$(item)Lignite$() with tuff, deepslate and scoria. Lignite is a soft brown coal. $(li)$(item)Fireclay$() with sand, gravel and crimsite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bauxite and galena are full building stones: put them in a stonecutter for cut, polished and brick variants. Lignite and sulfur blocks drop themselves when mined. A cluster is big, so when you see one band in a cave wall, dig along it.$(br2)Look for these layers in caves and ravines: they are much easier to spot than single ore blocks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite,tfmg:galena,tfmg:lignite,tfmg:fireclay",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

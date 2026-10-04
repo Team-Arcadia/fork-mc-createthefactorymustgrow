@@ -282,8 +282,10 @@ public abstract class AbstractEngineBlockEntity extends KineticElectricBlockEnti
 
         reverse = compound.getBoolean("Reverse");
         signal = compound.getInt("Signal");
-        if (compound.contains("EngineController"))
-            engineController = BlockPos.of(compound.getLong("EngineController"));
+        // Cleared when absent, so an unlinked controller does not linger on
+        // clients after the transmission is removed.
+        engineController = compound.contains("EngineController")
+                ? BlockPos.of(compound.getLong("EngineController")) : null;
 
         fuelTank.readFromNBT(registries, compound.getCompound("FuelTank"));
         exhaustTank.readFromNBT(registries, compound.getCompound("ExhaustTank"));
@@ -326,6 +328,37 @@ public abstract class AbstractEngineBlockEntity extends KineticElectricBlockEnti
     }
 
     public abstract int getFuelConsumption();
+
+    /** A readable name for a fuel tag: the first fluid in it, or the tag path. */
+    public static net.minecraft.network.chat.Component fuelName(TagKey<Fluid> tag) {
+        return net.minecraft.core.registries.BuiltInRegistries.FLUID.getTag(tag)
+                .flatMap(set -> set.stream().findFirst())
+                .map(holder -> (net.minecraft.network.chat.Component) holder.value().getFluidType().getDescription())
+                .orElse(net.minecraft.network.chat.Component.literal(tag.location().getPath()));
+    }
+
+    public static net.minecraft.network.chat.Component fuelList(List<TagKey<Fluid>> tags) {
+        net.minecraft.network.chat.MutableComponent list = net.minecraft.network.chat.Component.empty();
+        for (int i = 0; i < tags.size(); i++) {
+            if (i > 0)
+                list.append(", ");
+            list.append(fuelName(tags.get(i)));
+        }
+        return list;
+    }
+
+    public boolean isFuelSupported() {
+        if (fuelTank.isEmpty())
+            return false;
+        for (TagKey<Fluid> tag : getSupportedFuels())
+            if (fuelTank.getFluid().getFluid().is(tag))
+                return true;
+        return false;
+    }
+
+    protected static String coords(BlockPos pos) {
+        return pos.getX() + " " + pos.getY() + " " + pos.getZ();
+    }
 
     @Override
     public void onPlaced() {

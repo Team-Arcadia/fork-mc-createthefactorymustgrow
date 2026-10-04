@@ -1,0 +1,30 @@
+{
+  "name": "The tower rules",
+  "icon": "tfmg:steel_distillation_controller",
+  "category": "tfmg:distillation",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The controller checks these rules every tick. If one fails, nothing happens at all, so build carefully. $(l)Outputs - The first output sits $(item)directly on top$() of the controller.$() Then pipe, output, pipe, output, up to $(item)six outputs$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)The stack stops at the first block that breaks the pattern, so a missing pipe hides every output above it. $(li)The number of outputs must $(item)exactly$() equal the number of products of a recipe. That is how you choose the recipe: add or remove an output to switch."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Tank size$()$(li)The tank must be at least $(item)twice as tall$() as the number of outputs: 6 outputs need 12 blocks of tank.$(li)With $(item)more than 3 outputs$(), the tank must be at least $(item)2 blocks wide$(). Steel tanks go up to 3 x 3."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Placement$()$(br)The controller faces away from the tank: place it while looking at the tank wall. It must touch the tank, or it cannot stay in place.$(br2)Goggles on the controller show the $(item)Heat Level$(), the $(item)Output Count$(), and $(item)Steel Fluid Tank Not Found$() when the tank is missing."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:industrial_pipe,tfmg:steel_fluid_tank,create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

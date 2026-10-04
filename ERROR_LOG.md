@@ -110,3 +110,19 @@ replacement, or slice between two anchors verified in the same expression, and a
 SHORTER (`wc -l`) plus `git diff --stat` before compiling. A compile alone would not have caught this:
 duplicated private methods in the same class do fail, but duplicating a whole class body can still compile
 in other shapes, and the file was only saved by the grep count.
+
+## [2026-10-04 08:52] - Singleplayer game test pass froze: the integrated server was paused
+
+**Context:** First run of the new `runClientGameTest` config, which boots the client into a world and runs every TFMG game test on the integrated server.
+**Error:** The log stopped after "running 466 TFMG tests on the integrated server" and nothing else happened for minutes; no test passed or failed.
+**Root cause:** A singleplayer world pauses its integrated server whenever the game window loses focus (`pauseOnLostFocus:true` in `run/options.txt`), and the window opened behind the IDE. A paused server never ticks, so no test could advance.
+**Fix:** Set `pauseOnLostFocus:false` (and `soundCategory_master:0.0` at the user's request) in `run/options.txt`, killed the stuck client and reran: 462/466, then 466/466 after the test fix below.
+**Prevention:** Before any automated client run, check `run/options.txt` for `pauseOnLostFocus:false` and the master volume at 0. A client test run that logs its start and then goes silent is paused, not slow.
+
+## [2026-10-04 09:00] - Round-trip test flagged Create's "Force" sync flag only on the integrated server
+
+**Context:** The per-block save/load round-trip game test passed on the dedicated gameTestServer and failed on the integrated server for the three vats and the concrete hose.
+**Error:** `save/load round trip changed: [InputTanks ... -> ...{Level:{Force:1b,...}}]`.
+**Root cause:** Create's `LerpedFloat` / tank level writes `Force:1b` after a load to force the next client sync. It is transport state, not game data, and it only differs where a client is attached. The diff also compared list tags as a whole, so the flag inside a list element failed the whole list.
+**Fix:** The diff now recurses into lists of compounds and ignores `Force` alongside `NeedsSpeedUpdate`.
+**Prevention:** A round-trip difference that appears on only one side (integrated vs dedicated) is almost always sync state; check the key against Create's behaviours before treating it as data loss.

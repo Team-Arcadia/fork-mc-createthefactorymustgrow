@@ -1,0 +1,63 @@
+{
+  "name": "The blast stove",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Blast stove blocks join like Create fluid tanks: place them next to and on top of each other and they merge into one stove.$(br2)$(li)$(item)Width$(): 1x1 or $(item)2x2$() at most.$(li)$(item)Height$(): as tall as Create's fluid tank height limit (server config, 32 by default)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Whatever its size, the stove has four tanks of $(item)8000 mB$(): air in, fuel in, hot air out, CO2 out. Goggles show all four."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Size is speed$()$(br)The stove runs one cycle, then waits before the next. Each cycle converts $(item)one share per block$(), and the wait gets shorter as the stove grows. Output therefore grows with the $(item)square$() of the block count: double the blocks, about four times the hot air."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A stove is only a few blocks from useless to plenty. The view shows the size that matches one blast furnace making steel: $(item)2x2 wide, 5 high$()."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "The blast stove",
+      "multiblock": {
+        "pattern": [
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "S0"
+          ]
+        ],
+        "mapping": {
+          "S": "tfmg:blast_stove",
+          "0": "tfmg:blast_stove"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove,create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -41,7 +41,7 @@ import java.util.Set;
 import static com.drmangotea.tfmg.base.blocks.WallMountBlock.FACING;
 import static com.drmangotea.tfmg.content.electricity.connection.cables.CableConnectorBlock.EXTENSION;
 
-public class CableConnectorBlockEntity extends ElectricBlockEntity implements IHaveHoveringInformation {
+public class CableConnectorBlockEntity extends ElectricBlockEntity implements IHaveHoveringInformation, com.drmangotea.tfmg.content.items.inspector.IInspectable {
 
     //player held cable rendering
     public Player player;
@@ -89,6 +89,32 @@ public class CableConnectorBlockEntity extends ElectricBlockEntity implements IH
             return direction.getAxis() == getBlockState().getValue(FACING).getAxis();
 
         return direction == getBlockState().getValue(FACING).getOpposite();
+    }
+
+    @Override
+    public void inspect(com.drmangotea.tfmg.content.items.inspector.InspectionReport report) {
+        int unloaded = 0;
+        for (CableConnection connection : connections)
+            if (!connection.blockPos1.equals(getBlockPos()) && !level.isLoaded(connection.blockPos1))
+                unloaded++;
+        if (connections.isEmpty()) {
+            report.info("connector.no_wires");
+            report.fix("connector.no_wires.fix");
+        } else {
+            report.ok("connector.wires", connections.size());
+        }
+        if (unloaded > 0)
+            report.info("connector.unloaded", unloaded);
+        Direction back = getBlockState().getValue(FACING).getOpposite();
+        if (!getBlockState().getValue(EXTENSION)) {
+            BlockPos pos = getBlockPos().relative(back);
+            boolean attached = level.isLoaded(pos) && level.getBlockEntity(pos) instanceof com.drmangotea.tfmg.content.electricity.base.IElectric be && be.hasElectricitySlot(back.getOpposite());
+            net.minecraft.network.chat.Component face = net.minecraft.network.chat.Component.translatable("tfmg.inspector.dir." + back.getName());
+            if (attached)
+                report.ok("connector.attached", face);
+            else
+                report.info("connector.not_attached", face);
+        }
     }
 
     public void notifyRemoval() {

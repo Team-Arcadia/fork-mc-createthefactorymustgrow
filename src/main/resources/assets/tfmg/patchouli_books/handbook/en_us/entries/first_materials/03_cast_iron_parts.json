@@ -1,0 +1,30 @@
+{
+  "name": "Cast iron parts",
+  "icon": "tfmg:cast_iron_pipe",
+  "category": "tfmg:first_materials",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "With cast iron ingots and sheets you can craft the parts of the steel line: $(li)$(item)Cast iron pipe$(): 2 sheets + 1 ingot in a row give 4 pipes. $(li)$(item)Cast iron fluid tank$(): a barrel between 2 sheets, stacked vertically."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Cast iron mechanical pump$(): a Create cogwheel + a cast iron pipe. $(li)$(item)Cast iron flywheel$(): 8 ingots around a Create shaft. $(li)Cast iron $(item)frames$() and $(item)trusses$() from nuggets, for decoration. $(l)The first machines - $(item)Coke oven$():$() 4 cast iron ingots around a Create $(item)industrial iron block$() give 2 coke ovens. $(li)$(item)Casting basin$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "3 fireproof brick items, 1 cast iron pipe and 5 cast iron ingots. $(li)$(item)Blast stove$(): 2 cast iron pipes, 2 cast iron tanks and 2 fireproof brick blocks give 2 stoves. $(li)$(item)Blast furnace output$(): 4 fireproof brick blocks, 4 cast iron pipes and a block of cast iron. $(li)$(item)Blast furnace hatch$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "4 fireproof brick blocks, 2 cast iron sheets, 2 cast iron pipes and a cast iron tank.$(br2)None of these needs steel: you can build the whole steel line from this page."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cast_iron_pipe,tfmg:cast_iron_fluid_tank,tfmg:cast_iron_mechanical_pump,tfmg:coke_oven,tfmg:casting_basin,tfmg:blast_stove,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

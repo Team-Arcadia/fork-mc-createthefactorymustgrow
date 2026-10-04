@@ -1,0 +1,26 @@
+{
+  "name": "Steel tanks and pipes",
+  "icon": "tfmg:steel_fluid_tank",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Steel fluid tank$()$(br)$(item)Heavy plate, barrel, heavy plate$() in a column: $(item)2 tanks$(). They build distillation towers and chemical vats, and are part of fireboxes and pumpjacks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Steel pipe$()$(br)$(item)Heavy plate, steel ingot, heavy plate$() in a row or a column: $(item)4 pipes$().$(br2)From the steel pipe you get the rest of the family:$(li)$(item)Steel mechanical pump$(): a steel pipe and a cogwheel.$(li)$(item)Steel fluid valve$(): a steel pipe and an iron sheet.$(li)$(item)Steel smart fluid pipe$(): a steel pipe, an aluminium sheet and an electron tube."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Where to go next$()$(br)With steel ingots, heavy plates, screws, mechanisms and casings you can build almost every machine of the mod. Before the electrical and oil chapters, make sure your coke oven, hot air line and blast furnace run on their own: everything that follows eats steel."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_fluid_tank,minecraft:barrel,tfmg:steel_pipe,tfmg:steel_mechanical_pump,tfmg:steel_fluid_valve,tfmg:steel_smart_fluid_pipe,tfmg:heavy_plate,tfmg:steel_ingot",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

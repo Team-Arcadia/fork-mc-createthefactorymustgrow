@@ -1,0 +1,30 @@
+{
+  "name": "Three small engines",
+  "icon": "tfmg:regular_engine",
+  "category": "tfmg:engines",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Engines burn the fuels of your refinery and turn them into $(item)rotation$(). There are three small engines, all built the same way: $(li)$(item)Regular Engine$(): the all-rounder. Its layout can be changed between five types (I, V, W, U and Boxer)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Radial Engine$(): a fixed radial layout with eight cylinders and a built-in output. $(li)$(item)Turbine Engine$(): the fastest and strongest type, runs on turbine blades instead of cylinders."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each one is a block you place, then $(item)right-click with parts$() until it is complete: first the components, then the cylinders. Blocks of the same kind placed in a row, facing the same way, join into one longer engine that gives more torque."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "An engine never starts on fuel alone. It also needs a $(item)redstone signal$() (or an engine controller), an $(item)output shaft$(), and room in its exhaust tank. Wear Engineer's Goggles while you build: the engine always tells you what it is waiting for."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:regular_engine,tfmg:radial_engine,tfmg:turbine_engine,create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

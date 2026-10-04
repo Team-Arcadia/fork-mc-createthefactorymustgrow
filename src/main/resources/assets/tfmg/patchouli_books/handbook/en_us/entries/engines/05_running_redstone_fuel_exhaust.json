@@ -1,0 +1,26 @@
+{
+  "name": "Running: redstone, fuel, exhaust",
+  "icon": "minecraft:lever",
+  "category": "tfmg:engines",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Redstone sets the throttle$()$(br)Give any block of the engine a redstone signal. The strongest signal on the row counts: signal 15 is full power, signal 0 stops it. The output speed is $(item)100 RPM x type speed x fuel speed x upgrades x signal / 15$(), capped at 256 RPM."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fuel$()$(br)Pipe fuel into any block of the engine. It must be one of the fuels the cylinders accept. When the tank runs dry the engine stops.$(br2)$(l)Exhaust$()$(br)A running engine fills its $(item)exhaust tank (8000 mB) with CO2$(). When it is full the engine stops. Pump the CO2 out of the engine with a pipe into an $(item)Exhaust$() block, which vents it as smoke, or into a tank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The engine stops as well while a component or a cylinder is missing, so check the goggles first when nothing turns."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:lever,tfmg:exhaust,create:mechanical_pump,tfmg:gasoline_bucket,tfmg:diesel_bucket,tfmg:carbon_dioxide_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

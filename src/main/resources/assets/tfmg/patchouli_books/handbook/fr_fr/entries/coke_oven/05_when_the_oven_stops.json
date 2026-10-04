@@ -1,0 +1,30 @@
+{
+  "name": "Quand le four s'arrête",
+  "icon": "create:goggles",
+  "category": "tfmg:coke_oven",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Si l'un des réservoirs ne peut pas recevoir le sous-produit du tick suivant, le four $(item)se met en pause$(). Le minuteur se fige, le charbon reste dans l'emplacement et aucun fluide n'est perdu. Dès que vous videz le réservoir, la cuisson reprend toute seule."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Regardez n'importe quel bloc du four avec les $(item)lunettes d'ingénieur$() pour savoir ce qui se passe. En plus de la progression et des deux réservoirs, une ligne rouge indique quel réservoir bloque le four :$(br2)$(li)$(item)Réservoir de CO2 plein : pompez-le par la face du HAUT$()$(li)$(item)Réservoir de créosote plein : pompez-le par un côté$() $(l)Vérifications - Aucune progression :$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "l'emplacement est-il vide, ou contient-il autre chose que du charbon ou une bûche ? $(li)Bloqué sur le même temps restant : un réservoir est plein, lisez la ligne rouge. $(li)Le coke s'entasse devant : la zone de chute est bouchée ou rien ne le ramasse. $(li)Le four est plus lent que prévu :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "un bloc regarde dans un autre sens ou manque, donc le carré est plus petit. Cassez-le et reposez-le face à l'avant."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:coke_oven,create:mechanical_pump",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

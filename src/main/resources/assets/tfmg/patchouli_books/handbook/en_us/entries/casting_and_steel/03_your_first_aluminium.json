@@ -1,0 +1,26 @@
+{
+  "name": "Your first aluminium",
+  "icon": "tfmg:bauxite",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The steel mechanism needs an $(item)aluminium ingot$(), and electrolysis comes much later. A $(item)superheated mixer$() bridges the gap:$(br2)$(item)4 bauxite powder + 1 coal coke dust = 1 aluminium ingot$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Crush $(item)bauxite$() with crushing wheels or a millstone to get bauxite powder.$(li)Put a $(item)mechanical mixer$() over a $(item)basin$() on a $(item)blaze burner$(), and feed the burner a $(item)blaze cake$() to make it superheated.$(li)Drop the powder and the dust into the basin.$(br2)Later, a chemical vat with electrodes gives aluminium from bauxite powder alone, with extra nuggets."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The screwdriver$()$(br)Craft it from $(item)rebar over an aluminium ingot$() (a brass ingot works too). It has $(item)256 uses$(): a deployer holding it wears it down instead of using it up."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite,tfmg:bauxite_powder,tfmg:coal_coke_dust,tfmg:aluminum_ingot,create:mechanical_mixer,create:blaze_burner,create:blaze_cake,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

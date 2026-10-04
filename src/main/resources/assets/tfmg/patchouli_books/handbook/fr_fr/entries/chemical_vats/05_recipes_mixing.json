@@ -1,0 +1,30 @@
+{
+  "name": "Recettes : mélange",
+  "icon": "tfmg:mixer_blade",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Toutes ces recettes demandent un $(item)mélangeur industriel avec une pale de mélangeur$() et acceptent $(item)toutes les sortes de cuves$(), dès la taille 1."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Béton liquide$()$(br)1 sable, 1 gravier, 1 sable calcaire et 250 mB d'eau donnent $(item)32000 mB$() de béton liquide. Cela remplit les quatre réservoirs de sortie d'une cuve 1x1 à la taille par défaut : videz-la après chaque fournée ou prenez une cuve plus grande.$(br2)$(l)Asphalte liquide$()$(br)1 mélange à asphalte et 250 mB d'eau donnent 1000 mB d'asphalte liquide en 5 secondes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Acide sulfurique$()$(br)3 poudres de soufre, 1 poudre de nitrate et 1000 mB d'eau donnent 500 mB d'acide sulfurique.$(br2)$(l)Caoutchouc$()$(br)1 poudre de soufre et 250 mB d'huile lourde donnent 1 plaque de caoutchouc. Demande une $(item)chaleur de 2$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Craquage du naphta$()$(br)500 mB de naphta donnent 250 mB d'éthylène et 250 mB de propylène. Demande une $(item)chaleur de 2$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:mixer_blade,tfmg:limesand,tfmg:liquid_concrete_bucket,tfmg:asphalt_mixture,tfmg:sulfuric_acid_bucket,tfmg:rubber_sheet,tfmg:naphtha_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

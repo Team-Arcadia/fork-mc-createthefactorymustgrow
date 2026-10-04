@@ -1,6 +1,8 @@
 package com.drmangotea.tfmg.content.electricity.utilities.electric_motor;
 
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.electricity.base.IElectric;
 import com.drmangotea.tfmg.content.electricity.base.KineticElectricBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -23,7 +25,7 @@ import java.util.List;
 
 import static com.simibubi.create.content.kinetics.base.DirectionalKineticBlock.FACING;
 
-public class ElectricMotorBlockEntity extends KineticElectricBlockEntity {
+public class ElectricMotorBlockEntity extends KineticElectricBlockEntity implements IInspectable {
 
 
 
@@ -141,6 +143,42 @@ public class ElectricMotorBlockEntity extends KineticElectricBlockEntity {
     public float resistance() {
 
         return TFMGConfigs.common().machines.electricMotorInternalResistance.getF();
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        Direction back = getBlockState().getValue(FACING).getOpposite();
+        boolean lying = getBlockState().getValue(FACING).getAxis().isHorizontal();
+        net.minecraft.network.chat.Component backName = net.minecraft.network.chat.Component.translatable("tfmg.inspector.dir." + back.getName());
+        report.info(lying ? "motor.faces_lying" : "motor.faces", backName);
+
+        boolean connected = false;
+        for (Direction direction : Direction.values()) {
+            if (!hasElectricitySlot(direction))
+                continue;
+            BlockPos pos = getBlockPos().relative(direction);
+            if (level.isLoaded(pos) && level.getBlockEntity(pos) instanceof IElectric neighbour
+                    && neighbour.hasElectricitySlot(direction.getOpposite()))
+                connected = true;
+        }
+        if (!connected) {
+            report.problem("motor.not_connected");
+            report.fix(lying ? "motor.not_connected.fix_lying" : "motor.not_connected.fix", backName);
+        }
+
+        int voltage = data.getVoltage();
+        if (voltage > 0) {
+            int expected = (int) Math.min(255, voltage * .8f);
+            report.info("motor.speed_from_voltage", voltage, expected);
+            if (expected < 255)
+                report.info("motor.full_speed_at", (int) Math.ceil(255 / .8f));
+        }
+        // getGeneratedSpeed() returns 0 when the network is undersupplied even
+        // if the notEnoughPower flag (reported generically) is not raised.
+        if (voltage > 0 && !data.notEnoughPower && networkUndersupplied()) {
+            report.problem("motor.undersupplied", data.networkPowerGeneration, getNetworkPowerUsage());
+            report.fix("electric.not_enough_power.fix");
+        }
     }
 
     class MotorValueBox extends ValueBoxTransform.Sided {

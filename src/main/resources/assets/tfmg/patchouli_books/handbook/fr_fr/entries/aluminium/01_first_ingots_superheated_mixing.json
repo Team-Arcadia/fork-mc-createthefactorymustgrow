@@ -1,0 +1,30 @@
+{
+  "name": "Premiers lingots : mélange surchauffé",
+  "icon": "create:mechanical_mixer",
+  "category": "tfmg:aluminium",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Depuis la 1.3.0, il existe un moyen d'obtenir de l'aluminium $(item)sans électricité$(), pour ne jamais rester bloqué avant votre premier générateur.$(br2)$(l)La recette$()$(br)Dans un $(item)mélangeur mécanique$() de Create au-dessus d'un $(item)bassin$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)4 $(item)poudres de bauxite$()$(li)1 $(item)poussière de coke de charbon$()$(br2)donnent $(item)1 lingot d'aluminium$(). Le bassin doit être $(item)surchauffé$() : placez un brûleur à blaze dessous et donnez au blaze un $(item)gâteau au blaze$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Poussière de coke de charbon$()$(br)Concassez du $(item)coke de charbon$() dans les roues de concassage : un coke donne une poussière. Le coke vient du four à coke, décrit dans les chapitres sur l'acier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Quand arrêter$()$(br)Cette recette sert à démarrer. L'électrolyse transforme les mêmes 4 poudres en un lingot plus des pépites en bonus, sans poussière de coke : dès que vos premiers générateurs tournent, envoyez votre bauxite dans une cuve."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_mixer,create:basin,create:blaze_burner,create:blaze_cake,tfmg:bauxite_powder,tfmg:coal_coke,tfmg:coal_coke_dust,tfmg:aluminum_ingot",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

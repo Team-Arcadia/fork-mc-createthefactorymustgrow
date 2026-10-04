@@ -1,0 +1,30 @@
+{
+  "name": "Cast iron",
+  "icon": "minecraft:iron_ingot",
+  "category": "tfmg:first_materials",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cast iron is the metal of your first heavy machines: the coke oven, the blast stove, cast iron pipes and tanks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Making it$()$(br)Put a $(item)mechanical press$() over a $(item)basin$(), with a lit $(item)blaze burner$() under the basin. Drop in $(item)1 iron ingot + 1 coal$(): the press compacts them into $(item)1 cast iron ingot$(). The recipe needs heat, a cold basin does nothing.$(br2)Charcoal does not work here, it must be coal. Crushing lignite is a good source of extra coal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Storage and shapes$()$(li)9 cast iron nuggets make an ingot, and an ingot gives 9 nuggets back.$(li)9 ingots make a $(item)block of cast iron$(), which the blast furnace output needs.$(li)Press an ingot with a mechanical press on a depot or a belt for a $(item)cast iron sheet$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Automate it early: a hopper or funnel feeding iron and coal into the heated basin, and a second press making sheets, will cover the whole chapter."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_ingot,minecraft:coal,tfmg:cast_iron_ingot,tfmg:cast_iron_nugget,tfmg:cast_iron_block,tfmg:cast_iron_sheet,create:blaze_burner",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

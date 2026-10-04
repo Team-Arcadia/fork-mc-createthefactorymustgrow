@@ -1,0 +1,30 @@
+{
+  "name": "Tubes, poteaux et câbles spéciaux",
+  "icon": "tfmg:cable_tube",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Tube de câble et poteau électrique Ce sont deux piliers fins qui se connectent $(item)seulement à leurs deux extrémités$(), selon l'axe sur lequel ils sont posés.$() Ils sont parfaits pour les longues lignes droites et supportent jusqu'à $(item)10 000 V$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Posés dans du béton liquide, ils sèchent en une version $(item)enrobée de béton$(), idéale pour enterrer une ligne dans un sol ou un mur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Bloc de câble copieur$()$(br)Il se connecte sur $(item)ses six faces$(), comme un concentrateur, mais prend l'apparence de n'importe quel bloc que vous lui appliquez, comme les blocs copieurs de Create. Utilisez-le pour cacher le câblage dans un bâtiment. Il garde la limite standard de $(item)1 000 V$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Bloc de câble diagonal$()$(br)Il relie une face latérale à la face $(item)du dessus$() ou $(item)du dessous$(), pour qu'une ligne monte une pente ou un escalier sans pile de concentrateurs. Il supporte jusqu'à $(item)100 000 V$().$(br2)Aucun de ces blocs n'a de limite de courant : seuls les concentrateurs de câbles grillent quand le courant est trop fort."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cable_tube,tfmg:electric_post,tfmg:copycat_cable_block,tfmg:diagonal_cable_block",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

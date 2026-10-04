@@ -1,0 +1,30 @@
+{
+  "name": "Step 2: cylinders and fuels",
+  "icon": "tfmg:diesel_engine_cylinder",
+  "category": "tfmg:engines",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Once all components are in, right-click with $(item)cylinders$() until every slot is filled (goggles: $(item)Pistons Missing$() or $(item)Turbines Missing$() until then). The cylinder decides which fuels the engine burns; its tooltip lists them under $(item)Supported Fuels$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Diesel Engine Cylinder$() (4 aluminium sheets): diesel. $(li)$(item)Engine Cylinder$() (diesel cylinder + Spark Plug): gasoline, kerosene, naphtha. $(li)$(item)Engine Cylinder$() + Brass Pipe: LPG. $(li)Engine Cylinder filled by a spout with 250 mB of $(item)butane$(), $(item)propane$() or $(item)hydrogen$(): that gas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Simple Engine Cylinder$() (4 iron sheets + Flint and Steel): creosote and furnace gas. $(li)$(item)Turbine Blade$() (8 iron sheets + Shaft): kerosene. Turbine engines only take blades."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The fuel list is read from the cylinders, so keep one kind per engine; an Engine Cylinder whose fuels differ from those already inside is refused. Changing the engine type hands the cylinders back to you."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:diesel_engine_cylinder,tfmg:engine_cylinder,tfmg:simple_engine_cylinder,tfmg:turbine_blade,tfmg:spark_plug,tfmg:brass_pipe",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

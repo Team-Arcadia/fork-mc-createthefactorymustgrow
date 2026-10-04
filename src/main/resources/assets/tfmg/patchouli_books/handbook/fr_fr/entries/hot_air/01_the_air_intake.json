@@ -1,0 +1,45 @@
+{
+  "name": "La prise d'air",
+  "icon": "tfmg:air_intake",
+  "category": "tfmg:hot_air",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La prise d'air est un bloc cinétique avec un ventilateur à l'avant et une $(item)prise d'arbre à l'arrière$(). Faites tourner cet arbre et elle remplit son réservoir d'air. Pompez l'air par n'importe quelle face ; le réservoir contient $(item)8000 mB$() et n'accepte que de l'air."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Tailles$()$(li)Seule, en $(item)1x1$().$(li)En carré $(item)2x2$() ou $(item)3x3$() : tous les blocs côte à côte dans un même carré plat, $(item)tous tournés dans le même sens$(). Le carré devient un seul grand ventilateur.$(br2)Dans un carré, $(item)un seul bloc a besoin de tourner$() : le bloc le plus rapide donne la vitesse de tout le ventilateur. Tout son air va dans un seul réservoir commun."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une clé sur la $(item)face arrière$() retire ou remet la prise d'arbre, pour choisir quels blocs du carré reçoivent l'arbre.$(br2)La vue montre une prise $(item)2x2$() tournée vers le sud, prête à recevoir un arbre par le nord."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "La prise d'air",
+      "multiblock": {
+        "pattern": [
+          [
+            "AA"
+          ],
+          [
+            "A0"
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:air_intake[facing=south]",
+          "0": "tfmg:air_intake[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:air_intake,create:shaft,create:wrench,tfmg:air_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Plus haut, plus rapide",
+  "icon": "tfmg:fireproof_bricks",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Chaque couche retire du temps à chaque recette. À la hauteur maximale de 10, une recette prend $(item)la moitié$() de son temps de base. Avec les réglages par défaut :$(br2)$(item)temps = base x (1 - hauteur / 20)$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Un fer brut concassé (144 mB)$()$(li)$(item)3 couches$() : 340 ticks (17 s)$(li)$(item)4 couches$() : 320 ticks (16 s)$(li)$(item)5 couches$() : 300 ticks (15 s)$(li)$(item)6 couches$() : 280 ticks (14 s)$(li)$(item)8 couches$() : 240 ticks (12 s)$(li)$(item)10 couches$() : 200 ticks (10 s)$(br2)Un fourneau $(item)renforcé$() divise encore ces temps par deux : 170 ticks à 3 couches, $(item)100 ticks$() à 10."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'air chaud est pris $(item)à chaque tick de travail$() : un fourneau plus rapide consomme moins d'air chaud et moins de coke par lingot, environ 6800 mB d'air chaud par lingot à 3 couches, 2000 mB à 10 couches renforcées.$(br2)Le fourneau ne compte que les couches complètes : des murs à moitié construits au-dessus ne servent à rien."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_bricks,tfmg:fireproof_brick_reinforcement,tfmg:blast_furnace_reinforcement",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Boîte de vitesses moteur",
+  "icon": "tfmg:engine_gearbox",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La $(item)boîte de vitesses moteur$() est une boîte compacte faite pour se placer à côté d'un moteur. Elle se raccorde par son $(item)avant$() et par $(item)ses deux côtés$() : elle fait tourner la ligne de sortie d'un moteur à angle droit et permet de la répartir vers deux machines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Elle se pose orientée dans la direction de votre regard, comme la plupart des blocs de Create. $(l)Conseils pour les petits moteurs - Commencez par un moteur de type I à la créosote ou au gaz de four avec des cylindres simples :$() les deux carburants arrivent tôt, par le four à coke et le haut fourneau. $(li)Passez au diesel ou au kérosène pour les machines lourdes :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "leur facteur de couple est de 1,4. $(li)La longueur ajoute du couple, le signal et les facteurs de vitesse ajoutent des RPM. Dimensionnez la rangée pour la contrainte voulue, puis choisissez carburant et améliorations pour la vitesse. $(li)L'huile de lubrification et le liquide de refroidissement ensemble divisent à peu près par deux la consommation."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Une amélioration tuyauterie et un grand réservoir donnent un moteur qui tourne des heures sans surveillance, tant que l'échappement est évacué."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:engine_gearbox,tfmg:simple_engine_cylinder,tfmg:creosote_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

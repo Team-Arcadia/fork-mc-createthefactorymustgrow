@@ -1,0 +1,26 @@
+{
+  "name": "Watching the network",
+  "icon": "tfmg:voltage_observer",
+  "category": "tfmg:network_control",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Voltage observer$()$(br)Mount it on an electric block. It gives a $(item)redstone signal$() while that network has any voltage. A $(item)comparator$() reads it more finely: the strength grows with the voltage and is full at $(item)250 V$(). $(l)Display link sources Point a Create $(item)display link$() at:$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)an $(item)electric gauge$() or a $(item)voltage observer$(): voltage, current, resistance, power used or generated, voltage generated, and the network's consumption, generation, resistance and id; $(li)an $(item)accumulator$(): voltage and the network's consumption, generation and resistance; $(li)a $(item)potentiometer$(): voltage and voltage generated."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Segmented display$()$(br)A $(item)display link target$() that shows text with glowing segments, two characters per block. Place several side by side for longer text. It is a 100 ohm consumer and stays dark below $(item)5 W$(), so give it at least about 23 V. Right-click it with a dye to change its color (black and grays are refused)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:voltage_observer,minecraft:comparator,create:display_link,tfmg:voltmeter,tfmg:accumulator,tfmg:segmented_display",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

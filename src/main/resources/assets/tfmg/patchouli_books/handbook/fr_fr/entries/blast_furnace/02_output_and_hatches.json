@@ -1,0 +1,34 @@
+{
+  "name": "Sortie et trappes",
+  "icon": "tfmg:blast_furnace_output",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La sortie Elle prend la place d'une $(item)brique de côté de la couche du bas$() et doit $(item)regarder vers l'extérieur$(), le dos contre le centre.$() Elle vous fait face quand vous la posez : posez-la depuis l'extérieur de la tour."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'acier et le laitier en fusion se pompent par n'importe laquelle de ses faces.$(br2)$(l)La trappe d'air chaud$()$(br)Placez $(item)une$() trappe de haut fourneau à la place d'une $(item)brique de côté$(), sur n'importe quelle couche, et envoyez-y l'air chaud. Le fourneau ne prend son air chaud que dans cette trappe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une $(item)deuxième trappe dans une paroi coupe la tour$() à cette couche : le fourneau arrête de compter là. Gardez une seule trappe de paroi."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La trappe à gaz$()$(br)Une trappe posée dans le vide $(item)juste au-dessus du centre de la dernière couche$() récupère le $(item)gaz de haut fourneau$(). Pompez-le et envoyez-le au fourneau à air chaud comme combustible. Sans elle, le gaz est perdu ; le haut fourneau tourne quand même."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cette trappe du sommet accepte aussi des objets : tout ce qu'un entonnoir y met tombe dans le puits. C'est le moyen le plus simple d'alimenter un fourneau haut."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_output,tfmg:blast_furnace_hatch,create:mechanical_pump,create:andesite_funnel,tfmg:hot_air_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

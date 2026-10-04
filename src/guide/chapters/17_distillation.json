@@ -1,0 +1,282 @@
+{
+  "order": 170,
+  "icon": "tfmg:steel_distillation_controller",
+  "title": {
+    "en_us": "Distillation",
+    "fr_fr": "La distillation"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "A crude oil tower",
+        "fr_fr": "Une tour à pétrole brut"
+      },
+      "text": {
+        "en_us": [
+          "A distillation tower splits crude oil or heavy oil into several fluids at once. It is made of four things:",
+          "",
+          "- a **Steel Fluid Tank**, filled with the oil to split,",
+          "- a **Steel Distillation Controller** on the side of that tank,",
+          "- **Steel Distillation Outputs** stacked above the controller, with one **Industrial Pipe** between each pair,",
+          "- **heat** under the tank.",
+          "",
+          "The tower shown here runs the full crude oil recipe: a 2 x 2 tank 12 blocks tall, the controller on its north face, six outputs and five pipes above it, and a 2 x 2 firebox underneath.",
+          "",
+          "Oil goes into the steel tank like any Create fluid tank. The controller draws it from the tank block right behind it into its own 8000 mB tank, and each output collects one product in its own 8000 mB tank. Pump the products out of the outputs from any side.",
+          "",
+          "A tank takes only **one** controller: a second one will not stay on a tank that already has one."
+        ],
+        "fr_fr": [
+          "Une tour de distillation sépare le pétrole brut ou le pétrole lourd en plusieurs fluides à la fois. Elle se compose de quatre éléments :",
+          "",
+          "- une **cuve à fluide en acier**, remplie du pétrole à séparer,",
+          "- un **contrôleur de distillation en acier** sur le côté de cette cuve,",
+          "- des **sorties de distillation en acier** empilées au-dessus du contrôleur, avec un **tuyau industriel** entre chaque paire,",
+          "- de la **chaleur** sous la cuve.",
+          "",
+          "La tour montrée ici fait la recette complète du pétrole brut : une cuve de 2 x 2 haute de 12 blocs, le contrôleur sur sa face nord, six sorties et cinq tuyaux au-dessus, et un foyer de 2 x 2 en dessous.",
+          "",
+          "Le pétrole entre dans la cuve en acier comme dans n'importe quel réservoir de Create. Le contrôleur le tire du bloc de cuve juste derrière lui vers son propre réservoir de 8000 mB, et chaque sortie recueille un produit dans son propre réservoir de 8000 mB. Pompez les produits par n'importe quel côté des sorties.",
+          "",
+          "Une cuve n'accepte qu'**un seul** contrôleur : un second ne tient pas sur une cuve qui en a déjà un."
+        ]
+      },
+      "items": ["tfmg:steel_fluid_tank", "tfmg:steel_distillation_controller", "tfmg:steel_distillation_output", "tfmg:industrial_pipe", "tfmg:firebox", "tfmg:crude_oil_bucket"],
+      "schematic": {
+        "layers": [
+          ["..", "FF", "FF"],
+          ["C.", "AA", "AA"],
+          ["O.", "TT", "TT"],
+          ["P.", "TT", "TT"],
+          ["O.", "TT", "TT"],
+          ["P.", "TT", "TT"],
+          ["O.", "TT", "TT"],
+          ["P.", "TT", "TT"],
+          ["O.", "TT", "TT"],
+          ["P.", "TT", "TT"],
+          ["O.", "TT", "TT"],
+          ["P.", "TT", "TT"],
+          ["O.", "UU", "UU"]
+        ],
+        "key": {
+          "F": "tfmg:firebox[blaze=fading]",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "The tower rules",
+        "fr_fr": "Les règles de la tour"
+      },
+      "text": {
+        "en_us": [
+          "The controller checks these rules every tick. If one fails, nothing happens at all, so build carefully.",
+          "",
+          "## Outputs",
+          "- The first output sits **directly on top** of the controller. Then pipe, output, pipe, output, up to **six outputs**.",
+          "- The stack stops at the first block that breaks the pattern, so a missing pipe hides every output above it.",
+          "- The number of outputs must **exactly** equal the number of products of a recipe. That is how you choose the recipe: add or remove an output to switch.",
+          "",
+          "## Tank size",
+          "- The tank must be at least **twice as tall** as the number of outputs: 6 outputs need 12 blocks of tank.",
+          "- With **more than 3 outputs**, the tank must be at least **2 blocks wide**. Steel tanks go up to 3 x 3.",
+          "",
+          "## Placement",
+          "The controller faces away from the tank: place it while looking at the tank wall. It must touch the tank, or it cannot stay in place.",
+          "",
+          "Goggles on the controller show the **Heat Level**, the **Output Count**, and **Steel Fluid Tank Not Found** when the tank is missing."
+        ],
+        "fr_fr": [
+          "Le contrôleur vérifie ces règles à chaque tick. Si l'une d'elles échoue, il ne se passe rien du tout : construisez avec soin.",
+          "",
+          "## Les sorties",
+          "- La première sortie se pose **juste au-dessus** du contrôleur. Ensuite tuyau, sortie, tuyau, sortie, jusqu'à **six sorties**.",
+          "- La pile s'arrête au premier bloc qui casse le motif : un tuyau manquant cache toutes les sorties au-dessus.",
+          "- Le nombre de sorties doit être **exactement** égal au nombre de produits d'une recette. C'est ainsi que vous choisissez la recette : ajoutez ou retirez une sortie pour en changer.",
+          "",
+          "## La taille de la cuve",
+          "- La cuve doit être au moins **deux fois plus haute** que le nombre de sorties : 6 sorties demandent 12 blocs de cuve.",
+          "- Avec **plus de 3 sorties**, la cuve doit faire au moins **2 blocs de large**. Les cuves en acier vont jusqu'à 3 x 3.",
+          "",
+          "## La pose",
+          "Le contrôleur tourne le dos à la cuve : posez-le en regardant la paroi de la cuve. Il doit toucher la cuve, sinon il ne tient pas.",
+          "",
+          "Les lunettes sur le contrôleur affichent le **Heat Level**, l'**Output Count**, et **Steel Fluid Tank Not Found** quand la cuve manque."
+        ]
+      },
+      "items": ["tfmg:steel_distillation_controller", "tfmg:steel_distillation_output", "tfmg:industrial_pipe", "tfmg:steel_fluid_tank", "create:goggles"]
+    },
+    {
+      "title": {
+        "en_us": "Heat and speed",
+        "fr_fr": "Chaleur et vitesse"
+      },
+      "text": {
+        "en_us": [
+          "The tower needs heat from blocks placed **under the tank**, across its whole footprint. A 2 x 2 tank has four heater spots, a 3 x 3 tank has nine. The heat of every spot is added up:",
+          "",
+          "- **Blaze Burner**, kindled: **1**. Superheated (seething): **2**. A smouldering blaze burner gives nothing.",
+          "- **Firebox**, while burning: **2** per block.",
+          "",
+          "With a heat of 0 the tower does nothing.",
+          "",
+          "Every tick, the tower runs the recipe once, multiplied by **heat / 2**. A heat of 2 runs the recipe exactly as JEI shows it, every tick. A heat of 8, the 2 x 2 firebox of the first page, runs it four times over.",
+          "",
+          "The controller also needs at least the recipe input times that multiplier in its own tank before it starts a tick. Its tank holds 8000 mB, which is plenty for any heat you can fit under a tank.",
+          "",
+          "Even a small heater processes oil much faster than a single pumpjack delivers it, so heat rarely limits a refinery. Use more heat when several pumpjacks feed the same tower."
+        ],
+        "fr_fr": [
+          "La tour a besoin de chaleur venant de blocs posés **sous la cuve**, sur toute sa surface. Une cuve de 2 x 2 a quatre emplacements de chauffe, une cuve de 3 x 3 en a neuf. La chaleur de chaque emplacement s'additionne :",
+          "",
+          "- **Brûleur à blaze**, allumé : **1**. Surchauffé : **2**. Un brûleur à blaze qui couve ne donne rien.",
+          "- **Foyer**, quand il brûle : **2** par bloc.",
+          "",
+          "Avec une chaleur de 0, la tour ne fait rien.",
+          "",
+          "À chaque tick, la tour exécute la recette une fois, multipliée par **chaleur / 2**. Une chaleur de 2 exécute la recette exactement comme JEI la montre, à chaque tick. Une chaleur de 8, le foyer de 2 x 2 de la première page, l'exécute quatre fois.",
+          "",
+          "Le contrôleur doit aussi contenir au moins l'entrée de la recette multipliée par ce facteur avant de lancer un tick. Son réservoir de 8000 mB suffit largement pour toute la chaleur qu'on peut placer sous une cuve.",
+          "",
+          "Même un petit chauffage traite le pétrole bien plus vite qu'une seule pompe à pétrole ne le fournit : la chaleur limite rarement une raffinerie. Ajoutez-en quand plusieurs pompes alimentent la même tour."
+        ]
+      },
+      "items": ["create:blaze_burner", "tfmg:firebox", "tfmg:steel_fluid_tank", "tfmg:steel_distillation_controller"]
+    },
+    {
+      "title": {
+        "en_us": "Crude oil recipes",
+        "fr_fr": "Les recettes du pétrole brut"
+      },
+      "text": {
+        "en_us": [
+          "Outputs are filled **from the bottom up** in the order below: the first product goes into the lowest output, the lightest into the highest.",
+          "",
+          "## 6 outputs: 340 mB crude oil",
+          "- 120 mB heavy oil",
+          "- 60 mB diesel",
+          "- 30 mB kerosene",
+          "- 10 mB naphtha",
+          "- 60 mB gasoline",
+          "- 60 mB LPG",
+          "",
+          "## 5 outputs: 330 mB crude oil",
+          "Same as above **without naphtha**: 120 heavy oil, 60 diesel, 30 kerosene, 60 gasoline, 60 LPG.",
+          "",
+          "## 3 outputs: 200 mB crude oil (light distillation)",
+          "150 mB heavy oil, 45 mB diesel, 5 mB gasoline.",
+          "",
+          "All amounts are per run at a heat of 2. The six-output tower gives the widest range of fuels, plus naphtha, which you need for plastics. The three-output tower is cheap to build but turns most of the oil into heavy oil."
+        ],
+        "fr_fr": [
+          "Les sorties se remplissent **de bas en haut** dans l'ordre ci-dessous : le premier produit va dans la sortie la plus basse, le plus léger dans la plus haute.",
+          "",
+          "## 6 sorties : 340 mB de pétrole brut",
+          "- 120 mB de pétrole lourd",
+          "- 60 mB de diesel",
+          "- 30 mB de kérosène",
+          "- 10 mB de naphta",
+          "- 60 mB d'essence",
+          "- 60 mB de GPL",
+          "",
+          "## 5 sorties : 330 mB de pétrole brut",
+          "Comme ci-dessus **sans naphta** : 120 pétrole lourd, 60 diesel, 30 kérosène, 60 essence, 60 GPL.",
+          "",
+          "## 3 sorties : 200 mB de pétrole brut (distillation légère)",
+          "150 mB de pétrole lourd, 45 mB de diesel, 5 mB d'essence.",
+          "",
+          "Toutes les quantités sont par exécution, à une chaleur de 2. La tour à six sorties donne le plus large choix de carburants, plus du naphta, nécessaire pour les plastiques. La tour à trois sorties est bon marché mais transforme la plupart du pétrole en pétrole lourd."
+        ]
+      },
+      "items": ["tfmg:crude_oil_bucket", "tfmg:heavy_oil_bucket", "tfmg:diesel_bucket", "tfmg:kerosene_bucket", "tfmg:naphtha_bucket", "tfmg:gasoline_bucket", "tfmg:lpg_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Heavy oil recipes",
+        "fr_fr": "Les recettes du pétrole lourd"
+      },
+      "text": {
+        "en_us": [
+          "Heavy oil can go through a second tower. Each recipe uses **200 mB of heavy oil** and gives half of it back as heavy oil in the lowest output, which you can loop back into the tank.",
+          "",
+          "## 5 outputs",
+          "100 mB heavy oil, 25 mB lubrication oil, 50 mB diesel, 20 mB kerosene, 5 mB naphtha.",
+          "",
+          "## 4 outputs",
+          "100 mB heavy oil, 30 mB lubrication oil, 50 mB diesel, 20 mB kerosene.",
+          "",
+          "## 3 outputs (light distillation)",
+          "100 mB heavy oil, 50 mB diesel, 50 mB lubrication oil.",
+          "",
+          "Heavy oil also has uses of its own:",
+          "- compacted with heat, **1000 mB** makes one **bitumen**, the base of asphalt,",
+          "- with sulfur dust in a heated chemical vat with an industrial mixer, 250 mB makes a **rubber sheet**.",
+          "",
+          "Note that a crude oil tower and a heavy oil tower with the same number of outputs never mix up: the controller picks the recipe that matches the fluid in its tank."
+        ],
+        "fr_fr": [
+          "Le pétrole lourd peut passer dans une seconde tour. Chaque recette utilise **200 mB de pétrole lourd** et en rend la moitié sous forme de pétrole lourd dans la sortie la plus basse, que vous pouvez renvoyer dans la cuve.",
+          "",
+          "## 5 sorties",
+          "100 mB de pétrole lourd, 25 mB d'huile de lubrification, 50 mB de diesel, 20 mB de kérosène, 5 mB de naphta.",
+          "",
+          "## 4 sorties",
+          "100 mB de pétrole lourd, 30 mB d'huile de lubrification, 50 mB de diesel, 20 mB de kérosène.",
+          "",
+          "## 3 sorties (distillation légère)",
+          "100 mB de pétrole lourd, 50 mB de diesel, 50 mB d'huile de lubrification.",
+          "",
+          "Le pétrole lourd a aussi ses propres usages :",
+          "- compacté avec de la chaleur, **1000 mB** donnent un **bitume**, la base de l'asphalte,",
+          "- avec de la poudre de soufre dans une cuve chimique chauffée équipée d'un mélangeur industriel, 250 mB donnent une **plaque de caoutchouc**.",
+          "",
+          "Une tour à pétrole brut et une tour à pétrole lourd avec le même nombre de sorties ne se mélangent jamais : le contrôleur choisit la recette qui correspond au fluide de son réservoir."
+        ]
+      },
+      "items": ["tfmg:heavy_oil_bucket", "tfmg:lubrication_oil_bucket", "tfmg:diesel_bucket", "tfmg:kerosene_bucket", "tfmg:naphtha_bucket", "tfmg:bitumen", "tfmg:rubber_sheet"]
+    },
+    {
+      "title": {
+        "en_us": "When an output is full",
+        "fr_fr": "Quand une sortie est pleine"
+      },
+      "text": {
+        "en_us": [
+          "Each output has a Create value box on its sides. Use it, as on any Create machine, to choose what happens **When Internal Tank is Full**:",
+          "",
+          "- **Stop Distillation Process** (default): a full output stops taking its product. The other outputs keep working, and only the oil for the products actually stored is used.",
+          "- **Void Excess Fluid**: the output keeps accepting its share and destroys whatever does not fit. The tower never slows down.",
+          "",
+          "Use the void mode on products you do not want yet, so they never block anything, and the default mode on the fuels you sell or burn.",
+          "",
+          "A few habits keep a refinery running:",
+          "- Pump every output somewhere, even into a plain tank, and add more storage as the factory grows.",
+          "- Send the heavy oil from the bottom output to a heavy oil tower, to bitumen, or back into the crude tank.",
+          "- Burn surplus gases in a **flarestack** (see the next chapter) instead of voiding them.",
+          "- Keep the steel tank topped up: an empty tank stops the tower, not a full one."
+        ],
+        "fr_fr": [
+          "Chaque sortie a une case de réglage Create sur ses côtés. Utilisez-la, comme sur toute machine de Create, pour choisir ce qui se passe **When Internal Tank is Full** :",
+          "",
+          "- **Stop Distillation Process** (par défaut) : une sortie pleine cesse de recevoir son produit. Les autres sorties continuent, et seul le pétrole des produits réellement stockés est consommé.",
+          "- **Void Excess Fluid** : la sortie continue d'accepter sa part et détruit ce qui ne rentre pas. La tour ne ralentit jamais.",
+          "",
+          "Utilisez la destruction sur les produits dont vous n'avez pas encore besoin, pour qu'ils ne bloquent rien, et le mode par défaut sur les carburants que vous vendez ou brûlez.",
+          "",
+          "Quelques habitudes pour qu'une raffinerie tourne :",
+          "- Pompez chaque sortie quelque part, même dans un simple réservoir, et ajoutez du stockage à mesure que l'usine grandit.",
+          "- Envoyez le pétrole lourd de la sortie du bas vers une tour à pétrole lourd, vers le bitume, ou de nouveau dans la cuve.",
+          "- Brûlez les gaz en trop dans une **torche d'évacuation** (voir le chapitre suivant) plutôt que de les détruire.",
+          "- Gardez la cuve en acier remplie : c'est une cuve vide qui arrête la tour, pas une pleine."
+        ]
+      },
+      "items": ["tfmg:steel_distillation_output", "tfmg:flarestack", "create:fluid_tank", "create:mechanical_pump"]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Accumulateur",
+  "icon": "tfmg:accumulator",
+  "category": "tfmg:power",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "L'accumulateur stocke de l'énergie pour plus tard. Il se connecte aux $(item)deux extrémités$() de son axe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les chaînes$()$(br)Alignez des accumulateurs bout à bout, tous dans le même sens, pour former une chaîne de $(item)15$() au maximum. Chaque bloc ajoute $(item)12 V$() et $(item)100 000$() de stockage : une chaîne de 10 fournit 120 V et contient 1 000 000."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Charge et décharge$()$(li)Quand la tension du réseau est $(item)supérieure$() à celle de la chaîne et que le réseau a de la puissance en trop, il se charge jusqu'à $(item)100 par tick$().$(li)Quand la tension du réseau est $(item)inférieure ou égale$() à la sienne, il alimente le réseau, jusqu'à $(item)20 A$() (soit 240 W par bloc de la chaîne).$(li)Un $(item)signal de redstone$() l'empêche de se décharger."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un accumulateur cassé garde sa charge dans l'objet.$(br2)Ses autres faces exposent l'énergie stockée en $(item)Forge Energy$() pour les machines d'autres mods, et la leur envoient. C'est aussi une source pour $(item)liaison d'affichage$() pour la tension et les chiffres du réseau."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:accumulator,create:display_link,minecraft:redstone_torch",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

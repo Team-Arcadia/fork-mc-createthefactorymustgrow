@@ -1,0 +1,30 @@
+{
+  "name": "Lignes du haut fourneau",
+  "icon": "tfmg:blast_furnace_output",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "À lire sur la $(item)sortie de haut fourneau$() : $(li)**Structure incomplète : au moins 3 couches complètes** : la tour fait moins de 3 couches complètes, elle ne fait donc rien. Comparez chaque couche à la page d'info JEI :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "briques réfractaires sur les côtés, renforts aux coins, une brique réfractaire au centre de la couche du bas. $(li)**Pas de combustible : ajoutez de la poussière de coke** : broyez du coke et versez la poussière par le haut du puits, ou par entonnoir dans la sortie. $(li)**Pas de fondant : ajoutez du sable calcaire**."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Aucune trappe de haut fourneau dans les murs pour l'air chaud$() : une brique du mur doit être une trappe de haut fourneau. $(li)$(item)La trappe ne contient pas d'air chaud$() : amenez l'air chaud d'un fourneau à air chaud dans cette trappe. $(li)**Réservoir de sortie plein : pompez le résultat** :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "pompez le métal en fusion et le laitier hors de la sortie ; il faut de la place pour 144 mB dans chaque réservoir.$(br2)Les lignes de combustible, de fondant et d'air chaud n'apparaissent que si du minerai attend dedans : un fourneau vide paraît calme."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_output,tfmg:blast_furnace_hatch,tfmg:coal_coke_dust,tfmg:limesand,tfmg:hot_air_bucket,tfmg:molten_steel_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

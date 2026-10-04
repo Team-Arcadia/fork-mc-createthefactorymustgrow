@@ -1,0 +1,30 @@
+{
+  "name": "Le mécanisme en acier",
+  "icon": "tfmg:steel_mechanism",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La plupart des machines TFMG demandent un mécanisme en acier. C'est un $(item)assemblage séquencé$() qui part d'une $(item)plaque lourde$(), avec quatre étapes de $(item)déployeur$(), dans cet ordre :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)1. un $(item)lingot d'acier$()$(li)2. un $(item)lingot d'aluminium$()$(li)3. des $(item)vis$()$(li)4. le $(item)tournevis$() (usé, pas consommé)$(br2)Un seul passage suffit. Le résultat est un $(item)mécanisme en acier 80 %$() du temps, et une $(item)pépite de fer$() sinon."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Une ligne simple$()$(br)Un tapis fait passer les plaques lourdes sous quatre déployeurs alignés, chacun tenant un des objets ci-dessus. Approvisionnez les trois premiers avec des entonnoirs ou des glissières, et donnez un tournevis au dernier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Par mécanisme, en moyenne : 1 plaque lourde, 1 lingot d'acier, 1 lingot d'aluminium et 1 vis, divisés par 0,8. Comptez environ $(item)1,25 de chaque$() et $(item)2,5 lingots d'acier$() au total, plaque comprise."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_mechanism,tfmg:unfinished_steel_mechanism,tfmg:heavy_plate,tfmg:steel_ingot,tfmg:aluminum_ingot,tfmg:screw,tfmg:screwdriver,create:deployer",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

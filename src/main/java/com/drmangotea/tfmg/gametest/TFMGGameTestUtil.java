@@ -5,6 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.gametest.framework.TestFunction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -45,15 +46,17 @@ public final class TFMGGameTestUtil {
         return new TestFunction(batch, name, template, Rotation.NONE, timeoutTicks, 0L, true, false, 1, 1, false, body);
     }
 
-    /** Lists the keys whose values differ between two tags, recursing one compound level deep. */
+    /** Lists the keys whose values differ between two tags, recursing into compounds and lists of compounds. */
     public static Set<String> diffKeys(CompoundTag a, CompoundTag b) {
         Set<String> out = new TreeSet<>();
         Set<String> keys = new TreeSet<>(a.getAllKeys());
         keys.addAll(b.getAllKeys());
         for (String key : keys) {
             // Create flags every freshly loaded kinetic block for a speed
-            // re-check on purpose; that is load behaviour, not lost state.
-            if (key.equals("NeedsSpeedUpdate"))
+            // re-check, and every freshly loaded tank level or lerped value
+            // for a forced client sync ("Force"). Both are load behaviour,
+            // not lost state.
+            if (key.equals("NeedsSpeedUpdate") || key.equals("Force"))
                 continue;
             Tag va = a.get(key);
             Tag vb = b.get(key);
@@ -66,6 +69,17 @@ public final class TFMGGameTestUtil {
             if (va instanceof CompoundTag ca && vb instanceof CompoundTag cb) {
                 for (String inner : diffKeys(ca, cb))
                     out.add(key + "." + inner);
+            } else if (va instanceof ListTag la && vb instanceof ListTag lb && la.size() == lb.size()) {
+                for (int i = 0; i < la.size(); i++) {
+                    Tag ea = la.get(i);
+                    Tag eb = lb.get(i);
+                    if (ea instanceof CompoundTag ca && eb instanceof CompoundTag cb) {
+                        for (String inner : diffKeys(ca, cb))
+                            out.add(key + "[" + i + "]." + inner);
+                    } else if (!ea.equals(eb)) {
+                        out.add(key + "[" + i + "] (" + ea + " -> " + eb + ")");
+                    }
+                }
             } else {
                 out.add(key + " (" + va + " -> " + vb + ")");
             }

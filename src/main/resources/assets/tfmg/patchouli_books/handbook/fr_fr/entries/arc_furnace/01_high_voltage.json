@@ -1,0 +1,30 @@
+{
+  "name": "Haute tension",
+  "icon": "tfmg:electrode_holder",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Les électrodes en graphite ont une résistance bien plus élevée que celles en cuivre ou en zinc : $(item)300 ohms$() chacune, contre 10."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chaque porte-électrode a quand même besoin d'au moins $(item)5 A$() (le réglage serveur electrolysisMinimumCurrent), et l'intensité est la tension divisée par la résistance :$(br2)$(li)5 A x 300 ohms = $(item)1500 V$() au strict minimum sur chaque porte-électrode,$(li)le porte-électrode casse au-delà de $(item)20000 V$() : restez entre les deux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "À 1500 V, chaque porte-électrode consomme environ 7,5 kW, donc trois demandent une vraie centrale. Prévoyez générateurs et transformateurs avant de construire le four."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le courant entre par la $(item)face du haut$() de chaque porte-électrode, comme pour l'électrolyse. Si un seul est sous 5 A, il compte comme une machine en panne et tout le four s'arrête : vérifiez chacun au multimètre, il indique quand l'intensité est trop faible.$(br2)Une tension trop basse est la raison la plus courante d'un four à arc qui ne fait rien, bien avant les ingrédients."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electrode_holder,tfmg:graphite_electrode",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

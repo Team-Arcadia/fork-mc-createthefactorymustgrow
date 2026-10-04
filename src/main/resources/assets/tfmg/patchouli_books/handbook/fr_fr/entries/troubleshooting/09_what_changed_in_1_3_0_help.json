@@ -1,0 +1,34 @@
+{
+  "name": "Nouveautés de la 1.3.0 : aide",
+  "icon": "create:goggles",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La 1.3.0 met beaucoup d'efforts à vous dire ce qui se passe. $(li)$(item)Lignes de problème des lunettes$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "le haut fourneau, le four à coke, le foyer, la cuve chimique et les moteurs affichent une ligne rouge qui nomme ce qui les bloque, et le grand moteur et le haut fourneau disent enfin pourquoi ils sont à l'arrêt. Toutes sont listées dans ce chapitre. $(li)$(item)Pages d'info JEI$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "le haut fourneau, le fourneau à air chaud, la prise d'air, le four à coke, le bassin de coulée, le four à arc, la cuve chimique, la tour de distillation, le foyer, le scanner de surface, le grand générateur et la poussière de coke ont une page d'information dans JEI qui explique comment les construire et les alimenter. $(li)$(item)Inspecteur d'usine$() : un nouvel outil."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un clic droit sur une machine donne un rapport de ce qui marche, de ce qui la bloque et de quoi faire ; un clic droit dans le vide donne une liste de progression et votre prochaine étape. $(li)$(item)Le Manuel de l'Usine$() : ce livre, avec un chapitre par étape du mod, des premiers minerais aux moteurs et aux armes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Si une machine s'arrête encore sans un mot, passez-la à l'inspecteur d'usine, puis signalez-la comme bug."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:factory_inspector,tfmg:factory_guide",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

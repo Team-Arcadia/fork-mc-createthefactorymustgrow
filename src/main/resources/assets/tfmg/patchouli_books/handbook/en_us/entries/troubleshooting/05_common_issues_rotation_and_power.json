@@ -1,0 +1,30 @@
+{
+  "name": "Common issues: rotation and power",
+  "icon": "create:goggles",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)A machine does not turn Look at its shaft with goggles.$() No speed means nothing reaches it: check every shaft and cogwheel on the way. If the network is $(item)overstressed$(), everything on it stops: add a source or remove consumers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Some machines also need a minimum speed: a single air intake needs 40 RPM, the surface scanner 64 RPM.$(br2)$(l)A vat attachment does nothing$()$(br)See the vat page: one stopped machine on a vat blocks every recipe, so give it rotation or power, or take it off."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Electricity destroys blocks Every electrical block has a $(item)maximum voltage$() (1000 V for most of them) and some have a maximum current.$() Above it for a moment, the block $(item)is destroyed and drops nothing$(). The goggles and the multimeter warn first with $(item)Approaching Overvoltage$() or $(item)Approaching Overcurrent$() at 80% of the limit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Lower the voltage with a transformer or a resistor before it reaches small machines, and use cables rated for the current."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:multimeter,tfmg:transformer,tfmg:resistor,tfmg:air_intake,tfmg:surface_scanner",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

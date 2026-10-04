@@ -1,0 +1,26 @@
+{
+  "name": "Why coke?",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Steel starts with $(item)coal coke$(). Crushed into $(item)coal coke dust$(), it is the only fuel the blast furnace burns, so the coke oven is the first machine of your steel line."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The oven bakes one input at a time and gives:$(li)$(item)Coal$() becomes $(item)coal coke$(), plus creosote and CO2.$(li)Any $(item)log that burns$() becomes $(item)charcoal$(), plus creosote and CO2.$(br2)The solid result drops out of the front door as an item. The two by-products are fluids that stay in the oven until you pump them out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A single coke oven block already works on its own. Building several into a square makes one bigger oven that cooks faster. The next pages show the shape, then how to feed it and how to empty it."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal,tfmg:coal_coke,tfmg:coal_coke_dust,minecraft:oak_log,minecraft:charcoal",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

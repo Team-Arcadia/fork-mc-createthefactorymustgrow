@@ -1,0 +1,272 @@
+{
+  "order": 220,
+  "icon": "tfmg:flamethrower",
+  "title": {
+    "en_us": "Weapons and Tools",
+    "fr_fr": "Armes et outils"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Flamethrower",
+        "fr_fr": "Lance-flammes"
+      },
+      "text": {
+        "en_us": [
+          "The **Flamethrower** sprays burning fuel. Hold right-click to fire: every tick it throws a burst of sparks that **set fire to the block they land on** and **ignite creatures for 4 seconds**. Water and rain put the sparks out.",
+          "",
+          "## Refuelling",
+          "The flamethrower holds **4000 mB**. Right-click any block that stores a fuel it accepts (a Create fluid tank, a steel tank) to fill it. One tank is used per click, then there is a 1 second pause.",
+          "",
+          "- An empty flamethrower takes any accepted fuel.",
+          "- A partly filled one only tops up with the **same fuel**. Use it up before switching.",
+          "- Since 1.3.0, only the fuel that really leaves the tank is credited. Blocks that refuse extraction, like engines, give nothing.",
+          "",
+          "The fuel bar shows how much is left, and the tooltip shows the fuel, capacity, spread, speed and number of sparks per tick. Each tick of firing uses between half and all of that number in mB."
+        ],
+        "fr_fr": [
+          "Le **lance-flammes** projette du carburant enflammé. Maintenez le clic droit pour tirer : à chaque tick il lance une gerbe d'étincelles qui **mettent le feu au bloc touché** et **enflamment les créatures pendant 4 secondes**. L'eau et la pluie éteignent les étincelles.",
+          "",
+          "## Le plein",
+          "Le lance-flammes contient **4000 mB**. Un clic droit sur un bloc qui stocke un carburant accepté (réservoir de fluide de Create, réservoir en acier) le remplit. Un seul réservoir est utilisé par clic, suivi d'une pause d'une seconde.",
+          "",
+          "- Un lance-flammes vide prend n'importe quel carburant accepté.",
+          "- Un lance-flammes entamé ne se complète qu'avec le **même carburant**. Videz-le avant d'en changer.",
+          "- Depuis la 1.3.0, seul le carburant qui sort vraiment du réservoir est crédité. Les blocs qui refusent l'extraction, comme les moteurs, ne donnent rien.",
+          "",
+          "La barre montre le carburant restant, et l'infobulle indique le carburant, la capacité, la dispersion, la vitesse et le nombre d'étincelles par tick. Chaque tick de tir consomme entre la moitié et la totalité de ce nombre, en mB."
+        ]
+      },
+      "items": ["tfmg:flamethrower", "create:fluid_tank", "tfmg:steel_fluid_tank"]
+    },
+    {
+      "title": {
+        "en_us": "Flamethrower fuels",
+        "fr_fr": "Carburants du lance-flammes"
+      },
+      "text": {
+        "en_us": [
+          "Each fuel gives the stream its own shape (spread / speed / sparks per tick):",
+          "",
+          "- **Gasoline**: 15 / 1 / 3",
+          "- **Diesel**: 7 / 2 / 3. Tight and far-reaching.",
+          "- **Kerosene**: 10 / 1.3 / 4",
+          "- **Naphtha**: 20 / 0.8 / 1. The most economical.",
+          "- **LPG**: 35 / 0.6 / 16. A short, wide cloud of fire.",
+          "- **Napalm**: 20 / 1.8 / 15. Fast and dense.",
+          "- **Molten Slag**: 15 / 0.3 / 15. Heavy and short.",
+          "",
+          "A higher spread fans the sparks out, a higher speed throws them further, and more sparks per tick means more fire but a tank that empties faster, since the fuel used each tick follows the number of sparks.",
+          "",
+          "These fuel types are data-driven: a modpack can add fuels or change these values with a datapack."
+        ],
+        "fr_fr": [
+          "Chaque carburant donne au jet sa propre forme (dispersion / vitesse / étincelles par tick) :",
+          "",
+          "- **Essence** : 15 / 1 / 3",
+          "- **Diesel** : 7 / 2 / 3. Serré et de longue portée.",
+          "- **Kérosène** : 10 / 1,3 / 4",
+          "- **Naphta** : 20 / 0,8 / 1. Le plus économe.",
+          "- **GPL** : 35 / 0,6 / 16. Un nuage de feu court et large.",
+          "- **Napalm** : 20 / 1,8 / 15. Rapide et dense.",
+          "- **Laitier en fusion** : 15 / 0,3 / 15. Lourd et court.",
+          "",
+          "Une dispersion plus forte écarte les étincelles, une vitesse plus forte les envoie plus loin, et plus d'étincelles par tick donne plus de feu mais vide le réservoir plus vite, puisque le carburant consommé à chaque tick suit le nombre d'étincelles.",
+          "",
+          "Ces types de carburant sont définis par les données : un modpack peut en ajouter ou modifier ces valeurs avec un datapack."
+        ]
+      },
+      "items": ["tfmg:flamethrower", "tfmg:gasoline_bucket", "tfmg:diesel_bucket", "tfmg:kerosene_bucket", "tfmg:naphtha_bucket", "tfmg:lpg_bucket", "tfmg:napalm_bucket", "tfmg:molten_slag_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Potato cannons",
+        "fr_fr": "Canons à patates"
+      },
+      "text": {
+        "en_us": [
+          "## Advanced Potato Cannon",
+          "Fires only **Napalm Potatoes**: a potato filled with 500 mB of napalm by a spout. On impact it bursts into a shower of fire sparks and an explosion that **breaks blocks**. It reloads in 75 ticks (under 4 seconds) and has 500 durability. Like Create's cannon, a filled backtank absorbs the wear.",
+          "",
+          "## Quad Potato Cannon",
+          "Takes the same ammunition as Create's Potato Cannon, but each shot fires **four times** as many projectiles in a spray, for one ammo item. Reload time depends on the ammo, as in Create. It has 100 durability, uses backtank air the same way, and accepts Power, Punch, Flame, Looting and Potato Recovery.",
+          "",
+          "Both cannons look for ammo anywhere in your inventory. Hold the cannon and read its tooltip to see the damage, reload and knockback of the ammo it will use."
+        ],
+        "fr_fr": [
+          "## Canon à patates avancé",
+          "Il ne tire que des **patates au napalm** : une patate remplie de 500 mB de napalm par un bec verseur. À l'impact, elle éclate en une pluie d'étincelles de feu et une explosion qui **détruit des blocs**. Il recharge en 75 ticks (moins de 4 secondes) et a 500 points de durabilité. Comme le canon de Create, un réservoir dorsal rempli encaisse l'usure.",
+          "",
+          "## Canon à patates quadruple",
+          "Il prend les mêmes munitions que le canon à patates de Create, mais chaque tir lance **quatre fois** plus de projectiles en gerbe, pour une seule munition. Le temps de recharge dépend de la munition, comme dans Create. Il a 100 points de durabilité, utilise l'air du réservoir dorsal de la même façon, et accepte Puissance, Frappe, Flamme, Butin et Récupération de patates.",
+          "",
+          "Les deux canons cherchent leurs munitions partout dans l'inventaire. Tenez le canon et lisez son infobulle pour voir les dégâts, la recharge et le recul de la munition utilisée."
+        ]
+      },
+      "items": ["tfmg:advanced_potato_cannon", "tfmg:napalm_potato", "tfmg:quad_potato_cannon", "minecraft:potato", "create:spout", "create:copper_backtank"]
+    },
+    {
+      "title": {
+        "en_us": "Grenades and pipe bombs",
+        "fr_fr": "Grenades et bombes artisanales"
+      },
+      "text": {
+        "en_us": [
+          "Right-click to throw. Every thrown explosive has a 3 second cooldown.",
+          "",
+          "## Thermite grenades",
+          "On impact a thermite grenade explodes and throws **20 sparks** in every direction, each lighting a fire where it lands. The blast hurts creatures but **does not break blocks**.",
+          "- **Thermite Grenade** (4 thermite powder around an aluminium ingot): ordinary fire.",
+          "- **Zinc Grenade** (thermite grenade + 2 zinc ingots): **green fire**.",
+          "- **Copper Grenade** (thermite grenade + 2 copper ingots): **blue fire**.",
+          "",
+          "The coloured fires burn like normal fire and give full light.",
+          "",
+          "## Pipe Bomb",
+          "A Steel Pipe and TNT make two. It is thrown much further than a grenade and explodes on impact, again without breaking blocks. A good choice against mobs near your factory, where you do not want craters."
+        ],
+        "fr_fr": [
+          "Clic droit pour lancer. Chaque explosif lancé a un temps de recharge de 3 secondes.",
+          "",
+          "## Grenades au thermite",
+          "À l'impact, une grenade au thermite explose et projette **20 étincelles** dans toutes les directions, chacune allumant un feu là où elle tombe. Le souffle blesse les créatures mais **ne détruit pas de blocs**.",
+          "- **Grenade au thermite** (4 poudres de thermite autour d'un lingot d'aluminium) : feu ordinaire.",
+          "- **Grenade en zinc** (grenade au thermite + 2 lingots de zinc) : **feu vert**.",
+          "- **Grenade en cuivre** (grenade au thermite + 2 lingots de cuivre) : **feu bleu**.",
+          "",
+          "Les feux colorés brûlent comme un feu normal et éclairent au maximum.",
+          "",
+          "## Bombe artisanale",
+          "Un tuyau en acier et de la TNT en donnent deux. Elle se lance bien plus loin qu'une grenade et explose à l'impact, là encore sans détruire de blocs. Un bon choix contre les monstres près de votre usine, où vous ne voulez pas de cratères."
+        ]
+      },
+      "items": ["tfmg:thermite_grenade", "tfmg:zinc_grenade", "tfmg:copper_grenade", "tfmg:thermite_powder", "tfmg:pipe_bomb", "tfmg:steel_pipe", "minecraft:tnt"]
+    },
+    {
+      "title": {
+        "en_us": "Napalm bomb",
+        "fr_fr": "Bombe au napalm"
+      },
+      "text": {
+        "en_us": [
+          "The **Napalm Bomb** is a block, made from 6 plastic sheets and 3 buckets of napalm. It behaves like TNT:",
+          "",
+          "- Light it with **Flint and Steel** or a **Fire Charge**, power it with **redstone**, or hit it with a **burning projectile** (a flaming arrow, for instance).",
+          "- It then falls as a lit bomb with a **4 second fuse**.",
+          "- Caught in another explosion, it goes off on a much shorter fuse, so a row of bombs chains.",
+          "",
+          "When it goes off it throws **40 fire sparks** around it and explodes with a blast that **breaks blocks**. Everything flammable nearby will burn: keep it far from your wooden buildings and from anything you want to keep.",
+          "",
+          "A Fire Extinguisher cleans up after it (see the next pages)."
+        ],
+        "fr_fr": [
+          "La **bombe au napalm** est un bloc, fait de 6 plaques de plastique et de 3 seaux de napalm. Elle se comporte comme de la TNT :",
+          "",
+          "- Allumez-la avec un **briquet** ou une **boule de feu**, alimentez-la en **redstone**, ou touchez-la avec un **projectile enflammé** (une flèche enflammée par exemple).",
+          "- Elle devient alors une bombe allumée avec une **mèche de 4 secondes**.",
+          "- Prise dans une autre explosion, elle part avec une mèche bien plus courte : une rangée de bombes s'enchaîne.",
+          "",
+          "En explosant, elle projette **40 étincelles de feu** autour d'elle et produit un souffle qui **détruit des blocs**. Tout ce qui est inflammable alentour va brûler : gardez-la loin de vos bâtiments en bois et de tout ce que vous tenez à garder.",
+          "",
+          "Un extincteur nettoie les dégâts (voir les pages suivantes)."
+        ]
+      },
+      "items": ["tfmg:napalm_bomb", "tfmg:plastic_sheet", "tfmg:napalm_bucket", "minecraft:flint_and_steel", "minecraft:fire_charge"]
+    },
+    {
+      "title": {
+        "en_us": "Lithium blade",
+        "fr_fr": "Lame de lithium"
+      },
+      "text": {
+        "en_us": [
+          "The **Lithium Blade** is a steel sword with a burner. It is crafted from a Steel Sword, a Heavy Plate, aluminium sheets, a Spark Plug, a Circuit Board and copper wire.",
+          "",
+          "## Lighting it",
+          "Carry a **Lithium Charge** (a plastic sheet, 3 lithium ingots and an aluminium sheet) and right-click with the blade. One charge is used and the blade lights for about **100 seconds**. It goes out by itself when the charge runs dry, and keeps its enchantments both ways.",
+          "",
+          "## While lit",
+          "- Every hit sets **Hellfire** on the target for 7 seconds, adding to any Hellfire it already has. Hellfire keeps the target burning for its whole duration. Each hit costs 2 durability.",
+          "- Right-click to throw a fan of **10 lithium sparks**. They give Hellfire for 3 seconds but do not set blocks on fire. It costs 5 seconds of charge and has a 3 second cooldown."
+        ],
+        "fr_fr": [
+          "La **lame de lithium** est une épée en acier équipée d'un brûleur. Elle se fabrique avec une épée en acier, une plaque lourde, des plaques d'aluminium, une bougie d'allumage, un circuit imprimé et du fil de cuivre.",
+          "",
+          "## L'allumer",
+          "Portez une **charge de lithium** (une plaque de plastique, 3 lingots de lithium et une plaque d'aluminium) et faites un clic droit avec la lame. Une charge est consommée et la lame s'allume pendant environ **100 secondes**. Elle s'éteint seule quand la charge est épuisée, et garde ses enchantements dans les deux sens.",
+          "",
+          "## Une fois allumée",
+          "- Chaque coup inflige **Feu infernal** à la cible pendant 7 secondes, en s'ajoutant au Feu infernal qu'elle a déjà. Le Feu infernal garde la cible en flammes pendant toute sa durée. Chaque coup coûte 2 points de durabilité.",
+          "- Un clic droit lance un éventail de **10 étincelles de lithium**. Elles donnent Feu infernal pendant 3 secondes mais n'allument pas les blocs. Cela coûte 5 secondes de charge, avec un temps de recharge de 3 secondes."
+        ]
+      },
+      "items": ["tfmg:lithium_blade", "tfmg:lithium_charge", "tfmg:steel_sword", "tfmg:spark_plug", "tfmg:circuit_board", "tfmg:heavy_plate"]
+    },
+    {
+      "title": {
+        "en_us": "Fire extinguisher and lithium torch",
+        "fr_fr": "Extincteur et torche au lithium"
+      },
+      "text": {
+        "en_us": [
+          "## Fire Extinguisher",
+          "Hold right-click to spray **dry ice flakes**, one per tick. A full extinguisher holds **500 flakes**, about 25 seconds of spraying.",
+          "",
+          "- A flake that hits a block **puts out every fire** within 1 block of the impact (config **fireExtinguisherClearRadius**). That includes the green and blue fires of the grenades.",
+          "- A flake that hits a creature puts it out, **removes Hellfire**, slows it and freezes it; enough flakes start to hurt.",
+          "",
+          "Refill it with a **spout** and 1000 mB of carbon dioxide: the CO2 your engines, fireboxes and coke ovens produce finally has a use.",
+          "",
+          "## Lithium Torch",
+          "A lithium ingot above an aluminium ingot gives 4 **Lithium Torches**. They give light level 14, go on floors, walls and ceilings, and can be **placed underwater**, where a normal torch cannot."
+        ],
+        "fr_fr": [
+          "## Extincteur",
+          "Maintenez le clic droit pour projeter des **flocons de neige carbonique**, un par tick. Un extincteur plein contient **500 flocons**, environ 25 secondes de jet.",
+          "",
+          "- Un flocon qui touche un bloc **éteint tous les feux** dans un rayon d'un bloc autour de l'impact (option **fireExtinguisherClearRadius**). Cela inclut les feux vert et bleu des grenades.",
+          "- Un flocon qui touche une créature l'éteint, **retire le Feu infernal**, la ralentit et la gèle ; assez de flocons finissent par la blesser.",
+          "",
+          "Rechargez-le avec un **bec verseur** et 1000 mB de dioxyde de carbone : le CO2 de vos moteurs, foyers et fours à coke trouve enfin une utilité.",
+          "",
+          "## Torche au lithium",
+          "Un lingot de lithium au-dessus d'un lingot d'aluminium donne 4 **torches au lithium**. Elles éclairent au niveau 14, se posent au sol, aux murs et au plafond, et peuvent être **posées sous l'eau**, contrairement à une torche normale."
+        ]
+      },
+      "items": ["tfmg:fire_extinguisher", "create:spout", "tfmg:carbon_dioxide_bucket", "tfmg:lithium_torch", "tfmg:lithium_ingot", "tfmg:aluminum_ingot"]
+    },
+    {
+      "title": {
+        "en_us": "Metal tools",
+        "fr_fr": "Outils en métal"
+      },
+      "text": {
+        "en_us": [
+          "Three metals give a full set of sword, pickaxe, axe, shovel and hoe. There is no TFMG armor.",
+          "",
+          "- **Steel**: 1000 uses, mining speed 7.5, mines everything a diamond tool mines, enchantability 12. The best everyday set once the blast furnace runs.",
+          "- **Aluminium**: 220 uses, mining speed 6, mines like iron, but enchantability **22**, much higher than iron. Good for enchanting.",
+          "- **Lead**: 32 uses, mining speed 2, mines like stone. Weak and soft, but the **lead sword poisons** for 5 seconds and the **lead axe** for 8 seconds, adding to any poison already there. Each hit costs 2 durability.",
+          "",
+          "All of them are repaired with their own ingot on an anvil.",
+          "",
+          "## Engine tools",
+          "The **Screwdriver** takes parts and cylinders back out of an engine. The **Oil Can** and **Cooling Fluid Bottle** carry fluid to engines: see the Engines chapter."
+        ],
+        "fr_fr": [
+          "Trois métaux donnent un jeu complet d'épée, pioche, hache, pelle et houe. Il n'y a pas d'armure TFMG.",
+          "",
+          "- **Acier** : 1000 utilisations, vitesse de minage 7,5, mine tout ce que mine un outil en diamant, enchantabilité 12. Le meilleur jeu au quotidien une fois le haut fourneau lancé.",
+          "- **Aluminium** : 220 utilisations, vitesse de minage 6, mine comme le fer, mais enchantabilité de **22**, bien plus que le fer. Idéal pour enchanter.",
+          "- **Plomb** : 32 utilisations, vitesse de minage 2, mine comme la pierre. Faible et mou, mais l'**épée en plomb empoisonne** 5 secondes et la **hache en plomb** 8 secondes, en s'ajoutant au poison déjà présent. Chaque coup coûte 2 points de durabilité.",
+          "",
+          "Tous se réparent avec leur propre lingot sur une enclume.",
+          "",
+          "## Outils pour moteurs",
+          "Le **tournevis** retire les pièces et les cylindres d'un moteur. La **burette d'huile** et la **bouteille de liquide de refroidissement** apportent les fluides aux moteurs : voir le chapitre Moteurs."
+        ]
+      },
+      "items": ["tfmg:steel_pickaxe", "tfmg:steel_sword", "tfmg:aluminum_pickaxe", "tfmg:lead_sword", "tfmg:lead_axe", "tfmg:screwdriver", "tfmg:oil_can", "tfmg:cooling_fluid_bottle"]
+    }
+  ]
+}

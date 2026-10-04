@@ -1,0 +1,26 @@
+{
+  "name": "Grenades and pipe bombs",
+  "icon": "tfmg:thermite_grenade",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Right-click to throw. Every thrown explosive has a 3 second cooldown. $(l)Thermite grenades On impact a thermite grenade explodes and throws $(item)20 sparks$() in every direction, each lighting a fire where it lands.$() The blast hurts creatures but $(item)does not break blocks$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Thermite Grenade$() (4 thermite powder around an aluminium ingot): ordinary fire. $(li)$(item)Zinc Grenade$() (thermite grenade + 2 zinc ingots): $(item)green fire$(). $(li)$(item)Copper Grenade$() (thermite grenade + 2 copper ingots): $(item)blue fire$().$(br2)The coloured fires burn like normal fire and give full light."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Pipe Bomb$()$(br)A Steel Pipe and TNT make two. It is thrown much further than a grenade and explodes on impact, again without breaking blocks. A good choice against mobs near your factory, where you do not want craters."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:thermite_grenade,tfmg:zinc_grenade,tfmg:copper_grenade,tfmg:thermite_powder,tfmg:pipe_bomb,tfmg:steel_pipe,minecraft:tnt",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

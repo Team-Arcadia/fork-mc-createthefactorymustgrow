@@ -1,0 +1,26 @@
+{
+  "name": "The first magnet",
+  "icon": "tfmg:magnet",
+  "category": "tfmg:power",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The generator and the electric motor both need a $(item)magnet$() in their assembly, and so does the electric gauge. The $(item)polarizer$(), the machine that makes magnets, needs an electric gauge in its recipe and electricity to run. So where does the first magnet come from?"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Craft it by hand$()$(br)Since 1.3.0 a magnet can be crafted at a crafting table:$(li)a $(item)magnetic alloy ingot$() in the center,$(li)a $(item)block of redstone$() above it, on its left and on its right,$(li)a $(item)compass$() below it.$(br2)It is expensive on purpose: craft just enough to build your first generator and electric gauge, then a polarizer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Or call the lightning$()$(br)Lightning striking dropped magnetic alloy ingots turns them into magnets, but part of the stack is lost at random.$(br2)Once power flows, the $(item)polarizer$() turns magnetic alloy ingots into magnets cheaply (see $(item)Electric Machines$())."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:magnet,tfmg:magnetic_alloy_ingot,minecraft:redstone_block,minecraft:compass,tfmg:voltmeter,tfmg:polarizer",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

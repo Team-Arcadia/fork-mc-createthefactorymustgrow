@@ -1,0 +1,30 @@
+{
+  "name": "Ce qui se cache sous terre",
+  "icon": "tfmg:lead_ore",
+  "category": "tfmg:resources",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Avant la moindre machine, il vous faut des matériaux que Minecraft n'a pas. TFMG les ajoute à la génération du monde sous trois formes : $(li)$(item)Minerais$() : plomb, nickel et lithium, en filons classiques dans la pierre et l'ardoise des abîmes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Couches striées$() : d'épaisses bandes de bauxite, de galène, de lignite et d'argile réfractaire dans l'Overworld, de soufre et d'argile réfractaire dans le Nether. $(li)$(item)Pétrole$() : des gisements au fond de la bedrock de l'Overworld, et de rares puits de pétrole dans les déserts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Certaines ressources ne se trouvent pas, elles se fabriquent. Le $(item)sable calcaire$() vient du concassage du calcaire de Create, et la $(item)poudre de nitrate$() (salpêtre) du concassage de la terre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La plupart de ces blocs valent davantage une fois concassés : une paire de $(item)roues de concassage$() de Create est la première machine à construire. Les pages suivantes indiquent où trouver chaque ressource, puis ce que donne le concassage."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lead_ore,tfmg:nickel_ore,tfmg:lithium_ore,tfmg:bauxite,tfmg:galena,tfmg:fireclay,tfmg:sulfur,create:crushing_wheel",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

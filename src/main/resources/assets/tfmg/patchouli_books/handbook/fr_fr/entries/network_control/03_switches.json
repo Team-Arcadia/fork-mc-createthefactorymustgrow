@@ -1,0 +1,30 @@
+{
+  "name": "Les interrupteurs",
+  "icon": "tfmg:electrical_switch",
+  "category": "tfmg:network_control",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Interrupteur électrique Un petit pont commandé par la $(item)redstone$() :$() le courant entre à l'arrière et sort à l'avant. Sans signal, il est ouvert et le réseau de devant est coupé. La tension de sortie suit la force du signal :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)tension d'entrée x signal / 15$(). Un signal plein laisse tout passer, un plus faible sert de variateur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Grand interrupteur$()$(br)Un interrupteur en deux blocs pour les lignes lourdes, prévu pour $(item)100 000 V$() et $(item)1 000 A$(), qui laisse passer jusqu'à $(item)10 kW$(). Le poser installe les deux moitiés, prévoyez donc la place. Le courant entre à l'arrière de la première moitié et sort à l'avant de la seconde."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il est commandé par la $(item)rotation$(), pas par la redstone : tourner son axe dans un sens ferme le bras, dans l'autre sens l'ouvre, d'autant plus vite que la vitesse est haute. Arrêtez l'axe et le bras reste où il est. Placez un embrayage ou un inverseur sur l'entrée pour le commander à la redstone.$(br2)Le grand interrupteur ne peut pas être déplacé par les machines mobiles."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electrical_switch,tfmg:large_switch,minecraft:lever,create:clutch,create:gearshift",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

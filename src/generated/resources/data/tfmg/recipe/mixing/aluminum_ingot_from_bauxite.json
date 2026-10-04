@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "tfmg:bauxite_powder"
+    },
+    {
+      "item": "tfmg:bauxite_powder"
+    },
+    {
+      "item": "tfmg:bauxite_powder"
+    },
+    {
+      "item": "tfmg:bauxite_powder"
+    },
+    {
+      "item": "tfmg:coal_coke_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "tfmg:aluminum_ingot"
+    }
+  ]
+}

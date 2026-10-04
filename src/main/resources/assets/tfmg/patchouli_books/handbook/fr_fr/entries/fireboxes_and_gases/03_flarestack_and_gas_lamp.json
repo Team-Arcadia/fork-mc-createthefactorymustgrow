@@ -1,0 +1,30 @@
+{
+  "name": "Torche d'évacuation et lampe à gaz",
+  "icon": "tfmg:flarestack",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ces deux blocs brûlent les fluides inflammables : GPL, butane, propane, hydrogène, gaz de haut fourneau, pétrole brut, pétrole lourd, essence, diesel, naphta, kérosène, créosote et huile de lubrification. Aucun des deux n'a besoin d'échappement."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Torche d'évacuation La torche d'évacuation détruit ce que vous y pompez, avec une grande flamme.$() Utilisez-la pour les produits de la raffinerie dont vous n'avez pas encore besoin. $(li)Contient $(item)2500 mB$(). $(li)Brûle $(item)30 mB par tick$(), ou $(item)100 mB par tick$() tant qu'elle contient plus de 1000 mB. $(li)Éclaire au niveau 15 pendant qu'elle brûle."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Lampe à gaz$()$(br)Une source de lumière qui ne demande aucun câble.$(li)Contient $(item)4000 mB$() de n'importe lequel des fluides ci-dessus.$(li)Brûle environ $(item)1 mB par seconde$() : une lampe pleine dure plus d'une heure.$(li)Éclaire au niveau 15 tant qu'elle a du carburant, et reste allumée 5 secondes après la dernière goutte."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les lampes à gaz utilisent bien les petits restes, comme les 10 mB de naphta par passage de pétrole brut, ou la créosote des fours à coke."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:flarestack,tfmg:gas_lamp,tfmg:lpg_bucket,tfmg:creosote_bucket,tfmg:naphtha_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

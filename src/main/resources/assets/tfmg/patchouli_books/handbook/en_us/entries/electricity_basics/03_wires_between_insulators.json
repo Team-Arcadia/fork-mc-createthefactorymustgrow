@@ -1,0 +1,30 @@
+{
+  "name": "Wires between insulators",
+  "icon": "tfmg:cable_connector",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "To cross a distance, string a wire between two $(item)cable insulators$(). Place an insulator on a face of an electric block: it connects to the block it sits on."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Insulators placed in a straight line, all facing the same way, pass power along the stack, and the wire attaches to the outermost one. Insulators handle up to $(item)100,000 V$().$(br2)$(l)Filling a spool$()$(br)Cut an $(item)empty spool$() from hardened planks in a stonecutter. Mount it on a $(item)winding machine$() and feed it wire: each wire adds $(item)125 turns$(), and a full spool holds $(item)1,000 turns$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Stringing the wire$()$(li)Right-click an insulator with a filled spool, then right-click a second insulator.$(li)Every $(item)8 blocks$() of wire use $(item)125 turns$(), so a full spool covers about $(item)64 blocks$().$(li)Sneak and right-click in the air to cancel a started wire.$(li)Breaking an insulator gives back the wire, one item per 8 blocks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Copper, aluminum and constantan spools all work. In this version the metal only changes the wire's color."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cable_connector,tfmg:glass_cable_insulator,tfmg:empty_spool,tfmg:copper_spool,tfmg:aluminum_spool,tfmg:constantan_spool,tfmg:winding_machine,tfmg:copper_wire",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Le premier aimant",
+  "icon": "tfmg:magnet",
+  "category": "tfmg:power",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le générateur et le moteur électrique demandent tous deux un $(item)aimant$() pendant leur assemblage, tout comme la jauge électrique. Le $(item)polariseur$(), la machine qui fabrique les aimants, demande une jauge électrique dans sa recette et de l'électricité pour fonctionner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "D'où vient alors le premier aimant ?$(br2)$(l)Le fabriquer à la main$()$(br)Depuis la 1.3.0, un aimant se fabrique sur une table de craft :$(li)un $(item)lingot d'alliage magnétique$() au centre,$(li)un $(item)bloc de redstone$() au-dessus, à gauche et à droite,$(li)une $(item)boussole$() en dessous."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "C'est cher exprès : fabriquez juste de quoi construire votre premier générateur et votre jauge électrique, puis un polariseur.$(br2)$(l)Ou appeler la foudre$()$(br)La foudre qui frappe des lingots d'alliage magnétique posés au sol les transforme en aimants, mais une partie de la pile est perdue au hasard."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une fois le courant établi, le $(item)polariseur$() transforme les lingots d'alliage magnétique en aimants à moindre coût (voir $(item)Machines électriques$())."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:magnet,tfmg:magnetic_alloy_ingot,minecraft:redstone_block,minecraft:compass,tfmg:voltmeter,tfmg:polarizer",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

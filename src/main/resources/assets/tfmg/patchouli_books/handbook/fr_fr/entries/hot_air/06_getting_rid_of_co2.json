@@ -1,0 +1,30 @@
+{
+  "name": "Se débarrasser du CO2",
+  "icon": "tfmg:exhaust",
+  "category": "tfmg:hot_air",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le CO2 ne sert à rien dans ce chapitre : évacuez-le. Les deux blocs ci-dessous n'acceptent que du $(item)CO2$(), par n'importe quelle face."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Échappement$()$(br)Une petite bouche qui se fixe sur n'importe quelle face d'un bloc. Il contient $(item)1000 mB$() et rejette $(item)10 mB par tick$(), puis $(item)100 mB par tick$() dès qu'il contient plus de 700 mB. Un échappement suffit pour un four à coke ou un fourneau à air chaud 2x2x5."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Cheminée$()$(br)Les cheminées en briques, en béton et métalliques s'empilent en colonne ; construisez chaque colonne d'un seul type. Chaque bloc contient $(item)8000 mB$() et pousse son gaz dans le bloc du dessus ; seul le $(item)bloc du sommet$() rejette, $(item)10 mB par tick$(), puis $(item)50 mB par tick$() quand il contient plus de 7000 mB. Envoyez le CO2 dans le bloc du bas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une cheminée rejette moins qu'un échappement mais stocke beaucoup plus, ce qui absorbe les à-coups. Pour le débit pur, mettez plusieurs échappements sur la ligne de CO2.$(br2)Pompez le CO2 par la $(item)face du dessus$() d'un four à coke et par un $(item)côté de la couche du bas$() d'un fourneau à air chaud."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:exhaust,tfmg:brick_smokestack,tfmg:concrete_smokestack,tfmg:metal_smokestack,tfmg:carbon_dioxide_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

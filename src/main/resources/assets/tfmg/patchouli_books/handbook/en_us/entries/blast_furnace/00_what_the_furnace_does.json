@@ -1,0 +1,30 @@
+{
+  "name": "What the furnace does",
+  "icon": "tfmg:blast_furnace_output",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The blast furnace melts iron ore into $(item)molten steel$(). It is a hollow brick tower with a $(item)Blast Furnace Output$() at its foot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)What goes in$()$(li)$(item)Ore$(): crushed raw iron, raw iron, or quartz.$(li)$(item)Flux$(): limesand, one per iron item.$(li)$(item)Fuel$(): coal coke dust, the only fuel it burns.$(li)$(item)Hot air$(): piped into a hatch in the wall, from a blast stove."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)What comes out$()$(li)$(item)Molten steel$() and $(item)molten slag$(), pumped from the output block.$(li)$(item)Furnace gas$(), collected by a hatch on top. It fuels the blast stove."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Before you start, have a coke oven making coke, crushing wheels turning coke into dust and limestone into limesand, and a working hot air line (previous chapters). Steel is then cast into ingots in a casting basin (next chapter)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_output,create:crushed_raw_iron,minecraft:raw_iron,tfmg:limesand,tfmg:coal_coke_dust,tfmg:hot_air_bucket,tfmg:molten_steel_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

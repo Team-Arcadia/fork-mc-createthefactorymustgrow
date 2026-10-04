@@ -1,0 +1,57 @@
+{
+  "name": "Le scanner de surface",
+  "icon": "tfmg:surface_scanner",
+  "category": "tfmg:finding_oil",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)scanner de surface$() indique quels chunks autour de vous contiennent du pétrole, sans creuser."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Posez une $(item)entrée de machine$() et placez le scanner $(item)juste au-dessus$().$(li)Donnez de la rotation à l'entrée de machine par son côté arbre. Elle doit tourner à $(item)64 tr/min ou plus$(), dans un sens ou dans l'autre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une fois par seconde, le scanner examine une $(item)grille de 5 x 5 chunks$() centrée sur son propre chunk. Les 25 cases de son dessus s'allument pour chaque chunk qui contient un gisement ou du pétrole brut entre le fond du monde et Y 64. Appuyez sur $(item)F3 + G$() pour voir les limites de chunks et faire correspondre les cases au terrain."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Regardez-le avec les $(item)lunettes d'ingénieur$() :$(li)$(item)Not Enough Rotation (Needs 64rpm)$() : l'entrée manque ou tourne trop lentement.$(li)$(item)No Deposits Found$() : rien dans les 25 chunks, allez plus loin.$(li)$(item)N Chunks With Oil Deposits Found$() : rendez-vous dans un chunk allumé et creusez."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Pour balayer une grande zone, cassez le scanner et son entrée, avancez de cinq chunks et réinstallez-les : chaque nouvel emplacement couvre 25 nouveaux chunks."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Le scanner de surface",
+      "multiblock": {
+        "pattern": [
+          [
+            " ",
+            "U"
+          ],
+          [
+            "S",
+            "0"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "U": "tfmg:surface_scanner",
+          "0": "tfmg:machine_input[facing=north]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:surface_scanner,tfmg:machine_input,create:shaft,create:goggles",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

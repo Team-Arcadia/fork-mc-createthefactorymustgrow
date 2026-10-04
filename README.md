@@ -16,6 +16,22 @@ This repository is the **Team-Arcadia maintenance fork** (branch `Arcadia-fix`, 
 
 *Version française : ce dépôt est le fork de maintenance Team-Arcadia (branche `Arcadia-fix`). Il se concentre sur la stabilité : machines qui survivent au déchargement de chunk, séparation client/serveur complète (compatible serveur dédié), durcissement multijoueur, correction de crashs et optimisation du réseau électrique. Voir le [CHANGELOG.md](CHANGELOG.md).*
 
+### Since 1.3.0
+
+- **The Factory Handbook**: an in-game Patchouli guide to the whole mod (craft it from a book and coal, new players get one on first join). Chapters follow the order you build things in, with a 3D view of every multiblock that can also be projected as a ghost in the world. Requires Patchouli.
+- **Machines say what is wrong**: red goggle lines when a structure is incomplete, fuel, flux or hot air is missing, or an output tank is full; JEI info pages for every multiblock.
+- **The Factory Inspector**: right-click a machine to learn what works, what stops it and what to do; right-click the air to see your progress along the production chain and what the next step needs.
+- **No more dead end**: new bootstrap recipes give the first magnet and the first aluminium, which survival could not reach before.
+- **Game tests**: one test per block plus data and machine tests, run on a dedicated test server (`gradlew runGameTestServer`), on a singleplayer client (`gradlew runClientGameTest`) and on a regular server (`gradlew runServerGameTest`).
+
+### Depuis la 1.3.0
+
+- **Le Manuel de l'Usine** : un guide Patchouli en jeu de tout le mod (fabriqué avec un livre et du charbon, offert aux nouveaux joueurs à leur première connexion). Les chapitres suivent l'ordre de construction, avec une vue 3D de chaque multibloc qu'on peut aussi projeter en fantôme dans le monde. Nécessite Patchouli.
+- **Les machines disent ce qui ne va pas** : lignes rouges aux lunettes quand une structure est incomplète, qu'il manque combustible, fondant ou air chaud, ou qu'un réservoir de sortie est plein ; pages d'information JEI pour chaque multibloc.
+- **L'Inspecteur d'usine** : clic droit sur une machine pour savoir ce qui fonctionne, ce qui la bloque et quoi faire ; clic droit dans le vide pour voir votre avancée dans la chaîne de production et ce qu'il faut pour l'étape suivante.
+- **Plus d'impasse** : de nouvelles recettes d'amorçage donnent le premier aimant et le premier aluminium, impossibles à obtenir en survie auparavant.
+- **Tests en jeu** : un test par bloc plus des tests de données et de machines, lancés sur un serveur de test dédié (`gradlew runGameTestServer`), sur un client solo (`gradlew runClientGameTest`) et sur un serveur classique (`gradlew runServerGameTest`).
+
 ## Info
 
 Create is by default a steam/clockpunk mod and most addons aim to expand this part of Create and do that pretty well,

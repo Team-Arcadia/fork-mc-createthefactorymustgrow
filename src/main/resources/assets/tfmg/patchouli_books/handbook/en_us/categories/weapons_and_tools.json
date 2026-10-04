@@ -1,0 +1,6 @@
+{
+  "name": "Weapons and Tools",
+  "description": "The Flamethrower sprays burning fuel. Hold right-click to fire: every tick it throws a burst of sparks that set fire to the block they land on and ignite creatures for 4 seconds. Water and rain put the sparks out.",
+  "icon": "tfmg:flamethrower",
+  "sortnum": 220
+}

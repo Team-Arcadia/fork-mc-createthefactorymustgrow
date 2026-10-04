@@ -367,6 +367,33 @@ public class TFMGStandardRecipeGen extends TFMGRecipeProvider {
                     .pattern("I")
                     .pattern("P")),
 
+    // The inspector too: iron, copper, glass and redstone, all early-game.
+    FACTORY_INSPECTOR = create(TFMGItems.FACTORY_INSPECTOR)
+            .unlockedBy(() -> Items.COPPER_INGOT)
+            .viaShaped(b -> b
+                    .define('G', Items.GLASS_PANE)
+                    .define('R', Items.REDSTONE)
+                    .define('C', Items.COPPER_INGOT)
+                    .define('I', Items.IRON_INGOT)
+                    .pattern(" GR")
+                    .pattern("ICG")
+                    .pattern("II ")),
+
+    // The blueprint: paper and blue dye, available from the start.
+    FACTORY_BLUEPRINT = create(TFMGItems.FACTORY_BLUEPRINT)
+            .unlockedBy(() -> Items.PAPER)
+            .viaShapeless(b -> b
+                    .requires(Items.PAPER)
+                    .requires(Items.PAPER)
+                    .requires(Items.BLUE_DYE)),
+
+    // The handbook must be craftable from the first minutes: a book and coal.
+    FACTORY_GUIDE = create(TFMGItems.FACTORY_GUIDE)
+            .unlockedBy(() -> Items.BOOK)
+            .viaShapeless(b -> b
+                    .requires(Items.BOOK)
+                    .requires(Items.COAL)),
+
     STEEL_MECHANICAL_PUMP = create(TFMGPipes.PIPES.get(TFMGPipes.PipeMaterial.STEEL).getPump())
             .unlockedBy(TFMGItems.STEEL_INGOT::get)
             .viaShapeless(b -> b
@@ -949,6 +976,21 @@ public class TFMGStandardRecipeGen extends TFMGRecipeProvider {
                     .pattern("  R")
                     .pattern(" I ")
                     .pattern("   ")),
+
+    // Bootstrap: the voltmeter needs a magnet, the polarizer needs the
+    // voltmeter, and magnets otherwise only come out of the polarizer, so
+    // the first magnet could never be made in survival. This hand recipe
+    // breaks the loop; the polarizer stays the cheap way to make them.
+    MAGNET_BOOTSTRAP = create(TFMGItems.MAGNET)
+            .withSuffix("_by_hand")
+            .unlockedBy(TFMGItems.MAGNETIC_ALLOY_INGOT::get)
+            .viaShaped(b -> b
+                    .define('M', magneticIngot())
+                    .define('R', Items.REDSTONE_BLOCK)
+                    .define('C', Items.COMPASS)
+                    .pattern(" R ")
+                    .pattern("RMR")
+                    .pattern(" C ")),
 
     ELECTRIC_GAUGE = create(TFMGBlocks.VOLTMETER)
             .unlockedBy(TFMGItems.ALUMINUM_INGOT::get)

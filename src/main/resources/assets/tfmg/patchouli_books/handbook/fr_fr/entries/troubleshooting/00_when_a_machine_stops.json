@@ -1,0 +1,34 @@
+{
+  "name": "Quand une machine s'arrête",
+  "icon": "create:goggles",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La plupart des machines de TFMG ne s'arrêtent jamais sans raison, et elles vous disent laquelle. Vous avez deux façons de demander."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Lunettes d'ingénieur$()$(br)Regardez la machine. Sous ses réservoirs et sa progression, une $(item)ligne rouge$() nomme ce qui la bloque. Les pages suivantes listent chacune de ces lignes, ce qu'elle signifie et comment y remédier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Inspecteur d'usine$()$(br)Un clic droit sur une machine avec l'$(item)inspecteur d'usine$() donne un rapport complet : ce qui est en place (vert), ce qui bloque la machine (rouge) et quoi faire (doré). Un clic droit dans le vide donne une $(item)liste de progression$() : où vous en êtes dans la chaîne de production du mod et ce que demande l'étape suivante."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)À vérifier aussi$()$(li)Les $(item)pages d'info JEI$() : cherchez une machine dans JEI pour lire comment la construire et l'alimenter.$(li)Les chapitres de ce manuel, à comparer avec votre construction."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une ligne générale existe pour toute machine avec un réservoir de sortie : $(item)Réservoir de sortie plein : pompez le résultat$(). Évacuez le produit par tuyau et la machine repart seule."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:factory_inspector,tfmg:factory_guide",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

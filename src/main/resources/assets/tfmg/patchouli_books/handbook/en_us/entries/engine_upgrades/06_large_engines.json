@@ -1,0 +1,49 @@
+{
+  "name": "Large engines",
+  "icon": "tfmg:large_engine",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Large Engine$() and the cheaper $(item)Simple Large Engine$() work like a Create steam engine: they drive a $(item)Powered Shaft 2 blocks in front$() of them. Placed on the floor, the shaft goes 2 blocks above; on a wall, 2 blocks out from it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Right-click the engine with a $(item)Shaft$() to put it in the right spot. The shaft must cross the engine's direction, not point at it.$(br2)$(l)What they need$()$(li)$(item)Fuel$(): diesel, kerosene, naphtha or furnace gas (2000 mB tank).$(li)$(item)Air$() in a separate 1000 mB air tank. Pipe it from an $(item)Air Intake$().$(li)Room in the 2000 mB $(item)exhaust$() tank: pump the CO2 away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "No redstone, no components: once fuel, air and shaft are there, it runs. The shaft turns at $(item)128 RPM$(). Every 2 seconds the engine uses 150 mB of air and 3 mB of fuel; the simple large engine burns $(item)12 mB$(), four times more."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large engines",
+      "multiblock": {
+        "pattern": [
+          [
+            "S"
+          ],
+          [
+            " "
+          ],
+          [
+            "0"
+          ]
+        ],
+        "mapping": {
+          "E": "tfmg:large_engine[face=floor,facing=north,waterlogged=false]",
+          "S": "create:shaft[axis=x]",
+          "0": "tfmg:large_engine[face=floor,facing=north,waterlogged=false]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_engine,tfmg:simple_large_engine,create:shaft,tfmg:air_intake,tfmg:exhaust,tfmg:diesel_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

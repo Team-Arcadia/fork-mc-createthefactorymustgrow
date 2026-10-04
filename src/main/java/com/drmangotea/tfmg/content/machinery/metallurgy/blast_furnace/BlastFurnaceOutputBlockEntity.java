@@ -5,6 +5,8 @@ import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.capability.DrainOnlyFluidHandler;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.datagen.TFMGDamageSources;
 import com.drmangotea.tfmg.recipes.IndustrialBlastingRecipe;
 import com.drmangotea.tfmg.registry.*;
@@ -47,7 +49,7 @@ import java.util.Random;
 
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
-public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     // Per-tick fluid and progress changes sync at most every few ticks.
     private final ThrottledSync throttledSync = new ThrottledSync();
@@ -147,11 +149,283 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
         if (isReinforced)
             TFMGTexts.BlastFurnace.reinforced().forGoggles(tooltip);
 
+        addProblems(tooltip);
+
         TFMGUtils.createFluidTooltip(this, tooltip);
         TFMGUtils.createItemTooltip(this, tooltip);
 
 
         return true;
+    }
+
+    /**
+     * Says why the furnace is idle. Every one of these used to stop it with
+     * no word at all: the timer just froze.
+     */
+    private void addProblems(List<Component> tooltip) {
+        if (cachedSize < 3) {
+            TFMGTexts.problem("blast_furnace.structure").forGoggles(tooltip);
+            return;
+        }
+        if (inputInventory.isEmpty())
+            return;
+        if (fuel <= 0)
+            TFMGTexts.problem("blast_furnace.fuel").forGoggles(tooltip);
+        if (fluxInventory.isEmpty())
+            TFMGTexts.problem("blast_furnace.flux").forGoggles(tooltip);
+        if (tuyerePos == null || !(level.getBlockEntity(tuyerePos) instanceof BlastFurnaceHatchBlockEntity hatch))
+            TFMGTexts.problem("blast_furnace.no_hatch").forGoggles(tooltip);
+        else if (!hatch.tank.getFluid().getFluid().isSame(TFMGFluids.HOT_AIR.getSource()))
+            TFMGTexts.problem("blast_furnace.no_hot_air").forGoggles(tooltip);
+        if (primaryTank.getSpace() < 144 || secondaryTank.getSpace() < 144)
+            TFMGTexts.problem("output_full").forGoggles(tooltip);
+    }
+
+    /** Height found by the last structure scan, refreshed every lazy tick. */
+    public int getCachedSize() {
+        return cachedSize;
+    }
+
+    /** Outcome of a read-only replay of {@link #getSize()}: where and why it stopped. */
+    private record FurnaceScan(int height, int faultLayer, BlockPos faultPos, String fault, BlockPos hatch,
+                               boolean reinforced) {
+    }
+
+    /** {@link #isValidWall} without writing tuyerePos: the first hatch found goes in {@code hatch[0]}. */
+    private FurnaceBlockType inspectWall(BlockPos pos, BlockPos[] hatch) {
+        BlockState state = level.getBlockState(pos);
+        if (state.is(TFMGBlocks.BLAST_FURNACE_HATCH.get())) {
+            if (hatch[0] != null)
+                return FurnaceBlockType.NONE;
+            hatch[0] = pos;
+        }
+        if (state.is(TFMGTags.TFMGBlockTags.REINFORCED_BLAST_FURNACE_WALL.tag))
+            return FurnaceBlockType.REINFORCED;
+        if (state.is(TFMGTags.TFMGBlockTags.BLAST_FURNACE_WALL.tag))
+            return FurnaceBlockType.REGULAR;
+        return FurnaceBlockType.NONE;
+    }
+
+    /**
+     * Replays the structure scan of {@link #getSize()} step for step, without
+     * touching tuyerePos or isReinforced, so the inspector can say which block
+     * of which layer ended the furnace.
+     */
+    private FurnaceScan scanForInspection() {
+        BlockPos middlePos = getBlockPos().relative(getBlockState().getValue(FACING).getOpposite());
+        BlockPos[] hatch = {null};
+        if (inspectWall(middlePos, hatch) == FurnaceBlockType.NONE)
+            return new FurnaceScan(0, 0, middlePos, "base", null, false);
+
+        int size = 0;
+        int normalAmount = 0;
+        int reinforcedAmount = 0;
+        int maxHeight = TFMGConfigs.common().machines.blastFurnaceMaxHeight.get();
+        for (int i = 0; i < maxHeight; i++) {
+            BlockPos checkedPos = middlePos.above(i).east().south();
+            for (int j = 0; j < 3; j++) {
+                for (int y = 0; y < 3; y++) {
+                    BlockPos hatchBefore = hatch[0];
+                    FurnaceBlockType wall = inspectWall(checkedPos, hatch);
+                    FurnaceBlockType support = isValidSupport(checkedPos);
+                    boolean reinforced = normalAmount == 0 && reinforcedAmount > 0;
+                    if (checkedPos.getX() == middlePos.getX() ^ checkedPos.getZ() == middlePos.getZ()) {
+                        if (!level.getBlockState(checkedPos).is(TFMGBlocks.BLAST_FURNACE_OUTPUT.get())) {
+                            if (wall == FurnaceBlockType.NONE) {
+                                boolean secondHatch = hatchBefore != null
+                                        && level.getBlockState(checkedPos).is(TFMGBlocks.BLAST_FURNACE_HATCH.get());
+                                return new FurnaceScan(size, i, checkedPos, secondHatch ? "second_hatch" : "wall", hatch[0], reinforced);
+                            }
+                            if (wall == FurnaceBlockType.REGULAR)
+                                normalAmount++;
+                            else
+                                reinforcedAmount++;
+                        }
+                    } else if (checkedPos.getX() == middlePos.getX() && checkedPos.getZ() == middlePos.getZ()) {
+                        if (!level.getBlockState(checkedPos).isAir() && i != 0)
+                            return new FurnaceScan(size, i, checkedPos, "center", hatch[0], reinforced);
+                    } else if (support == FurnaceBlockType.NONE) {
+                        return new FurnaceScan(size, i, checkedPos, "corner", hatch[0], reinforced);
+                    } else if (support == FurnaceBlockType.REGULAR) {
+                        normalAmount++;
+                    } else {
+                        reinforcedAmount++;
+                    }
+                    checkedPos = checkedPos.west();
+                }
+                checkedPos = checkedPos.north();
+                checkedPos = checkedPos.east(3);
+            }
+            size++;
+        }
+        return new FurnaceScan(size, -1, null, null, hatch[0], normalAmount == 0 && reinforcedAmount > 0);
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        int maxHeight = TFMGConfigs.common().machines.blastFurnaceMaxHeight.get();
+        BlockPos middlePos = getBlockPos().relative(getBlockState().getValue(FACING).getOpposite());
+
+        // Structure
+        BlockPos hatchPos = tuyerePos;
+        boolean reinforced = isReinforced;
+        if (!isScanAreaLoaded()) {
+            report.info("blast_furnace.not_loaded");
+            if (cachedSize < 3) {
+                report.problem("blast_furnace.too_short", cachedSize, maxHeight);
+                return;
+            }
+            report.ok("blast_furnace.height", cachedSize, maxHeight);
+        } else {
+            FurnaceScan scan = scanForInspection();
+            hatchPos = scan.hatch();
+            reinforced = scan.reinforced();
+            if (scan.height() < 3) {
+                report.problem("blast_furnace.too_short", scan.height(), maxHeight);
+                BlockPos at = scan.faultPos();
+                Component found = level.getBlockState(at).getBlock().getName();
+                switch (scan.fault()) {
+                    case "base" -> {
+                        report.problem("blast_furnace.fault.base", at.getX(), at.getY(), at.getZ(), found);
+                        report.fix("blast_furnace.fault.base.fix", at.getX(), at.getY(), at.getZ());
+                    }
+                    case "second_hatch" -> {
+                        report.problem("blast_furnace.fault.second_hatch", scan.faultLayer() + 1, at.getX(), at.getY(), at.getZ());
+                        report.fix("blast_furnace.fault.second_hatch.fix");
+                    }
+                    case "center" -> {
+                        report.problem("blast_furnace.fault.center", scan.faultLayer() + 1, at.getX(), at.getY(), at.getZ(), found);
+                        report.fix("blast_furnace.fault.center.fix");
+                    }
+                    case "corner" -> {
+                        report.problem("blast_furnace.fault.corner", scan.faultLayer() + 1, at.getX(), at.getY(), at.getZ(), found);
+                        report.fix("blast_furnace.fault.corner.fix", at.getX(), at.getY(), at.getZ());
+                    }
+                    default -> {
+                        report.problem("blast_furnace.fault.wall", scan.faultLayer() + 1, at.getX(), at.getY(), at.getZ(), found);
+                        report.fix("blast_furnace.fault.wall.fix", at.getX(), at.getY(), at.getZ());
+                    }
+                }
+                return;
+            }
+            report.ok("blast_furnace.height", scan.height(), maxHeight);
+            if (scan.height() < maxHeight)
+                report.info("blast_furnace.taller");
+        }
+        report.info(reinforced ? "blast_furnace.reinforced" : "blast_furnace.not_reinforced");
+
+        // Ore and recipe
+        ItemStack ore = inputInventory.getStackInSlot(0);
+        IndustrialBlastingRecipe recipe = null;
+        if (ore.isEmpty()) {
+            report.problem("blast_furnace.no_ore");
+            report.fix("blast_furnace.no_ore.fix");
+        } else {
+            Optional<RecipeHolder<IndustrialBlastingRecipe>> found = TFMGRecipeTypes.INDUSTRIAL_BLASTING.find(new RecipeWrapper(inputInventory), level);
+            if (found.isEmpty()) {
+                report.problem("blast_furnace.no_recipe", ore.getHoverName());
+                report.fix("blast_furnace.no_recipe.fix");
+            } else {
+                recipe = found.get().value();
+                report.ok("blast_furnace.ore", ore.getCount(), ore.getHoverName(), recipe.getPrimaryResult().getHoverName());
+            }
+        }
+
+        // Fuel
+        if (fuel > 0)
+            report.ok("blast_furnace.fuel", fuel, STORAGE_SPACE, TFMGConfigs.common().machines.blastFurnaceFuelConsumption.get());
+        else {
+            report.problem("blast_furnace.no_fuel");
+            report.fix("blast_furnace.no_fuel.fix");
+        }
+
+        // Flux
+        ItemStack flux = fluxInventory.getStackInSlot(0);
+        if (recipe != null && recipe.getIngredients().size() > 1) {
+            int needed = recipe.getIngredients().size() - 1;
+            ItemStack[] accepted = recipe.getIngredients().get(1).getItems();
+            Component fluxName = accepted.length > 0 ? accepted[0].getHoverName() : Component.literal("?");
+            if (flux.isEmpty()) {
+                report.problem("blast_furnace.no_flux", fluxName);
+                report.fix("blast_furnace.no_flux.fix", fluxName);
+            } else if (!recipe.getIngredients().get(1).test(flux)) {
+                report.problem("blast_furnace.wrong_flux", flux.getHoverName(), fluxName);
+                report.fix("blast_furnace.wrong_flux.fix");
+            } else if (flux.getCount() < needed) {
+                report.problem("blast_furnace.flux_short", flux.getCount(), needed);
+                report.fix("blast_furnace.no_flux.fix", fluxName);
+            } else {
+                report.ok("blast_furnace.flux", flux.getCount(), flux.getHoverName(), needed);
+            }
+        } else if (!flux.isEmpty()) {
+            report.info("blast_furnace.flux_stock", flux.getCount(), flux.getHoverName());
+        }
+
+        // Hot air hatch in the walls
+        int usage = recipe == null ? 0 : recipe.hotAirUsage;
+        if (recipe == null || usage > 0) {
+            BlastFurnaceHatchBlockEntity hatch = hatchPos != null && level.isLoaded(hatchPos)
+                    && level.getBlockEntity(hatchPos) instanceof BlastFurnaceHatchBlockEntity h ? h : null;
+            if (hatch == null) {
+                report.problem("blast_furnace.no_hatch");
+                report.fix("blast_furnace.no_hatch.fix");
+            } else {
+                FluidStack air = hatch.tank.getFluid();
+                if (air.isEmpty()) {
+                    report.problem("blast_furnace.no_hot_air", hatchPos.getX(), hatchPos.getY(), hatchPos.getZ());
+                    report.fix("blast_furnace.no_hot_air.fix");
+                } else if (!air.getFluid().isSame(TFMGFluids.HOT_AIR.getSource())) {
+                    report.problem("blast_furnace.hatch_wrong_fluid", air.getHoverName());
+                    report.fix("blast_furnace.hatch_wrong_fluid.fix", air.getHoverName());
+                } else if (usage > 0 && air.getAmount() < usage) {
+                    report.problem("blast_furnace.hot_air_low", air.getAmount(), usage);
+                    report.fix("blast_furnace.hot_air_low.fix", usage);
+                } else if (usage > 0) {
+                    report.ok("blast_furnace.hot_air", air.getAmount(), usage);
+                } else {
+                    report.ok("blast_furnace.hot_air_stock", air.getAmount());
+                }
+            }
+        }
+
+        // Output tanks
+        if (recipe != null) {
+            inspectOutputTank(report, primaryTank, recipe.getPrimaryResult());
+            if (recipe.getFluidResults().size() > 1)
+                inspectOutputTank(report, secondaryTank, recipe.getSecondaryResult());
+        }
+
+        // Furnace gas hatch on top of the shaft
+        if (cachedSize >= 3) {
+            BlockPos top = middlePos.above(cachedSize);
+            if (level.isLoaded(top) && level.getBlockEntity(top) instanceof BlastFurnaceHatchBlockEntity gas) {
+                if (gas.tank.getSpace() <= 0)
+                    report.info("blast_furnace.gas_hatch_full", top.getX(), top.getY(), top.getZ());
+                else
+                    report.ok("blast_furnace.gas_hatch", top.getX(), top.getY(), top.getZ());
+            } else if (recipe == null || !recipe.getGasByproduct().isEmpty()) {
+                report.info("blast_furnace.no_gas_hatch", top.getX(), top.getY(), top.getZ());
+            }
+        }
+
+        if (timer > 0)
+            report.info("blast_furnace.progress", String.format("%.1f", timer / 20f));
+    }
+
+    private void inspectOutputTank(InspectionReport report, FluidTank tank, FluidStack result) {
+        if (result.isEmpty())
+            return;
+        if (!tank.getFluid().isEmpty() && !tank.getFluid().getFluid().isSame(result.getFluid())) {
+            report.problem("blast_furnace.output_other", tank.getFluid().getHoverName(), result.getHoverName());
+            report.fix("blast_furnace.output_drain.fix", tank.getFluid().getHoverName());
+        } else if (tank.getSpace() < result.getAmount()) {
+            report.problem("blast_furnace.output_full", result.getHoverName(), tank.getFluidAmount(), tank.getCapacity());
+            report.fix("blast_furnace.output_drain.fix", result.getHoverName());
+        } else {
+            report.ok("blast_furnace.output_space", result.getHoverName(), tank.getSpace());
+        }
     }
 
     public void executeRecipe() {

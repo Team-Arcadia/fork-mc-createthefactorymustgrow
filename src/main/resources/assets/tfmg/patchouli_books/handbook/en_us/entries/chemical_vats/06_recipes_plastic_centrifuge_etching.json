@@ -1,0 +1,30 @@
+{
+  "name": "Recipes: plastic, centrifuge, etching",
+  "icon": "tfmg:ethylene_bucket",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Molten Plastic$()$(br)500 mB Ethylene gives 500 mB Molten Plastic. 500 mB Propylene works the same way. Both need a $(item)Mixer Blade$(), $(item)heat 2$(), and accept every vat kind."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Neon$()$(br)1000 mB Air gives $(item)1 mB$() Neon per batch. Needs an $(item)Industrial Mixer with a Centrifuge$(), any vat kind. It takes a lot of air, so feed the vat with a steady air supply."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Etched Circuit Board$()$(br)1 Coated Circuit Board and 250 mB Sulfuric Acid give 1 Etched Circuit Board in 5 seconds. This one needs $(item)no machine$() and no heat: any vat with the ingredients will do it.$(br2)That last point matters: if you attach a machine to an etching vat, the machine must still be working, or the board will never be etched."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ethylene and propylene come from cracking naphtha (previous page). Air is collected by an $(item)Air Intake$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:ethylene_bucket,tfmg:propylene_bucket,tfmg:molten_plastic_bucket,tfmg:centrifuge,tfmg:air_bucket,tfmg:neon_bucket,tfmg:coated_circuit_board,tfmg:etched_circuit_board",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

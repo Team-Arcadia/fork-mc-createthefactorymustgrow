@@ -1,0 +1,6 @@
+{
+  "name": "The Blast Furnace",
+  "description": "The blast furnace melts iron ore into molten steel. It is a hollow brick tower with a Blast Furnace Output at its foot.",
+  "icon": "tfmg:blast_furnace_output",
+  "sortnum": 50
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Common issues: engines",
+  "icon": "tfmg:regular_engine",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Built, fuelled, but nothing turns - $(item)No redstone signal$():$() a small engine never runs on fuel alone. Signal 0 means 0 RPM. Put a lever or any redstone source against any block of it. $(li)$(item)Exhaust full$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the engine filled its 8000 mB CO2 tank and stopped. Pump the CO2 into an Exhaust block. $(li)$(item)Wrong fuel$(): the fuel must be in the list on the cylinders' tooltip. $(li)$(item)No output shaft$(): a regular engine needs a shaft clicked onto an end block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Engine with a controller ignores redstone$()$(br)That is expected: a linked transmission hands control to the engine controller. Start the engine with the start key, or take the transmission off with a wrench."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Engine row splits$()$(br)Blocks only join when they are the same block, face the same way and share the same type, up to 5 blocks by default. A sixth block starts a new engine.$(br2)$(l)Upgrade refused$()$(br)Each block takes one upgrade, and the same upgrade only once per engine."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:regular_engine,minecraft:lever,tfmg:exhaust,tfmg:transmission,tfmg:engine_controller,create:wrench",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

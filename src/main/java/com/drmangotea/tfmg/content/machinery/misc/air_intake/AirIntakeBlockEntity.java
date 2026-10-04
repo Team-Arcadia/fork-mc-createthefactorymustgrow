@@ -1,6 +1,8 @@
 package com.drmangotea.tfmg.content.machinery.misc.air_intake;
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
@@ -34,7 +36,7 @@ import java.util.Objects;
 import static com.drmangotea.tfmg.content.machinery.misc.air_intake.AirIntakeBlock.INVISIBLE;
 import static com.simibubi.create.content.kinetics.base.DirectionalKineticBlock.FACING;
 
-public class AirIntakeBlockEntity extends KineticBlockEntity implements IWrenchable {
+public class AirIntakeBlockEntity extends KineticBlockEntity implements IWrenchable, IInspectable {
 
     int diameter = 1;
 
@@ -264,6 +266,42 @@ public class AirIntakeBlockEntity extends KineticBlockEntity implements IWrencha
         super.invalidate();
 
         invalidateCapabilities();
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        if (isUsedByController && controller != null && !controller.equals(getBlockPos())) {
+            if (level.isLoaded(controller) && level.getBlockEntity(controller) instanceof AirIntakeBlockEntity owner && !owner.isRemoved()) {
+                report.info("air_intake.member", controller.getX(), controller.getY(), controller.getZ());
+                owner.inspect(report);
+                return;
+            }
+        }
+
+        int size = diameter * diameter;
+        // production = (int) speed * diameter^2 / 40, integer division: below
+        // this speed the intake makes nothing at all.
+        int minSpeed = (40 + size - 1) / size;
+        if (diameter > 1)
+            report.ok("air_intake.formed", diameter, diameter);
+        else
+            report.info("air_intake.single");
+        int speed = (int) maxShaftSpeed;
+        int production = speed * size / 40;
+        if (speed < minSpeed) {
+            report.problem("air_intake.too_slow", speed, minSpeed, diameter, diameter);
+            report.fix("air_intake.too_slow.fix", minSpeed);
+        } else {
+            report.ok("air_intake.production", production, speed);
+        }
+        if (tankInventory.getFluidAmount() + Math.max(production, 1) > tankInventory.getCapacity()) {
+            report.problem("air_intake.full", tankInventory.getFluidAmount(), tankInventory.getCapacity());
+            report.fix("air_intake.full.fix");
+        }
+        if (diameter < 3)
+            report.info("air_intake.grow");
     }
 
     public InteractionResult onWrenched(BlockState state, UseOnContext context){

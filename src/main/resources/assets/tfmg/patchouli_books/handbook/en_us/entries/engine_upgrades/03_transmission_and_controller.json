@@ -1,0 +1,30 @@
+{
+  "name": "Transmission and controller",
+  "icon": "tfmg:transmission",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Engine Controller$() lets you drive an engine like a vehicle instead of with redstone. A $(item)Transmission$() is the link between the two. 1. Right-click the engine controller with the transmission. Its tooltip now shows the linked controller."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Sneak-right-click in the air to clear the link. 2. Right-click the engine with the linked transmission. It mounts as the engine's upgrade and binds the engine to the controller."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The controller's goggles then show $(item)Engine: x y z$() and whether the engine is running; the engine's goggles show $(item)Controller: x y z$(). A controller with no engine says how to link one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "While a controller drives it, the engine $(item)ignores redstone$(). Take the transmission off with a wrench to go back to redstone control: the item you get back keeps its link, so you can mount it again later without re-binding.$(br2)Right-click the controller with a wrench to open its menu and set redstone link frequencies."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:transmission,tfmg:engine_controller,create:wrench",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

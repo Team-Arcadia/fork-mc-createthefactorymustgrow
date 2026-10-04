@@ -1,0 +1,30 @@
+{
+  "name": "Échappements et cheminées",
+  "icon": "tfmg:exhaust",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Ces deux blocs n'acceptent que le $(item)dioxyde de carbone$() et le rejettent dans l'air avec un nuage de fumée. Ils servent aux foyers, aux moteurs, aux fours à coke et à tout ce qui produit du CO2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)L'échappement$()$(li)Contient $(item)1000 mB$() et peut être orienté dans n'importe quelle direction.$(li)Rejette $(item)10 mB par tick$() (200 mB par seconde).$(li)Quand il reste moins de 300 mB de place, il rejette $(item)100 mB par tick$() à la place.$(br2)Un échappement maintenu presque plein peut donc rejeter beaucoup : assez pour le plus grand foyer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les cheminées$()$(br)Les cheminées en briques, en béton et métalliques fonctionnent toutes pareil et ne diffèrent que par l'aspect.$(li)Chacune contient $(item)8000 mB$().$(li)Empilez-les : chaque bloc passe son CO2 à celui du dessus, et seul celui du $(item)haut$() le rejette.$(li)Celle du haut rejette $(item)10 mB par tick$(), ou $(item)50 mB par tick$() quand il reste moins de 1000 mB de place."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les cheminées font un grand tampon et une belle silhouette. Pour une usine chargée, alimentez plusieurs piles ou ajoutez des échappements à côté.$(br2)Le dioxyde de carbone a aussi des usages : 1000 mB remplissent un $(item)extincteur$() ou un $(item)réservoir de dioxyde de carbone$() dans un bec verseur."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:exhaust,tfmg:brick_smokestack,tfmg:concrete_smokestack,tfmg:metal_smokestack,tfmg:carbon_dioxide_bucket,tfmg:fire_extinguisher,create:spout",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

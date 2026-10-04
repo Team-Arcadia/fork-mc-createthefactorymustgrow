@@ -1,0 +1,30 @@
+{
+  "name": "Les règles de la tour",
+  "icon": "tfmg:steel_distillation_controller",
+  "category": "tfmg:distillation",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le contrôleur vérifie ces règles à chaque tick. Si l'une d'elles échoue, il ne se passe rien du tout : construisez avec soin. $(l)Les sorties - La première sortie se pose $(item)juste au-dessus$() du contrôleur.$() Ensuite tuyau, sortie, tuyau, sortie, jusqu'à $(item)six sorties$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)La pile s'arrête au premier bloc qui casse le motif : un tuyau manquant cache toutes les sorties au-dessus. $(li)Le nombre de sorties doit être $(item)exactement$() égal au nombre de produits d'une recette. C'est ainsi que vous choisissez la recette : ajoutez ou retirez une sortie pour en changer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La taille de la cuve$()$(li)La cuve doit être au moins $(item)deux fois plus haute$() que le nombre de sorties : 6 sorties demandent 12 blocs de cuve.$(li)Avec $(item)plus de 3 sorties$(), la cuve doit faire au moins $(item)2 blocs de large$(). Les cuves en acier vont jusqu'à 3 x 3."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La pose$()$(br)Le contrôleur tourne le dos à la cuve : posez-le en regardant la paroi de la cuve. Il doit toucher la cuve, sinon il ne tient pas.$(br2)Les lunettes sur le contrôleur affichent le $(item)Heat Level$(), l'$(item)Output Count$(), et $(item)Steel Fluid Tank Not Found$() quand la cuve manque."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:industrial_pipe,tfmg:steel_fluid_tank,create:goggles",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

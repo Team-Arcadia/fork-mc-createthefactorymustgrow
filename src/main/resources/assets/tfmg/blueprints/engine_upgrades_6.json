@@ -1,0 +1,22 @@
+{
+  "order": 21006,
+  "name": {
+    "en_us": "Large engines",
+    "fr_fr": "Les grands moteurs"
+  },
+  "layers": [
+    [
+      "E"
+    ],
+    [
+      " "
+    ],
+    [
+      "S"
+    ]
+  ],
+  "key": {
+    "E": "tfmg:large_engine[face=floor,facing=north,waterlogged=false]",
+    "S": "create:shaft[axis=x]"
+  }
+}

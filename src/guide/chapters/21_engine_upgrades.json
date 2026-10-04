@@ -1,0 +1,297 @@
+{
+  "order": 210,
+  "icon": "tfmg:turbo",
+  "title": {
+    "en_us": "Engine Upgrades and Large Engines",
+    "fr_fr": "Améliorations et grands moteurs"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Mounting upgrades",
+        "fr_fr": "Poser des améliorations"
+      },
+      "text": {
+        "en_us": [
+          "Small engines (regular, radial and turbine) take upgrades. Right-click an engine block with the upgrade item to mount it.",
+          "",
+          "- Each block holds **one** upgrade.",
+          "- The same upgrade can only be mounted **once per engine**. A turbo and a golden turbo on two blocks of the same row both count, and their multipliers stack.",
+          "- Right-click the block with a **wrench** to take the upgrade back. Breaking the block drops it too.",
+          "",
+          "## Turbo",
+          "Speed x1.3, torque x1.2, efficiency x0.7. More power, but more fuel burnt.",
+          "",
+          "## Golden Turbo",
+          "Speed x1.3, torque x1.4, efficiency unchanged. Made in a mechanical crafter from a turbo, turbine blades, gold, nickel sheets and constantan.",
+          "",
+          "The goggles show the combined effect on an aqua line: **Upgrades: speed x, torque x, efficiency x**."
+        ],
+        "fr_fr": [
+          "Les petits moteurs (ordinaire, radial et à turbine) acceptent des améliorations. Un clic droit sur un bloc moteur avec l'objet d'amélioration la pose.",
+          "",
+          "- Chaque bloc porte **une seule** amélioration.",
+          "- Une même amélioration ne se pose qu'**une fois par moteur**. Un turbo et un turbo doré sur deux blocs de la même rangée comptent tous les deux, et leurs multiplicateurs se cumulent.",
+          "- Un clic droit avec une **clé** reprend l'amélioration. Casser le bloc la rend aussi.",
+          "",
+          "## Turbo",
+          "Vitesse x1,3, couple x1,2, rendement x0,7. Plus de puissance, mais plus de carburant brûlé.",
+          "",
+          "## Turbo doré",
+          "Vitesse x1,3, couple x1,4, rendement inchangé. Il se fabrique dans un assembleur mécanique avec un turbo, des pales de turbine, de l'or, des plaques de nickel et du constantan.",
+          "",
+          "Les lunettes montrent l'effet combiné sur une ligne bleue : **Améliorations : vitesse x, couple x, rendement x**."
+        ]
+      },
+      "items": ["tfmg:turbo", "tfmg:golden_turbo", "create:wrench", "create:mechanical_crafter"]
+    },
+    {
+      "title": {
+        "en_us": "Generator upgrade",
+        "fr_fr": "Amélioration générateur"
+      },
+      "text": {
+        "en_us": [
+          "Mount a **Generator** on an engine block and the engine also feeds the electrical network it is wired to. It makes power on top of its rotation, at the cost of **torque x0.7**.",
+          "",
+          "## How much",
+          "Both values follow the engine's speed, the RPM shown on the goggles:",
+          "- **Voltage = 1.6 V per RPM**",
+          "- **Power = 40 W per RPM**",
+          "",
+          "A type I engine on gasoline at full signal turns at 100 RPM, so its generator gives **160 V and 4000 W**. A faster engine (turbine, turbo, light fuel) gives more voltage, a slower one less. When the engine stops, so does the power.",
+          "",
+          "Use a **Multimeter** on the network to read the voltage and power actually generated. Keep an eye on the voltage limit of your cables and machines: most blocks burn out above their maximum voltage (see the Troubleshooting chapter)."
+        ],
+        "fr_fr": [
+          "Posez un **Générateur** sur un bloc moteur et le moteur alimente aussi le réseau électrique auquel il est relié. Il produit du courant en plus de sa rotation, au prix d'un **couple x0,7**.",
+          "",
+          "## Combien",
+          "Les deux valeurs suivent la vitesse du moteur, le RPM affiché par les lunettes :",
+          "- **Tension = 1,6 V par RPM**",
+          "- **Puissance = 40 W par RPM**",
+          "",
+          "Un moteur de type I à l'essence avec un signal maximal tourne à 100 RPM, son générateur donne donc **160 V et 4000 W**. Un moteur plus rapide (turbine, turbo, carburant léger) donne plus de tension, un plus lent moins. Quand le moteur s'arrête, le courant aussi.",
+          "",
+          "Utilisez un **multimètre** sur le réseau pour lire la tension et la puissance réellement produites. Surveillez la tension maximale de vos câbles et machines : la plupart des blocs grillent au-delà de leur tension maximale (voir le chapitre Dépannage)."
+        ]
+      },
+      "items": ["tfmg:generator", "tfmg:multimeter", "tfmg:copper_wire"]
+    },
+    {
+      "title": {
+        "en_us": "Piping upgrade",
+        "fr_fr": "Amélioration tuyauterie"
+      },
+      "text": {
+        "en_us": [
+          "Mount an **Industrial Pipe** on an engine block and the engine refuels itself from a fluid tank touching that block, on any of its six sides. Create fluid tanks and TFMG steel tanks both work, including multiblock tanks.",
+          "",
+          "- Every half second it moves up to **500 mB** of fuel into the engine.",
+          "- It only moves **what the engine accepts**. If the engine already holds a different fluid, or its 4000 mB tank is full, nothing leaves the tank.",
+          "",
+          "Since 1.3.0 the upgrade asks the engine first and drains only that amount. Before, it could drain fuel the engine refused and void it, and a full source tank never fed anything.",
+          "",
+          "The upgrade finds a new tank by itself when you place or replace one next to the engine. Place the tank against the block that carries the pipe, not against another block of the row."
+        ],
+        "fr_fr": [
+          "Posez un **tuyau industriel** sur un bloc moteur et le moteur se ravitaille seul dans un réservoir de fluide qui touche ce bloc, sur l'une de ses six faces. Les réservoirs de Create et les réservoirs en acier de TFMG fonctionnent tous les deux, y compris en multibloc.",
+          "",
+          "- Toutes les demi-secondes, il transfère jusqu'à **500 mB** de carburant vers le moteur.",
+          "- Il ne transfère **que ce que le moteur accepte**. Si le moteur contient déjà un autre fluide, ou si son réservoir de 4000 mB est plein, rien ne quitte le réservoir.",
+          "",
+          "Depuis la 1.3.0, l'amélioration interroge d'abord le moteur et ne prélève que cette quantité. Avant, elle pouvait prélever un carburant refusé par le moteur et le faire disparaître, et un réservoir source plein n'alimentait jamais rien.",
+          "",
+          "L'amélioration trouve seule un nouveau réservoir quand vous en posez ou remplacez un à côté du moteur. Collez le réservoir au bloc qui porte le tuyau, pas à un autre bloc de la rangée."
+        ]
+      },
+      "items": ["tfmg:industrial_pipe", "create:fluid_tank", "tfmg:steel_fluid_tank"]
+    },
+    {
+      "title": {
+        "en_us": "Transmission and controller",
+        "fr_fr": "Transmission et contrôleur"
+      },
+      "text": {
+        "en_us": [
+          "The **Engine Controller** lets you drive an engine like a vehicle instead of with redstone. A **Transmission** is the link between the two.",
+          "",
+          "1. Right-click the engine controller with the transmission. Its tooltip now shows the linked controller. Sneak-right-click in the air to clear the link.",
+          "2. Right-click the engine with the linked transmission. It mounts as the engine's upgrade and binds the engine to the controller.",
+          "",
+          "The controller's goggles then show **Engine: x y z** and whether the engine is running; the engine's goggles show **Controller: x y z**. A controller with no engine says how to link one.",
+          "",
+          "While a controller drives it, the engine **ignores redstone**. Take the transmission off with a wrench to go back to redstone control: the item you get back keeps its link, so you can mount it again later without re-binding.",
+          "",
+          "Right-click the controller with a wrench to open its menu and set redstone link frequencies."
+        ],
+        "fr_fr": [
+          "Le **contrôleur de moteur** permet de piloter un moteur comme un véhicule plutôt qu'à la redstone. Une **transmission** fait le lien entre les deux.",
+          "",
+          "1. Faites un clic droit sur le contrôleur avec la transmission. Son infobulle affiche alors le contrôleur lié. Un clic droit accroupi dans le vide efface le lien.",
+          "2. Faites un clic droit sur le moteur avec la transmission liée. Elle se pose comme amélioration du moteur et attache le moteur au contrôleur.",
+          "",
+          "Les lunettes du contrôleur affichent alors **Moteur : x y z** et si le moteur tourne ; celles du moteur affichent **Contrôleur : x y z**. Un contrôleur sans moteur explique comment en lier un.",
+          "",
+          "Tant qu'un contrôleur le pilote, le moteur **ignore la redstone**. Retirez la transmission avec une clé pour revenir à la redstone : l'objet rendu garde son lien, vous pourrez la reposer plus tard sans refaire la liaison.",
+          "",
+          "Un clic droit sur le contrôleur avec une clé ouvre son menu, où l'on règle des fréquences de liaison redstone."
+        ]
+      },
+      "items": ["tfmg:transmission", "tfmg:engine_controller", "create:wrench"]
+    },
+    {
+      "title": {
+        "en_us": "Driving with the controller",
+        "fr_fr": "Conduire avec le contrôleur"
+      },
+      "text": {
+        "en_us": [
+          "Stand right next to the controller and right-click it (not sneaking) to take the controls; right-click again to let go. Your keys now drive the engine:",
+          "",
+          "- **Start Engine** (default **I**): starts or stops the engine. It starts at idle, about a quarter of full power.",
+          "- **Forward**: throttle. Held, it raises power step by step up to full. Released, the engine falls back to idle.",
+          "- **Back**: brake, back to idle quickly.",
+          "- **Shift Up** / **Shift Down** (default **V** / **C**): change gear.",
+          "- **Left**, **Right** and the **Custom Button** (default **B**): send the redstone link frequencies set in the controller menu while held.",
+          "",
+          "## Gears",
+          "Reverse, Neutral, then gears 1 to 6. On an engine with a shaft at **both ends**, the gear scales the output: reverse 30% backwards, neutral 0, gears 1 to 6 give 20, 40, 60, 80, 100 and 120%.",
+          "",
+          "The keys can be changed in the Controls menu."
+        ],
+        "fr_fr": [
+          "Placez-vous tout contre le contrôleur et faites un clic droit (sans vous accroupir) pour prendre les commandes ; un nouveau clic droit les lâche. Vos touches pilotent alors le moteur :",
+          "",
+          "- **Démarrer le moteur** (par défaut **I**) : démarre ou arrête le moteur. Il démarre au ralenti, environ un quart de la pleine puissance.",
+          "- **Avancer** : accélérateur. Maintenu, il monte la puissance par paliers jusqu'au maximum. Relâché, le moteur retombe au ralenti.",
+          "- **Reculer** : frein, retour rapide au ralenti.",
+          "- **Monter une vitesse** / **Rétrograder** (par défaut **V** / **C**) : change de rapport.",
+          "- **Gauche**, **Droite** et le **bouton personnalisé** (par défaut **B**) : émettent, tant qu'ils sont maintenus, les fréquences de liaison redstone réglées dans le menu du contrôleur.",
+          "",
+          "## Les rapports",
+          "Marche arrière, point mort, puis rapports 1 à 6. Sur un moteur avec un arbre **aux deux bouts**, le rapport règle la sortie : marche arrière à 30 % en sens inverse, point mort à 0, rapports 1 à 6 à 20, 40, 60, 80, 100 et 120 %.",
+          "",
+          "Les touches se changent dans le menu Commandes."
+        ]
+      },
+      "items": ["tfmg:engine_controller", "tfmg:transmission", "create:redstone_link"]
+    },
+    {
+      "title": {
+        "en_us": "Engine gearbox",
+        "fr_fr": "Boîte de vitesses moteur"
+      },
+      "text": {
+        "en_us": [
+          "The **Engine Gearbox** is a compact gearbox sized to sit next to an engine. It connects on its **front** and on **both sides**, so it turns an engine's output line through a right angle and lets you branch it to two machines.",
+          "",
+          "It is placed facing the way you look, like most Create blocks.",
+          "",
+          "## Tips for small engines",
+          "- Start with a type I engine on creosote or furnace gas with simple cylinders: both fuels come early, from the coke oven and the blast furnace.",
+          "- Move to diesel or kerosene for heavy machines: their torque factor is 1.4.",
+          "- Length adds torque, the signal and the speed factors add RPM. Plan the row for the stress you need, then pick fuel and upgrades for the speed.",
+          "- Lubrication oil and cooling fluid together roughly halve fuel use.",
+          "- A piping upgrade plus a big tank makes an engine that runs for hours unattended, as long as the exhaust is pumped away."
+        ],
+        "fr_fr": [
+          "La **boîte de vitesses moteur** est une boîte compacte faite pour se placer à côté d'un moteur. Elle se raccorde par son **avant** et par **ses deux côtés** : elle fait tourner la ligne de sortie d'un moteur à angle droit et permet de la répartir vers deux machines.",
+          "",
+          "Elle se pose orientée dans la direction de votre regard, comme la plupart des blocs de Create.",
+          "",
+          "## Conseils pour les petits moteurs",
+          "- Commencez par un moteur de type I à la créosote ou au gaz de four avec des cylindres simples : les deux carburants arrivent tôt, par le four à coke et le haut fourneau.",
+          "- Passez au diesel ou au kérosène pour les machines lourdes : leur facteur de couple est de 1,4.",
+          "- La longueur ajoute du couple, le signal et les facteurs de vitesse ajoutent des RPM. Dimensionnez la rangée pour la contrainte voulue, puis choisissez carburant et améliorations pour la vitesse.",
+          "- L'huile de lubrification et le liquide de refroidissement ensemble divisent à peu près par deux la consommation.",
+          "- Une amélioration tuyauterie et un grand réservoir donnent un moteur qui tourne des heures sans surveillance, tant que l'échappement est évacué."
+        ]
+      },
+      "items": ["tfmg:engine_gearbox", "tfmg:simple_engine_cylinder", "tfmg:creosote_bucket", "tfmg:furnace_gas_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Large engines",
+        "fr_fr": "Les grands moteurs"
+      },
+      "text": {
+        "en_us": [
+          "The **Large Engine** and the cheaper **Simple Large Engine** work like a Create steam engine: they drive a **Powered Shaft 2 blocks in front** of them. Placed on the floor, the shaft goes 2 blocks above; on a wall, 2 blocks out from it.",
+          "",
+          "Right-click the engine with a **Shaft** to put it in the right spot. The shaft must cross the engine's direction, not point at it.",
+          "",
+          "## What they need",
+          "- **Fuel**: diesel, kerosene, naphtha or furnace gas (2000 mB tank).",
+          "- **Air** in a separate 1000 mB air tank. Pipe it from an **Air Intake**.",
+          "- Room in the 2000 mB **exhaust** tank: pump the CO2 away.",
+          "",
+          "No redstone, no components: once fuel, air and shaft are there, it runs. The shaft turns at **128 RPM**. Every 2 seconds the engine uses 150 mB of air and 3 mB of fuel; the simple large engine burns **12 mB**, four times more."
+        ],
+        "fr_fr": [
+          "Le **grand moteur** et le **grand moteur simple**, moins cher, fonctionnent comme une machine à vapeur de Create : ils entraînent un **arbre motorisé 2 blocs devant** eux. Posé au sol, l'arbre se place 2 blocs au-dessus ; sur un mur, 2 blocs devant le mur.",
+          "",
+          "Un clic droit sur le moteur avec un **arbre** le pose au bon endroit. L'arbre doit croiser la direction du moteur, pas pointer vers lui.",
+          "",
+          "## Ce qu'il leur faut",
+          "- **Carburant** : diesel, kérosène, naphta ou gaz de four (réservoir de 2000 mB).",
+          "- De l'**air** dans un réservoir d'air séparé de 1000 mB. Amenez-le depuis une **prise d'air**.",
+          "- De la place dans le réservoir d'**échappement** de 2000 mB : évacuez le CO2.",
+          "",
+          "Ni redstone ni composants : dès que carburant, air et arbre sont là, il tourne. L'arbre tourne à **128 RPM**. Toutes les 2 secondes, le moteur consomme 150 mB d'air et 3 mB de carburant ; le grand moteur simple en brûle **12 mB**, quatre fois plus."
+        ]
+      },
+      "items": ["tfmg:large_engine", "tfmg:simple_large_engine", "create:shaft", "tfmg:air_intake", "tfmg:exhaust", "tfmg:diesel_bucket"],
+      "schematic": {
+        "layers": [
+          ["E"],
+          ["."],
+          ["S"]
+        ],
+        "key": {
+          "E": "tfmg:large_engine[face=floor,facing=north,waterlogged=false]",
+          "S": "create:shaft[axis=x]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Large engine power and goggles",
+        "fr_fr": "Puissance et lunettes du grand moteur"
+      },
+      "text": {
+        "en_us": [
+          "The power of a large engine depends on the fuel's torque factor (see the fuel table in the Engines chapter). With the default stress settings, at 128 RPM:",
+          "",
+          "- **Large Engine**: about 26,400 su x torque factor. Diesel or kerosene: about 37,000 su. Naphtha: about 34,300 su. Furnace gas: about 7,900 su.",
+          "- **Simple Large Engine**: about 19,200 su x torque factor. Diesel: about 26,900 su. Furnace gas: about 5,800 su.",
+          "",
+          "## Goggle lines (since 1.3.0)",
+          "- **Needs a Powered Shaft 2 blocks in front**: place or turn the shaft.",
+          "- **Needs Air in its air tank**: feed it air.",
+          "- **No fuel**: pipe fuel in.",
+          "- **Unsupported fuel: use diesel, kerosene, naphtha or furnace gas**: drain the tank and change fuel.",
+          "- **Exhaust full: pump the CO2 away**.",
+          "",
+          "Below these lines the goggles list the three tanks, so you can see which one is empty or full."
+        ],
+        "fr_fr": [
+          "La puissance d'un grand moteur dépend du facteur de couple du carburant (voir le tableau des carburants du chapitre Moteurs). Avec les réglages de contrainte par défaut, à 128 RPM :",
+          "",
+          "- **Grand moteur** : environ 26 400 su x facteur de couple. Diesel ou kérosène : environ 37 000 su. Naphta : environ 34 300 su. Gaz de four : environ 7 900 su.",
+          "- **Grand moteur simple** : environ 19 200 su x facteur de couple. Diesel : environ 26 900 su. Gaz de four : environ 5 800 su.",
+          "",
+          "## Lignes des lunettes (depuis la 1.3.0)",
+          "- **Il faut un arbre motorisé 2 blocs devant** : posez ou tournez l'arbre.",
+          "- **Il faut de l'air dans son réservoir d'air** : amenez de l'air.",
+          "- **Pas de carburant** : envoyez du carburant.",
+          "- **Carburant non pris en charge** : videz le réservoir et changez de carburant.",
+          "- **Échappement plein : évacuez le CO2**.",
+          "",
+          "Sous ces lignes, les lunettes listent les trois réservoirs, pour voir lequel est vide ou plein."
+        ]
+      },
+      "items": ["tfmg:large_engine", "tfmg:simple_large_engine", "create:goggles", "tfmg:kerosene_bucket", "tfmg:naphtha_bucket"]
+    }
+  ]
+}

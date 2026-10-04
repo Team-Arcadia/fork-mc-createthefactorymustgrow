@@ -1,0 +1,26 @@
+{
+  "name": "Lithium blade",
+  "icon": "tfmg:lithium_blade",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Lithium Blade$() is a steel sword with a burner. It is crafted from a Steel Sword, a Heavy Plate, aluminium sheets, a Spark Plug, a Circuit Board and copper wire."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Lighting it Carry a $(item)Lithium Charge$() (a plastic sheet, 3 lithium ingots and an aluminium sheet) and right-click with the blade.$() One charge is used and the blade lights for about $(item)100 seconds$(). It goes out by itself when the charge runs dry, and keeps its enchantments both ways."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)While lit$()$(li)Every hit sets $(item)Hellfire$() on the target for 7 seconds, adding to any Hellfire it already has. Hellfire keeps the target burning for its whole duration. Each hit costs 2 durability.$(li)Right-click to throw a fan of $(item)10 lithium sparks$(). They give Hellfire for 3 seconds but do not set blocks on fire. It costs 5 seconds of charge and has a 3 second cooldown."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lithium_blade,tfmg:lithium_charge,tfmg:steel_sword,tfmg:spark_plug,tfmg:circuit_board,tfmg:heavy_plate",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

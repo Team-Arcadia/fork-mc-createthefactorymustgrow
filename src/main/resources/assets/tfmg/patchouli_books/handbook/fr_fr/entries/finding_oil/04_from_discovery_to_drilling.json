@@ -1,0 +1,30 @@
+{
+  "name": "De la découverte au forage",
+  "icon": "tfmg:industrial_pipe",
+  "category": "tfmg:finding_oil",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une fois qu'une case du scanner s'allume, voici le plan habituel : $(li)Allez dans le chunk et creusez un $(item)puits de 1 x 1$() tout droit jusqu'à la couche de bedrock. Cherchez la pierre fossile et le pétrole brut vers Y -60."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Trouvez un bloc de gisement et notez ses coordonnées $(item)X et Z$(). La base de la pompe à pétrole doit se trouver exactement au-dessus. $(li)Remplissez le puits depuis le gisement avec des $(item)tuyaux industriels$(), sans rien d'autre entre eux. Un lingot d'acier donne $(item)8 tuyaux$() au tailleur de pierre : un puits depuis Y 64 demande environ 16 lingots."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les blocs de pétrole brut dans le puits peuvent simplement être remplacés par des tuyaux.$(br2)Les tuyaux industriels peuvent être remplis de béton liquide et sèchent en $(item)tuyaux industriels encastrés dans du béton$(). Ils comptent toujours comme une colonne valide : vous pouvez sceller le puits pour de bon. Cassés, ils rendent un tuyau industriel normal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une fois la colonne posée, placez la base de la pompe à pétrole dessus, à la surface. Le chapitre suivant explique le reste de la pompe."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:industrial_pipe,tfmg:steel_ingot,minecraft:stonecutter,tfmg:liquid_concrete_bucket,tfmg:pumpjack_base",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

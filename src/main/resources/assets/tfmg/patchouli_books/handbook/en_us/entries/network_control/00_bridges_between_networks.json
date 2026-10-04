@@ -1,0 +1,30 @@
+{
+  "name": "Bridges between networks",
+  "icon": "tfmg:electric_diode",
+  "category": "tfmg:network_control",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The diode, the electric switch, the potentiometer and the transformer are $(item)bridges$(). Each one takes power in on one side (the $(item)back$() for the diode, switch and potentiometer) and feeds a $(item)separate network$() on its output side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The large switch and the large transformer work the same way across their two halves. $(li)The input network sees the bridge as one consumer that uses what the output network uses. $(li)The output network gets its voltage from the bridge, and at most $(item)10 kW$() of power from the small bridges and the large switch. The large transformer passes more."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Small bridges burn above $(item)100 A$() and above the usual 1,000 V. $(li)If the input network runs short of power, the output one stops too.$(br2)$(l)Never close a loop$()$(br)If a chain of bridges feeds power back into a network it comes from, the bridge you just placed is $(item)destroyed without dropping$(). Always keep power flowing one way, from generators towards machines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Splitting a factory into several networks lets you switch whole sections off and keeps one hungry machine from stalling everything."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_diode,tfmg:electrical_switch,tfmg:potentiometer,tfmg:transformer,tfmg:large_switch,tfmg:large_coil",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

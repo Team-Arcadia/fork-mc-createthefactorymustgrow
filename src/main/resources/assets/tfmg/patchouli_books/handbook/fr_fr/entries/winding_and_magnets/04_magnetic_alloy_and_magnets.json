@@ -1,0 +1,30 @@
+{
+  "name": "Alliage magnétique et aimants",
+  "icon": "tfmg:nickel_ingot",
+  "category": "tfmg:winding_and_magnets",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Alliage magnétique Mélangez $(item)2 lingots de nickel$(), $(item)1 lingot de silicium$() et $(item)2 lingots d'acier$() dans un bassin $(item)chauffé$() :$() vous obtenez $(item)2 lingots d'alliage magnétique$() (15 secondes). Pressez un lingot pour obtenir une $(item)plaque d'alliage magnétique$() ;"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "neuf plaques donnent un bloc d'alliage magnétique laminé.$(br2)$(l)Le polariseur$()$(br)Le $(item)polariseur$() transforme un $(item)lingot d'alliage magnétique$() en $(item)aimant$(). Clic droit avec le lingot (ou alimentez-le par un entonnoir), puis branchez le courant sur sa $(item)face arrière$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Il lui faut au moins $(item)2000 W$(). Pendant la charge c'est une charge de 30 ohms, donc environ $(item)245 V$() au minimum.$(li)La charge dure $(item)10 secondes$(), puis le lingot devient un aimant. Les lunettes affichent la charge.$(li)Clic droit main vide pour reprendre l'aimant."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Votre premier aimant$()$(br)Le polariseur demande une $(item)jauge électrique$(), et la jauge demande un aimant. Depuis la 1.3.0, une recette à la main casse cette boucle : un $(item)lingot d'alliage magnétique$() au centre, des $(item)blocs de redstone$() au-dessus, à gauche et à droite, et une $(item)boussole$() en dessous. Elle coûte cher exprès : construisez un polariseur dès que possible."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:nickel_ingot,tfmg:silicon_ingot,tfmg:magnetic_alloy_ingot,tfmg:magnetic_alloy_sheet,tfmg:polarizer,tfmg:magnet,tfmg:voltmeter,minecraft:compass",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

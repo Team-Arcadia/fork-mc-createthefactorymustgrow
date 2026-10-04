@@ -1,0 +1,26 @@
+{
+  "name": "Poser des améliorations",
+  "icon": "tfmg:turbo",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Les petits moteurs (ordinaire, radial et à turbine) acceptent des améliorations. Un clic droit sur un bloc moteur avec l'objet d'amélioration la pose. $(li)Chaque bloc porte $(item)une seule$() amélioration. $(li)Une même amélioration ne se pose qu'$(item)une fois par moteur$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un turbo et un turbo doré sur deux blocs de la même rangée comptent tous les deux, et leurs multiplicateurs se cumulent. $(li)Un clic droit avec une $(item)clé$() reprend l'amélioration. Casser le bloc la rend aussi.$(br2)$(l)Turbo$()$(br)Vitesse x1,3, couple x1,2, rendement x0,7. Plus de puissance, mais plus de carburant brûlé."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Turbo doré$()$(br)Vitesse x1,3, couple x1,4, rendement inchangé. Il se fabrique dans un assembleur mécanique avec un turbo, des pales de turbine, de l'or, des plaques de nickel et du constantan.$(br2)Les lunettes montrent l'effet combiné sur une ligne bleue : $(item)Améliorations : vitesse x, couple x, rendement x$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:turbo,tfmg:golden_turbo,create:wrench,create:mechanical_crafter",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

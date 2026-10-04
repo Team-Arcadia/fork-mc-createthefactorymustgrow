@@ -1,0 +1,30 @@
+{
+  "name": "Flamethrower",
+  "icon": "tfmg:flamethrower",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Flamethrower$() sprays burning fuel. Hold right-click to fire: every tick it throws a burst of sparks that $(item)set fire to the block they land on$() and $(item)ignite creatures for 4 seconds$(). Water and rain put the sparks out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Refuelling$()$(br)The flamethrower holds $(item)4000 mB$(). Right-click any block that stores a fuel it accepts (a Create fluid tank, a steel tank) to fill it. One tank is used per click, then there is a 1 second pause."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)An empty flamethrower takes any accepted fuel.$(li)A partly filled one only tops up with the $(item)same fuel$(). Use it up before switching.$(li)Since 1.3.0, only the fuel that really leaves the tank is credited. Blocks that refuse extraction, like engines, give nothing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The fuel bar shows how much is left, and the tooltip shows the fuel, capacity, spread, speed and number of sparks per tick. Each tick of firing uses between half and all of that number in mB."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:flamethrower,create:fluid_tank,tfmg:steel_fluid_tank",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

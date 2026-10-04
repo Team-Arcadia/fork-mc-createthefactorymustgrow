@@ -2,6 +2,8 @@ package com.drmangotea.tfmg.content.machinery.misc.flarestack;
 
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGTags;
 import com.simibubi.create.Create;
@@ -28,7 +30,7 @@ import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import java.util.List;
 import java.util.Random;
 
-public class FlarestackBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class FlarestackBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
 
 
@@ -65,6 +67,23 @@ public class FlarestackBlockEntity extends SmartBlockEntity implements IHaveGogg
         return TFMGUtils.createFluidTooltip(this, tooltip);
 
 
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        int amount = tankInventory.getFluidAmount();
+        if (amount <= 0) {
+            report.info("flarestack.idle");
+            return;
+        }
+        // Same thresholds as tick(): 100 mB a tick above 1000 mB, 30 below.
+        int rate = amount > 1000 ? 100 : 30;
+        report.ok("flarestack.burning", tankInventory.getFluid().getHoverName(), rate);
+        report.info("flarestack.waste");
+        if (tankInventory.getSpace() <= 0) {
+            report.problem("flarestack.full", amount, tankInventory.getCapacity());
+            report.fix("flarestack.full.fix");
+        }
     }
 
     protected SmartFluidTank createInventory() {

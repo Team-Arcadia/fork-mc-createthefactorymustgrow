@@ -1,0 +1,6 @@
+{
+  "name": "Troubleshooting",
+  "description": "Most TFMG machines never stop without a reason, and they tell you the reason. You have two ways to ask.",
+  "icon": "create:goggles",
+  "sortnum": 990
+}

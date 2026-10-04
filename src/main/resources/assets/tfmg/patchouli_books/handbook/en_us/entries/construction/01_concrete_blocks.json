@@ -1,0 +1,30 @@
+{
+  "name": "Concrete blocks",
+  "icon": "tfmg:concrete",
+  "category": "tfmg:construction",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pour liquid concrete from a bucket into a mould of any shape: the liquid turns into $(item)concrete$() blocks on its own. This is the easiest way to cast walls and floors without crafting."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Shapes$()$(br)In a stonecutter, one concrete block gives:$(li)$(item)2 concrete slabs$(), or stairs, or a wall,$(li)$(item)8 cinderblocks$(), the small grey bricks.$(br2)Six cinderblocks around two rebar and a bucket of liquid concrete craft $(item)8 cinder blocks$(), the full-size wall block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Colours$()$(br)Surround a dye with $(item)8 concrete$() in a crafting grid to get 8 coloured concrete. All sixteen colours exist, each with its own slab, stairs and wall from the stonecutter. Rebar concrete is dyed the same way.$(br2)$(l)Smokestacks$()$(br)Concrete with industrial pipes also crafts the $(item)concrete smokestack$() used to vent CO2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "For pillars, floors and the most industrial look, use rebar concrete, explained on the next page. It comes in the same sixteen colours."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:concrete,tfmg:concrete_slab,tfmg:concrete_stairs,tfmg:concrete_wall,tfmg:cinderblock,tfmg:cinder_block,tfmg:white_concrete,tfmg:concrete_smokestack",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

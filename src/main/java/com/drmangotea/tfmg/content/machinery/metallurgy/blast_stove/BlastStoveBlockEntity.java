@@ -4,9 +4,13 @@ package com.drmangotea.tfmg.content.machinery.metallurgy.blast_stove;
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.recipes.HotBlastRecipe;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
+import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.drmangotea.tfmg.registry.TFMGRecipeTypes;
+import com.drmangotea.tfmg.registry.TFMGTags;
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.fluids.tank.FluidTankBlockEntity;
@@ -40,7 +44,7 @@ import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import java.util.List;
 
 
-public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHaveGoggleInformation, IMultiBlockEntityContainer.Fluid {
+public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHaveGoggleInformation, IMultiBlockEntityContainer.Fluid, IInspectable {
 
     private static final int MAX_SIZE = 2;
 
@@ -175,6 +179,92 @@ public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHave
 
     public int getSpeedModifier() {
         return 100;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        if (!isController() && !level.isLoaded(controller)) {
+            report.info("multiblock.controller_unloaded");
+            return;
+        }
+        BlastStoveBlockEntity stove = getControllerBE();
+        if (stove == null) {
+            report.problem("blast_stove.no_controller");
+            report.fix("blast_stove.no_controller.fix");
+            return;
+        }
+        int size = stove.getTotalTankSize();
+        report.info("blast_stove.size", stove.getWidth(), stove.getWidth(), stove.getHeight(), size);
+
+        HotBlastRecipe recipe = stove.getMatchingRecipes();
+        FluidStack air = stove.primaryInputInventory.getFluid();
+        FluidStack fuel = stove.secondaryInputInventory.getFluid();
+
+        // Air: sides of the bottom layer
+        int airNeeded = recipe != null ? recipe.getPrimaryIngredient().amount() : 1;
+        if (air.isEmpty()) {
+            report.problem("blast_stove.no_air");
+            report.fix("blast_stove.no_air.fix");
+        } else if (!air.getFluid().isSame(TFMGFluids.AIR.getSource()) && recipe == null) {
+            report.problem("blast_stove.wrong_air", air.getHoverName());
+            report.fix("blast_stove.wrong_input.fix");
+        } else if (air.getAmount() < airNeeded) {
+            report.problem("blast_stove.low_air", air.getAmount(), airNeeded);
+            report.fix("blast_stove.no_air.fix");
+        } else {
+            report.ok("blast_stove.air", air.getAmount());
+        }
+
+        // Fuel: top or bottom face
+        int fuelNeeded = recipe != null ? recipe.getSecondaryIngredient().amount() : 1;
+        if (fuel.isEmpty()) {
+            report.problem("blast_stove.no_fuel");
+            report.fix("blast_stove.no_fuel.fix");
+        } else if (!fuel.getFluid().is(TFMGTags.TFMGFluidTags.BLAST_STOVE_FUEL.tag) && recipe == null) {
+            report.problem("blast_stove.wrong_fuel", fuel.getHoverName());
+            report.fix("blast_stove.wrong_input.fix");
+        } else if (fuel.getAmount() < fuelNeeded) {
+            report.problem("blast_stove.low_fuel", fuel.getAmount(), fuelNeeded);
+            report.fix("blast_stove.no_fuel.fix");
+        } else {
+            report.ok("blast_stove.fuel", fuel.getAmount(), fuel.getHoverName());
+        }
+
+        if (recipe == null && !air.isEmpty() && !fuel.isEmpty()
+                && air.getFluid().isSame(TFMGFluids.AIR.getSource()) && fuel.getFluid().is(TFMGTags.TFMGFluidTags.BLAST_STOVE_FUEL.tag)) {
+            report.problem("blast_stove.no_recipe", air.getHoverName(), fuel.getHoverName());
+            report.fix("blast_stove.no_recipe.fix");
+        }
+
+        // Outputs: hot air out of the top or bottom, CO2 out of the bottom sides
+        FluidTank hotAir = stove.primaryOutputInventory;
+        FluidTank co2 = stove.secondaryOutputInventory;
+        int hotAirShare = recipe != null ? recipe.getPrimaryResult().getAmount() : 1;
+        int co2Share = recipe != null ? recipe.getSecondaryResult().getAmount() : 1;
+        if (hotAir.getSpace() == 0 || hotAir.getSpace() < hotAirShare) {
+            report.problem("blast_stove.hot_air_full", hotAir.getFluidAmount(), hotAir.getCapacity());
+            report.fix("blast_stove.hot_air_full.fix");
+        } else {
+            report.ok("blast_stove.hot_air_space", hotAir.getFluidAmount(), hotAir.getCapacity());
+        }
+        if (co2.getSpace() == 0 || co2.getSpace() < co2Share) {
+            report.problem("blast_stove.co2_full", co2.getFluidAmount(), co2.getCapacity());
+            report.fix("blast_stove.co2_full.fix");
+        } else {
+            report.ok("blast_stove.co2_space", co2.getFluidAmount(), co2.getCapacity());
+        }
+
+        // Expected hot air rate: one batch of one share per block every cycle.
+        if (recipe != null && size > 0) {
+            int wait = (int) Math.ceil(getSpeedModifier() / (size * 0.3f));
+            int cycle = wait + 1;
+            float rate = (float) recipe.getPrimaryResult().getAmount() * size / cycle;
+            report.info("blast_stove.rate", String.format("%.1f", rate), cycle);
+            if (stove.getWidth() < MAX_SIZE)
+                report.info("blast_stove.grow");
+        }
     }
 
     // How many recipe shares an amount of fluid (or of tank space) can back.

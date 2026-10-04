@@ -1,0 +1,201 @@
+{
+  "order": 100,
+  "icon": "tfmg:electric_motor",
+  "title": {
+    "en_us": "Electric Machines",
+    "fr_fr": "Machines électriques"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Electric motor",
+        "fr_fr": "Moteur électrique"
+      },
+      "text": {
+        "en_us": [
+          "The electric motor turns electricity back into rotation, so one power plant can drive machines all over the base through wires. It is made by sequenced assembly on a shaft: a copper spool on the winding machine, a magnet, a steel mechanism and a screwdriver, three times over.",
+          "",
+          "## Speed and draw",
+          "- Speed: **voltage x 0.8 RPM**, up to **255 RPM**, reached at about 319 V.",
+          "- Resistance: **30 ohms**, so it draws **V / 30** amps.",
+          "- At 300 V it turns at 240 RPM and uses 10 A, that is **3,000 W**.",
+          "",
+          "Its stress capacity grows with its speed. Choose the direction of rotation with its value box.",
+          "",
+          "## Connecting it",
+          "Power enters through its **back** face, opposite the shaft. Since 1.3.0, a motor lying on its side also takes power through its **bottom** face, so you can feed a row of motors from cables underneath.",
+          "",
+          "If the network runs short of power, every motor on it stops at once."
+        ],
+        "fr_fr": [
+          "Le moteur électrique retransforme l'électricité en rotation : une seule centrale peut ainsi entraîner des machines dans toute la base grâce aux fils. Il se fabrique par assemblage séquencé sur un axe : une bobine de cuivre sur l'enrouleuse, un aimant, un mécanisme en acier et un tournevis, trois fois de suite.",
+          "",
+          "## Vitesse et consommation",
+          "- Vitesse : **tension x 0,8 tr/min**, jusqu'à **255 tr/min**, atteints vers 319 V.",
+          "- Résistance : **30 ohms**, il tire donc **V / 30** ampères.",
+          "- À 300 V, il tourne à 240 tr/min et tire 10 A, soit **3 000 W**.",
+          "",
+          "Sa capacité de contrainte augmente avec sa vitesse. Choisissez le sens de rotation avec sa boîte de valeur.",
+          "",
+          "## Le brancher",
+          "Le courant entre par sa face **arrière**, à l'opposé de l'axe. Depuis la 1.3.0, un moteur couché sur le côté accepte aussi le courant par sa face **du dessous** : vous pouvez alimenter une rangée de moteurs par des câbles posés en dessous.",
+          "",
+          "Si le réseau manque de puissance, tous ses moteurs s'arrêtent d'un coup."
+        ]
+      },
+      "items": ["tfmg:electric_motor", "create:shaft", "tfmg:copper_spool", "tfmg:magnet", "tfmg:steel_mechanism", "tfmg:screwdriver"]
+    },
+    {
+      "title": {
+        "en_us": "Electric pump",
+        "fr_fr": "Pompe électrique"
+      },
+      "text": {
+        "en_us": [
+          "The electric pump moves fluids through Create pipes like a mechanical pump, but it needs **no rotation**: just wire it to the network. Turn it with a wrench to choose the direction of flow, as with Create's pump.",
+          "",
+          "## Voltage sets its strength",
+          "- It is a **100 ohm** consumer: at 200 V it draws 2 A and uses 400 W.",
+          "- Its **pressure** is twice the voltage, up to a maximum reached at **750 V**.",
+          "- Its **reach** along the pipes grows with the voltage too, up to 6.7 times a mechanical pump's range, reached at about **335 V**.",
+          "",
+          "A low voltage gives a weak, short pump. If a long pipe line does not fill, check the voltage with a multimeter before adding more pumps.",
+          "",
+          "Like every consumer, it stops when its network runs short of power. An electric pump in the middle of a fuel line is a good reason to keep that network separate from heavy machines."
+        ],
+        "fr_fr": [
+          "La pompe électrique déplace les fluides dans les tuyaux de Create comme une pompe mécanique, mais elle n'a **pas besoin de rotation** : il suffit de la relier au réseau. Tournez-la avec une clé pour choisir le sens d'écoulement, comme la pompe de Create.",
+          "",
+          "## La tension fixe sa force",
+          "- C'est un consommateur de **100 ohms** : à 200 V, elle tire 2 A et consomme 400 W.",
+          "- Sa **pression** vaut deux fois la tension, jusqu'à un maximum atteint à **750 V**.",
+          "- Sa **portée** le long des tuyaux augmente aussi avec la tension, jusqu'à 6,7 fois celle d'une pompe mécanique, atteinte vers **335 V**.",
+          "",
+          "Une tension basse donne une pompe faible et courte. Si une longue conduite ne se remplit pas, vérifiez la tension au multimètre avant d'ajouter des pompes.",
+          "",
+          "Comme tout consommateur, elle s'arrête quand son réseau manque de puissance. Une pompe électrique au milieu d'une ligne de carburant est une bonne raison de séparer ce réseau des machines lourdes."
+        ]
+      },
+      "items": ["tfmg:electric_pump", "create:mechanical_pump", "create:fluid_pipe", "create:wrench"]
+    },
+    {
+      "title": {
+        "en_us": "Polarizer",
+        "fr_fr": "Polariseur"
+      },
+      "text": {
+        "en_us": [
+          "The polarizer magnetizes items. Its main job is turning **magnetic alloy ingots** into **magnets**, one at a time. Right-click it with an item to insert it, with an empty hand to take it out, or feed it with funnels and chutes.",
+          "",
+          "## Power",
+          "- It connects through its **back** face.",
+          "- While working it is a **30 ohm** consumer and needs at least **2,000 W**, which means about **245 V** or more.",
+          "- A single generator reaches that above roughly 215 RPM.",
+          "",
+          "Below 2,000 W, goggles show a red **not enough power** line and the charge does not move.",
+          "",
+          "## Cycle",
+          "It charges for **10 seconds**, then the item is converted with a burst of sparks. Its goggle tooltip shows the charge.",
+          "",
+          "Before you have a polarizer, see **The first magnet** in the **Making Power** chapter for the hand recipe."
+        ],
+        "fr_fr": [
+          "Le polariseur aimante les objets. Son rôle principal est de transformer les **lingots d'alliage magnétique** en **aimants**, un à la fois. Clic droit avec un objet pour l'insérer, main vide pour le reprendre, ou alimentez-le avec des entonnoirs et des glissières.",
+          "",
+          "## Alimentation",
+          "- Il se connecte par sa face **arrière**.",
+          "- Pendant le travail, c'est un consommateur de **30 ohms** qui demande au moins **2 000 W**, soit environ **245 V** ou plus.",
+          "- Un seul générateur y arrive au-dessus de 215 tr/min environ.",
+          "",
+          "En dessous de 2 000 W, les lunettes affichent une ligne rouge de puissance insuffisante et la charge n'avance pas.",
+          "",
+          "## Cycle",
+          "Il se charge pendant **10 secondes**, puis l'objet est converti dans une gerbe d'étincelles. Son infobulle aux lunettes affiche la charge.",
+          "",
+          "Avant d'avoir un polariseur, voyez **Le premier aimant** dans le chapitre **Produire de l'électricité** pour la recette à la main."
+        ]
+      },
+      "items": ["tfmg:polarizer", "tfmg:magnetic_alloy_ingot", "tfmg:magnet", "tfmg:generator", "create:goggles"]
+    },
+    {
+      "title": {
+        "en_us": "Lights",
+        "fr_fr": "Éclairage"
+      },
+      "text": {
+        "en_us": [
+          "## Lamps",
+          "The light bulb, circular lamp, light panel and aluminum lamp all work the same way. Place one on a face of an electric block: it takes power through its **back**.",
+          "",
+          "- **400 ohm** consumer.",
+          "- Light level = **voltage / 10**, full brightness (15) from **150 V**.",
+          "- A **redstone signal** switches it off.",
+          "- **Burns above 1 A**, so above **400 V**.",
+          "",
+          "## Neon tube",
+          "Neon tubes connect to each other like pipes and carry power along the line.",
+          "",
+          "- **200 ohm** consumer, light level = voltage / 10.",
+          "- **Burns above 1 A**, so above **200 V**. This is the lowest limit of all electric blocks: give neon its own low voltage network, through a transformer or a potentiometer.",
+          "",
+          "Right-click any lamp or neon tube with a **dye** to change its color. Black and grays are refused.",
+          "",
+          "A lamp burning out drops nothing, like every overloaded block."
+        ],
+        "fr_fr": [
+          "## Les lampes",
+          "L'ampoule, la lampe circulaire, le panneau lumineux et la lampe en aluminium fonctionnent tous de la même façon. Posez-en une sur une face d'un bloc électrique : elle reçoit le courant par son **arrière**.",
+          "",
+          "- Consommateur de **400 ohms**.",
+          "- Niveau de lumière = **tension / 10**, pleine luminosité (15) dès **150 V**.",
+          "- Un **signal de redstone** l'éteint.",
+          "- **Grille au-dessus de 1 A**, donc au-dessus de **400 V**.",
+          "",
+          "## Tube néon",
+          "Les tubes néon se raccordent entre eux comme des tuyaux et transmettent le courant le long de la ligne.",
+          "",
+          "- Consommateur de **200 ohms**, niveau de lumière = tension / 10.",
+          "- **Grille au-dessus de 1 A**, donc au-dessus de **200 V**. C'est la limite la plus basse de tous les blocs électriques : donnez aux néons leur propre réseau basse tension, via un transformateur ou un potentiomètre.",
+          "",
+          "Clic droit sur une lampe ou un tube néon avec une **teinture** pour changer sa couleur. Le noir et les gris sont refusés.",
+          "",
+          "Une lampe qui grille ne laisse rien tomber, comme tout bloc en surcharge."
+        ]
+      },
+      "items": ["tfmg:light_bulb", "tfmg:circular_light", "tfmg:modern_light", "tfmg:aluminum_lamp", "tfmg:neon_tube", "tfmg:potentiometer", "tfmg:transformer"]
+    },
+    {
+      "title": {
+        "en_us": "Traffic lights and vat machines",
+        "fr_fr": "Feux de circulation et machines de cuve"
+      },
+      "text": {
+        "en_us": [
+          "## Traffic light",
+          "It cycles on its own through red, then orange, then green, and starts again. Set the length of the cycle with its value box. It connects through its **top** and **bottom** faces, so you can stack it on a post, and it is a **175 ohm** consumer. It only lights up while powered.",
+          "",
+          "## Freezer",
+          "Cools a chemical vat. It connects on **any face** and is a **75 ohm** consumer. It only works with **more than 3 A**, which means above **225 V**, and burns above 400 A.",
+          "",
+          "## Electrode holder",
+          "Holds an electrode in a chemical vat for electrolysis. It takes power through its **top** face and needs at least **5 A** to work; its resistance depends on the electrode inside.",
+          "",
+          "Both are part of the vat multiblock. See the **Chemical Vats** chapter to build one, and the **Aluminium** chapter for electrolysis."
+        ],
+        "fr_fr": [
+          "## Feu de circulation",
+          "Il passe tout seul du rouge à l'orange puis au vert, et recommence. Réglez la durée du cycle avec sa boîte de valeur. Il se connecte par ses faces **du dessus** et **du dessous**, pour l'empiler sur un poteau, et c'est un consommateur de **175 ohms**. Il ne s'allume que lorsqu'il est alimenté.",
+          "",
+          "## Congélateur",
+          "Il refroidit une cuve chimique. Il se connecte sur **toutes ses faces** et c'est un consommateur de **75 ohms**. Il ne fonctionne qu'avec **plus de 3 A**, donc au-dessus de **225 V**, et grille au-delà de 400 A.",
+          "",
+          "## Porte-électrode",
+          "Il tient une électrode dans une cuve chimique pour l'électrolyse. Il reçoit le courant par sa face **du dessus** et demande au moins **5 A** pour fonctionner ; sa résistance dépend de l'électrode installée.",
+          "",
+          "Les deux font partie du multibloc de la cuve. Voir le chapitre **Cuves chimiques** pour en construire une, et le chapitre **L'aluminium** pour l'électrolyse."
+        ]
+      },
+      "items": ["tfmg:traffic_light", "tfmg:freezer", "tfmg:electrode_holder", "tfmg:copper_electrode", "tfmg:zinc_electrode", "tfmg:graphite_electrode"]
+    }
+  ]
+}

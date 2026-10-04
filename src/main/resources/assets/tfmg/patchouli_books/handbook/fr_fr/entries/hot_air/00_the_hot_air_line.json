@@ -1,0 +1,26 @@
+{
+  "name": "La ligne d'air chaud",
+  "icon": "tfmg:air_intake",
+  "category": "tfmg:hot_air",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le haut fourneau ne fonctionne que s'il reçoit de $(item)l'air chaud$(). Pour en produire, il faut trois machines : $(li)Une $(item)prise d'air$() transforme la rotation en $(item)air$(). $(li)Un $(item)fourneau à air chaud$() brûle un combustible pour chauffer cet air en $(item)air chaud$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Son combustible est la $(item)créosote$() (du four à coke) ou le $(item)gaz de haut fourneau$() (du haut fourneau lui-même). $(li)Un $(item)échappement$() ou une $(item)cheminée$() évacue le $(item)CO2$() rejeté par le fourneau.$(br2)$(l)La recette$()$(br)Chaque part de la recette prend $(item)25 mB d'air$() et $(item)5 mB de combustible$(), et donne $(item)25 mB d'air chaud$() et $(item)25 mB de CO2$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'air chaud passe ensuite par des tuyaux jusqu'à une $(item)trappe de haut fourneau$() placée dans la paroi. Construisez cette ligne avant le haut fourneau : démarrez le fourneau à air chaud à la créosote, puis, une fois le haut fourneau lancé, alimentez-le avec le gaz qu'il récupère."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:air_intake,tfmg:blast_stove,tfmg:exhaust,tfmg:air_bucket,tfmg:hot_air_bucket,tfmg:creosote_bucket,tfmg:furnace_gas_bucket,tfmg:carbon_dioxide_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

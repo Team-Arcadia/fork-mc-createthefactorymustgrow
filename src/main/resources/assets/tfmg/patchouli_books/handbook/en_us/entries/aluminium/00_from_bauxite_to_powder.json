@@ -1,0 +1,30 @@
+{
+  "name": "From bauxite to powder",
+  "icon": "tfmg:bauxite",
+  "category": "tfmg:aluminium",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Aluminium is everywhere in the electrical age: the $(item)steel mechanism$() needs it, and so do aluminium wire, pipes and the centrifuge. It all starts with $(item)Bauxite$(), a stone block.$(br2)$(l)Crushing$()$(br)Run Bauxite through Create's $(item)Crushing Wheels$(). Each block gives:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)2 Bauxite Powder$() with a 75% chance,$(li)$(item)1 more$() Bauxite Powder with a 20% chance.$(br2)That is about 1.7 powder per block on average, so mine plenty."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Two ways to aluminium$()$(li)$(item)Superheated mixing$() in a Create basin: easy to build, needs no electricity, but costs coal coke dust and gives a single ingot per batch.$(li)$(item)Electrolysis$() in a chemical vat: needs power and a heated vat, but gives more metal for the same powder."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Use the first to make your first ingots (you need aluminium to build the generators that power the second), then switch to electrolysis."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite,tfmg:bauxite_powder,create:crushing_wheel,tfmg:aluminum_ingot,tfmg:steel_mechanism",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

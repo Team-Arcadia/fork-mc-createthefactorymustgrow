@@ -3,6 +3,8 @@ package com.drmangotea.tfmg.content.machinery.misc.exhaust;
 
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.simibubi.create.Create;
@@ -32,7 +34,7 @@ import java.util.List;
 import java.util.Random;
 
 @SuppressWarnings("removal")
-public class ExhaustBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class ExhaustBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     protected IFluidHandler fluidCapability;
     public FluidTank tankInventory;
@@ -69,6 +71,23 @@ public class ExhaustBlockEntity extends SmartBlockEntity implements IHaveGoggleI
 
     }
 
+
+    @Override
+    public void inspect(InspectionReport report) {
+        int amount = tankInventory.getFluidAmount();
+        int capacity = tankInventory.getCapacity();
+        if (amount <= 0) {
+            report.info("exhaust.idle");
+            return;
+        }
+        // Same thresholds as tick(): fast once less than 300 mB of room is left.
+        int rate = tankInventory.getSpace() < 300 ? 100 : 10;
+        report.ok("exhaust.venting", rate, amount, capacity);
+        if (tankInventory.getSpace() <= 0) {
+            report.problem("exhaust.full");
+            report.fix("exhaust.full.fix");
+        }
+    }
 
     protected SmartFluidTank createInventory() {
         return new SmartFluidTank(1000, this::onFluidStackChanged) {

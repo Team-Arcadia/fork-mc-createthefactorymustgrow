@@ -1,0 +1,237 @@
+{
+  "order": 30,
+  "icon": "tfmg:coke_oven",
+  "title": {
+    "en_us": "The Coke Oven",
+    "fr_fr": "Le four à coke"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Why coke?",
+        "fr_fr": "Pourquoi du coke ?"
+      },
+      "text": {
+        "en_us": [
+          "Steel starts with **coal coke**. Crushed into **coal coke dust**, it is the only fuel the blast furnace burns, so the coke oven is the first machine of your steel line.",
+          "",
+          "The oven bakes one input at a time and gives:",
+          "- **Coal** becomes **coal coke**, plus creosote and CO2.",
+          "- Any **log that burns** becomes **charcoal**, plus creosote and CO2.",
+          "",
+          "The solid result drops out of the front door as an item. The two by-products are fluids that stay in the oven until you pump them out.",
+          "",
+          "A single coke oven block already works on its own. Building several into a square makes one bigger oven that cooks faster. The next pages show the shape, then how to feed it and how to empty it."
+        ],
+        "fr_fr": [
+          "L'acier commence par le **coke de charbon**. Broyé en **poussière de coke de charbon**, c'est le seul combustible du haut fourneau : le four à coke est donc la première machine de votre chaîne de l'acier.",
+          "",
+          "Le four cuit une entrée à la fois et donne :",
+          "- Le **charbon** devient du **coke de charbon**, avec de la créosote et du CO2.",
+          "- Toute **bûche qui brûle** devient du **charbon de bois**, avec de la créosote et du CO2.",
+          "",
+          "Le résultat solide tombe par la porte avant sous forme d'objet. Les deux sous-produits sont des fluides qui restent dans le four jusqu'à ce que vous les pompiez.",
+          "",
+          "Un seul bloc de four à coke fonctionne déjà tout seul. En assembler plusieurs en carré donne un four plus grand qui cuit plus vite. Les pages suivantes montrent la forme, puis comment le remplir et le vider."
+        ]
+      },
+      "items": ["tfmg:coke_oven", "minecraft:coal", "tfmg:coal_coke", "tfmg:coal_coke_dust", "minecraft:oak_log", "minecraft:charcoal"]
+    },
+    {
+      "title": {
+        "en_us": "The shape",
+        "fr_fr": "La forme"
+      },
+      "text": {
+        "en_us": [
+          "A coke oven is a **square slice** of oven blocks: as many blocks **high** as it is **deep**, and only **one block wide**. Think of it as a row of long chambers running back from the doors.",
+          "",
+          "- Every block must face the **same way**. A block faces you when you place it, so place them all while looking at the future front.",
+          "- The **controller** is the **bottom front** block. Only the front column shows doors.",
+          "- Sizes go from **1x1** to **6x6** (the server setting cokeOvenMaxSize, 5 by default, sets the limit).",
+          "- Extra blocks above or behind a full-size square stay separate ovens.",
+          "",
+          "Ovens placed side by side are separate machines, each with its own controller. To build a battery, put several slices next to each other.",
+          "",
+          "The view shows a **3x3** oven facing south: three high, three deep."
+        ],
+        "fr_fr": [
+          "Un four à coke est une **tranche carrée** de blocs de four : autant de blocs en **hauteur** qu'en **profondeur**, et **un seul bloc de large**. Voyez-le comme une rangée de longues chambres qui partent des portes vers l'arrière.",
+          "",
+          "- Tous les blocs doivent regarder **dans le même sens**. Un bloc vous fait face quand vous le posez : posez-les tous en regardant la future façade.",
+          "- Le **contrôleur** est le bloc **en bas à l'avant**. Seule la colonne de devant montre des portes.",
+          "- La taille va de **1x1** à **6x6** (le réglage serveur cokeOvenMaxSize, 5 par défaut, fixe la limite).",
+          "- Des blocs en trop au-dessus ou derrière un carré de taille maximale restent des fours séparés.",
+          "",
+          "Des fours posés côte à côte sont des machines séparées, chacune avec son contrôleur. Pour une batterie, alignez plusieurs tranches.",
+          "",
+          "La vue montre un four **3x3** tourné vers le sud : trois de haut, trois de profondeur."
+        ]
+      },
+      "items": ["tfmg:coke_oven"],
+      "schematic": {
+        "layers": [
+          ["C", "C", "B"],
+          ["C", "C", "M"],
+          ["C", "C", "T"]
+        ],
+        "key": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Bigger is faster",
+        "fr_fr": "Plus grand, plus rapide"
+      },
+      "text": {
+        "en_us": [
+          "Cooking time is the recipe time divided by **half the size**, never by less than 1. One coal takes 1200 ticks, one log 600 ticks.",
+          "",
+          "## Time per coal / per log",
+          "- **1x1** and **2x2**: 60 s / 30 s",
+          "- **3x3**: 40 s / 20 s",
+          "- **4x4**: 30 s / 15 s",
+          "- **5x5**: 24 s / 12 s",
+          "- **6x6**: 20 s / 10 s",
+          "",
+          "A 2x2 is no faster than a single block, so jump straight to **3x3** or more.",
+          "",
+          "The oven still cooks **one item at a time**: a bigger oven gives the same coke per coal, only sooner. The by-products are made **every tick** the oven cooks, whatever its size, so a fast oven makes the same flow of fluid per second as a slow one, just less of it per coal.",
+          "",
+          "Watch the progress with Engineer's Goggles: it counts down the seconds left on the current item."
+        ],
+        "fr_fr": [
+          "Le temps de cuisson est le temps de la recette divisé par **la moitié de la taille**, jamais par moins de 1. Un charbon prend 1200 ticks, une bûche 600 ticks.",
+          "",
+          "## Temps par charbon / par bûche",
+          "- **1x1** et **2x2** : 60 s / 30 s",
+          "- **3x3** : 40 s / 20 s",
+          "- **4x4** : 30 s / 15 s",
+          "- **5x5** : 24 s / 12 s",
+          "- **6x6** : 20 s / 10 s",
+          "",
+          "Un 2x2 ne va pas plus vite qu'un bloc seul : passez directement à **3x3** ou plus.",
+          "",
+          "Le four cuit toujours **un objet à la fois** : un four plus grand donne autant de coke par charbon, simplement plus tôt. Les sous-produits sont créés **à chaque tick** de cuisson, quelle que soit la taille : un four rapide produit le même débit de fluide par seconde qu'un lent, mais moins par charbon.",
+          "",
+          "Suivez la progression avec les lunettes d'ingénieur : elles affichent les secondes restantes sur l'objet en cours."
+        ]
+      },
+      "items": ["tfmg:coke_oven", "minecraft:coal", "create:goggles"]
+    },
+    {
+      "title": {
+        "en_us": "Feeding the oven",
+        "fr_fr": "Remplir le four"
+      },
+      "text": {
+        "en_us": [
+          "The oven has a single slot that holds up to **64** items of one kind. Every block of the square leads to the controller's slot, so you can insert from any face of any oven block.",
+          "",
+          "- Use a **funnel**, a **chute**, a hopper or a belt ending in a funnel to push coal or logs in.",
+          "- The slot is **insert only**: a hopper under the oven can no longer pull the coal back out.",
+          "",
+          "## Collecting the coke",
+          "When an item is done, the result is **dropped as an item** just in front of the **controller** (the bottom front block), with a small push forward. The doors swing open near the end of each cycle.",
+          "",
+          "Leave that space free and catch the drops: a belt running across the front, or a hopper or funnel set right in front of the controller, works well. Send the coke to a crushing wheel or millstone to make **coal coke dust** for the blast furnace."
+        ],
+        "fr_fr": [
+          "Le four a un seul emplacement qui contient jusqu'à **64** objets d'un même type. Chaque bloc du carré mène à l'emplacement du contrôleur : vous pouvez insérer par n'importe quelle face de n'importe quel bloc du four.",
+          "",
+          "- Utilisez un **entonnoir**, une **glissière**, un entonnoir vanilla ou un tapis finissant sur un entonnoir pour y mettre du charbon ou des bûches.",
+          "- L'emplacement est en **insertion seule** : un entonnoir sous le four ne peut plus en retirer le charbon.",
+          "",
+          "## Récupérer le coke",
+          "Quand un objet est prêt, le résultat est **lâché sous forme d'objet** juste devant le **contrôleur** (le bloc en bas à l'avant), avec une petite poussée vers l'avant. Les portes s'ouvrent vers la fin de chaque cycle.",
+          "",
+          "Laissez cet espace libre et récupérez ce qui tombe : un tapis qui passe devant, ou un entonnoir posé juste devant le contrôleur, fonctionne bien. Envoyez le coke vers des roues de concassage ou une meule pour obtenir la **poussière de coke de charbon** du haut fourneau."
+        ]
+      },
+      "items": ["create:andesite_funnel", "create:chute", "minecraft:hopper", "create:belt_connector", "create:crushing_wheel", "create:millstone", "tfmg:coal_coke", "tfmg:coal_coke_dust"]
+    },
+    {
+      "title": {
+        "en_us": "Creosote and CO2",
+        "fr_fr": "Créosote et CO2"
+      },
+      "text": {
+        "en_us": [
+          "The controller has two tanks of **8000 mB** each, shared by the whole square. Each tick the oven cooks it adds:",
+          "",
+          "- coal: **1 mB creosote** and **30 mB CO2**",
+          "- logs: **2 mB creosote** and **20 mB CO2**",
+          "",
+          "## Where to pump",
+          "- **Creosote** comes out of **any side** and the bottom.",
+          "- **CO2** comes out of the **top face only**. Put a pump on top of the oven.",
+          "",
+          "Both tanks are **drain only**: you cannot pipe anything in, so a stray water line cannot clog them.",
+          "",
+          "CO2 builds up fast: at 30 mB per tick the CO2 tank fills in under 15 seconds of cooking. Pipe it from the top to an **exhaust** or a **smokestack** to get rid of it (see the Hot Air chapter).",
+          "",
+          "Keep the creosote: it is one of the two fuels of the **blast stove**, which heats air for the blast furnace."
+        ],
+        "fr_fr": [
+          "Le contrôleur a deux réservoirs de **8000 mB** chacun, partagés par tout le carré. À chaque tick de cuisson, le four ajoute :",
+          "",
+          "- charbon : **1 mB de créosote** et **30 mB de CO2**",
+          "- bûches : **2 mB de créosote** et **20 mB de CO2**",
+          "",
+          "## Où pomper",
+          "- La **créosote** sort par **n'importe quel côté** et par le dessous.",
+          "- Le **CO2** sort **uniquement par la face du dessus**. Placez une pompe sur le four.",
+          "",
+          "Les deux réservoirs sont en **vidange seule** : impossible d'y faire entrer un fluide, donc une conduite d'eau égarée ne peut pas les boucher.",
+          "",
+          "Le CO2 monte vite : à 30 mB par tick, son réservoir est plein en moins de 15 secondes de cuisson. Envoyez-le depuis le dessus vers un **échappement** ou une **cheminée** pour vous en débarrasser (voir le chapitre Air chaud).",
+          "",
+          "Gardez la créosote : c'est l'un des deux combustibles du **fourneau à air chaud**, qui chauffe l'air du haut fourneau."
+        ]
+      },
+      "items": ["tfmg:creosote_bucket", "tfmg:carbon_dioxide_bucket", "create:mechanical_pump", "create:fluid_pipe", "tfmg:exhaust", "tfmg:brick_smokestack", "tfmg:blast_stove"]
+    },
+    {
+      "title": {
+        "en_us": "When the oven stops",
+        "fr_fr": "Quand le four s'arrête"
+      },
+      "text": {
+        "en_us": [
+          "If either tank cannot take the next tick of by-product, the oven **pauses**. The timer freezes, the coal stays in the slot and no fluid is lost. As soon as you drain the tank, cooking resumes by itself.",
+          "",
+          "Look at any oven block with **Engineer's Goggles** to see what is happening. Besides the progress and both tanks, a red line tells you which tank blocks the oven:",
+          "",
+          "- **CO2 tank full: pump it out from the TOP face**",
+          "- **Creosote tank full: pump it out from a side**",
+          "",
+          "## Checklist",
+          "- No progress at all: is the slot empty, or does it hold something that is not coal or a log?",
+          "- Stuck at the same time left: a tank is full, read the red line.",
+          "- Coke piling up in front: the drop zone is blocked or nothing collects it.",
+          "- The oven is slower than expected: a block faces another way or is missing, so the square is smaller. Break and replace it facing the front."
+        ],
+        "fr_fr": [
+          "Si l'un des réservoirs ne peut pas recevoir le sous-produit du tick suivant, le four **se met en pause**. Le minuteur se fige, le charbon reste dans l'emplacement et aucun fluide n'est perdu. Dès que vous videz le réservoir, la cuisson reprend toute seule.",
+          "",
+          "Regardez n'importe quel bloc du four avec les **lunettes d'ingénieur** pour savoir ce qui se passe. En plus de la progression et des deux réservoirs, une ligne rouge indique quel réservoir bloque le four :",
+          "",
+          "- **Réservoir de CO2 plein : pompez-le par la face du HAUT**",
+          "- **Réservoir de créosote plein : pompez-le par un côté**",
+          "",
+          "## Vérifications",
+          "- Aucune progression : l'emplacement est-il vide, ou contient-il autre chose que du charbon ou une bûche ?",
+          "- Bloqué sur le même temps restant : un réservoir est plein, lisez la ligne rouge.",
+          "- Le coke s'entasse devant : la zone de chute est bouchée ou rien ne le ramasse.",
+          "- Le four est plus lent que prévu : un bloc regarde dans un autre sens ou manque, donc le carré est plus petit. Cassez-le et reposez-le face à l'avant."
+        ]
+      },
+      "items": ["create:goggles", "tfmg:coke_oven", "create:mechanical_pump"]
+    }
+  ]
+}

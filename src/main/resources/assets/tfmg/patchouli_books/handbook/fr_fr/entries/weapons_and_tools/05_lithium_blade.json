@@ -1,0 +1,30 @@
+{
+  "name": "Lame de lithium",
+  "icon": "tfmg:lithium_blade",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La $(item)lame de lithium$() est une épée en acier équipée d'un brûleur. Elle se fabrique avec une épée en acier, une plaque lourde, des plaques d'aluminium, une bougie d'allumage, un circuit imprimé et du fil de cuivre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)L'allumer Portez une $(item)charge de lithium$() (une plaque de plastique, 3 lingots de lithium et une plaque d'aluminium) et faites un clic droit avec la lame.$() Une charge est consommée et la lame s'allume pendant environ $(item)100 secondes$(). Elle s'éteint seule quand la charge est épuisée, et garde ses enchantements dans les deux sens."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Une fois allumée - Chaque coup inflige $(item)Feu infernal$() à la cible pendant 7 secondes, en s'ajoutant au Feu infernal qu'elle a déjà.$() Le Feu infernal garde la cible en flammes pendant toute sa durée. Chaque coup coûte 2 points de durabilité. $(li)Un clic droit lance un éventail de $(item)10 étincelles de lithium$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Elles donnent Feu infernal pendant 3 secondes mais n'allument pas les blocs. Cela coûte 5 secondes de charge, avec un temps de recharge de 3 secondes."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lithium_blade,tfmg:lithium_charge,tfmg:steel_sword,tfmg:spark_plug,tfmg:circuit_board,tfmg:heavy_plate",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

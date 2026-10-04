@@ -1,0 +1,26 @@
+{
+  "name": "Fuel table",
+  "icon": "tfmg:gasoline_bucket",
+  "category": "tfmg:engines",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each fuel multiplies the engine's speed, efficiency and torque (speed / efficiency / torque): $(li)$(item)Gasoline$(): 1 / 1 / 1 - $(item)Diesel$(): 0.8 / 0.8 / 1.4 - $(item)Kerosene$(): 0.7 / 1 / 1.4 - $(item)Naphtha$(): 1 / 0.7 / 1.3 - $(item)LPG$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "1.2 / 0.7 / 0.7 - $(item)Butane$(): 1.3 / 0.6 / 0.6 - $(item)Propane$(): 1.1 / 0.9 / 0.8 - $(item)Hydrogen$(): 1.4 / 0.5 / 0.6 - $(item)Creosote$(): 0.7 / 0.4 / 0.5 - $(item)Furnace Gas$(): 0.5 / 0.3 / 0.3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Diesel and kerosene are the heavy-duty fuels, the gases spin fast but weak, and creosote and furnace gas are cheap by-products for a first engine. These values multiply those of the engine type and of the upgrades. Modpacks can change them with datapacks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:gasoline_bucket,tfmg:diesel_bucket,tfmg:kerosene_bucket,tfmg:naphtha_bucket,tfmg:lpg_bucket,tfmg:hydrogen_bucket,tfmg:creosote_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

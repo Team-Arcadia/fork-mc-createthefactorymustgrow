@@ -1,0 +1,63 @@
+{
+  "name": "Le fourneau à air chaud",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Les blocs de fourneau à air chaud s'assemblent comme les réservoirs à fluide de Create : posez-les côte à côte et les uns sur les autres et ils fusionnent en un seul fourneau."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Largeur$() : 1x1 ou $(item)2x2$() au maximum.$(li)$(item)Hauteur$() : jusqu'à la limite de hauteur des réservoirs de Create (réglage serveur, 32 par défaut).$(br2)Quelle que soit sa taille, le fourneau a quatre réservoirs de $(item)8000 mB$() : air en entrée, combustible en entrée, air chaud en sortie, CO2 en sortie. Les lunettes affichent les quatre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La taille, c'est la vitesse$()$(br)Le fourneau fait un cycle, puis attend avant le suivant. Chaque cycle convertit $(item)une part par bloc$(), et l'attente raccourcit quand le fourneau grandit. La production suit donc le $(item)carré$() du nombre de blocs : deux fois plus de blocs, environ quatre fois plus d'air chaud."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Quelques blocs séparent un fourneau inutile d'un fourneau suffisant. La vue montre la taille qui suffit à un haut fourneau qui produit de l'acier : $(item)2x2 de large, 5 de haut$()."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Le fourneau à air chaud",
+      "multiblock": {
+        "pattern": [
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "SS"
+          ],
+          [
+            "SS",
+            "S0"
+          ]
+        ],
+        "mapping": {
+          "S": "tfmg:blast_stove",
+          "0": "tfmg:blast_stove"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove,create:goggles",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

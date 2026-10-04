@@ -1,0 +1,30 @@
+{
+  "name": "Dimensionner le fourneau",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Production approximative d'air chaud, toutes les entrées étant fournies : $(li)$(item)2x2x1$() (4 blocs) : environ 1 mB par tick - $(item)2x2x2$() (8 blocs) : environ 5 mB par tick - $(item)2x2x3$() (12 blocs) : environ 10 mB par tick - $(item)2x2x4$() (16 blocs) :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "environ 18 mB par tick - $(item)2x2x5$() (20 blocs) : environ $(item)28 mB par tick$() - $(item)2x2x6$() (24 blocs) : environ 40 mB par tick$(br2)Un haut fourneau qui produit de l'acier brûle $(item)20 mB d'air chaud par tick$() pendant qu'il travaille. Un fourneau $(item)2x2x5$() suffit à un haut fourneau avec de la marge ; montez plus haut pour deux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "À cette taille, le fourneau demande aussi environ $(item)28 mB d'air$(), $(item)6 mB de combustible$() et rejette $(item)28 mB de CO2$() par tick."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le fourneau se met en pause quand son réservoir $(item)d'air chaud$() ou de $(item)CO2$() est plein, et quand un réservoir d'entrée est vide. Un réservoir d'air chaud plein n'est pas grave : le haut fourneau a tout ce qu'il lui faut. Un réservoir de CO2 plein signifie que votre évacuation ne suit pas."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove,tfmg:hot_air_bucket,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

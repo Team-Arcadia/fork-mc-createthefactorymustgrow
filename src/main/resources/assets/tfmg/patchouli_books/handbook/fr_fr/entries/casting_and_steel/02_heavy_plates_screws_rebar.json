@@ -1,0 +1,26 @@
+{
+  "name": "Plaques lourdes, vis, armatures",
+  "icon": "tfmg:heavy_plate",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Plaque lourde$()$(br)La plaque d'acier de ce mod. C'est un $(item)assemblage séquencé$() : posez un lingot d'acier sur un tapis ou un dépôt sous une $(item)presse mécanique$() et pressez-le $(item)trois fois$(). Entre deux pressages, c'est une plaque lourde non traitée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une rangée de trois presses au-dessus d'un tapis le fait en un seul passage. Les plaques lourdes servent aux tuyaux et cuves en acier, au carter de machinerie lourd et au mécanisme en acier. Ce sont aussi les plaques d'acier de toutes les recettes qui en demandent.$(br2)$(l)Vis$()$(br)Découpez un lingot d'acier au tailleur de pierre ou avec une $(item)scie mécanique$() : $(item)4 vis$() par lingot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Armatures$()$(br)De la même façon : $(item)4 armatures$() par lingot d'acier. Il en faut pour le tournevis.$(br2)Le tailleur de pierre transforme aussi un lingot d'acier en $(item)8 tuyaux industriels$(), utilisés par les cheminées et les tours de distillation."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:heavy_plate,tfmg:unprocessed_heavy_plate,create:mechanical_press,create:depot,tfmg:screw,tfmg:rebar,create:mechanical_saw,tfmg:industrial_pipe",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

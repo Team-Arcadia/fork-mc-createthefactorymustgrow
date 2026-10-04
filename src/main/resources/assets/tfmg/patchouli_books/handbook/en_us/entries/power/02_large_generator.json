@@ -1,0 +1,58 @@
+{
+  "name": "Large generator",
+  "icon": "tfmg:rotor",
+  "category": "tfmg:power",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Place a $(item)rotor$() and surround it with $(item)8 stators$() in a ring, square around the rotor's axis: four on the sides and four on the corners. The stators take their shape by themselves. The rotor only generates when all eight are in place. Both parts come from a mechanical crafter."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Output$()$(li)Nothing below $(item)70 RPM$().$(li)Voltage: $(item)(RPM - 70) x 12$(), capped at $(item)10,000 V$().$(li)Power: $(item)(RPM - 70) x 320 W$().$(br2)At 256 RPM it gives $(item)2,232 V$() and $(item)59,520 W$(). The rotor has a stress impact of 240."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Take power from the $(item)stators$(). They handle 10,000 V, but most machines burn above $(item)1,000 V$(): run the line through insulators, cable tubes or posts into a $(item)large transformer$() before it reaches your factory."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large generator",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " S ",
+            "   "
+          ],
+          [
+            "ABC",
+            "D0E",
+            "FGH"
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:stator[facing=north,stator_state=corner_horizontal,value=true]",
+          "B": "tfmg:stator[facing=south,stator_state=side,value=true]",
+          "C": "tfmg:stator[facing=east,stator_state=corner_horizontal,value=true]",
+          "D": "tfmg:stator[facing=east,stator_state=side,value=true]",
+          "R": "tfmg:rotor[axis=y]",
+          "E": "tfmg:stator[facing=west,stator_state=side,value=true]",
+          "F": "tfmg:stator[facing=west,stator_state=corner_horizontal,value=true]",
+          "G": "tfmg:stator[facing=north,stator_state=side,value=true]",
+          "H": "tfmg:stator[facing=south,stator_state=corner_horizontal,value=true]",
+          "S": "create:shaft[axis=y]",
+          "0": "tfmg:rotor[axis=y]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:rotor,tfmg:stator,create:shaft,tfmg:large_coil",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

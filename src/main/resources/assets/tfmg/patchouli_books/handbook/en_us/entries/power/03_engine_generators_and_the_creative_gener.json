@@ -1,0 +1,26 @@
+{
+  "name": "Engine generators and the creative generator",
+  "icon": "tfmg:generator",
+  "category": "tfmg:power",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Generator on an engine$()$(br)Right-click a regular, radial or turbine engine with a $(item)generator$() to mount it as the engine's upgrade. An engine takes only one upgrade. The engine then feeds the network directly:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Voltage: $(item)20 x engine RPM / 500$().$(li)Power: $(item)1 W per engine RPM$().$(li)Engine torque is multiplied by $(item)0.7$().$(br2)At 4,000 engine RPM that gives 160 V and 4,000 W, on top of the rotation the engine still delivers. See the $(item)Engines$() chapter to build and fuel one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Creative generator$()$(br)Available in creative mode only. Set its voltage with the value box on top, from $(item)0 to 2,500 V$() in steps of 10 V. Its power is practically unlimited and it never overloads itself. Use it to test a setup before building real generators, but remember that the other blocks on its network still have their own limits."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,tfmg:regular_engine,tfmg:radial_engine,tfmg:turbine_engine,tfmg:creative_generator",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

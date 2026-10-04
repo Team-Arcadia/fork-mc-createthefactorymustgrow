@@ -1,0 +1,30 @@
+{
+  "name": "Outils en métal",
+  "icon": "tfmg:steel_pickaxe",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Trois métaux donnent un jeu complet d'épée, pioche, hache, pelle et houe. Il n'y a pas d'armure TFMG. $(li)$(item)Acier$() : 1000 utilisations, vitesse de minage 7,5, mine tout ce que mine un outil en diamant, enchantabilité 12."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le meilleur jeu au quotidien une fois le haut fourneau lancé. $(li)$(item)Aluminium$() : 220 utilisations, vitesse de minage 6, mine comme le fer, mais enchantabilité de $(item)22$(), bien plus que le fer. Idéal pour enchanter. $(li)$(item)Plomb$() : 32 utilisations, vitesse de minage 2, mine comme la pierre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Faible et mou, mais l'$(item)épée en plomb empoisonne$() 5 secondes et la $(item)hache en plomb$() 8 secondes, en s'ajoutant au poison déjà présent. Chaque coup coûte 2 points de durabilité.$(br2)Tous se réparent avec leur propre lingot sur une enclume."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Outils pour moteurs$()$(br)Le $(item)tournevis$() retire les pièces et les cylindres d'un moteur. La $(item)burette d'huile$() et la $(item)bouteille de liquide de refroidissement$() apportent les fluides aux moteurs : voir le chapitre Moteurs."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_pickaxe,tfmg:steel_sword,tfmg:aluminum_pickaxe,tfmg:lead_sword,tfmg:lead_axe,tfmg:screwdriver,tfmg:oil_can,tfmg:cooling_fluid_bottle",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Amélioration tuyauterie",
+  "icon": "tfmg:industrial_pipe",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Posez un $(item)tuyau industriel$() sur un bloc moteur et le moteur se ravitaille seul dans un réservoir de fluide qui touche ce bloc, sur l'une de ses six faces. Les réservoirs de Create et les réservoirs en acier de TFMG fonctionnent tous les deux, y compris en multibloc."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Toutes les demi-secondes, il transfère jusqu'à $(item)500 mB$() de carburant vers le moteur.$(li)Il ne transfère $(item)que ce que le moteur accepte$(). Si le moteur contient déjà un autre fluide, ou si son réservoir de 4000 mB est plein, rien ne quitte le réservoir."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Depuis la 1.3.0, l'amélioration interroge d'abord le moteur et ne prélève que cette quantité. Avant, elle pouvait prélever un carburant refusé par le moteur et le faire disparaître, et un réservoir source plein n'alimentait jamais rien."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'amélioration trouve seule un nouveau réservoir quand vous en posez ou remplacez un à côté du moteur. Collez le réservoir au bloc qui porte le tuyau, pas à un autre bloc de la rangée."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:industrial_pipe,create:fluid_tank,tfmg:steel_fluid_tank",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

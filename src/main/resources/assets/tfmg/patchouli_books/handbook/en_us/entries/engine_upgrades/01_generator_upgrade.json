@@ -1,0 +1,30 @@
+{
+  "name": "Generator upgrade",
+  "icon": "tfmg:generator",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Mount a $(item)Generator$() on an engine block and the engine also feeds the electrical network it is wired to. It makes power on top of its rotation, at the cost of $(item)torque x0.7$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)How much$()$(br)Both values follow the engine's speed, the RPM shown on the goggles:$(li)$(item)Voltage = 1.6 V per RPM$()$(li)$(item)Power = 40 W per RPM$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A type I engine on gasoline at full signal turns at 100 RPM, so its generator gives $(item)160 V and 4000 W$(). A faster engine (turbine, turbo, light fuel) gives more voltage, a slower one less. When the engine stops, so does the power."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Use a $(item)Multimeter$() on the network to read the voltage and power actually generated. Keep an eye on the voltage limit of your cables and machines: most blocks burn out above their maximum voltage (see the Troubleshooting chapter)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,tfmg:multimeter,tfmg:copper_wire",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

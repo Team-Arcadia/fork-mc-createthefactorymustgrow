@@ -1,0 +1,30 @@
+{
+  "name": "Diode, potentiomètre et résistance",
+  "icon": "tfmg:electric_diode",
+  "category": "tfmg:network_control",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Diode$()$(br)Elle laisse passer le courant $(item)dans un seul sens$(), de son arrière vers son avant, sans changer la tension. Utilisez-la pour alimenter un réseau qui ne doit jamais renvoyer de courant."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Potentiomètre$()$(br)Un pont avec un cadran : il laisse passer de $(item)0 à 100 %$() de sa tension d'entrée, 100 % par défaut. C'est aussi une source pour $(item)liaison d'affichage$() pour la tension.$(br2)Faites un clic droit sur une diode ou un potentiomètre avec un $(item)carter de machinerie lourde$() pour l'encastrer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Résistance$()$(br)Un simple $(item)consommateur$() à résistance fixe. Elle se connecte par sa face arrière et transforme le courant en rien, ce qui en fait une charge de test pratique pour vérifier que vos générateurs suivent."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Bobinez-la sur l'$(item)enrouleuse$() avec une $(item)bobine de constantan$(). Le cadran règle sa résistance par pas de 10 ohms, jusqu'à $(item)1 000 ohms$(). Une résistance plus faible consomme plus : à 300 V, 100 ohms consomment 900 W, 1 000 ohms seulement 90 W."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_diode,tfmg:potentiometer,tfmg:heavy_machinery_casing,tfmg:resistor,tfmg:constantan_spool,tfmg:winding_machine",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

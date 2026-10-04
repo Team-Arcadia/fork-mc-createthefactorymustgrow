@@ -1,0 +1,30 @@
+{
+  "name": "Winding in sequenced assembly",
+  "icon": "tfmg:electric_motor",
+  "category": "tfmg:winding_and_magnets",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Several machines are built by $(item)sequenced assembly$(), with a winding step in the loop. Put a Winding Machine on the belt line, with the right spool mounted, where the sequence asks for winding. $(li)$(item)Electric Motor$(): starts from a shaft, 3 loops."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The winding step takes $(item)75 turns$() of a $(item)Copper Spool$(), then a magnet, a steel mechanism and a screwdriver. $(li)$(item)Generator$(): starts from a shaft, 3 loops. Capacitor, steel plate, then $(item)75 turns$() of a $(item)Copper Spool$(), then a magnet, a steel mechanism and a screwdriver. $(li)$(item)Potentiometer$(): starts from a Heavy Machinery Casing, 3 loops."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)100 turns$() of a $(item)Constantan Spool$(), then a steel cogwheel, copper wire and lubrication oil.$(br2)For these steps the target value box does not matter: the recipe sets the number of turns."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A winding step $(item)waits$() when the mounted spool is the wrong metal or out of turns. The item never skips the step, so a line that stops here usually just needs a fresh spool. A funnel can swap empty spools for full ones."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_motor,tfmg:generator,tfmg:potentiometer,tfmg:copper_spool,tfmg:constantan_spool,tfmg:magnet,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

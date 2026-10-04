@@ -1,0 +1,34 @@
+{
+  "name": "Nouveautés de la 1.3.0 : machines",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Cuve chimique$() : casser le contrôleur rend ses objets, et une cuve absorbée quand vous en construisez une plus grande lui transmet ses objets et ses fluides au lieu de les perdre. $(li)$(item)Four à arc$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "JEI montre désormais que la poussière de coke est un $(item)catalyseur$() qui retourne à l'entrée de la cuve, dont seuls 10 % environ sont consommés par fournée. C'était la cause des signalements « rien n'est produit ». $(li)$(item)Haut fourneau$() : la trappe garde ses objets, et le fourneau sauvegarde son combustible et le rend quand on le casse. $(li)$(item)Bassin de coulée$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "récupérez le lingot coulé $(item)à main nue$(), sans entonnoir. $(li)$(item)Lance-flammes$() : seul le carburant qui sort vraiment d'un réservoir est crédité, il ne se remplit plus gratuitement sur un moteur. $(li)$(item)Amélioration tuyauterie$() : ne fait plus disparaître de carburant et ne transfère que ce que le moteur accepte. $(li)$(item)Grand moteur$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "les lunettes expliquent maintenant pourquoi il est à l'arrêt."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Nouvelles recettes$()$(li)Un $(item)aimant à la main$() : un lingot d'alliage magnétique, 3 blocs de redstone et une boussole, pour le premier aimant avant d'avoir un polariseur.$(li)$(item)De l'aluminium au mélangeur surchauffé$() : 4 poudres de bauxite et 1 poussière de coke donnent un lingot d'aluminium, pour démarrer avant l'électrolyse."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:casting_basin,tfmg:blast_furnace_hatch,tfmg:magnet,tfmg:bauxite_powder,tfmg:aluminum_ingot,create:mechanical_mixer,create:blaze_burner",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

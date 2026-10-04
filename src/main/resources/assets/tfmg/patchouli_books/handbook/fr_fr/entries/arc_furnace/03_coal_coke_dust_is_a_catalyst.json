@@ -1,0 +1,30 @@
+{
+  "name": "La poussière de coke est un catalyseur",
+  "icon": "tfmg:coal_coke_dust",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "C'est le point qui trouble tout le monde, alors lisez attentivement.$(br2)Chaque fournée $(item)consomme une poussière de coke de charbon$(). Ensuite, $(item)90 % du temps$(), une poussière est $(item)rendue à l'entrée de la cuve$(), pas à la sortie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Donc en regardant la cuve :$(br2)$(li)le nombre de poussières $(item)reste en général le même$() d'une fournée à l'autre,$(li)il $(item)baisse de 1 environ une fois toutes les 10 fournées$(),$(li)la poussière de coke $(item)ne sort jamais$() côté sortie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Rien n'est cassé, et la poussière n'est ni dupliquée ni perdue : elle se comporte comme un catalyseur. Une pile de 64 poussières dure environ 640 fournées, soit 640 lingots d'acier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gardez quelques poussières en entrée et complétez de temps en temps, ou laissez un entonnoir en ajouter lentement. Si l'emplacement d'entrée est plein quand une poussière revient, elle part en sortie pour ne jamais être supprimée.$(br2)JEI montre la même chose sur la recette : la poussière y est indiquée comme rendue à l'entrée de la cuve, avec environ 10 % consommés par cycle."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coal_coke_dust,tfmg:coal_coke,create:crushing_wheel",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

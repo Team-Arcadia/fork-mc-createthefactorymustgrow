@@ -1,0 +1,30 @@
+{
+  "name": "Recettes : froid et pression",
+  "icon": "tfmg:butane_bucket",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)GPL comprimé$()$(br)500 mB de butane et 500 mB de propane donnent 1000 mB de GPL en 3 secondes.$(li)Un $(item)compresseur$(), $(item)pression de 1$().$(li)Cuve en $(item)acier$() ou $(item)réfractaire$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Séparation du GPL$()$(br)1000 mB de GPL donnent 500 mB de butane et 500 mB de propane en 4 secondes.$(li)Un $(item)congélateur$(). Toutes les sortes de cuves.$(br2)$(l)Liquide de refroidissement$()$(br)500 mB d'eau et 250 mB d'huile de lubrification donnent 500 mB de liquide de refroidissement en 4 secondes.$(li)Un $(item)congélateur$(). Toutes les sortes de cuves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Air liquide$()$(br)1000 mB d'air donnent 250 mB de liquide de refroidissement en 6 secondes.$(li)Un $(item)congélateur$() et un $(item)compresseur$(), $(item)pression de 1$().$(li)Cuve en $(item)acier$() ou $(item)réfractaire$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une cuve en acier montée pour l'air liquide (congélateur et compresseur) peut lancer les quatre recettes, car des machines en plus qui fonctionnent ne gênent jamais. Gardez simplement une seule sorte de fluide d'entrée par cuve pour qu'elle fasse toujours ce que vous attendez.$(br2)Tailles : toutes les recettes de cette page fonctionnent dans une seule cuve 1x1."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:butane_bucket,tfmg:propane_bucket,tfmg:lpg_bucket,tfmg:lubrication_oil_bucket,tfmg:cooling_fluid_bucket,tfmg:air_bucket,tfmg:compressor,tfmg:freezer",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

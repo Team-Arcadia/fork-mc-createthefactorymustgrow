@@ -92,3 +92,10 @@ modId = "flywheel"
 type = "required"
 versionRange = "[1.0.0,)"
 side = "BOTH"
+# The Factory Handbook, the in-game guide to the mod, is a Patchouli book.
+[[dependencies."${mod_id}"]]
+modId = "patchouli"
+type = "required"
+versionRange = "[1.21.1-93,)"
+ordering = "NONE"
+side = "BOTH"

@@ -1,0 +1,30 @@
+{
+  "name": "Remplir le four",
+  "icon": "create:andesite_funnel",
+  "category": "tfmg:coke_oven",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le four a un seul emplacement qui contient jusqu'à $(item)64$() objets d'un même type. Chaque bloc du carré mène à l'emplacement du contrôleur : vous pouvez insérer par n'importe quelle face de n'importe quel bloc du four."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Utilisez un $(item)entonnoir$(), une $(item)glissière$(), un entonnoir vanilla ou un tapis finissant sur un entonnoir pour y mettre du charbon ou des bûches.$(li)L'emplacement est en $(item)insertion seule$() : un entonnoir sous le four ne peut plus en retirer le charbon."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Récupérer le coke$()$(br)Quand un objet est prêt, le résultat est $(item)lâché sous forme d'objet$() juste devant le $(item)contrôleur$() (le bloc en bas à l'avant), avec une petite poussée vers l'avant. Les portes s'ouvrent vers la fin de chaque cycle."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Laissez cet espace libre et récupérez ce qui tombe : un tapis qui passe devant, ou un entonnoir posé juste devant le contrôleur, fonctionne bien. Envoyez le coke vers des roues de concassage ou une meule pour obtenir la $(item)poussière de coke de charbon$() du haut fourneau."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:andesite_funnel,create:chute,minecraft:hopper,create:belt_connector,create:crushing_wheel,create:millstone,tfmg:coal_coke,tfmg:coal_coke_dust",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

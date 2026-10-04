@@ -1,0 +1,30 @@
+{
+  "name": "Magnetic alloy and magnets",
+  "icon": "tfmg:nickel_ingot",
+  "category": "tfmg:winding_and_magnets",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Magnetic Alloy$()$(br)Mix $(item)2 Nickel Ingots$(), $(item)1 Silicon Ingot$() and $(item)2 Steel Ingots$() in a $(item)heated$() basin: you get $(item)2 Magnetic Alloy Ingots$() (15 seconds). Press an ingot to get a $(item)Magnetic Alloy Sheet$(); nine sheets craft a Laminated Magnetic Alloy Block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The Polarizer$()$(br)The $(item)Polarizer$() turns a $(item)Magnetic Alloy Ingot$() into a $(item)Magnet$(). Right-click it with the ingot (or feed it with a funnel), then give it power on its $(item)back face$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)It needs at least $(item)2000 W$(). While charging it is a 30 ohm load, so about $(item)245 V$() is the minimum.$(li)Charging takes $(item)10 seconds$(), then the ingot becomes a magnet. Goggles show the charge.$(li)Right-click with an empty hand to take the magnet out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Your first magnet$()$(br)The polarizer needs an $(item)Electric Gauge$(), and the gauge needs a magnet. Since 1.3.0 a hand recipe breaks that loop: a $(item)Magnetic Alloy Ingot$() in the middle, $(item)Blocks of Redstone$() above, left and right of it, and a $(item)Compass$() below. It is expensive on purpose: build a polarizer as soon as you can."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:nickel_ingot,tfmg:silicon_ingot,tfmg:magnetic_alloy_ingot,tfmg:magnetic_alloy_sheet,tfmg:polarizer,tfmg:magnet,tfmg:voltmeter,minecraft:compass",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

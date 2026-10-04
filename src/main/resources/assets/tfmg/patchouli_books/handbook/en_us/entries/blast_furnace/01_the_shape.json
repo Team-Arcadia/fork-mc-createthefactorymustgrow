@@ -1,0 +1,73 @@
+{
+  "name": "The shape",
+  "icon": "tfmg:fireproof_brick_reinforcement",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The furnace is a stack of $(item)3x3 layers$(), from $(item)3 up to 10$() layers high (server setting blastFurnaceMaxHeight)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Every layer$()$(li)The $(item)4 corners$(): Fireproof Brick Reinforcement.$(li)The $(item)4 edge middles$(): Fireproof Bricks.$(li)The $(item)centre$(): empty air.$(br2)$(l)The bottom layer$()$(li)Its $(item)centre$() is a block of $(item)Fireproof Bricks$(): the floor of the shaft.$(li)One edge brick is replaced by the $(item)Blast Furnace Output$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The furnace counts layers from the bottom and stops at the first one that is wrong, so a mistake on layer 4 gives you a 3-layer furnace. Below 3 complete layers it does nothing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The view shows the smallest furnace: 3 layers, the output on the south side, a hot air hatch on the west wall and a gas hatch on top. It takes 12 reinforcements, 11 fireproof bricks, the output and 2 hatches."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "The shape",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " H ",
+            "   "
+          ],
+          [
+            "eFf",
+            "F F",
+            "gFh"
+          ],
+          [
+            "aFb",
+            "H F",
+            "cFd"
+          ],
+          [
+            "aFb",
+            "F0F",
+            "cOd"
+          ]
+        ],
+        "mapping": {
+          "a": "tfmg:fireproof_brick_reinforcement[east=tall,south=tall,up=true]",
+          "b": "tfmg:fireproof_brick_reinforcement[west=tall,south=tall,up=true]",
+          "c": "tfmg:fireproof_brick_reinforcement[east=tall,north=tall,up=true]",
+          "d": "tfmg:fireproof_brick_reinforcement[west=tall,north=tall,up=true]",
+          "e": "tfmg:fireproof_brick_reinforcement[east=low,south=low,up=true]",
+          "f": "tfmg:fireproof_brick_reinforcement[west=low,south=low,up=true]",
+          "g": "tfmg:fireproof_brick_reinforcement[east=low,north=low,up=true]",
+          "h": "tfmg:fireproof_brick_reinforcement[west=low,north=low,up=true]",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "0": "tfmg:fireproof_bricks"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_brick_reinforcement,tfmg:fireproof_bricks,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

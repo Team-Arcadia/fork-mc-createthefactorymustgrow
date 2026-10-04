@@ -20,7 +20,7 @@ import static com.drmangotea.tfmg.base.blocks.WallMountBlock.FACING;
 import static com.drmangotea.tfmg.content.electricity.lights.LightBulbBlock.LIGHT;
 
 
-public class LightBulbBlockEntity extends ElectricBlockEntity {
+public class LightBulbBlockEntity extends ElectricBlockEntity implements com.drmangotea.tfmg.content.items.inspector.IInspectable {
 
     public LerpedFloat glow = LerpedFloat.linear();
 
@@ -83,6 +83,18 @@ public class LightBulbBlockEntity extends ElectricBlockEntity {
     @Override
     public float resistance() {
         return 400;
+    }
+
+    @Override
+    public void inspect(com.drmangotea.tfmg.content.items.inspector.InspectionReport report) {
+        report.info("light.face", net.minecraft.network.chat.Component.translatable("tfmg.inspector.dir." + getBlockState().getValue(FACING).getOpposite().getName()));
+        int safe = (int) (getMaxCurrent() * resistance());
+        int voltage = getData().getVoltage();
+        report.check(voltage <= safe, "light.limit", "light.over_limit", "light.over_limit.fix", voltage, safe);
+        if (hasSignal) {
+            report.problem("light.redstone_off");
+            report.fix("light.redstone_off.fix");
+        }
     }
 
 

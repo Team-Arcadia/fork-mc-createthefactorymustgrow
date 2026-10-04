@@ -1,0 +1,83 @@
+{
+  "name": "Le haut fourneau renforcé",
+  "icon": "tfmg:blast_furnace_reinforcement",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un haut fourneau construit $(item)entièrement en blocs renforcés$() travaille deux fois plus vite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Coins$() : renfort de haut fourneau (le rouillé marche aussi) ou blocs d'acier.$(li)$(item)Côtés$() : briques réfractaires renforcées ou blocs d'acier. La trappe compte comme renforcée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fabriquer les briques renforcées$()$(br)Montez le côté en briques réfractaires, puis posez un $(item)renfort de haut fourneau contre sa face extérieure$(). Il devient une plaque fine et transforme la brique derrière lui en briques réfractaires renforcées. Retirer la plaque annule l'effet."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "De ce fait, un renfort posé contre le côté d'une brique réfractaire devient toujours une plaque. Posez d'abord les $(item)coins$(), ou posez-les sur le coin du dessous, jamais en cliquant sur une brique voisine.$(br2)Un seul bloc normal dans les parois rend tout le fourneau normal. La sortie et le centre du bas ne comptent pas. Les lunettes affichent $(item)Renforcé$() quand c'est réussi."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La liste sous la vue ignore les briques et les plaques : ajoutez 10 briques réfractaires et 10 renforts de haut fourneau."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Le haut fourneau renforcé",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "  H  ",
+            "     ",
+            "     "
+          ],
+          [
+            "  n  ",
+            " RBR ",
+            "wB Be",
+            " RBR ",
+            "  s  "
+          ],
+          [
+            "  n  ",
+            " RBR ",
+            " H Be",
+            " RBR ",
+            "  s  "
+          ],
+          [
+            "  n  ",
+            " RBR ",
+            "wB0Be",
+            " ROR ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "R": "tfmg:blast_furnace_reinforcement",
+          "B": "tfmg:reinforced_fireproof_bricks",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "n": "tfmg:blast_furnace_reinforcement_wall[facing=north]",
+          "s": "tfmg:blast_furnace_reinforcement_wall[facing=south]",
+          "e": "tfmg:blast_furnace_reinforcement_wall[facing=east]",
+          "w": "tfmg:blast_furnace_reinforcement_wall[facing=west]",
+          "0": "tfmg:fireproof_bricks"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_reinforcement,tfmg:rusted_blast_furnace_reinforcement,tfmg:fireproof_bricks,tfmg:steel_block,tfmg:heavy_plate",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

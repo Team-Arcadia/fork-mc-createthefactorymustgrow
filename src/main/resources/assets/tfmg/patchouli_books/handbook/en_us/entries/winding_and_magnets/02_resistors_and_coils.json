@@ -1,0 +1,30 @@
+{
+  "name": "Resistors and coils",
+  "icon": "tfmg:unfinished_resistor",
+  "category": "tfmg:winding_and_magnets",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The target value$()$(br)The value box on the machine's front sets a target from 1 to 100, $(item)multiplied by 10$(): from $(item)10 to 1000$() turns (200 by default). One turn of wire is $(item)1 ohm$() on a resistor and $(item)1 turn$() on a coil."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Resistors$()$(br)Craft an $(item)Unfinished Resistor$() (copper wire, Plastic Sheet or Slime Ball, copper wire, in a column). Wind it with a $(item)Constantan Spool$(): it comes out as a $(item)Resistor$() whose resistance is the target. Put a finished resistor back in and it is wound up to a higher target."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Electromagnetic Coils$()$(br)Craft $(item)Unfinished Electromagnetic Coils$() (steel nugget, Magnetic Alloy Ingot, steel nugget: gives 2). Wind one with a $(item)Copper Spool$() to get a coil with the target's number of turns. Transformers use these turns."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Large Coils$()$(br)Wind a $(item)Laminated Magnetic Alloy Block$() (9 Magnetic Alloy Sheets) with a $(item)Copper Spool$(). The $(item)Large Coil$() gets the target's turns.$(br2)Set the target $(item)before$() you start: a job takes as many turns from the spool as the target asks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:unfinished_resistor,tfmg:resistor,tfmg:unfinished_electromagnetic_coil,tfmg:electromagnetic_coil,tfmg:laminated_magnetic_alloy_block,tfmg:large_coil,tfmg:plastic_sheet,tfmg:steel_nugget",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

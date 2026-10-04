@@ -1,0 +1,26 @@
+{
+  "name": "The oil hammer",
+  "icon": "tfmg:oil_hammer",
+  "category": "tfmg:finding_oil",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)oil hammer$() reads how much a deposit holds. Right-click any block with it: the hammer looks $(item)straight down, up to 300 blocks$(), and stops at the first oil deposit in that column. It never searches sideways, so stand right above the deposit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "If it finds one, the action bar shows $(item)Oil Reserves: N$() in yellow. Good to know: $(li)A deposit only gets a reserve figure once a $(item)pumpjack has started pumping it$(). Before that, the hammer finds the deposit but stays silent. $(li)The figure is rolled the first time, between 1000 and the server setting $(item)depositMaxReserves$() (10000 by default)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Deposits within 32 blocks of each other share $(item)one reserve$(). $(li)In this version pumping does $(item)not$() drain the reserve, so a deposit never runs dry. A server can also turn on $(item)infiniteDeposits$().$(br2)In practice the hammer is most useful to check that a pipe column really ends on a deposit: hit the top of the column, and a message means the column is right above one."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:oil_hammer,tfmg:oil_deposit,tfmg:pumpjack_base",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

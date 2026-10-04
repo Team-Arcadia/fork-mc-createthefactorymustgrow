@@ -1,0 +1,6 @@
+{
+  "name": "Finding Oil",
+  "description": "Crude oil comes from oil deposits, generated in every Overworld biome at the very bottom of the world, Y -64, in the bedrock layer.",
+  "icon": "tfmg:surface_scanner",
+  "sortnum": 150
+}

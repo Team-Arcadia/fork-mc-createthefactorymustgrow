@@ -1,0 +1,198 @@
+{
+  "order": 150,
+  "icon": "tfmg:surface_scanner",
+  "title": {
+    "en_us": "Finding Oil",
+    "fr_fr": "Trouver du pétrole"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Where oil hides",
+        "fr_fr": "Où se cache le pétrole"
+      },
+      "text": {
+        "en_us": [
+          "Crude oil comes from **oil deposits**, generated in every Overworld biome at the very bottom of the world, **Y -64**, in the bedrock layer.",
+          "",
+          "- A field appears on average in **one chunk out of 16**.",
+          "- A field holds **one to six** deposit blocks, spread up to 12 blocks around its centre.",
+          "- Above each deposit sits a column of **crude oil** source blocks, up to about two dozen blocks tall, with a few sources leaking sideways.",
+          "- **Fossilstone** sits beside the lowest four blocks of each column.",
+          "",
+          "The deposit block itself cannot be broken, not even by the Wither or the Ender Dragon. You never mine it: you pump it from above, through a column of industrial pipes, with a pumpjack.",
+          "",
+          "Digging down blindly is slow and dangerous, so use the tools on the next pages to find a field first, then plan a straight shaft from the surface down to it."
+        ],
+        "fr_fr": [
+          "Le pétrole brut vient des **gisements de pétrole**, générés dans tous les biomes de l'Overworld tout au fond du monde, à **Y -64**, dans la couche de bedrock.",
+          "",
+          "- Un champ apparaît en moyenne dans **un chunk sur 16**.",
+          "- Un champ compte **un à six** blocs de gisement, répartis jusqu'à 12 blocs autour de son centre.",
+          "- Au-dessus de chaque gisement se dresse une colonne de sources de **pétrole brut**, haute d'une vingtaine de blocs au plus, avec quelques sources qui fuient sur les côtés.",
+          "- De la **pierre fossile** borde les quatre blocs les plus bas de chaque colonne.",
+          "",
+          "Le bloc de gisement est incassable, même par le Wither ou l'Ender Dragon. Vous ne le minez jamais : vous le pompez par le haut, à travers une colonne de tuyaux industriels, avec une pompe à pétrole.",
+          "",
+          "Creuser au hasard est lent et dangereux. Utilisez d'abord les outils des pages suivantes pour trouver un champ, puis prévoyez un puits bien droit de la surface jusqu'à lui."
+        ]
+      },
+      "items": ["tfmg:oil_deposit", "tfmg:crude_oil_bucket", "tfmg:fossilstone", "tfmg:industrial_pipe"]
+    },
+    {
+      "title": {
+        "en_us": "Desert oil wells and fossilstone",
+        "fr_fr": "Puits du désert et pierre fossile"
+      },
+      "text": {
+        "en_us": [
+          "## Oil wells",
+          "Deserts (the biomes where desert pyramids can spawn) sometimes hold an **oil well**: on average once every **500 chunks**. It is a pillar of crude oil rising from a deposit at Y -64 all the way to roughly **70 to 80 blocks above the ground**, visible from very far away.",
+          "",
+          "An oil well is free crude oil for a bucket or a pump, and its base is an ordinary deposit you can tap with a pumpjack later.",
+          "",
+          "## Fossilstone",
+          "Fossilstone is a dark stone that only generates next to oil: around the bottom of deposit columns and in patches along the shaft of an oil well.",
+          "",
+          "- It is extremely tough: hardness **100**, twice that of obsidian, and blast resistance **1200**.",
+          "- Any pickaxe drops it, but it takes a long time to break.",
+          "",
+          "When a tunnel or a cave near bedrock runs into fossilstone, crude oil is right next to you. Mine around it, or simply build your pipe column beside it."
+        ],
+        "fr_fr": [
+          "## Les puits de pétrole",
+          "Les déserts (les biomes où peuvent apparaître des pyramides du désert) cachent parfois un **puits de pétrole** : en moyenne une fois tous les **500 chunks**. C'est un pilier de pétrole brut qui part d'un gisement à Y -64 et monte jusqu'à environ **70 à 80 blocs au-dessus du sol**, visible de très loin.",
+          "",
+          "Un puits, c'est du pétrole brut gratuit pour un seau ou une pompe, et sa base est un gisement ordinaire que vous pourrez exploiter plus tard avec une pompe à pétrole.",
+          "",
+          "## La pierre fossile",
+          "La pierre fossile est une roche sombre qui n'apparaît qu'à côté du pétrole : autour du bas des colonnes de gisement et par plaques le long du puits d'un puits de pétrole.",
+          "",
+          "- Elle est extrêmement solide : dureté **100**, le double de l'obsidienne, et résistance aux explosions **1200**.",
+          "- N'importe quelle pioche la récupère, mais il faut longtemps pour la casser.",
+          "",
+          "Quand un tunnel ou une grotte près de la bedrock tombe sur de la pierre fossile, le pétrole brut est tout proche. Contournez-la, ou montez simplement votre colonne de tuyaux à côté."
+        ]
+      },
+      "items": ["tfmg:fossilstone", "tfmg:crude_oil_bucket", "minecraft:bucket", "minecraft:sand"]
+    },
+    {
+      "title": {
+        "en_us": "The surface scanner",
+        "fr_fr": "Le scanner de surface"
+      },
+      "text": {
+        "en_us": [
+          "The **surface scanner** tells you which chunks around you contain oil, without digging.",
+          "",
+          "- Place a **Machine Input** and put the scanner **directly on top** of it.",
+          "- Feed the machine input rotation through its shaft side. It must turn at **64 RPM or more**, in either direction.",
+          "",
+          "Once a second, the scanner checks a **5 x 5 grid of chunks** centred on its own chunk. The 25 cells on its top light up for every chunk that holds an oil deposit or crude oil anywhere between the bottom of the world and Y 64. Press **F3 + G** to see chunk borders and match the cells to the ground.",
+          "",
+          "Look at it with **Engineer's Goggles**:",
+          "- **Not Enough Rotation (Needs 64rpm)**: the input is missing or too slow.",
+          "- **No Deposits Found**: nothing in the 25 chunks, move on.",
+          "- **N Chunks With Oil Deposits Found**: go to a lit chunk and dig.",
+          "",
+          "To sweep a large area, break the scanner and its input, walk five chunks, and set them up again: each new spot covers 25 fresh chunks."
+        ],
+        "fr_fr": [
+          "Le **scanner de surface** indique quels chunks autour de vous contiennent du pétrole, sans creuser.",
+          "",
+          "- Posez une **entrée de machine** et placez le scanner **juste au-dessus**.",
+          "- Donnez de la rotation à l'entrée de machine par son côté arbre. Elle doit tourner à **64 tr/min ou plus**, dans un sens ou dans l'autre.",
+          "",
+          "Une fois par seconde, le scanner examine une **grille de 5 x 5 chunks** centrée sur son propre chunk. Les 25 cases de son dessus s'allument pour chaque chunk qui contient un gisement ou du pétrole brut entre le fond du monde et Y 64. Appuyez sur **F3 + G** pour voir les limites de chunks et faire correspondre les cases au terrain.",
+          "",
+          "Regardez-le avec les **lunettes d'ingénieur** :",
+          "- **Not Enough Rotation (Needs 64rpm)** : l'entrée manque ou tourne trop lentement.",
+          "- **No Deposits Found** : rien dans les 25 chunks, allez plus loin.",
+          "- **N Chunks With Oil Deposits Found** : rendez-vous dans un chunk allumé et creusez.",
+          "",
+          "Pour balayer une grande zone, cassez le scanner et son entrée, avancez de cinq chunks et réinstallez-les : chaque nouvel emplacement couvre 25 nouveaux chunks."
+        ]
+      },
+      "items": ["tfmg:surface_scanner", "tfmg:machine_input", "create:shaft", "create:goggles"],
+      "schematic": {
+        "layers": [
+          ["S", "M"],
+          [".", "U"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "U": "tfmg:surface_scanner"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "The oil hammer",
+        "fr_fr": "Le marteau de pétrolier"
+      },
+      "text": {
+        "en_us": [
+          "The **oil hammer** reads how much a deposit holds. Right-click any block with it: the hammer looks **straight down, up to 300 blocks**, and stops at the first oil deposit in that column. It never searches sideways, so stand right above the deposit.",
+          "",
+          "If it finds one, the action bar shows **Oil Reserves: N** in yellow.",
+          "",
+          "Good to know:",
+          "- A deposit only gets a reserve figure once a **pumpjack has started pumping it**. Before that, the hammer finds the deposit but stays silent.",
+          "- The figure is rolled the first time, between 1000 and the server setting **depositMaxReserves** (10000 by default).",
+          "- Deposits within 32 blocks of each other share **one reserve**.",
+          "- In this version pumping does **not** drain the reserve, so a deposit never runs dry. A server can also turn on **infiniteDeposits**.",
+          "",
+          "In practice the hammer is most useful to check that a pipe column really ends on a deposit: hit the top of the column, and a message means the column is right above one."
+        ],
+        "fr_fr": [
+          "Le **marteau de pétrolier** lit ce que contient un gisement. Faites un clic droit sur n'importe quel bloc : le marteau regarde **tout droit vers le bas, jusqu'à 300 blocs**, et s'arrête au premier gisement de cette colonne. Il ne cherche jamais sur les côtés, placez-vous donc juste au-dessus.",
+          "",
+          "S'il en trouve un, la barre d'action affiche **Oil Reserves: N** en jaune.",
+          "",
+          "Bon à savoir :",
+          "- Un gisement n'a de chiffre de réserve qu'une fois qu'une **pompe à pétrole a commencé à le pomper**. Avant cela, le marteau trouve le gisement mais ne dit rien.",
+          "- Le chiffre est tiré la première fois, entre 1000 et le réglage serveur **depositMaxReserves** (10000 par défaut).",
+          "- Les gisements à moins de 32 blocs les uns des autres partagent **une seule réserve**.",
+          "- Dans cette version, pomper ne vide **pas** la réserve : un gisement ne s'épuise jamais. Un serveur peut aussi activer **infiniteDeposits**.",
+          "",
+          "En pratique, le marteau sert surtout à vérifier qu'une colonne de tuyaux finit bien sur un gisement : frappez le haut de la colonne, un message signifie qu'elle est juste au-dessus."
+        ]
+      },
+      "items": ["tfmg:oil_hammer", "tfmg:oil_deposit", "tfmg:pumpjack_base"]
+    },
+    {
+      "title": {
+        "en_us": "From discovery to drilling",
+        "fr_fr": "De la découverte au forage"
+      },
+      "text": {
+        "en_us": [
+          "Once a scanner cell lights up, here is the usual plan:",
+          "",
+          "- Go to the chunk and dig a **1 x 1 shaft** straight down to the bedrock layer. Look for fossilstone and crude oil near Y -60.",
+          "- Find a deposit block and note its **X and Z**. The pumpjack base must sit exactly above it.",
+          "- Fill the shaft from the deposit up with **industrial pipes**, with nothing else in between. One steel ingot gives **8 pipes** in a stonecutter, so a shaft from Y 64 needs about 16 ingots.",
+          "- Crude oil blocks in the shaft can simply be replaced by pipes.",
+          "",
+          "Industrial pipes can be filled with liquid concrete and dry into **concrete encased industrial pipes**. They still count as a valid column, so you can seal the shaft for good. Broken, they give back a normal industrial pipe.",
+          "",
+          "With the column built, put the pumpjack base on top of it at the surface. The next chapter explains the rest of the pumpjack."
+        ],
+        "fr_fr": [
+          "Une fois qu'une case du scanner s'allume, voici le plan habituel :",
+          "",
+          "- Allez dans le chunk et creusez un **puits de 1 x 1** tout droit jusqu'à la couche de bedrock. Cherchez la pierre fossile et le pétrole brut vers Y -60.",
+          "- Trouvez un bloc de gisement et notez ses coordonnées **X et Z**. La base de la pompe à pétrole doit se trouver exactement au-dessus.",
+          "- Remplissez le puits depuis le gisement avec des **tuyaux industriels**, sans rien d'autre entre eux. Un lingot d'acier donne **8 tuyaux** au tailleur de pierre : un puits depuis Y 64 demande environ 16 lingots.",
+          "- Les blocs de pétrole brut dans le puits peuvent simplement être remplacés par des tuyaux.",
+          "",
+          "Les tuyaux industriels peuvent être remplis de béton liquide et sèchent en **tuyaux industriels encastrés dans du béton**. Ils comptent toujours comme une colonne valide : vous pouvez sceller le puits pour de bon. Cassés, ils rendent un tuyau industriel normal.",
+          "",
+          "Une fois la colonne posée, placez la base de la pompe à pétrole dessus, à la surface. Le chapitre suivant explique le reste de la pompe."
+        ]
+      },
+      "items": ["tfmg:industrial_pipe", "tfmg:steel_ingot", "minecraft:stonecutter", "tfmg:liquid_concrete_bucket", "tfmg:pumpjack_base"]
+    }
+  ]
+}

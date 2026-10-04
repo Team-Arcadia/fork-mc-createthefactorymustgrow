@@ -1,0 +1,6 @@
+{
+  "name": "Raw Resources",
+  "description": "Before any machine, you need materials Minecraft does not have. TFMG adds them to world generation in three forms:",
+  "icon": "tfmg:galena",
+  "sortnum": 10
+}

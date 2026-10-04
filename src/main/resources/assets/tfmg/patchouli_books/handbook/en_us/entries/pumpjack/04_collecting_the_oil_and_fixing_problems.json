@@ -1,0 +1,34 @@
+{
+  "name": "Collecting the oil and fixing problems",
+  "icon": "tfmg:pumpjack_base",
+  "category": "tfmg:pumpjack",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The base has an internal tank of $(item)8000 mB$() that only accepts crude oil. Pull from it with a mechanical pump and pipes on any side. When the tank cannot fit the next stroke, pumping simply pauses until you drain it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Look at the base with $(item)Engineer's Goggles$(). It shows the tank content and, when something is wrong, $(item)Machine Invalid$(). That means the base found no deposit:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)the column under the base has a gap or a block that is not an $(item)industrial pipe$() (concrete encased pipes are fine),$(li)the column does not end on an oil deposit,$(li)the base is not exactly above the column,$(li)the beam is not assembled yet."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The base rescans its column every few seconds while running, so a fixed column is picked up without rebuilding anything.$(br2)If the beam does not move at all, check the glue, the axis of every part, the head and connector distances, and that the machine input really turns."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Deposits do not run dry in this version, so one good pumpjack keeps a refinery fed for as long as you want."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:pumpjack_base,tfmg:crude_oil_bucket,create:mechanical_pump,create:fluid_pipe,create:goggles,tfmg:industrial_pipe",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

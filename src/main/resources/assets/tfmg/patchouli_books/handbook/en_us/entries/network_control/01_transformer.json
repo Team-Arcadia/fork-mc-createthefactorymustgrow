@@ -1,0 +1,30 @@
+{
+  "name": "Transformer",
+  "icon": "tfmg:transformer",
+  "category": "tfmg:network_control",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The transformer raises or lowers voltage. Power comes in on one side and leaves on the opposite side; the multimeter shows its state."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Coils$()$(br)Right-click a side with an $(item)electromagnetic coil$() to fit it; an outline shows which side you are aiming at. The coil on the input side is the $(item)primary$(), the one on the output side the $(item)secondary$(). Right-click with an empty hand to take a coil back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Both coils need at least $(item)50 turns$(), or nothing comes out.$(li)Output voltage = $(item)input voltage x secondary turns / primary turns$().$(br2)Example: 300 V in, 100 turns on the input, 50 on the output: 150 V out.$(br2)Wind coils on the $(item)winding machine$() with a copper spool. Its dial sets the number of turns in steps of 10, up to 1,000."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Limits$()$(br)Up to $(item)10 kW$() on the output, $(item)100 A$(), and the usual $(item)1,000 V$() on the transformer itself. For more, use the large transformer."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:transformer,tfmg:electromagnetic_coil,tfmg:winding_machine,tfmg:copper_spool",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

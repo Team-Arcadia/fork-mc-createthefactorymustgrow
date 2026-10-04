@@ -1,0 +1,30 @@
+{
+  "name": "La vitesse de pompage",
+  "icon": "tfmg:machine_input",
+  "category": "tfmg:pumpjack",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La manivelle lit uniquement l'$(item)entrée de machine$() juste en dessous. Cette entrée reçoit la rotation par son côté arbre, comme n'importe quel composant de Create, et rien d'autre ne peut entraîner la manivelle.$(br2)À chaque tick, la base pompe :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)tr/min x (distance du connecteur / 5) x sin(angle de la manivelle)$() mB"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)tr/min$() est la vitesse de l'entrée de machine, dans un sens ou dans l'autre.$(li)La $(item)distance du connecteur$() est le nombre de blocs entre le support et le connecteur le long du balancier.$(li)Le sinus suit la course, donc le débit pulse : maximal à mi-course, nul en haut et en bas. En moyenne vous obtenez environ $(item)deux tiers$() du maximum."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Exemple : la pompe de la première page a son connecteur à 3 blocs du support. À 64 tr/min, elle monte à environ 38 mB par tick, soit environ $(item)490 mB par seconde$() en moyenne.$(br2)Pour pomper plus vite, faites tourner l'entrée plus vite ou éloignez le connecteur du support. L'entrée de machine a un impact de contrainte de $(item)4 par tr/min$() : 64 tr/min coûtent 256 SU."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:machine_input,tfmg:pumpjack_crank,tfmg:pumpjack_hammer_connector,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

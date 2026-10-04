@@ -1,0 +1,30 @@
+{
+  "name": "Concasser les pierres et la terre",
+  "icon": "tfmg:bauxite_powder",
+  "category": "tfmg:resources",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Les pierres en couches et quelques blocs courants se concassent aussi. Les chances sont données par bloc : $(li)$(item)Bauxite$() : 75 % de chance de 2 poudres de bauxite, plus 20 % de chance d'une de plus. $(li)$(item)Galène$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "40 % de chance d'1 plomb brut concassé, 10 % de chance de 2 pépites de plomb. $(li)$(item)Lignite$() : 75 % de chance d'1 charbon, plus 20 % de chance d'un de plus. $(li)$(item)Soufre$() : 20 % de chance d'1 poudre de soufre, plus 10 % de chance d'une de plus. $(li)$(item)Calcaire$() (Create) : toujours 1 $(item)sable calcaire$(). $(li)$(item)Terre$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "5 % de chance d'1 $(item)poudre de nitrate$() (salpêtre). Broyez la terre en grande quantité.$(br2)Le calcaire ne se trouve pas dans le monde : Create le crée là où $(item)le miel rencontre de la lave qui coule$() (une source de lave donne de l'obsidienne). Un petit générateur de miel et de lave à côté d'une perceuse mécanique vous donne tout le sable calcaire nécessaire."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La poudre de soufre est lente à accumuler : commencez tôt à concasser du soufre. La poudre de bauxite deviendra de l'aluminium, le nitrate et le soufre de la poudre à canon et de l'acide sulfurique."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite_powder,tfmg:lead_nugget,minecraft:coal,tfmg:sulfur_dust,create:limestone,tfmg:limesand,minecraft:dirt,tfmg:nitrate_dust",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

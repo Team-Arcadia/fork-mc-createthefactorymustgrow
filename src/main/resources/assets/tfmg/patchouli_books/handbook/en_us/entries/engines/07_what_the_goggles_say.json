@@ -1,0 +1,30 @@
+{
+  "name": "What the goggles say",
+  "icon": "create:goggles",
+  "category": "tfmg:engines",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Look at any block of the engine with goggles. While it is being built:$(li)$(item)Engine Unfinished$(), $(item)Building engine X of Y$() and $(item)Next Component$(): keep clicking parts in.$(li)$(item)Pistons Missing$() / $(item)Turbines Missing$(): add cylinders or blades."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Once complete it shows its $(item)Type$(), $(item)Speed$() in RPM, $(item)Signal$() (0 means no redstone, so no rotation), $(item)Torque$(), $(item)Output$() in stress units and $(item)Fuel Consumption$() in mB/s, then its fuel and exhaust tanks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)A gold line $(item)No output shaft: the engine cannot deliver its power$() means it burns fuel for nothing: add a shaft.$(li)An aqua $(item)Upgrades: speed x, torque x, efficiency x$() line shows what the mounted upgrades multiply.$(li)$(item)Controller$() gives the position of the engine controller driving it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "If Speed stays at 0 with everything built, check in this order: signal, fuel matching the cylinders, exhaust tank not full."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:regular_engine",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

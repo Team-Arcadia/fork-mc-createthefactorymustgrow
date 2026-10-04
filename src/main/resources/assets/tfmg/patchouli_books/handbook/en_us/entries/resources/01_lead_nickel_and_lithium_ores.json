@@ -1,0 +1,26 @@
+{
+  "name": "Lead, nickel and lithium ores",
+  "icon": "tfmg:lead_ore",
+  "category": "tfmg:resources",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The three TFMG ores generate in every Overworld biome, with a stone and a deepslate variant. Mine them with at least a $(item)stone pickaxe$().$(br2)$(l)Lead$()$(br)Veins of up to 12 blocks, 5 attempts per chunk, between $(item)Y -15 and Y 80$(). The easiest to find."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Nickel$()$(br)Veins of up to 10 blocks, 5 attempts per chunk, between $(item)Y -63 and Y 20$().$(br2)$(l)Lithium$()$(br)Smaller veins of up to 7 blocks, 3 attempts per chunk, deep between $(item)Y -63 and Y -5$(). Expect deepslate lithium ore most of the time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each ore drops its $(item)raw$() item (raw lead, raw nickel, raw lithium) and Fortune adds more. With Silk Touch you get the ore block itself, which is worth keeping for the crushing wheels. Nine raw items craft into a raw storage block."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lead_ore,tfmg:deepslate_lead_ore,tfmg:nickel_ore,tfmg:deepslate_nickel_ore,tfmg:lithium_ore,tfmg:deepslate_lithium_ore,tfmg:raw_lead,tfmg:raw_nickel",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

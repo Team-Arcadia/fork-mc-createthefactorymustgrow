@@ -1,0 +1,26 @@
+{
+  "name": "Fireclay and fireproof bricks",
+  "icon": "tfmg:fireclay",
+  "category": "tfmg:first_materials",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Getting fireclay balls$()$(li)Mine a fireclay block with a shovel: it drops $(item)1 fireclay ball$().$(li)Four balls craft back into a fireclay block for storage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Firing the bricks$()$(br)Smelt a $(item)fireclay ball$() in a furnace (10 seconds) to get one $(item)fireproof brick$(). Four fireproof bricks in a 2 by 2 grid craft one block of $(item)fireproof bricks$().$(br2)Single bricks and brick blocks are both used:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Fireproof brick$() (item): the casting basin.$(li)$(item)Fireproof bricks$() (block): the blast stove, the blast furnace output and hatch, and the walls of the blast furnace itself.$(li)Six blocks give six $(item)fireproof brick reinforcement$() walls.$(br2)A blast furnace eats many brick blocks, so set up an automatic fireclay line early."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireclay,tfmg:fireclay_ball,tfmg:fireproof_brick,tfmg:fireproof_bricks,tfmg:fireproof_brick_reinforcement",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

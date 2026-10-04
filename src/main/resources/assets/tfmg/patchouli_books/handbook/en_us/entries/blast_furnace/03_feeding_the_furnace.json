@@ -1,0 +1,30 @@
+{
+  "name": "Feeding the furnace",
+  "icon": "create:andesite_funnel",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "There are three ways in, and the furnace sorts what it gets: coke dust goes to the fuel, limesand to the flux slot, ore to the ore slot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Drop items into the shaft$() from the top. They are collected where they land, in the space just above the bottom centre.$(li)$(item)Insert into the output block$() with a funnel, a hopper or a chute, from any side.$(li)$(item)Insert into the top gas hatch$(): items fall down the shaft."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Limits$()$(li)$(item)Ore$(): one kind at a time, up to 64. Only ore that a furnace recipe can smelt is taken; anything else stays where it is, so a stray item can no longer jam the furnace.$(li)$(item)Flux$(): up to 64 limesand.$(li)$(item)Fuel$(): up to 64 coke dust. The furnace burns $(item)one dust every 600 ticks$() (30 s) of work."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Nothing can be pulled back out of the output block: it only gives fluids.$(br2)Do not stand in the shaft. A working furnace burns anything inside it."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:andesite_funnel,minecraft:hopper,create:chute,tfmg:coal_coke_dust,tfmg:limesand,create:crushed_raw_iron,create:crushing_wheel,create:limestone",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

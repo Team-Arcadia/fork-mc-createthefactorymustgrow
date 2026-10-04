@@ -1,0 +1,26 @@
+{
+  "name": "Polarizer",
+  "icon": "tfmg:polarizer",
+  "category": "tfmg:electric_machines",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The polarizer magnetizes items. Its main job is turning $(item)magnetic alloy ingots$() into $(item)magnets$(), one at a time. Right-click it with an item to insert it, with an empty hand to take it out, or feed it with funnels and chutes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Power$()$(li)It connects through its $(item)back$() face.$(li)While working it is a $(item)30 ohm$() consumer and needs at least $(item)2,000 W$(), which means about $(item)245 V$() or more.$(li)A single generator reaches that above roughly 215 RPM.$(br2)Below 2,000 W, goggles show a red $(item)not enough power$() line and the charge does not move."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Cycle$()$(br)It charges for $(item)10 seconds$(), then the item is converted with a burst of sparks. Its goggle tooltip shows the charge.$(br2)Before you have a polarizer, see $(item)The first magnet$() in the $(item)Making Power$() chapter for the hand recipe."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:polarizer,tfmg:magnetic_alloy_ingot,tfmg:magnet,tfmg:generator,create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

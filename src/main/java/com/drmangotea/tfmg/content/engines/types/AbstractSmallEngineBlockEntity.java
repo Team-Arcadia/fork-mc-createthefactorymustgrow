@@ -5,6 +5,8 @@ import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.engines.base.AbstractEngineBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.engines.base.EngineComponentsInventory;
 import com.drmangotea.tfmg.content.engines.base.EngineProperties;
 import com.drmangotea.tfmg.content.engines.engine_controller.EngineControllerBlockEntity;
@@ -50,7 +52,7 @@ import static com.drmangotea.tfmg.content.engines.base.EngineBlock.EngineState.S
 import static com.drmangotea.tfmg.content.engines.base.EngineBlock.SHAFT_FACING;
 import static com.simibubi.create.content.kinetics.base.HorizontalKineticBlock.HORIZONTAL_FACING;
 
-public abstract class AbstractSmallEngineBlockEntity extends AbstractEngineBlockEntity {
+public abstract class AbstractSmallEngineBlockEntity extends AbstractEngineBlockEntity implements IInspectable {
 
     public Optional<? extends EngineUpgrade> upgrade = Optional.empty();
     public TransmissionUpgrade.TransmissionState shift = TransmissionUpgrade.TransmissionState.NEUTRAL;
@@ -217,9 +219,20 @@ public abstract class AbstractSmallEngineBlockEntity extends AbstractEngineBlock
             // deserializing the block entity and corrupt the chunk load.
             upgrade = Optional.ofNullable(EngineUpgrade.getUpgrades().get(stack.getItem()));
 
+        } else {
+            // A removed upgrade writes no key; without this, other players
+            // kept seeing it on the engine until they relogged.
+            upgrade = Optional.empty();
         }
-        if (!compound.getString("Shift").isEmpty())
-            shift = TransmissionUpgrade.TransmissionState.valueOf(compound.getString("Shift"));
+        // An unknown gear name (older save, hand-edited data) falls back to
+        // neutral instead of throwing out of the chunk load.
+        if (!compound.getString("Shift").isEmpty()) {
+            try {
+                shift = TransmissionUpgrade.TransmissionState.valueOf(compound.getString("Shift"));
+            } catch (IllegalArgumentException e) {
+                shift = TransmissionUpgrade.TransmissionState.NEUTRAL;
+            }
+        }
         oil = compound.getInt("Oil");
         coolingFluid = compound.getInt("CoolingFluid");
         componentsInventory.deserializeNBT(registries, compound.getCompound("Components"));
@@ -939,6 +952,135 @@ public abstract class AbstractSmallEngineBlockEntity extends AbstractEngineBlock
 
     }
 
+
+    // Factory Inspector
+
+    @Override
+    public void inspect(InspectionReport report) {
+        AbstractSmallEngineBlockEntity master = this;
+        if (!isController()) {
+            if (controller == null || !level.isLoaded(controller)
+                    || !(level.getBlockEntity(controller) instanceof AbstractSmallEngineBlockEntity be)) {
+                report.problem("engine.no_master");
+                report.fix("engine.no_master.fix");
+                return;
+            }
+            master = be;
+        }
+        master.inspectEngine(report);
+    }
+
+    /** The chain in build order, master first, skipping blocks in unloaded chunks. */
+    protected List<AbstractSmallEngineBlockEntity> loadedChain() {
+        List<AbstractSmallEngineBlockEntity> chain = new ArrayList<>();
+        chain.add(this);
+        for (Long l : engines) {
+            BlockPos pos = BlockPos.of(l);
+            if (pos.equals(getBlockPos()) || !level.isLoaded(pos))
+                continue;
+            if (level.getBlockEntity(pos) instanceof AbstractSmallEngineBlockEntity be && be != this && !chain.contains(be))
+                chain.add(be);
+        }
+        return chain;
+    }
+
+    protected Component engineTypeName() {
+        return getBlockState().getBlock().getName();
+    }
+
+    /** Pistons, cylinders or turbine blades; engines without them have nothing to check. */
+    protected void inspectCylinders(InspectionReport report, List<AbstractSmallEngineBlockEntity> chain) {
+    }
+
+    /** What decides which fuels this engine burns, for the fuel lines. */
+    protected Component fuelSourceName() {
+        return engineTypeName();
+    }
+
+    protected void inspectEngine(InspectionReport report) {
+        List<AbstractSmallEngineBlockEntity> chain = loadedChain();
+        report.info("engine.summary", engineTypeName(), chain.size());
+
+        components:
+        for (int i = 0; i < chain.size(); i++) {
+            AbstractSmallEngineBlockEntity be = chain.get(i);
+            for (int s = 0; s < be.componentsInventory.getSlots(); s++) {
+                if (!be.componentsInventory.getStackInSlot(s).isEmpty())
+                    continue;
+                ItemStack[] items = be.componentsInventory.components.get(s).getItems();
+                Component name = items.length > 0 ? items[0].getHoverName() : Component.literal("?");
+                report.problem("engine.missing_component", i + 1, chain.size(), name, coords(be.getBlockPos()));
+                report.fix("engine.missing_component.fix", name);
+                break components;
+            }
+        }
+
+        inspectCylinders(report, chain);
+
+        List<TagKey<Fluid>> fuels = getSupportedFuels();
+        if (fuelTank.isEmpty()) {
+            report.problem("engine.no_fuel");
+            if (fuels.isEmpty())
+                report.fix("engine.no_fuel.fix_unknown");
+            else
+                report.fix("engine.no_fuel.fix", fuelList(fuels));
+        } else if (isFuelSupported()) {
+            report.ok("engine.fuel_ok", fuelTank.getFluid().getHoverName(), fuelTank.getFluidAmount());
+        } else if (fuels.isEmpty()) {
+            report.problem("engine.no_fuel_list", fuelSourceName());
+            report.fix("engine.no_fuel_list.fix");
+        } else {
+            report.problem("engine.wrong_fuel", fuelTank.getFluid().getHoverName(), fuelSourceName());
+            report.fix("engine.wrong_fuel.fix", fuelList(fuels));
+        }
+
+        if (exhaustTank.getSpace() == 0) {
+            report.problem("engine.exhaust_full");
+            report.fix("engine.exhaust_full.fix");
+        }
+
+        if (engineController != null) {
+            if (!level.isLoaded(engineController)
+                    || !(level.getBlockEntity(engineController) instanceof EngineControllerBlockEntity linked)) {
+                report.problem("engine.controller_missing", coords(engineController));
+                report.fix("engine.controller_missing.fix");
+            } else {
+                report.info("engine.controlled_by", coords(engineController));
+                if (!linked.engineStarted) {
+                    report.problem("engine.controller_stopped");
+                    report.fix("engine.controller_stopped.fix");
+                } else if (highestSignal <= 0) {
+                    report.problem("engine.no_throttle");
+                    report.fix("engine.no_throttle.fix");
+                }
+                BlockPos farEnd = getBlockPos().relative(getBlockState().getValue(SHAFT_FACING).getOpposite(), engineLength());
+                if (shift == TransmissionUpgrade.TransmissionState.NEUTRAL && level.isLoaded(farEnd) && hasTwoShafts()) {
+                    report.problem("engine.neutral");
+                    report.fix("engine.neutral.fix");
+                }
+            }
+        } else if (highestSignal <= 0) {
+            report.problem("engine.no_signal");
+            report.fix("engine.no_signal.fix");
+        } else {
+            report.ok("engine.signal", Math.round(highestSignal * 15));
+        }
+
+        boolean shaft = false;
+        for (AbstractSmallEngineBlockEntity be : chain)
+            shaft |= be.hasOutputShaft();
+        if (!shaft) {
+            report.problem("engine.no_shaft");
+            report.fix("engine.no_shaft.fix");
+        }
+
+        report.info("engine.lubrication", oil, coolingFluid);
+        if (oil <= 0 || coolingFluid <= 0)
+            report.fix("engine.lubrication.fix");
+
+        for (AbstractSmallEngineBlockEntity be : chain)
+            be.upgrade.ifPresent(u -> report.info("engine.upgrade", u.getItem().getDescription()));
+    }
 
     public float getUpgradeSpeedModifier() {
         float modifier = 1;

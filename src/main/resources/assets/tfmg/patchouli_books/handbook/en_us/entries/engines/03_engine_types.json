@@ -1,0 +1,26 @@
+{
+  "name": "Engine types",
+  "icon": "create:empty_schematic",
+  "category": "tfmg:engines",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Right-click a regular engine with an $(item)Empty Schematic$() to switch its type. The order is I, V, W, U, Boxer, then back to I. The whole row changes together, and any cylinders already inside drop out. Multipliers (speed / torque / efficiency) and cylinders per block:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)I$(): 1 / 1 / 1, 2 cylinders - $(item)V$(): 1.2 / 1.3 / 0.8, 4 cylinders - $(item)W$(): 1.3 / 1.1 / 0.5, 8 cylinders - $(item)U$(): 1 / 1.5 / 0.9, 4 cylinders - $(item)Boxer$(): 1 / 0.8 / 1.2, 4 cylinders - $(item)Radial$(): 1 / 0.8 / 1.2, 8 cylinders - $(item)Turbine$(): 1.5 / 1.5 / 0.5, 4 blades"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Radial and turbine engines keep their type, the schematic does nothing on them. Higher efficiency means less fuel burnt for the same work, so the Boxer and the radial are the thrifty choices, while the W and the turbine trade fuel for power."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:empty_schematic,tfmg:regular_engine,tfmg:radial_engine,tfmg:turbine_engine",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

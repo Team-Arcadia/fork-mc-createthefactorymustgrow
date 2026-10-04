@@ -1,0 +1,22 @@
+{
+  "order": 15002,
+  "name": {
+    "en_us": "The surface scanner",
+    "fr_fr": "Le scanner de surface"
+  },
+  "layers": [
+    [
+      "S",
+      "M"
+    ],
+    [
+      " ",
+      "U"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "M": "tfmg:machine_input[facing=north]",
+    "U": "tfmg:surface_scanner"
+  }
+}

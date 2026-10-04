@@ -1,0 +1,30 @@
+{
+  "name": "Building it step by step",
+  "icon": "tfmg:pumpjack_base",
+  "category": "tfmg:pumpjack",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)1. Pipe and base$()$(br)Build the industrial pipe column from the deposit up to the surface (see the previous chapter), then place the $(item)Pumpjack Base$() directly on top of the last pipe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)2. Holder$()$(br)Place the $(item)Hammer Holder$() a few blocks away from the base, in line with it. Its facing comes from the direction you look when placing it, and that facing sets the $(item)axis of the beam$(): the beam must run along it, east-west or north-south."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)3. Beam$()$(br)On the block right above the holder, lay $(item)hammer parts$() in a straight line along that axis. Put the $(item)head$() at the end above the base and the $(item)connector$() at the other end. Parts, head and connector placed while you look along the beam all end up on the right axis."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)4. Glue$()$(br)Use $(item)Super Glue$() over the whole beam, from head to connector. The beam moves as one contraption, and unglued blocks are left behind.$(br2)$(l)5. Drive$()$(br)Put the $(item)crank$() under the connector and a $(item)Machine Input$() right under the crank."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:pumpjack_base,tfmg:pumpjack_hammer,tfmg:pumpjack_hammer_part,tfmg:pumpjack_hammer_head,tfmg:pumpjack_hammer_connector,create:super_glue,tfmg:pumpjack_crank,tfmg:machine_input",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

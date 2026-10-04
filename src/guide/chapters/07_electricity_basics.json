@@ -1,0 +1,261 @@
+{
+  "order": 70,
+  "icon": "tfmg:multimeter",
+  "title": {
+    "en_us": "Electricity Basics",
+    "fr_fr": "Bases de l'électricité"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "How a network works",
+        "fr_fr": "Comment fonctionne un réseau"
+      },
+      "text": {
+        "en_us": [
+          "Electric blocks that touch through faces able to carry power form one **network**. A network has a single voltage and a single power budget.",
+          "",
+          "- **Voltage (V)** is the highest voltage offered by any generator on the network. Two generators do not add their voltages.",
+          "- **Power generated (W)** is the sum of what every generator can supply.",
+          "- Every consumer is wired **in parallel**: each one sees the full network voltage.",
+          "",
+          "## The formulas",
+          "Each consumer has a **resistance R** in ohms. It then draws a current **I = V / R** and uses a power **P = V x I**, so **V x V / R**.",
+          "",
+          "Example: a light bulb is 400 ohms. At 200 V it draws 0.5 A and uses 100 W. At 400 V it would draw 1 A and use 400 W.",
+          "",
+          "Raising the voltage makes every machine draw more current and more power. A lower resistance also means a bigger draw. The network resistance is the parallel total of all its loads."
+        ],
+        "fr_fr": [
+          "Les blocs électriques qui se touchent par des faces capables de transmettre le courant forment un **réseau**. Un réseau a une seule tension et un seul budget de puissance.",
+          "",
+          "- La **tension (V)** est la plus haute tension proposée par un générateur du réseau. Deux générateurs n'additionnent pas leurs tensions.",
+          "- La **puissance produite (W)** est la somme de ce que chaque générateur peut fournir.",
+          "- Tous les consommateurs sont branchés **en parallèle** : chacun reçoit la tension complète du réseau.",
+          "",
+          "## Les formules",
+          "Chaque consommateur a une **résistance R** en ohms. Il tire alors un courant **I = V / R** et consomme une puissance **P = V x I**, soit **V x V / R**.",
+          "",
+          "Exemple : une ampoule fait 400 ohms. À 200 V, elle tire 0,5 A et consomme 100 W. À 400 V, elle tirerait 1 A et consommerait 400 W.",
+          "",
+          "Monter la tension fait tirer plus de courant et plus de puissance à chaque machine. Une résistance plus faible signifie aussi une plus grosse consommation. La résistance du réseau est le total en parallèle de toutes ses charges."
+        ]
+      },
+      "items": ["tfmg:generator", "tfmg:light_bulb", "tfmg:electric_motor", "tfmg:multimeter"]
+    },
+    {
+      "title": {
+        "en_us": "When power runs out",
+        "fr_fr": "Quand la puissance manque"
+      },
+      "text": {
+        "en_us": [
+          "The network adds up the power used by every consumer and compares it with the power generated.",
+          "",
+          "If consumption is **higher** than generation, the whole network is marked **Not Enough Power**. Every machine on it stops at once: motors stop turning, lamps go dark, the polarizer stops charging. It is not only the last machine you placed that fails.",
+          "",
+          "## How to fix it",
+          "- Add generators, or spin the ones you have faster.",
+          "- Remove or switch off consumers. When a block is removed, the network is checked again right away.",
+          "- Split the factory into separate networks with switches, diodes or transformers (see **Network Control**), so one hungry machine cannot stall everything.",
+          "",
+          "Hold a **multimeter** and look at any block of the network. The red line **Not Enough Power** tells you the network is short. Sneak while looking to see the network's total **generation** and **consumption** side by side."
+        ],
+        "fr_fr": [
+          "Le réseau additionne la puissance consommée par chaque consommateur et la compare à la puissance produite.",
+          "",
+          "Si la consommation est **supérieure** à la production, tout le réseau passe en **puissance insuffisante**. Toutes ses machines s'arrêtent d'un coup : les moteurs ne tournent plus, les lampes s'éteignent, le polariseur cesse de charger. Ce n'est pas seulement la dernière machine posée qui tombe en panne.",
+          "",
+          "## Comment corriger",
+          "- Ajoutez des générateurs, ou faites tourner plus vite ceux que vous avez.",
+          "- Retirez ou coupez des consommateurs. Quand un bloc est retiré, le réseau est revérifié immédiatement.",
+          "- Découpez l'usine en réseaux séparés avec des interrupteurs, des diodes ou des transformateurs (voir **Contrôle du réseau**), pour qu'une machine gourmande ne bloque pas tout.",
+          "",
+          "Tenez un **multimètre** et regardez n'importe quel bloc du réseau. La ligne rouge de puissance insuffisante vous indique que le réseau manque de puissance. Accroupissez-vous en regardant pour voir côte à côte la **production** et la **consommation** totales du réseau."
+        ]
+      },
+      "items": ["tfmg:multimeter", "tfmg:generator", "tfmg:electrical_switch", "tfmg:electric_diode"]
+    },
+    {
+      "title": {
+        "en_us": "Touching blocks and cable hubs",
+        "fr_fr": "Blocs accolés et concentrateurs"
+      },
+      "text": {
+        "en_us": [
+          "Two electric blocks connect when they touch through faces that both accept power. A generator accepts power on every face, but many machines only on one: the motor, the lamps and the polarizer use their **back** face. Each chapter says which face to use.",
+          "",
+          "## Cable hubs",
+          "A cable hub is a full block that connects on **all six faces**. Stack them to run power through walls and floors. Each hub handles up to **5,000 V** and has a **current limit**, checked against the total current of the **whole network**:",
+          "",
+          "- Copper Cable Hub: **16 A**",
+          "- Brass Cable Hub: **50 A**",
+          "- Aluminum Cable Hub: **80 A**",
+          "- Steel Casing Cable Hub and Heavy Cable Hub: **100 A**",
+          "- Steel Cable Hub: **250 A**",
+          "",
+          "Copper hubs are the cheapest, two per craft from copper ingots and copper wire. Upgrade them before your network grows past their limit, or they will burn out (see **Overloads**)."
+        ],
+        "fr_fr": [
+          "Deux blocs électriques se connectent quand ils se touchent par des faces qui acceptent toutes deux le courant. Un générateur accepte le courant sur toutes ses faces, mais beaucoup de machines sur une seule : le moteur, les lampes et le polariseur utilisent leur face **arrière**. Chaque chapitre précise quelle face utiliser.",
+          "",
+          "## Les concentrateurs de câbles",
+          "Un concentrateur de câbles est un bloc plein qui se connecte sur **ses six faces**. Empilez-les pour faire passer le courant à travers murs et planchers. Chaque concentrateur supporte jusqu'à **5 000 V** et a une **limite de courant**, comparée au courant total de **tout le réseau** :",
+          "",
+          "- Cuivre : **16 A**",
+          "- Laiton : **50 A**",
+          "- Aluminium : **80 A**",
+          "- Carter d'acier et lourd : **100 A**",
+          "- Acier : **250 A**",
+          "",
+          "Ceux en cuivre sont les moins chers, deux par fabrication avec des lingots et du fil de cuivre. Améliorez-les avant que votre réseau dépasse leur limite, sinon ils grillent (voir **Surcharges**)."
+        ]
+      },
+      "items": ["tfmg:copper_cable_hub", "tfmg:brass_cable_hub", "tfmg:aluminum_cable_hub", "tfmg:steel_casing_cable_hub", "tfmg:heavy_cable_hub", "tfmg:steel_cable_hub", "tfmg:copper_wire"]
+    },
+    {
+      "title": {
+        "en_us": "Wires between insulators",
+        "fr_fr": "Des fils entre les isolateurs"
+      },
+      "text": {
+        "en_us": [
+          "To cross a distance, string a wire between two **cable insulators**. Place an insulator on a face of an electric block: it connects to the block it sits on. Insulators placed in a straight line, all facing the same way, pass power along the stack, and the wire attaches to the outermost one. Insulators handle up to **100,000 V**.",
+          "",
+          "## Filling a spool",
+          "Cut an **empty spool** from hardened planks in a stonecutter. Mount it on a **winding machine** and feed it wire: each wire adds **125 turns**, and a full spool holds **1,000 turns**.",
+          "",
+          "## Stringing the wire",
+          "- Right-click an insulator with a filled spool, then right-click a second insulator.",
+          "- Every **8 blocks** of wire use **125 turns**, so a full spool covers about **64 blocks**.",
+          "- Sneak and right-click in the air to cancel a started wire.",
+          "- Breaking an insulator gives back the wire, one item per 8 blocks.",
+          "",
+          "Copper, aluminum and constantan spools all work. In this version the metal only changes the wire's color."
+        ],
+        "fr_fr": [
+          "Pour franchir une distance, tendez un fil entre deux **isolateurs de câble**. Posez un isolateur sur une face d'un bloc électrique : il se connecte au bloc sur lequel il est posé. Des isolateurs posés en ligne droite, tous dans le même sens, font passer le courant le long de la pile, et le fil s'accroche au dernier. Les isolateurs supportent jusqu'à **100 000 V**.",
+          "",
+          "## Remplir une bobine",
+          "Taillez une **bobine vide** dans des planches durcies avec un tailleur de pierre. Montez-la sur une **enrouleuse** et donnez-lui du fil : chaque fil ajoute **125 tours**, et une bobine pleine contient **1 000 tours**.",
+          "",
+          "## Tendre le fil",
+          "- Clic droit sur un isolateur avec une bobine pleine, puis clic droit sur un second isolateur.",
+          "- Chaque tranche de **8 blocs** de fil consomme **125 tours** : une bobine pleine couvre environ **64 blocs**.",
+          "- Accroupi, clic droit dans le vide pour annuler un fil commencé.",
+          "- Casser un isolateur rend le fil, un objet par tranche de 8 blocs.",
+          "",
+          "Les bobines de cuivre, d'aluminium et de constantan fonctionnent toutes. Dans cette version, le métal ne change que la couleur du fil."
+        ]
+      },
+      "items": ["tfmg:cable_connector", "tfmg:glass_cable_insulator", "tfmg:empty_spool", "tfmg:copper_spool", "tfmg:aluminum_spool", "tfmg:constantan_spool", "tfmg:winding_machine", "tfmg:copper_wire"]
+    },
+    {
+      "title": {
+        "en_us": "Tubes, posts and special cables",
+        "fr_fr": "Tubes, poteaux et câbles spéciaux"
+      },
+      "text": {
+        "en_us": [
+          "## Cable tube and electric post",
+          "Both are thin pillars that connect **only at their two ends**, along the axis they are placed on. They are good for long straight runs and handle up to **10,000 V**. Placed inside liquid concrete, they dry into a **concrete encased** version, perfect for burying a line in a floor or a wall.",
+          "",
+          "## Copycat cable block",
+          "Connects on **all six faces**, like a cable hub, but takes the look of any block you apply to it, in the same way as Create's copycat blocks. Use it to hide wiring inside a building. It keeps the standard **1,000 V** limit.",
+          "",
+          "## Diagonal cable block",
+          "Links one side face with the face **above** or **below** it, so a line can climb a slope or a staircase without a stack of hubs. It handles up to **100,000 V**.",
+          "",
+          "None of these has a current limit: only cable hubs burn out from too much current."
+        ],
+        "fr_fr": [
+          "## Tube de câble et poteau électrique",
+          "Ce sont deux piliers fins qui se connectent **seulement à leurs deux extrémités**, selon l'axe sur lequel ils sont posés. Ils sont parfaits pour les longues lignes droites et supportent jusqu'à **10 000 V**. Posés dans du béton liquide, ils sèchent en une version **enrobée de béton**, idéale pour enterrer une ligne dans un sol ou un mur.",
+          "",
+          "## Bloc de câble copieur",
+          "Il se connecte sur **ses six faces**, comme un concentrateur, mais prend l'apparence de n'importe quel bloc que vous lui appliquez, comme les blocs copieurs de Create. Utilisez-le pour cacher le câblage dans un bâtiment. Il garde la limite standard de **1 000 V**.",
+          "",
+          "## Bloc de câble diagonal",
+          "Il relie une face latérale à la face **du dessus** ou **du dessous**, pour qu'une ligne monte une pente ou un escalier sans pile de concentrateurs. Il supporte jusqu'à **100 000 V**.",
+          "",
+          "Aucun de ces blocs n'a de limite de courant : seuls les concentrateurs de câbles grillent quand le courant est trop fort."
+        ]
+      },
+      "items": ["tfmg:cable_tube", "tfmg:electric_post", "tfmg:copycat_cable_block", "tfmg:diagonal_cable_block"]
+    },
+    {
+      "title": {
+        "en_us": "Overloads destroy blocks",
+        "fr_fr": "Les surcharges détruisent les blocs"
+      },
+      "text": {
+        "en_us": [
+          "Every electric block has a **maximum voltage**, **1,000 V** by default, and some also have a **maximum current**. While a block is over its limit, a damage counter rises every half second. After a few seconds of overload, and even short overloads count, the block is **destroyed and drops nothing**. The block is lost for good.",
+          "",
+          "A multimeter shows a red warning once a block reaches **80%** of a limit. Check new setups before you leave them running.",
+          "",
+          "## Blocks with higher voltage limits",
+          "- Cable hubs: 5,000 V",
+          "- Cable tubes, electric posts, stators and the large generator rotor: 10,000 V",
+          "- Insulators, diagonal cables, large switch and large transformer: 100,000 V",
+          "",
+          "## Current limits",
+          "- Lamps and neon tubes: 1 A",
+          "- Diode, switch, potentiometer and transformer: 100 A",
+          "- Freezer and electrode holder: 400 A",
+          "- Large transformer: 500 A, large switch: 1,000 A",
+          "",
+          "A large generator can go well above 1,000 V. Step it down before it reaches ordinary machines."
+        ],
+        "fr_fr": [
+          "Chaque bloc électrique a une **tension maximale**, **1 000 V** par défaut, et certains ont aussi un **courant maximal**. Tant qu'un bloc dépasse sa limite, un compteur de dégâts monte toutes les demi-secondes. Après quelques secondes de surcharge, et même de courtes surcharges comptent, le bloc est **détruit sans rien laisser tomber**. Il est perdu pour de bon.",
+          "",
+          "Un multimètre affiche un avertissement rouge dès qu'un bloc atteint **80 %** d'une limite. Vérifiez vos nouvelles installations avant de les laisser tourner.",
+          "",
+          "## Blocs à tension maximale plus élevée",
+          "- Concentrateurs de câbles : 5 000 V",
+          "- Tubes de câble, poteaux, stators et rotor du grand générateur : 10 000 V",
+          "- Isolateurs, câbles diagonaux, grand interrupteur et grand transformateur : 100 000 V",
+          "",
+          "## Limites de courant",
+          "- Lampes et tubes néon : 1 A",
+          "- Diode, interrupteur, potentiomètre et transformateur : 100 A",
+          "- Congélateur et porte-électrode : 400 A",
+          "- Grand transformateur : 500 A, grand interrupteur : 1 000 A",
+          "",
+          "Un grand générateur peut dépasser largement 1 000 V. Abaissez sa tension avant qu'elle n'atteigne des machines ordinaires."
+        ]
+      },
+      "items": ["tfmg:multimeter", "tfmg:copper_cable_hub", "tfmg:cable_tube", "tfmg:cable_connector", "tfmg:light_bulb", "tfmg:transformer", "tfmg:large_coil"]
+    },
+    {
+      "title": {
+        "en_us": "Measuring tools",
+        "fr_fr": "Les instruments de mesure"
+      },
+      "text": {
+        "en_us": [
+          "## Multimeter",
+          "Hold it in either hand and look at an electric block to read its **voltage**, **current**, **resistance** and **power**. Generators also show the voltage and power they produce. Sneak to add the network's total generation and consumption. Craft it with dye to change its color.",
+          "",
+          "## Electric Gauge",
+          "Place it against an electric block: its needle reads the block behind it. Use a Create **wrench** on it to cycle the mode and scale: voltage (500 V), high voltage (10,000 V), current (16 A), resistance (500 ohms), power (5,000 W), network usage and generation (50,000 W) and accumulator charge. It is also a **display link** source.",
+          "",
+          "## Configuration Wrench",
+          "Sneak and right-click to open a screen and choose a **group** number stored on the wrench. In this version groups do not change how a network is computed: every consumer stays in parallel."
+        ],
+        "fr_fr": [
+          "## Multimètre",
+          "Tenez-le dans n'importe quelle main et regardez un bloc électrique pour lire sa **tension**, son **courant**, sa **résistance** et sa **puissance**. Les générateurs affichent aussi la tension et la puissance qu'ils produisent. Accroupissez-vous pour ajouter la production et la consommation totales du réseau. Fabriquez-le avec une teinture pour changer sa couleur.",
+          "",
+          "## Jauge électrique",
+          "Posez-la contre un bloc électrique : son aiguille mesure le bloc derrière elle. Utilisez une **clé** de Create dessus pour changer de mode et d'échelle : tension (500 V), haute tension (10 000 V), courant (16 A), résistance (500 ohms), puissance (5 000 W), consommation et production du réseau (50 000 W) et charge d'un accumulateur. C'est aussi une source pour **liaison d'affichage**.",
+          "",
+          "## Clé de configuration",
+          "Accroupi, faites un clic droit pour ouvrir un écran et choisir un numéro de **groupe** enregistré sur la clé. Dans cette version, les groupes ne changent pas le calcul du réseau : tous les consommateurs restent en parallèle."
+        ]
+      },
+      "items": ["tfmg:multimeter", "tfmg:voltmeter", "tfmg:electricians_wrench", "create:wrench", "create:display_link"]
+    }
+  ]
+}

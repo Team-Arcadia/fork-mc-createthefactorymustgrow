@@ -2,6 +2,8 @@ package com.drmangotea.tfmg.content.machinery.vat.freezer;
 
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.electricity.base.ElectricBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.machinery.vat.base.IVatMachine;
 import com.drmangotea.tfmg.content.machinery.vat.base.VatBlock;
 import com.drmangotea.tfmg.content.machinery.vat.base.VatBlockEntity;
@@ -14,7 +16,7 @@ import net.minecraft.world.phys.AABB;
 
 import java.util.List;
 
-public class FreezerBlockEntity extends ElectricBlockEntity implements IVatMachine {
+public class FreezerBlockEntity extends ElectricBlockEntity implements IVatMachine, IInspectable {
 
 
 
@@ -83,6 +85,18 @@ public class FreezerBlockEntity extends ElectricBlockEntity implements IVatMachi
     @Override
     public float resistance() {
         return 75;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        // Power shortage is reported by the generic electricity check.
+        if (!data.notEnoughPower)
+            report.check(getCurrent() > 3, "freezer.current_ok", "freezer.low_current", "freezer.low_current.fix",
+                    String.format("%.1f", getCurrent()), 3);
+        if (VatBlockEntity.appendVatReport(level, getBlockPos(), report, Direction.DOWN, Direction.UP) == null) {
+            report.problem("freezer.no_vat");
+            report.fix("freezer.no_vat.fix");
+        }
     }
 
 

@@ -1,0 +1,34 @@
+{
+  "name": "Chaleur et vitesse",
+  "icon": "create:blaze_burner",
+  "category": "tfmg:distillation",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La tour a besoin de chaleur venant de blocs posés $(item)sous la cuve$(), sur toute sa surface. Une cuve de 2 x 2 a quatre emplacements de chauffe, une cuve de 3 x 3 en a neuf. La chaleur de chaque emplacement s'additionne :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Brûleur à blaze$(), allumé : $(item)1$(). Surchauffé : $(item)2$(). Un brûleur à blaze qui couve ne donne rien.$(li)$(item)Foyer$(), quand il brûle : $(item)2$() par bloc.$(br2)Avec une chaleur de 0, la tour ne fait rien."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "À chaque tick, la tour exécute la recette une fois, multipliée par $(item)chaleur / 2$(). Une chaleur de 2 exécute la recette exactement comme JEI la montre, à chaque tick. Une chaleur de 8, le foyer de 2 x 2 de la première page, l'exécute quatre fois."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le contrôleur doit aussi contenir au moins l'entrée de la recette multipliée par ce facteur avant de lancer un tick. Son réservoir de 8000 mB suffit largement pour toute la chaleur qu'on peut placer sous une cuve."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Même un petit chauffage traite le pétrole bien plus vite qu'une seule pompe à pétrole ne le fournit : la chaleur limite rarement une raffinerie. Ajoutez-en quand plusieurs pompes alimentent la même tour."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:blaze_burner,tfmg:firebox,tfmg:steel_fluid_tank,tfmg:steel_distillation_controller",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

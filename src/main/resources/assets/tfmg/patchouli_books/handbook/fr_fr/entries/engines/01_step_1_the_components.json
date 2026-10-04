@@ -1,0 +1,30 @@
+{
+  "name": "Étape 1 : les composants",
+  "icon": "tfmg:crankshaft",
+  "category": "tfmg:engines",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Posez le bloc moteur, puis faites un clic droit dessus avec chaque composant qu'il demande. Les lunettes affichent $(item)Moteur inachevé$() et le $(item)Prochain composant$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Moteurs ordinaire et radial$()$(li)1 vilebrequin, 1 engrenage en acier, 1 grand engrenage en acier$(li)1 tapis roulant, 2 tuyaux en acier, 1 mécanisme en acier$(br2)$(l)Moteur à turbine$()$(li)1 arbre, 1 engrenage en acier, 2 tuyaux en acier, 2 mécanismes en acier"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Chaque bloc d'un moteur long demande son propre jeu complet.$() Un moteur de trois blocs réclame trois jeux, l'un après l'autre ; les lunettes indiquent le bloc en cours ($(item)Construction du moteur 2 sur 3$()). Vous pouvez cliquer sur n'importe quel bloc de la rangée, les pièces vont là où il faut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une erreur ? Un clic droit avec un $(item)tournevis$() retire la dernière pièce posée. Casser un bloc moteur rend aussi toutes les pièces qu'il contenait."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:crankshaft,tfmg:steel_cogwheel,tfmg:large_steel_cogwheel,create:belt_connector,tfmg:steel_pipe,tfmg:steel_mechanism,create:shaft,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

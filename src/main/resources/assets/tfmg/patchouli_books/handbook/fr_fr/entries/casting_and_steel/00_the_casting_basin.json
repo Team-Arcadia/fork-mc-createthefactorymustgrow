@@ -1,0 +1,30 @@
+{
+  "name": "Le bassin de coulée",
+  "icon": "tfmg:casting_basin",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le bassin de coulée transforme une matière en fusion en objets solides. Envoyez-y le fluide par n'importe quelle face ; il contient $(item)1000 mB$(). $(l)Comment se passe une coulée - Dès que le bassin contient assez de fluide pour une recette, il commence à compter.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Pour l'acier : $(item)144 mB$() et $(item)200 ticks$() (10 s) donnent $(item)un lingot d'acier$(). $(li)Le lingot reste dans le bassin. Le bassin contient $(item)un seul objet$() et ne lance pas la coulée suivante tant qu'il n'a pas été retiré."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Récupérer le résultat$()$(li)À la main : $(item)clic droit main vide$().$(li)Automatiquement : un $(item)entonnoir$() ou un entonnoir vanilla le retire.$(br2)Le bassin $(item)refuse les objets insérés$() : il ne prend que des fluides, donc un entonnoir à côté ne fait qu'extraire."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le réservoir accepte n'importe quel fluide. Un fluide sans recette de coulée y reste bloqué : gardez chaque bassin sur une ligne propre."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:casting_basin,tfmg:molten_steel_bucket,tfmg:steel_ingot,create:andesite_funnel,minecraft:hopper",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

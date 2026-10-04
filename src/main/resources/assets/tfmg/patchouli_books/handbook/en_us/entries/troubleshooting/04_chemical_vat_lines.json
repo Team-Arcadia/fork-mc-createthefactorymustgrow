@@ -1,0 +1,30 @@
+{
+  "name": "Chemical vat lines",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(li)**An attached machine is not working: no recipe can run**: every machine on the vat must work, even the ones the current recipe does not use."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "An industrial mixer needs rotation, electrode holders need power from their top face, and every other machine must be running too. Fix it or remove it. $(li)**No recipe matches: check size, vat type and machines in JEI**: the inputs fit no recipe for this vat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Recipes can ask for a minimum vat size (up to 3x3), a vat type (steel, cast iron or firebrick-lined) and particular machines. JEI shows all of these on each recipe. $(li)$(item)Not hot enough for this recipe$(): put fireboxes or blaze burners under the vat, and feed them. $(li)$(item)Pressure too low for this recipe$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the recipe needs a pressure the vat does not have. A compressor on the vat changes its pressure; JEI shows the pressure each recipe needs.$(br2)Remember that pipes can only fill the vat's inputs and drain its outputs. The arc furnace is a firebrick-lined vat of at least 3x3 with three powered electrode holders on top."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:industrial_mixer,tfmg:electrode_holder,tfmg:compressor,tfmg:freezer,tfmg:firebox",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

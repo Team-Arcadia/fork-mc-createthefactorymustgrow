@@ -1,0 +1,34 @@
+{
+  "name": "Ce qui peut être coulé",
+  "icon": "tfmg:steel_ingot",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Acier en fusion$(), 144 mB : lingot d'acier, 200 ticks. $(li)$(item)Silicium liquide$(), 144 mB : lingot de silicium, 200 ticks. $(li)$(item)Plastique fondu$(), 144 mB : feuille de plastique, 100 ticks. $(li)$(item)Béton liquide$(), 144 mB :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "parpaing, 50 ticks. $(li)$(item)Laitier en fusion$(), 20 mB : bloc de laitier, 50 ticks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Suivre le rythme du haut fourneau$()$(br)Un bassin produit un lingot d'acier toutes les 10 secondes. Un haut fourneau bas en produit un toutes les 17 secondes : $(item)un bassin$() suffit au début. Un haut fourneau haut et renforcé (un lingot toutes les 5 secondes) en demande $(item)deux ou plus$() : alimentez une rangée de bassins depuis un seul tuyau."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'acier et le laitier quittent le fourneau par la même sortie. Séparez-les, par exemple avec un $(item)tuyau à fluide intelligent$() réglé sur l'un des deux, pour que vos bassins à acier ne se remplissent jamais de laitier. Le laitier a ses propres bassins et devient des blocs de laitier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Neuf lingots d'acier donnent un $(item)bloc d'acier$(), qui compte aussi comme bloc renforcé pour le haut fourneau."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_ingot,tfmg:silicon_ingot,tfmg:plastic_sheet,tfmg:cinderblock,tfmg:slag_block,tfmg:steel_block,create:smart_fluid_pipe,tfmg:casting_basin",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

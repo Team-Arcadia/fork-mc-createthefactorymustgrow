@@ -1,0 +1,250 @@
+{
+  "order": 80,
+  "icon": "tfmg:generator",
+  "title": {
+    "en_us": "Making Power",
+    "fr_fr": "Produire de l'électricité"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "The first magnet",
+        "fr_fr": "Le premier aimant"
+      },
+      "text": {
+        "en_us": [
+          "The generator and the electric motor both need a **magnet** in their assembly, and so does the electric gauge. The **polarizer**, the machine that makes magnets, needs an electric gauge in its recipe and electricity to run. So where does the first magnet come from?",
+          "",
+          "## Craft it by hand",
+          "Since 1.3.0 a magnet can be crafted at a crafting table:",
+          "- a **magnetic alloy ingot** in the center,",
+          "- a **block of redstone** above it, on its left and on its right,",
+          "- a **compass** below it.",
+          "",
+          "It is expensive on purpose: craft just enough to build your first generator and electric gauge, then a polarizer.",
+          "",
+          "## Or call the lightning",
+          "Lightning striking dropped magnetic alloy ingots turns them into magnets, but part of the stack is lost at random.",
+          "",
+          "Once power flows, the **polarizer** turns magnetic alloy ingots into magnets cheaply (see **Electric Machines**)."
+        ],
+        "fr_fr": [
+          "Le générateur et le moteur électrique demandent tous deux un **aimant** pendant leur assemblage, tout comme la jauge électrique. Le **polariseur**, la machine qui fabrique les aimants, demande une jauge électrique dans sa recette et de l'électricité pour fonctionner. D'où vient alors le premier aimant ?",
+          "",
+          "## Le fabriquer à la main",
+          "Depuis la 1.3.0, un aimant se fabrique sur une table de craft :",
+          "- un **lingot d'alliage magnétique** au centre,",
+          "- un **bloc de redstone** au-dessus, à gauche et à droite,",
+          "- une **boussole** en dessous.",
+          "",
+          "C'est cher exprès : fabriquez juste de quoi construire votre premier générateur et votre jauge électrique, puis un polariseur.",
+          "",
+          "## Ou appeler la foudre",
+          "La foudre qui frappe des lingots d'alliage magnétique posés au sol les transforme en aimants, mais une partie de la pile est perdue au hasard.",
+          "",
+          "Une fois le courant établi, le **polariseur** transforme les lingots d'alliage magnétique en aimants à moindre coût (voir **Machines électriques**)."
+        ]
+      },
+      "items": ["tfmg:magnet", "tfmg:magnetic_alloy_ingot", "minecraft:redstone_block", "minecraft:compass", "tfmg:voltmeter", "tfmg:polarizer"]
+    },
+    {
+      "title": {
+        "en_us": "Generator",
+        "fr_fr": "Générateur"
+      },
+      "text": {
+        "en_us": [
+          "The generator turns rotation into electricity. It is made by sequenced assembly on a shaft: a capacitor, a steel plate, a copper spool on the winding machine, a magnet, a steel mechanism and a screwdriver, three times over.",
+          "",
+          "## Output",
+          "- Nothing below **40 RPM**.",
+          "- Voltage: **(RPM - 40) x 1.4**, capped at **1,000 V**.",
+          "- Power: **voltage x 40 W**.",
+          "",
+          "At 128 RPM it gives 123 V and 4,920 W. At 256 RPM, the fastest Create shaft, it gives **302 V** and **12,080 W**.",
+          "",
+          "It connects on **every face**, and it puts a stress impact of 50 on its shaft, like any Create machine.",
+          "",
+          "## Several generators",
+          "Their powers add up, but the network takes the **highest** voltage only. Run them all at the same speed, otherwise the slow ones add power without adding voltage.",
+          "",
+          "These are the default values; a server can change them in the config."
+        ],
+        "fr_fr": [
+          "Le générateur transforme la rotation en électricité. Il se fabrique par assemblage séquencé sur un axe : un condensateur, une plaque d'acier, une bobine de cuivre sur l'enrouleuse, un aimant, un mécanisme en acier et un tournevis, trois fois de suite.",
+          "",
+          "## Production",
+          "- Rien en dessous de **40 tr/min**.",
+          "- Tension : **(tr/min - 40) x 1,4**, plafonnée à **1 000 V**.",
+          "- Puissance : **tension x 40 W**.",
+          "",
+          "À 128 tr/min, il donne 123 V et 4 920 W. À 256 tr/min, la vitesse maximale d'un axe Create, il donne **302 V** et **12 080 W**.",
+          "",
+          "Il se connecte sur **toutes ses faces** et impose un impact de contrainte de 50 à son axe, comme n'importe quelle machine de Create.",
+          "",
+          "## Plusieurs générateurs",
+          "Leurs puissances s'additionnent, mais le réseau ne garde que la tension **la plus haute**. Faites-les tous tourner à la même vitesse, sinon les plus lents ajoutent de la puissance sans ajouter de tension.",
+          "",
+          "Ce sont les valeurs par défaut ; un serveur peut les modifier dans la configuration."
+        ]
+      },
+      "items": ["tfmg:generator", "create:shaft", "tfmg:capacitor_item", "tfmg:copper_spool", "tfmg:magnet", "tfmg:steel_mechanism", "tfmg:screwdriver"]
+    },
+    {
+      "title": {
+        "en_us": "Large generator",
+        "fr_fr": "Grand générateur"
+      },
+      "text": {
+        "en_us": [
+          "Place a **rotor** and surround it with **8 stators** in a ring, square around the rotor's axis: four on the sides and four on the corners. The stators take their shape by themselves. The rotor only generates when all eight are in place. Both parts come from a mechanical crafter.",
+          "",
+          "## Output",
+          "- Nothing below **70 RPM**.",
+          "- Voltage: **(RPM - 70) x 12**, capped at **10,000 V**.",
+          "- Power: **(RPM - 70) x 320 W**.",
+          "",
+          "At 256 RPM it gives **2,232 V** and **59,520 W**. The rotor has a stress impact of 240.",
+          "",
+          "Take power from the **stators**. They handle 10,000 V, but most machines burn above **1,000 V**: run the line through insulators, cable tubes or posts into a **large transformer** before it reaches your factory."
+        ],
+        "fr_fr": [
+          "Posez un **rotor** et entourez-le de **8 stators** en anneau, en carré autour de l'axe du rotor : quatre sur les côtés et quatre dans les coins. Les stators prennent leur forme tout seuls. Le rotor ne produit que lorsque les huit sont en place. Les deux pièces sortent d'un établi mécanique.",
+          "",
+          "## Production",
+          "- Rien en dessous de **70 tr/min**.",
+          "- Tension : **(tr/min - 70) x 12**, plafonnée à **10 000 V**.",
+          "- Puissance : **(tr/min - 70) x 320 W**.",
+          "",
+          "À 256 tr/min, il donne **2 232 V** et **59 520 W**. Le rotor a un impact de contrainte de 240.",
+          "",
+          "Prenez le courant sur les **stators**. Ils supportent 10 000 V, mais la plupart des machines grillent au-dessus de **1 000 V** : faites passer la ligne par des isolateurs, des tubes de câble ou des poteaux jusqu'à un **grand transformateur** avant qu'elle n'atteigne votre usine."
+        ]
+      },
+      "items": ["tfmg:rotor", "tfmg:stator", "create:shaft", "tfmg:large_coil"],
+      "schematic": {
+        "layers": [
+          ["ABC", "DRE", "FGH"],
+          ["...", ".S.", "..."]
+        ],
+        "key": {
+          "A": "tfmg:stator[facing=north,stator_state=corner_horizontal,value=true]",
+          "B": "tfmg:stator[facing=south,stator_state=side,value=true]",
+          "C": "tfmg:stator[facing=east,stator_state=corner_horizontal,value=true]",
+          "D": "tfmg:stator[facing=east,stator_state=side,value=true]",
+          "R": "tfmg:rotor[axis=y]",
+          "E": "tfmg:stator[facing=west,stator_state=side,value=true]",
+          "F": "tfmg:stator[facing=west,stator_state=corner_horizontal,value=true]",
+          "G": "tfmg:stator[facing=north,stator_state=side,value=true]",
+          "H": "tfmg:stator[facing=south,stator_state=corner_horizontal,value=true]",
+          "S": "create:shaft[axis=y]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Engine generators and the creative generator",
+        "fr_fr": "Moteurs générateurs et générateur créatif"
+      },
+      "text": {
+        "en_us": [
+          "## Generator on an engine",
+          "Right-click a regular, radial or turbine engine with a **generator** to mount it as the engine's upgrade. An engine takes only one upgrade. The engine then feeds the network directly:",
+          "",
+          "- Voltage: **20 x engine RPM / 500**.",
+          "- Power: **1 W per engine RPM**.",
+          "- Engine torque is multiplied by **0.7**.",
+          "",
+          "At 4,000 engine RPM that gives 160 V and 4,000 W, on top of the rotation the engine still delivers. See the **Engines** chapter to build and fuel one.",
+          "",
+          "## Creative generator",
+          "Available in creative mode only. Set its voltage with the value box on top, from **0 to 2,500 V** in steps of 10 V. Its power is practically unlimited and it never overloads itself. Use it to test a setup before building real generators, but remember that the other blocks on its network still have their own limits."
+        ],
+        "fr_fr": [
+          "## Un générateur sur un moteur",
+          "Faites un clic droit sur un moteur normal, radial ou à turbine avec un **générateur** pour le monter comme amélioration du moteur. Un moteur n'accepte qu'une seule amélioration. Le moteur alimente alors directement le réseau :",
+          "",
+          "- Tension : **20 x tr/min du moteur / 500**.",
+          "- Puissance : **1 W par tr/min du moteur**.",
+          "- Le couple du moteur est multiplié par **0,7**.",
+          "",
+          "À 4 000 tr/min de moteur, cela donne 160 V et 4 000 W, en plus de la rotation que le moteur fournit toujours. Voir le chapitre **Moteurs** pour en construire et en alimenter un.",
+          "",
+          "## Générateur créatif",
+          "Disponible uniquement en mode créatif. Réglez sa tension avec la boîte de valeur sur le dessus, de **0 à 2 500 V** par pas de 10 V. Sa puissance est pratiquement illimitée et il ne surcharge jamais lui-même. Servez-vous-en pour tester une installation avant de construire de vrais générateurs, mais les autres blocs de son réseau gardent leurs propres limites."
+        ]
+      },
+      "items": ["tfmg:generator", "tfmg:regular_engine", "tfmg:radial_engine", "tfmg:turbine_engine", "tfmg:creative_generator"]
+    },
+    {
+      "title": {
+        "en_us": "Accumulator",
+        "fr_fr": "Accumulateur"
+      },
+      "text": {
+        "en_us": [
+          "The accumulator stores energy for later. It connects at the **two ends** of its axis.",
+          "",
+          "## Chains",
+          "Line accumulators up end to end, all facing the same way, to build a chain of up to **15**. Each block adds **12 V** and **100,000** of storage: a chain of 10 outputs 120 V and holds 1,000,000.",
+          "",
+          "## Charging and discharging",
+          "- When the network voltage is **above** the chain's voltage and the network has spare power, it charges at up to **100 per tick**.",
+          "- When the network voltage is **at or below** its own, it powers the network, up to **20 A** (so 240 W per block of the chain).",
+          "- A **redstone signal** stops it from discharging.",
+          "",
+          "A broken accumulator keeps its charge in the item.",
+          "",
+          "Its other faces expose the stored energy as **Forge Energy** for machines from other mods, and push it into them. It is also a **display link** source for voltage and network figures."
+        ],
+        "fr_fr": [
+          "L'accumulateur stocke de l'énergie pour plus tard. Il se connecte aux **deux extrémités** de son axe.",
+          "",
+          "## Les chaînes",
+          "Alignez des accumulateurs bout à bout, tous dans le même sens, pour former une chaîne de **15** au maximum. Chaque bloc ajoute **12 V** et **100 000** de stockage : une chaîne de 10 fournit 120 V et contient 1 000 000.",
+          "",
+          "## Charge et décharge",
+          "- Quand la tension du réseau est **supérieure** à celle de la chaîne et que le réseau a de la puissance en trop, il se charge jusqu'à **100 par tick**.",
+          "- Quand la tension du réseau est **inférieure ou égale** à la sienne, il alimente le réseau, jusqu'à **20 A** (soit 240 W par bloc de la chaîne).",
+          "- Un **signal de redstone** l'empêche de se décharger.",
+          "",
+          "Un accumulateur cassé garde sa charge dans l'objet.",
+          "",
+          "Ses autres faces exposent l'énergie stockée en **Forge Energy** pour les machines d'autres mods, et la leur envoient. C'est aussi une source pour **liaison d'affichage** pour la tension et les chiffres du réseau."
+        ]
+      },
+      "items": ["tfmg:accumulator", "create:display_link", "minecraft:redstone_torch"]
+    },
+    {
+      "title": {
+        "en_us": "Converter",
+        "fr_fr": "Convertisseur"
+      },
+      "text": {
+        "en_us": [
+          "The converter links TFMG electricity with **Forge Energy (FE)** from other mods. It stores up to **500,000 FE**. Use a Create **wrench** on it to switch between its two modes.",
+          "",
+          "## FE to TFMG",
+          "Feed it Forge Energy. It powers the TFMG network at the voltage set on its dial, from **1 to 250 V** (20 V by default), with up to **10 kW**. When its storage runs empty it waits **5 seconds** before it starts again.",
+          "",
+          "## TFMG to FE",
+          "It charges from the TFMG network at up to **1,000 FE per tick**, as long as the network voltage reaches the dial value and the network has spare power. It pushes that energy into neighbouring FE machines.",
+          "",
+          "Only **one side** takes the TFMG connection. Look at it with a multimeter: it tells you the current mode and which side goes to the TFMG cable and which to the FE machine. It also says why it is not charging, for example when the dial is set higher than the network voltage."
+        ],
+        "fr_fr": [
+          "Le convertisseur relie l'électricité de TFMG à la **Forge Energy (FE)** des autres mods. Il stocke jusqu'à **500 000 FE**. Utilisez une **clé** de Create dessus pour passer d'un mode à l'autre.",
+          "",
+          "## De FE vers TFMG",
+          "Donnez-lui de la Forge Energy. Il alimente le réseau TFMG à la tension réglée sur son cadran, de **1 à 250 V** (20 V par défaut), avec jusqu'à **10 kW**. Quand son stock est vide, il attend **5 secondes** avant de repartir.",
+          "",
+          "## De TFMG vers FE",
+          "Il se charge sur le réseau TFMG jusqu'à **1 000 FE par tick**, tant que la tension du réseau atteint la valeur du cadran et que le réseau a de la puissance en trop. Il envoie cette énergie aux machines FE voisines.",
+          "",
+          "Une **seule face** accepte la connexion TFMG. Regardez-le avec un multimètre : il indique le mode actuel, quelle face va au câble TFMG et laquelle à la machine FE. Il explique aussi pourquoi il ne charge pas, par exemple quand le cadran est réglé plus haut que la tension du réseau."
+        ]
+      },
+      "items": ["tfmg:converter", "create:wrench", "tfmg:multimeter"]
+    }
+  ]
+}

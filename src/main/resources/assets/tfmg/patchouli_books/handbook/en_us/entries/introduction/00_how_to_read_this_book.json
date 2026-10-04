@@ -1,0 +1,26 @@
+{
+  "name": "How to read this book",
+  "icon": "tfmg:factory_guide",
+  "category": "tfmg:introduction",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Factory Must Grow brings the age of $(item)steel$(), $(item)oil$() and $(item)electricity$() to Create.$(br2)Each chapter follows the order you will build things in. Read them in order the first time, then come back to any chapter when you need it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Every multiblock has a $(item)3D view$() page. Press $(item)Visualize$() on it to project the structure as a ghost in front of you: missing and wrong blocks are shown until it is complete. $(li)The last page of an entry shows the $(item)items$() it talks about; hover them for details, and use JEI for their recipes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Use the $(item)search$() bar on the contents page, and bookmark the pages you use most. $(li)Stuck? Right-click the machine with the $(item)Factory Inspector$(): it tells you what works, what stops it and what to do."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:factory_guide,tfmg:factory_inspector,create:goggles,create:wrench",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

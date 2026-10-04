@@ -1,0 +1,26 @@
+{
+  "name": "The Winding Machine",
+  "icon": "tfmg:winding_machine",
+  "category": "tfmg:winding_and_magnets",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Winding Machine$() wraps wire from a $(item)spool$() around a workpiece, one turn per tick. It makes resistors and coils, winds wire onto spools, and is a step in several sequenced assemblies. $(l)Setting it up - Drive it with a shaft on its $(item)side$().$() Any speed works:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "it winds one turn per tick as long as it turns. $(li)$(item)Spool$(): right-click the machine with a spool to mount it (the old one comes back to you). Right-click with an empty hand to take the spool off. $(li)$(item)Workpiece$(): right-click with any other item to put $(item)one$() in. Sneak and right-click with an empty hand to take it back."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Automation$()$(br)Funnels and deployers can insert both: spools go to the spool slot, everything else to the workpiece slot. Only a $(item)used-up, empty spool$() can be pulled out of the spool slot, and wire in the workpiece slot is never pulled out.$(br2)With goggles you see the mounted spool, its $(item)turns left$(), and the progress of the current job."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:winding_machine,tfmg:copper_spool,tfmg:constantan_spool,tfmg:aluminum_spool,tfmg:empty_spool,create:deployer",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

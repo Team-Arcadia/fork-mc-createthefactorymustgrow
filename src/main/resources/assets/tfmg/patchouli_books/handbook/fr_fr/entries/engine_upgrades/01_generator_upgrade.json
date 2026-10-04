@@ -1,0 +1,30 @@
+{
+  "name": "Amélioration générateur",
+  "icon": "tfmg:generator",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Posez un $(item)Générateur$() sur un bloc moteur et le moteur alimente aussi le réseau électrique auquel il est relié. Il produit du courant en plus de sa rotation, au prix d'un $(item)couple x0,7$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Combien$()$(br)Les deux valeurs suivent la vitesse du moteur, le RPM affiché par les lunettes :$(li)$(item)Tension = 1,6 V par RPM$()$(li)$(item)Puissance = 40 W par RPM$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un moteur de type I à l'essence avec un signal maximal tourne à 100 RPM, son générateur donne donc $(item)160 V et 4000 W$(). Un moteur plus rapide (turbine, turbo, carburant léger) donne plus de tension, un plus lent moins. Quand le moteur s'arrête, le courant aussi."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Utilisez un $(item)multimètre$() sur le réseau pour lire la tension et la puissance réellement produites. Surveillez la tension maximale de vos câbles et machines : la plupart des blocs grillent au-delà de leur tension maximale (voir le chapitre Dépannage)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,tfmg:multimeter,tfmg:copper_wire",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

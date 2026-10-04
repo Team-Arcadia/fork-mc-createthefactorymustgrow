@@ -1,0 +1,42 @@
+{
+  "order": 5001,
+  "name": {
+    "en_us": "The shape",
+    "fr_fr": "La forme"
+  },
+  "layers": [
+    [
+      "aFb",
+      "FFF",
+      "cOd"
+    ],
+    [
+      "aFb",
+      "H F",
+      "cFd"
+    ],
+    [
+      "eFf",
+      "F F",
+      "gFh"
+    ],
+    [
+      "   ",
+      " H ",
+      "   "
+    ]
+  ],
+  "key": {
+    "a": "tfmg:fireproof_brick_reinforcement[east=tall,south=tall,up=true]",
+    "b": "tfmg:fireproof_brick_reinforcement[west=tall,south=tall,up=true]",
+    "c": "tfmg:fireproof_brick_reinforcement[east=tall,north=tall,up=true]",
+    "d": "tfmg:fireproof_brick_reinforcement[west=tall,north=tall,up=true]",
+    "e": "tfmg:fireproof_brick_reinforcement[east=low,south=low,up=true]",
+    "f": "tfmg:fireproof_brick_reinforcement[west=low,south=low,up=true]",
+    "g": "tfmg:fireproof_brick_reinforcement[east=low,north=low,up=true]",
+    "h": "tfmg:fireproof_brick_reinforcement[west=low,north=low,up=true]",
+    "F": "tfmg:fireproof_bricks",
+    "O": "tfmg:blast_furnace_output[facing=south]",
+    "H": "tfmg:blast_furnace_hatch"
+  }
+}

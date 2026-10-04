@@ -1,0 +1,30 @@
+{
+  "name": "Décorations en métal",
+  "icon": "tfmg:yellow_caution_block",
+  "category": "tfmg:construction",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La plupart des décorations en métal viennent du $(item)tailleur de pierre$(), un lingot à la fois : $(li)$(item)Blocs de signalisation$() : 1 lingot d'aluminium en donne $(item)2$(), dans l'une des quinze couleurs. Ils sont orientables et suivent votre regard à la pose."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Sol d'usine$() : 1 lingot d'aluminium donne $(item)1$() bloc de sol en métal. $(li)$(item)Barreaux$() : 1 lingot en donne $(item)4$(), en acier, aluminium, fonte, plomb ou nickel. $(li)$(item)Échelles$() : 1 lingot en donne $(item)2$(), en acier, aluminium, fonte, plomb, nickel ou constantan. $(li)$(item)Échafaudages$() : 1 lingot en donne $(item)2$(), en acier ou en aluminium."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les portes Les quatre portes de TFMG sont des $(item)portes coulissantes$(), comme les portes de train de Create :$() $(li)$(item)porte blindée lourde$() : 6 lingots d'acier en donnent 3, - $(item)porte en aluminium$() : 6 lingots d'aluminium en donnent 3, - $(item)porte en acier$() : un carter en acier avec n'importe quelle porte en bois, - $(item)porte de carter lourde$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "un carter de machinerie lourde avec n'importe quelle porte en bois.$(br2)La $(item)trappe en acier$() demande une ligne de 3 lingots d'acier.$(br2)Les blocs de stockage d'acier et d'aluminium, les poutres et les cadres complètent l'ensemble pour un aspect structurel."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:yellow_caution_block,tfmg:factory_floor,tfmg:steel_bars,tfmg:steel_ladder,tfmg:steel_scaffolding,tfmg:heavy_plated_door,tfmg:steel_door,tfmg:steel_trapdoor",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

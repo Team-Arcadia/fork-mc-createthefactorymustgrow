@@ -1,0 +1,30 @@
+{
+  "name": "GPL, butane et propane",
+  "icon": "tfmg:lpg_bucket",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)GPL$() sort par la sortie du haut d'une tour à pétrole brut : 60 mB par passage. Dans une cuve chimique, on peut le séparer puis le recombiner :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Séparation$()$(br)$(item)1000 mB de GPL$() donnent $(item)500 mB de butane + 500 mB de propane$(). Utilisez n'importe quelle cuve chimique équipée d'un $(item)congélateur$().$(br2)$(l)Compression$()$(br)$(item)500 mB de butane + 500 mB de propane$() donnent $(item)1000 mB de GPL$(). Il faut un $(item)compresseur$() qui met la cuve sous pression, et cela ne marche que dans une cuve chimique $(item)en acier$() ou $(item)ignifugée$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Usages$()$(li)Les trois sont des carburants de foyer et brûlent dans les torches d'évacuation et les lampes à gaz.$(li)Un bec verseur remplit un $(item)cylindre de moteur$() avec 250 mB de butane ou de propane, pour faire tourner un moteur avec ce gaz.$(li)Un bec verseur transforme un seau vide et 1000 mB de GPL en $(item)réservoir de GPL$(), pratique pour transporter du gaz à la main."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le GPL est aussi une bonne raison de garder la tour à pétrole brut à six sorties : la recette à cinq sorties en fait autant, mais celle à trois sorties n'en fait pas. Le chapitre des cuves chimiques explique comment brancher congélateurs et compresseurs."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lpg_bucket,tfmg:butane_bucket,tfmg:propane_bucket,tfmg:freezer,tfmg:compressor,tfmg:steel_chemical_vat,tfmg:engine_cylinder,create:spout",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

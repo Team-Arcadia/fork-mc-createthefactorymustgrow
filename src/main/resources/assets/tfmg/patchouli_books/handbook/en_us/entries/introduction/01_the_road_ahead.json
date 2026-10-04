@@ -1,0 +1,26 @@
+{
+  "name": "The road ahead",
+  "icon": "tfmg:coal_coke",
+  "category": "tfmg:introduction",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)1. Steel$()$(br)Coal becomes $(item)coal coke$() in a coke oven. Hot air from a blast stove feeds a $(item)blast furnace$(), which melts crushed iron into molten steel. A casting basin turns it into $(item)steel ingots$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)2. Parts and machines$()$(br)Steel gives heavy plates, screws, casings and the $(item)steel mechanism$() that most machines need.$(br2)$(l)3. Electricity$()$(br)Generators turn rotation into power for motors, vats, the polarizer and the winding machine. Aluminium comes from electrolysis."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)4. Oil$()$(br)Find a deposit, pump it with a pumpjack, refine it in a distillation tower into fuels, then burn them in $(item)engines$(), or turn them into plastic."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coal_coke,tfmg:steel_ingot,tfmg:steel_mechanism,tfmg:aluminum_ingot,tfmg:crude_oil_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

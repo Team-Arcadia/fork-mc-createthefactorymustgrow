@@ -1,0 +1,30 @@
+{
+  "name": "Flarestack and gas lamp",
+  "icon": "tfmg:flarestack",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Both blocks burn flammable fluids: LPG, butane, propane, hydrogen, furnace gas, crude oil, heavy oil, gasoline, diesel, naphtha, kerosene, creosote and lubrication oil. Neither one needs an exhaust."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Flarestack The flarestack destroys what you pump into it, with a tall flame.$() Use it on the products your refinery makes but you do not need yet. $(li)Holds $(item)2500 mB$(). $(li)Burns $(item)30 mB per tick$(), or $(item)100 mB per tick$() while it holds more than 1000 mB. $(li)Gives off light level 15 while burning."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Gas lamp$()$(br)A light source that needs no wiring at all.$(li)Holds $(item)4000 mB$() of any of the fluids above.$(li)Burns about $(item)1 mB per second$(), so a full lamp lasts over an hour.$(li)Gives light level 15 while fuelled, and stays lit for 5 seconds after the last drop."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Gas lamps are a good use for small leftovers such as the 10 mB of naphtha per crude oil run, or the creosote from coke ovens."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:flarestack,tfmg:gas_lamp,tfmg:lpg_bucket,tfmg:creosote_bucket,tfmg:naphtha_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

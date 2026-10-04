@@ -1,0 +1,30 @@
+{
+  "name": "Blocs accolés et concentrateurs",
+  "icon": "tfmg:copper_cable_hub",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Deux blocs électriques se connectent quand ils se touchent par des faces qui acceptent toutes deux le courant. Un générateur accepte le courant sur toutes ses faces, mais beaucoup de machines sur une seule :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "le moteur, les lampes et le polariseur utilisent leur face $(item)arrière$(). Chaque chapitre précise quelle face utiliser."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les concentrateurs de câbles$()$(br)Un concentrateur de câbles est un bloc plein qui se connecte sur $(item)ses six faces$(). Empilez-les pour faire passer le courant à travers murs et planchers. Chaque concentrateur supporte jusqu'à $(item)5 000 V$() et a une $(item)limite de courant$(), comparée au courant total de $(item)tout le réseau$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Cuivre : $(item)16 A$()$(li)Laiton : $(item)50 A$()$(li)Aluminium : $(item)80 A$()$(li)Carter d'acier et lourd : $(item)100 A$()$(li)Acier : $(item)250 A$()$(br2)Ceux en cuivre sont les moins chers, deux par fabrication avec des lingots et du fil de cuivre. Améliorez-les avant que votre réseau dépasse leur limite, sinon ils grillent (voir $(item)Surcharges$())."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:copper_cable_hub,tfmg:brass_cable_hub,tfmg:aluminum_cable_hub,tfmg:steel_casing_cable_hub,tfmg:heavy_cable_hub,tfmg:steel_cable_hub,tfmg:copper_wire",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -9,6 +9,8 @@ import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.recipes.CokingRecipe;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGBlocks;
@@ -53,7 +55,7 @@ import java.util.Optional;
 
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
-public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     // Per-tick fluid and progress changes sync at most every few ticks.
     private final ThrottledSync throttledSync = new ThrottledSync();
@@ -224,11 +226,17 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
                 .style(ChatFormatting.GRAY)
                 .forGoggles(tooltip);
 
-        if(level.getBlockEntity(controller) instanceof CokeOvenBlockEntity controller)
+        if(level.getBlockEntity(controller) instanceof CokeOvenBlockEntity controller) {
             if (controller.timer > 0)
                 TFMGTexts.progress((double) controller.timer / 20)
                         .style(ChatFormatting.GOLD)
                         .forGoggles(tooltip);
+            // A full by-product tank pauses the oven; it used to say nothing.
+            if (controller.secondaryTank.getSpace() < 100)
+                TFMGTexts.problem("coke_oven.co2_full").forGoggles(tooltip);
+            if (controller.primaryTank.getSpace() < 100)
+                TFMGTexts.problem("coke_oven.creosote_full").forGoggles(tooltip);
+        }
 
         createFluidTooltip(this,tooltip);
         TFMGUtils.createItemTooltip(this, tooltip);
@@ -269,6 +277,69 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
         }
         return true;
     }
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        if (!isController()) {
+            if (!level.isLoaded(controller) || !(level.getBlockEntity(controller) instanceof CokeOvenBlockEntity owner)) {
+                report.problem("coke_oven.no_controller");
+                report.fix("coke_oven.no_controller.fix");
+                return;
+            }
+            report.info("coke_oven.member", controller.getX(), controller.getY(), controller.getZ());
+            owner.inspect(report);
+            return;
+        }
+
+        int maxSize = TFMGConfigs.common().machines.cokeOvenMaxSize.get();
+        float speed = Math.max(size / 2f, 1f);
+        if (size > 1)
+            report.ok("coke_oven.formed", size, size, maxSize, String.format("%.1f", speed));
+        else
+            report.info("coke_oven.single", maxSize);
+
+        ItemStack input = inventory.getItem(0);
+        CokingRecipe recipe = null;
+        if (input.isEmpty()) {
+            report.problem("coke_oven.no_input");
+            report.fix("coke_oven.no_input.fix");
+        } else {
+            Optional<RecipeHolder<CokingRecipe>> found = TFMGRecipeTypes.COKING.find(new RecipeWrapper(inventory), level);
+            if (found.isEmpty()) {
+                report.problem("coke_oven.no_recipe", input.getHoverName());
+                report.fix("coke_oven.no_recipe.fix", input.getHoverName());
+            } else {
+                recipe = found.get().value();
+                report.ok("coke_oven.input", input.getCount(), input.getHoverName(),
+                        recipe.getResultItem(level.registryAccess()).getHoverName());
+            }
+        }
+
+        if (recipe != null) {
+            FluidStack creosote = recipe.getPrimaryResult();
+            FluidStack gas = recipe.getSecondaryResult();
+            if (primaryTank.fill(creosote, IFluidHandler.FluidAction.SIMULATE) < creosote.getAmount()) {
+                report.problem("coke_oven.creosote_full", primaryTank.getFluidAmount(), primaryTank.getCapacity());
+                report.fix("coke_oven.creosote_full.fix", creosote.getHoverName());
+            } else {
+                report.ok("coke_oven.creosote_space", creosote.getHoverName(), primaryTank.getFluidAmount(), primaryTank.getCapacity());
+            }
+            if (secondaryTank.fill(gas, IFluidHandler.FluidAction.SIMULATE) < gas.getAmount()) {
+                report.problem("coke_oven.co2_full", secondaryTank.getFluidAmount(), secondaryTank.getCapacity());
+                report.fix("coke_oven.co2_full.fix", gas.getHoverName());
+            } else {
+                report.ok("coke_oven.co2_space", gas.getHoverName(), secondaryTank.getFluidAmount(), secondaryTank.getCapacity());
+            }
+            report.info("coke_oven.byproducts", creosote.getAmount(), creosote.getHoverName(), gas.getAmount(), gas.getHoverName());
+        }
+
+        if (timer > 0)
+            report.info("coke_oven.progress", String.format("%.1f", timer / 20f));
+        BlockPos drop = worldPosition.relative(getBlockState().getValue(FACING));
+        report.info("coke_oven.output", drop.getX(), drop.getY(), drop.getZ());
+    }
+
     public void manageDoors(boolean open){
 
         for(int i =0; i< size;i++){

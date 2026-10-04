@@ -1,0 +1,30 @@
+{
+  "name": "Large engine power and goggles",
+  "icon": "tfmg:large_engine",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The power of a large engine depends on the fuel's torque factor (see the fuel table in the Engines chapter). With the default stress settings, at 128 RPM:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Large Engine$(): about 26,400 su x torque factor. Diesel or kerosene: about 37,000 su. Naphtha: about 34,300 su. Furnace gas: about 7,900 su.$(li)$(item)Simple Large Engine$(): about 19,200 su x torque factor. Diesel: about 26,900 su. Furnace gas: about 5,800 su."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Goggle lines (since 1.3.0)$()$(li)$(item)Needs a Powered Shaft 2 blocks in front$(): place or turn the shaft.$(li)$(item)Needs Air in its air tank$(): feed it air.$(li)$(item)No fuel$(): pipe fuel in.$(li)$(item)Unsupported fuel: use diesel, kerosene, naphtha or furnace gas$(): drain the tank and change fuel.$(li)$(item)Exhaust full: pump the CO2 away$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Below these lines the goggles list the three tanks, so you can see which one is empty or full."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_engine,tfmg:simple_large_engine,create:goggles,tfmg:kerosene_bucket,tfmg:naphtha_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

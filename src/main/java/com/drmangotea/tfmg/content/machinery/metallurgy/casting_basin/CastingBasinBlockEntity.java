@@ -1,6 +1,8 @@
 package com.drmangotea.tfmg.content.machinery.metallurgy.casting_basin;
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.recipes.CastingRecipe;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGRecipeTypes;
@@ -30,7 +32,7 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 
 import java.util.List;
 
-public class CastingBasinBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class CastingBasinBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     int flowTimer = 0;
     // Output only: an item pushed in by a hopper or chute blocked casting.
@@ -132,6 +134,50 @@ public class CastingBasinBlockEntity extends SmartBlockEntity implements IHaveGo
 
     protected Object getRecipeCacheKey() {
         return castingRecipeKey;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        FluidStack fluid = tank.getFluid();
+        if (!inventory.isEmpty()) {
+            report.problem("casting_basin.output_waiting", inventory.getStackInSlot(0).getHoverName());
+            report.fix("casting_basin.output_waiting.fix");
+        }
+        if (fluid.isEmpty()) {
+            report.problem("casting_basin.empty");
+            report.fix("casting_basin.empty.fix");
+            return;
+        }
+
+        // Same lookup as findRecipe, read only: the first casting recipe whose
+        // fluid ingredient accepts what the basin holds.
+        CastingRecipe match = null;
+        for (RecipeHolder<? extends Recipe<?>> holder : RecipeFinder.get(getRecipeCacheKey(), level, RecipeConditions.isOfType(TFMGRecipeTypes.CASTING.getType()))) {
+            CastingRecipe tested = (CastingRecipe) holder.value();
+            if (tested.getIngrenient().test(fluid) && !tested.getRollableResults().isEmpty()) {
+                match = tested;
+                break;
+            }
+        }
+        if (match == null) {
+            report.problem("casting_basin.no_recipe", fluid.getHoverName());
+            report.fix("casting_basin.no_recipe.fix", fluid.getHoverName());
+            return;
+        }
+        Component result = match.getRollableResults().get(0).getStack().getHoverName();
+        int needed = match.getIngrenient().amount();
+        if (fluid.getAmount() < needed) {
+            report.problem("casting_basin.not_enough", fluid.getAmount(), needed, fluid.getHoverName(), result);
+            report.fix("casting_basin.not_enough.fix", needed - fluid.getAmount(), fluid.getHoverName());
+        } else {
+            report.ok("casting_basin.recipe", fluid.getHoverName(), result, needed);
+        }
+        if (timer > 0 && recipe != null)
+            report.info("casting_basin.progress", timer, match.getProcessingDuration());
+        else
+            report.info("casting_basin.duration", String.format("%.1f", match.getProcessingDuration() / 20f));
     }
 
     @Override

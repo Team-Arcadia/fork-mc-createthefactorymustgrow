@@ -1,0 +1,30 @@
+{
+  "name": "Distances and axis rules",
+  "icon": "tfmg:pumpjack_hammer",
+  "category": "tfmg:pumpjack",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The holder scans its beam every half second, and the pumpjack assembles by itself as soon as every rule below is met. Nothing needs a click or a redstone signal."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)The head and the connector must each be within $(item)6 blocks$() of the holder along the beam, with only hammer parts in between. $(li)Every part, the connector and the crank must face along the $(item)same axis$() as the holder. A part turned sideways ends the beam there. $(li)The $(item)base$() must be in the same column as the head, $(item)1 to 8 blocks$() below it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)The $(item)crank$() must be in the same column as the connector, $(item)1 to 7 blocks$() below it. $(li)Only one pumpjack can drive a given base.$(br2)If you remove the base or the crank, the beam disassembles back into blocks. Put the piece back and it reassembles on its own."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)large$() hammer parts, head and connector work the same way as the small ones and can replace them for a heavier look. With a large part above it, the holder widens automatically."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:pumpjack_hammer,tfmg:large_pumpjack_hammer_part,tfmg:large_pumpjack_hammer_head,tfmg:large_pumpjack_hammer_connector,tfmg:pumpjack_crank,tfmg:pumpjack_base",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

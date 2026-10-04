@@ -1,0 +1,26 @@
+{
+  "name": "Creosote and CO2",
+  "icon": "tfmg:creosote_bucket",
+  "category": "tfmg:coke_oven",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The controller has two tanks of $(item)8000 mB$() each, shared by the whole square. Each tick the oven cooks it adds:$(br2)$(li)coal: $(item)1 mB creosote$() and $(item)30 mB CO2$()$(li)logs: $(item)2 mB creosote$() and $(item)20 mB CO2$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Where to pump$()$(li)$(item)Creosote$() comes out of $(item)any side$() and the bottom.$(li)$(item)CO2$() comes out of the $(item)top face only$(). Put a pump on top of the oven.$(br2)Both tanks are $(item)drain only$(): you cannot pipe anything in, so a stray water line cannot clog them."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "CO2 builds up fast: at 30 mB per tick the CO2 tank fills in under 15 seconds of cooking. Pipe it from the top to an $(item)exhaust$() or a $(item)smokestack$() to get rid of it (see the Hot Air chapter).$(br2)Keep the creosote: it is one of the two fuels of the $(item)blast stove$(), which heats air for the blast furnace."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:creosote_bucket,tfmg:carbon_dioxide_bucket,create:mechanical_pump,create:fluid_pipe,tfmg:exhaust,tfmg:brick_smokestack,tfmg:blast_stove",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

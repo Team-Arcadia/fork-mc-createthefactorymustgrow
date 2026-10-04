@@ -1,0 +1,30 @@
+{
+  "name": "Lire les lunettes",
+  "icon": "create:goggles",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Regardez la $(item)sortie$() avec les lunettes d'ingénieur. Elle affiche le nombre de minerais, la $(item)hauteur$(), le $(item)combustible$() restant, le temps restant en ticks, $(item)Renforcé$() le cas échéant, puis les deux réservoirs. Des lignes rouges disent pourquoi il est à l'arrêt :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Structure incomplète$() : moins de 3 couches correctes. Vérifiez coins, côtés, centre vide et brique du centre du bas, couche par couche. $(li)$(item)Pas de combustible$() : ajoutez de la poussière de coke. $(li)$(item)Pas de fondant$() : ajoutez du sable calcaire. $(li)$(item)Aucune trappe de haut fourneau dans les murs$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "ajoutez-en une, ou vous en avez deux et la seconde a coupé la tour. $(li)$(item)La trappe ne contient pas d'air chaud$() : le fourneau à air chaud ne livre pas, ou la trappe contient un autre fluide. $(li)$(item)Réservoir de sortie plein$() : pompez l'acier ou le laitier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Si le fourneau s'arrête alors que la trappe contient de l'air chaud, elle en a peut-être moins de 20 mB : votre fourneau à air chaud est trop petit. Le laitier n'est pas un déchet : coulez-le en blocs de laitier."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch,tfmg:molten_slag_bucket,tfmg:slag_block",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

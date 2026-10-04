@@ -1,0 +1,26 @@
+{
+  "name": "Touching blocks and cable hubs",
+  "icon": "tfmg:copper_cable_hub",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two electric blocks connect when they touch through faces that both accept power. A generator accepts power on every face, but many machines only on one: the motor, the lamps and the polarizer use their $(item)back$() face. Each chapter says which face to use."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Cable hubs$()$(br)A cable hub is a full block that connects on $(item)all six faces$(). Stack them to run power through walls and floors. Each hub handles up to $(item)5,000 V$() and has a $(item)current limit$(), checked against the total current of the $(item)whole network$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Copper Cable Hub: $(item)16 A$()$(li)Brass Cable Hub: $(item)50 A$()$(li)Aluminum Cable Hub: $(item)80 A$()$(li)Steel Casing Cable Hub and Heavy Cable Hub: $(item)100 A$()$(li)Steel Cable Hub: $(item)250 A$()$(br2)Copper hubs are the cheapest, two per craft from copper ingots and copper wire. Upgrade them before your network grows past their limit, or they will burn out (see $(item)Overloads$())."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:copper_cable_hub,tfmg:brass_cable_hub,tfmg:aluminum_cable_hub,tfmg:steel_casing_cable_hub,tfmg:heavy_cable_hub,tfmg:steel_cable_hub,tfmg:copper_wire",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

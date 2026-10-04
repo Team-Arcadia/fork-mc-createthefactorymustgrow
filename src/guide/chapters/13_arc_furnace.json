@@ -1,0 +1,180 @@
+{
+  "order": 130,
+  "icon": "tfmg:graphite_electrode",
+  "title": {
+    "en_us": "The Arc Furnace",
+    "fr_fr": "Le four à arc"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Steel from electricity",
+        "fr_fr": "De l'acier par l'électricité"
+      },
+      "text": {
+        "en_us": [
+          "The **arc furnace** is not a block of its own: it is a chemical vat set up to melt iron with electric arcs. It makes molten steel without a blast furnace or hot air.",
+          "",
+          "## The build",
+          "- **Fireproof Chemical Vat** blocks only. Steel and cast iron vats do not work.",
+          "- At least **9 vat blocks**: a 3x3 vat one block high is the usual shape.",
+          "- **3 Electrode Holders** on top of the vat, each with a **Graphite Electrode**.",
+          "- **No heat** is needed: you can leave the space under the vat empty.",
+          "",
+          "Any other machine you attach must be working too, or nothing runs. The simplest arc furnace has the three holders and nothing else.",
+          "",
+          "## Graphite electrodes",
+          "Put a **Block of Coal Coke** in a **Stonecutter**: one block gives one graphite electrode. Right-click a holder to insert it, sneak and right-click with an empty hand to take it out. Working holders throw electric sparks into the vat."
+        ],
+        "fr_fr": [
+          "Le **four à arc** n'est pas un bloc à part : c'est une cuve chimique montée pour fondre le fer avec des arcs électriques. Il produit de l'acier en fusion sans haut fourneau ni air chaud.",
+          "",
+          "## Le montage",
+          "- Uniquement des blocs de **cuve chimique réfractaire**. Les cuves en acier et en fonte ne marchent pas.",
+          "- Au moins **9 blocs de cuve** : une cuve 3x3 d'un bloc de haut est la forme habituelle.",
+          "- **3 porte-électrodes** au-dessus de la cuve, chacun avec une **électrode en graphite**.",
+          "- **Aucune chaleur** n'est nécessaire : vous pouvez laisser le dessous de la cuve vide.",
+          "",
+          "Toute autre machine reliée doit aussi fonctionner, sinon rien ne tourne. Le four à arc le plus simple a ses trois porte-électrodes et rien d'autre.",
+          "",
+          "## Électrodes en graphite",
+          "Mettez un **bloc de coke de charbon** dans un **tailleur de pierre** : un bloc donne une électrode en graphite. Clic droit sur un porte-électrode pour l'insérer, clic droit accroupi main vide pour la retirer. Les porte-électrodes en marche lancent des étincelles dans la cuve."
+        ]
+      },
+      "items": ["tfmg:fireproof_chemical_vat", "tfmg:electrode_holder", "tfmg:graphite_electrode", "tfmg:coal_coke_block", "minecraft:stonecutter"],
+      "schematic": {
+        "layers": [
+          ["VVV", "VVV", "VVV"],
+          ["E.E", "...", ".E."]
+        ],
+        "key": {
+          "V": "tfmg:fireproof_chemical_vat",
+          "E": "tfmg:electrode_holder"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "High voltage",
+        "fr_fr": "Haute tension"
+      },
+      "text": {
+        "en_us": [
+          "Graphite electrodes have a much higher resistance than copper or zinc ones: **300 ohm** each, against 10.",
+          "",
+          "Each holder still needs at least **5 A** (the server setting electrolysisMinimumCurrent), and current is voltage divided by resistance:",
+          "",
+          "- 5 A x 300 ohm = **1500 V** at the very least on every holder,",
+          "- the holder breaks above **20000 V**, so stay between the two.",
+          "",
+          "At 1500 V each holder draws about 7.5 kW, so three of them need a serious power plant. Plan your generators and transformers before building the furnace.",
+          "",
+          "Power goes in through the **top face** of each holder, like for electrolysis. If one holder is under 5 A, it counts as a broken machine and the whole furnace stops: check each holder with a multimeter, it says when the current is too low.",
+          "",
+          "A low voltage is the most common reason an arc furnace does nothing, well before the ingredients."
+        ],
+        "fr_fr": [
+          "Les électrodes en graphite ont une résistance bien plus élevée que celles en cuivre ou en zinc : **300 ohms** chacune, contre 10.",
+          "",
+          "Chaque porte-électrode a quand même besoin d'au moins **5 A** (le réglage serveur electrolysisMinimumCurrent), et l'intensité est la tension divisée par la résistance :",
+          "",
+          "- 5 A x 300 ohms = **1500 V** au strict minimum sur chaque porte-électrode,",
+          "- le porte-électrode casse au-delà de **20000 V** : restez entre les deux.",
+          "",
+          "À 1500 V, chaque porte-électrode consomme environ 7,5 kW, donc trois demandent une vraie centrale. Prévoyez générateurs et transformateurs avant de construire le four.",
+          "",
+          "Le courant entre par la **face du haut** de chaque porte-électrode, comme pour l'électrolyse. Si un seul est sous 5 A, il compte comme une machine en panne et tout le four s'arrête : vérifiez chacun au multimètre, il indique quand l'intensité est trop faible.",
+          "",
+          "Une tension trop basse est la raison la plus courante d'un four à arc qui ne fait rien, bien avant les ingrédients."
+        ]
+      },
+      "items": ["tfmg:electrode_holder", "tfmg:graphite_electrode"]
+    },
+    {
+      "title": {
+        "en_us": "The recipe",
+        "fr_fr": "La recette"
+      },
+      "text": {
+        "en_us": [
+          "Each batch takes **1 second** and uses:",
+          "",
+          "- 1 **Crushed Iron Ore** (crush raw iron in Crushing Wheels),",
+          "- 1 **flux**: **Limesand**, made by crushing limestone,",
+          "- 1 **Coal Coke Dust**, which works as a catalyst (next page).",
+          "",
+          "It gives:",
+          "",
+          "- **144 mB Molten Steel**, exactly one steel ingot in a casting basin,",
+          "- **288 mB Molten Slag**.",
+          "",
+          "## Running it",
+          "Feed the three items through funnels on the vat. The vat has 4 input slots and each holds one kind of item, so crushed iron, limesand and coke dust each take their own slot.",
+          "",
+          "Pump both fluids out of the output side. A recipe only starts when all its products fit, so a vat full of slag stops making steel. Send the molten steel to casting basins, as in the steel chapter, and do something with the slag."
+        ],
+        "fr_fr": [
+          "Chaque fournée prend **1 seconde** et utilise :",
+          "",
+          "- 1 **minerai de fer concassé** (concassez du fer brut dans les roues de concassage),",
+          "- 1 **fondant** : du **sable calcaire**, obtenu en concassant du calcaire,",
+          "- 1 **poussière de coke de charbon**, qui sert de catalyseur (page suivante).",
+          "",
+          "Elle donne :",
+          "",
+          "- **144 mB d'acier en fusion**, exactement un lingot d'acier dans un bassin de coulée,",
+          "- **288 mB de laitier en fusion**.",
+          "",
+          "## Le faire tourner",
+          "Amenez les trois objets par des entonnoirs sur la cuve. La cuve a 4 emplacements d'entrée et chacun contient une seule sorte d'objet, donc le fer concassé, le sable calcaire et la poussière de coke ont chacun le leur.",
+          "",
+          "Pompez les deux fluides côté sortie. Une recette ne démarre que si tous ses produits ont la place : une cuve pleine de laitier ne fait plus d'acier. Envoyez l'acier en fusion vers des bassins de coulée, comme dans le chapitre sur l'acier, et trouvez un usage au laitier."
+        ]
+      },
+      "items": ["create:crushed_raw_iron", "tfmg:limesand", "tfmg:coal_coke_dust", "tfmg:molten_steel_bucket", "tfmg:molten_slag_bucket", "tfmg:casting_basin", "tfmg:steel_ingot"]
+    },
+    {
+      "title": {
+        "en_us": "Coal coke dust is a catalyst",
+        "fr_fr": "La poussière de coke est un catalyseur"
+      },
+      "text": {
+        "en_us": [
+          "This is the part that confuses everyone, so read it carefully.",
+          "",
+          "Every batch **uses one Coal Coke Dust**. Then, **90% of the time**, one dust is given **back to the vat input**, not to the output.",
+          "",
+          "So when you watch the vat:",
+          "",
+          "- the coke dust count **usually stays the same** from one batch to the next,",
+          "- it **drops by 1 about once every 10 batches**,",
+          "- coke dust **never comes out** of the output side.",
+          "",
+          "Nothing is broken, and the dust is not being duplicated or lost: it behaves like a catalyst. A stack of 64 dust lasts for about 640 batches, that is 640 ingots of steel.",
+          "",
+          "Keep a few dust in the input and top it up from time to time, or leave a funnel feeding it slowly. If the input slot is full when a dust comes back, it goes to the output instead so it is never deleted.",
+          "",
+          "JEI shows the same thing on the recipe: the dust is marked as returned to the vat input, with about 10% used up per cycle."
+        ],
+        "fr_fr": [
+          "C'est le point qui trouble tout le monde, alors lisez attentivement.",
+          "",
+          "Chaque fournée **consomme une poussière de coke de charbon**. Ensuite, **90 % du temps**, une poussière est **rendue à l'entrée de la cuve**, pas à la sortie.",
+          "",
+          "Donc en regardant la cuve :",
+          "",
+          "- le nombre de poussières **reste en général le même** d'une fournée à l'autre,",
+          "- il **baisse de 1 environ une fois toutes les 10 fournées**,",
+          "- la poussière de coke **ne sort jamais** côté sortie.",
+          "",
+          "Rien n'est cassé, et la poussière n'est ni dupliquée ni perdue : elle se comporte comme un catalyseur. Une pile de 64 poussières dure environ 640 fournées, soit 640 lingots d'acier.",
+          "",
+          "Gardez quelques poussières en entrée et complétez de temps en temps, ou laissez un entonnoir en ajouter lentement. Si l'emplacement d'entrée est plein quand une poussière revient, elle part en sortie pour ne jamais être supprimée.",
+          "",
+          "JEI montre la même chose sur la recette : la poussière y est indiquée comme rendue à l'entrée de la cuve, avec environ 10 % consommés par cycle."
+        ]
+      },
+      "items": ["tfmg:coal_coke_dust", "tfmg:coal_coke", "create:crushing_wheel"]
+    }
+  ]
+}

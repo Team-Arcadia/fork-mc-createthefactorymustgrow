@@ -1,0 +1,30 @@
+{
+  "name": "Les carters en acier",
+  "icon": "tfmg:hardened_planks",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Planches durcies$()$(br)Remplissez une $(item)bûche écorcée$() avec $(item)250 mB de créosote$() à l'aide d'un bec verseur. Voilà un usage pour la créosote du four à coke."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Carter en acier$()$(br)Appliquez un $(item)lingot d'acier$() sur des planches durcies : clic droit sur le bloc posé, ou avec un déployeur. C'est la base des transformateurs, polariseurs, boîtes de vitesses de moteur et portes en acier."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Carter de machinerie lourd$()$(br)Appliquez une $(item)plaque lourde$() sur un carter en acier de la même façon. Moteurs, chevalets de pompage, mélangeur industriel, entrées de machine et beaucoup de pièces électriques en ont besoin.$(br2)$(l)Carter en aluminium$()$(br)Une $(item)feuille d'aluminium$() sur un carter en acier donne un carter en aluminium."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Comme les carters de Create, ces applications se font à la main sur un bloc posé ou avec un déployeur au-dessus d'un tapis ou d'un dépôt : elles s'automatisent facilement dès que les plaques arrivent en continu."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:hardened_planks,tfmg:creosote_bucket,create:spout,tfmg:steel_casing,tfmg:heavy_machinery_casing,tfmg:industrial_aluminum_casing,tfmg:aluminum_sheet,tfmg:heavy_plate",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

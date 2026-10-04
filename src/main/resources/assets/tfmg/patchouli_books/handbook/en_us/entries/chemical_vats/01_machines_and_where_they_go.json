@@ -1,0 +1,54 @@
+{
+  "name": "Machines and where they go",
+  "icon": "tfmg:industrial_mixer",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A vat only counts machines that sit $(item)directly on its top layer$() or $(item)directly under its bottom layer$(), inside its footprint. $(li)$(item)Industrial Mixer$(): on top, in the $(item)centre$() of a 3x3 vat (anywhere on top of a smaller one)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Give it a $(item)Mixer Blade$() for mixing or a $(item)Centrifuge$() for centrifuging by right-clicking. Driven from its top shaft, it needs at least $(item)30 RPM$(). $(li)$(item)Electrode Holder$(): on top, powered through its $(item)top face$(). Right-click it with an electrode, sneak-click with an empty hand to take it out. It needs at least $(item)5 A$() (server config). $(li)$(item)Compressor$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "on top or underneath, driven by a horizontal shaft at $(item)120 RPM or more$(). $(li)$(item)Freezer$(): on top or underneath, powered by electricity on any side, it needs $(item)more than 3 A$() (75 ohm, so above 225 V)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A mixer without its item or a holder without an electrode is simply not counted. The build shown here is the classic 1x1 mixing vat: a firebox for heat, the vat, and a mixer on top."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Machines and where they go",
+      "multiblock": {
+        "pattern": [
+          [
+            "M"
+          ],
+          [
+            "V"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:industrial_mixer,tfmg:mixer_blade,tfmg:centrifuge,tfmg:electrode_holder,tfmg:compressor,tfmg:freezer",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

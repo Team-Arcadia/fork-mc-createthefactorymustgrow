@@ -1,0 +1,30 @@
+{
+  "name": "Quand la puissance manque",
+  "icon": "tfmg:multimeter",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le réseau additionne la puissance consommée par chaque consommateur et la compare à la puissance produite. Si la consommation est $(item)supérieure$() à la production, tout le réseau passe en $(item)puissance insuffisante$(). Toutes ses machines s'arrêtent d'un coup :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "les moteurs ne tournent plus, les lampes s'éteignent, le polariseur cesse de charger. Ce n'est pas seulement la dernière machine posée qui tombe en panne."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Comment corriger$()$(li)Ajoutez des générateurs, ou faites tourner plus vite ceux que vous avez.$(li)Retirez ou coupez des consommateurs. Quand un bloc est retiré, le réseau est revérifié immédiatement.$(li)Découpez l'usine en réseaux séparés avec des interrupteurs, des diodes ou des transformateurs (voir $(item)Contrôle du réseau$()), pour qu'une machine gourmande ne bloque pas tout."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Tenez un $(item)multimètre$() et regardez n'importe quel bloc du réseau. La ligne rouge de puissance insuffisante vous indique que le réseau manque de puissance. Accroupissez-vous en regardant pour voir côte à côte la $(item)production$() et la $(item)consommation$() totales du réseau."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:multimeter,tfmg:generator,tfmg:electrical_switch,tfmg:electric_diode",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

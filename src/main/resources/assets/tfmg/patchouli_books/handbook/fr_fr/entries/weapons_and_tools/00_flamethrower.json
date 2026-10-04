@@ -1,0 +1,30 @@
+{
+  "name": "Lance-flammes",
+  "icon": "tfmg:flamethrower",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)lance-flammes$() projette du carburant enflammé. Maintenez le clic droit pour tirer : à chaque tick il lance une gerbe d'étincelles qui $(item)mettent le feu au bloc touché$() et $(item)enflamment les créatures pendant 4 secondes$(). L'eau et la pluie éteignent les étincelles."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le plein$()$(br)Le lance-flammes contient $(item)4000 mB$(). Un clic droit sur un bloc qui stocke un carburant accepté (réservoir de fluide de Create, réservoir en acier) le remplit. Un seul réservoir est utilisé par clic, suivi d'une pause d'une seconde."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un lance-flammes vide prend n'importe quel carburant accepté.$(li)Un lance-flammes entamé ne se complète qu'avec le $(item)même carburant$(). Videz-le avant d'en changer.$(li)Depuis la 1.3.0, seul le carburant qui sort vraiment du réservoir est crédité. Les blocs qui refusent l'extraction, comme les moteurs, ne donnent rien."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La barre montre le carburant restant, et l'infobulle indique le carburant, la capacité, la dispersion, la vitesse et le nombre d'étincelles par tick. Chaque tick de tir consomme entre la moitié et la totalité de ce nombre, en mB."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:flamethrower,create:fluid_tank,tfmg:steel_fluid_tank",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "order": 3001,
+  "name": {
+    "en_us": "The shape",
+    "fr_fr": "La forme"
+  },
+  "layers": [
+    [
+      "C",
+      "C",
+      "B"
+    ],
+    [
+      "C",
+      "C",
+      "M"
+    ],
+    [
+      "C",
+      "C",
+      "T"
+    ]
+  ],
+  "key": {
+    "C": "tfmg:coke_oven[facing=south]",
+    "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+    "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+    "T": "tfmg:coke_oven[facing=south,controller_type=top_on]"
+  }
+}

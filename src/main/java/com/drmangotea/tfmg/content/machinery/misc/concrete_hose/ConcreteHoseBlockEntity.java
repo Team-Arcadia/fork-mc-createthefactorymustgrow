@@ -1,6 +1,9 @@
 package com.drmangotea.tfmg.content.machinery.misc.concrete_hose;
 
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
+import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.simibubi.create.content.fluids.hosePulley.HosePulleyBlock;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -8,7 +11,9 @@ import com.simibubi.create.foundation.fluid.SmartFluidTank;
 import com.simibubi.create.foundation.item.TooltipHelper;
 import com.simibubi.create.foundation.utility.ServerSpeedProvider;
 import net.createmod.catnip.animation.LerpedFloat;
+import com.drmangotea.tfmg.content.decoration.concrete.ConcreteloggedBlock;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -22,7 +27,7 @@ import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 
 import java.util.List;
 
-public class ConcreteHoseBlockEntity extends KineticBlockEntity {
+public class ConcreteHoseBlockEntity extends KineticBlockEntity implements IInspectable {
 
     LerpedFloat offset;
     boolean isMoving;
@@ -67,6 +72,64 @@ public class ConcreteHoseBlockEntity extends KineticBlockEntity {
             TooltipHelper.addHint(tooltip, "hint.hose_pulley");
         return addToGoggleTooltip;
     }
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        FluidStack held = internalTank.getFluid();
+        if (held.isEmpty()) {
+            report.problem("concrete_hose.empty");
+            report.fix("concrete_hose.empty.fix");
+        } else if (!held.getFluid().isSame(TFMGFluids.LIQUID_CONCRETE.getSource())) {
+            report.problem("concrete_hose.wrong_fluid", held.getHoverName());
+        } else if (held.getAmount() < 1000) {
+            report.problem("concrete_hose.low", held.getAmount());
+            report.fix("concrete_hose.empty.fix");
+        } else {
+            report.ok("concrete_hose.concrete", held.getAmount());
+        }
+
+        if (!com.simibubi.create.infrastructure.config.AllConfigs.server().fluids.fluidFillPlaceFluidSourceBlocks.get()) {
+            report.problem("concrete_hose.config");
+            report.fix("concrete_hose.config.fix");
+        }
+
+        int length = (int) Math.ceil(offset.getValue());
+        if (isMoving) {
+            report.info("concrete_hose.moving", length);
+            return;
+        }
+        report.ok("concrete_hose.extended", length);
+
+        // The pour starts at the block the hose end hangs in and spreads only
+        // through rebar (concretelogged blocks), never upwards.
+        BlockPos root = worldPosition.below(length);
+        int empty = 0;
+        int filled = 0;
+        for (Direction side : Direction.values()) {
+            if (side == Direction.UP)
+                continue;
+            BlockPos pos = root.relative(side);
+            if (!level.isLoaded(pos))
+                continue;
+            BlockState state = level.getBlockState(pos);
+            if (!state.hasProperty(ConcreteloggedBlock.CONCRETELOGGED))
+                continue;
+            if (state.getValue(ConcreteloggedBlock.CONCRETELOGGED))
+                filled++;
+            else
+                empty++;
+        }
+        if (empty > 0)
+            report.ok("concrete_hose.rebar", empty, root.getX(), root.getY(), root.getZ());
+        else if (filled > 0)
+            report.info("concrete_hose.rebar_filled");
+        else {
+            report.problem("concrete_hose.no_rebar", root.getX(), root.getY(), root.getZ());
+            report.fix("concrete_hose.no_rebar.fix");
+        }
+    }
+
     public float getInterpolatedOffset(float pt) {
         return offset.getValue(pt);
     }

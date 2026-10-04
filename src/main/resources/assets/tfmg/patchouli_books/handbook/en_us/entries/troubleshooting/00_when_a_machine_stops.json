@@ -1,0 +1,30 @@
+{
+  "name": "When a machine stops",
+  "icon": "create:goggles",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Most TFMG machines never stop without a reason, and they tell you the reason. You have two ways to ask."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Engineer's Goggles$()$(br)Look at the machine. Under its tanks and progress, a $(item)red line$() names what stops it. The next pages list every one of these lines, what it means and how to fix it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Factory Inspector$()$(br)Right-click a machine with the $(item)Factory Inspector$() for a full report: what is in place (green), what blocks the machine (red) and what to do about it (gold). Right-click the air instead for a $(item)progression checklist$(): how far you are along the mod's production chain and what the next step needs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Also check$()$(li)The $(item)JEI info pages$(): look up a machine in JEI to read how it is built and fed.$(li)The chapters of this handbook, to compare with what you built.$(br2)One general line exists for every machine with an output tank: $(item)Output tank full: pump the result out$(). Pipe the product away and the machine resumes by itself."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:factory_inspector,tfmg:factory_guide",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Arbre de sortie et moteurs longs",
+  "icon": "create:shaft",
+  "category": "tfmg:engines",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un $(item)moteur ordinaire$() ne délivre rien tant que vous n'avez pas fait un clic droit sur l'un de ses blocs d'extrémité avec un $(item)arbre$(). L'arbre dépasse du bout libre ; une clé le retire. Vous pouvez en mettre un à chaque bout, la puissance est alors partagée entre les deux."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)moteur radial$() a ses sorties intégrées : aux deux bouts d'une rangée, et des deux côtés d'un bloc seul. Le $(item)moteur à turbine$() a aussi une sortie intégrée, à un seul bout : repérez le bout d'arbre sur son modèle. Aucun des deux n'a besoin d'un arbre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les blocs moteur s'assemblent s'ils sont du même modèle, orientés dans le même sens et, pour les moteurs ordinaires, du même type. Une rangée compte jusqu'à $(item)5 blocs$() par défaut (option $(item)engineMaxLength$()). Le couple augmente avec chaque bloc de la rangée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La vue 3D montre un moteur I de trois blocs tourné vers le nord, son arbre devant. Envoyez le carburant par tuyau dans n'importe quel bloc : la rangée partage un seul réservoir de 4000 mB."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Arbre de sortie et moteurs longs",
+      "multiblock": {
+        "pattern": [
+          [
+            "S",
+            "F",
+            "0",
+            "E"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "F": "tfmg:regular_engine[facing=north,engine_state=front,shaft_facing=north,extended=true]",
+          "E": "tfmg:regular_engine[facing=north,engine_state=normal,shaft_facing=south,extended=true]",
+          "0": "tfmg:regular_engine[facing=north,engine_state=normal,shaft_facing=south,extended=true]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:shaft,create:wrench,tfmg:regular_engine",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

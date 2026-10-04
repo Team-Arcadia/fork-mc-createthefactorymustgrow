@@ -3,6 +3,7 @@ package com.drmangotea.tfmg.content.engines.types.large_engine;
 
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
+import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.engines.base.AbstractEngineBlockEntity;
 import com.drmangotea.tfmg.content.engines.base.EngineFluidTank;
@@ -43,7 +44,7 @@ import javax.annotation.Nullable;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-public class LargeEngineBlockEntity extends AbstractEngineBlockEntity {
+public class LargeEngineBlockEntity extends AbstractEngineBlockEntity implements com.drmangotea.tfmg.content.items.inspector.IInspectable {
 
 
     public WeakReference<PoweredShaftBlockEntity> target;
@@ -226,14 +227,79 @@ public class LargeEngineBlockEntity extends AbstractEngineBlockEntity {
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
 
-        if(getShaft() == null)
-            return false;
-
+        // The large engine used to show nothing but its tanks, and nothing at
+        // all without a shaft; each reason it can sit idle now has a line.
         TFMGLang.text("").style(ChatFormatting.GRAY).forGoggles(tooltip);
+        if (getShaft() == null)
+            TFMGTexts.problem("large_engine.no_shaft").forGoggles(tooltip);
+        if (airTank.isEmpty())
+            TFMGTexts.problem("large_engine.no_air").forGoggles(tooltip);
+        if (fuelTank.isEmpty()) {
+            TFMGTexts.problem("engine.no_fuel").forGoggles(tooltip);
+        } else {
+            boolean supported = false;
+            for (TagKey<Fluid> tag : getSupportedFuels())
+                supported |= fuelTank.getFluid().getFluid().is(tag);
+            if (!supported)
+                TFMGTexts.problem("large_engine.wrong_fuel").forGoggles(tooltip);
+        }
+        if (exhaustTank.getSpace() <= 0)
+            TFMGTexts.problem("engine.exhaust_full").forGoggles(tooltip);
 
         TFMGUtils.createFluidTooltip(this,tooltip);
 
         return true;
+    }
+
+    // Never driven by a shaft: skip the inspector's generic "not turning" check.
+    @Override
+    public boolean wantsRotationCheck() {
+        return false;
+    }
+
+    @Override
+    public void inspect(com.drmangotea.tfmg.content.items.inspector.InspectionReport report) {
+        // The engine block itself never turns; it drives the shaft in front.
+        report.info("large_engine.drives_shaft");
+        Direction facing = LargeEngineBlock.getFacing(getBlockState());
+        BlockPos shaftPos = worldPosition.relative(facing, 2);
+        if (!level.isLoaded(shaftPos)) {
+            report.info("large_engine.shaft_unloaded", coords(shaftPos));
+        } else if (level.getBlockEntity(shaftPos) instanceof PoweredShaftBlockEntity ps && ps.canBePoweredBy(worldPosition)) {
+            report.ok("large_engine.shaft_ok", coords(shaftPos));
+        } else {
+            BlockState shaftState = level.getBlockState(shaftPos);
+            if ((com.simibubi.create.AllBlocks.SHAFT.has(shaftState) || com.simibubi.create.AllBlocks.POWERED_SHAFT.has(shaftState))
+                    && !LargeEngineBlock.isShaftValid(getBlockState(), shaftState)) {
+                report.problem("large_engine.shaft_axis", coords(shaftPos));
+                report.fix("large_engine.shaft_axis.fix");
+            } else {
+                report.problem("large_engine.no_shaft", coords(shaftPos));
+                report.fix("large_engine.no_shaft.fix", coords(shaftPos));
+            }
+        }
+
+        if (airTank.isEmpty()) {
+            report.problem("large_engine.no_air");
+            report.fix("large_engine.no_air.fix");
+        } else {
+            report.ok("large_engine.air_ok", airTank.getFluidAmount(), airTank.getCapacity());
+        }
+
+        if (fuelTank.isEmpty()) {
+            report.problem("engine.no_fuel");
+            report.fix("engine.no_fuel.fix", fuelList(getSupportedFuels()));
+        } else if (isFuelSupported()) {
+            report.ok("engine.fuel_ok", fuelTank.getFluid().getHoverName(), fuelTank.getFluidAmount());
+        } else {
+            report.problem("engine.wrong_fuel", fuelTank.getFluid().getHoverName(), getBlockState().getBlock().getName());
+            report.fix("engine.wrong_fuel.fix", fuelList(getSupportedFuels()));
+        }
+
+        if (exhaustTank.getSpace() <= 0) {
+            report.problem("engine.exhaust_full");
+            report.fix("engine.exhaust_full.fix");
+        }
     }
 
     @Override

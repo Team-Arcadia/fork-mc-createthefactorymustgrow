@@ -1,0 +1,370 @@
+{
+  "order": 50,
+  "icon": "tfmg:blast_furnace_output",
+  "title": {
+    "en_us": "The Blast Furnace",
+    "fr_fr": "Le haut fourneau"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "What the furnace does",
+        "fr_fr": "À quoi sert le haut fourneau"
+      },
+      "text": {
+        "en_us": [
+          "The blast furnace melts iron ore into **molten steel**. It is a hollow brick tower with a **Blast Furnace Output** at its foot.",
+          "",
+          "## What goes in",
+          "- **Ore**: crushed raw iron, raw iron, or quartz.",
+          "- **Flux**: limesand, one per iron item.",
+          "- **Fuel**: coal coke dust, the only fuel it burns.",
+          "- **Hot air**: piped into a hatch in the wall, from a blast stove.",
+          "",
+          "## What comes out",
+          "- **Molten steel** and **molten slag**, pumped from the output block.",
+          "- **Furnace gas**, collected by a hatch on top. It fuels the blast stove.",
+          "",
+          "Before you start, have a coke oven making coke, crushing wheels turning coke into dust and limestone into limesand, and a working hot air line (previous chapters). Steel is then cast into ingots in a casting basin (next chapter)."
+        ],
+        "fr_fr": [
+          "Le haut fourneau fond le minerai de fer en **acier en fusion**. C'est une tour creuse en briques avec une **sortie de haut fourneau** à sa base.",
+          "",
+          "## Ce qui entre",
+          "- **Minerai** : fer brut concassé, fer brut ou quartz.",
+          "- **Fondant** : sable calcaire, un par objet de fer.",
+          "- **Combustible** : poussière de coke de charbon, le seul qu'il brûle.",
+          "- **Air chaud** : envoyé par tuyau dans une trappe de la paroi, depuis un fourneau à air chaud.",
+          "",
+          "## Ce qui sort",
+          "- **L'acier en fusion** et le **laitier en fusion**, pompés depuis la sortie.",
+          "- Le **gaz de haut fourneau**, récupéré par une trappe au sommet. Il alimente le fourneau à air chaud.",
+          "",
+          "Avant de commencer, ayez un four à coke qui produit du coke, des roues de concassage qui changent le coke en poussière et le calcaire en sable calcaire, et une ligne d'air chaud qui marche (chapitres précédents). L'acier est ensuite coulé en lingots dans un bassin de coulée (chapitre suivant)."
+        ]
+      },
+      "items": ["tfmg:blast_furnace_output", "create:crushed_raw_iron", "minecraft:raw_iron", "tfmg:limesand", "tfmg:coal_coke_dust", "tfmg:hot_air_bucket", "tfmg:molten_steel_bucket", "tfmg:furnace_gas_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "The shape",
+        "fr_fr": "La forme"
+      },
+      "text": {
+        "en_us": [
+          "The furnace is a stack of **3x3 layers**, from **3 up to 10** layers high (server setting blastFurnaceMaxHeight).",
+          "",
+          "## Every layer",
+          "- The **4 corners**: Fireproof Brick Reinforcement.",
+          "- The **4 edge middles**: Fireproof Bricks.",
+          "- The **centre**: empty air.",
+          "",
+          "## The bottom layer",
+          "- Its **centre** is a block of **Fireproof Bricks**: the floor of the shaft.",
+          "- One edge brick is replaced by the **Blast Furnace Output**.",
+          "",
+          "The furnace counts layers from the bottom and stops at the first one that is wrong, so a mistake on layer 4 gives you a 3-layer furnace. Below 3 complete layers it does nothing.",
+          "",
+          "The view shows the smallest furnace: 3 layers, the output on the south side, a hot air hatch on the west wall and a gas hatch on top. It takes 12 reinforcements, 11 fireproof bricks, the output and 2 hatches."
+        ],
+        "fr_fr": [
+          "Le haut fourneau est une pile de **couches 3x3**, de **3 à 10** couches de haut (réglage serveur blastFurnaceMaxHeight).",
+          "",
+          "## Chaque couche",
+          "- Les **4 coins** : renfort en briques réfractaires.",
+          "- Les **4 milieux de côté** : briques réfractaires.",
+          "- Le **centre** : de l'air.",
+          "",
+          "## La couche du bas",
+          "- Son **centre** est un bloc de **briques réfractaires** : le fond du puits.",
+          "- Une brique de côté est remplacée par la **sortie de haut fourneau**.",
+          "",
+          "Le fourneau compte les couches depuis le bas et s'arrête à la première qui est fausse : une erreur à la couche 4 donne un fourneau de 3 couches. En dessous de 3 couches complètes, il ne fait rien.",
+          "",
+          "La vue montre le plus petit fourneau : 3 couches, la sortie côté sud, une trappe d'air chaud dans la paroi ouest et une trappe à gaz au sommet. Il faut 12 renforts, 11 briques réfractaires, la sortie et 2 trappes."
+        ]
+      },
+      "items": ["tfmg:fireproof_brick_reinforcement", "tfmg:fireproof_bricks", "tfmg:blast_furnace_output", "tfmg:blast_furnace_hatch"],
+      "schematic": {
+        "layers": [
+          ["aFb", "FFF", "cOd"],
+          ["aFb", "H.F", "cFd"],
+          ["eFf", "F.F", "gFh"],
+          ["...", ".H.", "..."]
+        ],
+        "key": {
+          "a": "tfmg:fireproof_brick_reinforcement[east=tall,south=tall,up=true]",
+          "b": "tfmg:fireproof_brick_reinforcement[west=tall,south=tall,up=true]",
+          "c": "tfmg:fireproof_brick_reinforcement[east=tall,north=tall,up=true]",
+          "d": "tfmg:fireproof_brick_reinforcement[west=tall,north=tall,up=true]",
+          "e": "tfmg:fireproof_brick_reinforcement[east=low,south=low,up=true]",
+          "f": "tfmg:fireproof_brick_reinforcement[west=low,south=low,up=true]",
+          "g": "tfmg:fireproof_brick_reinforcement[east=low,north=low,up=true]",
+          "h": "tfmg:fireproof_brick_reinforcement[west=low,north=low,up=true]",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Output and hatches",
+        "fr_fr": "Sortie et trappes"
+      },
+      "text": {
+        "en_us": [
+          "## The output",
+          "It takes the place of an **edge brick of the bottom layer** and must **face outward**, its back against the centre. It faces you when placed, so place it standing outside the tower. Molten steel and slag are pumped out of any of its faces.",
+          "",
+          "## The hot air hatch",
+          "Put **one** Blast Furnace Hatch in place of an **edge brick**, on any layer, and pipe hot air into it. The furnace draws its hot air from that hatch only.",
+          "",
+          "A **second hatch in a wall ends the tower** at that layer: the furnace stops counting there. Keep a single wall hatch.",
+          "",
+          "## The gas hatch",
+          "A hatch placed in the air **right above the centre of the top layer** collects the **furnace gas**. Pump it out and send it to the blast stove as fuel. Without it the gas is simply lost; the furnace still runs.",
+          "",
+          "That top hatch also accepts items: anything a funnel puts into it falls down the shaft. It is the easiest way to feed a tall furnace."
+        ],
+        "fr_fr": [
+          "## La sortie",
+          "Elle prend la place d'une **brique de côté de la couche du bas** et doit **regarder vers l'extérieur**, le dos contre le centre. Elle vous fait face quand vous la posez : posez-la depuis l'extérieur de la tour. L'acier et le laitier en fusion se pompent par n'importe laquelle de ses faces.",
+          "",
+          "## La trappe d'air chaud",
+          "Placez **une** trappe de haut fourneau à la place d'une **brique de côté**, sur n'importe quelle couche, et envoyez-y l'air chaud. Le fourneau ne prend son air chaud que dans cette trappe.",
+          "",
+          "Une **deuxième trappe dans une paroi coupe la tour** à cette couche : le fourneau arrête de compter là. Gardez une seule trappe de paroi.",
+          "",
+          "## La trappe à gaz",
+          "Une trappe posée dans le vide **juste au-dessus du centre de la dernière couche** récupère le **gaz de haut fourneau**. Pompez-le et envoyez-le au fourneau à air chaud comme combustible. Sans elle, le gaz est perdu ; le haut fourneau tourne quand même.",
+          "",
+          "Cette trappe du sommet accepte aussi des objets : tout ce qu'un entonnoir y met tombe dans le puits. C'est le moyen le plus simple d'alimenter un fourneau haut."
+        ]
+      },
+      "items": ["tfmg:blast_furnace_output", "tfmg:blast_furnace_hatch", "create:mechanical_pump", "create:andesite_funnel", "tfmg:hot_air_bucket", "tfmg:furnace_gas_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Feeding the furnace",
+        "fr_fr": "Alimenter le haut fourneau"
+      },
+      "text": {
+        "en_us": [
+          "There are three ways in, and the furnace sorts what it gets: coke dust goes to the fuel, limesand to the flux slot, ore to the ore slot.",
+          "",
+          "- **Drop items into the shaft** from the top. They are collected where they land, in the space just above the bottom centre.",
+          "- **Insert into the output block** with a funnel, a hopper or a chute, from any side.",
+          "- **Insert into the top gas hatch**: items fall down the shaft.",
+          "",
+          "## Limits",
+          "- **Ore**: one kind at a time, up to 64. Only ore that a furnace recipe can smelt is taken; anything else stays where it is, so a stray item can no longer jam the furnace.",
+          "- **Flux**: up to 64 limesand.",
+          "- **Fuel**: up to 64 coke dust. The furnace burns **one dust every 600 ticks** (30 s) of work.",
+          "",
+          "Nothing can be pulled back out of the output block: it only gives fluids.",
+          "",
+          "Do not stand in the shaft. A working furnace burns anything inside it."
+        ],
+        "fr_fr": [
+          "Il y a trois entrées, et le fourneau trie ce qu'il reçoit : la poussière de coke va au combustible, le sable calcaire à l'emplacement du fondant, le minerai à l'emplacement du minerai.",
+          "",
+          "- **Jetez les objets dans le puits** par le haut. Ils sont ramassés là où ils tombent, dans l'espace juste au-dessus du centre du bas.",
+          "- **Insérez dans la sortie** avec un entonnoir, un entonnoir vanilla ou une glissière, par n'importe quel côté.",
+          "- **Insérez dans la trappe à gaz du sommet** : les objets tombent dans le puits.",
+          "",
+          "## Limites",
+          "- **Minerai** : un seul type à la fois, jusqu'à 64. Seul un minerai qu'une recette du fourneau sait fondre est pris ; le reste ne bouge pas, si bien qu'un objet égaré ne peut plus bloquer le fourneau.",
+          "- **Fondant** : jusqu'à 64 sable calcaire.",
+          "- **Combustible** : jusqu'à 64 poussières de coke. Le fourneau en brûle **une toutes les 600 ticks** (30 s) de travail.",
+          "",
+          "Rien ne peut être retiré de la sortie : elle ne donne que des fluides.",
+          "",
+          "Ne restez pas dans le puits. Un fourneau en marche brûle tout ce qui s'y trouve."
+        ]
+      },
+      "items": ["create:andesite_funnel", "minecraft:hopper", "create:chute", "tfmg:coal_coke_dust", "tfmg:limesand", "create:crushed_raw_iron", "create:crushing_wheel", "create:limestone"]
+    },
+    {
+      "title": {
+        "en_us": "Recipes",
+        "fr_fr": "Recettes"
+      },
+      "text": {
+        "en_us": [
+          "Every recipe needs fuel and draws **20 mB of hot air per tick** while it works. Base times are for a short furnace; see the next page for height.",
+          "",
+          "## Crushed raw iron + 1 limesand",
+          "**144 mB** molten steel, 144 mB slag, furnace gas. Base 400 ticks.",
+          "",
+          "## Raw iron + 1 limesand",
+          "**288 mB** molten steel, 288 mB slag, furnace gas. Base 800 ticks: same speed per ingot, but crushing the ore first lets you use Create's ore processing.",
+          "",
+          "## Iron dust + 1 limesand",
+          "Only when another mod adds iron dust: 144 mB steel and slag. Base 400 ticks.",
+          "",
+          "## Quartz",
+          "**40 mB liquid silicon**, no flux. Base 100 ticks. Cast it into silicon ingots.",
+          "",
+          "The two output tanks hold **4000 mB** each and only accept the fluid already in them. Pump them empty before switching from steel to silicon, or the furnace will wait."
+        ],
+        "fr_fr": [
+          "Chaque recette demande du combustible et prend **20 mB d'air chaud par tick** pendant le travail. Les temps de base sont ceux d'un fourneau bas ; voyez la page suivante pour la hauteur.",
+          "",
+          "## Fer brut concassé + 1 sable calcaire",
+          "**144 mB** d'acier en fusion, 144 mB de laitier, du gaz de haut fourneau. Base 400 ticks.",
+          "",
+          "## Fer brut + 1 sable calcaire",
+          "**288 mB** d'acier en fusion, 288 mB de laitier, du gaz. Base 800 ticks : même vitesse par lingot, mais concasser d'abord permet de profiter du traitement des minerais de Create.",
+          "",
+          "## Poussière de fer + 1 sable calcaire",
+          "Seulement si un autre mod ajoute de la poussière de fer : 144 mB d'acier et de laitier. Base 400 ticks.",
+          "",
+          "## Quartz",
+          "**40 mB de silicium liquide**, sans fondant. Base 100 ticks. Coulez-le en lingots de silicium.",
+          "",
+          "Les deux réservoirs de sortie contiennent **4000 mB** chacun et n'acceptent que le fluide qu'ils contiennent déjà. Videz-les avant de passer de l'acier au silicium, sinon le fourneau attend."
+        ]
+      },
+      "items": ["create:crushed_raw_iron", "minecraft:raw_iron", "minecraft:quartz", "tfmg:limesand", "tfmg:molten_steel_bucket", "tfmg:molten_slag_bucket", "tfmg:liquid_silicon_bucket", "tfmg:furnace_gas_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Taller is faster",
+        "fr_fr": "Plus haut, plus rapide"
+      },
+      "text": {
+        "en_us": [
+          "Each layer takes time off every recipe. At the maximum height of 10 a recipe takes **half** its base time. With the default settings:",
+          "",
+          "**time = base x (1 - height / 20)**",
+          "",
+          "## One crushed raw iron (144 mB)",
+          "- **3 layers**: 340 ticks (17 s)",
+          "- **4 layers**: 320 ticks (16 s)",
+          "- **5 layers**: 300 ticks (15 s)",
+          "- **6 layers**: 280 ticks (14 s)",
+          "- **8 layers**: 240 ticks (12 s)",
+          "- **10 layers**: 200 ticks (10 s)",
+          "",
+          "A **reinforced** furnace halves these times again: 170 ticks at 3 layers, **100 ticks** at 10.",
+          "",
+          "Hot air is drawn **per tick of work**, so a faster furnace uses less hot air and less coke per ingot: about 6800 mB of hot air per ingot at 3 layers, 2000 mB at 10 reinforced layers.",
+          "",
+          "The furnace only counts complete layers, so extra half-built walls on top do nothing."
+        ],
+        "fr_fr": [
+          "Chaque couche retire du temps à chaque recette. À la hauteur maximale de 10, une recette prend **la moitié** de son temps de base. Avec les réglages par défaut :",
+          "",
+          "**temps = base x (1 - hauteur / 20)**",
+          "",
+          "## Un fer brut concassé (144 mB)",
+          "- **3 couches** : 340 ticks (17 s)",
+          "- **4 couches** : 320 ticks (16 s)",
+          "- **5 couches** : 300 ticks (15 s)",
+          "- **6 couches** : 280 ticks (14 s)",
+          "- **8 couches** : 240 ticks (12 s)",
+          "- **10 couches** : 200 ticks (10 s)",
+          "",
+          "Un fourneau **renforcé** divise encore ces temps par deux : 170 ticks à 3 couches, **100 ticks** à 10.",
+          "",
+          "L'air chaud est pris **à chaque tick de travail** : un fourneau plus rapide consomme moins d'air chaud et moins de coke par lingot, environ 6800 mB d'air chaud par lingot à 3 couches, 2000 mB à 10 couches renforcées.",
+          "",
+          "Le fourneau ne compte que les couches complètes : des murs à moitié construits au-dessus ne servent à rien."
+        ]
+      },
+      "items": ["tfmg:fireproof_bricks", "tfmg:fireproof_brick_reinforcement", "tfmg:blast_furnace_reinforcement"]
+    },
+    {
+      "title": {
+        "en_us": "The reinforced furnace",
+        "fr_fr": "Le haut fourneau renforcé"
+      },
+      "text": {
+        "en_us": [
+          "A furnace built **entirely from reinforced blocks** works twice as fast.",
+          "",
+          "- **Corners**: Blast Furnace Reinforcement (rusted works too) or Blocks of Steel.",
+          "- **Edges**: Reinforced Fireproof Bricks or Blocks of Steel. The hatch counts as reinforced.",
+          "",
+          "## Making reinforced bricks",
+          "Build the edge as Fireproof Bricks, then place a **Blast Furnace Reinforcement against its outer face**. It becomes a thin plate and turns the brick behind it into Reinforced Fireproof Bricks. Removing the plate turns it back.",
+          "",
+          "Because of that, a reinforcement placed against the side of a fireproof brick always becomes a plate. Place the **corner** blocks first, or on top of the corner below, never by clicking a neighbouring brick.",
+          "",
+          "One regular block anywhere in the walls makes the whole furnace regular. The output and the bottom centre do not count. The goggles show **Reinforced** when it worked.",
+          "",
+          "The block list under the view skips the bricks and plates: add 10 Fireproof Bricks and 10 Blast Furnace Reinforcements."
+        ],
+        "fr_fr": [
+          "Un haut fourneau construit **entièrement en blocs renforcés** travaille deux fois plus vite.",
+          "",
+          "- **Coins** : renfort de haut fourneau (le rouillé marche aussi) ou blocs d'acier.",
+          "- **Côtés** : briques réfractaires renforcées ou blocs d'acier. La trappe compte comme renforcée.",
+          "",
+          "## Fabriquer les briques renforcées",
+          "Montez le côté en briques réfractaires, puis posez un **renfort de haut fourneau contre sa face extérieure**. Il devient une plaque fine et transforme la brique derrière lui en briques réfractaires renforcées. Retirer la plaque annule l'effet.",
+          "",
+          "De ce fait, un renfort posé contre le côté d'une brique réfractaire devient toujours une plaque. Posez d'abord les **coins**, ou posez-les sur le coin du dessous, jamais en cliquant sur une brique voisine.",
+          "",
+          "Un seul bloc normal dans les parois rend tout le fourneau normal. La sortie et le centre du bas ne comptent pas. Les lunettes affichent **Renforcé** quand c'est réussi.",
+          "",
+          "La liste sous la vue ignore les briques et les plaques : ajoutez 10 briques réfractaires et 10 renforts de haut fourneau."
+        ]
+      },
+      "items": ["tfmg:blast_furnace_reinforcement", "tfmg:rusted_blast_furnace_reinforcement", "tfmg:fireproof_bricks", "tfmg:steel_block", "tfmg:heavy_plate"],
+      "schematic": {
+        "layers": [
+          ["..n..", ".RBR.", "wBFBe", ".ROR.", "....."],
+          ["..n..", ".RBR.", ".H.Be", ".RBR.", "..s.."],
+          ["..n..", ".RBR.", "wB.Be", ".RBR.", "..s.."],
+          [".....", ".....", "..H..", ".....", "....."]
+        ],
+        "key": {
+          "R": "tfmg:blast_furnace_reinforcement",
+          "B": "tfmg:reinforced_fireproof_bricks",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "n": "tfmg:blast_furnace_reinforcement_wall[facing=north]",
+          "s": "tfmg:blast_furnace_reinforcement_wall[facing=south]",
+          "e": "tfmg:blast_furnace_reinforcement_wall[facing=east]",
+          "w": "tfmg:blast_furnace_reinforcement_wall[facing=west]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Reading the goggles",
+        "fr_fr": "Lire les lunettes"
+      },
+      "text": {
+        "en_us": [
+          "Look at the **output block** with Engineer's Goggles. It shows the ore count, the **height**, the **fuel** left, the time left in ticks, **Reinforced** if it is, then both tanks. Red lines say why it is idle:",
+          "",
+          "- **Structure incomplete**: fewer than 3 good layers. Check corners, edges, the empty centre and the bottom centre brick, layer by layer.",
+          "- **No fuel**: add coal coke dust.",
+          "- **No flux**: add limesand.",
+          "- **No Blast Furnace Hatch in the walls**: add one, or you have two and the second cut the tower.",
+          "- **The hatch holds no Hot Air**: the stove is not delivering, or the hatch holds another fluid.",
+          "- **Output tank full**: pump the steel or slag out.",
+          "",
+          "If the furnace stops with hot air in the hatch, the hatch may have less than 20 mB: your stove is too small for this furnace. Slag is not waste: cast it into slag blocks."
+        ],
+        "fr_fr": [
+          "Regardez la **sortie** avec les lunettes d'ingénieur. Elle affiche le nombre de minerais, la **hauteur**, le **combustible** restant, le temps restant en ticks, **Renforcé** le cas échéant, puis les deux réservoirs. Des lignes rouges disent pourquoi il est à l'arrêt :",
+          "",
+          "- **Structure incomplète** : moins de 3 couches correctes. Vérifiez coins, côtés, centre vide et brique du centre du bas, couche par couche.",
+          "- **Pas de combustible** : ajoutez de la poussière de coke.",
+          "- **Pas de fondant** : ajoutez du sable calcaire.",
+          "- **Aucune trappe de haut fourneau dans les murs** : ajoutez-en une, ou vous en avez deux et la seconde a coupé la tour.",
+          "- **La trappe ne contient pas d'air chaud** : le fourneau à air chaud ne livre pas, ou la trappe contient un autre fluide.",
+          "- **Réservoir de sortie plein** : pompez l'acier ou le laitier.",
+          "",
+          "Si le fourneau s'arrête alors que la trappe contient de l'air chaud, elle en a peut-être moins de 20 mB : votre fourneau à air chaud est trop petit. Le laitier n'est pas un déchet : coulez-le en blocs de laitier."
+        ]
+      },
+      "items": ["create:goggles", "tfmg:blast_furnace_output", "tfmg:blast_furnace_hatch", "tfmg:molten_slag_bucket", "tfmg:slag_block"]
+    }
+  ]
+}

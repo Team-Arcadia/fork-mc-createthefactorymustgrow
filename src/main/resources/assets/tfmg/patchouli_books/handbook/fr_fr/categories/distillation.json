@@ -1,0 +1,6 @@
+{
+  "name": "La distillation",
+  "description": "Une tour de distillation sépare le pétrole brut ou le pétrole lourd en plusieurs fluides à la fois. Elle se compose de quatre éléments :",
+  "icon": "tfmg:steel_distillation_controller",
+  "sortnum": 170
+}

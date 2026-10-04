@@ -1,0 +1,30 @@
+{
+  "name": "Before steel",
+  "icon": "create:crushing_wheel",
+  "category": "tfmg:first_materials",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Steel is the heart of TFMG, but the machines that make it are built from simpler materials. This chapter covers everything you can make $(item)before your first steel ingot$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Fireproof bricks$(), from fireclay.$(li)$(item)Cast iron$(), from iron and coal.$(li)$(item)Limesand$(), the flux of the blast furnace.$(li)$(item)Cement and concrete$().$(li)$(item)Sheets and alloys$() of lead and nickel."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Create machines you need$()$(li)$(item)Crushing wheels$(), for limesand and crushed ores.$(li)A $(item)mechanical mixer$() over a $(item)basin$(), for fireclay, cement and concrete.$(li)A $(item)mechanical press$(): over a depot or belt it presses sheets, over a basin it compacts.$(li)A $(item)blaze burner$() under the basin, lit with fuel, for the recipes marked $(item)heated$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Click an item at the bottom of a page to see its exact recipe in JEI."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:crushing_wheel,create:mechanical_mixer,create:basin,create:mechanical_press,create:blaze_burner,create:depot",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

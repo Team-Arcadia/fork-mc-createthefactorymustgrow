@@ -1,0 +1,26 @@
+{
+  "name": "The hot air line",
+  "icon": "tfmg:air_intake",
+  "category": "tfmg:hot_air",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The blast furnace only works while it receives $(item)hot air$(). Making it takes three machines:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)An $(item)air intake$() turns rotation into $(item)air$().$(li)A $(item)blast stove$() burns a fuel to heat that air into $(item)hot air$(). Its fuel is $(item)creosote$() (from the coke oven) or $(item)furnace gas$() (from the blast furnace itself).$(li)An $(item)exhaust$() or a $(item)smokestack$() gets rid of the $(item)CO2$() the stove gives off."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The recipe$()$(br)Each share of the stove recipe takes $(item)25 mB air$() and $(item)5 mB fuel$(), and gives $(item)25 mB hot air$() and $(item)25 mB CO2$().$(br2)Hot air then goes through pipes into a $(item)blast furnace hatch$() set in the furnace wall. Build this line before the furnace: start the stove on creosote, and once the furnace runs you can feed the stove with the furnace gas it collects."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:air_intake,tfmg:blast_stove,tfmg:exhaust,tfmg:air_bucket,tfmg:hot_air_bucket,tfmg:creosote_bucket,tfmg:furnace_gas_bucket,tfmg:carbon_dioxide_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

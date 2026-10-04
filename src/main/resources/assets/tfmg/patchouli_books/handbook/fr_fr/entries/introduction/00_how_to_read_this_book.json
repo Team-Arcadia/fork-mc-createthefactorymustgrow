@@ -1,0 +1,26 @@
+{
+  "name": "Comment lire ce livre",
+  "icon": "tfmg:factory_guide",
+  "category": "tfmg:introduction",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Factory Must Grow apporte l'ère de $(item)l'acier$(), du $(item)pétrole$() et de $(item)l'électricité$() à Create.$(br2)Chaque chapitre suit l'ordre dans lequel vous allez construire. Lisez-les dans l'ordre la première fois, puis revenez à n'importe quel chapitre quand vous en avez besoin."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Chaque multibloc a une page de $(item)vue 3D$(). Appuyez sur $(item)Visualiser$() pour projeter la structure en fantôme devant vous : les blocs manquants ou mal placés sont signalés jusqu'à ce qu'elle soit complète. $(li)La dernière page d'une entrée montre les $(item)objets$() dont elle parle ; survolez-les pour les détails, et utilisez JEI pour leurs recettes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Utilisez la $(item)recherche$() du sommaire, et mettez en signet les pages dont vous vous servez le plus. $(li)Bloqué ? Faites un clic droit sur la machine avec l'$(item)Inspecteur d'usine$() : il vous dit ce qui fonctionne, ce qui la bloque et quoi faire."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:factory_guide,tfmg:factory_inspector,create:goggles,create:wrench",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

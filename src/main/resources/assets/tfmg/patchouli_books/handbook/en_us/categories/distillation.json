@@ -1,0 +1,6 @@
+{
+  "name": "Distillation",
+  "description": "A distillation tower splits crude oil or heavy oil into several fluids at once. It is made of four things:",
+  "icon": "tfmg:steel_distillation_controller",
+  "sortnum": 170
+}

@@ -1,0 +1,30 @@
+{
+  "name": "What each resource is for",
+  "icon": "tfmg:fireproof_brick",
+  "category": "tfmg:resources",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A quick map of where your first finds go: $(li)$(item)Fireclay$(): fireproof bricks, for every hot machine. $(li)$(item)Limesand$(): cement, and the $(item)flux$() of the blast furnace that makes steel. $(li)$(item)Lead$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "lead sheets (mechanical press), the cast iron chemical vat, lead tools. $(li)$(item)Nickel$(): nickel sheets, and $(item)constantan$() (copper + nickel in a heated mixer). $(li)$(item)Lithium$(): accumulators, lithium charges and lithium torches. $(li)$(item)Bauxite powder$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "aluminium, by electrolysis in a vat, or 4 powder + 1 coal coke dust in a $(item)superheated$() mixer for the first ingots. $(li)$(item)Sulfur and nitrate dust$(): 3 nitrate + 2 charcoal + 1 sulfur in a mixer give 3 gunpowder; in a vat they make sulfuric acid. $(li)$(item)Lignite$(): crushed into coal. $(li)$(item)Crude oil$(): everything in the oil chapter:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "fuels, plastic, asphalt.$(br2)Next chapter: turning these into the first factory materials."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_brick,tfmg:limesand,tfmg:lead_sheet,tfmg:constantan_ingot,tfmg:lithium_ingot,tfmg:aluminum_ingot,minecraft:gunpowder,tfmg:crude_oil_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "What changed in 1.3.0: machines",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Chemical vat$(): breaking the controller drops its items, and a vat absorbed when you build a bigger one hands its items and fluids over instead of losing them. $(li)$(item)Arc furnace$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "JEI now shows that coal coke dust is a $(item)catalyst$() that returns to the vat input, with only about 10% used per batch. This was the cause of the \"nothing is produced\" reports. $(li)$(item)Blast furnace$(): the hatch keeps its items, and the furnace saves its fuel and gives it back when broken. $(li)$(item)Casting basin$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "take the cast ingot out $(item)with an empty hand$(), no funnel needed. $(li)$(item)Flamethrower$(): only fuel that really leaves a tank is credited, so it can no longer refuel for free from an engine. $(li)$(item)Piping upgrade$(): never voids fuel any more and moves only what the engine accepts. $(li)$(item)Large engine$(): the goggles now explain why it is idle."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)New recipes$()$(li)A $(item)Magnet by hand$(): a magnetic alloy ingot, 3 redstone blocks and a compass, for the first magnet before you own a polarizer.$(li)$(item)Aluminium from a superheated mixer$(): 4 bauxite powder and 1 coal coke dust give an aluminium ingot, to get started before electrolysis."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:casting_basin,tfmg:blast_furnace_hatch,tfmg:magnet,tfmg:bauxite_powder,tfmg:aluminum_ingot,create:mechanical_mixer,create:blaze_burner",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

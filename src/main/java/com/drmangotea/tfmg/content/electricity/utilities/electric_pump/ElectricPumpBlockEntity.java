@@ -28,7 +28,7 @@ import java.util.*;
 
 import static com.simibubi.create.content.kinetics.base.DirectionalKineticBlock.FACING;
 
-public class ElectricPumpBlockEntity extends PumpBlockEntity implements IElectric {
+public class ElectricPumpBlockEntity extends PumpBlockEntity implements IElectric, com.drmangotea.tfmg.content.items.inspector.IInspectable {
 
     public ElectricBlockValues data = new ElectricBlockValues(getPos());
 
@@ -219,6 +219,30 @@ public class ElectricPumpBlockEntity extends PumpBlockEntity implements IElectri
     @Override
     public float resistance() {
         return 100;
+    }
+
+    // Never driven by a shaft: skip the inspector's generic "not turning" check.
+    @Override
+    public boolean wantsRotationCheck() {
+        return false;
+    }
+
+    @Override
+    public void inspect(com.drmangotea.tfmg.content.items.inspector.InspectionReport report) {
+        // The pump extends Create's pump but runs on electricity alone.
+        report.info("pump.electric");
+        int voltage = data.getVoltage();
+        if (voltage <= 0)
+            return;
+        if (getPowerUsage() == 0) {
+            report.problem("pump.no_power");
+            return;
+        }
+        int pressure = (int) Math.min(1500, voltage * 2f);
+        int range = (int) (FluidPropagator.getPumpRange() * Math.min(6.7f, voltage * 0.02));
+        report.info("pump.output", pressure, range);
+        if (voltage < 750)
+            report.info("pump.full_at", 750, (int) Math.ceil(6.7f / 0.02f));
     }
 
 

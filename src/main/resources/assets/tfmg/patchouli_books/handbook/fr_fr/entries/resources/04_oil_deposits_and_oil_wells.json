@@ -1,0 +1,34 @@
+{
+  "name": "Gisements et puits de pétrole",
+  "icon": "tfmg:oil_deposit",
+  "category": "tfmg:resources",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Gisements de pétrole Dans tous les biomes de l'Overworld, environ un chunk sur seize cache un champ pétrolifère sur le $(item)fond de bedrock, à Y -64$().$() Il se compose d'un ou plusieurs blocs de $(item)gisement de pétrole$() séparés de quelques blocs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Au-dessus de chaque gisement monte une colonne de $(item)pétrole brut$() haute de 24 blocs au plus, bordée de $(item)pierre fossile$() dans sa partie basse."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un gisement ne peut être ni miné, ni détruit par une explosion, ni déplacé, et ne donne jamais rien. Il reste en place et vous le pompez avec un chevalet de pompage.$(li)Chaque gisement contient une réserve aléatoire, entre 1000 et le maximum du serveur (10000 par défaut).$(li)La pierre fossile est deux fois plus dure que l'obsidienne : minez-la à la pioche, avec patience."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Puits de pétrole$()$(br)Dans les biomes où peut apparaître une pyramide du désert, environ un chunk sur 500 contient un $(item)puits de pétrole$() : un gisement surmonté d'une colonne de pétrole brut qui monte de la bedrock jusqu'à environ $(item)70 blocs au-dessus de la surface$(). Impossible de le rater."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le marteau de pétrolier et le scanner de surface, qui trouvent les gisements pour vous, demandent de l'acier : ils sont décrits dans le chapitre sur le pétrole."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:oil_deposit,tfmg:crude_oil_bucket,tfmg:fossilstone,tfmg:oil_hammer,tfmg:surface_scanner",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

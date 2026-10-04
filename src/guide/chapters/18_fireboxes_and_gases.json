@@ -1,0 +1,231 @@
+{
+  "order": 180,
+  "icon": "tfmg:firebox",
+  "title": {
+    "en_us": "Fireboxes and Gases",
+    "fr_fr": "Foyers et gaz"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "The firebox",
+        "fr_fr": "Le foyer"
+      },
+      "text": {
+        "en_us": [
+          "The **firebox** burns fuel fluids to heat whatever sits on top of it. It is the fuel-powered answer to the blaze burner.",
+          "",
+          "Fireboxes placed side by side merge into one firebox, like Create fluid tanks: a square of **1 x 1, 2 x 2 or 3 x 3**, one block tall. The merged firebox shares a single fuel tank and a single exhaust tank, each holding **8000 mB per block** with Create's default tank size.",
+          "",
+          "## Fuels",
+          "Only fluids in the firebox fuel list burn: **LPG, butane, propane, hydrogen, diesel, naphtha and kerosene**. The tank accepts any fluid, so pumping in something else just clogs it: goggles then show **This fluid is not a firebox fuel**.",
+          "",
+          "## Heat",
+          "A burning firebox counts as a lit heater:",
+          "- **2 heat** per block for distillation towers, chemical vats and Create steam boilers, the same as a superheated blaze burner,",
+          "- **heated**, not superheated, for a Create basin above it.",
+          "",
+          "When it stops burning, its heat drops to nothing."
+        ],
+        "fr_fr": [
+          "Le **foyer** brûle des carburants liquides pour chauffer ce qui est posé dessus. C'est l'équivalent au carburant du brûleur à blaze.",
+          "",
+          "Des foyers posés côte à côte fusionnent en un seul, comme les réservoirs de Create : un carré de **1 x 1, 2 x 2 ou 3 x 3**, haut d'un bloc. Le foyer fusionné partage un seul réservoir de carburant et un seul réservoir d'échappement, chacun de **8000 mB par bloc** avec la taille de réservoir par défaut de Create.",
+          "",
+          "## Carburants",
+          "Seuls les fluides de la liste des carburants de foyer brûlent : **GPL, butane, propane, hydrogène, diesel, naphta et kérosène**. Le réservoir accepte n'importe quel fluide : en pomper un autre ne fait que le boucher, et les lunettes affichent alors **This fluid is not a firebox fuel**.",
+          "",
+          "## Chaleur",
+          "Un foyer qui brûle compte comme un chauffage allumé :",
+          "- **2 de chaleur** par bloc pour les tours de distillation, les cuves chimiques et les chaudières à vapeur de Create, comme un brûleur à blaze surchauffé,",
+          "- **chauffé**, mais pas surchauffé, pour un bassin de Create posé dessus.",
+          "",
+          "Quand il s'éteint, sa chaleur tombe à zéro."
+        ]
+      },
+      "items": ["tfmg:firebox", "tfmg:lpg_bucket", "tfmg:butane_bucket", "tfmg:propane_bucket", "tfmg:hydrogen_bucket", "tfmg:diesel_bucket", "tfmg:naphtha_bucket", "tfmg:kerosene_bucket"],
+      "schematic": {
+        "layers": [
+          ["FFF", "FFF", "FFF"]
+        ],
+        "key": {
+          "F": "tfmg:firebox[blaze=fading]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Fuel use and CO2",
+        "fr_fr": "Consommation et CO2"
+      },
+      "text": {
+        "en_us": [
+          "Every **3 seconds**, each block of a burning firebox takes **50 mB** of fuel from the shared tank. A 3 x 3 firebox therefore burns 450 mB every 3 seconds.",
+          "",
+          "It only burns while it holds at least the server setting **fireboxFuelConsumption** of fuel, **100 mB** by default. Below that it goes out and goggles show **Not enough fuel to burn**. Keep a pump feeding it rather than filling it once.",
+          "",
+          "## Exhaust",
+          "With the server setting **fireboxExhaustRequirement** on (the default), each block also puts **500 mB of carbon dioxide** into the exhaust tank every 3 seconds, about 167 mB per second per block.",
+          "",
+          "When the exhaust tank is full, the firebox stops and goggles show **Exhaust full: pump the CO2 away**. So every firebox needs a way out for its CO2:",
+          "",
+          "- attach a mechanical pump to the firebox and pull the CO2 out through pipes,",
+          "- send it to an **exhaust** or a **smokestack** that vents it into the air,",
+          "- or keep it in tanks for later use.",
+          "",
+          "Fuel can be pumped in, and only CO2 can be pumped out."
+        ],
+        "fr_fr": [
+          "Toutes les **3 secondes**, chaque bloc d'un foyer allumé prend **50 mB** de carburant dans le réservoir commun. Un foyer de 3 x 3 brûle donc 450 mB toutes les 3 secondes.",
+          "",
+          "Il ne brûle que s'il contient au moins le réglage serveur **fireboxFuelConsumption** de carburant, **100 mB** par défaut. En dessous, il s'éteint et les lunettes affichent **Not enough fuel to burn**. Gardez une pompe qui l'alimente plutôt que de le remplir une fois.",
+          "",
+          "## Échappement",
+          "Avec le réglage serveur **fireboxExhaustRequirement** actif (par défaut), chaque bloc ajoute aussi **500 mB de dioxyde de carbone** au réservoir d'échappement toutes les 3 secondes, soit environ 167 mB par seconde et par bloc.",
+          "",
+          "Quand le réservoir d'échappement est plein, le foyer s'arrête et les lunettes affichent **Exhaust full: pump the CO2 away**. Chaque foyer a donc besoin d'une sortie pour son CO2 :",
+          "",
+          "- branchez une pompe mécanique sur le foyer et aspirez le CO2 par des tuyaux,",
+          "- envoyez-le vers un **échappement** ou une **cheminée** qui le rejette dans l'air,",
+          "- ou gardez-le dans des réservoirs pour plus tard.",
+          "",
+          "Le carburant peut être pompé dedans, et seul le CO2 peut être pompé dehors."
+        ]
+      },
+      "items": ["tfmg:firebox", "tfmg:carbon_dioxide_bucket", "create:mechanical_pump", "create:fluid_pipe", "tfmg:exhaust", "tfmg:metal_smokestack"]
+    },
+    {
+      "title": {
+        "en_us": "Exhausts and smokestacks",
+        "fr_fr": "Échappements et cheminées"
+      },
+      "text": {
+        "en_us": [
+          "Both blocks only accept **carbon dioxide** and release it into the air with a puff of smoke. They work for fireboxes, engines, coke ovens and anything else that makes CO2.",
+          "",
+          "## Exhaust",
+          "- Holds **1000 mB** and can face any direction.",
+          "- Vents **10 mB per tick** (200 mB per second).",
+          "- When less than 300 mB of room is left, it vents **100 mB per tick** instead.",
+          "",
+          "So an exhaust kept nearly full can vent a lot: enough for the biggest firebox.",
+          "",
+          "## Smokestacks",
+          "Brick, concrete and metal smokestacks all work the same way and only differ in looks.",
+          "- Each holds **8000 mB**.",
+          "- Stack them: each block passes its CO2 up to the one above, and only the **top** one vents.",
+          "- The top vents **10 mB per tick**, or **50 mB per tick** when less than 1000 mB of room is left.",
+          "",
+          "Smokestacks make a big buffer and a nice chimney. For a busy factory, feed several stacks or add exhausts next to them.",
+          "",
+          "Carbon dioxide also has uses: 1000 mB fills a **fire extinguisher** or a **carbon dioxide tank** in a spout."
+        ],
+        "fr_fr": [
+          "Ces deux blocs n'acceptent que le **dioxyde de carbone** et le rejettent dans l'air avec un nuage de fumée. Ils servent aux foyers, aux moteurs, aux fours à coke et à tout ce qui produit du CO2.",
+          "",
+          "## L'échappement",
+          "- Contient **1000 mB** et peut être orienté dans n'importe quelle direction.",
+          "- Rejette **10 mB par tick** (200 mB par seconde).",
+          "- Quand il reste moins de 300 mB de place, il rejette **100 mB par tick** à la place.",
+          "",
+          "Un échappement maintenu presque plein peut donc rejeter beaucoup : assez pour le plus grand foyer.",
+          "",
+          "## Les cheminées",
+          "Les cheminées en briques, en béton et métalliques fonctionnent toutes pareil et ne diffèrent que par l'aspect.",
+          "- Chacune contient **8000 mB**.",
+          "- Empilez-les : chaque bloc passe son CO2 à celui du dessus, et seul celui du **haut** le rejette.",
+          "- Celle du haut rejette **10 mB par tick**, ou **50 mB par tick** quand il reste moins de 1000 mB de place.",
+          "",
+          "Les cheminées font un grand tampon et une belle silhouette. Pour une usine chargée, alimentez plusieurs piles ou ajoutez des échappements à côté.",
+          "",
+          "Le dioxyde de carbone a aussi des usages : 1000 mB remplissent un **extincteur** ou un **réservoir de dioxyde de carbone** dans un bec verseur."
+        ]
+      },
+      "items": ["tfmg:exhaust", "tfmg:brick_smokestack", "tfmg:concrete_smokestack", "tfmg:metal_smokestack", "tfmg:carbon_dioxide_bucket", "tfmg:fire_extinguisher", "create:spout"]
+    },
+    {
+      "title": {
+        "en_us": "Flarestack and gas lamp",
+        "fr_fr": "Torche d'évacuation et lampe à gaz"
+      },
+      "text": {
+        "en_us": [
+          "Both blocks burn flammable fluids: LPG, butane, propane, hydrogen, furnace gas, crude oil, heavy oil, gasoline, diesel, naphtha, kerosene, creosote and lubrication oil. Neither one needs an exhaust.",
+          "",
+          "## Flarestack",
+          "The flarestack destroys what you pump into it, with a tall flame. Use it on the products your refinery makes but you do not need yet.",
+          "- Holds **2500 mB**.",
+          "- Burns **30 mB per tick**, or **100 mB per tick** while it holds more than 1000 mB.",
+          "- Gives off light level 15 while burning.",
+          "",
+          "## Gas lamp",
+          "A light source that needs no wiring at all.",
+          "- Holds **4000 mB** of any of the fluids above.",
+          "- Burns about **1 mB per second**, so a full lamp lasts over an hour.",
+          "- Gives light level 15 while fuelled, and stays lit for 5 seconds after the last drop.",
+          "",
+          "Gas lamps are a good use for small leftovers such as the 10 mB of naphtha per crude oil run, or the creosote from coke ovens."
+        ],
+        "fr_fr": [
+          "Ces deux blocs brûlent les fluides inflammables : GPL, butane, propane, hydrogène, gaz de haut fourneau, pétrole brut, pétrole lourd, essence, diesel, naphta, kérosène, créosote et huile de lubrification. Aucun des deux n'a besoin d'échappement.",
+          "",
+          "## Torche d'évacuation",
+          "La torche d'évacuation détruit ce que vous y pompez, avec une grande flamme. Utilisez-la pour les produits de la raffinerie dont vous n'avez pas encore besoin.",
+          "- Contient **2500 mB**.",
+          "- Brûle **30 mB par tick**, ou **100 mB par tick** tant qu'elle contient plus de 1000 mB.",
+          "- Éclaire au niveau 15 pendant qu'elle brûle.",
+          "",
+          "## Lampe à gaz",
+          "Une source de lumière qui ne demande aucun câble.",
+          "- Contient **4000 mB** de n'importe lequel des fluides ci-dessus.",
+          "- Brûle environ **1 mB par seconde** : une lampe pleine dure plus d'une heure.",
+          "- Éclaire au niveau 15 tant qu'elle a du carburant, et reste allumée 5 secondes après la dernière goutte.",
+          "",
+          "Les lampes à gaz utilisent bien les petits restes, comme les 10 mB de naphta par passage de pétrole brut, ou la créosote des fours à coke."
+        ]
+      },
+      "items": ["tfmg:flarestack", "tfmg:gas_lamp", "tfmg:lpg_bucket", "tfmg:creosote_bucket", "tfmg:naphtha_bucket", "tfmg:furnace_gas_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "LPG, butane and propane",
+        "fr_fr": "GPL, butane et propane"
+      },
+      "text": {
+        "en_us": [
+          "**LPG** comes from the top output of a crude oil tower: 60 mB per run. In a chemical vat it can be split and put back together:",
+          "",
+          "## Separation",
+          "**1000 mB LPG** gives **500 mB butane + 500 mB propane**. Use any chemical vat with a **Freezer** attached.",
+          "",
+          "## Compression",
+          "**500 mB butane + 500 mB propane** give **1000 mB LPG**. This needs a **Compressor** pressurising the vat, and only works in a **steel** or **fireproof** chemical vat.",
+          "",
+          "## Uses",
+          "- All three are firebox fuels and burn in flarestacks and gas lamps.",
+          "- A spout fills an **engine cylinder** with 250 mB of butane or propane, to run an engine on that gas.",
+          "- A spout turns an empty bucket and 1000 mB of LPG into an **LPG tank**, handy to carry gas by hand.",
+          "",
+          "LPG is also a strong reason to keep the six-output crude oil tower: the five-output recipe makes as much, but the three-output one makes none. The chemical vat chapter explains how to attach freezers and compressors."
+        ],
+        "fr_fr": [
+          "Le **GPL** sort par la sortie du haut d'une tour à pétrole brut : 60 mB par passage. Dans une cuve chimique, on peut le séparer puis le recombiner :",
+          "",
+          "## Séparation",
+          "**1000 mB de GPL** donnent **500 mB de butane + 500 mB de propane**. Utilisez n'importe quelle cuve chimique équipée d'un **congélateur**.",
+          "",
+          "## Compression",
+          "**500 mB de butane + 500 mB de propane** donnent **1000 mB de GPL**. Il faut un **compresseur** qui met la cuve sous pression, et cela ne marche que dans une cuve chimique **en acier** ou **ignifugée**.",
+          "",
+          "## Usages",
+          "- Les trois sont des carburants de foyer et brûlent dans les torches d'évacuation et les lampes à gaz.",
+          "- Un bec verseur remplit un **cylindre de moteur** avec 250 mB de butane ou de propane, pour faire tourner un moteur avec ce gaz.",
+          "- Un bec verseur transforme un seau vide et 1000 mB de GPL en **réservoir de GPL**, pratique pour transporter du gaz à la main.",
+          "",
+          "Le GPL est aussi une bonne raison de garder la tour à pétrole brut à six sorties : la recette à cinq sorties en fait autant, mais celle à trois sorties n'en fait pas. Le chapitre des cuves chimiques explique comment brancher congélateurs et compresseurs."
+        ]
+      },
+      "items": ["tfmg:lpg_bucket", "tfmg:butane_bucket", "tfmg:propane_bucket", "tfmg:freezer", "tfmg:compressor", "tfmg:steel_chemical_vat", "tfmg:engine_cylinder", "create:spout"]
+    }
+  ]
+}

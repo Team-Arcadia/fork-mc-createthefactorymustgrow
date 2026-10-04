@@ -1,0 +1,6 @@
+{
+  "name": "La pompe à pétrole",
+  "description": "La pompe à pétrole remonte le pétrole brut d'un gisement jusqu'à un réservoir en surface. Elle se construit avec des blocs séparés qui forment un balancier :",
+  "icon": "tfmg:pumpjack_base",
+  "sortnum": 160
+}

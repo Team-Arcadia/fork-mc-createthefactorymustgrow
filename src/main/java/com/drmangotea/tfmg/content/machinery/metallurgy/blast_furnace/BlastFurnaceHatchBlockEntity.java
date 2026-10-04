@@ -1,6 +1,9 @@
 package com.drmangotea.tfmg.content.machinery.metallurgy.blast_furnace;
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
@@ -9,6 +12,7 @@ import com.simibubi.create.foundation.item.ItemHelper;
 import com.simibubi.create.foundation.item.SmartInventory;
 import net.createmod.catnip.math.VecHelper;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -29,7 +33,7 @@ import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import java.util.List;
 
 
-public class BlastFurnaceHatchBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class BlastFurnaceHatchBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
 
     public FluidTank tank;
@@ -74,6 +78,68 @@ public class BlastFurnaceHatchBlockEntity extends SmartBlockEntity implements IH
     public void lazyTick() {
         super.lazyTick();
         dropItems();
+    }
+
+    /**
+     * The furnace this hatch serves, found by walking down to its output
+     * block: either as the hot air tuyere in its walls or as the gas hatch
+     * sitting on top of its shaft. Read only, loaded chunks only.
+     */
+    private BlastFurnaceOutputBlockEntity findFurnace(boolean[] gasHatch) {
+        int maxHeight = TFMGConfigs.common().machines.blastFurnaceMaxHeight.get();
+        for (int k = 0; k <= maxHeight; k++) {
+            for (Direction side : Direction.Plane.HORIZONTAL) {
+                // Gas hatch: straight above the shaft, the output sits next to the shaft's bottom.
+                BlockPos shaftBottom = worldPosition.below(k);
+                if (k > 0 && furnaceAt(shaftBottom.relative(side), shaftBottom) instanceof BlastFurnaceOutputBlockEntity out
+                        && out.getCachedSize() == k) {
+                    gasHatch[0] = true;
+                    return out;
+                }
+                // Tuyere: in a wall next to the shaft.
+                BlockPos middle = worldPosition.relative(side).below(k);
+                for (Direction outSide : Direction.Plane.HORIZONTAL) {
+                    if (furnaceAt(middle.relative(outSide), middle) instanceof BlastFurnaceOutputBlockEntity out
+                            && worldPosition.equals(out.tuyerePos))
+                        return out;
+                }
+            }
+        }
+        return null;
+    }
+
+    private BlastFurnaceOutputBlockEntity furnaceAt(BlockPos pos, BlockPos expectedMiddle) {
+        if (!level.isLoaded(pos) || !(level.getBlockEntity(pos) instanceof BlastFurnaceOutputBlockEntity out))
+            return null;
+        BlockPos middle = pos.relative(out.getBlockState().getValue(net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING).getOpposite());
+        return middle.equals(expectedMiddle) ? out : null;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        boolean[] gasHatch = {false};
+        BlastFurnaceOutputBlockEntity furnace = findFurnace(gasHatch);
+        if (furnace == null) {
+            report.problem("blast_furnace_hatch.unused");
+            report.fix("blast_furnace_hatch.unused.fix");
+            return;
+        }
+        BlockPos out = furnace.getBlockPos();
+        if (gasHatch[0]) {
+            report.ok("blast_furnace_hatch.role_gas", out.getX(), out.getY(), out.getZ());
+            if (tank.getSpace() <= 0) {
+                report.problem("blast_furnace_hatch.gas_full");
+                report.fix("blast_furnace_hatch.gas_full.fix");
+            }
+        } else {
+            report.ok("blast_furnace_hatch.role_tuyere", out.getX(), out.getY(), out.getZ());
+        }
+        if (!inventory.isEmpty())
+            report.info("blast_furnace_hatch.item", inventory.getStackInSlot(0).getCount(), inventory.getStackInSlot(0).getHoverName());
+        report.info("blast_furnace_hatch.furnace_report");
+        furnace.inspect(report);
     }
 
     @Override

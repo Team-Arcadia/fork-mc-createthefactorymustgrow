@@ -61,7 +61,7 @@ public class TFMGDataTests {
         List<String> broken = new ArrayList<>();
         for (RecipeHolder<?> holder : server.getRecipeManager().getRecipes()) {
             ResourceLocation id = holder.id();
-            if (!id.getNamespace().equals(TFMG.MOD_ID))
+            if (!id.getNamespace().equals(TFMG.MOD_ID) && !producesTfmg(holder, server))
                 continue;
             for (Ingredient ingredient : holder.value().getIngredients()) {
                 if (ingredient.isEmpty())
@@ -91,6 +91,21 @@ public class TFMGDataTests {
                 missing.add(key);
         }
         report(helper, missing, "items without an en_us name");
+    }
+
+    /**
+     * TFMG ships some recipes under other namespaces (its crushing recipes
+     * live in create:crushing), so also check anything that makes a TFMG item.
+     */
+    private static boolean producesTfmg(RecipeHolder<?> holder, MinecraftServer server) {
+        ItemStack result = holder.value().getResultItem(server.registryAccess());
+        if (!result.isEmpty() && BuiltInRegistries.ITEM.getKey(result.getItem()).getNamespace().equals(TFMG.MOD_ID))
+            return true;
+        if (holder.value() instanceof ProcessingRecipe<?, ?> processing)
+            for (var output : processing.getRollableResults())
+                if (BuiltInRegistries.ITEM.getKey(output.getStack().getItem()).getNamespace().equals(TFMG.MOD_ID))
+                    return true;
+        return false;
     }
 
     /** An empty tag yields a single barrier stack named after the tag. */

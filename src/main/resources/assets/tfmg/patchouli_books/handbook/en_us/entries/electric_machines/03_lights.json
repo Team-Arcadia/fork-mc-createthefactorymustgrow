@@ -1,0 +1,30 @@
+{
+  "name": "Lights",
+  "icon": "tfmg:light_bulb",
+  "category": "tfmg:electric_machines",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Lamps$()$(br)The light bulb, circular lamp, light panel and aluminum lamp all work the same way. Place one on a face of an electric block: it takes power through its $(item)back$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)400 ohm$() consumer.$(li)Light level = $(item)voltage / 10$(), full brightness (15) from $(item)150 V$().$(li)A $(item)redstone signal$() switches it off.$(li)$(item)Burns above 1 A$(), so above $(item)400 V$().$(br2)$(l)Neon tube$()$(br)Neon tubes connect to each other like pipes and carry power along the line."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)200 ohm$() consumer, light level = voltage / 10.$(li)$(item)Burns above 1 A$(), so above $(item)200 V$(). This is the lowest limit of all electric blocks: give neon its own low voltage network, through a transformer or a potentiometer.$(br2)Right-click any lamp or neon tube with a $(item)dye$() to change its color. Black and grays are refused."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A lamp burning out drops nothing, like every overloaded block."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:light_bulb,tfmg:circular_light,tfmg:modern_light,tfmg:aluminum_lamp,tfmg:neon_tube,tfmg:potentiometer,tfmg:transformer",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

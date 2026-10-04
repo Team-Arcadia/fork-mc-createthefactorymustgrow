@@ -1,0 +1,22 @@
+{
+  "name": "Goggles tell you what is wrong",
+  "icon": "create:goggles",
+  "category": "tfmg:introduction",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Wear Create's $(item)Engineer's Goggles$() and look at a machine. Besides its tanks and progress, TFMG machines show $(item)red lines$() when something stops them:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)a structure that is not complete,$(li)a missing fuel, flux or hot air,$(li)a full output or exhaust tank,$(li)a vat recipe that needs more heat or pressure.$(br2)When a machine sits idle, look at it with goggles first. The last chapter, $(item)Troubleshooting$(), lists every message and how to fix it."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "name": "The firebox",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)firebox$() burns fuel fluids to heat whatever sits on top of it. It is the fuel-powered answer to the blaze burner."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Fireboxes placed side by side merge into one firebox, like Create fluid tanks: a square of $(item)1 x 1, 2 x 2 or 3 x 3$(), one block tall. The merged firebox shares a single fuel tank and a single exhaust tank, each holding $(item)8000 mB per block$() with Create's default tank size."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fuels$()$(br)Only fluids in the firebox fuel list burn: $(item)LPG, butane, propane, hydrogen, diesel, naphtha and kerosene$(). The tank accepts any fluid, so pumping in something else just clogs it: goggles then show $(item)This fluid is not a firebox fuel$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Heat$()$(br)A burning firebox counts as a lit heater:$(li)$(item)2 heat$() per block for distillation towers, chemical vats and Create steam boilers, the same as a superheated blaze burner,$(li)$(item)heated$(), not superheated, for a Create basin above it.$(br2)When it stops burning, its heat drops to nothing."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "The firebox",
+      "multiblock": {
+        "pattern": [
+          [
+            "FFF",
+            "F0F",
+            "FFF"
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox[blaze=fading]",
+          "0": "tfmg:firebox[blaze=fading]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,tfmg:lpg_bucket,tfmg:butane_bucket,tfmg:propane_bucket,tfmg:hydrogen_bucket,tfmg:diesel_bucket,tfmg:naphtha_bucket,tfmg:kerosene_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

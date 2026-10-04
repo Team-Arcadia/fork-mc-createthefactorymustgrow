@@ -1,0 +1,30 @@
+{
+  "name": "La recette",
+  "icon": "create:crushed_raw_iron",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Chaque fournée prend $(item)1 seconde$() et utilise :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)1 $(item)minerai de fer concassé$() (concassez du fer brut dans les roues de concassage),$(li)1 $(item)fondant$() : du $(item)sable calcaire$(), obtenu en concassant du calcaire,$(li)1 $(item)poussière de coke de charbon$(), qui sert de catalyseur (page suivante).$(br2)Elle donne :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)144 mB d'acier en fusion$(), exactement un lingot d'acier dans un bassin de coulée,$(li)$(item)288 mB de laitier en fusion$().$(br2)$(l)Le faire tourner$()$(br)Amenez les trois objets par des entonnoirs sur la cuve. La cuve a 4 emplacements d'entrée et chacun contient une seule sorte d'objet, donc le fer concassé, le sable calcaire et la poussière de coke ont chacun le leur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Pompez les deux fluides côté sortie. Une recette ne démarre que si tous ses produits ont la place : une cuve pleine de laitier ne fait plus d'acier. Envoyez l'acier en fusion vers des bassins de coulée, comme dans le chapitre sur l'acier, et trouvez un usage au laitier."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:crushed_raw_iron,tfmg:limesand,tfmg:coal_coke_dust,tfmg:molten_steel_bucket,tfmg:molten_slag_bucket,tfmg:casting_basin,tfmg:steel_ingot",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

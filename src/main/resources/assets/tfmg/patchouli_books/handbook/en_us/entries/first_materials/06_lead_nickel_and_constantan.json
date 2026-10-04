@@ -1,0 +1,30 @@
+{
+  "name": "Lead, nickel and constantan",
+  "icon": "tfmg:lead_ingot",
+  "category": "tfmg:first_materials",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The new ores also give early parts that need no steel.$(br2)$(l)Sheets$()$(br)A mechanical press on a depot or a belt turns one ingot into one sheet:$(br2)$(li)$(item)Lead ingot$() to $(item)lead sheet$().$(li)$(item)Nickel ingot$() to $(item)nickel sheet$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Constantan$()$(br)In a $(item)heated$() mixer (lit blaze burner), $(item)1 copper ingot + 1 nickel ingot$() give $(item)2 constantan ingots$(). Constantan is used later for wires and electrical parts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The cast iron chemical vat$()$(br)6 cast iron sheets, 2 lead sheets and a cast iron fluid tank make a $(item)cast iron chemical vat$(), the first vat you can build. Sulfuric acid is one of the recipes it accepts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Waiting for steel$()$(br)$(item)Screws$() and $(item)rebar$() are not made from these metals: both come from a steel ingot in a stonecutter (4 per ingot). Keep a few early steel ingots aside for them."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lead_ingot,tfmg:lead_sheet,tfmg:nickel_ingot,tfmg:nickel_sheet,tfmg:constantan_ingot,tfmg:cast_iron_chemical_vat,tfmg:screw,tfmg:rebar",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

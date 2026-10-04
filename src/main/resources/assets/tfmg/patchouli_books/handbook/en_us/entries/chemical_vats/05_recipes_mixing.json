@@ -1,0 +1,26 @@
+{
+  "name": "Recipes: mixing",
+  "icon": "tfmg:mixer_blade",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "All of these need an $(item)Industrial Mixer with a Mixer Blade$() and accept $(item)every vat kind$(), size 1 and up."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Liquid Concrete$()$(br)1 Sand, 1 Gravel, 1 Limesand, 250 mB Water give $(item)32000 mB$() Liquid Concrete. That fills all four output tanks of a 1x1 vat at default size, so empty it after each batch or use a bigger vat.$(br2)$(l)Liquid Asphalt$()$(br)1 Asphalt Mixture and 250 mB Water give 1000 mB Liquid Asphalt in 5 seconds."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Sulfuric Acid$()$(br)3 Sulfur Dust, 1 Nitrate Dust and 1000 mB Water give 500 mB Sulfuric Acid.$(br2)$(l)Rubber$()$(br)1 Sulfur Dust and 250 mB Heavy Oil give 1 Rubber Sheet. Needs $(item)heat 2$().$(br2)$(l)Naphtha cracking$()$(br)500 mB Naphtha gives 250 mB Ethylene and 250 mB Propylene. Needs $(item)heat 2$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:mixer_blade,tfmg:limesand,tfmg:liquid_concrete_bucket,tfmg:asphalt_mixture,tfmg:sulfuric_acid_bucket,tfmg:rubber_sheet,tfmg:naphtha_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:compass"
+    },
+    "M": {
+      "item": "tfmg:magnetic_alloy_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    " R ",
+    "RMR",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfmg:magnet"
+  }
+}

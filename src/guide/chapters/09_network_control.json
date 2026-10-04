@@ -1,0 +1,238 @@
+{
+  "order": 90,
+  "icon": "tfmg:transformer",
+  "title": {
+    "en_us": "Network Control",
+    "fr_fr": "Contrôle du réseau"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Bridges between networks",
+        "fr_fr": "Les ponts entre réseaux"
+      },
+      "text": {
+        "en_us": [
+          "The diode, the electric switch, the potentiometer and the transformer are **bridges**. Each one takes power in on one side (the **back** for the diode, switch and potentiometer) and feeds a **separate network** on its output side. The large switch and the large transformer work the same way across their two halves.",
+          "",
+          "- The input network sees the bridge as one consumer that uses what the output network uses.",
+          "- The output network gets its voltage from the bridge, and at most **10 kW** of power from the small bridges and the large switch. The large transformer passes more.",
+          "- Small bridges burn above **100 A** and above the usual 1,000 V.",
+          "- If the input network runs short of power, the output one stops too.",
+          "",
+          "## Never close a loop",
+          "If a chain of bridges feeds power back into a network it comes from, the bridge you just placed is **destroyed without dropping**. Always keep power flowing one way, from generators towards machines.",
+          "",
+          "Splitting a factory into several networks lets you switch whole sections off and keeps one hungry machine from stalling everything."
+        ],
+        "fr_fr": [
+          "La diode, l'interrupteur électrique, le potentiomètre et le transformateur sont des **ponts**. Chacun reçoit le courant d'un côté (l'**arrière** pour la diode, l'interrupteur et le potentiomètre) et alimente un **réseau séparé** côté sortie. Le grand interrupteur et le grand transformateur fonctionnent de la même façon entre leurs deux moitiés.",
+          "",
+          "- Le réseau d'entrée voit le pont comme un seul consommateur qui utilise ce qu'utilise le réseau de sortie.",
+          "- Le réseau de sortie reçoit sa tension du pont, et au plus **10 kW** de puissance avec les petits ponts et le grand interrupteur. Le grand transformateur en laisse passer davantage.",
+          "- Les petits ponts grillent au-dessus de **100 A** et au-dessus des 1 000 V habituels.",
+          "- Si le réseau d'entrée manque de puissance, celui de sortie s'arrête aussi.",
+          "",
+          "## Ne fermez jamais de boucle",
+          "Si une chaîne de ponts renvoie du courant vers un réseau dont elle vient, le pont que vous venez de poser est **détruit sans rien laisser tomber**. Gardez toujours un sens unique, des générateurs vers les machines.",
+          "",
+          "Découper une usine en plusieurs réseaux permet de couper des sections entières et empêche une machine gourmande de tout bloquer."
+        ]
+      },
+      "items": ["tfmg:electric_diode", "tfmg:electrical_switch", "tfmg:potentiometer", "tfmg:transformer", "tfmg:large_switch", "tfmg:large_coil"]
+    },
+    {
+      "title": {
+        "en_us": "Transformer",
+        "fr_fr": "Transformateur"
+      },
+      "text": {
+        "en_us": [
+          "The transformer raises or lowers voltage. Power comes in on one side and leaves on the opposite side; the multimeter shows its state.",
+          "",
+          "## Coils",
+          "Right-click a side with an **electromagnetic coil** to fit it; an outline shows which side you are aiming at. The coil on the input side is the **primary**, the one on the output side the **secondary**. Right-click with an empty hand to take a coil back.",
+          "",
+          "- Both coils need at least **50 turns**, or nothing comes out.",
+          "- Output voltage = **input voltage x secondary turns / primary turns**.",
+          "",
+          "Example: 300 V in, 100 turns on the input, 50 on the output: 150 V out.",
+          "",
+          "Wind coils on the **winding machine** with a copper spool. Its dial sets the number of turns in steps of 10, up to 1,000.",
+          "",
+          "## Limits",
+          "Up to **10 kW** on the output, **100 A**, and the usual **1,000 V** on the transformer itself. For more, use the large transformer."
+        ],
+        "fr_fr": [
+          "Le transformateur élève ou abaisse la tension. Le courant entre d'un côté et ressort du côté opposé ; le multimètre affiche son état.",
+          "",
+          "## Les bobines",
+          "Faites un clic droit sur un côté avec une **bobine électromagnétique** pour l'installer ; un contour montre le côté visé. La bobine du côté entrée est la **primaire**, celle du côté sortie la **secondaire**. Clic droit main vide pour reprendre une bobine.",
+          "",
+          "- Les deux bobines doivent avoir au moins **50 tours**, sinon rien ne sort.",
+          "- Tension de sortie = **tension d'entrée x tours secondaires / tours primaires**.",
+          "",
+          "Exemple : 300 V en entrée, 100 tours à l'entrée, 50 à la sortie : 150 V en sortie.",
+          "",
+          "Bobinez les bobines sur l'**enrouleuse** avec une bobine de cuivre. Son cadran règle le nombre de tours par pas de 10, jusqu'à 1 000.",
+          "",
+          "## Limites",
+          "Jusqu'à **10 kW** en sortie, **100 A**, et les **1 000 V** habituels sur le transformateur lui-même. Au-delà, passez au grand transformateur."
+        ]
+      },
+      "items": ["tfmg:transformer", "tfmg:electromagnetic_coil", "tfmg:winding_machine", "tfmg:copper_spool"]
+    },
+    {
+      "title": {
+        "en_us": "Large transformer",
+        "fr_fr": "Grand transformateur"
+      },
+      "text": {
+        "en_us": [
+          "The large transformer handles the output of a large generator: up to **100,000 V** and **500 A**.",
+          "",
+          "## Building it",
+          "- Wind two **large coils** on the winding machine, from laminated magnetic alloy blocks and a copper spool. The machine's dial sets the number of turns.",
+          "- Place the two coils side by side.",
+          "- Right-click one of them with a **laminated magnetic alloy block**. The coil you click becomes the **input** half, the other one the **output** half.",
+          "",
+          "Output voltage = **input voltage x output turns / input turns**.",
+          "",
+          "## Connections",
+          "Each half connects on its **top face only**: the incoming line on top of the input half, the outgoing line on top of the output half.",
+          "",
+          "## Cooling raises its power",
+          "- As built, it passes up to **30 kW**.",
+          "- Right-click it with a **block of steel**: **50 kW**.",
+          "- Then right-click with a **bucket of lubrication oil**: **100 kW**.",
+          "",
+          "The multimeter shows which stage it has reached."
+        ],
+        "fr_fr": [
+          "Le grand transformateur encaisse la production d'un grand générateur : jusqu'à **100 000 V** et **500 A**.",
+          "",
+          "## Le construire",
+          "- Bobinez deux **grandes bobines** sur l'enrouleuse, à partir de blocs d'alliage magnétique laminé et d'une bobine de cuivre. Le cadran de la machine règle le nombre de tours.",
+          "- Posez les deux bobines côte à côte.",
+          "- Faites un clic droit sur l'une d'elles avec un **bloc d'alliage magnétique laminé**. La bobine cliquée devient la moitié **entrée**, l'autre la moitié **sortie**.",
+          "",
+          "Tension de sortie = **tension d'entrée x tours de sortie / tours d'entrée**.",
+          "",
+          "## Connexions",
+          "Chaque moitié se connecte **uniquement par sa face du dessus** : la ligne d'arrivée sur la moitié entrée, la ligne de départ sur la moitié sortie.",
+          "",
+          "## Le refroidissement augmente sa puissance",
+          "- Tel quel, il laisse passer jusqu'à **30 kW**.",
+          "- Clic droit avec un **bloc d'acier** : **50 kW**.",
+          "- Puis clic droit avec un **seau d'huile de lubrification** : **100 kW**.",
+          "",
+          "Le multimètre indique l'étape atteinte."
+        ]
+      },
+      "items": ["tfmg:large_coil", "tfmg:laminated_magnetic_alloy_block", "tfmg:steel_block", "tfmg:lubrication_oil_bucket", "tfmg:winding_machine", "tfmg:copper_spool"]
+    },
+    {
+      "title": {
+        "en_us": "Switches",
+        "fr_fr": "Les interrupteurs"
+      },
+      "text": {
+        "en_us": [
+          "## Electric switch",
+          "A small bridge driven by **redstone**: power in at the back, out at the front. With no signal it is open and the front network is dead. The output voltage follows the signal strength: **input voltage x signal / 15**. A full signal passes everything, a weaker one acts as a dimmer.",
+          "",
+          "## Large switch",
+          "A two block switch for heavy lines, rated **100,000 V** and **1,000 A**, passing up to **10 kW**. Placing it puts down both halves, so leave room. Power enters at the back of the first half and leaves at the front of the second.",
+          "",
+          "It is driven by **rotation**, not redstone: turning its shaft one way swings the arm closed, the other way opens it, faster at higher speed. Stop the shaft and the arm stays where it is. Put a clutch or a gearshift on the input to control it from redstone.",
+          "",
+          "The large switch cannot be moved by contraptions."
+        ],
+        "fr_fr": [
+          "## Interrupteur électrique",
+          "Un petit pont commandé par la **redstone** : le courant entre à l'arrière et sort à l'avant. Sans signal, il est ouvert et le réseau de devant est coupé. La tension de sortie suit la force du signal : **tension d'entrée x signal / 15**. Un signal plein laisse tout passer, un plus faible sert de variateur.",
+          "",
+          "## Grand interrupteur",
+          "Un interrupteur en deux blocs pour les lignes lourdes, prévu pour **100 000 V** et **1 000 A**, qui laisse passer jusqu'à **10 kW**. Le poser installe les deux moitiés, prévoyez donc la place. Le courant entre à l'arrière de la première moitié et sort à l'avant de la seconde.",
+          "",
+          "Il est commandé par la **rotation**, pas par la redstone : tourner son axe dans un sens ferme le bras, dans l'autre sens l'ouvre, d'autant plus vite que la vitesse est haute. Arrêtez l'axe et le bras reste où il est. Placez un embrayage ou un inverseur sur l'entrée pour le commander à la redstone.",
+          "",
+          "Le grand interrupteur ne peut pas être déplacé par les machines mobiles."
+        ]
+      },
+      "items": ["tfmg:electrical_switch", "tfmg:large_switch", "minecraft:lever", "create:clutch", "create:gearshift"]
+    },
+    {
+      "title": {
+        "en_us": "Diode, potentiometer and resistor",
+        "fr_fr": "Diode, potentiomètre et résistance"
+      },
+      "text": {
+        "en_us": [
+          "## Diode",
+          "Passes power **one way only**, from its back to its front, without changing the voltage. Use it to feed a network that must never send power back.",
+          "",
+          "## Potentiometer",
+          "A bridge with a dial: it passes from **0 to 100%** of its input voltage, 100% by default. It is also a **display link** source for voltage.",
+          "",
+          "Right-click a diode or a potentiometer with **heavy machinery casing** to encase it.",
+          "",
+          "## Resistor",
+          "A plain **consumer** with a fixed resistance. It connects on its back face and turns power into nothing, which makes it a handy test load to check that your generators keep up.",
+          "",
+          "Wind it on the **winding machine** with a **constantan spool**. The dial sets its resistance in steps of 10 ohms, up to **1,000 ohms**. Remember that a lower resistance draws more: at 300 V, 100 ohms use 900 W, 1,000 ohms only 90 W."
+        ],
+        "fr_fr": [
+          "## Diode",
+          "Elle laisse passer le courant **dans un seul sens**, de son arrière vers son avant, sans changer la tension. Utilisez-la pour alimenter un réseau qui ne doit jamais renvoyer de courant.",
+          "",
+          "## Potentiomètre",
+          "Un pont avec un cadran : il laisse passer de **0 à 100 %** de sa tension d'entrée, 100 % par défaut. C'est aussi une source pour **liaison d'affichage** pour la tension.",
+          "",
+          "Faites un clic droit sur une diode ou un potentiomètre avec un **carter de machinerie lourde** pour l'encastrer.",
+          "",
+          "## Résistance",
+          "Un simple **consommateur** à résistance fixe. Elle se connecte par sa face arrière et transforme le courant en rien, ce qui en fait une charge de test pratique pour vérifier que vos générateurs suivent.",
+          "",
+          "Bobinez-la sur l'**enrouleuse** avec une **bobine de constantan**. Le cadran règle sa résistance par pas de 10 ohms, jusqu'à **1 000 ohms**. Une résistance plus faible consomme plus : à 300 V, 100 ohms consomment 900 W, 1 000 ohms seulement 90 W."
+        ]
+      },
+      "items": ["tfmg:electric_diode", "tfmg:potentiometer", "tfmg:heavy_machinery_casing", "tfmg:resistor", "tfmg:constantan_spool", "tfmg:winding_machine"]
+    },
+    {
+      "title": {
+        "en_us": "Watching the network",
+        "fr_fr": "Surveiller le réseau"
+      },
+      "text": {
+        "en_us": [
+          "## Voltage observer",
+          "Mount it on an electric block. It gives a **redstone signal** while that network has any voltage. A **comparator** reads it more finely: the strength grows with the voltage and is full at **250 V**.",
+          "",
+          "## Display link sources",
+          "Point a Create **display link** at:",
+          "- an **electric gauge** or a **voltage observer**: voltage, current, resistance, power used or generated, voltage generated, and the network's consumption, generation, resistance and id;",
+          "- an **accumulator**: voltage and the network's consumption, generation and resistance;",
+          "- a **potentiometer**: voltage and voltage generated.",
+          "",
+          "## Segmented display",
+          "A **display link target** that shows text with glowing segments, two characters per block. Place several side by side for longer text. It is a 100 ohm consumer and stays dark below **5 W**, so give it at least about 23 V. Right-click it with a dye to change its color (black and grays are refused)."
+        ],
+        "fr_fr": [
+          "## Observateur de tension",
+          "Fixez-le sur un bloc électrique. Il émet un **signal de redstone** tant que ce réseau a une tension. Un **comparateur** le lit plus finement : la force augmente avec la tension et atteint son maximum à **250 V**.",
+          "",
+          "## Sources pour liaison d'affichage",
+          "Pointez une **liaison d'affichage** de Create sur :",
+          "- une **jauge électrique** ou un **observateur de tension** : tension, courant, résistance, puissance consommée ou produite, tension produite, et consommation, production, résistance et identifiant du réseau ;",
+          "- un **accumulateur** : tension et consommation, production et résistance du réseau ;",
+          "- un **potentiomètre** : tension et tension produite.",
+          "",
+          "## Afficheur segmenté",
+          "Une **cible de liaison d'affichage** qui montre du texte avec des segments lumineux, deux caractères par bloc. Posez-en plusieurs côte à côte pour un texte plus long. C'est un consommateur de 100 ohms qui reste éteint en dessous de **5 W** : donnez-lui au moins 23 V environ. Clic droit avec une teinture pour changer sa couleur (le noir et les gris sont refusés)."
+        ]
+      },
+      "items": ["tfmg:voltage_observer", "minecraft:comparator", "create:display_link", "tfmg:voltmeter", "tfmg:accumulator", "tfmg:segmented_display"]
+    }
+  ]
+}

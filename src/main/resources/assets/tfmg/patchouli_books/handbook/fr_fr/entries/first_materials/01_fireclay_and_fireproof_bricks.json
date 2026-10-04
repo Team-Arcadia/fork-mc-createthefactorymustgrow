@@ -1,0 +1,30 @@
+{
+  "name": "Argile réfractaire et briques réfractaires",
+  "icon": "tfmg:fireclay",
+  "category": "tfmg:first_materials",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Obtenir des boules d'argile réfractaire$()$(li)Minez un bloc d'argile réfractaire à la pelle : il donne $(item)1 boule d'argile réfractaire$().$(li)Quatre boules redonnent un bloc d'argile réfractaire pour le stockage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Cuire les briques$()$(br)Faites cuire une $(item)boule d'argile réfractaire$() au four (10 secondes) pour obtenir une $(item)brique réfractaire$(). Quatre briques réfractaires en carré de 2 sur 2 donnent un bloc de $(item)briques réfractaires$().$(br2)Les briques seules comme les blocs servent :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Brique réfractaire$() (objet) : le bassin de coulée.$(li)$(item)Briques réfractaires$() (bloc) : le fourneau à air chaud, la sortie et la trappe du haut fourneau, et les murs du haut fourneau lui-même.$(li)Six blocs donnent six murets de $(item)renfort en briques réfractaires$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un haut fourneau consomme beaucoup de blocs de briques : montez tôt une ligne automatique d'argile réfractaire."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireclay,tfmg:fireclay_ball,tfmg:fireproof_brick,tfmg:fireproof_bricks,tfmg:fireproof_brick_reinforcement",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

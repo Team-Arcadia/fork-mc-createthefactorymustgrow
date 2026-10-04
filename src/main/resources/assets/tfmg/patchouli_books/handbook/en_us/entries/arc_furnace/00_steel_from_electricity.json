@@ -1,0 +1,54 @@
+{
+  "name": "Steel from electricity",
+  "icon": "tfmg:fireproof_chemical_vat",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)arc furnace$() is not a block of its own: it is a chemical vat set up to melt iron with electric arcs. It makes molten steel without a blast furnace or hot air. $(l)The build - $(item)Fireproof Chemical Vat$() blocks only.$() Steel and cast iron vats do not work."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)At least $(item)9 vat blocks$(): a 3x3 vat one block high is the usual shape. $(li)$(item)3 Electrode Holders$() on top of the vat, each with a $(item)Graphite Electrode$(). $(li)$(item)No heat$() is needed: you can leave the space under the vat empty."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Any other machine you attach must be working too, or nothing runs. The simplest arc furnace has the three holders and nothing else."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Graphite electrodes$()$(br)Put a $(item)Block of Coal Coke$() in a $(item)Stonecutter$(): one block gives one graphite electrode. Right-click a holder to insert it, sneak and right-click with an empty hand to take it out. Working holders throw electric sparks into the vat."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Steel from electricity",
+      "multiblock": {
+        "pattern": [
+          [
+            "E E",
+            "   ",
+            " E "
+          ],
+          [
+            "VVV",
+            "V0V",
+            "VVV"
+          ]
+        ],
+        "mapping": {
+          "V": "tfmg:fireproof_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:fireproof_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_chemical_vat,tfmg:electrode_holder,tfmg:graphite_electrode,tfmg:coal_coke_block,minecraft:stonecutter",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

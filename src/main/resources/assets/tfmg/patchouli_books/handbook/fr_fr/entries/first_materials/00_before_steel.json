@@ -1,0 +1,30 @@
+{
+  "name": "Avant l'acier",
+  "icon": "create:crushing_wheel",
+  "category": "tfmg:first_materials",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "L'acier est le cœur de TFMG, mais les machines qui le produisent se construisent avec des matériaux plus simples. Ce chapitre couvre tout ce que vous pouvez fabriquer $(item)avant votre premier lingot d'acier$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les $(item)briques réfractaires$(), à partir d'argile réfractaire.$(li)La $(item)fonte$(), à partir de fer et de charbon.$(li)Le $(item)sable calcaire$(), fondant du haut fourneau.$(li)Le $(item)ciment$() et le $(item)béton$().$(li)Les $(item)plaques et alliages$() de plomb et de nickel. $(l)Machines de Create nécessaires - Des $(item)roues de concassage$(), pour le sable calcaire et les minerais concassés.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un $(item)malaxeur mécanique$() au-dessus d'un $(item)bassin$(), pour l'argile réfractaire, le ciment et le béton. $(li)Une $(item)presse mécanique$() : au-dessus d'un dépôt ou d'un tapis elle presse des plaques, au-dessus d'un bassin elle compacte. $(li)Un $(item)brûleur à blaze$() sous le bassin, alimenté en combustible, pour les recettes marquées $(item)chauffées$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cliquez sur un objet en bas de page pour voir sa recette exacte dans JEI."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:crushing_wheel,create:mechanical_mixer,create:basin,create:mechanical_press,create:blaze_burner,create:depot",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

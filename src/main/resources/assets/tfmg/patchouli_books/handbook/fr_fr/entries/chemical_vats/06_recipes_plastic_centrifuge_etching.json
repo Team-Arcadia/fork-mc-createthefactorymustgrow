@@ -1,0 +1,30 @@
+{
+  "name": "Recettes : plastique, centrifugeuse, gravure",
+  "icon": "tfmg:ethylene_bucket",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Plastique en fusion$()$(br)500 mB d'éthylène donnent 500 mB de plastique en fusion. 500 mB de propylène font de même. Les deux demandent une $(item)pale de mélangeur$(), une $(item)chaleur de 2$(), et acceptent toutes les sortes de cuves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Néon$()$(br)1000 mB d'air donnent $(item)1 mB$() de néon par fournée. Demande un $(item)mélangeur industriel avec une centrifugeuse$(), n'importe quelle cuve. Il faut beaucoup d'air : alimentez la cuve en continu."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Circuit imprimé gravé$()$(br)1 circuit imprimé recouvert et 250 mB d'acide sulfurique donnent 1 circuit imprimé gravé en 5 secondes. Cette recette ne demande $(item)aucune machine$() ni chaleur : n'importe quelle cuve avec les ingrédients s'en charge."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ce dernier point compte : si vous reliez une machine à une cuve de gravure, cette machine doit quand même fonctionner, sinon le circuit ne sera jamais gravé.$(br2)L'éthylène et le propylène viennent du craquage du naphta (page précédente). L'air se récupère avec une $(item)prise d'air$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:ethylene_bucket,tfmg:propylene_bucket,tfmg:molten_plastic_bucket,tfmg:centrifuge,tfmg:air_bucket,tfmg:neon_bucket,tfmg:coated_circuit_board,tfmg:etched_circuit_board",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

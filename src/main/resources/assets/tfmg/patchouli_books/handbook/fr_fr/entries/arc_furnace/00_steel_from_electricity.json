@@ -1,0 +1,54 @@
+{
+  "name": "De l'acier par l'électricité",
+  "icon": "tfmg:fireproof_chemical_vat",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)four à arc$() n'est pas un bloc à part : c'est une cuve chimique montée pour fondre le fer avec des arcs électriques. Il produit de l'acier en fusion sans haut fourneau ni air chaud. $(l)Le montage - Uniquement des blocs de $(item)cuve chimique réfractaire$().$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les cuves en acier et en fonte ne marchent pas. $(li)Au moins $(item)9 blocs de cuve$() : une cuve 3x3 d'un bloc de haut est la forme habituelle. $(li)$(item)3 porte-électrodes$() au-dessus de la cuve, chacun avec une $(item)électrode en graphite$(). $(li)$(item)Aucune chaleur$() n'est nécessaire : vous pouvez laisser le dessous de la cuve vide."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Toute autre machine reliée doit aussi fonctionner, sinon rien ne tourne. Le four à arc le plus simple a ses trois porte-électrodes et rien d'autre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Électrodes en graphite$()$(br)Mettez un $(item)bloc de coke de charbon$() dans un $(item)tailleur de pierre$() : un bloc donne une électrode en graphite. Clic droit sur un porte-électrode pour l'insérer, clic droit accroupi main vide pour la retirer. Les porte-électrodes en marche lancent des étincelles dans la cuve."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "De l'acier par l'électricité",
+      "multiblock": {
+        "pattern": [
+          [
+            "E E",
+            "   ",
+            " E "
+          ],
+          [
+            "VVV",
+            "V0V",
+            "VVV"
+          ]
+        ],
+        "mapping": {
+          "V": "tfmg:fireproof_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:fireproof_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_chemical_vat,tfmg:electrode_holder,tfmg:graphite_electrode,tfmg:coal_coke_block,minecraft:stonecutter",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

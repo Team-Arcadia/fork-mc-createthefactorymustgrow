@@ -1,0 +1,26 @@
+{
+  "name": "Engine gearbox",
+  "icon": "tfmg:engine_gearbox",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Engine Gearbox$() is a compact gearbox sized to sit next to an engine. It connects on its $(item)front$() and on $(item)both sides$(), so it turns an engine's output line through a right angle and lets you branch it to two machines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It is placed facing the way you look, like most Create blocks. $(l)Tips for small engines - Start with a type I engine on creosote or furnace gas with simple cylinders:$() both fuels come early, from the coke oven and the blast furnace. $(li)Move to diesel or kerosene for heavy machines: their torque factor is 1.4."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Length adds torque, the signal and the speed factors add RPM. Plan the row for the stress you need, then pick fuel and upgrades for the speed. $(li)Lubrication oil and cooling fluid together roughly halve fuel use. $(li)A piping upgrade plus a big tank makes an engine that runs for hours unattended, as long as the exhaust is pumped away."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:engine_gearbox,tfmg:simple_engine_cylinder,tfmg:creosote_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

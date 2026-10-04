@@ -2,6 +2,8 @@ package com.drmangotea.tfmg.content.electricity.storage;
 
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.electricity.base.ElectricBlockEntity;
 import com.drmangotea.tfmg.content.electricity.base.IElectric;
 import com.drmangotea.tfmg.content.electricity.base.IVoltageSource;
@@ -24,7 +26,7 @@ import java.util.List;
 
 import static net.minecraft.world.level.block.DirectionalBlock.FACING;
 
-public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVoltageSource {
+public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVoltageSource, IInspectable {
 
     public TFMGForgeEnergyStorage energy = createEnergyStorage(1);
     private IEnergyStorage energyCapability;
@@ -117,6 +119,49 @@ public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVolt
         TFMGTexts.electricalMaxCapacity(getMaxCapacity()).forGoggles(tooltip, 1);
 
         return true;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (!isController()) {
+            if (level.isLoaded(controller) && level.getBlockEntity(controller) instanceof AccumulatorBlockEntity be && be.isController()) {
+                report.info("accumulator.member", controller.getX() + " " + controller.getY() + " " + controller.getZ());
+                be.inspect(report);
+            } else {
+                report.problem("accumulator.no_controller");
+                report.fix("accumulator.no_controller.fix");
+            }
+            return;
+        }
+        int stored = energy.getEnergyStored();
+        int max = getMaxCapacity();
+        report.info("accumulator.charge", stored, max, max <= 0 ? 0 : (int) (100L * stored / max));
+        Direction facing = getBlockState().getValue(FACING);
+        report.info("accumulator.chain", length, getOutputVoltage(),
+                net.minecraft.network.chat.Component.translatable("tfmg.inspector.dir." + facing.getName()),
+                net.minecraft.network.chat.Component.translatable("tfmg.inspector.dir." + facing.getOpposite().getName()));
+
+        int threshold = TFMGConfigs.common().machines.accumulatorVoltage.get() * length;
+        if (getData().getVoltage() > threshold) {
+            if (stored >= max)
+                report.ok("accumulator.full");
+            else if (data.notEnoughPower)
+                report.problem("accumulator.no_spare_power");
+            else
+                report.ok("accumulator.charging", getChargingRate());
+            return;
+        }
+        if (signal > 0) {
+            report.problem("accumulator.redstone", signal);
+            report.fix("accumulator.redstone.fix");
+        } else if (stored <= 0) {
+            report.problem("accumulator.empty");
+        } else if (canPower()) {
+            report.ok("accumulator.discharging", getOutputVoltage());
+        } else {
+            report.info("accumulator.idle");
+        }
+        report.fix("accumulator.charge.fix", threshold, TFMGConfigs.common().machines.accumulatorVoltage.get());
     }
 
     public void refreshController() {

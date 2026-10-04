@@ -1,0 +1,83 @@
+{
+  "order": 17000,
+  "name": {
+    "en_us": "A crude oil tower",
+    "fr_fr": "Une tour à pétrole brut"
+  },
+  "layers": [
+    [
+      "  ",
+      "FF",
+      "FF"
+    ],
+    [
+      "C ",
+      "AA",
+      "AA"
+    ],
+    [
+      "O ",
+      "TT",
+      "TT"
+    ],
+    [
+      "P ",
+      "TT",
+      "TT"
+    ],
+    [
+      "O ",
+      "TT",
+      "TT"
+    ],
+    [
+      "P ",
+      "TT",
+      "TT"
+    ],
+    [
+      "O ",
+      "TT",
+      "TT"
+    ],
+    [
+      "P ",
+      "TT",
+      "TT"
+    ],
+    [
+      "O ",
+      "TT",
+      "TT"
+    ],
+    [
+      "P ",
+      "TT",
+      "TT"
+    ],
+    [
+      "O ",
+      "TT",
+      "TT"
+    ],
+    [
+      "P ",
+      "TT",
+      "TT"
+    ],
+    [
+      "O ",
+      "UU",
+      "UU"
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox[blaze=fading]",
+    "C": "tfmg:steel_distillation_controller[facing=north]",
+    "O": "tfmg:steel_distillation_output",
+    "P": "tfmg:industrial_pipe[concretelogged=false]",
+    "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+    "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+    "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]"
+  }
+}

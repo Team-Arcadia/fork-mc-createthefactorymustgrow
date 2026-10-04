@@ -1,0 +1,30 @@
+{
+  "name": "Transmission et contrôleur",
+  "icon": "tfmg:transmission",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)contrôleur de moteur$() permet de piloter un moteur comme un véhicule plutôt qu'à la redstone. Une $(item)transmission$() fait le lien entre les deux. 1. Faites un clic droit sur le contrôleur avec la transmission."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Son infobulle affiche alors le contrôleur lié. Un clic droit accroupi dans le vide efface le lien. 2. Faites un clic droit sur le moteur avec la transmission liée. Elle se pose comme amélioration du moteur et attache le moteur au contrôleur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les lunettes du contrôleur affichent alors $(item)Moteur : x y z$() et si le moteur tourne ; celles du moteur affichent $(item)Contrôleur : x y z$(). Un contrôleur sans moteur explique comment en lier un."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Tant qu'un contrôleur le pilote, le moteur $(item)ignore la redstone$(). Retirez la transmission avec une clé pour revenir à la redstone : l'objet rendu garde son lien, vous pourrez la reposer plus tard sans refaire la liaison.$(br2)Un clic droit sur le contrôleur avec une clé ouvre son menu, où l'on règle des fréquences de liaison redstone."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:transmission,tfmg:engine_controller,create:wrench",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

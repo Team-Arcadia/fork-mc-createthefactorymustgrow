@@ -1,5 +1,7 @@
 package com.drmangotea.tfmg.content.machinery.misc.smokestack;
 
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.simibubi.create.Create;
@@ -26,7 +28,7 @@ import java.util.Random;
 import static com.drmangotea.tfmg.content.machinery.misc.smokestack.SmokestackBlock.TOP;
 
 
-public class SmokestackBlockEntity extends SmartBlockEntity {
+public class SmokestackBlockEntity extends SmartBlockEntity implements IInspectable {
 
 
     int smokeTimer = 0;
@@ -163,6 +165,36 @@ public class SmokestackBlockEntity extends SmartBlockEntity {
                     tankInventory.drain(accepted, IFluidHandler.FluidAction.EXECUTE);
             }
 
+        }
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        // Gas climbs the column block by block and only the TOP block vents it.
+        BlockPos top = getBlockPos();
+        int height = 1;
+        while (height < 64 && level.isLoaded(top.above()) && level.getBlockEntity(top.above()) instanceof SmokestackBlockEntity) {
+            top = top.above();
+            height++;
+        }
+        if (!(level.getBlockEntity(top) instanceof SmokestackBlockEntity topStack))
+            return;
+        if (!topStack.getBlockState().getValue(TOP)) {
+            report.problem("smokestack.no_top", top.getX(), top.getY(), top.getZ());
+            report.fix("smokestack.no_top.fix");
+        } else {
+            int amount = topStack.tankInventory.getFluidAmount();
+            int rate = topStack.tankInventory.getSpace() < 1000 ? 50 : 10;
+            if (amount <= 0)
+                report.info("smokestack.idle");
+            else
+                report.ok("smokestack.venting", rate, top.getX(), top.getY(), top.getZ());
+        }
+        if (tankInventory.getSpace() <= 0) {
+            report.problem("smokestack.full", tankInventory.getFluidAmount(), tankInventory.getCapacity());
+            report.fix("smokestack.full.fix");
         }
     }
 

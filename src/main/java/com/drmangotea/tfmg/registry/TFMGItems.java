@@ -184,6 +184,25 @@ public class TFMGItems {
     public static final ItemEntry<MagnetItem>
             MAGNET = REGISTRATE.item("magnet", MagnetItem::new).register();
 
+    // Diagnostic tool: explains what a machine needs, or the player's progress.
+    public static final ItemEntry<com.drmangotea.tfmg.content.items.inspector.FactoryInspectorItem>
+            FACTORY_INSPECTOR = REGISTRATE.item("factory_inspector", com.drmangotea.tfmg.content.items.inspector.FactoryInspectorItem::new)
+            .lang("Factory Inspector")
+            .model((c, p) -> p.withExistingParent(c.getName(), "item/handheld").texture("layer0", p.modLoc("item/factory_inspector")))
+            .register();
+
+    // Projects a multiblock into the world one layer at a time.
+    public static final ItemEntry<com.drmangotea.tfmg.content.items.blueprint.FactoryBlueprintItem>
+            FACTORY_BLUEPRINT = REGISTRATE.item("factory_blueprint", com.drmangotea.tfmg.content.items.blueprint.FactoryBlueprintItem::new)
+            .lang("Factory Blueprint")
+            .register();
+
+    // In-game guide to the whole mod, opened with a right click.
+    public static final ItemEntry<com.drmangotea.tfmg.content.items.guide.FactoryGuideItem>
+            FACTORY_GUIDE = REGISTRATE.item("factory_guide", com.drmangotea.tfmg.content.items.guide.FactoryGuideItem::new)
+            .lang("The Factory Handbook")
+            .register();
+
     public static final ItemEntry<ResistorItem>
             UNFINISHED_RESISTOR = REGISTRATE.item("unfinished_resistor", ResistorItem::new).register();
     public static final ItemEntry<CylinderItem>

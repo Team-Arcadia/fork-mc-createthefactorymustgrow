@@ -1,0 +1,30 @@
+{
+  "name": "Heavy oil recipes",
+  "icon": "tfmg:heavy_oil_bucket",
+  "category": "tfmg:distillation",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Heavy oil can go through a second tower. Each recipe uses $(item)200 mB of heavy oil$() and gives half of it back as heavy oil in the lowest output, which you can loop back into the tank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)5 outputs$()$(br)100 mB heavy oil, 25 mB lubrication oil, 50 mB diesel, 20 mB kerosene, 5 mB naphtha.$(br2)$(l)4 outputs$()$(br)100 mB heavy oil, 30 mB lubrication oil, 50 mB diesel, 20 mB kerosene.$(br2)$(l)3 outputs (light distillation)$()$(br)100 mB heavy oil, 50 mB diesel, 50 mB lubrication oil."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Heavy oil also has uses of its own:$(li)compacted with heat, $(item)1000 mB$() makes one $(item)bitumen$(), the base of asphalt,$(li)with sulfur dust in a heated chemical vat with an industrial mixer, 250 mB makes a $(item)rubber sheet$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Note that a crude oil tower and a heavy oil tower with the same number of outputs never mix up: the controller picks the recipe that matches the fluid in its tank."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:heavy_oil_bucket,tfmg:lubrication_oil_bucket,tfmg:diesel_bucket,tfmg:kerosene_bucket,tfmg:naphtha_bucket,tfmg:bitumen,tfmg:rubber_sheet",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

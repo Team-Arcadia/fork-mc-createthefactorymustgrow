@@ -1,0 +1,229 @@
+{
+  "order": 120,
+  "icon": "tfmg:aluminum_ingot",
+  "title": {
+    "en_us": "Aluminium",
+    "fr_fr": "L'aluminium"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "From bauxite to powder",
+        "fr_fr": "De la bauxite à la poudre"
+      },
+      "text": {
+        "en_us": [
+          "Aluminium is everywhere in the electrical age: the **steel mechanism** needs it, and so do aluminium wire, pipes and the centrifuge. It all starts with **Bauxite**, a stone block.",
+          "",
+          "## Crushing",
+          "Run Bauxite through Create's **Crushing Wheels**. Each block gives:",
+          "",
+          "- **2 Bauxite Powder** with a 75% chance,",
+          "- **1 more** Bauxite Powder with a 20% chance.",
+          "",
+          "That is about 1.7 powder per block on average, so mine plenty.",
+          "",
+          "## Two ways to aluminium",
+          "- **Superheated mixing** in a Create basin: easy to build, needs no electricity, but costs coal coke dust and gives a single ingot per batch.",
+          "- **Electrolysis** in a chemical vat: needs power and a heated vat, but gives more metal for the same powder.",
+          "",
+          "Use the first to make your first ingots (you need aluminium to build the generators that power the second), then switch to electrolysis."
+        ],
+        "fr_fr": [
+          "L'aluminium est partout à l'ère électrique : le **mécanisme en acier** en a besoin, tout comme le fil d'aluminium, les tuyaux et la centrifugeuse. Tout commence avec la **bauxite**, un bloc de pierre.",
+          "",
+          "## Concassage",
+          "Passez la bauxite dans les **roues de concassage** de Create. Chaque bloc donne :",
+          "",
+          "- **2 poudres de bauxite** avec 75 % de chance,",
+          "- **1 poudre de plus** avec 20 % de chance.",
+          "",
+          "Cela fait environ 1,7 poudre par bloc en moyenne : minez-en beaucoup.",
+          "",
+          "## Deux chemins vers l'aluminium",
+          "- Le **mélange surchauffé** dans un bassin de Create : facile à construire, sans électricité, mais il coûte de la poussière de coke et ne donne qu'un lingot par fournée.",
+          "- L'**électrolyse** dans une cuve chimique : il faut du courant et une cuve chauffée, mais elle donne plus de métal pour la même poudre.",
+          "",
+          "Utilisez le premier pour vos premiers lingots (il faut de l'aluminium pour construire les générateurs qui alimentent le second), puis passez à l'électrolyse."
+        ]
+      },
+      "items": ["tfmg:bauxite", "tfmg:bauxite_powder", "create:crushing_wheel", "tfmg:aluminum_ingot", "tfmg:steel_mechanism"]
+    },
+    {
+      "title": {
+        "en_us": "First ingots: superheated mixing",
+        "fr_fr": "Premiers lingots : mélange surchauffé"
+      },
+      "text": {
+        "en_us": [
+          "Since 1.3.0 there is a way to get aluminium **without electricity**, so you are never stuck before your first generator.",
+          "",
+          "## The recipe",
+          "In a Create **Mechanical Mixer** over a **Basin**:",
+          "",
+          "- 4 **Bauxite Powder**",
+          "- 1 **Coal Coke Dust**",
+          "",
+          "give **1 Aluminum Ingot**. The basin must be **superheated**: put a Blaze Burner under it and feed the blaze a **Blaze Cake**.",
+          "",
+          "## Coal Coke Dust",
+          "Crush **Coal Coke** in Crushing Wheels: one coke gives one dust. Coal coke comes from the coke oven, covered in the steel chapters.",
+          "",
+          "## When to stop",
+          "This recipe is meant to start you off. Electrolysis turns the same 4 powder into an ingot plus extra nuggets and needs no coke dust, so once your first generators are running, move your bauxite to a vat."
+        ],
+        "fr_fr": [
+          "Depuis la 1.3.0, il existe un moyen d'obtenir de l'aluminium **sans électricité**, pour ne jamais rester bloqué avant votre premier générateur.",
+          "",
+          "## La recette",
+          "Dans un **mélangeur mécanique** de Create au-dessus d'un **bassin** :",
+          "",
+          "- 4 **poudres de bauxite**",
+          "- 1 **poussière de coke de charbon**",
+          "",
+          "donnent **1 lingot d'aluminium**. Le bassin doit être **surchauffé** : placez un brûleur à blaze dessous et donnez au blaze un **gâteau au blaze**.",
+          "",
+          "## Poussière de coke de charbon",
+          "Concassez du **coke de charbon** dans les roues de concassage : un coke donne une poussière. Le coke vient du four à coke, décrit dans les chapitres sur l'acier.",
+          "",
+          "## Quand arrêter",
+          "Cette recette sert à démarrer. L'électrolyse transforme les mêmes 4 poudres en un lingot plus des pépites en bonus, sans poussière de coke : dès que vos premiers générateurs tournent, envoyez votre bauxite dans une cuve."
+        ]
+      },
+      "items": ["create:mechanical_mixer", "create:basin", "create:blaze_burner", "create:blaze_cake", "tfmg:bauxite_powder", "tfmg:coal_coke", "tfmg:coal_coke_dust", "tfmg:aluminum_ingot"]
+    },
+    {
+      "title": {
+        "en_us": "The electrolysis vat",
+        "fr_fr": "La cuve d'électrolyse"
+      },
+      "text": {
+        "en_us": [
+          "Electrolysis runs in a chemical vat with **two Electrode Holders**, each holding a **Copper** or **Zinc Electrode** (you can mix them).",
+          "",
+          "## The build",
+          "- A **Steel** or **Fireproof** Chemical Vat. Cast iron does not work.",
+          "- Machines must sit on the vat's own footprint, so two holders need a vat at least **2x2** wide.",
+          "- Both holders go **on top** of the vat.",
+          "- **Heat 2** under the vat: one burning **Firebox** is enough, or a superheated Blaze Burner.",
+          "",
+          "Do not put an Industrial Mixer on this vat unless it is spinning at 30 RPM or more: any attached machine that is not working stops every recipe.",
+          "",
+          "## Getting electrodes",
+          "Put a **Block of Copper** or a **Block of Zinc** in a **Stonecutter**: one block gives one electrode. Right-click a holder with an electrode to insert it. Sneak and right-click with an empty hand to take it back."
+        ],
+        "fr_fr": [
+          "L'électrolyse se fait dans une cuve chimique avec **deux porte-électrodes**, chacun tenant une **électrode en cuivre** ou **en zinc** (vous pouvez les mélanger).",
+          "",
+          "## Le montage",
+          "- Une cuve chimique en **acier** ou **réfractaire**. La fonte ne marche pas.",
+          "- Les machines doivent être dans l'emprise de la cuve, donc deux porte-électrodes demandent une cuve d'au moins **2x2**.",
+          "- Les deux porte-électrodes vont **au-dessus** de la cuve.",
+          "- Une **chaleur de 2** sous la cuve : un seul **foyer** allumé suffit, ou un brûleur à blaze surchauffé.",
+          "",
+          "Ne mettez pas de mélangeur industriel sur cette cuve, sauf s'il tourne à 30 RPM ou plus : toute machine reliée qui ne fonctionne pas bloque toutes les recettes.",
+          "",
+          "## Obtenir des électrodes",
+          "Mettez un **bloc de cuivre** ou un **bloc de zinc** dans un **tailleur de pierre** : un bloc donne une électrode. Clic droit sur un porte-électrode avec une électrode pour l'insérer. Clic droit accroupi main vide pour la reprendre."
+        ]
+      },
+      "items": ["tfmg:steel_chemical_vat", "tfmg:electrode_holder", "tfmg:copper_electrode", "tfmg:zinc_electrode", "tfmg:firebox", "minecraft:copper_block", "minecraft:stonecutter"],
+      "schematic": {
+        "layers": [
+          ["F.", ".."],
+          ["VV", "VV"],
+          ["E.", ".E"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Powering the electrodes",
+        "fr_fr": "Alimenter les électrodes"
+      },
+      "text": {
+        "en_us": [
+          "An Electrode Holder only takes power through its **top face**. Run your cable to the top of each holder.",
+          "",
+          "## Current, not just voltage",
+          "A holder works only when at least **5 A** flows through it (the server setting electrolysisMinimumCurrent, 5 by default). Current is voltage divided by resistance, and copper and zinc electrodes are **10 ohm** each:",
+          "",
+          "- **50 V** gives exactly 5 A, the minimum,",
+          "- below 50 V the holder idles and its multimeter line says not enough current.",
+          "",
+          "## Do not overdo it",
+          "A holder breaks if it sees more than **400 A** or more than **20000 V** for a moment. With a 10 ohm electrode, 400 A is reached at **4000 V**, so keep copper and zinc holders well under that.",
+          "",
+          "An empty holder has no resistance and draws nothing. Remember the vat rule: a holder with an electrode but not enough current blocks every recipe in that vat, not only electrolysis."
+        ],
+        "fr_fr": [
+          "Un porte-électrode ne prend le courant que par sa **face du haut**. Amenez votre câble sur le dessus de chaque porte-électrode.",
+          "",
+          "## L'intensité, pas seulement la tension",
+          "Un porte-électrode ne fonctionne que si au moins **5 A** le traversent (le réglage serveur electrolysisMinimumCurrent, 5 par défaut). L'intensité est la tension divisée par la résistance, et les électrodes en cuivre ou en zinc font **10 ohms** :",
+          "",
+          "- **50 V** donnent exactement 5 A, le minimum,",
+          "- sous 50 V le porte-électrode reste inactif et son multimètre indique un courant insuffisant.",
+          "",
+          "## N'en faites pas trop",
+          "Un porte-électrode casse s'il reçoit plus de **400 A** ou plus de **20000 V**, même un instant. Avec une électrode de 10 ohms, 400 A sont atteints à **4000 V** : restez bien en dessous avec le cuivre et le zinc.",
+          "",
+          "Un porte-électrode vide n'a pas de résistance et ne consomme rien. Rappelez-vous la règle des cuves : un porte-électrode équipé mais sans assez d'intensité bloque toutes les recettes de la cuve, pas seulement l'électrolyse."
+        ]
+      },
+      "items": ["tfmg:electrode_holder", "tfmg:copper_electrode", "tfmg:zinc_electrode"]
+    },
+    {
+      "title": {
+        "en_us": "Running electrolysis",
+        "fr_fr": "Faire tourner l'électrolyse"
+      },
+      "text": {
+        "en_us": [
+          "## The recipe",
+          "Every 5 seconds the vat turns **4 Bauxite Powder** into:",
+          "",
+          "- **1 Aluminum Ingot**,",
+          "- **4 Aluminum Nuggets** with a 50% chance,",
+          "- **2 Aluminum Nuggets** with a 25% chance,",
+          "- **500 mB Carbon Dioxide**.",
+          "",
+          "On average that is one ingot plus 2.5 nuggets per batch, against a single ingot from superheated mixing.",
+          "",
+          "## Keep it flowing",
+          "- Feed powder into the vat with a funnel or a chute. Items can only go into the inputs.",
+          "- Pull ingots and nuggets out of the output side with a funnel.",
+          "- **Pump the carbon dioxide out.** It lands in the output tanks, and once there is no room for another 500 mB the vat stops.",
+          "",
+          "## Hydrogen on the side",
+          "The same two electrodes, without heat, turn **1000 mB Water** into **500 mB Hydrogen**. If you send water into your aluminium vat, it will make hydrogen too."
+        ],
+        "fr_fr": [
+          "## La recette",
+          "Toutes les 5 secondes, la cuve transforme **4 poudres de bauxite** en :",
+          "",
+          "- **1 lingot d'aluminium**,",
+          "- **4 pépites d'aluminium** avec 50 % de chance,",
+          "- **2 pépites d'aluminium** avec 25 % de chance,",
+          "- **500 mB de dioxyde de carbone**.",
+          "",
+          "En moyenne cela fait un lingot plus 2,5 pépites par fournée, contre un seul lingot par le mélange surchauffé.",
+          "",
+          "## Garder le flux",
+          "- Envoyez la poudre dans la cuve avec un entonnoir ou une glissière. Les objets ne peuvent aller qu'en entrée.",
+          "- Récupérez lingots et pépites côté sortie avec un entonnoir.",
+          "- **Pompez le dioxyde de carbone.** Il arrive dans les réservoirs de sortie, et dès qu'il n'y a plus la place pour 500 mB de plus, la cuve s'arrête.",
+          "",
+          "## De l'hydrogène en prime",
+          "Les deux mêmes électrodes, sans chaleur, transforment **1000 mB d'eau** en **500 mB d'hydrogène**. Si vous envoyez de l'eau dans votre cuve à aluminium, elle fera aussi de l'hydrogène."
+        ]
+      },
+      "items": ["tfmg:bauxite_powder", "tfmg:aluminum_ingot", "tfmg:aluminum_nugget", "tfmg:carbon_dioxide_bucket", "tfmg:hydrogen_bucket", "create:andesite_funnel"]
+    }
+  ]
+}

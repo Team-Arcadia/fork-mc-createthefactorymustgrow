@@ -1,0 +1,30 @@
+{
+  "name": "Plastic and rubber",
+  "icon": "tfmg:naphtha_bucket",
+  "category": "tfmg:construction",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Plastic All steps but the last run in a chemical vat with an industrial mixer and a $(item)heat of 2$() (one burning firebox under the vat is enough):$() $(li)$(item)500 mB naphtha$() gives $(item)250 mB ethylene + 250 mB propylene$(), - $(item)500 mB ethylene$() or $(item)500 mB propylene$() gives $(item)500 mB molten plastic$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)casting basin$() turns $(item)144 mB molten plastic$() into one $(item)plastic sheet$(). Nine sheets make a $(item)plastic block$() and back.$(br2)Three sheets in a row craft $(item)4 plastic pipes$(). Plastic also gives plastic versions of the mechanical pump, fluid valve and smart fluid pipe."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Rubber$()$(br)In a chemical vat with an industrial mixer and a heat of 2, $(item)sulfur dust + 250 mB heavy oil$() gives a $(item)rubber sheet$(). Then:$(li)a mechanical press turns a rubber sheet into $(item)synthetic leather$(), which crafts into $(item)leather$(),$(li)a stonecutter turns a rubber sheet into $(item)4 synthetic string$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Naphtha comes from the six-output crude oil tower and from the five-output heavy oil tower, so plan one of those before starting a plastic line."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:naphtha_bucket,tfmg:ethylene_bucket,tfmg:molten_plastic_bucket,tfmg:plastic_sheet,tfmg:plastic_block,tfmg:plastic_pipe,tfmg:rubber_sheet,tfmg:synthetic_leather",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

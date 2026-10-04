@@ -1,0 +1,26 @@
+{
+  "name": "Electric pump",
+  "icon": "tfmg:electric_pump",
+  "category": "tfmg:electric_machines",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The electric pump moves fluids through Create pipes like a mechanical pump, but it needs $(item)no rotation$(): just wire it to the network. Turn it with a wrench to choose the direction of flow, as with Create's pump. $(l)Voltage sets its strength - It is a $(item)100 ohm$() consumer:$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "at 200 V it draws 2 A and uses 400 W. $(li)Its $(item)pressure$() is twice the voltage, up to a maximum reached at $(item)750 V$(). $(li)Its $(item)reach$() along the pipes grows with the voltage too, up to 6.7 times a mechanical pump's range, reached at about $(item)335 V$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A low voltage gives a weak, short pump. If a long pipe line does not fill, check the voltage with a multimeter before adding more pumps.$(br2)Like every consumer, it stops when its network runs short of power. An electric pump in the middle of a fuel line is a good reason to keep that network separate from heavy machines."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_pump,create:mechanical_pump,create:fluid_pipe,create:wrench",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

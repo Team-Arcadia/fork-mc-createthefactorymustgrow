@@ -1,0 +1,383 @@
+{
+  "order": 110,
+  "icon": "tfmg:steel_chemical_vat",
+  "title": {
+    "en_us": "Chemical Vats",
+    "fr_fr": "Cuves chimiques"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Three kinds of vat",
+        "fr_fr": "Trois sortes de cuves"
+      },
+      "text": {
+        "en_us": [
+          "The **Chemical Vat** is the mod's all-purpose reactor: it mixes, cracks, freezes, compresses and runs electrolysis. There are three kinds, and each recipe lists the kinds it accepts:",
+          "",
+          "- **Cast Iron Chemical Vat**: the cheapest. Most mixing and freezing recipes accept it.",
+          "- **Steel Chemical Vat**: needed for pressure work and electrolysis.",
+          "- **Fireproof Chemical Vat** (firebrick-lined): accepts everything, and is the only one the **arc furnace** works in. Its windows cannot be opened.",
+          "",
+          "## Building bigger",
+          "Vats of the same kind join like Create fluid tanks: up to **3x3 wide** and up to **10 blocks high**. Some recipes ask for a **minimum size** in blocks (width x width x height).",
+          "",
+          "Each vat has **4 input** and **4 output** fluid tanks, each holding **8 buckets per block** with Create's default tank size, plus **4 input** and **4 output** item slots. Each item slot holds a different item.",
+          "",
+          "Hit a vat with a **wrench** to open or close its windows."
+        ],
+        "fr_fr": [
+          "La **cuve chimique** est le réacteur à tout faire du mod : elle mélange, craque, congèle, compresse et fait de l'électrolyse. Il en existe trois sortes, et chaque recette indique celles qu'elle accepte :",
+          "",
+          "- **Cuve chimique en fonte** : la moins chère. La plupart des recettes de mélange et de congélation l'acceptent.",
+          "- **Cuve chimique en acier** : nécessaire pour la pression et l'électrolyse.",
+          "- **Cuve chimique réfractaire** (garnie de briques réfractaires) : accepte tout, et c'est la seule où le **four à arc** fonctionne. Ses fenêtres ne s'ouvrent pas.",
+          "",
+          "## Construire plus grand",
+          "Les cuves d'une même sorte s'assemblent comme les réservoirs de Create : jusqu'à **3x3 de large** et jusqu'à **10 blocs de haut**. Certaines recettes demandent une **taille minimale** en blocs (largeur x largeur x hauteur).",
+          "",
+          "Chaque cuve a **4 réservoirs d'entrée** et **4 de sortie**, de **8 seaux par bloc** avec la taille de réservoir par défaut de Create, plus **4 emplacements d'objets en entrée** et **4 en sortie**. Chaque emplacement contient un objet différent.",
+          "",
+          "Frappez une cuve avec une **clé** pour ouvrir ou fermer ses fenêtres."
+        ]
+      },
+      "items": ["tfmg:cast_iron_chemical_vat", "tfmg:steel_chemical_vat", "tfmg:fireproof_chemical_vat", "create:wrench"]
+    },
+    {
+      "title": {
+        "en_us": "Machines and where they go",
+        "fr_fr": "Les machines et leur place"
+      },
+      "text": {
+        "en_us": [
+          "A vat only counts machines that sit **directly on its top layer** or **directly under its bottom layer**, inside its footprint.",
+          "",
+          "- **Industrial Mixer**: on top, in the **centre** of a 3x3 vat (anywhere on top of a smaller one). Give it a **Mixer Blade** for mixing or a **Centrifuge** for centrifuging by right-clicking. Driven from its top shaft, it needs at least **30 RPM**.",
+          "- **Electrode Holder**: on top, powered through its **top face**. Right-click it with an electrode, sneak-click with an empty hand to take it out. It needs at least **5 A** (server config).",
+          "- **Compressor**: on top or underneath, driven by a horizontal shaft at **120 RPM or more**.",
+          "- **Freezer**: on top or underneath, powered by electricity on any side, it needs **more than 3 A** (75 ohm, so above 225 V).",
+          "",
+          "A mixer without its item or a holder without an electrode is simply not counted. The build shown here is the classic 1x1 mixing vat: a firebox for heat, the vat, and a mixer on top."
+        ],
+        "fr_fr": [
+          "Une cuve ne compte que les machines posées **juste au-dessus de sa couche du haut** ou **juste sous sa couche du bas**, dans son emprise.",
+          "",
+          "- **Mélangeur industriel** : au-dessus, au **centre** d'une cuve 3x3 (n'importe où sur une cuve plus petite). Donnez-lui une **pale de mélangeur** pour mélanger ou une **centrifugeuse** pour centrifuger, par clic droit. Entraîné par son arbre du haut, il lui faut au moins **30 RPM**.",
+          "- **Porte-électrode** : au-dessus, alimenté par sa **face du haut**. Clic droit avec une électrode, clic accroupi main vide pour la retirer. Il lui faut au moins **5 A** (config serveur).",
+          "- **Compresseur** : au-dessus ou en dessous, entraîné par un arbre horizontal à **120 RPM ou plus**.",
+          "- **Congélateur** : au-dessus ou en dessous, alimenté en électricité sur n'importe quelle face, il lui faut **plus de 3 A** (75 ohms, donc plus de 225 V).",
+          "",
+          "Un mélangeur sans son objet ou un porte-électrode vide n'est tout simplement pas compté. Le montage montré ici est la cuve de mélange 1x1 classique : un foyer pour la chaleur, la cuve, et un mélangeur dessus."
+        ]
+      },
+      "items": ["tfmg:industrial_mixer", "tfmg:mixer_blade", "tfmg:centrifuge", "tfmg:electrode_holder", "tfmg:compressor", "tfmg:freezer"],
+      "schematic": {
+        "layers": [
+          ["F"],
+          ["V"],
+          ["M"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "M": "tfmg:industrial_mixer"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Heat and pressure",
+        "fr_fr": "Chaleur et pression"
+      },
+      "text": {
+        "en_us": [
+          "## Heat",
+          "Heat is the sum of every heater **directly under the vat**:",
+          "",
+          "- a burning **Firebox** block gives **2**,",
+          "- a lit **Blaze Burner** gives **1**, or **2** when superheated,",
+          "- each working **Freezer** attached to the vat takes **1** away.",
+          "",
+          "Heated vat recipes ask for **heat 2**: one burning firebox under the vat is enough. Remember that a compressor or freezer placed underneath takes a spot a heater could use.",
+          "",
+          "## Pressure",
+          "Each running **Compressor** adds **1** pressure. Turn its shaft the other way and it removes 1 instead (goggles say Pressurizing or Depressurizing). Pressure recipes ask for **pressure 1**, so one compressor turning the right way does it.",
+          "",
+          "Goggles show the vat's **Heat** and **Pressure** as bars, so you can check both before blaming the recipe."
+        ],
+        "fr_fr": [
+          "## Chaleur",
+          "La chaleur est la somme de toutes les sources **juste sous la cuve** :",
+          "",
+          "- un bloc de **foyer** allumé donne **2**,",
+          "- un **brûleur à blaze** allumé donne **1**, ou **2** quand il est surchauffé,",
+          "- chaque **congélateur** en marche relié à la cuve retire **1**.",
+          "",
+          "Les recettes chauffées de la cuve demandent une **chaleur de 2** : un seul foyer allumé sous la cuve suffit. Pensez qu'un compresseur ou un congélateur placé dessous prend une place qu'une source de chaleur pourrait occuper.",
+          "",
+          "## Pression",
+          "Chaque **compresseur** en marche ajoute **1** de pression. Faites tourner son arbre dans l'autre sens et il en retire 1 (les lunettes indiquent Pressurisation ou Dépressurisation). Les recettes sous pression demandent une **pression de 1**, donc un compresseur qui tourne dans le bon sens suffit.",
+          "",
+          "Les lunettes affichent la **chaleur** et la **pression** de la cuve en barres : vérifiez les deux avant d'accuser la recette."
+        ]
+      },
+      "items": ["tfmg:firebox", "create:blaze_burner", "tfmg:compressor", "tfmg:freezer", "create:goggles"]
+    },
+    {
+      "title": {
+        "en_us": "The rules that stop a vat",
+        "fr_fr": "Les règles qui bloquent une cuve"
+      },
+      "text": {
+        "en_us": [
+          "## One broken machine stops everything",
+          "If **any** attached machine is not working, **no recipe runs at all**, even one that does not need that machine. A mixer below 30 RPM, a compressor below 120 RPM, an unpowered freezer or an electrode holder with too little current all freeze the whole vat. Remove the machine or get it running.",
+          "",
+          "Extra working machines are fine: a recipe needs **at least** the machines it lists.",
+          "",
+          "## Pipes and funnels",
+          "Pipes, funnels and hoppers can only **fill the inputs** and **drain the outputs**. You cannot pull an ingredient back out, and nothing can be pushed into an output. Ingredients are only read from the input side.",
+          "",
+          "## Full outputs",
+          "A recipe only starts when **all** its products fit. A by-product left in the output (carbon dioxide, slag) will stall the vat sooner or later, so drain it.",
+          "",
+          "## Breaking a vat",
+          "Breaking a vat **drops the items** it held. Its fluids move to the blocks that remain in the multiblock."
+        ],
+        "fr_fr": [
+          "## Une machine en panne bloque tout",
+          "Si **une seule** machine reliée ne fonctionne pas, **aucune recette ne tourne**, même une qui n'a pas besoin de cette machine. Un mélangeur sous 30 RPM, un compresseur sous 120 RPM, un congélateur sans courant ou un porte-électrode avec trop peu d'intensité bloquent toute la cuve. Retirez la machine ou faites-la fonctionner.",
+          "",
+          "Les machines en plus qui fonctionnent ne gênent pas : une recette demande **au moins** les machines qu'elle liste.",
+          "",
+          "## Tuyaux et entonnoirs",
+          "Tuyaux, entonnoirs et trémies peuvent seulement **remplir les entrées** et **vider les sorties**. Impossible de reprendre un ingrédient, et rien ne peut être poussé dans une sortie. Les ingrédients ne sont lus que côté entrée.",
+          "",
+          "## Sorties pleines",
+          "Une recette ne démarre que si **tous** ses produits ont la place. Un sous-produit laissé en sortie (dioxyde de carbone, laitier) finira par bloquer la cuve : videz-le.",
+          "",
+          "## Casser une cuve",
+          "Casser une cuve **fait tomber les objets** qu'elle contenait. Ses fluides passent dans les blocs qui restent du multibloc."
+        ]
+      },
+      "items": ["create:mechanical_pump", "create:fluid_pipe", "create:andesite_funnel", "tfmg:steel_chemical_vat"]
+    },
+    {
+      "title": {
+        "en_us": "Reading a vat with goggles",
+        "fr_fr": "Lire une cuve avec les lunettes"
+      },
+      "text": {
+        "en_us": [
+          "Look at any block of a vat with **Engineer's Goggles**. You see its pressure and heat bars, its contents, then the list of **attachments**: every machine the vat has counted.",
+          "",
+          "When the vat sits idle, a red line tells you why:",
+          "",
+          "- **An attached machine is not working: no recipe can run.** Find the machine that is too slow or unpowered.",
+          "- **No recipe matches: check size, vat type and machines in JEI.** The inputs are there but nothing fits: wrong vat kind, too small, or a machine missing.",
+          "- **Not hot enough for this recipe.** Add or light a firebox under the vat, or remove a freezer.",
+          "- **Pressure too low for this recipe.** Add a compressor, speed it up past 120 RPM, or reverse it.",
+          "",
+          "If a machine does not appear in the attachments at all, it is in the wrong place (outside the footprint, or a mixer off-centre on a 3x3), or it has no blade or electrode."
+        ],
+        "fr_fr": [
+          "Regardez n'importe quel bloc d'une cuve avec les **lunettes d'ingénieur**. Vous voyez les barres de pression et de chaleur, le contenu, puis la liste des **modules** : chaque machine que la cuve a comptée.",
+          "",
+          "Quand la cuve reste inactive, une ligne rouge vous dit pourquoi :",
+          "",
+          "- **Une machine attachée ne fonctionne pas : aucune recette ne peut tourner.** Trouvez la machine trop lente ou sans courant.",
+          "- **Aucune recette ne correspond : vérifiez taille, type de cuve et machines dans JEI.** Les ingrédients sont là mais rien ne convient : mauvaise sorte de cuve, trop petite, ou machine manquante.",
+          "- **Pas assez chaud pour cette recette.** Ajoutez ou allumez un foyer sous la cuve, ou retirez un congélateur.",
+          "- **Pression trop faible pour cette recette.** Ajoutez un compresseur, faites-le tourner au-delà de 120 RPM, ou inversez-le.",
+          "",
+          "Si une machine n'apparaît pas du tout dans les modules, elle est mal placée (hors de l'emprise, ou mélangeur décentré sur une 3x3), ou elle n'a ni pale ni électrode."
+        ]
+      },
+      "items": ["create:goggles", "tfmg:industrial_mixer", "tfmg:electrode_holder"]
+    },
+    {
+      "title": {
+        "en_us": "Recipes: mixing",
+        "fr_fr": "Recettes : mélange"
+      },
+      "text": {
+        "en_us": [
+          "All of these need an **Industrial Mixer with a Mixer Blade** and accept **every vat kind**, size 1 and up.",
+          "",
+          "## Liquid Concrete",
+          "1 Sand, 1 Gravel, 1 Limesand, 250 mB Water give **32000 mB** Liquid Concrete. That fills all four output tanks of a 1x1 vat at default size, so empty it after each batch or use a bigger vat.",
+          "",
+          "## Liquid Asphalt",
+          "1 Asphalt Mixture and 250 mB Water give 1000 mB Liquid Asphalt in 5 seconds.",
+          "",
+          "## Sulfuric Acid",
+          "3 Sulfur Dust, 1 Nitrate Dust and 1000 mB Water give 500 mB Sulfuric Acid.",
+          "",
+          "## Rubber",
+          "1 Sulfur Dust and 250 mB Heavy Oil give 1 Rubber Sheet. Needs **heat 2**.",
+          "",
+          "## Naphtha cracking",
+          "500 mB Naphtha gives 250 mB Ethylene and 250 mB Propylene. Needs **heat 2**."
+        ],
+        "fr_fr": [
+          "Toutes ces recettes demandent un **mélangeur industriel avec une pale de mélangeur** et acceptent **toutes les sortes de cuves**, dès la taille 1.",
+          "",
+          "## Béton liquide",
+          "1 sable, 1 gravier, 1 sable calcaire et 250 mB d'eau donnent **32000 mB** de béton liquide. Cela remplit les quatre réservoirs de sortie d'une cuve 1x1 à la taille par défaut : videz-la après chaque fournée ou prenez une cuve plus grande.",
+          "",
+          "## Asphalte liquide",
+          "1 mélange à asphalte et 250 mB d'eau donnent 1000 mB d'asphalte liquide en 5 secondes.",
+          "",
+          "## Acide sulfurique",
+          "3 poudres de soufre, 1 poudre de nitrate et 1000 mB d'eau donnent 500 mB d'acide sulfurique.",
+          "",
+          "## Caoutchouc",
+          "1 poudre de soufre et 250 mB d'huile lourde donnent 1 plaque de caoutchouc. Demande une **chaleur de 2**.",
+          "",
+          "## Craquage du naphta",
+          "500 mB de naphta donnent 250 mB d'éthylène et 250 mB de propylène. Demande une **chaleur de 2**."
+        ]
+      },
+      "items": ["tfmg:mixer_blade", "tfmg:limesand", "tfmg:liquid_concrete_bucket", "tfmg:asphalt_mixture", "tfmg:sulfuric_acid_bucket", "tfmg:rubber_sheet", "tfmg:naphtha_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Recipes: plastic, centrifuge, etching",
+        "fr_fr": "Recettes : plastique, centrifugeuse, gravure"
+      },
+      "text": {
+        "en_us": [
+          "## Molten Plastic",
+          "500 mB Ethylene gives 500 mB Molten Plastic. 500 mB Propylene works the same way. Both need a **Mixer Blade**, **heat 2**, and accept every vat kind.",
+          "",
+          "## Neon",
+          "1000 mB Air gives **1 mB** Neon per batch. Needs an **Industrial Mixer with a Centrifuge**, any vat kind. It takes a lot of air, so feed the vat with a steady air supply.",
+          "",
+          "## Etched Circuit Board",
+          "1 Coated Circuit Board and 250 mB Sulfuric Acid give 1 Etched Circuit Board in 5 seconds. This one needs **no machine** and no heat: any vat with the ingredients will do it.",
+          "",
+          "That last point matters: if you attach a machine to an etching vat, the machine must still be working, or the board will never be etched.",
+          "",
+          "Ethylene and propylene come from cracking naphtha (previous page). Air is collected by an **Air Intake**."
+        ],
+        "fr_fr": [
+          "## Plastique en fusion",
+          "500 mB d'éthylène donnent 500 mB de plastique en fusion. 500 mB de propylène font de même. Les deux demandent une **pale de mélangeur**, une **chaleur de 2**, et acceptent toutes les sortes de cuves.",
+          "",
+          "## Néon",
+          "1000 mB d'air donnent **1 mB** de néon par fournée. Demande un **mélangeur industriel avec une centrifugeuse**, n'importe quelle cuve. Il faut beaucoup d'air : alimentez la cuve en continu.",
+          "",
+          "## Circuit imprimé gravé",
+          "1 circuit imprimé recouvert et 250 mB d'acide sulfurique donnent 1 circuit imprimé gravé en 5 secondes. Cette recette ne demande **aucune machine** ni chaleur : n'importe quelle cuve avec les ingrédients s'en charge.",
+          "",
+          "Ce dernier point compte : si vous reliez une machine à une cuve de gravure, cette machine doit quand même fonctionner, sinon le circuit ne sera jamais gravé.",
+          "",
+          "L'éthylène et le propylène viennent du craquage du naphta (page précédente). L'air se récupère avec une **prise d'air**."
+        ]
+      },
+      "items": ["tfmg:ethylene_bucket", "tfmg:propylene_bucket", "tfmg:molten_plastic_bucket", "tfmg:centrifuge", "tfmg:air_bucket", "tfmg:neon_bucket", "tfmg:coated_circuit_board", "tfmg:etched_circuit_board"]
+    },
+    {
+      "title": {
+        "en_us": "Recipes: electrodes",
+        "fr_fr": "Recettes : électrodes"
+      },
+      "text": {
+        "en_us": [
+          "## Aluminium (electrolysis)",
+          "4 Bauxite Powder give 1 Aluminum Ingot, plus 4 Aluminum Nuggets (50% chance), 2 more nuggets (25% chance) and 500 mB Carbon Dioxide, in 5 seconds.",
+          "- 2 Electrode Holders with **copper or zinc** electrodes, **heat 2**.",
+          "- **Steel** or **Fireproof** vat, size 1 and up. Not cast iron.",
+          "",
+          "## Hydrogen",
+          "1000 mB Water gives 500 mB Hydrogen in 5 seconds.",
+          "- 2 Electrode Holders with **copper or zinc** electrodes, no heat.",
+          "- Every vat kind.",
+          "",
+          "## Arc furnace steel",
+          "1 Crushed Iron Ore, 1 Limesand (flux) and 1 Coal Coke Dust give 144 mB Molten Steel and 288 mB Molten Slag in 1 second.",
+          "- 3 Electrode Holders with **graphite** electrodes, no heat.",
+          "- **Fireproof** vat only, at least **9 blocks**.",
+          "- The coal coke dust is a catalyst: 90% of the time it goes back to the input.",
+          "",
+          "The Aluminium and Arc Furnace chapters explain both setups in detail."
+        ],
+        "fr_fr": [
+          "## Aluminium (électrolyse)",
+          "4 poudres de bauxite donnent 1 lingot d'aluminium, plus 4 pépites d'aluminium (50 % de chance), 2 pépites de plus (25 % de chance) et 500 mB de dioxyde de carbone, en 5 secondes.",
+          "- 2 porte-électrodes avec des électrodes en **cuivre ou zinc**, **chaleur de 2**.",
+          "- Cuve en **acier** ou **réfractaire**, dès la taille 1. Pas en fonte.",
+          "",
+          "## Hydrogène",
+          "1000 mB d'eau donnent 500 mB d'hydrogène en 5 secondes.",
+          "- 2 porte-électrodes avec des électrodes en **cuivre ou zinc**, sans chaleur.",
+          "- Toutes les sortes de cuves.",
+          "",
+          "## Acier au four à arc",
+          "1 minerai de fer concassé, 1 sable calcaire (fondant) et 1 poussière de coke de charbon donnent 144 mB d'acier en fusion et 288 mB de laitier en fusion en 1 seconde.",
+          "- 3 porte-électrodes avec des électrodes en **graphite**, sans chaleur.",
+          "- Cuve **réfractaire** seulement, d'au moins **9 blocs**.",
+          "- La poussière de coke est un catalyseur : 90 % du temps elle retourne en entrée.",
+          "",
+          "Les chapitres Aluminium et Four à arc détaillent ces deux montages."
+        ]
+      },
+      "items": ["tfmg:bauxite_powder", "tfmg:aluminum_ingot", "tfmg:copper_electrode", "tfmg:zinc_electrode", "tfmg:hydrogen_bucket", "tfmg:graphite_electrode", "tfmg:molten_steel_bucket", "tfmg:molten_slag_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Recipes: cold and pressure",
+        "fr_fr": "Recettes : froid et pression"
+      },
+      "text": {
+        "en_us": [
+          "## Compressed LPG",
+          "500 mB Butane and 500 mB Propane give 1000 mB LPG in 3 seconds.",
+          "- A **Compressor**, **pressure 1**.",
+          "- **Steel** or **Fireproof** vat.",
+          "",
+          "## LPG separation",
+          "1000 mB LPG gives 500 mB Butane and 500 mB Propane in 4 seconds.",
+          "- A **Freezer**. Every vat kind.",
+          "",
+          "## Cooling Fluid",
+          "500 mB Water and 250 mB Lubrication Oil give 500 mB Cooling Fluid in 4 seconds.",
+          "- A **Freezer**. Every vat kind.",
+          "",
+          "## Liquid air",
+          "1000 mB Air gives 250 mB Cooling Fluid in 6 seconds.",
+          "- A **Freezer** and a **Compressor**, **pressure 1**.",
+          "- **Steel** or **Fireproof** vat.",
+          "",
+          "A steel vat built for liquid air (freezer plus compressor) can run all four recipes, since extra working machines never hurt. Just keep each vat to one kind of input fluid so it always does the job you expect.",
+          "",
+          "Sizes: every recipe on this page works from a single 1x1 vat."
+        ],
+        "fr_fr": [
+          "## GPL comprimé",
+          "500 mB de butane et 500 mB de propane donnent 1000 mB de GPL en 3 secondes.",
+          "- Un **compresseur**, **pression de 1**.",
+          "- Cuve en **acier** ou **réfractaire**.",
+          "",
+          "## Séparation du GPL",
+          "1000 mB de GPL donnent 500 mB de butane et 500 mB de propane en 4 secondes.",
+          "- Un **congélateur**. Toutes les sortes de cuves.",
+          "",
+          "## Liquide de refroidissement",
+          "500 mB d'eau et 250 mB d'huile de lubrification donnent 500 mB de liquide de refroidissement en 4 secondes.",
+          "- Un **congélateur**. Toutes les sortes de cuves.",
+          "",
+          "## Air liquide",
+          "1000 mB d'air donnent 250 mB de liquide de refroidissement en 6 secondes.",
+          "- Un **congélateur** et un **compresseur**, **pression de 1**.",
+          "- Cuve en **acier** ou **réfractaire**.",
+          "",
+          "Une cuve en acier montée pour l'air liquide (congélateur et compresseur) peut lancer les quatre recettes, car des machines en plus qui fonctionnent ne gênent jamais. Gardez simplement une seule sorte de fluide d'entrée par cuve pour qu'elle fasse toujours ce que vous attendez.",
+          "",
+          "Tailles : toutes les recettes de cette page fonctionnent dans une seule cuve 1x1."
+        ]
+      },
+      "items": ["tfmg:butane_bucket", "tfmg:propane_bucket", "tfmg:lpg_bucket", "tfmg:lubrication_oil_bucket", "tfmg:cooling_fluid_bucket", "tfmg:air_bucket", "tfmg:compressor", "tfmg:freezer"]
+    }
+  ]
+}

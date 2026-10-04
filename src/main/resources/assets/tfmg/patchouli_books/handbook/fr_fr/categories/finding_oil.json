@@ -1,0 +1,6 @@
+{
+  "name": "Trouver du pétrole",
+  "description": "Le pétrole brut vient des gisements de pétrole, générés dans tous les biomes de l'Overworld tout au fond du monde, à Y -64, dans la couche de bedrock.",
+  "icon": "tfmg:surface_scanner",
+  "sortnum": 150
+}

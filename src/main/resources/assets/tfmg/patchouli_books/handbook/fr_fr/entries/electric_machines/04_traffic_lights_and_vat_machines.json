@@ -1,0 +1,26 @@
+{
+  "name": "Feux de circulation et machines de cuve",
+  "icon": "tfmg:traffic_light",
+  "category": "tfmg:electric_machines",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Feu de circulation Il passe tout seul du rouge à l'orange puis au vert, et recommence.$() Réglez la durée du cycle avec sa boîte de valeur. Il se connecte par ses faces $(item)du dessus$() et $(item)du dessous$(), pour l'empiler sur un poteau, et c'est un consommateur de $(item)175 ohms$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il ne s'allume que lorsqu'il est alimenté.$(br2)$(l)Congélateur$()$(br)Il refroidit une cuve chimique. Il se connecte sur $(item)toutes ses faces$() et c'est un consommateur de $(item)75 ohms$(). Il ne fonctionne qu'avec $(item)plus de 3 A$(), donc au-dessus de $(item)225 V$(), et grille au-delà de 400 A."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Porte-électrode$()$(br)Il tient une électrode dans une cuve chimique pour l'électrolyse. Il reçoit le courant par sa face $(item)du dessus$() et demande au moins $(item)5 A$() pour fonctionner ; sa résistance dépend de l'électrode installée.$(br2)Les deux font partie du multibloc de la cuve. Voir le chapitre $(item)Cuves chimiques$() pour en construire une, et le chapitre $(item)L'aluminium$() pour l'électrolyse."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:traffic_light,tfmg:freezer,tfmg:electrode_holder,tfmg:copper_electrode,tfmg:zinc_electrode,tfmg:graphite_electrode",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Exhausts and smokestacks",
+  "icon": "tfmg:exhaust",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Both blocks only accept $(item)carbon dioxide$() and release it into the air with a puff of smoke. They work for fireboxes, engines, coke ovens and anything else that makes CO2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Exhaust$()$(li)Holds $(item)1000 mB$() and can face any direction.$(li)Vents $(item)10 mB per tick$() (200 mB per second).$(li)When less than 300 mB of room is left, it vents $(item)100 mB per tick$() instead.$(br2)So an exhaust kept nearly full can vent a lot: enough for the biggest firebox."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Smokestacks$()$(br)Brick, concrete and metal smokestacks all work the same way and only differ in looks.$(li)Each holds $(item)8000 mB$().$(li)Stack them: each block passes its CO2 up to the one above, and only the $(item)top$() one vents.$(li)The top vents $(item)10 mB per tick$(), or $(item)50 mB per tick$() when less than 1000 mB of room is left."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Smokestacks make a big buffer and a nice chimney. For a busy factory, feed several stacks or add exhausts next to them.$(br2)Carbon dioxide also has uses: 1000 mB fills a $(item)fire extinguisher$() or a $(item)carbon dioxide tank$() in a spout."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:exhaust,tfmg:brick_smokestack,tfmg:concrete_smokestack,tfmg:metal_smokestack,tfmg:carbon_dioxide_bucket,tfmg:fire_extinguisher,create:spout",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

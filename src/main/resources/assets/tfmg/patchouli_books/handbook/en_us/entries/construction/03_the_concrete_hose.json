@@ -1,0 +1,30 @@
+{
+  "name": "The concrete hose",
+  "icon": "tfmg:concrete_hose",
+  "category": "tfmg:construction",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)concrete hose$() works like Create's hose pulley, but pours liquid concrete into rebar. $(li)Place it above your rebar structure and pipe liquid concrete into its pipe side. It holds $(item)1500 mB$(). $(li)Turn it:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "one direction lowers the hose, the other raises it. The hose stops by itself at the first solid block below it. $(li)$(item)Stop the rotation.$() The hose only pours while it stands still."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Once stopped with at least $(item)1000 mB$() inside, it fills one frame per bucket, starting next to the tip of the hose and spreading $(item)sideways and downwards$(), never up. It only travels through blocks that can take concrete (rebar frames, industrial pipes, cable tubes, electric posts); any other block stops the spread, and empty air is never filled."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "So build the whole frame first, connected in one piece, and lower the hose until it rests on top of it. Filled frames then dry into rebar concrete like hand-filled ones.$(br2)If rebar is added later next to a finished area, the hose finds it again after a short while without moving it. The reach is the same as Create's hose pulley, set in Create's server config."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:concrete_hose,tfmg:liquid_concrete_bucket,tfmg:rebar_block,tfmg:rebar_concrete,create:hose_pulley,create:mechanical_pump,create:fluid_pipe",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

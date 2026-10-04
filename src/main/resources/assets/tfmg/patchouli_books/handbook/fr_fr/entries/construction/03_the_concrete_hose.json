@@ -1,0 +1,34 @@
+{
+  "name": "Le tuyau à béton",
+  "icon": "tfmg:concrete_hose",
+  "category": "tfmg:construction",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)tuyau à béton$() fonctionne comme la poulie à tuyau de Create, mais verse du béton liquide dans les armatures. $(li)Placez-le au-dessus de votre structure d'armatures et amenez le béton liquide par son côté tuyau. Il contient $(item)1500 mB$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Faites-le tourner : un sens descend le tuyau, l'autre le remonte. Il s'arrête tout seul sur le premier bloc solide en dessous. $(li)$(item)Arrêtez la rotation.$() Le tuyau ne verse que lorsqu'il est immobile."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une fois arrêté avec au moins $(item)1000 mB$() dedans, il remplit un cadre par seau, en partant d'à côté du bout du tuyau et en s'étendant $(item)sur les côtés et vers le bas$(), jamais vers le haut. Il ne passe que par les blocs qui acceptent du béton (cadres d'armature, tuyaux industriels, tubes de câbles, poteaux électriques) ; tout autre bloc arrête la propagation, et l'air n'est jamais rempli."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Construisez donc tout le cadre d'abord, d'un seul tenant, et descendez le tuyau jusqu'à ce qu'il repose dessus. Les cadres remplis sèchent ensuite en béton armé comme ceux remplis à la main."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Si vous ajoutez des armatures plus tard à côté d'une zone finie, le tuyau les retrouve au bout d'un moment sans le déplacer. La portée est celle de la poulie à tuyau de Create, réglée dans la configuration serveur de Create."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:concrete_hose,tfmg:liquid_concrete_bucket,tfmg:rebar_block,tfmg:rebar_concrete,create:hose_pulley,create:mechanical_pump,create:fluid_pipe",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

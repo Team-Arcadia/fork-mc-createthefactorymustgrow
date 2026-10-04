@@ -1,0 +1,30 @@
+{
+  "name": "When power runs out",
+  "icon": "tfmg:multimeter",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The network adds up the power used by every consumer and compares it with the power generated."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "If consumption is $(item)higher$() than generation, the whole network is marked $(item)Not Enough Power$(). Every machine on it stops at once: motors stop turning, lamps go dark, the polarizer stops charging. It is not only the last machine you placed that fails."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)How to fix it$()$(li)Add generators, or spin the ones you have faster.$(li)Remove or switch off consumers. When a block is removed, the network is checked again right away.$(li)Split the factory into separate networks with switches, diodes or transformers (see $(item)Network Control$()), so one hungry machine cannot stall everything."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Hold a $(item)multimeter$() and look at any block of the network. The red line $(item)Not Enough Power$() tells you the network is short. Sneak while looking to see the network's total $(item)generation$() and $(item)consumption$() side by side."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:multimeter,tfmg:generator,tfmg:electrical_switch,tfmg:electric_diode",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

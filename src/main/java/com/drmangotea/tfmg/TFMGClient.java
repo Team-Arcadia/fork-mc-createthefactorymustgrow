@@ -34,6 +34,12 @@ public class TFMGClient {
         IEventBus neoEventBus = NeoForge.EVENT_BUS;
 
         modEventBus.addListener(TFMGClient::clientInit);
+        // The Factory Blueprint's projection is client-side; the item reaches
+        // it through this handler and it advances layers on the client tick.
+        com.drmangotea.tfmg.content.items.blueprint.FactoryBlueprintItem.CLIENT =
+                com.drmangotea.tfmg.content.items.blueprint.client.BlueprintProjector.INSTANCE;
+        neoEventBus.addListener((net.neoforged.neoforge.client.event.ClientTickEvent.Post event) ->
+                com.drmangotea.tfmg.content.items.blueprint.client.BlueprintProjector.INSTANCE.tick());
         modEventBus.addListener(TFMGParticleTypes::registerFactories);
 
         QUAD_POTATO_CANNON_RENDER_HANDLER.registerListeners(neoEventBus);

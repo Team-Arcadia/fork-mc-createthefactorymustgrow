@@ -1,0 +1,30 @@
+{
+  "name": "Éclairage",
+  "icon": "tfmg:light_bulb",
+  "category": "tfmg:electric_machines",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Les lampes$()$(br)L'ampoule, la lampe circulaire, le panneau lumineux et la lampe en aluminium fonctionnent tous de la même façon. Posez-en une sur une face d'un bloc électrique : elle reçoit le courant par son $(item)arrière$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Consommateur de $(item)400 ohms$().$(li)Niveau de lumière = $(item)tension / 10$(), pleine luminosité (15) dès $(item)150 V$().$(li)Un $(item)signal de redstone$() l'éteint.$(li)$(item)Grille au-dessus de 1 A$(), donc au-dessus de $(item)400 V$().$(br2)$(l)Tube néon$()$(br)Les tubes néon se raccordent entre eux comme des tuyaux et transmettent le courant le long de la ligne."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Consommateur de $(item)200 ohms$(), niveau de lumière = tension / 10.$(li)$(item)Grille au-dessus de 1 A$(), donc au-dessus de $(item)200 V$(). C'est la limite la plus basse de tous les blocs électriques : donnez aux néons leur propre réseau basse tension, via un transformateur ou un potentiomètre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Clic droit sur une lampe ou un tube néon avec une $(item)teinture$() pour changer sa couleur. Le noir et les gris sont refusés.$(br2)Une lampe qui grille ne laisse rien tomber, comme tout bloc en surcharge."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:light_bulb,tfmg:circular_light,tfmg:modern_light,tfmg:aluminum_lamp,tfmg:neon_tube,tfmg:potentiometer,tfmg:transformer",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Measuring tools",
+  "icon": "tfmg:multimeter",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Multimeter$()$(br)Hold it in either hand and look at an electric block to read its $(item)voltage$(), $(item)current$(), $(item)resistance$() and $(item)power$(). Generators also show the voltage and power they produce. Sneak to add the network's total generation and consumption. Craft it with dye to change its color."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Electric Gauge Place it against an electric block:$() its needle reads the block behind it. Use a Create $(item)wrench$() on it to cycle the mode and scale: voltage (500 V), high voltage (10,000 V), current (16 A), resistance (500 ohms), power (5,000 W), network usage and generation (50,000 W) and accumulator charge. It is also a $(item)display link$() source."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Configuration Wrench$()$(br)Sneak and right-click to open a screen and choose a $(item)group$() number stored on the wrench. In this version groups do not change how a network is computed: every consumer stays in parallel."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:multimeter,tfmg:voltmeter,tfmg:electricians_wrench,create:wrench,create:display_link",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

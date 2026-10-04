@@ -1,0 +1,53 @@
+{
+  "name": "Les grands moteurs",
+  "icon": "tfmg:large_engine",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)grand moteur$() et le $(item)grand moteur simple$(), moins cher, fonctionnent comme une machine à vapeur de Create : ils entraînent un $(item)arbre motorisé 2 blocs devant$() eux. Posé au sol, l'arbre se place 2 blocs au-dessus ; sur un mur, 2 blocs devant le mur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un clic droit sur le moteur avec un $(item)arbre$() le pose au bon endroit. L'arbre doit croiser la direction du moteur, pas pointer vers lui."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Ce qu'il leur faut$()$(li)$(item)Carburant$() : diesel, kérosène, naphta ou gaz de four (réservoir de 2000 mB).$(li)De l'$(item)air$() dans un réservoir d'air séparé de 1000 mB. Amenez-le depuis une $(item)prise d'air$().$(li)De la place dans le réservoir d'$(item)échappement$() de 2000 mB : évacuez le CO2."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ni redstone ni composants : dès que carburant, air et arbre sont là, il tourne. L'arbre tourne à $(item)128 RPM$(). Toutes les 2 secondes, le moteur consomme 150 mB d'air et 3 mB de carburant ; le grand moteur simple en brûle $(item)12 mB$(), quatre fois plus."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Les grands moteurs",
+      "multiblock": {
+        "pattern": [
+          [
+            "S"
+          ],
+          [
+            " "
+          ],
+          [
+            "0"
+          ]
+        ],
+        "mapping": {
+          "E": "tfmg:large_engine[face=floor,facing=north,waterlogged=false]",
+          "S": "create:shaft[axis=x]",
+          "0": "tfmg:large_engine[face=floor,facing=north,waterlogged=false]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_engine,tfmg:simple_large_engine,create:shaft,tfmg:air_intake,tfmg:exhaust,tfmg:diesel_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

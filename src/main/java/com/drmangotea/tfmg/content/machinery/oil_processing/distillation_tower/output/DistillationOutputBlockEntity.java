@@ -3,6 +3,9 @@ package com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.
 import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.base.TFMGIcons;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
+import com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.controller.DistillationControllerBlockEntity;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
@@ -32,7 +35,7 @@ import java.util.List;
 /**
     this block doesn't do anything, it only holds fluids create in the distillation tower
  */
-public class DistillationOutputBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class DistillationOutputBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     // Per-tick fluid and progress changes sync at most every few ticks.
     private final ThrottledSync throttledSync = new ThrottledSync();
@@ -94,6 +97,30 @@ public class DistillationOutputBlockEntity extends SmartBlockEntity implements I
     @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
         return containedFluidTooltip(tooltip, isPlayerSneaking, fluidCapability);
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        boolean keep = mode.get() == DistillationOutputMode.KEEP_FLUID;
+        report.info(keep ? "distillation_output.keep" : "distillation_output.void");
+        // Stages sit on every second block above the controller, pipes between.
+        for (int i = 1; i <= 11; i++) {
+            BlockPos pos = getBlockPos().below(i);
+            if (!level.isLoaded(pos))
+                break;
+            if (level.getBlockEntity(pos) instanceof DistillationControllerBlockEntity controller) {
+                int stage = controller.getOutputs().indexOf(this);
+                if (stage < 0)
+                    break;
+                report.info("distillation_output.stage", stage + 1, pos.getX(), pos.getY(), pos.getZ());
+                controller.inspect(report);
+                return;
+            }
+        }
+        report.problem("distillation_output.unlinked");
+        report.fix("distillation_output.unlinked.fix");
     }
 
     public static class DistillationOutputValueBox extends ValueBoxTransform.Sided {

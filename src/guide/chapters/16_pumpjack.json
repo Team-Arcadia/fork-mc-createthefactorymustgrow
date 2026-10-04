@@ -1,0 +1,228 @@
+{
+  "order": 160,
+  "icon": "tfmg:pumpjack_base",
+  "title": {
+    "en_us": "The Pumpjack",
+    "fr_fr": "La pompe à pétrole"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "A complete pumpjack",
+        "fr_fr": "Une pompe à pétrole complète"
+      },
+      "text": {
+        "en_us": [
+          "The pumpjack lifts crude oil from a deposit into a tank at the surface. It is built from separate blocks that join into a rocking beam:",
+          "",
+          "- **Pumpjack Base**: sits on the pipe column, holds the oil.",
+          "- **Industrial Pipes**: a straight column from the base down to the deposit (only three are shown here).",
+          "- **Pumpjack Hammer Holder**: the pivot. The beam rests on top of it.",
+          "- **Beam**: a line of **hammer parts** with a **hammer head** at one end and a **hammer connector** at the other.",
+          "- **Pumpjack Crank**: under the connector, it drives the beam.",
+          "- **Machine Input**: under the crank, it takes the rotation.",
+          "",
+          "In this view the head hangs over the base on the west, the connector over the crank on the east, and the holder stands in the middle on two steel trusses. The shaft on the north side of the machine input is where the rotation comes in.",
+          "",
+          "Use **-** and **+** to look at it layer by layer."
+        ],
+        "fr_fr": [
+          "La pompe à pétrole remonte le pétrole brut d'un gisement jusqu'à un réservoir en surface. Elle se construit avec des blocs séparés qui forment un balancier :",
+          "",
+          "- **Base de pompe** : posée sur la colonne de tuyaux, elle stocke le pétrole.",
+          "- **Tuyaux industriels** : une colonne droite de la base jusqu'au gisement (seuls trois sont montrés ici).",
+          "- **Support de marteau** : le pivot. Le balancier repose dessus.",
+          "- **Balancier** : une ligne de **pièces de marteau** avec une **tête de marteau** à un bout et un **connecteur de marteau** à l'autre.",
+          "- **Manivelle** : sous le connecteur, elle entraîne le balancier.",
+          "- **Entrée de machine** : sous la manivelle, elle reçoit la rotation.",
+          "",
+          "Sur cette vue, la tête surplombe la base à l'ouest, le connecteur surplombe la manivelle à l'est, et le support se dresse au milieu sur deux poutres en acier. L'arbre côté nord de l'entrée de machine amène la rotation.",
+          "",
+          "Utilisez **-** et **+** pour la voir couche par couche."
+        ]
+      },
+      "items": ["tfmg:pumpjack_base", "tfmg:pumpjack_hammer", "tfmg:pumpjack_hammer_part", "tfmg:pumpjack_hammer_head", "tfmg:pumpjack_hammer_connector", "tfmg:pumpjack_crank", "tfmg:machine_input", "tfmg:industrial_pipe"],
+      "schematic": {
+        "layers": [
+          [".......", "D......", "......."],
+          [".......", "P......", "......."],
+          [".......", "P......", "......."],
+          [".......", "P......", "......."],
+          ["......S", "B..T..M", "......."],
+          [".......", "...T..C", "......."],
+          [".......", "...O...", "......."],
+          [".......", "HRRRRRN", "......."]
+        ],
+        "key": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=false]",
+          "H": "tfmg:pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:pumpjack_hammer_connector[facing=east]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Building it step by step",
+        "fr_fr": "La construction pas à pas"
+      },
+      "text": {
+        "en_us": [
+          "## 1. Pipe and base",
+          "Build the industrial pipe column from the deposit up to the surface (see the previous chapter), then place the **Pumpjack Base** directly on top of the last pipe.",
+          "",
+          "## 2. Holder",
+          "Place the **Hammer Holder** a few blocks away from the base, in line with it. Its facing comes from the direction you look when placing it, and that facing sets the **axis of the beam**: the beam must run along it, east-west or north-south.",
+          "",
+          "## 3. Beam",
+          "On the block right above the holder, lay **hammer parts** in a straight line along that axis. Put the **head** at the end above the base and the **connector** at the other end. Parts, head and connector placed while you look along the beam all end up on the right axis.",
+          "",
+          "## 4. Glue",
+          "Use **Super Glue** over the whole beam, from head to connector. The beam moves as one contraption, and unglued blocks are left behind.",
+          "",
+          "## 5. Drive",
+          "Put the **crank** under the connector and a **Machine Input** right under the crank."
+        ],
+        "fr_fr": [
+          "## 1. Tuyaux et base",
+          "Montez la colonne de tuyaux industriels du gisement jusqu'à la surface (voir le chapitre précédent), puis posez la **base de pompe** directement sur le dernier tuyau.",
+          "",
+          "## 2. Support",
+          "Placez le **support de marteau** à quelques blocs de la base, aligné avec elle. Son orientation dépend de la direction de votre regard à la pose, et elle fixe **l'axe du balancier** : le balancier doit suivre cet axe, est-ouest ou nord-sud.",
+          "",
+          "## 3. Balancier",
+          "Sur le bloc juste au-dessus du support, alignez des **pièces de marteau** selon cet axe. Mettez la **tête** au bout situé au-dessus de la base et le **connecteur** à l'autre bout. Les pièces, la tête et le connecteur posés en regardant le long du balancier prennent tous le bon axe.",
+          "",
+          "## 4. Colle",
+          "Passez de la **super glue** sur tout le balancier, de la tête au connecteur. Il bouge comme une seule contraption, et les blocs non collés restent en place.",
+          "",
+          "## 5. Entraînement",
+          "Posez la **manivelle** sous le connecteur et une **entrée de machine** juste sous la manivelle."
+        ]
+      },
+      "items": ["tfmg:pumpjack_base", "tfmg:pumpjack_hammer", "tfmg:pumpjack_hammer_part", "tfmg:pumpjack_hammer_head", "tfmg:pumpjack_hammer_connector", "create:super_glue", "tfmg:pumpjack_crank", "tfmg:machine_input"]
+    },
+    {
+      "title": {
+        "en_us": "Distances and axis rules",
+        "fr_fr": "Distances et règles d'axe"
+      },
+      "text": {
+        "en_us": [
+          "The holder scans its beam every half second, and the pumpjack assembles by itself as soon as every rule below is met. Nothing needs a click or a redstone signal.",
+          "",
+          "- The head and the connector must each be within **6 blocks** of the holder along the beam, with only hammer parts in between.",
+          "- Every part, the connector and the crank must face along the **same axis** as the holder. A part turned sideways ends the beam there.",
+          "- The **base** must be in the same column as the head, **1 to 8 blocks** below it.",
+          "- The **crank** must be in the same column as the connector, **1 to 7 blocks** below it.",
+          "- Only one pumpjack can drive a given base.",
+          "",
+          "If you remove the base or the crank, the beam disassembles back into blocks. Put the piece back and it reassembles on its own.",
+          "",
+          "The **large** hammer parts, head and connector work the same way as the small ones and can replace them for a heavier look. With a large part above it, the holder widens automatically."
+        ],
+        "fr_fr": [
+          "Le support analyse son balancier toutes les demi-secondes, et la pompe s'assemble toute seule dès que toutes les règles ci-dessous sont respectées. Aucun clic ni signal de redstone n'est nécessaire.",
+          "",
+          "- La tête et le connecteur doivent chacun être à **6 blocs** au plus du support le long du balancier, avec uniquement des pièces de marteau entre eux.",
+          "- Chaque pièce, le connecteur et la manivelle doivent être orientés selon le **même axe** que le support. Une pièce tournée de travers arrête le balancier à cet endroit.",
+          "- La **base** doit être dans la même colonne que la tête, **1 à 8 blocs** en dessous.",
+          "- La **manivelle** doit être dans la même colonne que le connecteur, **1 à 7 blocs** en dessous.",
+          "- Une base ne peut être entraînée que par une seule pompe.",
+          "",
+          "Si vous retirez la base ou la manivelle, le balancier se redécompose en blocs. Remettez la pièce et il se réassemble tout seul.",
+          "",
+          "Les **grandes** pièces, tête et connecteur fonctionnent comme les petits et peuvent les remplacer pour un aspect plus massif. Avec une grande pièce au-dessus, le support s'élargit automatiquement."
+        ]
+      },
+      "items": ["tfmg:pumpjack_hammer", "tfmg:large_pumpjack_hammer_part", "tfmg:large_pumpjack_hammer_head", "tfmg:large_pumpjack_hammer_connector", "tfmg:pumpjack_crank", "tfmg:pumpjack_base"]
+    },
+    {
+      "title": {
+        "en_us": "Pumping speed",
+        "fr_fr": "La vitesse de pompage"
+      },
+      "text": {
+        "en_us": [
+          "The crank only reads the **Machine Input** directly below it. That input takes rotation on its shaft side, like any Create component, and nothing else can drive the crank.",
+          "",
+          "Each tick, the base pumps:",
+          "",
+          "**RPM x (connector distance / 5) x sin(crank angle)** mB",
+          "",
+          "- **RPM** is the speed of the machine input, in either direction.",
+          "- **Connector distance** is the number of blocks between the holder and the connector along the beam.",
+          "- The sine follows the stroke, so the flow pulses: highest mid-stroke, zero at the top and bottom. On average you get about **two thirds** of the peak.",
+          "",
+          "Example: the pumpjack on the first page has its connector 3 blocks from the holder. At 64 RPM it peaks at about 38 mB per tick, roughly **490 mB per second** on average.",
+          "",
+          "To pump faster, spin the input faster or move the connector further from the holder. The machine input has a stress impact of **4 per RPM**, so 64 RPM costs 256 SU."
+        ],
+        "fr_fr": [
+          "La manivelle lit uniquement l'**entrée de machine** juste en dessous. Cette entrée reçoit la rotation par son côté arbre, comme n'importe quel composant de Create, et rien d'autre ne peut entraîner la manivelle.",
+          "",
+          "À chaque tick, la base pompe :",
+          "",
+          "**tr/min x (distance du connecteur / 5) x sin(angle de la manivelle)** mB",
+          "",
+          "- **tr/min** est la vitesse de l'entrée de machine, dans un sens ou dans l'autre.",
+          "- La **distance du connecteur** est le nombre de blocs entre le support et le connecteur le long du balancier.",
+          "- Le sinus suit la course, donc le débit pulse : maximal à mi-course, nul en haut et en bas. En moyenne vous obtenez environ **deux tiers** du maximum.",
+          "",
+          "Exemple : la pompe de la première page a son connecteur à 3 blocs du support. À 64 tr/min, elle monte à environ 38 mB par tick, soit environ **490 mB par seconde** en moyenne.",
+          "",
+          "Pour pomper plus vite, faites tourner l'entrée plus vite ou éloignez le connecteur du support. L'entrée de machine a un impact de contrainte de **4 par tr/min** : 64 tr/min coûtent 256 SU."
+        ]
+      },
+      "items": ["tfmg:machine_input", "tfmg:pumpjack_crank", "tfmg:pumpjack_hammer_connector", "create:shaft"]
+    },
+    {
+      "title": {
+        "en_us": "Collecting the oil and fixing problems",
+        "fr_fr": "Récupérer le pétrole et régler les problèmes"
+      },
+      "text": {
+        "en_us": [
+          "The base has an internal tank of **8000 mB** that only accepts crude oil. Pull from it with a mechanical pump and pipes on any side. When the tank cannot fit the next stroke, pumping simply pauses until you drain it.",
+          "",
+          "Look at the base with **Engineer's Goggles**. It shows the tank content and, when something is wrong, **Machine Invalid**. That means the base found no deposit:",
+          "",
+          "- the column under the base has a gap or a block that is not an **industrial pipe** (concrete encased pipes are fine),",
+          "- the column does not end on an oil deposit,",
+          "- the base is not exactly above the column,",
+          "- the beam is not assembled yet.",
+          "",
+          "The base rescans its column every few seconds while running, so a fixed column is picked up without rebuilding anything.",
+          "",
+          "If the beam does not move at all, check the glue, the axis of every part, the head and connector distances, and that the machine input really turns.",
+          "",
+          "Deposits do not run dry in this version, so one good pumpjack keeps a refinery fed for as long as you want."
+        ],
+        "fr_fr": [
+          "La base possède un réservoir interne de **8000 mB** qui n'accepte que le pétrole brut. Videz-le avec une pompe mécanique et des tuyaux, par n'importe quel côté. Quand le réservoir ne peut pas contenir le coup suivant, le pompage se met simplement en pause jusqu'à ce que vous le vidiez.",
+          "",
+          "Regardez la base avec les **lunettes d'ingénieur**. Elles montrent le contenu du réservoir et, en cas de problème, **Machine Invalid**. Cela veut dire que la base n'a trouvé aucun gisement :",
+          "",
+          "- la colonne sous la base a un trou ou un bloc qui n'est pas un **tuyau industriel** (les tuyaux encastrés dans du béton conviennent),",
+          "- la colonne ne se termine pas sur un gisement de pétrole,",
+          "- la base n'est pas exactement au-dessus de la colonne,",
+          "- le balancier n'est pas encore assemblé.",
+          "",
+          "En marche, la base réanalyse sa colonne toutes les quelques secondes : une colonne réparée est prise en compte sans rien reconstruire.",
+          "",
+          "Si le balancier ne bouge pas du tout, vérifiez la colle, l'axe de chaque pièce, les distances de la tête et du connecteur, et que l'entrée de machine tourne vraiment.",
+          "",
+          "Les gisements ne s'épuisent pas dans cette version : une bonne pompe alimente une raffinerie aussi longtemps que vous le voulez."
+        ]
+      },
+      "items": ["tfmg:pumpjack_base", "tfmg:crude_oil_bucket", "create:mechanical_pump", "create:fluid_pipe", "create:goggles", "tfmg:industrial_pipe"]
+    }
+  ]
+}

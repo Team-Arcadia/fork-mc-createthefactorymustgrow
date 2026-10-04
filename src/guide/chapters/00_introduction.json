@@ -1,0 +1,116 @@
+{
+  "order": 0,
+  "icon": "tfmg:factory_guide",
+  "title": {
+    "en_us": "Welcome to the Factory",
+    "fr_fr": "Bienvenue à l'usine"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "How to read this book",
+        "fr_fr": "Comment lire ce livre"
+      },
+      "text": {
+        "en_us": [
+          "The Factory Must Grow brings the age of **steel**, **oil** and **electricity** to Create.",
+          "",
+          "Each chapter follows the order you will build things in. Read them in order the first time, then come back to any chapter when you need it.",
+          "",
+          "- Every multiblock has a **3D view** page. Press **Visualize** on it to project the structure as a ghost in front of you: missing and wrong blocks are shown until it is complete.",
+          "- The last page of an entry shows the **items** it talks about; hover them for details, and use JEI for their recipes.",
+          "- Use the **search** bar on the contents page, and bookmark the pages you use most.",
+          "- Stuck? Right-click the machine with the **Factory Inspector**: it tells you what works, what stops it and what to do."
+        ],
+        "fr_fr": [
+          "The Factory Must Grow apporte l'ère de **l'acier**, du **pétrole** et de **l'électricité** à Create.",
+          "",
+          "Chaque chapitre suit l'ordre dans lequel vous allez construire. Lisez-les dans l'ordre la première fois, puis revenez à n'importe quel chapitre quand vous en avez besoin.",
+          "",
+          "- Chaque multibloc a une page de **vue 3D**. Appuyez sur **Visualiser** pour projeter la structure en fantôme devant vous : les blocs manquants ou mal placés sont signalés jusqu'à ce qu'elle soit complète.",
+          "- La dernière page d'une entrée montre les **objets** dont elle parle ; survolez-les pour les détails, et utilisez JEI pour leurs recettes.",
+          "- Utilisez la **recherche** du sommaire, et mettez en signet les pages dont vous vous servez le plus.",
+          "- Bloqué ? Faites un clic droit sur la machine avec l'**Inspecteur d'usine** : il vous dit ce qui fonctionne, ce qui la bloque et quoi faire."
+        ]
+      },
+      "items": [
+        "tfmg:factory_guide",
+        "tfmg:factory_inspector",
+        "create:goggles",
+        "create:wrench"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "The road ahead",
+        "fr_fr": "La route à suivre"
+      },
+      "text": {
+        "en_us": [
+          "## 1. Steel",
+          "Coal becomes **coal coke** in a coke oven. Hot air from a blast stove feeds a **blast furnace**, which melts crushed iron into molten steel. A casting basin turns it into **steel ingots**.",
+          "",
+          "## 2. Parts and machines",
+          "Steel gives heavy plates, screws, casings and the **steel mechanism** that most machines need.",
+          "",
+          "## 3. Electricity",
+          "Generators turn rotation into power for motors, vats, the polarizer and the winding machine. Aluminium comes from electrolysis.",
+          "",
+          "## 4. Oil",
+          "Find a deposit, pump it with a pumpjack, refine it in a distillation tower into fuels, then burn them in **engines**, or turn them into plastic."
+        ],
+        "fr_fr": [
+          "## 1. L'acier",
+          "Le charbon devient du **coke** dans un four à coke. L'air chaud d'un fourneau à air chaud alimente un **haut fourneau**, qui fond le fer concassé en acier liquide. Un bassin de coulée le transforme en **lingots d'acier**.",
+          "",
+          "## 2. Pièces et machines",
+          "L'acier donne des plaques lourdes, des vis, des carters et le **mécanisme en acier** dont la plupart des machines ont besoin.",
+          "",
+          "## 3. L'électricité",
+          "Les générateurs transforment la rotation en courant pour les moteurs, les cuves, le polariseur et la machine à bobiner. L'aluminium vient de l'électrolyse.",
+          "",
+          "## 4. Le pétrole",
+          "Trouvez un gisement, pompez-le avec un chevalet de pompage, raffinez-le dans une tour de distillation en carburants, puis brûlez-les dans des **moteurs**, ou transformez-les en plastique."
+        ]
+      },
+      "items": [
+        "tfmg:coal_coke",
+        "tfmg:steel_ingot",
+        "tfmg:steel_mechanism",
+        "tfmg:aluminum_ingot",
+        "tfmg:crude_oil_bucket"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Goggles tell you what is wrong",
+        "fr_fr": "Les lunettes disent ce qui ne va pas"
+      },
+      "text": {
+        "en_us": [
+          "Wear Create's **Engineer's Goggles** and look at a machine. Besides its tanks and progress, TFMG machines show **red lines** when something stops them:",
+          "",
+          "- a structure that is not complete,",
+          "- a missing fuel, flux or hot air,",
+          "- a full output or exhaust tank,",
+          "- a vat recipe that needs more heat or pressure.",
+          "",
+          "When a machine sits idle, look at it with goggles first. The last chapter, **Troubleshooting**, lists every message and how to fix it."
+        ],
+        "fr_fr": [
+          "Portez les **lunettes d'ingénieur** de Create et regardez une machine. En plus de ses réservoirs et de sa progression, les machines TFMG affichent des **lignes rouges** quand quelque chose les bloque :",
+          "",
+          "- une structure incomplète,",
+          "- un combustible, un fondant ou de l'air chaud manquant,",
+          "- un réservoir de sortie ou d'échappement plein,",
+          "- une recette de cuve qui demande plus de chaleur ou de pression.",
+          "",
+          "Quand une machine reste inactive, regardez-la d'abord avec les lunettes. Le dernier chapitre, **Dépannage**, liste chaque message et comment le régler."
+        ]
+      },
+      "items": [
+        "create:goggles"
+      ]
+    }
+  ]
+}

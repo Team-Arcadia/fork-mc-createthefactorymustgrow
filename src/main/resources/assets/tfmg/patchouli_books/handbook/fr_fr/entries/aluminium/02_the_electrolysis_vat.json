@@ -1,0 +1,57 @@
+{
+  "name": "La cuve d'électrolyse",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:aluminium",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "L'électrolyse se fait dans une cuve chimique avec $(item)deux porte-électrodes$(), chacun tenant une $(item)électrode en cuivre$() ou $(item)en zinc$() (vous pouvez les mélanger). $(l)Le montage - Une cuve chimique en $(item)acier$() ou $(item)réfractaire$().$() La fonte ne marche pas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les machines doivent être dans l'emprise de la cuve, donc deux porte-électrodes demandent une cuve d'au moins $(item)2x2$(). $(li)Les deux porte-électrodes vont $(item)au-dessus$() de la cuve. $(li)Une $(item)chaleur de 2$() sous la cuve : un seul $(item)foyer$() allumé suffit, ou un brûleur à blaze surchauffé."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ne mettez pas de mélangeur industriel sur cette cuve, sauf s'il tourne à 30 RPM ou plus : toute machine reliée qui ne fonctionne pas bloque toutes les recettes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Obtenir des électrodes$()$(br)Mettez un $(item)bloc de cuivre$() ou un $(item)bloc de zinc$() dans un $(item)tailleur de pierre$() : un bloc donne une électrode. Clic droit sur un porte-électrode avec une électrode pour l'insérer. Clic droit accroupi main vide pour la reprendre."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "La cuve d'électrolyse",
+      "multiblock": {
+        "pattern": [
+          [
+            "E ",
+            " E"
+          ],
+          [
+            "VV",
+            "VV"
+          ],
+          [
+            "F ",
+            " 0"
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:electrode_holder,tfmg:copper_electrode,tfmg:zinc_electrode,tfmg:firebox,minecraft:copper_block,minecraft:stonecutter",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

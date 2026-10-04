@@ -1,0 +1,54 @@
+{
+  "name": "Les machines et leur place",
+  "icon": "tfmg:industrial_mixer",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une cuve ne compte que les machines posées $(item)juste au-dessus de sa couche du haut$() ou $(item)juste sous sa couche du bas$(), dans son emprise. $(li)$(item)Mélangeur industriel$() : au-dessus, au $(item)centre$() d'une cuve 3x3 (n'importe où sur une cuve plus petite)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Donnez-lui une $(item)pale de mélangeur$() pour mélanger ou une $(item)centrifugeuse$() pour centrifuger, par clic droit. Entraîné par son arbre du haut, il lui faut au moins $(item)30 RPM$(). $(li)$(item)Porte-électrode$() : au-dessus, alimenté par sa $(item)face du haut$(). Clic droit avec une électrode, clic accroupi main vide pour la retirer. Il lui faut au moins $(item)5 A$() (config serveur)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Compresseur$() : au-dessus ou en dessous, entraîné par un arbre horizontal à $(item)120 RPM ou plus$(). $(li)$(item)Congélateur$() : au-dessus ou en dessous, alimenté en électricité sur n'importe quelle face, il lui faut $(item)plus de 3 A$() (75 ohms, donc plus de 225 V)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un mélangeur sans son objet ou un porte-électrode vide n'est tout simplement pas compté. Le montage montré ici est la cuve de mélange 1x1 classique : un foyer pour la chaleur, la cuve, et un mélangeur dessus."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Les machines et leur place",
+      "multiblock": {
+        "pattern": [
+          [
+            "M"
+          ],
+          [
+            "V"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:industrial_mixer,tfmg:mixer_blade,tfmg:centrifuge,tfmg:electrode_holder,tfmg:compressor,tfmg:freezer",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

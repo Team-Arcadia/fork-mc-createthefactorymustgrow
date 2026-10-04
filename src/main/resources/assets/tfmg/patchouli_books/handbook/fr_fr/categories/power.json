@@ -1,0 +1,6 @@
+{
+  "name": "Produire de l'électricité",
+  "description": "Le générateur et le moteur électrique demandent tous deux un aimant pendant leur assemblage, tout comme la jauge électrique. Le polariseur, la machine qui fabrique les aimants, demande une jauge électrique dans sa recette et de l'électricité pour fonctionner. D'où vient alors le premier aimant ?",
+  "icon": "tfmg:generator",
+  "sortnum": 80
+}

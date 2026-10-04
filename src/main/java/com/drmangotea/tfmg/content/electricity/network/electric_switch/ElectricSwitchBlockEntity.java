@@ -1,6 +1,7 @@
 package com.drmangotea.tfmg.content.electricity.network.electric_switch;
 
 import com.drmangotea.tfmg.content.electricity.base.VoltageAlteringBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -68,6 +69,17 @@ public class ElectricSwitchBlockEntity extends VoltageAlteringBlockEntity {
     @Override
     public int getOutputVoltage() {
         return (int) (data.getVoltage()*(signal/15f));
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (signal <= 0) {
+            report.problem("switch.open");
+            report.fix("switch.open.fix");
+        } else {
+            report.ok("switch.closed", signal, (int) (signal / 15f * 100));
+        }
+        inspectFaces(report);
     }
 
     @Override

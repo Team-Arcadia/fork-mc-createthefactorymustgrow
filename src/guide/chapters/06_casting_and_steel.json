@@ -1,0 +1,279 @@
+{
+  "order": 60,
+  "icon": "tfmg:steel_ingot",
+  "title": {
+    "en_us": "Casting and Steel Parts",
+    "fr_fr": "Coulée et pièces en acier"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "The casting basin",
+        "fr_fr": "Le bassin de coulée"
+      },
+      "text": {
+        "en_us": [
+          "The casting basin turns molten material into solid items. Pipe the fluid into it from any face; it holds **1000 mB**.",
+          "",
+          "## How a cast works",
+          "- Once the basin holds enough fluid for a recipe, it starts counting.",
+          "- For steel: **144 mB** and **200 ticks** (10 s) make **one steel ingot**.",
+          "- The ingot stays in the basin. The basin holds **one item** and does not start the next cast until it is taken out.",
+          "",
+          "## Taking the result",
+          "- By hand: **right-click with an empty hand**.",
+          "- Automatically: a **funnel** or a **hopper** pulls it out.",
+          "",
+          "The basin **refuses inserted items**: it only takes fluids, so a funnel next to it only ever extracts.",
+          "",
+          "The tank takes any fluid. Fluid with no casting recipe just sits there, so keep each basin on a clean line."
+        ],
+        "fr_fr": [
+          "Le bassin de coulée transforme une matière en fusion en objets solides. Envoyez-y le fluide par n'importe quelle face ; il contient **1000 mB**.",
+          "",
+          "## Comment se passe une coulée",
+          "- Dès que le bassin contient assez de fluide pour une recette, il commence à compter.",
+          "- Pour l'acier : **144 mB** et **200 ticks** (10 s) donnent **un lingot d'acier**.",
+          "- Le lingot reste dans le bassin. Le bassin contient **un seul objet** et ne lance pas la coulée suivante tant qu'il n'a pas été retiré.",
+          "",
+          "## Récupérer le résultat",
+          "- À la main : **clic droit main vide**.",
+          "- Automatiquement : un **entonnoir** ou un entonnoir vanilla le retire.",
+          "",
+          "Le bassin **refuse les objets insérés** : il ne prend que des fluides, donc un entonnoir à côté ne fait qu'extraire.",
+          "",
+          "Le réservoir accepte n'importe quel fluide. Un fluide sans recette de coulée y reste bloqué : gardez chaque bassin sur une ligne propre."
+        ]
+      },
+      "items": ["tfmg:casting_basin", "tfmg:molten_steel_bucket", "tfmg:steel_ingot", "create:andesite_funnel", "minecraft:hopper"]
+    },
+    {
+      "title": {
+        "en_us": "What can be cast",
+        "fr_fr": "Ce qui peut être coulé"
+      },
+      "text": {
+        "en_us": [
+          "- **Molten steel**, 144 mB: steel ingot, 200 ticks.",
+          "- **Liquid silicon**, 144 mB: silicon ingot, 200 ticks.",
+          "- **Molten plastic**, 144 mB: plastic sheet, 100 ticks.",
+          "- **Liquid concrete**, 144 mB: cinderblock, 50 ticks.",
+          "- **Molten slag**, 20 mB: slag block, 50 ticks.",
+          "",
+          "## Keeping up with the furnace",
+          "A basin makes one steel ingot every 10 seconds. A short furnace makes one every 17 seconds, so **one basin** is enough at first. A tall reinforced furnace (one ingot every 5 seconds) needs **two or more**: feed a row of basins from one pipe.",
+          "",
+          "Steel and slag leave the furnace by the same output block. Keep them apart, for example with a **smart fluid pipe** set to one of them, so your steel basins never fill with slag. Slag has its own basins and becomes slag blocks.",
+          "",
+          "Nine steel ingots craft a **Block of Steel**, which is also a reinforced blast furnace block."
+        ],
+        "fr_fr": [
+          "- **Acier en fusion**, 144 mB : lingot d'acier, 200 ticks.",
+          "- **Silicium liquide**, 144 mB : lingot de silicium, 200 ticks.",
+          "- **Plastique fondu**, 144 mB : feuille de plastique, 100 ticks.",
+          "- **Béton liquide**, 144 mB : parpaing, 50 ticks.",
+          "- **Laitier en fusion**, 20 mB : bloc de laitier, 50 ticks.",
+          "",
+          "## Suivre le rythme du haut fourneau",
+          "Un bassin produit un lingot d'acier toutes les 10 secondes. Un haut fourneau bas en produit un toutes les 17 secondes : **un bassin** suffit au début. Un haut fourneau haut et renforcé (un lingot toutes les 5 secondes) en demande **deux ou plus** : alimentez une rangée de bassins depuis un seul tuyau.",
+          "",
+          "L'acier et le laitier quittent le fourneau par la même sortie. Séparez-les, par exemple avec un **tuyau à fluide intelligent** réglé sur l'un des deux, pour que vos bassins à acier ne se remplissent jamais de laitier. Le laitier a ses propres bassins et devient des blocs de laitier.",
+          "",
+          "Neuf lingots d'acier donnent un **bloc d'acier**, qui compte aussi comme bloc renforcé pour le haut fourneau."
+        ]
+      },
+      "items": ["tfmg:steel_ingot", "tfmg:silicon_ingot", "tfmg:plastic_sheet", "tfmg:cinderblock", "tfmg:slag_block", "tfmg:steel_block", "create:smart_fluid_pipe", "tfmg:casting_basin"]
+    },
+    {
+      "title": {
+        "en_us": "Heavy plates, screws, rebar",
+        "fr_fr": "Plaques lourdes, vis, armatures"
+      },
+      "text": {
+        "en_us": [
+          "## Heavy plate",
+          "The steel plate of this mod. It is a **sequenced assembly**: put a steel ingot on a belt or depot under a **mechanical press** and press it **three times**. Between presses it is an Unprocessed Heavy Plate.",
+          "",
+          "A row of three presses over one belt does it in one pass. Heavy plates are used by steel pipes, tanks, the heavy machinery casing and the steel mechanism. They are also the steel plate of every recipe that asks for one.",
+          "",
+          "## Screws",
+          "Cut a steel ingot in a stonecutter or with a **mechanical saw**: **4 screws** per ingot.",
+          "",
+          "## Rebar",
+          "Same way: **4 rebar** per steel ingot. You need rebar for the screwdriver.",
+          "",
+          "The stonecutter also turns one steel ingot into **8 industrial pipes**, used by smokestacks and distillation towers."
+        ],
+        "fr_fr": [
+          "## Plaque lourde",
+          "La plaque d'acier de ce mod. C'est un **assemblage séquencé** : posez un lingot d'acier sur un tapis ou un dépôt sous une **presse mécanique** et pressez-le **trois fois**. Entre deux pressages, c'est une plaque lourde non traitée.",
+          "",
+          "Une rangée de trois presses au-dessus d'un tapis le fait en un seul passage. Les plaques lourdes servent aux tuyaux et cuves en acier, au carter de machinerie lourd et au mécanisme en acier. Ce sont aussi les plaques d'acier de toutes les recettes qui en demandent.",
+          "",
+          "## Vis",
+          "Découpez un lingot d'acier au tailleur de pierre ou avec une **scie mécanique** : **4 vis** par lingot.",
+          "",
+          "## Armatures",
+          "De la même façon : **4 armatures** par lingot d'acier. Il en faut pour le tournevis.",
+          "",
+          "Le tailleur de pierre transforme aussi un lingot d'acier en **8 tuyaux industriels**, utilisés par les cheminées et les tours de distillation."
+        ]
+      },
+      "items": ["tfmg:heavy_plate", "tfmg:unprocessed_heavy_plate", "create:mechanical_press", "create:depot", "tfmg:screw", "tfmg:rebar", "create:mechanical_saw", "tfmg:industrial_pipe"]
+    },
+    {
+      "title": {
+        "en_us": "Your first aluminium",
+        "fr_fr": "Votre premier aluminium"
+      },
+      "text": {
+        "en_us": [
+          "The steel mechanism needs an **aluminium ingot**, and electrolysis comes much later. A **superheated mixer** bridges the gap:",
+          "",
+          "**4 bauxite powder + 1 coal coke dust = 1 aluminium ingot**",
+          "",
+          "- Crush **bauxite** with crushing wheels or a millstone to get bauxite powder.",
+          "- Put a **mechanical mixer** over a **basin** on a **blaze burner**, and feed the burner a **blaze cake** to make it superheated.",
+          "- Drop the powder and the dust into the basin.",
+          "",
+          "Later, a chemical vat with electrodes gives aluminium from bauxite powder alone, with extra nuggets.",
+          "",
+          "## The screwdriver",
+          "Craft it from **rebar over an aluminium ingot** (a brass ingot works too). It has **256 uses**: a deployer holding it wears it down instead of using it up."
+        ],
+        "fr_fr": [
+          "Le mécanisme en acier demande un **lingot d'aluminium**, et l'électrolyse arrive bien plus tard. Un **mélangeur surchauffé** fait le lien :",
+          "",
+          "**4 poudres de bauxite + 1 poussière de coke = 1 lingot d'aluminium**",
+          "",
+          "- Concassez de la **bauxite** avec des roues de concassage ou une meule pour obtenir la poudre de bauxite.",
+          "- Placez un **mélangeur mécanique** au-dessus d'un **bassin** posé sur un **brûleur à blaze**, et donnez au brûleur un **gâteau de blaze** pour le surchauffer.",
+          "- Mettez la poudre et la poussière dans le bassin.",
+          "",
+          "Plus tard, une cuve chimique avec des électrodes donne de l'aluminium à partir de la seule poudre de bauxite, avec des pépites en plus.",
+          "",
+          "## Le tournevis",
+          "Fabriquez-le avec une **armature au-dessus d'un lingot d'aluminium** (un lingot de laiton marche aussi). Il a **256 utilisations** : un déployeur qui le tient l'use au lieu de le consommer."
+        ]
+      },
+      "items": ["tfmg:bauxite", "tfmg:bauxite_powder", "tfmg:coal_coke_dust", "tfmg:aluminum_ingot", "create:mechanical_mixer", "create:blaze_burner", "create:blaze_cake", "tfmg:screwdriver"]
+    },
+    {
+      "title": {
+        "en_us": "The steel mechanism",
+        "fr_fr": "Le mécanisme en acier"
+      },
+      "text": {
+        "en_us": [
+          "Most TFMG machines ask for a steel mechanism. It is a **sequenced assembly** that starts from a **heavy plate**, with four **deployer** steps, in this order:",
+          "",
+          "- 1. a **steel ingot**",
+          "- 2. an **aluminium ingot**",
+          "- 3. **screws**",
+          "- 4. the **screwdriver** (worn, not consumed)",
+          "",
+          "One pass is enough. The result is a **steel mechanism 80%** of the time, and an **iron nugget** otherwise.",
+          "",
+          "## A simple line",
+          "A belt carries heavy plates under four deployers in a row, each holding one of the items above. Keep the first three deployers stocked with funnels or chutes, and give the last one a screwdriver.",
+          "",
+          "Per mechanism, on average: 1 heavy plate, 1 steel ingot, 1 aluminium ingot and 1 screw, divided by 0.8. Count about **1.25 of each** and **2.5 steel ingots** in total, plate included."
+        ],
+        "fr_fr": [
+          "La plupart des machines TFMG demandent un mécanisme en acier. C'est un **assemblage séquencé** qui part d'une **plaque lourde**, avec quatre étapes de **déployeur**, dans cet ordre :",
+          "",
+          "- 1. un **lingot d'acier**",
+          "- 2. un **lingot d'aluminium**",
+          "- 3. des **vis**",
+          "- 4. le **tournevis** (usé, pas consommé)",
+          "",
+          "Un seul passage suffit. Le résultat est un **mécanisme en acier 80 %** du temps, et une **pépite de fer** sinon.",
+          "",
+          "## Une ligne simple",
+          "Un tapis fait passer les plaques lourdes sous quatre déployeurs alignés, chacun tenant un des objets ci-dessus. Approvisionnez les trois premiers avec des entonnoirs ou des glissières, et donnez un tournevis au dernier.",
+          "",
+          "Par mécanisme, en moyenne : 1 plaque lourde, 1 lingot d'acier, 1 lingot d'aluminium et 1 vis, divisés par 0,8. Comptez environ **1,25 de chaque** et **2,5 lingots d'acier** au total, plaque comprise."
+        ]
+      },
+      "items": ["tfmg:steel_mechanism", "tfmg:unfinished_steel_mechanism", "tfmg:heavy_plate", "tfmg:steel_ingot", "tfmg:aluminum_ingot", "tfmg:screw", "tfmg:screwdriver", "create:deployer"]
+    },
+    {
+      "title": {
+        "en_us": "Steel casings",
+        "fr_fr": "Les carters en acier"
+      },
+      "text": {
+        "en_us": [
+          "## Hardened planks",
+          "Fill a **stripped log** with **250 mB of creosote** using a spout. Here is a use for the coke oven's creosote.",
+          "",
+          "## Steel casing",
+          "Use a **steel ingot** on hardened planks: right-click the placed block, or let a deployer do it. It is the base of transformers, polarizers, engine gearboxes and steel doors.",
+          "",
+          "## Heavy machinery casing",
+          "Use a **heavy plate** on a steel casing the same way. Engines, pumpjacks, the industrial mixer, machine inputs and many electrical parts need it.",
+          "",
+          "## Aluminium casing",
+          "An **aluminium sheet** on a steel casing gives an aluminium casing.",
+          "",
+          "Like Create's casings, these item applications work by hand on a placed block or with a deployer over a belt or depot, so they automate easily once you have a steady supply of plates."
+        ],
+        "fr_fr": [
+          "## Planches durcies",
+          "Remplissez une **bûche écorcée** avec **250 mB de créosote** à l'aide d'un bec verseur. Voilà un usage pour la créosote du four à coke.",
+          "",
+          "## Carter en acier",
+          "Appliquez un **lingot d'acier** sur des planches durcies : clic droit sur le bloc posé, ou avec un déployeur. C'est la base des transformateurs, polariseurs, boîtes de vitesses de moteur et portes en acier.",
+          "",
+          "## Carter de machinerie lourd",
+          "Appliquez une **plaque lourde** sur un carter en acier de la même façon. Moteurs, chevalets de pompage, mélangeur industriel, entrées de machine et beaucoup de pièces électriques en ont besoin.",
+          "",
+          "## Carter en aluminium",
+          "Une **feuille d'aluminium** sur un carter en acier donne un carter en aluminium.",
+          "",
+          "Comme les carters de Create, ces applications se font à la main sur un bloc posé ou avec un déployeur au-dessus d'un tapis ou d'un dépôt : elles s'automatisent facilement dès que les plaques arrivent en continu."
+        ]
+      },
+      "items": ["tfmg:hardened_planks", "tfmg:creosote_bucket", "create:spout", "tfmg:steel_casing", "tfmg:heavy_machinery_casing", "tfmg:industrial_aluminum_casing", "tfmg:aluminum_sheet", "tfmg:heavy_plate"]
+    },
+    {
+      "title": {
+        "en_us": "Steel tanks and pipes",
+        "fr_fr": "Cuves et tuyaux en acier"
+      },
+      "text": {
+        "en_us": [
+          "## Steel fluid tank",
+          "**Heavy plate, barrel, heavy plate** in a column: **2 tanks**. They build distillation towers and chemical vats, and are part of fireboxes and pumpjacks.",
+          "",
+          "## Steel pipe",
+          "**Heavy plate, steel ingot, heavy plate** in a row or a column: **4 pipes**.",
+          "",
+          "From the steel pipe you get the rest of the family:",
+          "- **Steel mechanical pump**: a steel pipe and a cogwheel.",
+          "- **Steel fluid valve**: a steel pipe and an iron sheet.",
+          "- **Steel smart fluid pipe**: a steel pipe, an aluminium sheet and an electron tube.",
+          "",
+          "## Where to go next",
+          "With steel ingots, heavy plates, screws, mechanisms and casings you can build almost every machine of the mod. Before the electrical and oil chapters, make sure your coke oven, hot air line and blast furnace run on their own: everything that follows eats steel."
+        ],
+        "fr_fr": [
+          "## Cuve à fluide en acier",
+          "**Plaque lourde, tonneau, plaque lourde** en colonne : **2 cuves**. Elles forment les tours de distillation et les cuves chimiques, et entrent dans les foyers et les chevalets de pompage.",
+          "",
+          "## Tuyau en acier",
+          "**Plaque lourde, lingot d'acier, plaque lourde** en ligne ou en colonne : **4 tuyaux**.",
+          "",
+          "Le tuyau en acier donne le reste de la famille :",
+          "- **Pompe mécanique en acier** : un tuyau en acier et une roue dentée.",
+          "- **Vanne à fluide en acier** : un tuyau en acier et une plaque de fer.",
+          "- **Tuyau à fluide intelligent en acier** : un tuyau en acier, une feuille d'aluminium et un tube électronique.",
+          "",
+          "## Pour la suite",
+          "Avec les lingots d'acier, les plaques lourdes, les vis, les mécanismes et les carters, vous pouvez construire presque toutes les machines du mod. Avant les chapitres sur l'électricité et le pétrole, assurez-vous que votre four à coke, votre ligne d'air chaud et votre haut fourneau tournent seuls : tout ce qui suit consomme de l'acier."
+        ]
+      },
+      "items": ["tfmg:steel_fluid_tank", "minecraft:barrel", "tfmg:steel_pipe", "tfmg:steel_mechanical_pump", "tfmg:steel_fluid_valve", "tfmg:steel_smart_fluid_pipe", "tfmg:heavy_plate", "tfmg:steel_ingot"]
+    }
+  ]
+}

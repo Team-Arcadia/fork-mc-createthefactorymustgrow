@@ -1,0 +1,30 @@
+{
+  "name": "Convertisseur",
+  "icon": "tfmg:converter",
+  "category": "tfmg:power",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le convertisseur relie l'électricité de TFMG à la $(item)Forge Energy (FE)$() des autres mods. Il stocke jusqu'à $(item)500 000 FE$(). Utilisez une $(item)clé$() de Create dessus pour passer d'un mode à l'autre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)De FE vers TFMG$()$(br)Donnez-lui de la Forge Energy. Il alimente le réseau TFMG à la tension réglée sur son cadran, de $(item)1 à 250 V$() (20 V par défaut), avec jusqu'à $(item)10 kW$(). Quand son stock est vide, il attend $(item)5 secondes$() avant de repartir."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)De TFMG vers FE$()$(br)Il se charge sur le réseau TFMG jusqu'à $(item)1 000 FE par tick$(), tant que la tension du réseau atteint la valeur du cadran et que le réseau a de la puissance en trop. Il envoie cette énergie aux machines FE voisines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une $(item)seule face$() accepte la connexion TFMG. Regardez-le avec un multimètre : il indique le mode actuel, quelle face va au câble TFMG et laquelle à la machine FE. Il explique aussi pourquoi il ne charge pas, par exemple quand le cadran est réglé plus haut que la tension du réseau."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:converter,create:wrench,tfmg:multimeter",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

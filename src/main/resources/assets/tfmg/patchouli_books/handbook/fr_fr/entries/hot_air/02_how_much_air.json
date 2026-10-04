@@ -1,0 +1,26 @@
+{
+  "name": "Combien d'air",
+  "icon": "tfmg:air_intake",
+  "category": "tfmg:hot_air",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une prise d'air produit, à chaque tick :$(br2)$(item)RPM x taille x taille / 40$() mB d'air, arrondi vers le bas.$(br2)$(l)À 256 RPM$()$(li)$(item)1x1$() : 6 mB par tick$(li)$(item)2x2$() : 25 mB par tick$(li)$(item)3x3$() : 57 mB par tick"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)À 128 RPM$()$(li)$(item)1x1$() : 3 mB, $(item)2x2$() : 12 mB, $(item)3x3$() : 28 mB par tick$(br2)À cause de l'arrondi, une prise seule ne produit $(item)rien sous 40 RPM$(). La taille compte deux fois : un grand carré vaut bien mieux qu'un tas de prises seules à faible vitesse."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un fourneau à air chaud $(item)2x2x5$() (pages suivantes) consomme près de $(item)28 mB d'air par tick$(). Une prise 2x2 à pleine vitesse est un peu juste : prévoyez une prise $(item)3x3$(), ou deux prises 2x2 sur le même tuyau, pour chaque fourneau de ce type.$(br2)Quand rien ne pompe l'air, le réservoir reste simplement plein : une prise à l'arrêt ne gêne rien."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:air_intake,create:mechanical_pump,create:fluid_pipe",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

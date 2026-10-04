@@ -1,0 +1,26 @@
+{
+  "name": "Grenades et bombes artisanales",
+  "icon": "tfmg:thermite_grenade",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Clic droit pour lancer. Chaque explosif lancé a un temps de recharge de 3 secondes. $(l)Grenades au thermite À l'impact, une grenade au thermite explose et projette $(item)20 étincelles$() dans toutes les directions, chacune allumant un feu là où elle tombe.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le souffle blesse les créatures mais $(item)ne détruit pas de blocs$(). $(li)$(item)Grenade au thermite$() (4 poudres de thermite autour d'un lingot d'aluminium) : feu ordinaire. $(li)$(item)Grenade en zinc$() (grenade au thermite + 2 lingots de zinc) : $(item)feu vert$(). $(li)$(item)Grenade en cuivre$() (grenade au thermite + 2 lingots de cuivre) : $(item)feu bleu$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les feux colorés brûlent comme un feu normal et éclairent au maximum.$(br2)$(l)Bombe artisanale$()$(br)Un tuyau en acier et de la TNT en donnent deux. Elle se lance bien plus loin qu'une grenade et explose à l'impact, là encore sans détruire de blocs. Un bon choix contre les monstres près de votre usine, où vous ne voulez pas de cratères."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:thermite_grenade,tfmg:zinc_grenade,tfmg:copper_grenade,tfmg:thermite_powder,tfmg:pipe_bomb,tfmg:steel_pipe,minecraft:tnt",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

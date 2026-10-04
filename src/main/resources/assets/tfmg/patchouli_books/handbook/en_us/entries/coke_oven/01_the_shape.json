@@ -1,0 +1,57 @@
+{
+  "name": "The shape",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A coke oven is a $(item)square slice$() of oven blocks: as many blocks $(item)high$() as it is $(item)deep$(), and only $(item)one block wide$(). Think of it as a row of long chambers running back from the doors. $(li)Every block must face the $(item)same way$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A block faces you when you place it, so place them all while looking at the future front. $(li)The $(item)controller$() is the $(item)bottom front$() block. Only the front column shows doors. $(li)Sizes go from $(item)1x1$() to $(item)6x6$() (the server setting cokeOvenMaxSize, 5 by default, sets the limit). $(li)Extra blocks above or behind a full-size square stay separate ovens."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ovens placed side by side are separate machines, each with its own controller. To build a battery, put several slices next to each other.$(br2)The view shows a $(item)3x3$() oven facing south: three high, three deep."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "The shape",
+      "multiblock": {
+        "pattern": [
+          [
+            "C",
+            "C",
+            "T"
+          ],
+          [
+            "C",
+            "C",
+            "M"
+          ],
+          [
+            "C",
+            "0",
+            "B"
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Surveiller le réseau",
+  "icon": "tfmg:voltage_observer",
+  "category": "tfmg:network_control",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Observateur de tension$()$(br)Fixez-le sur un bloc électrique. Il émet un $(item)signal de redstone$() tant que ce réseau a une tension. Un $(item)comparateur$() le lit plus finement : la force augmente avec la tension et atteint son maximum à $(item)250 V$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Sources pour liaison d'affichage Pointez une $(item)liaison d'affichage$() de Create sur :$() $(li)une $(item)jauge électrique$() ou un $(item)observateur de tension$() : tension, courant, résistance, puissance consommée ou produite, tension produite, et consommation, production, résistance et identifiant du réseau ; $(li)un $(item)accumulateur$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "tension et consommation, production et résistance du réseau ; $(li)un $(item)potentiomètre$() : tension et tension produite."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Afficheur segmenté$()$(br)Une $(item)cible de liaison d'affichage$() qui montre du texte avec des segments lumineux, deux caractères par bloc. Posez-en plusieurs côte à côte pour un texte plus long. C'est un consommateur de 100 ohms qui reste éteint en dessous de $(item)5 W$() : donnez-lui au moins 23 V environ. Clic droit avec une teinture pour changer sa couleur (le noir et les gris sont refusés)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:voltage_observer,minecraft:comparator,create:display_link,tfmg:voltmeter,tfmg:accumulator,tfmg:segmented_display",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

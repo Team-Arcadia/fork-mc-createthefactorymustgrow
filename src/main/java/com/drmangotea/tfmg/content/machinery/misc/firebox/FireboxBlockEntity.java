@@ -1,7 +1,10 @@
 package com.drmangotea.tfmg.content.machinery.misc.firebox;
 
+import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.drmangotea.tfmg.registry.TFMGTags;
@@ -37,7 +40,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Objects;
 
-public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IMultiBlockEntityContainer.Fluid {
+public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IMultiBlockEntityContainer.Fluid, IInspectable {
 
     private static final int MAX_SIZE = 3;
 
@@ -294,8 +297,69 @@ public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleI
         FireboxBlockEntity controllerBE = getControllerBE();
         if (controllerBE == null)
             return false;
+        // Say why a firebox stays cold instead of leaving the player to guess.
+        FluidStack fuel = controllerBE.tankInventory.getFluid();
+        if (!fuel.isEmpty() && !fuel.getFluid().is(TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag))
+            TFMGTexts.problem("firebox.wrong_fuel").forGoggles(tooltip);
+        else if (fuel.getAmount() < TFMGConfigs.common().machines.fireboxFuelConsumption.get())
+            TFMGTexts.problem("firebox.no_fuel").forGoggles(tooltip);
+        if (controllerBE.exhuastTank.getSpace() <= 0)
+            TFMGTexts.problem("firebox.exhaust_full").forGoggles(tooltip);
         return containedFluidTooltip(tooltip, isPlayerSneaking,
                 fluidCapability);
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        if (!isController() && !level.isLoaded(controller)) {
+            report.info("multiblock.controller_unloaded");
+            return;
+        }
+        FireboxBlockEntity main = getControllerBE();
+        if (main == null) {
+            report.problem("firebox.no_controller");
+            report.fix("firebox.no_controller.fix");
+            return;
+        }
+        report.info("firebox.size", main.width, main.width, main.getTotalTankSize());
+
+        int needed = TFMGConfigs.common().machines.fireboxFuelConsumption.get();
+        FluidStack fuel = main.tankInventory.getFluid();
+        if (fuel.isEmpty()) {
+            report.problem("firebox.no_fuel", needed);
+            report.fix("firebox.no_fuel.fix", needed);
+        } else if (!fuel.getFluid().is(TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag)) {
+            report.problem("firebox.wrong_fuel", fuel.getHoverName());
+            report.fix("firebox.wrong_fuel.fix");
+        } else if (fuel.getAmount() < needed) {
+            report.problem("firebox.low_fuel", fuel.getHoverName(), fuel.getAmount(), needed);
+            report.fix("firebox.no_fuel.fix", needed);
+        } else {
+            report.ok("firebox.fuel", fuel.getAmount(), fuel.getHoverName(), needed);
+        }
+        // Every block of the firebox burns 50 mB from the shared tank each 60 ticks.
+        report.info("firebox.consumption", 50 * main.getTotalTankSize());
+
+        boolean exhaustRequired = TFMGConfigs.common().machines.fireboxExhaustRequirement.get();
+        if (main.exhuastTank.getSpace() <= 0) {
+            report.problem("firebox.exhaust_full", main.exhuastTank.getFluidAmount(), main.exhuastTank.getCapacity());
+            report.fix("firebox.exhaust_full.fix");
+        } else if (exhaustRequired) {
+            report.ok("firebox.exhaust", main.exhuastTank.getFluidAmount(), main.exhuastTank.getCapacity());
+            if (main.exhuastTank.getFluidAmount() > main.exhuastTank.getCapacity() / 2)
+                report.info("firebox.exhaust_rising");
+        } else {
+            report.info("firebox.exhaust_off");
+        }
+
+        BlazeBurnerBlock.HeatLevel heat = getBlockState().hasProperty(FireboxBlock.HEAT_LEVEL)
+                ? getBlockState().getValue(FireboxBlock.HEAT_LEVEL) : BlazeBurnerBlock.HeatLevel.NONE;
+        if (heat == BlazeBurnerBlock.HeatLevel.NONE)
+            report.info("firebox.cold");
+        else
+            report.ok("firebox.burning");
     }
 
     @Override

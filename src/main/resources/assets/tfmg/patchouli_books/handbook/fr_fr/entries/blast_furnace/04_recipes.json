@@ -1,0 +1,30 @@
+{
+  "name": "Recettes",
+  "icon": "create:crushed_raw_iron",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Chaque recette demande du combustible et prend $(item)20 mB d'air chaud par tick$() pendant le travail. Les temps de base sont ceux d'un fourneau bas ; voyez la page suivante pour la hauteur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fer brut concassé + 1 sable calcaire$()$(br)$(item)144 mB$() d'acier en fusion, 144 mB de laitier, du gaz de haut fourneau. Base 400 ticks.$(br2)$(l)Fer brut + 1 sable calcaire$()$(br)$(item)288 mB$() d'acier en fusion, 288 mB de laitier, du gaz. Base 800 ticks : même vitesse par lingot, mais concasser d'abord permet de profiter du traitement des minerais de Create."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Poussière de fer + 1 sable calcaire$()$(br)Seulement si un autre mod ajoute de la poussière de fer : 144 mB d'acier et de laitier. Base 400 ticks.$(br2)$(l)Quartz$()$(br)$(item)40 mB de silicium liquide$(), sans fondant. Base 100 ticks. Coulez-le en lingots de silicium."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les deux réservoirs de sortie contiennent $(item)4000 mB$() chacun et n'acceptent que le fluide qu'ils contiennent déjà. Videz-les avant de passer de l'acier au silicium, sinon le fourneau attend."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:crushed_raw_iron,minecraft:raw_iron,minecraft:quartz,tfmg:limesand,tfmg:molten_steel_bucket,tfmg:molten_slag_bucket,tfmg:liquid_silicon_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

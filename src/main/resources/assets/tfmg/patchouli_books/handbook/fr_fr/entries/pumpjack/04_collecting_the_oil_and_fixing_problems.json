@@ -1,0 +1,34 @@
+{
+  "name": "Récupérer le pétrole et régler les problèmes",
+  "icon": "tfmg:pumpjack_base",
+  "category": "tfmg:pumpjack",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La base possède un réservoir interne de $(item)8000 mB$() qui n'accepte que le pétrole brut. Videz-le avec une pompe mécanique et des tuyaux, par n'importe quel côté. Quand le réservoir ne peut pas contenir le coup suivant, le pompage se met simplement en pause jusqu'à ce que vous le vidiez."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Regardez la base avec les $(item)lunettes d'ingénieur$(). Elles montrent le contenu du réservoir et, en cas de problème, $(item)Machine Invalid$(). Cela veut dire que la base n'a trouvé aucun gisement :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)la colonne sous la base a un trou ou un bloc qui n'est pas un $(item)tuyau industriel$() (les tuyaux encastrés dans du béton conviennent),$(li)la colonne ne se termine pas sur un gisement de pétrole,$(li)la base n'est pas exactement au-dessus de la colonne,$(li)le balancier n'est pas encore assemblé."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "En marche, la base réanalyse sa colonne toutes les quelques secondes : une colonne réparée est prise en compte sans rien reconstruire.$(br2)Si le balancier ne bouge pas du tout, vérifiez la colle, l'axe de chaque pièce, les distances de la tête et du connecteur, et que l'entrée de machine tourne vraiment."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les gisements ne s'épuisent pas dans cette version : une bonne pompe alimente une raffinerie aussi longtemps que vous le voulez."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:pumpjack_base,tfmg:crude_oil_bucket,create:mechanical_pump,create:fluid_pipe,create:goggles,tfmg:industrial_pipe",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

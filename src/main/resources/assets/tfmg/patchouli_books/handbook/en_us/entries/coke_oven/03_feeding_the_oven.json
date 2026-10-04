@@ -1,0 +1,30 @@
+{
+  "name": "Feeding the oven",
+  "icon": "create:andesite_funnel",
+  "category": "tfmg:coke_oven",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The oven has a single slot that holds up to $(item)64$() items of one kind. Every block of the square leads to the controller's slot, so you can insert from any face of any oven block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Use a $(item)funnel$(), a $(item)chute$(), a hopper or a belt ending in a funnel to push coal or logs in.$(li)The slot is $(item)insert only$(): a hopper under the oven can no longer pull the coal back out."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Collecting the coke$()$(br)When an item is done, the result is $(item)dropped as an item$() just in front of the $(item)controller$() (the bottom front block), with a small push forward. The doors swing open near the end of each cycle."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Leave that space free and catch the drops: a belt running across the front, or a hopper or funnel set right in front of the controller, works well. Send the coke to a crushing wheel or millstone to make $(item)coal coke dust$() for the blast furnace."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:andesite_funnel,create:chute,minecraft:hopper,create:belt_connector,create:crushing_wheel,create:millstone,tfmg:coal_coke,tfmg:coal_coke_dust",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

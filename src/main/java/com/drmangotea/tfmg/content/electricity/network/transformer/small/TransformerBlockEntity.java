@@ -6,6 +6,7 @@ import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import net.minecraft.ChatFormatting;
 import com.drmangotea.tfmg.content.electricity.base.IElectric;
 import com.drmangotea.tfmg.content.electricity.base.VoltageAlteringBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 
 import com.drmangotea.tfmg.registry.TFMGBlocks;
 import com.drmangotea.tfmg.registry.TFMGDataComponents;
@@ -170,6 +171,26 @@ public class TransformerBlockEntity extends VoltageAlteringBlockEntity {
     }
 
     @Override
+    public void inspect(InspectionReport report) {
+        checkCoil(report, primaryCoil, "transformer.coil.input");
+        checkCoil(report, secondaryCoil, "transformer.coil.output");
+        if (coilRatio != 0)
+            report.ok("transformer.ratio", String.format("%.2f", coilRatio), getData().getVoltage(), getOutputVoltage());
+        inspectFaces(report);
+    }
+
+    private static void checkCoil(InspectionReport report, ItemStack coil, String coilKey) {
+        Component name = Component.translatable("tfmg.inspector." + coilKey);
+        if (coil.isEmpty()) {
+            report.problem("transformer.coil_missing", name);
+            report.fix("transformer.coil_missing.fix");
+            return;
+        }
+        int turns = coil.getOrDefault(TFMGDataComponents.COIL_TURNS, 0);
+        report.check(turns >= 50, "transformer.coil_ok", "transformer.coil_few_turns", "transformer.coil_few_turns.fix", name, turns, 50);
+    }
+
+    @Override
     public float resistance() {
         Direction facing = getBlockState().getValue(FACING).getCounterClockWise();
         if (level.getBlockEntity(getBlockPos().relative(facing)) instanceof IElectric be && be.getData().getId() != data.getId()) {
@@ -232,12 +253,12 @@ public class TransformerBlockEntity extends VoltageAlteringBlockEntity {
     protected void read(CompoundTag compound, HolderLookup.Provider registries, boolean clientPacket) {
         super.read(compound,registries , clientPacket);
 
-        if (compound.contains("PrimaryCoil")) {
-            ItemStack.parse(registries, compound.getCompound("PrimaryCoil")).ifPresent(i -> primaryCoil = i);
-        }
-        if (compound.contains("SecondaryCoil")) {
-            ItemStack.parse(registries, compound.getCompound("SecondaryCoil")).ifPresent(i -> secondaryCoil = i);
-        }
+        // Absent keys mean an empty coil slot: clear it, or a removed coil
+        // stayed visible on other clients.
+        primaryCoil = compound.contains("PrimaryCoil")
+                ? ItemStack.parseOptional(registries, compound.getCompound("PrimaryCoil")) : ItemStack.EMPTY;
+        secondaryCoil = compound.contains("SecondaryCoil")
+                ? ItemStack.parseOptional(registries, compound.getCompound("SecondaryCoil")) : ItemStack.EMPTY;
 ;
 
         coilRatio = compound.getFloat("CoilRation");

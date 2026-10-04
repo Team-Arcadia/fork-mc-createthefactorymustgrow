@@ -1,5 +1,7 @@
 package com.drmangotea.tfmg.content.machinery.vat.industrial_mixer;
 
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.machinery.vat.base.IVatMachine;
 import com.drmangotea.tfmg.content.machinery.vat.base.VatBlock;
 import com.drmangotea.tfmg.content.machinery.vat.base.VatBlockEntity;
@@ -20,7 +22,7 @@ import net.minecraft.world.phys.AABB;
 import java.util.Objects;
 
 
-public class IndustrialMixerBlockEntity extends KineticBlockEntity implements IVatMachine {
+public class IndustrialMixerBlockEntity extends KineticBlockEntity implements IVatMachine, IInspectable {
 
 
     public MixerMode mixerMode = MixerMode.NONE;
@@ -159,6 +161,33 @@ public class IndustrialMixerBlockEntity extends KineticBlockEntity implements IV
     @Override
     public String[] doesntWorkWith() {
         return new String[]{"electrodes"};
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (getOperationId().isEmpty()) {
+            report.problem("mixer.no_tool");
+            report.fix("mixer.no_tool.fix");
+        } else {
+            report.info("mixer.mode", VatBlockEntity.operationName(getOperationId()));
+        }
+        int minimum = (int) IRotate.SpeedLevel.MEDIUM.getSpeedValue();
+        int speed = Math.abs((int) getSpeed());
+        // A stopped mixer is already reported by the generic rotation check.
+        if (speed != 0)
+            report.check(canOperate(null), "mixer.speed_ok", "mixer.too_slow", "mixer.too_slow.fix", speed, minimum);
+
+        VatBlockEntity vat = VatBlockEntity.findVat(level, getBlockPos(), Direction.DOWN);
+        if (vat == null) {
+            report.problem("mixer.no_vat");
+            report.fix("mixer.no_vat.fix");
+            return;
+        }
+        if (!vat.isAtValidLocation(getPositionRequirement(), getBlockPos())) {
+            report.problem("mixer.off_center");
+            report.fix("mixer.off_center.fix");
+        }
+        VatBlockEntity.appendVatReport(level, getBlockPos(), report, Direction.DOWN);
     }
 
     enum MixerMode {

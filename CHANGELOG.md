@@ -8,6 +8,117 @@ All notable changes to Create: The Factory Must Grow are documented here.
 
 ---
 
+## [1.3.0] - 2026-10-04
+
+A release about trust and about help. Trust: a game test suite now places,
+ticks, saves, reloads and breaks every block of the mod and drives the main
+machines, on a dedicated server, on a singleplayer client and on a regular
+server, and a full audit of the machines fixed every data loss, dupe and stall
+it turned up. Help: an in-game handbook, a diagnostic tool, red goggle lines
+and JEI pages now explain what used to be learnt only by reading the code.
+
+Une version sur la confiance et sur l'aide. La confiance : une suite de tests
+en jeu pose, fait tourner, sauvegarde, recharge et casse chaque bloc du mod et
+fait fonctionner les machines principales, sur un serveur dedie, sur un client
+solo et sur un serveur classique, et un audit complet des machines a corrige
+chaque perte de donnees, duplication et blocage qu'il a trouve. L'aide : un
+manuel en jeu, un outil de diagnostic, des lignes rouges aux lunettes et des
+pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
+
+### Added
+
+- **The Factory Handbook** - An in-game guide to the whole mod, a Patchouli book in English and French. Twenty-four chapters follow the order you build things in, from the first coke oven to steel, electricity, oil, engines and weapons, and end with a troubleshooting chapter. Every multiblock has a 3D view that can be projected as a ghost in the world with Visualize. Crafted from a book and coal; every player receives one on first joining a world (config `giveHandbookOnFirstJoin`). Requires Patchouli.
+- **The Factory Inspector** - Right-click a machine: it lists what is in place (green), what stops the machine (red) and what to do about it (gold), in your language. Right-click the air: it shows how far you are along the production chain, from coal coke to plastic, and what the next step needs. Crafted from iron, copper, glass and redstone.
+- **Machines say what is wrong** - Red goggle lines on the blast furnace (incomplete structure, no fuel, no flux, no hatch, no hot air, full output), coke oven (full CO2 or creosote tank), firebox (wrong fuel, not enough fuel, full exhaust), large engine (no shaft, no air, wrong fuel, full exhaust), chemical vat (a machine not working, no matching recipe, not hot enough, not enough pressure) and regular engines (no redstone signal).
+- **JEI information pages** for the blast furnace, blast stove, air intake, coke oven, casting basin, arc furnace, chemical vats, distillation tower, firebox, surface scanner, large generator and coal coke dust. The vat category now shows the minimum vat size and the allowed vat types.
+- **No more dead end on magnets and aluminium** - The voltmeter needs a magnet, the polarizer needs the voltmeter, and magnets only came out of the polarizer, so survival could never make the first one. A hand recipe (magnetic alloy ingot, redstone blocks, compass) breaks the loop. Likewise the steel mechanism every generator needs takes aluminium, which only electrolysis made: a superheated mixer recipe (4 bauxite powder and 1 coal coke dust) gives the first ingots. The polarizer and electrolysis stay the efficient routes.
+- **The casting basin gives its result by hand** - Right-click with an empty hand to take the ingot.
+- **Game tests** - One test per block (place, tick, save and reload, client sync, break), data checks (loot tables, recipe ingredients, item names, the handbook) and machine tests (vat, arc furnace recovery, casting, blast furnace hatch, firebox, electric motor). Run them with `gradlew runGameTestServer`, `runClientGameTest` and `runServerGameTest`. Test code is not shipped in the jar.
+
+### Fixed
+
+- **Arc furnace coke dust (the "nothing is produced" report)** - The recipe uses one coal coke dust per batch and gives it back to the vat input 90% of the time, so the count stays the same and drops by one about every ten batches. That is the intended catalyst, but JEI listed the dust as a 90% product, so players waited for an output that never came. JEI now says the dust returns to the input and how much is used up; the dust also no longer reserves output room, which could stall the furnace when the outputs were occupied.
+- **Breaking a chemical vat deleted its items** - Items now drop.
+- **A vat absorbed by a bigger vat lost its contents** - Placing a vat under a filled one, or growing a vat from a new corner, left the old items and fluids in a block nothing could reach, and they vanished on the next save. They move to the new controller now; when the controller is broken, its fluids go to a surviving block.
+- **Vat automation went the wrong way** - Funnels pulled the ingredients out before any product, and items spilled into output slots nothing reads. Pipes and funnels can now only fill the inputs and empty the outputs, like the fluid side.
+- **Vat progress carried over to another recipe** - Swapping the inputs could finish a different recipe on the next tick.
+- **Blast furnace** - The hatch now saves its items; fuel eaten from dropped items is saved; stored fuel drops as coke dust when the output is broken; only ore that a recipe smelts is accepted, so a stray item can no longer jam the input for good; the timer can no longer freeze with a high speed setting; output tanks refuse piped-in fluid.
+- **Blast stove and coke oven lost their tanks when the controller changed** - Growing or breaking either structure now hands the contents to the new controller. The coke oven no longer keeps coking inside a member block, refuses hoppers pulling its coal, and its output tanks refuse piped-in fluid.
+- **Casting basin** - Hoppers and chutes can no longer push items into the result slot and block casting.
+- **Winding machine** - Taking a spool by hand is saved (it came back after a reload), a client no longer shows a spool that was removed, paid wire turns stay with the metal they were bought for, two machines on the same sequenced recipe no longer swap results, and hoppers can no longer pull wire or a working spool.
+- **Concrete hose** - It searches again for new rebar instead of stopping for good, and never voids concrete when Create's source placement setting is off.
+- **Firebox** - The exhaust tank grows with the multiblock instead of staying at one block until a reload.
+- **Air intake** - Pipes always reach the live controller tank; they could keep draining the tank of a removed block.
+- **Smokestack** - CO2 is no longer lost when the block above refuses it.
+- **Cable wire dropped twice** - Breaking both ends at once, or an end whose partner was in an unloaded chunk, paid the wire out twice; connector lookups also no longer load chunks.
+- **Blocks that lost their contents or settings when broken** - Copycat cable material, resistor value and large coil turns (on a wrench pickup, explosion or drill) and the polarizer's item.
+- **Polarizer** - A chain of recipes no longer completes several steps in one tick.
+- **Electric motor** - A lying motor now accepts power from below as intended, and keeps its stress capacity at low speed.
+- **Flamethrower** - It no longer refuels for free from engines, and no longer loses fuel when a block has two tanks.
+- **Engine piping upgrade** - It no longer voids fuel the engine refuses, and a full source tank feeds the engine again.
+- **Engine upgrades removed with the wrench** were not saved on an idle engine and came back after a restart.
+- **Stale client state** - Removed engine upgrades, transformer coils and controller links no longer linger on other players' screens; an unknown gear value no longer breaks a chunk load.
+- **Electric diode model** - It pointed at a model that does not exist and rendered as the missing model.
+- **JEI** - Create's own registrations were registered a second time (duplicate entries, an error on every load); the blast furnace page hid the slag of recipes without gas; datapack recipes with one fluid no longer break the hot blast and winding pages.
+- **steel_from_dust** only loads when another mod provides iron dust, instead of showing an empty tag.
+
+### Performance
+
+- The blast furnace, coke oven, distillation tower, pumpjack and winding machine no longer send a full sync packet every tick while working; they sync at most four times a second.
+- Simulated Forge Energy transfers no longer recompute the whole electrical network and send a packet each tick next to the converter or accumulator.
+
+### Ajouts
+
+- **Le Manuel de l'Usine** - Un guide en jeu de tout le mod, un livre Patchouli en anglais et en francais. Vingt-quatre chapitres suivent l'ordre de construction, du premier four a coke a l'acier, l'electricite, le petrole, les moteurs et les armes, et se terminent par un chapitre de depannage. Chaque multibloc a une vue 3D qu'on peut projeter en fantome dans le monde avec Visualiser. Fabrique avec un livre et du charbon ; chaque joueur en recoit un a sa premiere connexion a un monde (config `giveHandbookOnFirstJoin`). Necessite Patchouli.
+- **L'Inspecteur d'usine** - Clic droit sur une machine : il liste ce qui est en place (vert), ce qui la bloque (rouge) et quoi faire (or), dans votre langue. Clic droit dans le vide : il montre ou vous en etes dans la chaine de production, du coke au plastique, et ce qu'il faut pour l'etape suivante. Fabrique avec du fer, du cuivre, du verre et de la redstone.
+- **Les machines disent ce qui ne va pas** - Lignes rouges aux lunettes sur le haut fourneau (structure incomplete, pas de combustible, pas de fondant, pas de trappe, pas d'air chaud, sortie pleine), le four a coke (reservoir de CO2 ou de creosote plein), le foyer (mauvais carburant, carburant insuffisant, echappement plein), le grand moteur (pas d'arbre, pas d'air, mauvais carburant, echappement plein), la cuve chimique (une machine en panne, aucune recette, pas assez chaud, pas assez de pression) et les moteurs classiques (pas de signal redstone).
+- **Pages d'information JEI** pour le haut fourneau, le fourneau a air chaud, la prise d'air, le four a coke, le bassin de coulee, le four a arc, les cuves chimiques, la tour de distillation, le foyer, le scanner de surface, le grand generateur et la poussiere de coke. La categorie des cuves affiche la taille minimale et les types de cuve autorises.
+- **Plus d'impasse sur les aimants et l'aluminium** - Le voltmetre demande un aimant, le polariseur demande le voltmetre, et les aimants ne sortaient que du polariseur : la survie ne pouvait jamais fabriquer le premier. Une recette a la main (lingot d'alliage magnetique, blocs de redstone, boussole) casse la boucle. De meme, le mecanisme en acier qu'exige tout generateur demande de l'aluminium, que seule l'electrolyse produisait : une recette de melangeur surchauffe (4 poudres de bauxite et 1 poussiere de coke) donne les premiers lingots. Le polariseur et l'electrolyse restent les voies rentables.
+- **Le bassin de coulee se vide a la main** - Clic droit main vide pour prendre le lingot.
+- **Tests en jeu** - Un test par bloc (pose, fonctionnement, sauvegarde et rechargement, synchronisation client, casse), des verifications de donnees (tables de butin, ingredients des recettes, noms des objets, le manuel) et des tests de machines (cuve, recuperation du four a arc, coulee, trappe du haut fourneau, foyer, moteur electrique). A lancer avec `gradlew runGameTestServer`, `runClientGameTest` et `runServerGameTest`. Le code de test n'est pas livre dans le jar.
+
+### Correctifs
+
+- **Poussiere de coke du four a arc (le signalement "rien n'est produit")** - La recette utilise une poussiere de coke par cycle et la rend a l'entree de la cuve 9 fois sur 10 : le compteur reste le meme et baisse d'une unite environ tous les dix cycles. C'est le catalyseur voulu, mais JEI affichait la poussiere comme un produit a 90 %, si bien que les joueurs attendaient une sortie qui ne venait jamais. JEI dit desormais que la poussiere retourne a l'entree et combien en est consomme ; la poussiere ne reserve plus de place en sortie, ce qui pouvait bloquer le four quand les sorties etaient occupees.
+- **Casser une cuve chimique supprimait ses objets** - Ils tombent desormais.
+- **Une cuve absorbee par une plus grande perdait son contenu** - Poser une cuve sous une cuve remplie, ou agrandir une cuve par un nouveau coin, laissait les anciens objets et fluides dans un bloc inaccessible, perdus a la sauvegarde suivante. Ils passent au nouveau controleur ; quand le controleur est casse, ses fluides vont a un bloc restant.
+- **L'automatisation des cuves allait a l'envers** - Les entonnoirs retiraient les ingredients avant tout produit, et des objets tombaient dans des sorties que rien ne lit. Tuyaux et entonnoirs ne peuvent plus que remplir les entrees et vider les sorties, comme cote fluides.
+- **La progression d'une cuve passait a une autre recette** - Changer les ingredients pouvait terminer une autre recette au tick suivant.
+- **Haut fourneau** - La trappe sauvegarde ses objets ; le combustible avale depuis des objets au sol est sauvegarde ; le combustible stocke tombe en poussiere de coke quand on casse la sortie ; seul un minerai qu'une recette sait fondre est accepte, un objet egare ne bloque plus l'entree pour de bon ; le timer ne peut plus se figer avec un reglage de vitesse eleve ; les reservoirs de sortie refusent les fluides pompes dedans.
+- **Fourneau a air chaud et four a coke perdaient leurs reservoirs quand le controleur changeait** - Agrandir ou casser l'une de ces structures transmet desormais le contenu au nouveau controleur. Le four a coke ne cokefie plus dans un bloc membre, refuse les entonnoirs qui retiraient son charbon, et ses reservoirs de sortie refusent les fluides pompes dedans.
+- **Bassin de coulee** - Entonnoirs et glissieres ne peuvent plus pousser d'objet dans l'emplacement du resultat et bloquer la coulee.
+- **Machine a bobiner** - Retirer une bobine a la main est sauvegarde (elle revenait apres un rechargement), un client n'affiche plus une bobine retiree, les tours de fil payes restent au metal pour lequel ils ont ete achetes, deux machines sur la meme recette sequencee n'echangent plus leurs resultats, et les entonnoirs ne retirent plus le fil ni une bobine en service.
+- **Tuyau a beton** - Il recherche a nouveau les nouvelles armatures au lieu de s'arreter pour de bon, et ne detruit plus de beton quand le reglage de Create sur les blocs source est desactive.
+- **Foyer** - Le reservoir d'echappement grandit avec le multibloc au lieu de rester a la taille d'un bloc jusqu'au rechargement.
+- **Prise d'air** - Les tuyaux atteignent toujours le reservoir du controleur actuel ; ils pouvaient continuer a vider celui d'un bloc retire.
+- **Cheminee** - Le CO2 n'est plus perdu quand le bloc du dessus le refuse.
+- **Fil de cable rendu deux fois** - Casser les deux bouts a la fois, ou un bout dont l'autre etait dans un chunk decharge, rendait le fil deux fois ; la recherche des connecteurs ne charge plus de chunks.
+- **Blocs qui perdaient leur contenu ou leur reglage a la casse** - Materiau du cable copycat, valeur de la resistance et tours de la grande bobine (au ramassage a la cle, en explosion ou a la foreuse) et l'objet du polariseur.
+- **Polariseur** - Une chaine de recettes ne termine plus plusieurs etapes en un seul tick.
+- **Moteur electrique** - Un moteur couche accepte enfin le courant par le dessous comme prevu, et garde sa capacite de contrainte a basse vitesse.
+- **Lance-flammes** - Il ne se recharge plus gratuitement sur les moteurs et ne perd plus de carburant sur un bloc a deux reservoirs.
+- **Amelioration de tuyauterie des moteurs** - Elle ne detruit plus le carburant que le moteur refuse, et un reservoir source plein alimente de nouveau le moteur.
+- **Ameliorations de moteur retirees a la cle** - Elles n'etaient pas sauvegardees sur un moteur a l'arret et revenaient apres un redemarrage.
+- **Etat client perime** - Ameliorations de moteur retirees, bobines de transformateur et liaisons de controleur ne restent plus affichees chez les autres joueurs ; une valeur de vitesse inconnue ne casse plus le chargement d'un chunk.
+- **Modele de la diode electrique** - Il pointait vers un modele inexistant et s'affichait en modele manquant.
+- **JEI** - Les enregistrements propres a Create etaient faits une seconde fois (doublons, une erreur a chaque chargement) ; la page du haut fourneau cachait le laitier des recettes sans gaz ; les recettes de datapack a un seul fluide ne cassent plus les pages d'air chaud et de bobinage.
+- **steel_from_dust** ne se charge que si un autre mod fournit de la poussiere de fer, au lieu d'afficher un tag vide.
+
+### Performances
+
+- Le haut fourneau, le four a coke, la tour de distillation, le chevalet de pompage et la machine a bobiner n'envoient plus un paquet de synchronisation complet a chaque tick : au plus quatre par seconde.
+- Les transferts Forge Energy simules ne recalculent plus tout le reseau electrique ni n'envoient un paquet a chaque tick a cote du convertisseur ou de l'accumulateur.
+
+### Known issues
+
+- **Electrical network rebuilds are costly on very large grids** - A grid rebuild on chunk load is quadratic in the number of members. It is correct, only slow on grids of several hundred blocks; the rework touches the network's chunk-border behaviour, the most fragile part of the mod, so it waits for a release of its own.
+
+### Problemes connus
+
+- **Les reconstructions du reseau electrique coutent cher sur de tres grands reseaux** - La reconstruction au chargement d'un chunk est quadratique en nombre de membres. Elle est correcte, seulement lente sur des reseaux de plusieurs centaines de blocs ; la refonte touche au comportement aux bords de chunk, la partie la plus fragile du mod, elle attend donc une version dediee.
+
+---
+
 ## [1.2.10] - 2026-09-01
 
 Answers the 22 bugs the 243-test pass on 1.2.9 reported, plus the turbine

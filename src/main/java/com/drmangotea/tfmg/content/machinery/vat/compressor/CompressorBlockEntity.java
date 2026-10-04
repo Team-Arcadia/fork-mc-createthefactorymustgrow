@@ -1,18 +1,21 @@
 package com.drmangotea.tfmg.content.machinery.vat.compressor;
 
 import com.drmangotea.tfmg.base.lang.TFMGLang;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.machinery.vat.base.IVatMachine;
 import com.drmangotea.tfmg.content.machinery.vat.base.VatBlockEntity;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
-public class CompressorBlockEntity extends KineticBlockEntity implements IVatMachine {
+public class CompressorBlockEntity extends KineticBlockEntity implements IVatMachine, IInspectable {
 
     public CompressorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -70,6 +73,20 @@ public class CompressorBlockEntity extends KineticBlockEntity implements IVatMac
         }
 
         return super.addToGoggleTooltip(tooltip, isPlayerSneaking);
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        int speed = Math.abs((int) getSpeed());
+        if (speed != 0) {
+            report.info(getSpeed() > 0 ? "compressor.pressurizing" : "compressor.depressurizing");
+            report.check(speed >= 120, "compressor.speed_ok", "compressor.too_slow", "compressor.too_slow.fix", speed, 120);
+        }
+        // Counted above or below the vat (PositionRequirement.ANY).
+        if (VatBlockEntity.appendVatReport(level, getBlockPos(), report, Direction.DOWN, Direction.UP) == null) {
+            report.problem("compressor.no_vat");
+            report.fix("compressor.no_vat.fix");
+        }
     }
 
     public enum CompressorState{

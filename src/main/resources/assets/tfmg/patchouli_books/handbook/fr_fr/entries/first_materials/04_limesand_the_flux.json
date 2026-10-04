@@ -1,0 +1,30 @@
+{
+  "name": "Le sable calcaire, fondant",
+  "icon": "create:limestone",
+  "category": "tfmg:first_materials",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le haut fourneau ne fond pas le fer tout seul : chaque recette demande un $(item)fondant$(), et dans TFMG le fondant est le $(item)sable calcaire$(). $(l)Obtenir du sable calcaire 1.$() Fabriquez du $(item)calcaire$() de Create : faites couler du miel dans de la lave qui coule."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une source de lave devient de l'obsidienne à la place, gardez donc la lave en mouvement. 2. Minez le calcaire, idéalement avec une perceuse mécanique qui le casse dès qu'il se forme. 3. Passez-le aux $(item)roues de concassage$() : chaque bloc de calcaire donne toujours $(item)1 sable calcaire$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Ce qu'en fait le haut fourneau$()$(li)$(item)Fer brut concassé + sable calcaire$() : 144 mB d'acier liquide, 144 mB de laitier liquide et 200 mB de gaz de haut fourneau.$(li)$(item)Fer brut + sable calcaire$() : 288 mB d'acier liquide et 288 mB de laitier, mais deux fois plus de temps et d'air chaud."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "144 mB font un lingot d'acier dans le bassin de coulée. Prévoyez environ $(item)un sable calcaire par lingot d'acier$() à partir de fer concassé.$(br2)Le sable calcaire sert aussi au $(item)ciment$(), page suivante."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:limestone,tfmg:limesand,create:crushing_wheel,create:mechanical_drill,create:crushed_raw_iron,minecraft:raw_iron",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Le marteau de pétrolier",
+  "icon": "tfmg:oil_hammer",
+  "category": "tfmg:finding_oil",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)marteau de pétrolier$() lit ce que contient un gisement. Faites un clic droit sur n'importe quel bloc : le marteau regarde $(item)tout droit vers le bas, jusqu'à 300 blocs$(), et s'arrête au premier gisement de cette colonne. Il ne cherche jamais sur les côtés, placez-vous donc juste au-dessus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "S'il en trouve un, la barre d'action affiche $(item)Oil Reserves: N$() en jaune. Bon à savoir : $(li)Un gisement n'a de chiffre de réserve qu'une fois qu'une $(item)pompe à pétrole a commencé à le pomper$(). Avant cela, le marteau trouve le gisement mais ne dit rien. $(li)Le chiffre est tiré la première fois, entre 1000 et le réglage serveur $(item)depositMaxReserves$() (10000 par défaut)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Les gisements à moins de 32 blocs les uns des autres partagent $(item)une seule réserve$(). $(li)Dans cette version, pomper ne vide $(item)pas$() la réserve : un gisement ne s'épuise jamais. Un serveur peut aussi activer $(item)infiniteDeposits$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "En pratique, le marteau sert surtout à vérifier qu'une colonne de tuyaux finit bien sur un gisement : frappez le haut de la colonne, un message signifie qu'elle est juste au-dessus."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:oil_hammer,tfmg:oil_deposit,tfmg:pumpjack_base",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

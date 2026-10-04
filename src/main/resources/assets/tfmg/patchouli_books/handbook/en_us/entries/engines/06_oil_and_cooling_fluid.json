@@ -1,0 +1,30 @@
+{
+  "name": "Oil and cooling fluid",
+  "icon": "tfmg:oil_can",
+  "category": "tfmg:engines",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two optional fluids make an engine cheaper to run. Each one cuts fuel consumption to $(item)70%$(), and with both the engine burns about half the fuel.$(br2)$(li)$(item)Lubrication Oil$()$(li)$(item)Cooling Fluid$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each is stored separately in the engine, up to $(item)2000 mB$(). Right-click the engine with a $(item)bucket$() to add 1000 mB (refused while it already holds more than 1000), or use the refillable items:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Oil Can$() for lubrication oil, $(item)Cooling Fluid Bottle$() for cooling fluid. Each holds 4000 mB. Right-click a tank, a vat or any fluid container to fill it; sneak-right-click a container to pour it back.$(li)Right-click the engine with the full item to top the engine up to 2000 mB."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A running engine uses both fluids up slowly. The goggles show $(item)Oil$() and $(item)Cooling Fluid$() while any is left."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:oil_can,tfmg:cooling_fluid_bottle,tfmg:lubrication_oil_bucket,tfmg:cooling_fluid_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

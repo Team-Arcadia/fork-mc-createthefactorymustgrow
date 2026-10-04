@@ -1,0 +1,26 @@
+{
+  "name": "Bigger is faster",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Cooking time is the recipe time divided by $(item)half the size$(), never by less than 1. One coal takes 1200 ticks, one log 600 ticks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Time per coal / per log$()$(li)$(item)1x1$() and $(item)2x2$(): 60 s / 30 s$(li)$(item)3x3$(): 40 s / 20 s$(li)$(item)4x4$(): 30 s / 15 s$(li)$(item)5x5$(): 24 s / 12 s$(li)$(item)6x6$(): 20 s / 10 s$(br2)A 2x2 is no faster than a single block, so jump straight to $(item)3x3$() or more."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The oven still cooks $(item)one item at a time$(): a bigger oven gives the same coke per coal, only sooner. The by-products are made $(item)every tick$() the oven cooks, whatever its size, so a fast oven makes the same flow of fluid per second as a slow one, just less of it per coal.$(br2)Watch the progress with Engineer's Goggles: it counts down the seconds left on the current item."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal,create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

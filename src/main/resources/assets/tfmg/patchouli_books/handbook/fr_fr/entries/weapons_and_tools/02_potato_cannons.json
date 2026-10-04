@@ -1,0 +1,30 @@
+{
+  "name": "Canons à patates",
+  "icon": "tfmg:advanced_potato_cannon",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Canon à patates avancé Il ne tire que des $(item)patates au napalm$() :$() une patate remplie de 500 mB de napalm par un bec verseur. À l'impact, elle éclate en une pluie d'étincelles de feu et une explosion qui $(item)détruit des blocs$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il recharge en 75 ticks (moins de 4 secondes) et a 500 points de durabilité. Comme le canon de Create, un réservoir dorsal rempli encaisse l'usure. $(l)Canon à patates quadruple Il prend les mêmes munitions que le canon à patates de Create, mais chaque tir lance $(item)quatre fois$() plus de projectiles en gerbe, pour une seule munition.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le temps de recharge dépend de la munition, comme dans Create. Il a 100 points de durabilité, utilise l'air du réservoir dorsal de la même façon, et accepte Puissance, Frappe, Flamme, Butin et Récupération de patates."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les deux canons cherchent leurs munitions partout dans l'inventaire. Tenez le canon et lisez son infobulle pour voir les dégâts, la recharge et le recul de la munition utilisée."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:advanced_potato_cannon,tfmg:napalm_potato,tfmg:quad_potato_cannon,minecraft:potato,create:spout,create:copper_backtank",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

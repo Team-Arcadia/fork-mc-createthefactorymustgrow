@@ -1,0 +1,30 @@
+{
+  "name": "Distances et règles d'axe",
+  "icon": "tfmg:pumpjack_hammer",
+  "category": "tfmg:pumpjack",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le support analyse son balancier toutes les demi-secondes, et la pompe s'assemble toute seule dès que toutes les règles ci-dessous sont respectées. Aucun clic ni signal de redstone n'est nécessaire."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)La tête et le connecteur doivent chacun être à $(item)6 blocs$() au plus du support le long du balancier, avec uniquement des pièces de marteau entre eux. $(li)Chaque pièce, le connecteur et la manivelle doivent être orientés selon le $(item)même axe$() que le support. Une pièce tournée de travers arrête le balancier à cet endroit."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)La $(item)base$() doit être dans la même colonne que la tête, $(item)1 à 8 blocs$() en dessous. $(li)La $(item)manivelle$() doit être dans la même colonne que le connecteur, $(item)1 à 7 blocs$() en dessous. $(li)Une base ne peut être entraînée que par une seule pompe.$(br2)Si vous retirez la base ou la manivelle, le balancier se redécompose en blocs. Remettez la pièce et il se réassemble tout seul."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les $(item)grandes$() pièces, tête et connecteur fonctionnent comme les petits et peuvent les remplacer pour un aspect plus massif. Avec une grande pièce au-dessus, le support s'élargit automatiquement."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:pumpjack_hammer,tfmg:large_pumpjack_hammer_part,tfmg:large_pumpjack_hammer_head,tfmg:large_pumpjack_hammer_connector,tfmg:pumpjack_crank,tfmg:pumpjack_base",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

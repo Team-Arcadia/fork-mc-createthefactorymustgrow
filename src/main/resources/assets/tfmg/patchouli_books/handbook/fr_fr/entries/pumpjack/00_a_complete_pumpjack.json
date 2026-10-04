@@ -1,0 +1,93 @@
+{
+  "name": "Une pompe à pétrole complète",
+  "icon": "tfmg:pumpjack_base",
+  "category": "tfmg:pumpjack",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La pompe à pétrole remonte le pétrole brut d'un gisement jusqu'à un réservoir en surface. Elle se construit avec des blocs séparés qui forment un balancier : $(li)$(item)Base de pompe$() : posée sur la colonne de tuyaux, elle stocke le pétrole."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Tuyaux industriels$() : une colonne droite de la base jusqu'au gisement (seuls trois sont montrés ici). $(li)$(item)Support de marteau$() : le pivot. Le balancier repose dessus. $(li)$(item)Balancier$() : une ligne de $(item)pièces de marteau$() avec une $(item)tête de marteau$() à un bout et un $(item)connecteur de marteau$() à l'autre. $(li)$(item)Manivelle$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "sous le connecteur, elle entraîne le balancier. $(li)$(item)Entrée de machine$() : sous la manivelle, elle reçoit la rotation.$(br2)Sur cette vue, la tête surplombe la base à l'ouest, le connecteur surplombe la manivelle à l'est, et le support se dresse au milieu sur deux poutres en acier. L'arbre côté nord de l'entrée de machine amène la rotation."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Utilisez $(item)-$() et $(item)+$() pour la voir couche par couche."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Une pompe à pétrole complète",
+      "multiblock": {
+        "pattern": [
+          [
+            "       ",
+            "HRRRRRN",
+            "       "
+          ],
+          [
+            "       ",
+            "   O   ",
+            "       "
+          ],
+          [
+            "       ",
+            "   T  C",
+            "       "
+          ],
+          [
+            "      S",
+            "B  T  M",
+            "       "
+          ],
+          [
+            "       ",
+            "P      ",
+            "       "
+          ],
+          [
+            "       ",
+            "P      ",
+            "       "
+          ],
+          [
+            "       ",
+            "P      ",
+            "       "
+          ],
+          [
+            "       ",
+            "D  0   ",
+            "       "
+          ]
+        ],
+        "mapping": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=false]",
+          "H": "tfmg:pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:pumpjack_hammer_connector[facing=east]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:pumpjack_base,tfmg:pumpjack_hammer,tfmg:pumpjack_hammer_part,tfmg:pumpjack_hammer_head,tfmg:pumpjack_hammer_connector,tfmg:pumpjack_crank,tfmg:machine_input,tfmg:industrial_pipe",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

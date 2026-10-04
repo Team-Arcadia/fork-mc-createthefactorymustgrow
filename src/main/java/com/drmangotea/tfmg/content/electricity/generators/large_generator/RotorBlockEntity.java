@@ -2,6 +2,8 @@ package com.drmangotea.tfmg.content.electricity.generators.large_generator;
 
 
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.electricity.base.KineticElectricBlockEntity;
 import com.drmangotea.tfmg.content.electricity.generators.large_generator.StatorBlock.StatorState;
 import com.drmangotea.tfmg.registry.TFMGBlocks;
@@ -23,7 +25,7 @@ import static net.minecraft.core.Direction.*;
 import static net.minecraft.world.level.block.DirectionalBlock.FACING;
 
 
-public class RotorBlockEntity extends KineticElectricBlockEntity {
+public class RotorBlockEntity extends KineticElectricBlockEntity implements IInspectable {
 
 
     LerpedFloat visualSpeed = LerpedFloat.linear();
@@ -147,6 +149,41 @@ public class RotorBlockEntity extends KineticElectricBlockEntity {
         }
         // Generation still gates on the full 8-stator ring (see generation()).
         stators = found.size() == position.size() ? found : new ArrayList<>();
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        Map<StatorOffset, BlockState> ring = statorPosition.get(getBlockState().getValue(AXIS));
+        List<BlockPos> missing = new ArrayList<>();
+        int found = 0;
+        for (StatorOffset offset : ring.keySet()) {
+            BlockPos pos = getBlockPos().relative(offset.direction1);
+            if (offset.direction2.isPresent())
+                pos = pos.relative(offset.direction2.get());
+            if (!level.isLoaded(pos)) {
+                missing.add(pos);
+                continue;
+            }
+            if (level.getBlockEntity(pos) instanceof StatorBlockEntity stator) {
+                if (stator.rotor != null && !stator.rotor.equals(getBlockPos())) {
+                    report.problem("rotor.stator_taken", pos.getX() + " " + pos.getY() + " " + pos.getZ());
+                    missing.add(pos);
+                    continue;
+                }
+                found++;
+            } else {
+                missing.add(pos);
+            }
+        }
+        report.check(found == ring.size(), "rotor.stators_ok", "rotor.stators_missing", "rotor.stators_missing.fix", found, ring.size());
+        for (BlockPos pos : missing)
+            report.info("rotor.stator_needed_at", pos.getX() + " " + pos.getY() + " " + pos.getZ());
+
+        float minSpeed = TFMGConfigs.common().machines.largeGeneratorMinSpeed.getF();
+        int speed = Math.abs((int) getSpeed());
+        if (speed != 0)
+            report.check(speed > minSpeed, "generator.speed_ok", "generator.too_slow", "generator.too_slow.fix", speed, (int) minSpeed);
+        report.info("rotor.faces");
     }
 
     public void manageRotation() {

@@ -1,0 +1,30 @@
+{
+  "name": "What changed in 1.3.0: help",
+  "icon": "create:goggles",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "1.3.0 puts a lot of effort into telling you what is going on. $(li)$(item)Goggle problem lines$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the blast furnace, coke oven, firebox, chemical vat and engines now show a red line naming whatever stops them, and the large engine and the blast furnace finally say why they are idle. All of them are listed in this chapter. $(li)$(item)JEI info pages$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the blast furnace, blast stove, air intake, coke oven, casting basin, arc furnace, chemical vat, distillation tower, firebox, surface scanner, large generator and coal coke dust have an information page in JEI explaining how to build and feed them. $(li)$(item)Factory Inspector$(): a new tool. Right-click a machine for a report of what works, what blocks it and what to do;"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "right-click the air for a progression checklist and your next step. $(li)$(item)The Factory Handbook$(): this book, with a chapter for each stage of the mod, from the first ores to engines and weapons.$(br2)If a machine still stops without a word, check it with the Factory Inspector, then report it as a bug."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:factory_inspector,tfmg:factory_guide",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

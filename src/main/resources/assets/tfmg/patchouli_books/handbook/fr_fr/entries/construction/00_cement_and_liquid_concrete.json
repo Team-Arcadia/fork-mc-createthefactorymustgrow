@@ -1,0 +1,34 @@
+{
+  "name": "Ciment et béton liquide",
+  "icon": "tfmg:limesand",
+  "category": "tfmg:construction",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le béton commence par le $(item)sable calcaire$() : broyez le $(item)calcaire$() de Create avec des roues de concassage. $(l)Au mélangeur Chaque étape se fait dans un mélangeur mécanique de Create au-dessus d'un bassin, sans chaleur :$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)boule d'argile + sable calcaire$() donne $(item)4 ciments$(), - $(item)sable + ciment + gravier$() donne $(item)16 mélanges à béton$() (avec du $(item)laitier$() à la place du sable : $(item)32$()), - $(item)mélange à béton + 250 mB d'eau$() donne $(item)1000 mB de béton liquide$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)En cuve chimique$()$(br)Avec un mélangeur industriel, n'importe quelle cuve chimique transforme $(item)sable + gravier + sable calcaire + 250 mB d'eau$() directement en béton liquide. JEI indique $(item)32000 mB$() par fournée, bien plus que la voie du mélangeur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le ciment est aussi un bloc à part entière qui tombe comme le sable. Le laitier, obtenu en broyant les blocs de laitier de votre chaîne de l'acier, double chaque fournée de mélange."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le béton liquide circule dans les tuyaux comme tout fluide et remplit les seaux. Versé dans le monde, il $(item)durcit en blocs de béton$() après un court délai aléatoire. Les pages suivantes montrent les trois façons de l'utiliser : blocs simples, armatures et tuyau à béton."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:limesand,create:limestone,tfmg:cement,tfmg:concrete_mixture,tfmg:slag,tfmg:liquid_concrete_bucket,create:mechanical_mixer,tfmg:industrial_mixer",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

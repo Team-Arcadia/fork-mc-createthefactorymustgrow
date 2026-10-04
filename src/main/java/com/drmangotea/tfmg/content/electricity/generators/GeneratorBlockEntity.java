@@ -1,12 +1,14 @@
 package com.drmangotea.tfmg.content.electricity.generators;
 
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.electricity.base.KineticElectricBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class GeneratorBlockEntity extends KineticElectricBlockEntity  {
+public class GeneratorBlockEntity extends KineticElectricBlockEntity implements IInspectable {
 
 
     public GeneratorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
@@ -55,6 +57,19 @@ public class GeneratorBlockEntity extends KineticElectricBlockEntity  {
             getOrCreateNetwork().remove(this);
             getOrCreateNetwork().add(this);
         }
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        float minSpeed = TFMGConfigs.common().machines.generatorMinSpeed.getF();
+        float modifier = TFMGConfigs.common().machines.generatorModifier.getF();
+        int speed = Math.abs((int) getSpeed());
+        // A stopped generator is already reported by the generic rotation check.
+        if (speed == 0)
+            return;
+        report.check(speed > minSpeed, "generator.speed_ok", "generator.too_slow", "generator.too_slow.fix", speed, (int) minSpeed);
+        if (modifier > 0)
+            report.info("generator.max_at", getMaxVoltage(), (int) Math.ceil(minSpeed + getMaxVoltage() / modifier));
     }
 
     public int generation() {

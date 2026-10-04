@@ -3,6 +3,8 @@ package com.drmangotea.tfmg.content.machinery.misc.winding_machine;
 import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.recipes.WindingRecipe;
 import com.drmangotea.tfmg.registry.*;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
@@ -42,7 +44,7 @@ import java.util.Optional;
 import static com.drmangotea.tfmg.content.machinery.misc.winding_machine.WindingMachineBlock.POWERED;
 import static com.simibubi.create.content.kinetics.base.HorizontalKineticBlock.HORIZONTAL_FACING;
 
-public class WindingMachineBlockEntity extends KineticBlockEntity implements IHaveGoggleInformation {
+public class WindingMachineBlockEntity extends KineticBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     // Per-tick fluid and progress changes sync at most every few ticks.
     private final ThrottledSync throttledSync = new ThrottledSync();
@@ -205,6 +207,100 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
             }
         }
         return duration;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        ItemStack slotItem = inventory.getItem(0);
+        int spoolTurns = spool.getOrDefault(TFMGDataComponents.SPOOL_AMOUNT, 0);
+        boolean emptySpool = spool.is(TFMGItems.EMPTY_SPOOL.get());
+        int target = turnPercentage.getValue() * 10;
+
+        if (spool.isEmpty())
+            report.info("winding_machine.no_spool_mounted");
+        else if (emptySpool)
+            report.info("winding_machine.spool_empty", spool.getHoverName());
+        else
+            report.info("winding_machine.spool", spool.getHoverName(), spoolTurns);
+        if (wireTurnsPending > 0)
+            report.info("winding_machine.wire_credit", wireTurnsPending);
+
+        // Winding wire onto a spool
+        ItemStack wireSpool = spoolForWire(slotItem);
+        if (!wireSpool.isEmpty()) {
+            if (spool.isEmpty()) {
+                report.problem("winding_machine.wire_no_spool", slotItem.getHoverName());
+                report.fix("winding_machine.wire_no_spool.fix", wireSpool.getHoverName());
+            } else if (!emptySpool && !spool.is(wireSpool.getItem())) {
+                report.problem("winding_machine.wire_wrong_spool", slotItem.getHoverName(), spool.getHoverName());
+                report.fix("winding_machine.wire_no_spool.fix", wireSpool.getHoverName());
+            } else if (!emptySpool && spoolTurns >= 1000) {
+                report.problem("winding_machine.spool_full");
+                report.fix("winding_machine.spool_full.fix");
+            } else {
+                report.ok("winding_machine.winding_wire", slotItem.getHoverName(), emptySpool ? 0 : spoolTurns, TURNS_PER_WIRE);
+            }
+            return;
+        }
+
+        if (slotItem.isEmpty()) {
+            if (wireTurnsPending > 0 && !spool.isEmpty() && !emptySpool && spoolTurns < 1000) {
+                report.ok("winding_machine.winding_credit", spoolTurns);
+                return;
+            }
+            report.problem("winding_machine.no_workpiece");
+            report.fix("winding_machine.no_workpiece.fix");
+            return;
+        }
+
+        boolean isResistor = slotItem.is(TFMGBlocks.RESISTOR.asItem());
+        boolean isCoil = slotItem.is(TFMGItems.ELECTROMAGNETIC_COIL.get()) || slotItem.is(TFMGBlocks.LARGE_COIL.get().asItem());
+        if (isResistor || isCoil) {
+            ItemStack needed = isResistor ? TFMGItems.CONSTANTAN_SPOOL.asStack() : TFMGItems.COPPER_SPOOL.asStack();
+            int done = isResistor ? slotItem.getOrDefault(TFMGDataComponents.RESISTANCE, 0) : slotItem.getOrDefault(TFMGDataComponents.COIL_TURNS, 0);
+            if (done >= target) {
+                report.ok("winding_machine.target_reached", slotItem.getHoverName(), done, target);
+                report.fix("winding_machine.take_out.fix");
+            } else if (!spool.is(needed.getItem())) {
+                report.problem("winding_machine.needs_spool", slotItem.getHoverName(), needed.getHoverName());
+                report.fix("winding_machine.mount_spool.fix", needed.getHoverName());
+            } else if (spoolTurns <= 0) {
+                report.problem("winding_machine.spool_out");
+                report.fix("winding_machine.spool_out.fix");
+            } else {
+                report.ok("winding_machine.adjusting", slotItem.getHoverName(), done, target);
+            }
+            report.info("winding_machine.target", target);
+            return;
+        }
+
+        if (recipe == null || recipe.getRollableResults().isEmpty()) {
+            report.problem("winding_machine.no_recipe", slotItem.getHoverName());
+            report.fix("winding_machine.no_recipe.fix");
+            return;
+        }
+        Component result = recipe.getRollableResults().get(0).getStack().getHoverName();
+        int required = currentRequiredDuration();
+        ItemStack[] spools = recipe.getSpool().getItems();
+        Component spoolName = spools.length > 0 ? spools[0].getHoverName() : Component.literal("?");
+        if (amountWinded >= required) {
+            report.ok("winding_machine.recipe_done", result);
+        } else if (spool.isEmpty() || emptySpool) {
+            report.problem("winding_machine.needs_spool", slotItem.getHoverName(), spoolName);
+            report.fix("winding_machine.mount_spool.fix", spoolName);
+        } else if (!recipe.getSpool().isEmpty() && !recipe.getSpool().test(spool)) {
+            report.problem("winding_machine.wrong_spool", spool.getHoverName(), spoolName);
+            report.fix("winding_machine.mount_spool.fix", spoolName);
+        } else if (spoolTurns <= 0) {
+            report.problem("winding_machine.spool_out");
+            report.fix("winding_machine.spool_out.fix");
+        } else {
+            report.ok("winding_machine.recipe", slotItem.getHoverName(), result, amountWinded, required);
+            if (spoolTurns < required - amountWinded)
+                report.info("winding_machine.spool_short", spoolTurns, required - amountWinded);
+        }
     }
 
     public void destroy() {

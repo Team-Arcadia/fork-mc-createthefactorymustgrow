@@ -1,0 +1,30 @@
+{
+  "name": "Getting rid of CO2",
+  "icon": "tfmg:exhaust",
+  "category": "tfmg:hot_air",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "CO2 has no use in this chapter: vent it. Both blocks below only accept $(item)CO2$(), from any face."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Exhaust$()$(br)A small vent that mounts on any face of a block. It holds $(item)1000 mB$() and vents $(item)10 mB per tick$(), rising to $(item)100 mB per tick$() once it holds more than 700 mB. One exhaust can keep up with a coke oven or a 2x2x5 stove."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Smokestack$()$(br)Brick, concrete and metal smokestacks stack into a chimney; build each chimney from a single kind. Each block holds $(item)8000 mB$() and pushes its gas into the block above; only the $(item)top block$() vents, $(item)10 mB per tick$(), rising to $(item)50 mB per tick$() when it holds more than 7000 mB. Pipe the CO2 into the bottom block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A smokestack vents less than an exhaust but stores much more, which smooths out bursts. For raw throughput, put several exhausts on the CO2 line.$(br2)Pump CO2 from the $(item)top face$() of a coke oven and from a $(item)side of the bottom layer$() of a blast stove."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:exhaust,tfmg:brick_smokestack,tfmg:concrete_smokestack,tfmg:metal_smokestack,tfmg:carbon_dioxide_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

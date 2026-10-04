@@ -1,0 +1,23 @@
+{
+  "order": 13000,
+  "name": {
+    "en_us": "Steel from electricity",
+    "fr_fr": "De l'acier par l'électricité"
+  },
+  "layers": [
+    [
+      "VVV",
+      "VVV",
+      "VVV"
+    ],
+    [
+      "E E",
+      "   ",
+      " E "
+    ]
+  ],
+  "key": {
+    "V": "tfmg:fireproof_chemical_vat",
+    "E": "tfmg:electrode_holder"
+  }
+}

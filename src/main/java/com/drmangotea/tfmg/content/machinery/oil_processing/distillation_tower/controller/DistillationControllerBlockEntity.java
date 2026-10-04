@@ -4,6 +4,8 @@ import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.decoration.tanks.steel.SteelTankBlock;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.decoration.tanks.steel.SteelTankBlockEntity;
 import com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.output.DistillationOutputBlockEntity;
 import com.drmangotea.tfmg.mixin.accessor.FluidTankBlockEntityAccessor;
@@ -42,7 +44,7 @@ import java.util.List;
 
 import static com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.controller.DistillationControllerBlock.getFacing;
 
-public class DistillationControllerBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class DistillationControllerBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     // Per-tick fluid and progress changes sync at most every few ticks.
     private final ThrottledSync throttledSync = new ThrottledSync();
@@ -276,6 +278,118 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
 
     protected Object getRecipeCacheKey() {
         return DistillationRecipesKey;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        BlockPos behind = getBlockPos().relative(getFacing(getBlockState()).getOpposite());
+        if (!level.isLoaded(behind) || !(level.getBlockEntity(behind) instanceof SteelTankBlockEntity be)) {
+            report.problem("distillation.no_tank");
+            report.fix("distillation.no_tank.fix", behind.getX(), behind.getY(), behind.getZ());
+            return;
+        }
+        if (!be.isController() && !level.isLoaded(be.getController())) {
+            report.info("multiblock.controller_unloaded");
+            return;
+        }
+        SteelTankBlockEntity heatSource = be.getControllerBE() != null ? be.getControllerBE() : be;
+        int width = ((FluidTankBlockEntityAccessor) heatSource).tfmg$getWidth();
+        int height = heatSource.getHeight();
+        report.ok("distillation.tank", width, width, height);
+
+        // Heat under the tank
+        if (heatSource.activeHeat == 0) {
+            report.problem("distillation.no_heat");
+            report.fix("distillation.no_heat.fix");
+        } else {
+            report.ok("distillation.heat", heatSource.activeHeat, String.format("%.1f", heatSource.activeHeat / 2f));
+        }
+
+        // Output stages
+        ArrayList<DistillationOutputBlockEntity> outputs = getOutputs();
+        int outputCount = outputs.size();
+        if (outputCount == 0) {
+            report.problem("distillation.no_outputs");
+            report.fix("distillation.no_outputs.fix");
+        } else {
+            report.ok("distillation.outputs", outputCount);
+        }
+        if (outputCount > 0 && height < outputCount * 2) {
+            report.problem("distillation.too_low", height, outputCount, outputCount * 2);
+            report.fix("distillation.too_low.fix", outputCount * 2);
+        }
+        if (outputCount > 3 && width < 2) {
+            report.problem("distillation.too_thin", outputCount);
+            report.fix("distillation.too_thin.fix");
+        }
+
+        // Input and recipe
+        FluidStack input = tank.getFluid();
+        if (input.isEmpty()) {
+            FluidStack inTank = heatSource.getTankInventory().getFluid();
+            if (inTank.isEmpty()) {
+                report.problem("distillation.no_input");
+                report.fix("distillation.no_input.fix");
+            } else {
+                report.info("distillation.pulling", inTank.getHoverName());
+            }
+            return;
+        }
+        DistillationRecipe match = null;
+        List<Integer> counts = new ArrayList<>();
+        for (RecipeHolder<? extends Recipe<?>> holder : RecipeFinder.get(getRecipeCacheKey(), level, RecipeConditions.isOfType(TFMGRecipeTypes.DISTILLATION.getType()))) {
+            DistillationRecipe candidate = (DistillationRecipe) holder.value();
+            if (candidate.getFluidIngredients().isEmpty())
+                continue;
+            boolean sameFluid = false;
+            for (FluidStack accepted : candidate.getFluidIngredients().getFirst().getFluids())
+                if (input.getFluid().isSame(accepted.getFluid()))
+                    sameFluid = true;
+            if (!sameFluid)
+                continue;
+            counts.add(candidate.getFluidResults().size());
+            if (candidate.getFluidResults().size() == outputCount && match == null)
+                match = candidate;
+        }
+        if (counts.isEmpty()) {
+            report.problem("distillation.no_recipe", input.getHoverName());
+            report.fix("distillation.no_recipe.fix");
+            return;
+        }
+        if (match == null) {
+            String options = counts.stream().distinct().sorted().map(String::valueOf).collect(java.util.stream.Collectors.joining(", "));
+            report.problem("distillation.wrong_output_count", input.getHoverName(), outputCount, options);
+            report.fix("distillation.wrong_output_count.fix", options);
+            return;
+        }
+        report.ok("distillation.recipe", input.getHoverName(), outputCount);
+        float speedModifier = heatSource.activeHeat / 2f;
+        int perCycle = (int) (match.getInputFluid().amount() * speedModifier);
+        if (speedModifier > 0 && perCycle > tank.getFluidAmount()) {
+            report.problem("distillation.low_input", tank.getFluidAmount(), perCycle, input.getHoverName());
+            report.fix("distillation.low_input.fix", input.getHoverName());
+        }
+
+        // Each stage receives one fraction, lightest on top.
+        for (int i = 0; i < outputs.size() && i < match.getFluidResults().size(); i++) {
+            DistillationOutputBlockEntity output = outputs.get(i);
+            FluidStack fraction = match.getFluidResults().get(i);
+            if (fraction.isEmpty())
+                continue;
+            int fillAmount = Math.max(1, (int) (fraction.getAmount() * speedModifier));
+            boolean fits = output.tank.fill(new FluidStack(fraction.getFluidHolder(), fillAmount), IFluidHandler.FluidAction.SIMULATE) >= fillAmount;
+            if (fits)
+                continue;
+            boolean keep = output.mode.get() == DistillationOutputBlockEntity.DistillationOutputMode.KEEP_FLUID;
+            if (keep) {
+                report.problem("distillation.stage_full", i + 1, fraction.getHoverName());
+                report.fix("distillation.stage_full.fix", i + 1, fraction.getHoverName());
+            } else {
+                report.info("distillation.stage_voiding", i + 1, fraction.getHoverName());
+            }
+        }
     }
 
     //@Nonnull

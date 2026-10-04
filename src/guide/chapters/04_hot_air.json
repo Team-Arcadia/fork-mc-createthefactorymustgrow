@@ -1,0 +1,300 @@
+{
+  "order": 40,
+  "icon": "tfmg:blast_stove",
+  "title": {
+    "en_us": "Hot Air",
+    "fr_fr": "L'air chaud"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "The hot air line",
+        "fr_fr": "La ligne d'air chaud"
+      },
+      "text": {
+        "en_us": [
+          "The blast furnace only works while it receives **hot air**. Making it takes three machines:",
+          "",
+          "- An **air intake** turns rotation into **air**.",
+          "- A **blast stove** burns a fuel to heat that air into **hot air**. Its fuel is **creosote** (from the coke oven) or **furnace gas** (from the blast furnace itself).",
+          "- An **exhaust** or a **smokestack** gets rid of the **CO2** the stove gives off.",
+          "",
+          "## The recipe",
+          "Each share of the stove recipe takes **25 mB air** and **5 mB fuel**, and gives **25 mB hot air** and **25 mB CO2**.",
+          "",
+          "Hot air then goes through pipes into a **blast furnace hatch** set in the furnace wall. Build this line before the furnace: start the stove on creosote, and once the furnace runs you can feed the stove with the furnace gas it collects."
+        ],
+        "fr_fr": [
+          "Le haut fourneau ne fonctionne que s'il reçoit de **l'air chaud**. Pour en produire, il faut trois machines :",
+          "",
+          "- Une **prise d'air** transforme la rotation en **air**.",
+          "- Un **fourneau à air chaud** brûle un combustible pour chauffer cet air en **air chaud**. Son combustible est la **créosote** (du four à coke) ou le **gaz de haut fourneau** (du haut fourneau lui-même).",
+          "- Un **échappement** ou une **cheminée** évacue le **CO2** rejeté par le fourneau.",
+          "",
+          "## La recette",
+          "Chaque part de la recette prend **25 mB d'air** et **5 mB de combustible**, et donne **25 mB d'air chaud** et **25 mB de CO2**.",
+          "",
+          "L'air chaud passe ensuite par des tuyaux jusqu'à une **trappe de haut fourneau** placée dans la paroi. Construisez cette ligne avant le haut fourneau : démarrez le fourneau à air chaud à la créosote, puis, une fois le haut fourneau lancé, alimentez-le avec le gaz qu'il récupère."
+        ]
+      },
+      "items": ["tfmg:air_intake", "tfmg:blast_stove", "tfmg:exhaust", "tfmg:air_bucket", "tfmg:hot_air_bucket", "tfmg:creosote_bucket", "tfmg:furnace_gas_bucket", "tfmg:carbon_dioxide_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "The air intake",
+        "fr_fr": "La prise d'air"
+      },
+      "text": {
+        "en_us": [
+          "The air intake is a kinetic block with a fan on its front and a **shaft socket on its back**. Turn that shaft and it fills its tank with air. Pipe the air out of any face; the tank holds **8000 mB** and only takes air.",
+          "",
+          "## Sizes",
+          "- Alone, as a **1x1**.",
+          "- As a **2x2** or **3x3** square: all blocks side by side in one flat square, **all facing the same way**. The square turns into one big fan.",
+          "",
+          "In a square, only **one block needs to turn**: the fastest block sets the speed of the whole fan. All of its air goes into one shared tank.",
+          "",
+          "Using a wrench on the **back face** removes or restores the shaft socket, so you can choose which blocks of a square take the shaft.",
+          "",
+          "The view shows a **2x2** intake facing south, ready to take a shaft from the north."
+        ],
+        "fr_fr": [
+          "La prise d'air est un bloc cinétique avec un ventilateur à l'avant et une **prise d'arbre à l'arrière**. Faites tourner cet arbre et elle remplit son réservoir d'air. Pompez l'air par n'importe quelle face ; le réservoir contient **8000 mB** et n'accepte que de l'air.",
+          "",
+          "## Tailles",
+          "- Seule, en **1x1**.",
+          "- En carré **2x2** ou **3x3** : tous les blocs côte à côte dans un même carré plat, **tous tournés dans le même sens**. Le carré devient un seul grand ventilateur.",
+          "",
+          "Dans un carré, **un seul bloc a besoin de tourner** : le bloc le plus rapide donne la vitesse de tout le ventilateur. Tout son air va dans un seul réservoir commun.",
+          "",
+          "Une clé sur la **face arrière** retire ou remet la prise d'arbre, pour choisir quels blocs du carré reçoivent l'arbre.",
+          "",
+          "La vue montre une prise **2x2** tournée vers le sud, prête à recevoir un arbre par le nord."
+        ]
+      },
+      "items": ["tfmg:air_intake", "create:shaft", "create:wrench", "tfmg:air_bucket"],
+      "schematic": {
+        "layers": [
+          ["AA"],
+          ["AA"]
+        ],
+        "key": {
+          "A": "tfmg:air_intake[facing=south]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "How much air",
+        "fr_fr": "Combien d'air"
+      },
+      "text": {
+        "en_us": [
+          "An intake makes, every tick:",
+          "",
+          "**RPM x size x size / 40** mB of air, rounded down.",
+          "",
+          "## At 256 RPM",
+          "- **1x1**: 6 mB per tick",
+          "- **2x2**: 25 mB per tick",
+          "- **3x3**: 57 mB per tick",
+          "",
+          "## At 128 RPM",
+          "- **1x1**: 3 mB, **2x2**: 12 mB, **3x3**: 28 mB per tick",
+          "",
+          "Because of the rounding, a lone intake makes **nothing below 40 RPM**. Size counts twice, so a big square is far better than a pile of single intakes at low speed.",
+          "",
+          "A **2x2x5** blast stove (next pages) uses close to **28 mB of air per tick**. A 2x2 intake at full speed falls just short of that, so plan a **3x3** intake, or two 2x2 intakes on the same pipe, for each such stove.",
+          "",
+          "When nothing pulls the air, the tank simply stays full: an idle intake does no harm."
+        ],
+        "fr_fr": [
+          "Une prise d'air produit, à chaque tick :",
+          "",
+          "**RPM x taille x taille / 40** mB d'air, arrondi vers le bas.",
+          "",
+          "## À 256 RPM",
+          "- **1x1** : 6 mB par tick",
+          "- **2x2** : 25 mB par tick",
+          "- **3x3** : 57 mB par tick",
+          "",
+          "## À 128 RPM",
+          "- **1x1** : 3 mB, **2x2** : 12 mB, **3x3** : 28 mB par tick",
+          "",
+          "À cause de l'arrondi, une prise seule ne produit **rien sous 40 RPM**. La taille compte deux fois : un grand carré vaut bien mieux qu'un tas de prises seules à faible vitesse.",
+          "",
+          "Un fourneau à air chaud **2x2x5** (pages suivantes) consomme près de **28 mB d'air par tick**. Une prise 2x2 à pleine vitesse est un peu juste : prévoyez une prise **3x3**, ou deux prises 2x2 sur le même tuyau, pour chaque fourneau de ce type.",
+          "",
+          "Quand rien ne pompe l'air, le réservoir reste simplement plein : une prise à l'arrêt ne gêne rien."
+        ]
+      },
+      "items": ["tfmg:air_intake", "create:mechanical_pump", "create:fluid_pipe"]
+    },
+    {
+      "title": {
+        "en_us": "The blast stove",
+        "fr_fr": "Le fourneau à air chaud"
+      },
+      "text": {
+        "en_us": [
+          "Blast stove blocks join like Create fluid tanks: place them next to and on top of each other and they merge into one stove.",
+          "",
+          "- **Width**: 1x1 or **2x2** at most.",
+          "- **Height**: as tall as Create's fluid tank height limit (server config, 32 by default).",
+          "",
+          "Whatever its size, the stove has four tanks of **8000 mB**: air in, fuel in, hot air out, CO2 out. Goggles show all four.",
+          "",
+          "## Size is speed",
+          "The stove runs one cycle, then waits before the next. Each cycle converts **one share per block**, and the wait gets shorter as the stove grows. Output therefore grows with the **square** of the block count: double the blocks, about four times the hot air.",
+          "",
+          "A stove is only a few blocks from useless to plenty. The view shows the size that matches one blast furnace making steel: **2x2 wide, 5 high**."
+        ],
+        "fr_fr": [
+          "Les blocs de fourneau à air chaud s'assemblent comme les réservoirs à fluide de Create : posez-les côte à côte et les uns sur les autres et ils fusionnent en un seul fourneau.",
+          "",
+          "- **Largeur** : 1x1 ou **2x2** au maximum.",
+          "- **Hauteur** : jusqu'à la limite de hauteur des réservoirs de Create (réglage serveur, 32 par défaut).",
+          "",
+          "Quelle que soit sa taille, le fourneau a quatre réservoirs de **8000 mB** : air en entrée, combustible en entrée, air chaud en sortie, CO2 en sortie. Les lunettes affichent les quatre.",
+          "",
+          "## La taille, c'est la vitesse",
+          "Le fourneau fait un cycle, puis attend avant le suivant. Chaque cycle convertit **une part par bloc**, et l'attente raccourcit quand le fourneau grandit. La production suit donc le **carré** du nombre de blocs : deux fois plus de blocs, environ quatre fois plus d'air chaud.",
+          "",
+          "Quelques blocs séparent un fourneau inutile d'un fourneau suffisant. La vue montre la taille qui suffit à un haut fourneau qui produit de l'acier : **2x2 de large, 5 de haut**."
+        ]
+      },
+      "items": ["tfmg:blast_stove", "create:goggles"],
+      "schematic": {
+        "layers": [
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"]
+        ],
+        "key": {
+          "S": "tfmg:blast_stove"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Which face does what",
+        "fr_fr": "Quelle face fait quoi"
+      },
+      "text": {
+        "en_us": [
+          "The stove has no front; what matters is the face your pipe touches.",
+          "",
+          "## Sides of the bottom layer",
+          "- Pipe **air in**.",
+          "- Pump **CO2 out**.",
+          "",
+          "## Top and bottom faces",
+          "- Pipe **fuel in** (creosote or furnace gas).",
+          "- Pump **hot air out**.",
+          "",
+          "The **sides of the upper layers** have no connection at all.",
+          "",
+          "The input tanks take **any fluid** pushed into them. Air pushed into the top goes into the fuel tank, fuel pushed into a side goes into the air tank, and no recipe matches any more: the stove stops. The input tanks cannot be pumped back out, so check every pipe before you open the line. Goggles show what each tank holds.",
+          "",
+          "A simple layout: air and CO2 pipes on two sides of the bottom, a fuel pipe under the stove, and the hot air pump on top, leading to the furnace hatch."
+        ],
+        "fr_fr": [
+          "Le fourneau n'a pas d'avant : c'est la face que touche le tuyau qui compte.",
+          "",
+          "## Côtés de la couche du bas",
+          "- Envoyez **l'air** dedans.",
+          "- Pompez le **CO2** dehors.",
+          "",
+          "## Faces du dessus et du dessous",
+          "- Envoyez le **combustible** dedans (créosote ou gaz de haut fourneau).",
+          "- Pompez **l'air chaud** dehors.",
+          "",
+          "Les **côtés des couches supérieures** n'ont aucune connexion.",
+          "",
+          "Les réservoirs d'entrée acceptent **n'importe quel fluide**. De l'air envoyé par le dessus va dans le réservoir de combustible, du combustible envoyé par un côté va dans le réservoir d'air, et plus aucune recette ne correspond : le fourneau s'arrête. Les réservoirs d'entrée ne se vident pas à la pompe : vérifiez chaque tuyau avant d'ouvrir la ligne. Les lunettes montrent le contenu de chaque réservoir.",
+          "",
+          "Une disposition simple : tuyaux d'air et de CO2 sur deux côtés du bas, tuyau de combustible sous le fourneau, et pompe d'air chaud au sommet, vers la trappe du haut fourneau."
+        ]
+      },
+      "items": ["tfmg:blast_stove", "create:mechanical_pump", "create:fluid_pipe", "tfmg:air_bucket", "tfmg:creosote_bucket", "tfmg:furnace_gas_bucket", "tfmg:hot_air_bucket", "tfmg:carbon_dioxide_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Sizing the stove",
+        "fr_fr": "Dimensionner le fourneau"
+      },
+      "text": {
+        "en_us": [
+          "Approximate hot air output with all inputs supplied:",
+          "",
+          "- **2x2x1** (4 blocks): about 1 mB per tick",
+          "- **2x2x2** (8 blocks): about 5 mB per tick",
+          "- **2x2x3** (12 blocks): about 10 mB per tick",
+          "- **2x2x4** (16 blocks): about 18 mB per tick",
+          "- **2x2x5** (20 blocks): about **28 mB per tick**",
+          "- **2x2x6** (24 blocks): about 40 mB per tick",
+          "",
+          "A blast furnace making steel burns **20 mB of hot air per tick** while it works. A **2x2x5** stove covers one furnace with a margin; go higher for two.",
+          "",
+          "At that size the stove also needs about **28 mB of air**, **6 mB of fuel** and gives **28 mB of CO2** per tick.",
+          "",
+          "The stove pauses when its **hot air** or **CO2** tank is full, and when an input tank is empty. A full hot air tank is fine: it means the furnace has all it needs. A full CO2 tank means your exhaust cannot keep up."
+        ],
+        "fr_fr": [
+          "Production approximative d'air chaud, toutes les entrées étant fournies :",
+          "",
+          "- **2x2x1** (4 blocs) : environ 1 mB par tick",
+          "- **2x2x2** (8 blocs) : environ 5 mB par tick",
+          "- **2x2x3** (12 blocs) : environ 10 mB par tick",
+          "- **2x2x4** (16 blocs) : environ 18 mB par tick",
+          "- **2x2x5** (20 blocs) : environ **28 mB par tick**",
+          "- **2x2x6** (24 blocs) : environ 40 mB par tick",
+          "",
+          "Un haut fourneau qui produit de l'acier brûle **20 mB d'air chaud par tick** pendant qu'il travaille. Un fourneau **2x2x5** suffit à un haut fourneau avec de la marge ; montez plus haut pour deux.",
+          "",
+          "À cette taille, le fourneau demande aussi environ **28 mB d'air**, **6 mB de combustible** et rejette **28 mB de CO2** par tick.",
+          "",
+          "Le fourneau se met en pause quand son réservoir **d'air chaud** ou de **CO2** est plein, et quand un réservoir d'entrée est vide. Un réservoir d'air chaud plein n'est pas grave : le haut fourneau a tout ce qu'il lui faut. Un réservoir de CO2 plein signifie que votre évacuation ne suit pas."
+        ]
+      },
+      "items": ["tfmg:blast_stove", "tfmg:hot_air_bucket", "tfmg:blast_furnace_hatch"]
+    },
+    {
+      "title": {
+        "en_us": "Getting rid of CO2",
+        "fr_fr": "Se débarrasser du CO2"
+      },
+      "text": {
+        "en_us": [
+          "CO2 has no use in this chapter: vent it. Both blocks below only accept **CO2**, from any face.",
+          "",
+          "## Exhaust",
+          "A small vent that mounts on any face of a block. It holds **1000 mB** and vents **10 mB per tick**, rising to **100 mB per tick** once it holds more than 700 mB. One exhaust can keep up with a coke oven or a 2x2x5 stove.",
+          "",
+          "## Smokestack",
+          "Brick, concrete and metal smokestacks stack into a chimney; build each chimney from a single kind. Each block holds **8000 mB** and pushes its gas into the block above; only the **top block** vents, **10 mB per tick**, rising to **50 mB per tick** when it holds more than 7000 mB. Pipe the CO2 into the bottom block.",
+          "",
+          "A smokestack vents less than an exhaust but stores much more, which smooths out bursts. For raw throughput, put several exhausts on the CO2 line.",
+          "",
+          "Pump CO2 from the **top face** of a coke oven and from a **side of the bottom layer** of a blast stove."
+        ],
+        "fr_fr": [
+          "Le CO2 ne sert à rien dans ce chapitre : évacuez-le. Les deux blocs ci-dessous n'acceptent que du **CO2**, par n'importe quelle face.",
+          "",
+          "## Échappement",
+          "Une petite bouche qui se fixe sur n'importe quelle face d'un bloc. Il contient **1000 mB** et rejette **10 mB par tick**, puis **100 mB par tick** dès qu'il contient plus de 700 mB. Un échappement suffit pour un four à coke ou un fourneau à air chaud 2x2x5.",
+          "",
+          "## Cheminée",
+          "Les cheminées en briques, en béton et métalliques s'empilent en colonne ; construisez chaque colonne d'un seul type. Chaque bloc contient **8000 mB** et pousse son gaz dans le bloc du dessus ; seul le **bloc du sommet** rejette, **10 mB par tick**, puis **50 mB par tick** quand il contient plus de 7000 mB. Envoyez le CO2 dans le bloc du bas.",
+          "",
+          "Une cheminée rejette moins qu'un échappement mais stocke beaucoup plus, ce qui absorbe les à-coups. Pour le débit pur, mettez plusieurs échappements sur la ligne de CO2.",
+          "",
+          "Pompez le CO2 par la **face du dessus** d'un four à coke et par un **côté de la couche du bas** d'un fourneau à air chaud."
+        ]
+      },
+      "items": ["tfmg:exhaust", "tfmg:brick_smokestack", "tfmg:concrete_smokestack", "tfmg:metal_smokestack", "tfmg:carbon_dioxide_bucket"]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Tableau des carburants",
+  "icon": "tfmg:gasoline_bucket",
+  "category": "tfmg:engines",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Chaque carburant multiplie la vitesse, le rendement et le couple du moteur (vitesse / rendement / couple) : $(li)$(item)Essence$() : 1 / 1 / 1 - $(item)Diesel$() : 0,8 / 0,8 / 1,4 - $(item)Kérosène$() : 0,7 / 1 / 1,4 - $(item)Naphta$() : 1 / 0,7 / 1,3 - $(item)GPL$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "1,2 / 0,7 / 0,7 - $(item)Butane$() : 1,3 / 0,6 / 0,6 - $(item)Propane$() : 1,1 / 0,9 / 0,8 - $(item)Hydrogène$() : 1,4 / 0,5 / 0,6 - $(item)Créosote$() : 0,7 / 0,4 / 0,5 - $(item)Gaz de four$() : 0,5 / 0,3 / 0,3"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le diesel et le kérosène sont les carburants de force, les gaz tournent vite mais sans couple, et la créosote et le gaz de four sont des sous-produits bon marché pour un premier moteur. Ces valeurs se multiplient avec celles du type de moteur et des améliorations. Les modpacks peuvent les modifier par datapack."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:gasoline_bucket,tfmg:diesel_bucket,tfmg:kerosene_bucket,tfmg:naphtha_bucket,tfmg:lpg_bucket,tfmg:hydrogen_bucket,tfmg:creosote_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

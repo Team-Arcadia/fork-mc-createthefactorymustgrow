@@ -1,0 +1,30 @@
+{
+  "name": "À quoi sert chaque ressource",
+  "icon": "tfmg:fireproof_brick",
+  "category": "tfmg:resources",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un aperçu rapide de l'usage de vos premières trouvailles : $(li)$(item)Argile réfractaire$() : briques réfractaires, pour toutes les machines chaudes. $(li)$(item)Sable calcaire$() : ciment, et $(item)fondant$() du haut fourneau qui produit l'acier. $(li)$(item)Plomb$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "plaques de plomb (presse mécanique), cuve chimique en fonte, outils en plomb. $(li)$(item)Nickel$() : plaques de nickel, et $(item)constantan$() (cuivre + nickel dans un malaxeur chauffé). $(li)$(item)Lithium$() : accumulateurs, charges de lithium et torches au lithium. $(li)$(item)Poudre de bauxite$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "aluminium, par électrolyse dans une cuve, ou 4 poudres + 1 poussière de coke dans un malaxeur $(item)surchauffé$() pour les premiers lingots. $(li)$(item)Soufre et nitrate$() : 3 nitrates + 2 charbons de bois + 1 soufre au malaxeur donnent 3 poudres à canon ; dans une cuve, ils font de l'acide sulfurique. $(li)$(item)Lignite$() : concassé en charbon. $(li)$(item)Pétrole brut$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "tout le chapitre sur le pétrole : carburants, plastique, asphalte.$(br2)Chapitre suivant : transformer tout cela en premiers matériaux d'usine."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_brick,tfmg:limesand,tfmg:lead_sheet,tfmg:constantan_ingot,tfmg:lithium_ingot,tfmg:aluminum_ingot,minecraft:gunpowder,tfmg:crude_oil_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Recettes : électrodes",
+  "icon": "tfmg:bauxite_powder",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Aluminium (électrolyse) 4 poudres de bauxite donnent 1 lingot d'aluminium, plus 4 pépites d'aluminium (50 % de chance), 2 pépites de plus (25 % de chance) et 500 mB de dioxyde de carbone, en 5 secondes.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)2 porte-électrodes avec des électrodes en $(item)cuivre ou zinc$(), $(item)chaleur de 2$(). $(li)Cuve en $(item)acier$() ou $(item)réfractaire$(), dès la taille 1. Pas en fonte.$(br2)$(l)Hydrogène$()$(br)1000 mB d'eau donnent 500 mB d'hydrogène en 5 secondes.$(li)2 porte-électrodes avec des électrodes en $(item)cuivre ou zinc$(), sans chaleur.$(li)Toutes les sortes de cuves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Acier au four à arc 1 minerai de fer concassé, 1 sable calcaire (fondant) et 1 poussière de coke de charbon donnent 144 mB d'acier en fusion et 288 mB de laitier en fusion en 1 seconde.$() $(li)3 porte-électrodes avec des électrodes en $(item)graphite$(), sans chaleur. $(li)Cuve $(item)réfractaire$() seulement, d'au moins $(item)9 blocs$(). $(li)La poussière de coke est un catalyseur :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "90 % du temps elle retourne en entrée.$(br2)Les chapitres Aluminium et Four à arc détaillent ces deux montages."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite_powder,tfmg:aluminum_ingot,tfmg:copper_electrode,tfmg:zinc_electrode,tfmg:hydrogen_bucket,tfmg:graphite_electrode,tfmg:molten_steel_bucket,tfmg:molten_slag_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

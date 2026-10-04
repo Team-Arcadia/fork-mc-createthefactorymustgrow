@@ -1,0 +1,30 @@
+{
+  "name": "Grand transformateur",
+  "icon": "tfmg:large_coil",
+  "category": "tfmg:network_control",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le grand transformateur encaisse la production d'un grand générateur : jusqu'à $(item)100 000 V$() et $(item)500 A$(). $(l)Le construire - Bobinez deux $(item)grandes bobines$() sur l'enrouleuse, à partir de blocs d'alliage magnétique laminé et d'une bobine de cuivre.$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le cadran de la machine règle le nombre de tours. $(li)Posez les deux bobines côte à côte. $(li)Faites un clic droit sur l'une d'elles avec un $(item)bloc d'alliage magnétique laminé$(). La bobine cliquée devient la moitié $(item)entrée$(), l'autre la moitié $(item)sortie$().$(br2)Tension de sortie = $(item)tension d'entrée x tours de sortie / tours d'entrée$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Connexions$()$(br)Chaque moitié se connecte $(item)uniquement par sa face du dessus$() : la ligne d'arrivée sur la moitié entrée, la ligne de départ sur la moitié sortie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Le refroidissement augmente sa puissance$()$(li)Tel quel, il laisse passer jusqu'à $(item)30 kW$().$(li)Clic droit avec un $(item)bloc d'acier$() : $(item)50 kW$().$(li)Puis clic droit avec un $(item)seau d'huile de lubrification$() : $(item)100 kW$().$(br2)Le multimètre indique l'étape atteinte."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_coil,tfmg:laminated_magnetic_alloy_block,tfmg:steel_block,tfmg:lubrication_oil_bucket,tfmg:winding_machine,tfmg:copper_spool",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

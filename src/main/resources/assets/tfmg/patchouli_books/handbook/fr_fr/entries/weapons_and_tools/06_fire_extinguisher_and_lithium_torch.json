@@ -1,0 +1,30 @@
+{
+  "name": "Extincteur et torche au lithium",
+  "icon": "tfmg:fire_extinguisher",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Extincteur$()$(br)Maintenez le clic droit pour projeter des $(item)flocons de neige carbonique$(), un par tick. Un extincteur plein contient $(item)500 flocons$(), environ 25 secondes de jet."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un flocon qui touche un bloc $(item)éteint tous les feux$() dans un rayon d'un bloc autour de l'impact (option $(item)fireExtinguisherClearRadius$()). Cela inclut les feux vert et bleu des grenades. $(li)Un flocon qui touche une créature l'éteint, $(item)retire le Feu infernal$(), la ralentit et la gèle ; assez de flocons finissent par la blesser."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Rechargez-le avec un $(item)bec verseur$() et 1000 mB de dioxyde de carbone : le CO2 de vos moteurs, foyers et fours à coke trouve enfin une utilité."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Torche au lithium$()$(br)Un lingot de lithium au-dessus d'un lingot d'aluminium donne 4 $(item)torches au lithium$(). Elles éclairent au niveau 14, se posent au sol, aux murs et au plafond, et peuvent être $(item)posées sous l'eau$(), contrairement à une torche normale."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fire_extinguisher,create:spout,tfmg:carbon_dioxide_bucket,tfmg:lithium_torch,tfmg:lithium_ingot,tfmg:aluminum_ingot",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

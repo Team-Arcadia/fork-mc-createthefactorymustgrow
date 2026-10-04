@@ -1,0 +1,30 @@
+{
+  "name": "Minerais de plomb, de nickel et de lithium",
+  "icon": "tfmg:lead_ore",
+  "category": "tfmg:resources",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Les trois minerais de TFMG apparaissent dans tous les biomes de l'Overworld, en version pierre et en version ardoise des abîmes. Minez-les au moins avec une $(item)pioche en pierre$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Plomb$()$(br)Des filons jusqu'à 12 blocs, 5 tentatives par chunk, entre $(item)Y -15 et Y 80$(). Le plus facile à trouver.$(br2)$(l)Nickel$()$(br)Des filons jusqu'à 10 blocs, 5 tentatives par chunk, entre $(item)Y -63 et Y 20$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Lithium$()$(br)Des filons plus petits, jusqu'à 7 blocs, 3 tentatives par chunk, en profondeur entre $(item)Y -63 et Y -5$(). Vous trouverez surtout du minerai de lithium des abîmes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chaque minerai donne son objet $(item)brut$() (plomb brut, nickel brut, lithium brut) et Fortune en ajoute. Avec Toucher de soie, vous récupérez le bloc de minerai lui-même, à garder pour les roues de concassage. Neuf objets bruts forment un bloc de stockage brut."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lead_ore,tfmg:deepslate_lead_ore,tfmg:nickel_ore,tfmg:deepslate_nickel_ore,tfmg:lithium_ore,tfmg:deepslate_lithium_ore,tfmg:raw_lead,tfmg:raw_nickel",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

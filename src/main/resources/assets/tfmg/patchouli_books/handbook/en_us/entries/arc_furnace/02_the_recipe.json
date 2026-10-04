@@ -1,0 +1,26 @@
+{
+  "name": "The recipe",
+  "icon": "create:crushed_raw_iron",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Each batch takes $(item)1 second$() and uses:$(br2)$(li)1 $(item)Crushed Iron Ore$() (crush raw iron in Crushing Wheels),$(li)1 $(item)flux$(): $(item)Limesand$(), made by crushing limestone,$(li)1 $(item)Coal Coke Dust$(), which works as a catalyst (next page).$(br2)It gives:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)144 mB Molten Steel$(), exactly one steel ingot in a casting basin,$(li)$(item)288 mB Molten Slag$().$(br2)$(l)Running it$()$(br)Feed the three items through funnels on the vat. The vat has 4 input slots and each holds one kind of item, so crushed iron, limesand and coke dust each take their own slot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Pump both fluids out of the output side. A recipe only starts when all its products fit, so a vat full of slag stops making steel. Send the molten steel to casting basins, as in the steel chapter, and do something with the slag."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:crushed_raw_iron,tfmg:limesand,tfmg:coal_coke_dust,tfmg:molten_steel_bucket,tfmg:molten_slag_bucket,tfmg:casting_basin,tfmg:steel_ingot",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

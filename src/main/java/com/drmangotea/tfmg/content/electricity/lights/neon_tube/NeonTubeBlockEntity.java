@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import static com.drmangotea.tfmg.content.electricity.lights.LightBulbBlock.LIGHT;
 
-public class NeonTubeBlockEntity extends ElectricBlockEntity {
+public class NeonTubeBlockEntity extends ElectricBlockEntity implements com.drmangotea.tfmg.content.items.inspector.IInspectable {
 
     public DyeColor color= DyeColor.WHITE;
 
@@ -66,5 +66,12 @@ public class NeonTubeBlockEntity extends ElectricBlockEntity {
     @Override
     public float resistance() {
         return 200;
+    }
+
+    @Override
+    public void inspect(com.drmangotea.tfmg.content.items.inspector.InspectionReport report) {
+        int safe = (int) (getMaxCurrent() * resistance());
+        int voltage = getData().getVoltage();
+        report.check(voltage <= safe, "light.limit", "light.over_limit", "light.over_limit.fix", voltage, safe);
     }
 }

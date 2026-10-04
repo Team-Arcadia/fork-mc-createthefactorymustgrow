@@ -1,0 +1,26 @@
+{
+  "name": "Où se cache le pétrole",
+  "icon": "tfmg:oil_deposit",
+  "category": "tfmg:finding_oil",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le pétrole brut vient des $(item)gisements de pétrole$(), générés dans tous les biomes de l'Overworld tout au fond du monde, à $(item)Y -64$(), dans la couche de bedrock. $(li)Un champ apparaît en moyenne dans $(item)un chunk sur 16$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Un champ compte $(item)un à six$() blocs de gisement, répartis jusqu'à 12 blocs autour de son centre. $(li)Au-dessus de chaque gisement se dresse une colonne de sources de $(item)pétrole brut$(), haute d'une vingtaine de blocs au plus, avec quelques sources qui fuient sur les côtés. $(li)De la $(item)pierre fossile$() borde les quatre blocs les plus bas de chaque colonne."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le bloc de gisement est incassable, même par le Wither ou l'Ender Dragon. Vous ne le minez jamais : vous le pompez par le haut, à travers une colonne de tuyaux industriels, avec une pompe à pétrole.$(br2)Creuser au hasard est lent et dangereux. Utilisez d'abord les outils des pages suivantes pour trouver un champ, puis prévoyez un puits bien droit de la surface jusqu'à lui."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:oil_deposit,tfmg:crude_oil_bucket,tfmg:fossilstone,tfmg:industrial_pipe",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

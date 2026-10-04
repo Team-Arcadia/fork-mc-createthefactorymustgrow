@@ -185,6 +185,14 @@ public class TFMGTexts {
     }
 
     // Blast Furnace Tooltips
+    /**
+     * A red goggle line saying why a machine is not running, under
+     * {@code tfmg.goggles.problem.<key>}.
+     */
+    public static LangBuilder problem(String key, Object... args) {
+        return TFMGLang.translate("goggles.problem." + key, args).style(ChatFormatting.RED);
+    }
+
     public static class BlastFurnace {
         public static LangBuilder stats(int count) {
             return TFMGLang.translate("goggles.blast_furnace.stats", count).style(ChatFormatting.GRAY);

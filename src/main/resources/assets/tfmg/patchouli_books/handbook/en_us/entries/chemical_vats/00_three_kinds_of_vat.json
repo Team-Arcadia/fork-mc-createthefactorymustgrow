@@ -1,0 +1,30 @@
+{
+  "name": "Three kinds of vat",
+  "icon": "tfmg:cast_iron_chemical_vat",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)Chemical Vat$() is the mod's all-purpose reactor: it mixes, cracks, freezes, compresses and runs electrolysis. There are three kinds, and each recipe lists the kinds it accepts: $(li)$(item)Cast Iron Chemical Vat$(): the cheapest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Most mixing and freezing recipes accept it. $(li)$(item)Steel Chemical Vat$(): needed for pressure work and electrolysis. $(li)$(item)Fireproof Chemical Vat$() (firebrick-lined): accepts everything, and is the only one the $(item)arc furnace$() works in. Its windows cannot be opened."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Building bigger$()$(br)Vats of the same kind join like Create fluid tanks: up to $(item)3x3 wide$() and up to $(item)10 blocks high$(). Some recipes ask for a $(item)minimum size$() in blocks (width x width x height)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each vat has $(item)4 input$() and $(item)4 output$() fluid tanks, each holding $(item)8 buckets per block$() with Create's default tank size, plus $(item)4 input$() and $(item)4 output$() item slots. Each item slot holds a different item.$(br2)Hit a vat with a $(item)wrench$() to open or close its windows."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cast_iron_chemical_vat,tfmg:steel_chemical_vat,tfmg:fireproof_chemical_vat,create:wrench",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

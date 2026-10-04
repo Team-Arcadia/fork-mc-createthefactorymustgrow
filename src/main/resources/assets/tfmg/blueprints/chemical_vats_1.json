@@ -1,0 +1,23 @@
+{
+  "order": 11001,
+  "name": {
+    "en_us": "Machines and where they go",
+    "fr_fr": "Les machines et leur place"
+  },
+  "layers": [
+    [
+      "F"
+    ],
+    [
+      "V"
+    ],
+    [
+      "M"
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "V": "tfmg:steel_chemical_vat",
+    "M": "tfmg:industrial_mixer"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "À quoi sert le haut fourneau",
+  "icon": "tfmg:blast_furnace_output",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le haut fourneau fond le minerai de fer en $(item)acier en fusion$(). C'est une tour creuse en briques avec une $(item)sortie de haut fourneau$() à sa base. $(l)Ce qui entre - $(item)Minerai$() :$() fer brut concassé, fer brut ou quartz. $(li)$(item)Fondant$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "sable calcaire, un par objet de fer. $(li)$(item)Combustible$() : poussière de coke de charbon, le seul qu'il brûle. $(li)$(item)Air chaud$() : envoyé par tuyau dans une trappe de la paroi, depuis un fourneau à air chaud."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Ce qui sort$()$(li)$(item)L'acier en fusion$() et le $(item)laitier en fusion$(), pompés depuis la sortie.$(li)Le $(item)gaz de haut fourneau$(), récupéré par une trappe au sommet. Il alimente le fourneau à air chaud."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Avant de commencer, ayez un four à coke qui produit du coke, des roues de concassage qui changent le coke en poussière et le calcaire en sable calcaire, et une ligne d'air chaud qui marche (chapitres précédents). L'acier est ensuite coulé en lingots dans un bassin de coulée (chapitre suivant)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_output,create:crushed_raw_iron,minecraft:raw_iron,tfmg:limesand,tfmg:coal_coke_dust,tfmg:hot_air_bucket,tfmg:molten_steel_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

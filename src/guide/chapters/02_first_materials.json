@@ -1,0 +1,403 @@
+{
+  "order": 20,
+  "icon": "tfmg:cast_iron_ingot",
+  "title": {
+    "en_us": "First Materials",
+    "fr_fr": "Premiers matériaux"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "Before steel",
+        "fr_fr": "Avant l'acier"
+      },
+      "text": {
+        "en_us": [
+          "Steel is the heart of TFMG, but the machines that make it are built from simpler materials. This chapter covers everything you can make **before your first steel ingot**:",
+          "",
+          "- **Fireproof bricks**, from fireclay.",
+          "- **Cast iron**, from iron and coal.",
+          "- **Limesand**, the flux of the blast furnace.",
+          "- **Cement and concrete**.",
+          "- **Sheets and alloys** of lead and nickel.",
+          "",
+          "## Create machines you need",
+          "- **Crushing wheels**, for limesand and crushed ores.",
+          "- A **mechanical mixer** over a **basin**, for fireclay, cement and concrete.",
+          "- A **mechanical press**: over a depot or belt it presses sheets, over a basin it compacts.",
+          "- A **blaze burner** under the basin, lit with fuel, for the recipes marked **heated**.",
+          "",
+          "Click an item at the bottom of a page to see its exact recipe in JEI."
+        ],
+        "fr_fr": [
+          "L'acier est le cœur de TFMG, mais les machines qui le produisent se construisent avec des matériaux plus simples. Ce chapitre couvre tout ce que vous pouvez fabriquer **avant votre premier lingot d'acier** :",
+          "",
+          "- Les **briques réfractaires**, à partir d'argile réfractaire.",
+          "- La **fonte**, à partir de fer et de charbon.",
+          "- Le **sable calcaire**, fondant du haut fourneau.",
+          "- Le **ciment** et le **béton**.",
+          "- Les **plaques et alliages** de plomb et de nickel.",
+          "",
+          "## Machines de Create nécessaires",
+          "- Des **roues de concassage**, pour le sable calcaire et les minerais concassés.",
+          "- Un **malaxeur mécanique** au-dessus d'un **bassin**, pour l'argile réfractaire, le ciment et le béton.",
+          "- Une **presse mécanique** : au-dessus d'un dépôt ou d'un tapis elle presse des plaques, au-dessus d'un bassin elle compacte.",
+          "- Un **brûleur à blaze** sous le bassin, alimenté en combustible, pour les recettes marquées **chauffées**.",
+          "",
+          "Cliquez sur un objet en bas de page pour voir sa recette exacte dans JEI."
+        ]
+      },
+      "items": [
+        "create:crushing_wheel",
+        "create:mechanical_mixer",
+        "create:basin",
+        "create:mechanical_press",
+        "create:blaze_burner",
+        "create:depot"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Fireclay and fireproof bricks",
+        "fr_fr": "Argile réfractaire et briques réfractaires"
+      },
+      "text": {
+        "en_us": [
+          "## Getting fireclay balls",
+          "- Mine a fireclay block with a shovel: it drops **1 fireclay ball**.",
+          "- Four balls craft back into a fireclay block for storage.",
+          "",
+          "## Firing the bricks",
+          "Smelt a **fireclay ball** in a furnace (10 seconds) to get one **fireproof brick**. Four fireproof bricks in a 2 by 2 grid craft one block of **fireproof bricks**.",
+          "",
+          "Single bricks and brick blocks are both used:",
+          "",
+          "- **Fireproof brick** (item): the casting basin.",
+          "- **Fireproof bricks** (block): the blast stove, the blast furnace output and hatch, and the walls of the blast furnace itself.",
+          "- Six blocks give six **fireproof brick reinforcement** walls.",
+          "",
+          "A blast furnace eats many brick blocks, so set up an automatic fireclay line early."
+        ],
+        "fr_fr": [
+          "## Obtenir des boules d'argile réfractaire",
+          "- Minez un bloc d'argile réfractaire à la pelle : il donne **1 boule d'argile réfractaire**.",
+          "- Quatre boules redonnent un bloc d'argile réfractaire pour le stockage.",
+          "",
+          "## Cuire les briques",
+          "Faites cuire une **boule d'argile réfractaire** au four (10 secondes) pour obtenir une **brique réfractaire**. Quatre briques réfractaires en carré de 2 sur 2 donnent un bloc de **briques réfractaires**.",
+          "",
+          "Les briques seules comme les blocs servent :",
+          "",
+          "- **Brique réfractaire** (objet) : le bassin de coulée.",
+          "- **Briques réfractaires** (bloc) : le fourneau à air chaud, la sortie et la trappe du haut fourneau, et les murs du haut fourneau lui-même.",
+          "- Six blocs donnent six murets de **renfort en briques réfractaires**.",
+          "",
+          "Un haut fourneau consomme beaucoup de blocs de briques : montez tôt une ligne automatique d'argile réfractaire."
+        ]
+      },
+      "items": [
+        "tfmg:fireclay",
+        "tfmg:fireclay_ball",
+        "tfmg:fireproof_brick",
+        "tfmg:fireproof_bricks",
+        "tfmg:fireproof_brick_reinforcement"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Cast iron",
+        "fr_fr": "La fonte"
+      },
+      "text": {
+        "en_us": [
+          "Cast iron is the metal of your first heavy machines: the coke oven, the blast stove, cast iron pipes and tanks.",
+          "",
+          "## Making it",
+          "Put a **mechanical press** over a **basin**, with a lit **blaze burner** under the basin. Drop in **1 iron ingot + 1 coal**: the press compacts them into **1 cast iron ingot**. The recipe needs heat, a cold basin does nothing.",
+          "",
+          "Charcoal does not work here, it must be coal. Crushing lignite is a good source of extra coal.",
+          "",
+          "## Storage and shapes",
+          "- 9 cast iron nuggets make an ingot, and an ingot gives 9 nuggets back.",
+          "- 9 ingots make a **block of cast iron**, which the blast furnace output needs.",
+          "- Press an ingot with a mechanical press on a depot or a belt for a **cast iron sheet**.",
+          "",
+          "Automate it early: a hopper or funnel feeding iron and coal into the heated basin, and a second press making sheets, will cover the whole chapter."
+        ],
+        "fr_fr": [
+          "La fonte est le métal de vos premières machines lourdes : le four à coke, le fourneau à air chaud, les tuyaux et cuves en fonte.",
+          "",
+          "## La fabriquer",
+          "Placez une **presse mécanique** au-dessus d'un **bassin**, avec un **brûleur à blaze** allumé sous le bassin. Mettez **1 lingot de fer + 1 charbon** : la presse les compacte en **1 lingot de fonte**. La recette demande de la chaleur, un bassin froid ne fait rien.",
+          "",
+          "Le charbon de bois ne marche pas ici, il faut du charbon. Concasser du lignite est une bonne source de charbon en plus.",
+          "",
+          "## Stockage et formes",
+          "- 9 pépites de fonte font un lingot, et un lingot redonne 9 pépites.",
+          "- 9 lingots font un **bloc de fonte**, dont la sortie du haut fourneau a besoin.",
+          "- Pressez un lingot avec une presse mécanique sur un dépôt ou un tapis pour obtenir une **plaque de fonte**.",
+          "",
+          "Automatisez tôt : un entonnoir qui verse fer et charbon dans le bassin chauffé, et une seconde presse qui fait les plaques, suffisent pour tout ce chapitre."
+        ]
+      },
+      "items": [
+        "minecraft:iron_ingot",
+        "minecraft:coal",
+        "tfmg:cast_iron_ingot",
+        "tfmg:cast_iron_nugget",
+        "tfmg:cast_iron_block",
+        "tfmg:cast_iron_sheet",
+        "create:blaze_burner"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Cast iron parts",
+        "fr_fr": "Pièces en fonte"
+      },
+      "text": {
+        "en_us": [
+          "With cast iron ingots and sheets you can craft the parts of the steel line:",
+          "",
+          "- **Cast iron pipe**: 2 sheets + 1 ingot in a row give 4 pipes.",
+          "- **Cast iron fluid tank**: a barrel between 2 sheets, stacked vertically.",
+          "- **Cast iron mechanical pump**: a Create cogwheel + a cast iron pipe.",
+          "- **Cast iron flywheel**: 8 ingots around a Create shaft.",
+          "- Cast iron **frames** and **trusses** from nuggets, for decoration.",
+          "",
+          "## The first machines",
+          "- **Coke oven**: 4 cast iron ingots around a Create **industrial iron block** give 2 coke ovens.",
+          "- **Casting basin**: 3 fireproof brick items, 1 cast iron pipe and 5 cast iron ingots.",
+          "- **Blast stove**: 2 cast iron pipes, 2 cast iron tanks and 2 fireproof brick blocks give 2 stoves.",
+          "- **Blast furnace output**: 4 fireproof brick blocks, 4 cast iron pipes and a block of cast iron.",
+          "- **Blast furnace hatch**: 4 fireproof brick blocks, 2 cast iron sheets, 2 cast iron pipes and a cast iron tank.",
+          "",
+          "None of these needs steel: you can build the whole steel line from this page."
+        ],
+        "fr_fr": [
+          "Avec des lingots et des plaques de fonte, vous fabriquez les pièces de la ligne d'acier :",
+          "",
+          "- **Tuyau en fonte** : 2 plaques + 1 lingot en ligne donnent 4 tuyaux.",
+          "- **Cuve à fluide en fonte** : un tonneau entre 2 plaques, à la verticale.",
+          "- **Pompe mécanique en fonte** : une roue dentée de Create + un tuyau en fonte.",
+          "- **Volant d'inertie en fonte** : 8 lingots autour d'un axe de Create.",
+          "- Des **cadres** et des **treillis** en fonte à partir de pépites, pour la décoration.",
+          "",
+          "## Les premières machines",
+          "- **Four à coke** : 4 lingots de fonte autour d'un **bloc de fer industriel** de Create donnent 2 fours à coke.",
+          "- **Bassin de coulée** : 3 briques réfractaires (objets), 1 tuyau en fonte et 5 lingots de fonte.",
+          "- **Fourneau à air chaud** : 2 tuyaux en fonte, 2 cuves en fonte et 2 blocs de briques réfractaires donnent 2 fourneaux.",
+          "- **Sortie du haut fourneau** : 4 blocs de briques réfractaires, 4 tuyaux en fonte et un bloc de fonte.",
+          "- **Trappe du haut fourneau** : 4 blocs de briques réfractaires, 2 plaques de fonte, 2 tuyaux en fonte et une cuve en fonte.",
+          "",
+          "Aucune de ces machines ne demande d'acier : cette page suffit pour construire toute la ligne d'acier."
+        ]
+      },
+      "items": [
+        "tfmg:cast_iron_pipe",
+        "tfmg:cast_iron_fluid_tank",
+        "tfmg:cast_iron_mechanical_pump",
+        "tfmg:coke_oven",
+        "tfmg:casting_basin",
+        "tfmg:blast_stove",
+        "tfmg:blast_furnace_output",
+        "tfmg:blast_furnace_hatch"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Limesand, the flux",
+        "fr_fr": "Le sable calcaire, fondant"
+      },
+      "text": {
+        "en_us": [
+          "The blast furnace does not melt iron alone: every recipe needs one item of **flux**, and in TFMG the flux is **limesand**.",
+          "",
+          "## Getting limesand",
+          "1. Make Create **limestone**: let honey flow into flowing lava. A lava source turns into obsidian instead, so keep the lava flowing.",
+          "2. Mine the limestone, ideally with a mechanical drill that breaks it as it forms.",
+          "3. Send it through **crushing wheels**: each limestone block always gives **1 limesand**.",
+          "",
+          "## What the blast furnace does with it",
+          "- **Crushed raw iron + limesand**: 144 mB of molten steel, 144 mB of molten slag and 200 mB of furnace gas.",
+          "- **Raw iron + limesand**: 288 mB of molten steel and 288 mB of slag, but it takes twice the time and hot air.",
+          "",
+          "144 mB is one steel ingot in the casting basin. Plan about **one limesand per steel ingot** from crushed iron.",
+          "",
+          "Limesand also makes **cement**, on the next page."
+        ],
+        "fr_fr": [
+          "Le haut fourneau ne fond pas le fer tout seul : chaque recette demande un **fondant**, et dans TFMG le fondant est le **sable calcaire**.",
+          "",
+          "## Obtenir du sable calcaire",
+          "1. Fabriquez du **calcaire** de Create : faites couler du miel dans de la lave qui coule. Une source de lave devient de l'obsidienne à la place, gardez donc la lave en mouvement.",
+          "2. Minez le calcaire, idéalement avec une perceuse mécanique qui le casse dès qu'il se forme.",
+          "3. Passez-le aux **roues de concassage** : chaque bloc de calcaire donne toujours **1 sable calcaire**.",
+          "",
+          "## Ce qu'en fait le haut fourneau",
+          "- **Fer brut concassé + sable calcaire** : 144 mB d'acier liquide, 144 mB de laitier liquide et 200 mB de gaz de haut fourneau.",
+          "- **Fer brut + sable calcaire** : 288 mB d'acier liquide et 288 mB de laitier, mais deux fois plus de temps et d'air chaud.",
+          "",
+          "144 mB font un lingot d'acier dans le bassin de coulée. Prévoyez environ **un sable calcaire par lingot d'acier** à partir de fer concassé.",
+          "",
+          "Le sable calcaire sert aussi au **ciment**, page suivante."
+        ]
+      },
+      "items": [
+        "create:limestone",
+        "tfmg:limesand",
+        "create:crushing_wheel",
+        "create:mechanical_drill",
+        "create:crushed_raw_iron",
+        "minecraft:raw_iron"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Cement and concrete",
+        "fr_fr": "Ciment et béton"
+      },
+      "text": {
+        "en_us": [
+          "Concrete is TFMG's strong building material, and every step uses a mechanical mixer over a basin, no heat needed.",
+          "",
+          "1. **Cement**: 1 clay ball + 1 limesand give **4 cement**.",
+          "2. **Concrete mixture**: 1 sand + 1 cement + 1 gravel give **16 concrete mixture**. With **slag** from the blast furnace instead of sand you get **32**.",
+          "3. **Liquid concrete**: 1 concrete mixture + 250 mB of water give **1000 mB of liquid concrete**.",
+          "",
+          "## Setting it",
+          "- Pour liquid concrete in the world, with a bucket or a pipe: it **hardens into concrete blocks** after a while.",
+          "- In a **casting basin**, 144 mB of liquid concrete casts a **cinderblock**.",
+          "- 8 concrete blocks around a dye give 8 colored concrete.",
+          "",
+          "Cement is also a falling block, like sand, if you place it."
+        ],
+        "fr_fr": [
+          "Le béton est le matériau de construction solide de TFMG, et chaque étape se fait au malaxeur mécanique au-dessus d'un bassin, sans chaleur.",
+          "",
+          "1. **Ciment** : 1 boule d'argile + 1 sable calcaire donnent **4 ciments**.",
+          "2. **Mélange à béton** : 1 sable + 1 ciment + 1 gravier donnent **16 mélanges à béton**. Avec du **laitier** du haut fourneau à la place du sable, vous en obtenez **32**.",
+          "3. **Béton liquide** : 1 mélange à béton + 250 mB d'eau donnent **1000 mB de béton liquide**.",
+          "",
+          "## Le faire prendre",
+          "- Versez le béton liquide dans le monde, au seau ou par un tuyau : il **durcit en blocs de béton** au bout d'un moment.",
+          "- Dans un **bassin de coulée**, 144 mB de béton liquide coulent un **parpaing**.",
+          "- 8 blocs de béton autour d'une teinture donnent 8 bétons colorés.",
+          "",
+          "Le ciment est aussi un bloc soumis à la gravité, comme le sable, si vous le posez."
+        ]
+      },
+      "items": [
+        "tfmg:cement",
+        "tfmg:concrete_mixture",
+        "tfmg:slag",
+        "tfmg:liquid_concrete_bucket",
+        "tfmg:concrete",
+        "tfmg:cinderblock",
+        "tfmg:limesand"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Lead, nickel and constantan",
+        "fr_fr": "Plomb, nickel et constantan"
+      },
+      "text": {
+        "en_us": [
+          "The new ores also give early parts that need no steel.",
+          "",
+          "## Sheets",
+          "A mechanical press on a depot or a belt turns one ingot into one sheet:",
+          "",
+          "- **Lead ingot** to **lead sheet**.",
+          "- **Nickel ingot** to **nickel sheet**.",
+          "",
+          "## Constantan",
+          "In a **heated** mixer (lit blaze burner), **1 copper ingot + 1 nickel ingot** give **2 constantan ingots**. Constantan is used later for wires and electrical parts.",
+          "",
+          "## The cast iron chemical vat",
+          "6 cast iron sheets, 2 lead sheets and a cast iron fluid tank make a **cast iron chemical vat**, the first vat you can build. Sulfuric acid is one of the recipes it accepts.",
+          "",
+          "## Waiting for steel",
+          "**Screws** and **rebar** are not made from these metals: both come from a steel ingot in a stonecutter (4 per ingot). Keep a few early steel ingots aside for them."
+        ],
+        "fr_fr": [
+          "Les nouveaux minerais donnent aussi des pièces précoces qui ne demandent pas d'acier.",
+          "",
+          "## Plaques",
+          "Une presse mécanique sur un dépôt ou un tapis transforme un lingot en une plaque :",
+          "",
+          "- **Lingot de plomb** en **plaque de plomb**.",
+          "- **Lingot de nickel** en **plaque de nickel**.",
+          "",
+          "## Constantan",
+          "Dans un malaxeur **chauffé** (brûleur à blaze allumé), **1 lingot de cuivre + 1 lingot de nickel** donnent **2 lingots de constantan**. Le constantan sert plus tard aux fils et aux pièces électriques.",
+          "",
+          "## La cuve chimique en fonte",
+          "6 plaques de fonte, 2 plaques de plomb et une cuve à fluide en fonte donnent une **cuve chimique en fonte**, la première cuve que vous pouvez construire. L'acide sulfurique fait partie des recettes qu'elle accepte.",
+          "",
+          "## En attendant l'acier",
+          "Les **vis** et les **armatures** ne viennent pas de ces métaux : elles sortent d'un lingot d'acier au tailleur de pierre (4 par lingot). Gardez quelques-uns de vos premiers lingots d'acier pour elles."
+        ]
+      },
+      "items": [
+        "tfmg:lead_ingot",
+        "tfmg:lead_sheet",
+        "tfmg:nickel_ingot",
+        "tfmg:nickel_sheet",
+        "tfmg:constantan_ingot",
+        "tfmg:cast_iron_chemical_vat",
+        "tfmg:screw",
+        "tfmg:rebar"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Checklist before steel",
+        "fr_fr": "Liste avant l'acier"
+      },
+      "text": {
+        "en_us": [
+          "Before moving on to the steel chapter, make sure you have:",
+          "",
+          "- A steady supply of **fireproof bricks**, as blocks: the blast furnace walls, the blast stoves, the output and the hatch all use them.",
+          "- A heated compacting line for **cast iron ingots**, and a press making **cast iron sheets**.",
+          "- A stack of **cast iron pipes** and a few **cast iron fluid tanks**.",
+          "- At least one **coke oven** and plenty of **coal**: the blast furnace burns **coal coke dust**, which is coal coke through crushing wheels.",
+          "- A **limesand** line: honey, flowing lava, a drill and crushing wheels.",
+          "- **Iron** for the furnace: raw iron or crushed raw iron, both work.",
+          "- A **casting basin**, to turn molten steel into ingots.",
+          "",
+          "The **blast furnace reinforcement** needs steel and heavy plates: build the furnace with plain fireproof bricks first, and reinforce it later.",
+          "",
+          "Next chapter: coal coke, hot air and your first steel."
+        ],
+        "fr_fr": [
+          "Avant de passer au chapitre sur l'acier, vérifiez que vous avez :",
+          "",
+          "- Une production régulière de **briques réfractaires**, en blocs : les murs du haut fourneau, les fourneaux à air chaud, la sortie et la trappe en consomment.",
+          "- Une ligne de compactage chauffée pour les **lingots de fonte**, et une presse qui fait les **plaques de fonte**.",
+          "- Une pile de **tuyaux en fonte** et quelques **cuves à fluide en fonte**.",
+          "- Au moins un **four à coke** et beaucoup de **charbon** : le haut fourneau brûle de la **poussière de coke de charbon**, du coke passé aux roues de concassage.",
+          "- Une ligne de **sable calcaire** : miel, lave qui coule, perceuse et roues de concassage.",
+          "- Du **fer** pour le fourneau : fer brut ou fer brut concassé, les deux fonctionnent.",
+          "- Un **bassin de coulée**, pour transformer l'acier liquide en lingots.",
+          "",
+          "Le **renfort de haut fourneau** demande de l'acier et des plaques lourdes : construisez d'abord le fourneau en simples briques réfractaires, et renforcez-le ensuite.",
+          "",
+          "Chapitre suivant : coke, air chaud et votre premier acier."
+        ]
+      },
+      "items": [
+        "tfmg:fireproof_bricks",
+        "tfmg:cast_iron_ingot",
+        "tfmg:cast_iron_pipe",
+        "tfmg:coke_oven",
+        "tfmg:coal_coke_dust",
+        "tfmg:limesand",
+        "minecraft:raw_iron",
+        "tfmg:casting_basin"
+      ]
+    }
+  ]
+}

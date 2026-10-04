@@ -1,0 +1,354 @@
+{
+  "order": 10,
+  "icon": "tfmg:galena",
+  "title": {
+    "en_us": "Raw Resources",
+    "fr_fr": "Ressources brutes"
+  },
+  "pages": [
+    {
+      "title": {
+        "en_us": "What lies underground",
+        "fr_fr": "Ce qui se cache sous terre"
+      },
+      "text": {
+        "en_us": [
+          "Before any machine, you need materials Minecraft does not have. TFMG adds them to world generation in three forms:",
+          "",
+          "- **Ores**: lead, nickel and lithium, as classic veins in stone and deepslate.",
+          "- **Striated layers**: thick bands of bauxite, galena, lignite and fireclay in the Overworld, sulfur and fireclay in the Nether.",
+          "- **Oil**: deposits on the bedrock floor of the Overworld, and rare oil wells in deserts.",
+          "",
+          "Some resources are not found at all, you make them. **Limesand** comes from crushing Create's limestone, and **nitrate dust** (saltpeter) from crushing dirt.",
+          "",
+          "Most of these blocks are worth more once crushed: a pair of Create **crushing wheels** is the first machine to build. The following pages tell you where each resource is, then what crushing gives."
+        ],
+        "fr_fr": [
+          "Avant la moindre machine, il vous faut des matériaux que Minecraft n'a pas. TFMG les ajoute à la génération du monde sous trois formes :",
+          "",
+          "- **Minerais** : plomb, nickel et lithium, en filons classiques dans la pierre et l'ardoise des abîmes.",
+          "- **Couches striées** : d'épaisses bandes de bauxite, de galène, de lignite et d'argile réfractaire dans l'Overworld, de soufre et d'argile réfractaire dans le Nether.",
+          "- **Pétrole** : des gisements au fond de la bedrock de l'Overworld, et de rares puits de pétrole dans les déserts.",
+          "",
+          "Certaines ressources ne se trouvent pas, elles se fabriquent. Le **sable calcaire** vient du concassage du calcaire de Create, et la **poudre de nitrate** (salpêtre) du concassage de la terre.",
+          "",
+          "La plupart de ces blocs valent davantage une fois concassés : une paire de **roues de concassage** de Create est la première machine à construire. Les pages suivantes indiquent où trouver chaque ressource, puis ce que donne le concassage."
+        ]
+      },
+      "items": [
+        "tfmg:lead_ore",
+        "tfmg:nickel_ore",
+        "tfmg:lithium_ore",
+        "tfmg:bauxite",
+        "tfmg:galena",
+        "tfmg:fireclay",
+        "tfmg:sulfur",
+        "create:crushing_wheel"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Lead, nickel and lithium ores",
+        "fr_fr": "Minerais de plomb, de nickel et de lithium"
+      },
+      "text": {
+        "en_us": [
+          "The three TFMG ores generate in every Overworld biome, with a stone and a deepslate variant. Mine them with at least a **stone pickaxe**.",
+          "",
+          "## Lead",
+          "Veins of up to 12 blocks, 5 attempts per chunk, between **Y -15 and Y 80**. The easiest to find.",
+          "",
+          "## Nickel",
+          "Veins of up to 10 blocks, 5 attempts per chunk, between **Y -63 and Y 20**.",
+          "",
+          "## Lithium",
+          "Smaller veins of up to 7 blocks, 3 attempts per chunk, deep between **Y -63 and Y -5**. Expect deepslate lithium ore most of the time.",
+          "",
+          "Each ore drops its **raw** item (raw lead, raw nickel, raw lithium) and Fortune adds more. With Silk Touch you get the ore block itself, which is worth keeping for the crushing wheels. Nine raw items craft into a raw storage block."
+        ],
+        "fr_fr": [
+          "Les trois minerais de TFMG apparaissent dans tous les biomes de l'Overworld, en version pierre et en version ardoise des abîmes. Minez-les au moins avec une **pioche en pierre**.",
+          "",
+          "## Plomb",
+          "Des filons jusqu'à 12 blocs, 5 tentatives par chunk, entre **Y -15 et Y 80**. Le plus facile à trouver.",
+          "",
+          "## Nickel",
+          "Des filons jusqu'à 10 blocs, 5 tentatives par chunk, entre **Y -63 et Y 20**.",
+          "",
+          "## Lithium",
+          "Des filons plus petits, jusqu'à 7 blocs, 3 tentatives par chunk, en profondeur entre **Y -63 et Y -5**. Vous trouverez surtout du minerai de lithium des abîmes.",
+          "",
+          "Chaque minerai donne son objet **brut** (plomb brut, nickel brut, lithium brut) et Fortune en ajoute. Avec Toucher de soie, vous récupérez le bloc de minerai lui-même, à garder pour les roues de concassage. Neuf objets bruts forment un bloc de stockage brut."
+        ]
+      },
+      "items": [
+        "tfmg:lead_ore",
+        "tfmg:deepslate_lead_ore",
+        "tfmg:nickel_ore",
+        "tfmg:deepslate_nickel_ore",
+        "tfmg:lithium_ore",
+        "tfmg:deepslate_lithium_ore",
+        "tfmg:raw_lead",
+        "tfmg:raw_nickel"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Striated layers of the Overworld",
+        "fr_fr": "Les couches striées de l'Overworld"
+      },
+      "text": {
+        "en_us": [
+          "Like Create's striated ores, TFMG places large layered clusters in the Overworld, between **Y -30 and Y 70**, in about one chunk out of 18. Each cluster follows one of four patterns, with stone or deepslate between the bands:",
+          "",
+          "- **Bauxite** with smooth basalt, granite and andesite. Bauxite is the ore of aluminium.",
+          "- **Galena** with smooth basalt, dripstone and deepslate. Galena is a lead-bearing stone.",
+          "- **Lignite** with tuff, deepslate and scoria. Lignite is a soft brown coal.",
+          "- **Fireclay** with sand, gravel and crimsite.",
+          "",
+          "Bauxite and galena are full building stones: put them in a stonecutter for cut, polished and brick variants. Lignite and sulfur blocks drop themselves when mined. A cluster is big, so when you see one band in a cave wall, dig along it.",
+          "",
+          "Look for these layers in caves and ravines: they are much easier to spot than single ore blocks."
+        ],
+        "fr_fr": [
+          "Comme les minerais striés de Create, TFMG place de grands amas en couches dans l'Overworld, entre **Y -30 et Y 70**, dans environ un chunk sur 18. Chaque amas suit l'un de quatre motifs, avec de la pierre ou de l'ardoise des abîmes entre les bandes :",
+          "",
+          "- **Bauxite** avec basalte lisse, granite et andésite. La bauxite est le minerai de l'aluminium.",
+          "- **Galène** avec basalte lisse, bloc de spéléothème et ardoise des abîmes. La galène est une pierre qui contient du plomb.",
+          "- **Lignite** avec tuf, ardoise des abîmes et scorie. Le lignite est un charbon brun et tendre.",
+          "- **Argile réfractaire** avec sable, gravier et crimsite.",
+          "",
+          "La bauxite et la galène sont de vraies pierres de construction : passez-les au tailleur de pierre pour obtenir des variantes taillées, polies et en briques. Le lignite et le soufre se récupèrent tels quels une fois minés. Un amas est grand : quand vous voyez une bande dans une paroi, creusez le long de celle-ci.",
+          "",
+          "Cherchez ces couches dans les grottes et les ravins : elles se repèrent bien plus facilement que des blocs de minerai isolés."
+        ]
+      },
+      "items": [
+        "tfmg:bauxite",
+        "tfmg:galena",
+        "tfmg:lignite",
+        "tfmg:fireclay"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Fireclay and the Nether layers",
+        "fr_fr": "L'argile réfractaire et les couches du Nether"
+      },
+      "text": {
+        "en_us": [
+          "## Fireclay",
+          "Fireclay is the first wall of the progression: fireproof bricks for the casting basin, the blast stove and the blast furnace all come from it. Dig it with a **shovel**.",
+          "",
+          "- A fireclay block drops **1 fireclay ball**, and four balls craft back into a block, so mine the layer generously.",
+          "",
+          "## The Nether",
+          "In the Nether, clusters appear between **Y 40 and Y 90**, also in about one chunk out of 18. Two patterns exist:",
+          "",
+          "- **Sulfur** with scorchia, blackstone, magma and basalt. This is the **only place sulfur generates**.",
+          "- **Fireclay** with scorchia, gravel, magma, soul sand and soul soil.",
+          "",
+          "Sulfur feeds gunpowder, sulfuric acid and rubber later on, so bring back a good stack on your first trip."
+        ],
+        "fr_fr": [
+          "## Argile réfractaire",
+          "L'argile réfractaire est le premier obstacle de la progression : les briques réfractaires du bassin de coulée, du fourneau à air chaud et du haut fourneau en viennent toutes. Creusez-la à la **pelle**.",
+          "",
+          "- Un bloc d'argile réfractaire donne **1 boule d'argile réfractaire**, et quatre boules redonnent un bloc : minez la couche sans compter.",
+          "",
+          "## Le Nether",
+          "Dans le Nether, les amas apparaissent entre **Y 40 et Y 90**, eux aussi dans environ un chunk sur 18. Il existe deux motifs :",
+          "",
+          "- **Soufre** avec scorchia, roche noire, magma et basalte. C'est le **seul endroit où le soufre apparaît**.",
+          "- **Argile réfractaire** avec scorchia, gravier, magma, sable et terre des âmes.",
+          "",
+          "Le soufre servira plus tard à la poudre à canon, à l'acide sulfurique et au caoutchouc : rapportez-en une bonne pile dès votre premier voyage."
+        ]
+      },
+      "items": [
+        "tfmg:fireclay",
+        "tfmg:fireclay_ball",
+        "tfmg:sulfur",
+        "create:scorchia"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Oil deposits and oil wells",
+        "fr_fr": "Gisements et puits de pétrole"
+      },
+      "text": {
+        "en_us": [
+          "## Oil deposits",
+          "In every Overworld biome, roughly one chunk in sixteen hides an oil field on the **bedrock floor, at Y -64**. It is made of one or more **oil deposit** blocks a few blocks apart. Above each deposit rises a column of **crude oil** up to 24 blocks high, with **fossilstone** beside its lower part.",
+          "",
+          "- An oil deposit cannot be mined, blown up or moved, and never drops anything. It stays where it is and you pump it with a pumpjack.",
+          "- Each deposit holds a random reserve, between 1000 and the server's maximum (10000 by default).",
+          "- Fossilstone is twice as hard as obsidian: mine it with a pickaxe and patience.",
+          "",
+          "## Oil wells",
+          "In biomes that can hold a desert pyramid, about one chunk in 500 has an **oil well**: an oil deposit with a column of crude oil climbing from bedrock to about **70 blocks above the surface**. You cannot miss it.",
+          "",
+          "The oil hammer and the surface scanner, which find deposits for you, need steel: they are covered in the oil chapter."
+        ],
+        "fr_fr": [
+          "## Gisements de pétrole",
+          "Dans tous les biomes de l'Overworld, environ un chunk sur seize cache un champ pétrolifère sur le **fond de bedrock, à Y -64**. Il se compose d'un ou plusieurs blocs de **gisement de pétrole** séparés de quelques blocs. Au-dessus de chaque gisement monte une colonne de **pétrole brut** haute de 24 blocs au plus, bordée de **pierre fossile** dans sa partie basse.",
+          "",
+          "- Un gisement ne peut être ni miné, ni détruit par une explosion, ni déplacé, et ne donne jamais rien. Il reste en place et vous le pompez avec un chevalet de pompage.",
+          "- Chaque gisement contient une réserve aléatoire, entre 1000 et le maximum du serveur (10000 par défaut).",
+          "- La pierre fossile est deux fois plus dure que l'obsidienne : minez-la à la pioche, avec patience.",
+          "",
+          "## Puits de pétrole",
+          "Dans les biomes où peut apparaître une pyramide du désert, environ un chunk sur 500 contient un **puits de pétrole** : un gisement surmonté d'une colonne de pétrole brut qui monte de la bedrock jusqu'à environ **70 blocs au-dessus de la surface**. Impossible de le rater.",
+          "",
+          "Le marteau de pétrolier et le scanner de surface, qui trouvent les gisements pour vous, demandent de l'acier : ils sont décrits dans le chapitre sur le pétrole."
+        ]
+      },
+      "items": [
+        "tfmg:oil_deposit",
+        "tfmg:crude_oil_bucket",
+        "tfmg:fossilstone",
+        "tfmg:oil_hammer",
+        "tfmg:surface_scanner"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Crushing the ores",
+        "fr_fr": "Concasser les minerais"
+      },
+      "text": {
+        "en_us": [
+          "Crushing wheels turn ores into **crushed ore**, which smelts into ingots. Crushing the ore block gives more than mining it.",
+          "",
+          "- **Lead ore**: 1 crushed raw lead, plus 75% chance of a second, and 75% chance of an experience nugget.",
+          "- **Nickel ore**: the same, with crushed raw nickel.",
+          "- **Lithium ore**: 1 crushed raw lithium, plus 25% chance of another, 75% experience nugget, 12% cobblestone.",
+          "- **Deepslate lithium ore**: 2 crushed raw lithium, plus 25% chance of a third.",
+          "- **Raw lead, raw nickel, raw lithium**: 1 crushed ore each, plus 75% chance of an experience nugget. A raw lithium block gives 9.",
+          "",
+          "Smelt crushed ore in a furnace (10 seconds) or a vanilla blast furnace (5 seconds) for one ingot each. Raw items smelt to ingots too, but crushing first is the better yield.",
+          "",
+          "TFMG adds no washing recipe for these crushed ores: send them straight to the furnace."
+        ],
+        "fr_fr": [
+          "Les roues de concassage transforment les minerais en **minerai concassé**, qui fond en lingots. Concasser le bloc de minerai rapporte plus que le miner.",
+          "",
+          "- **Minerai de plomb** : 1 plomb brut concassé, plus 75 % de chance d'un second, et 75 % de chance d'une pépite d'expérience.",
+          "- **Minerai de nickel** : la même chose, avec du nickel brut concassé.",
+          "- **Minerai de lithium** : 1 lithium brut concassé, plus 25 % de chance d'un autre, 75 % de pépite d'expérience, 12 % de pierre taillée.",
+          "- **Minerai de lithium des abîmes** : 2 lithium brut concassé, plus 25 % de chance d'un troisième.",
+          "- **Plomb, nickel et lithium bruts** : 1 minerai concassé chacun, plus 75 % de chance d'une pépite d'expérience. Un bloc de lithium brut en donne 9.",
+          "",
+          "Faites fondre le minerai concassé dans un four (10 secondes) ou un haut fourneau vanilla (5 secondes), un lingot par pièce. Les objets bruts fondent aussi en lingots, mais les concasser d'abord rapporte davantage.",
+          "",
+          "TFMG n'ajoute aucune recette de lavage pour ces minerais concassés : envoyez-les directement au four."
+        ]
+      },
+      "items": [
+        "create:crushed_raw_lead",
+        "create:crushed_raw_nickel",
+        "tfmg:crushed_raw_lithium",
+        "create:experience_nugget",
+        "tfmg:lead_ingot",
+        "tfmg:nickel_ingot",
+        "tfmg:lithium_ingot"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "Crushing stones and dirt",
+        "fr_fr": "Concasser les pierres et la terre"
+      },
+      "text": {
+        "en_us": [
+          "The layered stones and a few common blocks are crushed too. Chances are per block:",
+          "",
+          "- **Bauxite**: 75% chance of 2 bauxite powder, plus 20% chance of 1 more.",
+          "- **Galena**: 40% chance of 1 crushed raw lead, 10% chance of 2 lead nuggets.",
+          "- **Lignite**: 75% chance of 1 coal, plus 20% chance of 1 more.",
+          "- **Sulfur**: 20% chance of 1 sulfur dust, plus 10% chance of 1 more.",
+          "- **Limestone** (Create): always 1 **limesand**.",
+          "- **Dirt**: 5% chance of 1 **nitrate dust** (saltpeter). Crush dirt in bulk.",
+          "",
+          "Limestone is not found in the world: Create makes it where **honey meets flowing lava** (a lava source gives obsidian instead). A small honey and lava generator next to a mechanical drill gives you all the limesand you need.",
+          "",
+          "Sulfur dust is slow to collect, so start crushing sulfur early. Bauxite powder becomes aluminium later, nitrate and sulfur dust become gunpowder and sulfuric acid."
+        ],
+        "fr_fr": [
+          "Les pierres en couches et quelques blocs courants se concassent aussi. Les chances sont données par bloc :",
+          "",
+          "- **Bauxite** : 75 % de chance de 2 poudres de bauxite, plus 20 % de chance d'une de plus.",
+          "- **Galène** : 40 % de chance d'1 plomb brut concassé, 10 % de chance de 2 pépites de plomb.",
+          "- **Lignite** : 75 % de chance d'1 charbon, plus 20 % de chance d'un de plus.",
+          "- **Soufre** : 20 % de chance d'1 poudre de soufre, plus 10 % de chance d'une de plus.",
+          "- **Calcaire** (Create) : toujours 1 **sable calcaire**.",
+          "- **Terre** : 5 % de chance d'1 **poudre de nitrate** (salpêtre). Broyez la terre en grande quantité.",
+          "",
+          "Le calcaire ne se trouve pas dans le monde : Create le crée là où **le miel rencontre de la lave qui coule** (une source de lave donne de l'obsidienne). Un petit générateur de miel et de lave à côté d'une perceuse mécanique vous donne tout le sable calcaire nécessaire.",
+          "",
+          "La poudre de soufre est lente à accumuler : commencez tôt à concasser du soufre. La poudre de bauxite deviendra de l'aluminium, le nitrate et le soufre de la poudre à canon et de l'acide sulfurique."
+        ]
+      },
+      "items": [
+        "tfmg:bauxite_powder",
+        "tfmg:lead_nugget",
+        "minecraft:coal",
+        "tfmg:sulfur_dust",
+        "create:limestone",
+        "tfmg:limesand",
+        "minecraft:dirt",
+        "tfmg:nitrate_dust"
+      ]
+    },
+    {
+      "title": {
+        "en_us": "What each resource is for",
+        "fr_fr": "À quoi sert chaque ressource"
+      },
+      "text": {
+        "en_us": [
+          "A quick map of where your first finds go:",
+          "",
+          "- **Fireclay**: fireproof bricks, for every hot machine.",
+          "- **Limesand**: cement, and the **flux** of the blast furnace that makes steel.",
+          "- **Lead**: lead sheets (mechanical press), the cast iron chemical vat, lead tools.",
+          "- **Nickel**: nickel sheets, and **constantan** (copper + nickel in a heated mixer).",
+          "- **Lithium**: accumulators, lithium charges and lithium torches.",
+          "- **Bauxite powder**: aluminium, by electrolysis in a vat, or 4 powder + 1 coal coke dust in a **superheated** mixer for the first ingots.",
+          "- **Sulfur and nitrate dust**: 3 nitrate + 2 charcoal + 1 sulfur in a mixer give 3 gunpowder; in a vat they make sulfuric acid.",
+          "- **Lignite**: crushed into coal.",
+          "- **Crude oil**: everything in the oil chapter: fuels, plastic, asphalt.",
+          "",
+          "Next chapter: turning these into the first factory materials."
+        ],
+        "fr_fr": [
+          "Un aperçu rapide de l'usage de vos premières trouvailles :",
+          "",
+          "- **Argile réfractaire** : briques réfractaires, pour toutes les machines chaudes.",
+          "- **Sable calcaire** : ciment, et **fondant** du haut fourneau qui produit l'acier.",
+          "- **Plomb** : plaques de plomb (presse mécanique), cuve chimique en fonte, outils en plomb.",
+          "- **Nickel** : plaques de nickel, et **constantan** (cuivre + nickel dans un malaxeur chauffé).",
+          "- **Lithium** : accumulateurs, charges de lithium et torches au lithium.",
+          "- **Poudre de bauxite** : aluminium, par électrolyse dans une cuve, ou 4 poudres + 1 poussière de coke dans un malaxeur **surchauffé** pour les premiers lingots.",
+          "- **Soufre et nitrate** : 3 nitrates + 2 charbons de bois + 1 soufre au malaxeur donnent 3 poudres à canon ; dans une cuve, ils font de l'acide sulfurique.",
+          "- **Lignite** : concassé en charbon.",
+          "- **Pétrole brut** : tout le chapitre sur le pétrole : carburants, plastique, asphalte.",
+          "",
+          "Chapitre suivant : transformer tout cela en premiers matériaux d'usine."
+        ]
+      },
+      "items": [
+        "tfmg:fireproof_brick",
+        "tfmg:limesand",
+        "tfmg:lead_sheet",
+        "tfmg:constantan_ingot",
+        "tfmg:lithium_ingot",
+        "tfmg:aluminum_ingot",
+        "minecraft:gunpowder",
+        "tfmg:crude_oil_bucket"
+      ]
+    }
+  ]
+}

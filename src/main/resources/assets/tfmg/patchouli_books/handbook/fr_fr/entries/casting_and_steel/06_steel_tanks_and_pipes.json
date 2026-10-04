@@ -1,0 +1,30 @@
+{
+  "name": "Cuves et tuyaux en acier",
+  "icon": "tfmg:steel_fluid_tank",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Cuve à fluide en acier$()$(br)$(item)Plaque lourde, tonneau, plaque lourde$() en colonne : $(item)2 cuves$(). Elles forment les tours de distillation et les cuves chimiques, et entrent dans les foyers et les chevalets de pompage."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Tuyau en acier$()$(br)$(item)Plaque lourde, lingot d'acier, plaque lourde$() en ligne ou en colonne : $(item)4 tuyaux$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le tuyau en acier donne le reste de la famille :$(li)$(item)Pompe mécanique en acier$() : un tuyau en acier et une roue dentée.$(li)$(item)Vanne à fluide en acier$() : un tuyau en acier et une plaque de fer.$(li)$(item)Tuyau à fluide intelligent en acier$() : un tuyau en acier, une feuille d'aluminium et un tube électronique."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Pour la suite$()$(br)Avec les lingots d'acier, les plaques lourdes, les vis, les mécanismes et les carters, vous pouvez construire presque toutes les machines du mod. Avant les chapitres sur l'électricité et le pétrole, assurez-vous que votre four à coke, votre ligne d'air chaud et votre haut fourneau tournent seuls : tout ce qui suit consomme de l'acier."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_fluid_tank,minecraft:barrel,tfmg:steel_pipe,tfmg:steel_mechanical_pump,tfmg:steel_fluid_valve,tfmg:steel_smart_fluid_pipe,tfmg:heavy_plate,tfmg:steel_ingot",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

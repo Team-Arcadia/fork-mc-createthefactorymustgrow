@@ -5,6 +5,8 @@ import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.crank.PumpjackCrankBlockEntity;
 import com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.hammer.PumpjackBlockEntity;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
@@ -31,7 +33,7 @@ import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 
 import java.util.List;
 
-public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     // Per-tick fluid and progress changes sync at most every few ticks.
     private final ThrottledSync throttledSync = new ThrottledSync();
@@ -193,6 +195,76 @@ public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGo
         //}
 
 
+    }
+
+    /** The well under the base and the base's own tank; read only. */
+    public void inspectWell(InspectionReport report) {
+        // Same walk as findDeposit: industrial pipe all the way down to an oil deposit.
+        int minY = level.getMinBuildHeight();
+        BlockPos found = null;
+        BlockPos gap = null;
+        for (int y = getBlockPos().getY() - 1; y >= minY; y--) {
+            BlockPos checkedPos = new BlockPos(getBlockPos().getX(), y, getBlockPos().getZ());
+            BlockState state = level.getBlockState(checkedPos);
+            if (state.is(TFMGBlocks.OIL_DEPOSIT.get())) {
+                found = checkedPos;
+                break;
+            }
+            if (!state.is(TFMGTags.TFMGBlockTags.INDUSTRIAL_PIPE.tag)) {
+                gap = checkedPos;
+                break;
+            }
+        }
+        if (found != null) {
+            report.ok("pumpjack.deposit", found.getY(), getBlockPos().getY() - 1 - found.getY());
+        } else if (gap != null) {
+            report.problem("pumpjack.pipe_gap", gap.getX(), gap.getY(), gap.getZ(), level.getBlockState(gap).getBlock().getName());
+            report.fix("pumpjack.pipe_gap.fix");
+        } else {
+            report.problem("pumpjack.no_deposit");
+            report.fix("pumpjack.no_deposit.fix");
+        }
+
+        if (isRunning && miningRate > 0)
+            report.info("pumpjack.rate", miningRate);
+        if (tank.getFluidAmount() + Math.max(miningRate, 1) > tank.getCapacity()) {
+            report.problem("pumpjack.full", tank.getFluidAmount(), tank.getCapacity());
+            report.fix("pumpjack.full.fix");
+        }
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        PumpjackBlockEntity hammer = controllerHammer != null && !controllerHammer.isRemoved() ? controllerHammer : null;
+        if (hammer == null) {
+            // Not running: find a hammer whose base is this one. The head sits
+            // up to 8 blocks above and up to 6 to the side along the beam.
+            search:
+            for (int dy = 1; dy <= 9; dy++) {
+                for (int dx = -7; dx <= 7; dx++) {
+                    for (int dz = -7; dz <= 7; dz++) {
+                        if (dx != 0 && dz != 0)
+                            continue;
+                        BlockPos pos = getBlockPos().offset(dx, dy, dz);
+                        if (level.isLoaded(pos) && level.getBlockEntity(pos) instanceof PumpjackBlockEntity candidate && candidate.base == this) {
+                            hammer = candidate;
+                            break search;
+                        }
+                    }
+                }
+            }
+        }
+        if (hammer != null) {
+            BlockPos at = hammer.getBlockPos();
+            report.info("pumpjack.part_of", at.getX(), at.getY(), at.getZ());
+            hammer.inspect(report);
+            return;
+        }
+        report.problem("pumpjack.base_unlinked");
+        report.fix("pumpjack.base_unlinked.fix");
+        inspectWell(report);
     }
 
     public void setControllerHammer(PumpjackBlockEntity controllerHammer) {

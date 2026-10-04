@@ -1,6 +1,8 @@
 package com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.hammer;
 
 
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.base.PumpjackBaseBlockEntity;
 import com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.crank.PumpjackCrankBlockEntity;
 import com.drmangotea.tfmg.registry.TFMGTags;
@@ -35,7 +37,7 @@ import static com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.hamm
 import static net.minecraft.world.level.block.DirectionalBlock.FACING;
 
 public class PumpjackBlockEntity extends GeneratingKineticBlockEntity
-        implements IBearingBlockEntity, IDisplayAssemblyExceptions {
+        implements IBearingBlockEntity, IDisplayAssemblyExceptions, IInspectable {
     protected ControlledContraptionEntity movedContraption;
     protected float angle;
     protected boolean running;
@@ -576,6 +578,54 @@ public class PumpjackBlockEntity extends GeneratingKineticBlockEntity
 
     public boolean isRunning() {
         return running;
+    }
+
+    /**
+     * The whole pumpjack, read from the hammer that ties it together: the
+     * beam (head and connector), the crank under the connector, the base
+     * under the head, then the well below the base.
+     */
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        if (headPosition == null || connectorPosition == null) {
+            report.problem("pumpjack.no_beam");
+            report.fix("pumpjack.no_beam.fix");
+        } else {
+            report.ok("pumpjack.beam", headDistance, connectorDistance);
+        }
+
+        PumpjackCrankBlockEntity liveCrank = crank != null && !crank.isRemoved() ? crank : null;
+        PumpjackBaseBlockEntity liveBase = base != null && !base.isRemoved() ? base : null;
+        if (connectorPosition != null) {
+            if (liveCrank == null) {
+                report.problem("pumpjack.no_crank", connectorPosition.getX(), connectorPosition.getY(), connectorPosition.getZ());
+                report.fix("pumpjack.no_crank.fix");
+            } else {
+                liveCrank.inspectDrive(report);
+            }
+        }
+        if (headPosition != null && liveBase == null) {
+            report.problem("pumpjack.no_base", headPosition.getX(), headPosition.getY(), headPosition.getZ());
+            report.fix("pumpjack.no_base.fix");
+        }
+
+        if (running) {
+            report.ok("pumpjack.assembled");
+        } else {
+            if (lastException != null)
+                report.problem("pumpjack.assembly_error", lastException.component);
+            report.problem("pumpjack.not_assembled");
+            report.fix("pumpjack.not_assembled.fix");
+        }
+
+        if (liveCrank != null && connectorDistance > 0) {
+            int peak = (int) Math.abs(liveCrank.getMachineInputSpeed() * ((float) connectorDistance / 5));
+            report.info("pumpjack.peak_rate", peak);
+        }
+        if (liveBase != null)
+            liveBase.inspectWell(report);
     }
 
     public void setAngle(float forcedAngle) {

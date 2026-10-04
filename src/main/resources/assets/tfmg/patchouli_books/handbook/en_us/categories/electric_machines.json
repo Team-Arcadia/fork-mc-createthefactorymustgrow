@@ -1,0 +1,6 @@
+{
+  "name": "Electric Machines",
+  "description": "The electric motor turns electricity back into rotation, so one power plant can drive machines all over the base through wires. It is made by sequenced assembly on a shaft: a copper spool on the winding machine, a magnet, a steel mechanism and a screwdriver, three times over.",
+  "icon": "tfmg:electric_motor",
+  "sortnum": 100
+}

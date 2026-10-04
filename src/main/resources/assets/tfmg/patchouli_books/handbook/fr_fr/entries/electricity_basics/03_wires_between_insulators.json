@@ -1,0 +1,34 @@
+{
+  "name": "Des fils entre les isolateurs",
+  "icon": "tfmg:cable_connector",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Pour franchir une distance, tendez un fil entre deux $(item)isolateurs de câble$(). Posez un isolateur sur une face d'un bloc électrique : il se connecte au bloc sur lequel il est posé."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Des isolateurs posés en ligne droite, tous dans le même sens, font passer le courant le long de la pile, et le fil s'accroche au dernier. Les isolateurs supportent jusqu'à $(item)100 000 V$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Remplir une bobine$()$(br)Taillez une $(item)bobine vide$() dans des planches durcies avec un tailleur de pierre. Montez-la sur une $(item)enrouleuse$() et donnez-lui du fil : chaque fil ajoute $(item)125 tours$(), et une bobine pleine contient $(item)1 000 tours$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Tendre le fil$()$(li)Clic droit sur un isolateur avec une bobine pleine, puis clic droit sur un second isolateur.$(li)Chaque tranche de $(item)8 blocs$() de fil consomme $(item)125 tours$() : une bobine pleine couvre environ $(item)64 blocs$().$(li)Accroupi, clic droit dans le vide pour annuler un fil commencé.$(li)Casser un isolateur rend le fil, un objet par tranche de 8 blocs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les bobines de cuivre, d'aluminium et de constantan fonctionnent toutes. Dans cette version, le métal ne change que la couleur du fil."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cable_connector,tfmg:glass_cable_insulator,tfmg:empty_spool,tfmg:copper_spool,tfmg:aluminum_spool,tfmg:constantan_spool,tfmg:winding_machine,tfmg:copper_wire",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

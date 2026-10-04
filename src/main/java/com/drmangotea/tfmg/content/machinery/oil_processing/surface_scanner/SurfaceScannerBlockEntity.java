@@ -2,6 +2,8 @@ package com.drmangotea.tfmg.content.machinery.oil_processing.surface_scanner;
 
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.content.machinery.misc.machine_input.MachineInputBlockEntity;
 import com.drmangotea.tfmg.registry.TFMGFluids;
 import com.drmangotea.tfmg.registry.TFMGTags;
@@ -22,7 +24,7 @@ import net.minecraft.world.level.chunk.LevelChunkSection;
 
 import java.util.List;
 
-public class SurfaceScannerBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+public class SurfaceScannerBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation, IInspectable {
 
 
     public Boolean[][] grid = new Boolean[5][5];
@@ -71,6 +73,54 @@ public class SurfaceScannerBlockEntity extends SmartBlockEntity implements IHave
             TFMGTexts.SurfaceScanner.noRotation().forGoggles(tooltip);
 
         return true;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (level == null)
+            return;
+        BlockPos below = getBlockPos().below();
+        if (!(level.getBlockEntity(below) instanceof MachineInputBlockEntity input)) {
+            report.problem("surface_scanner.no_input");
+            report.fix("surface_scanner.no_input.fix");
+            return;
+        }
+        int speed = (int) Math.abs(input.getSpeed());
+        if (speed < 64) {
+            report.problem("surface_scanner.slow", speed);
+            report.fix("surface_scanner.slow.fix");
+            return;
+        }
+        report.ok("surface_scanner.powered", speed);
+        report.info("surface_scanner.area", TFMGConfigs.common().machines.surfaceScannerScanDepth.get());
+
+        int found = 0;
+        boolean scanned = false;
+        for (int x = 0; x < 5; x++) {
+            for (int z = 0; z < 5; z++) {
+                Boolean cell = grid[x][z];
+                if (cell == null)
+                    continue;
+                scanned = true;
+                if (!cell)
+                    continue;
+                found++;
+                // Name at most five chunks; the goggles and the screen show the full map.
+                if (found <= 5) {
+                    int chunkX = (getBlockPos().getX() >> 4) + x - 2;
+                    int chunkZ = (getBlockPos().getZ() >> 4) + z - 2;
+                    report.info("surface_scanner.deposit_at", chunkX * 16 + 8, chunkZ * 16 + 8);
+                }
+            }
+        }
+        if (!scanned)
+            report.info("surface_scanner.scanning");
+        else if (found > 0)
+            report.ok("surface_scanner.deposits", found);
+        else {
+            report.info("surface_scanner.none");
+            report.fix("surface_scanner.none.fix");
+        }
     }
 
     @Override

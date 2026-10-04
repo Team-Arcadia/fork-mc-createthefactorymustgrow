@@ -1,0 +1,30 @@
+{
+  "name": "Lignes de la cuve chimique",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(li)**Une machine attachée ne fonctionne pas : aucune recette ne peut tourner** : toutes les machines de la cuve doivent fonctionner, même celles que la recette en cours n'utilise pas."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un mélangeur industriel a besoin de rotation, les porte-électrodes de courant par leur face du haut, et toute autre machine doit tourner aussi. Réparez-la ou retirez-la. $(li)**Aucune recette ne correspond : vérifiez taille, type de cuve et machines dans JEI** : les entrées ne correspondent à aucune recette de cette cuve."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une recette peut exiger une taille minimale (jusqu'à 3x3), un type de cuve (acier, fonte ou revêtement réfractaire) et des machines précises. JEI les affiche sur chaque recette. $(li)$(item)Pas assez chaud pour cette recette$() : placez des foyers ou des brûleurs à blaze sous la cuve, et alimentez-les. $(li)$(item)Pression trop faible pour cette recette$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "la recette demande une pression que la cuve n'a pas. Un compresseur sur la cuve change sa pression ; JEI indique la pression demandée par chaque recette.$(br2)Les tuyaux ne peuvent que remplir les entrées de la cuve et vider ses sorties. Le four à arc est une cuve à revêtement réfractaire d'au moins 3x3 avec trois porte-électrodes alimentés dessus."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:industrial_mixer,tfmg:electrode_holder,tfmg:compressor,tfmg:freezer,tfmg:firebox",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

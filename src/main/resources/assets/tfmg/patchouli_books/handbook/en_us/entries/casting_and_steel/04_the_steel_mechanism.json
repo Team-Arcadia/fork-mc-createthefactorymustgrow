@@ -1,0 +1,30 @@
+{
+  "name": "The steel mechanism",
+  "icon": "tfmg:steel_mechanism",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Most TFMG machines ask for a steel mechanism. It is a $(item)sequenced assembly$() that starts from a $(item)heavy plate$(), with four $(item)deployer$() steps, in this order:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)1. a $(item)steel ingot$()$(li)2. an $(item)aluminium ingot$()$(li)3. $(item)screws$()$(li)4. the $(item)screwdriver$() (worn, not consumed)$(br2)One pass is enough. The result is a $(item)steel mechanism 80%$() of the time, and an $(item)iron nugget$() otherwise."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)A simple line$()$(br)A belt carries heavy plates under four deployers in a row, each holding one of the items above. Keep the first three deployers stocked with funnels or chutes, and give the last one a screwdriver."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Per mechanism, on average: 1 heavy plate, 1 steel ingot, 1 aluminium ingot and 1 screw, divided by 0.8. Count about $(item)1.25 of each$() and $(item)2.5 steel ingots$() in total, plate included."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_mechanism,tfmg:unfinished_steel_mechanism,tfmg:heavy_plate,tfmg:steel_ingot,tfmg:aluminum_ingot,tfmg:screw,tfmg:screwdriver,create:deployer",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

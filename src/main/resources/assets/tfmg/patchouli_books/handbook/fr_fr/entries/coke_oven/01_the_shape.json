@@ -1,0 +1,57 @@
+{
+  "name": "La forme",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un four à coke est une $(item)tranche carrée$() de blocs de four : autant de blocs en $(item)hauteur$() qu'en $(item)profondeur$(), et $(item)un seul bloc de large$(). Voyez-le comme une rangée de longues chambres qui partent des portes vers l'arrière. $(li)Tous les blocs doivent regarder $(item)dans le même sens$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un bloc vous fait face quand vous le posez : posez-les tous en regardant la future façade. $(li)Le $(item)contrôleur$() est le bloc $(item)en bas à l'avant$(). Seule la colonne de devant montre des portes. $(li)La taille va de $(item)1x1$() à $(item)6x6$() (le réglage serveur cokeOvenMaxSize, 5 par défaut, fixe la limite)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Des blocs en trop au-dessus ou derrière un carré de taille maximale restent des fours séparés.$(br2)Des fours posés côte à côte sont des machines séparées, chacune avec son contrôleur. Pour une batterie, alignez plusieurs tranches.$(br2)La vue montre un four $(item)3x3$() tourné vers le sud : trois de haut, trois de profondeur."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "La forme",
+      "multiblock": {
+        "pattern": [
+          [
+            "C",
+            "C",
+            "T"
+          ],
+          [
+            "C",
+            "C",
+            "M"
+          ],
+          [
+            "C",
+            "0",
+            "B"
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

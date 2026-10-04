@@ -1,13 +1,15 @@
 package com.drmangotea.tfmg.content.electricity.generators.large_generator;
 
 import com.drmangotea.tfmg.content.electricity.base.ElectricBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 
-public class StatorBlockEntity extends ElectricBlockEntity implements IHaveGoggleInformation {
+public class StatorBlockEntity extends ElectricBlockEntity implements IHaveGoggleInformation, IInspectable {
 
     public BlockPos rotor = null;
 
@@ -46,6 +48,17 @@ public class StatorBlockEntity extends ElectricBlockEntity implements IHaveGoggl
 
             timer--;
         }
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        if (rotor != null && level.isLoaded(rotor) && level.getBlockEntity(rotor) instanceof RotorBlockEntity be) {
+            report.info("stator.part_of", rotor.getX() + " " + rotor.getY() + " " + rotor.getZ());
+            be.inspect(report);
+            return;
+        }
+        report.problem("stator.no_rotor");
+        report.fix("stator.no_rotor.fix");
     }
 
     public void updateRotor(){

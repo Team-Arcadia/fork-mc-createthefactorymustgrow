@@ -1,0 +1,30 @@
+{
+  "name": "Converter",
+  "icon": "tfmg:converter",
+  "category": "tfmg:power",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The converter links TFMG electricity with $(item)Forge Energy (FE)$() from other mods. It stores up to $(item)500,000 FE$(). Use a Create $(item)wrench$() on it to switch between its two modes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)FE to TFMG$()$(br)Feed it Forge Energy. It powers the TFMG network at the voltage set on its dial, from $(item)1 to 250 V$() (20 V by default), with up to $(item)10 kW$(). When its storage runs empty it waits $(item)5 seconds$() before it starts again."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)TFMG to FE$()$(br)It charges from the TFMG network at up to $(item)1,000 FE per tick$(), as long as the network voltage reaches the dial value and the network has spare power. It pushes that energy into neighbouring FE machines."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Only $(item)one side$() takes the TFMG connection. Look at it with a multimeter: it tells you the current mode and which side goes to the TFMG cable and which to the FE machine. It also says why it is not charging, for example when the dial is set higher than the network voltage."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:converter,create:wrench,tfmg:multimeter",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

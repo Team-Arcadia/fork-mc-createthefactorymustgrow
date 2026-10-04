@@ -1,0 +1,30 @@
+{
+  "name": "When the oven stops",
+  "icon": "create:goggles",
+  "category": "tfmg:coke_oven",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "If either tank cannot take the next tick of by-product, the oven $(item)pauses$(). The timer freezes, the coal stays in the slot and no fluid is lost. As soon as you drain the tank, cooking resumes by itself."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Look at any oven block with $(item)Engineer's Goggles$() to see what is happening. Besides the progress and both tanks, a red line tells you which tank blocks the oven:$(br2)$(li)$(item)CO2 tank full: pump it out from the TOP face$()$(li)$(item)Creosote tank full: pump it out from a side$() $(l)Checklist - No progress at all:$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "is the slot empty, or does it hold something that is not coal or a log? $(li)Stuck at the same time left: a tank is full, read the red line. $(li)Coke piling up in front: the drop zone is blocked or nothing collects it. $(li)The oven is slower than expected: a block faces another way or is missing, so the square is smaller."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Break and replace it facing the front."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:coke_oven,create:mechanical_pump",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

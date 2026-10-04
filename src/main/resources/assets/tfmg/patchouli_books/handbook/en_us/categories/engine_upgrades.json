@@ -1,0 +1,6 @@
+{
+  "name": "Engine Upgrades and Large Engines",
+  "description": "Small engines (regular, radial and turbine) take upgrades. Right-click an engine block with the upgrade item to mount it.",
+  "icon": "tfmg:turbo",
+  "sortnum": 210
+}

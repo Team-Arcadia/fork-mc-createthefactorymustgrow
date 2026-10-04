@@ -60,6 +60,9 @@ public class TFMGDatagen {
 
             provideDefaultLang("interface", langConsumer);
             provideDefaultLang("tooltips", langConsumer);
+            provideDefaultLang("inspector", langConsumer);
+            provideDefaultLang("inspector_power", langConsumer);
+            provideDefaultLang("inspector_machines", langConsumer);
 
             providePonderLang(langConsumer);
         });

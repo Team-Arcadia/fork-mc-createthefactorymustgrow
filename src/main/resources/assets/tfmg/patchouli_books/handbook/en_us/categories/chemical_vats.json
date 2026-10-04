@@ -1,0 +1,6 @@
+{
+  "name": "Chemical Vats",
+  "description": "The Chemical Vat is the mod's all-purpose reactor: it mixes, cracks, freezes, compresses and runs electrolysis. There are three kinds, and each recipe lists the kinds it accepts:",
+  "icon": "tfmg:steel_chemical_vat",
+  "sortnum": 110
+}

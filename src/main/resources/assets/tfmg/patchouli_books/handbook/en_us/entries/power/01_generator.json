@@ -1,0 +1,26 @@
+{
+  "name": "Generator",
+  "icon": "tfmg:generator",
+  "category": "tfmg:power",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The generator turns rotation into electricity. It is made by sequenced assembly on a shaft: a capacitor, a steel plate, a copper spool on the winding machine, a magnet, a steel mechanism and a screwdriver, three times over."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Output$()$(li)Nothing below $(item)40 RPM$().$(li)Voltage: $(item)(RPM - 40) x 1.4$(), capped at $(item)1,000 V$().$(li)Power: $(item)voltage x 40 W$().$(br2)At 128 RPM it gives 123 V and 4,920 W. At 256 RPM, the fastest Create shaft, it gives $(item)302 V$() and $(item)12,080 W$().$(br2)It connects on $(item)every face$(), and it puts a stress impact of 50 on its shaft, like any Create machine."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Several generators$()$(br)Their powers add up, but the network takes the $(item)highest$() voltage only. Run them all at the same speed, otherwise the slow ones add power without adding voltage.$(br2)These are the default values; a server can change them in the config."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,create:shaft,tfmg:capacitor_item,tfmg:copper_spool,tfmg:magnet,tfmg:steel_mechanism,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

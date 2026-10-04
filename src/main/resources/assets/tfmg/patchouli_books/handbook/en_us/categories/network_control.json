@@ -1,0 +1,6 @@
+{
+  "name": "Network Control",
+  "description": "The diode, the electric switch, the potentiometer and the transformer are bridges. Each one takes power in on one side (the back for the diode, switch and potentiometer) and feeds a separate network on its output side. The large switch and the large transformer work the same way across their two halves.",
+  "icon": "tfmg:transformer",
+  "sortnum": 90
+}

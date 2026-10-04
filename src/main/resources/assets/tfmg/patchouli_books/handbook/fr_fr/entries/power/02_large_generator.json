@@ -1,0 +1,58 @@
+{
+  "name": "Grand générateur",
+  "icon": "tfmg:rotor",
+  "category": "tfmg:power",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Posez un $(item)rotor$() et entourez-le de $(item)8 stators$() en anneau, en carré autour de l'axe du rotor : quatre sur les côtés et quatre dans les coins. Les stators prennent leur forme tout seuls. Le rotor ne produit que lorsque les huit sont en place. Les deux pièces sortent d'un établi mécanique."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Production$()$(li)Rien en dessous de $(item)70 tr/min$().$(li)Tension : $(item)(tr/min - 70) x 12$(), plafonnée à $(item)10 000 V$().$(li)Puissance : $(item)(tr/min - 70) x 320 W$().$(br2)À 256 tr/min, il donne $(item)2 232 V$() et $(item)59 520 W$(). Le rotor a un impact de contrainte de 240."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Prenez le courant sur les $(item)stators$(). Ils supportent 10 000 V, mais la plupart des machines grillent au-dessus de $(item)1 000 V$() : faites passer la ligne par des isolateurs, des tubes de câble ou des poteaux jusqu'à un $(item)grand transformateur$() avant qu'elle n'atteigne votre usine."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Grand générateur",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " S ",
+            "   "
+          ],
+          [
+            "ABC",
+            "D0E",
+            "FGH"
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:stator[facing=north,stator_state=corner_horizontal,value=true]",
+          "B": "tfmg:stator[facing=south,stator_state=side,value=true]",
+          "C": "tfmg:stator[facing=east,stator_state=corner_horizontal,value=true]",
+          "D": "tfmg:stator[facing=east,stator_state=side,value=true]",
+          "R": "tfmg:rotor[axis=y]",
+          "E": "tfmg:stator[facing=west,stator_state=side,value=true]",
+          "F": "tfmg:stator[facing=west,stator_state=corner_horizontal,value=true]",
+          "G": "tfmg:stator[facing=north,stator_state=side,value=true]",
+          "H": "tfmg:stator[facing=south,stator_state=corner_horizontal,value=true]",
+          "S": "create:shaft[axis=y]",
+          "0": "tfmg:rotor[axis=y]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:rotor,tfmg:stator,create:shaft,tfmg:large_coil",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

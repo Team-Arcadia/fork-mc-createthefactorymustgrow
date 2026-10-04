@@ -1,0 +1,30 @@
+{
+  "name": "Step 1: the components",
+  "icon": "tfmg:crankshaft",
+  "category": "tfmg:engines",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Place the engine block, then right-click it with each component it asks for. The goggles show $(item)Engine Unfinished$() and the $(item)Next Component$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Regular and radial engines$()$(li)1 Crankshaft, 1 Steel Cogwheel, 1 Large Steel Cogwheel$(li)1 Belt Connector, 2 Steel Pipes, 1 Steel Mechanism$(br2)$(l)Turbine engine$()$(li)1 Shaft, 1 Steel Cogwheel, 2 Steel Pipes, 2 Steel Mechanisms"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Every block of a long engine needs its own full set.$() A three-block engine asks for three sets, one after the other; the goggles say which block you are on ($(item)Building engine 2 of 3$()). You can click any block of the row, the parts go where they are needed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Made a mistake? Right-click with a $(item)Screwdriver$() to take the last part back out. Breaking an engine block also drops every part that was in it."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:crankshaft,tfmg:steel_cogwheel,tfmg:large_steel_cogwheel,create:belt_connector,tfmg:steel_pipe,tfmg:steel_mechanism,create:shaft,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

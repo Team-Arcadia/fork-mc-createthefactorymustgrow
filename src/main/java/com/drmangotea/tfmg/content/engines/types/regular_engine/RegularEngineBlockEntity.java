@@ -6,6 +6,7 @@ import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.engines.types.AbstractSmallEngineBlockEntity;
 import com.drmangotea.tfmg.content.engines.types.turbine_engine.TurbineEngineBlockEntity;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGDataComponents;
 import com.drmangotea.tfmg.registry.TFMGItems;
 import com.drmangotea.tfmg.registry.TFMGSoundEvents;
@@ -435,6 +436,11 @@ public class RegularEngineBlockEntity extends AbstractSmallEngineBlockEntity {
         TFMGTexts.Engine.type(type.langKey).forGoggles(tooltip, 1);
         TFMGTexts.Engine.rpm(outputSpeed()).forGoggles(tooltip, 1);
         TFMGTexts.Engine.signal((int) (highestSignal*15)).forGoggles(tooltip, 1);
+        // Speed is a multiple of the redstone signal: without one a built and
+        // fuelled engine sits at zero. The shared tooltip says so; this one,
+        // used by every regular, radial and turbine engine, never did.
+        if (highestSignal <= 0 && engineController == null)
+            TFMGTexts.Engine.noSignal().forGoggles(tooltip, 1);
         TFMGTexts.Engine.torque(torque).forGoggles(tooltip, 1);
         TFMGTexts.Engine.stressCapacity(outputStress()).forGoggles(tooltip, 1);
         // A built, fuelled, signalled engine with no shaft delivers nothing and
@@ -467,6 +473,37 @@ public class RegularEngineBlockEntity extends AbstractSmallEngineBlockEntity {
         return true;
     }
 
+
+    @Override
+    protected Component engineTypeName() {
+        return Component.translatable("tfmg." + type.langKey);
+    }
+
+    @Override
+    protected Component fuelSourceName() {
+        ItemStack cylinder = pistonInventory.getItem(0);
+        return cylinder.isEmpty() ? super.fuelSourceName() : cylinder.getHoverName();
+    }
+
+    @Override
+    protected void inspectCylinders(InspectionReport report, List<AbstractSmallEngineBlockEntity> chain) {
+        Component part = Component.translatable(this instanceof TurbineEngineBlockEntity
+                ? "tfmg.inspector.engine.part.turbine_blade" : "tfmg.inspector.engine.part.cylinder");
+        for (int i = 0; i < chain.size(); i++) {
+            if (!(chain.get(i) instanceof RegularEngineBlockEntity be))
+                continue;
+            int missing = 0;
+            for (int slot = 0; slot < be.pistonInventory.getSlots(); slot++)
+                if (be.pistonInventory.getItem(slot).isEmpty())
+                    missing++;
+            if (missing == 0)
+                continue;
+            report.problem("engine.missing_cylinders", i + 1, chain.size(), missing, be.pistonInventory.getSlots(), part,
+                    coords(be.getBlockPos()));
+            report.fix("engine.missing_cylinders.fix", part);
+            return;
+        }
+    }
 
     public enum EngineType {
         I("engine_i", pistonsI(), 1, 1, 1, true),

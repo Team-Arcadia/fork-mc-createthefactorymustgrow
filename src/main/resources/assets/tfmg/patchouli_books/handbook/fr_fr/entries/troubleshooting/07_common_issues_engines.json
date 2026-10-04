@@ -1,0 +1,30 @@
+{
+  "name": "Problèmes courants : moteurs",
+  "icon": "tfmg:regular_engine",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Construit, alimenté, mais rien ne tourne - $(item)Pas de signal de redstone$() :$() un petit moteur ne tourne jamais au seul carburant. Un signal de 0 donne 0 RPM. Posez un levier ou toute source de redstone contre n'importe lequel de ses blocs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Échappement plein$() : le moteur a rempli son réservoir de CO2 de 8000 mB et s'est arrêté. Pompez le CO2 vers un bloc Échappement. $(li)$(item)Mauvais carburant$() : le carburant doit figurer dans la liste de l'infobulle des cylindres. $(li)$(item)Aucun arbre de sortie$() : un moteur ordinaire a besoin d'un arbre posé sur un bloc d'extrémité."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Un moteur avec contrôleur ignore la redstone$()$(br)C'est normal : une transmission liée confie la commande au contrôleur de moteur. Démarrez le moteur avec la touche de démarrage, ou retirez la transmission avec une clé."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La rangée de moteurs se coupe$()$(br)Les blocs ne s'assemblent que s'ils sont du même modèle, orientés pareil et du même type, jusqu'à 5 blocs par défaut. Un sixième bloc commence un nouveau moteur.$(br2)$(l)Amélioration refusée$()$(br)Chaque bloc prend une amélioration, et une même amélioration une seule fois par moteur."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:regular_engine,minecraft:lever,tfmg:exhaust,tfmg:transmission,tfmg:engine_controller,create:wrench",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

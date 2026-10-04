@@ -1,0 +1,30 @@
+{
+  "name": "Le bobinage en assemblage séquencé",
+  "icon": "tfmg:electric_motor",
+  "category": "tfmg:winding_and_magnets",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Plusieurs machines se construisent par $(item)assemblage séquencé$(), avec une étape de bobinage dans la boucle. Placez une enrouleuse sur la ligne, avec la bonne bobine montée, à l'endroit où la séquence demande un bobinage. $(li)$(item)Moteur électrique$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "part d'un arbre, 3 boucles. L'étape de bobinage prend $(item)75 tours$() d'une $(item)bobine de cuivre$(), puis un aimant, un mécanisme en acier et un tournevis. $(li)$(item)Générateur$() : part d'un arbre, 3 boucles. Condensateur, plaque d'acier, puis $(item)75 tours$() d'une $(item)bobine de cuivre$(), puis un aimant, un mécanisme en acier et un tournevis. $(li)$(item)Potentiomètre$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "part d'un carter de machinerie lourd, 3 boucles. $(item)100 tours$() d'une $(item)bobine de constantan$(), puis un engrenage en acier, du fil de cuivre et de l'huile de lubrification.$(br2)Pour ces étapes, la case de valeur cible ne compte pas : c'est la recette qui fixe le nombre de tours."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une étape de bobinage $(item)attend$() quand la bobine montée est du mauvais métal ou n'a plus de tours. L'objet ne saute jamais l'étape, donc une ligne arrêtée ici demande juste une bobine neuve. Un entonnoir peut échanger les bobines vides contre des pleines."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_motor,tfmg:generator,tfmg:potentiometer,tfmg:copper_spool,tfmg:constantan_spool,tfmg:magnet,tfmg:screwdriver",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

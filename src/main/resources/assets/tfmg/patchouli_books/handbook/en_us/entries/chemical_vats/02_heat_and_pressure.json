@@ -1,0 +1,26 @@
+{
+  "name": "Heat and pressure",
+  "icon": "tfmg:firebox",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Heat$()$(br)Heat is the sum of every heater $(item)directly under the vat$():$(br2)$(li)a burning $(item)Firebox$() block gives $(item)2$(),$(li)a lit $(item)Blaze Burner$() gives $(item)1$(), or $(item)2$() when superheated,$(li)each working $(item)Freezer$() attached to the vat takes $(item)1$() away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Heated vat recipes ask for $(item)heat 2$(): one burning firebox under the vat is enough. Remember that a compressor or freezer placed underneath takes a spot a heater could use."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Pressure$()$(br)Each running $(item)Compressor$() adds $(item)1$() pressure. Turn its shaft the other way and it removes 1 instead (goggles say Pressurizing or Depressurizing). Pressure recipes ask for $(item)pressure 1$(), so one compressor turning the right way does it.$(br2)Goggles show the vat's $(item)Heat$() and $(item)Pressure$() as bars, so you can check both before blaming the recipe."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:firebox,create:blaze_burner,tfmg:compressor,tfmg:freezer,create:goggles",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

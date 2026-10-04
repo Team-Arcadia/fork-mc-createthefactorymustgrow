@@ -1,0 +1,26 @@
+{
+  "name": "Desert oil wells and fossilstone",
+  "icon": "tfmg:fossilstone",
+  "category": "tfmg:finding_oil",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Oil wells$()$(br)Deserts (the biomes where desert pyramids can spawn) sometimes hold an $(item)oil well$(): on average once every $(item)500 chunks$(). It is a pillar of crude oil rising from a deposit at Y -64 all the way to roughly $(item)70 to 80 blocks above the ground$(), visible from very far away."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "An oil well is free crude oil for a bucket or a pump, and its base is an ordinary deposit you can tap with a pumpjack later.$(br2)$(l)Fossilstone$()$(br)Fossilstone is a dark stone that only generates next to oil: around the bottom of deposit columns and in patches along the shaft of an oil well."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)It is extremely tough: hardness $(item)100$(), twice that of obsidian, and blast resistance $(item)1200$().$(li)Any pickaxe drops it, but it takes a long time to break.$(br2)When a tunnel or a cave near bedrock runs into fossilstone, crude oil is right next to you. Mine around it, or simply build your pipe column beside it."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fossilstone,tfmg:crude_oil_bucket,minecraft:bucket,minecraft:sand",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

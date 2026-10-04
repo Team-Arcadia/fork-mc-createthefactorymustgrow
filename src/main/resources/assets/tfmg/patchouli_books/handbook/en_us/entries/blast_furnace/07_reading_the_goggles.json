@@ -1,0 +1,26 @@
+{
+  "name": "Reading the goggles",
+  "icon": "create:goggles",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Look at the $(item)output block$() with Engineer's Goggles. It shows the ore count, the $(item)height$(), the $(item)fuel$() left, the time left in ticks, $(item)Reinforced$() if it is, then both tanks. Red lines say why it is idle: $(li)$(item)Structure incomplete$(): fewer than 3 good layers."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Check corners, edges, the empty centre and the bottom centre brick, layer by layer. $(li)$(item)No fuel$(): add coal coke dust. $(li)$(item)No flux$(): add limesand. $(li)$(item)No Blast Furnace Hatch in the walls$(): add one, or you have two and the second cut the tower. $(li)$(item)The hatch holds no Hot Air$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "the stove is not delivering, or the hatch holds another fluid. $(li)$(item)Output tank full$(): pump the steel or slag out.$(br2)If the furnace stops with hot air in the hatch, the hatch may have less than 20 mB: your stove is too small for this furnace. Slag is not waste: cast it into slag blocks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch,tfmg:molten_slag_bucket,tfmg:slag_block",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

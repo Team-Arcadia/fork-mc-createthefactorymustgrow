@@ -1,0 +1,30 @@
+{
+  "name": "Coke oven and firebox lines",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Coke oven$()$(li)$(item)CO2 tank full: pump it out from the TOP face$(): the CO2 by-product only leaves through the top of the oven. A pipe on a side will never drain it.$(li)$(item)Creosote tank full: pump it out from a side$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Either full tank $(item)pauses the whole oven$(). Send the CO2 to an Exhaust or a smokestack, and keep the creosote for simple engines or the blast stove."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Firebox$()$(li)$(item)Not enough fuel to burn$(): the tank holds less than one burn's worth. Pipe more fuel in.$(li)$(item)This fluid is not a firebox fuel$(): fireboxes burn LPG, butane, propane, hydrogen, diesel, kerosene and naphtha. Empty the tank and change the fluid.$(li)$(item)Exhaust full: pump the CO2 away$(): like engines, a firebox stops when its CO2 has nowhere to go."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A cold firebox means a cold vat or distillation tower above it, so check the firebox first when one of those slows down."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,tfmg:firebox,tfmg:exhaust,tfmg:creosote_bucket,tfmg:carbon_dioxide_bucket,tfmg:lpg_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

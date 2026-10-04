@@ -1,0 +1,30 @@
+{
+  "name": "De la bauxite à la poudre",
+  "icon": "tfmg:bauxite",
+  "category": "tfmg:aluminium",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "L'aluminium est partout à l'ère électrique : le $(item)mécanisme en acier$() en a besoin, tout comme le fil d'aluminium, les tuyaux et la centrifugeuse. Tout commence avec la $(item)bauxite$(), un bloc de pierre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Concassage$()$(br)Passez la bauxite dans les $(item)roues de concassage$() de Create. Chaque bloc donne :$(br2)$(li)$(item)2 poudres de bauxite$() avec 75 % de chance,$(li)$(item)1 poudre de plus$() avec 20 % de chance.$(br2)Cela fait environ 1,7 poudre par bloc en moyenne : minez-en beaucoup."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Deux chemins vers l'aluminium$()$(li)Le $(item)mélange surchauffé$() dans un bassin de Create : facile à construire, sans électricité, mais il coûte de la poussière de coke et ne donne qu'un lingot par fournée.$(li)L'$(item)électrolyse$() dans une cuve chimique : il faut du courant et une cuve chauffée, mais elle donne plus de métal pour la même poudre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Utilisez le premier pour vos premiers lingots (il faut de l'aluminium pour construire les générateurs qui alimentent le second), puis passez à l'électrolyse."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite,tfmg:bauxite_powder,create:crushing_wheel,tfmg:aluminum_ingot,tfmg:steel_mechanism",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

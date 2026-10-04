@@ -1,0 +1,30 @@
+{
+  "name": "Étape 2 : cylindres et carburants",
+  "icon": "tfmg:diesel_engine_cylinder",
+  "category": "tfmg:engines",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une fois tous les composants en place, faites un clic droit avec des $(item)cylindres$() jusqu'à remplir chaque emplacement (lunettes : $(item)Pistons manquants$() ou $(item)Turbines manquantes$() d'ici là). Le cylindre décide des carburants que le moteur brûle ; son infobulle les liste sous $(item)Carburants supportés$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Cylindre de moteur diesel$() (4 plaques d'aluminium) : diesel. $(li)$(item)Cylindre de moteur$() (cylindre diesel + bougie d'allumage) : essence, kérosène, naphta. $(li)$(item)Cylindre de moteur$() + tuyau en laiton : GPL. $(li)Cylindre de moteur rempli au bec verseur avec 250 mB de $(item)butane$(), $(item)propane$() ou $(item)hydrogène$() : ce gaz."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Cylindre de moteur simple$() (4 plaques de fer + briquet) : créosote et gaz de four. $(li)$(item)Pale de turbine$() (8 plaques de fer + arbre) : kérosène. Les moteurs à turbine n'acceptent que des pales."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La liste des carburants est lue sur les cylindres : gardez une seule sorte par moteur ; un cylindre de moteur dont les carburants diffèrent de ceux déjà posés est refusé. Changer le type du moteur vous rend les cylindres."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:diesel_engine_cylinder,tfmg:engine_cylinder,tfmg:simple_engine_cylinder,tfmg:turbine_blade,tfmg:spark_plug,tfmg:brass_pipe",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

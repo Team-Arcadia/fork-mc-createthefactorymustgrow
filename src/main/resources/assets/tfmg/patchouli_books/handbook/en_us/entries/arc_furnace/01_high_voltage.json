@@ -1,0 +1,26 @@
+{
+  "name": "High voltage",
+  "icon": "tfmg:electrode_holder",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Graphite electrodes have a much higher resistance than copper or zinc ones: $(item)300 ohm$() each, against 10.$(br2)Each holder still needs at least $(item)5 A$() (the server setting electrolysisMinimumCurrent), and current is voltage divided by resistance:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)5 A x 300 ohm = $(item)1500 V$() at the very least on every holder,$(li)the holder breaks above $(item)20000 V$(), so stay between the two.$(br2)At 1500 V each holder draws about 7.5 kW, so three of them need a serious power plant. Plan your generators and transformers before building the furnace."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Power goes in through the $(item)top face$() of each holder, like for electrolysis. If one holder is under 5 A, it counts as a broken machine and the whole furnace stops: check each holder with a multimeter, it says when the current is too low.$(br2)A low voltage is the most common reason an arc furnace does nothing, well before the ingredients."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electrode_holder,tfmg:graphite_electrode",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

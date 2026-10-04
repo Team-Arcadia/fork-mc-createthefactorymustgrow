@@ -1,0 +1,30 @@
+{
+  "name": "Metal decorations",
+  "icon": "tfmg:yellow_caution_block",
+  "category": "tfmg:construction",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Most metal decorations come from a $(item)stonecutter$(), one ingot at a time: $(li)$(item)Caution blocks$(): 1 aluminium ingot gives $(item)2$(), in any of fifteen colours. They are directional and face the way you place them. $(li)$(item)Factory floor$():"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "1 aluminium ingot gives $(item)1$() metal floor block. $(li)$(item)Bars$(): 1 ingot gives $(item)4$(), in steel, aluminium, cast iron, lead or nickel. $(li)$(item)Ladders$(): 1 ingot gives $(item)2$(), in steel, aluminium, cast iron, lead, nickel or constantan. $(li)$(item)Scaffolding$(): 1 ingot gives $(item)2$(), in steel or aluminium."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Doors$()$(br)All four TFMG doors are $(item)sliding doors$(), like Create's train doors:$(li)$(item)heavy plated door$(): 6 steel ingots give 3,$(li)$(item)aluminium door$(): 6 aluminium ingots give 3,$(li)$(item)steel door$(): a steel casing with any wooden door,$(li)$(item)heavy casing door$(): a heavy machinery casing with any wooden door."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)steel trapdoor$() takes a row of 3 steel ingots.$(br2)Steel and aluminium storage blocks, trusses and frames round out the set for structural looks."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:yellow_caution_block,tfmg:factory_floor,tfmg:steel_bars,tfmg:steel_ladder,tfmg:steel_scaffolding,tfmg:heavy_plated_door,tfmg:steel_door,tfmg:steel_trapdoor",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

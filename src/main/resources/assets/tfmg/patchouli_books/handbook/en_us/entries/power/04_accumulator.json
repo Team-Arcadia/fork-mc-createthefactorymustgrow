@@ -1,0 +1,30 @@
+{
+  "name": "Accumulator",
+  "icon": "tfmg:accumulator",
+  "category": "tfmg:power",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The accumulator stores energy for later. It connects at the $(item)two ends$() of its axis."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Chains$()$(br)Line accumulators up end to end, all facing the same way, to build a chain of up to $(item)15$(). Each block adds $(item)12 V$() and $(item)100,000$() of storage: a chain of 10 outputs 120 V and holds 1,000,000."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Charging and discharging$()$(li)When the network voltage is $(item)above$() the chain's voltage and the network has spare power, it charges at up to $(item)100 per tick$().$(li)When the network voltage is $(item)at or below$() its own, it powers the network, up to $(item)20 A$() (so 240 W per block of the chain).$(li)A $(item)redstone signal$() stops it from discharging."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A broken accumulator keeps its charge in the item.$(br2)Its other faces expose the stored energy as $(item)Forge Energy$() for machines from other mods, and push it into them. It is also a $(item)display link$() source for voltage and network figures."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:accumulator,create:display_link,minecraft:redstone_torch",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

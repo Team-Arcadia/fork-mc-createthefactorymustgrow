@@ -1,0 +1,30 @@
+{
+  "name": "Cement and liquid concrete",
+  "icon": "tfmg:limesand",
+  "category": "tfmg:construction",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Concrete starts with $(item)limesand$(): crush Create's $(item)limestone$() with crushing wheels. $(l)In a mixer Every step runs in a Create mechanical mixer over a basin, no heat needed:$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)clay ball + limesand$() gives $(item)4 cement$(), - $(item)sand + cement + gravel$() gives $(item)16 concrete mixture$() (with $(item)slag$() instead of sand: $(item)32$()), - $(item)concrete mixture + 250 mB water$() gives $(item)1000 mB liquid concrete$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)In a chemical vat$()$(br)With an industrial mixer, any chemical vat turns $(item)sand + gravel + limesand + 250 mB water$() straight into liquid concrete. JEI lists $(item)32000 mB$() for one batch, far more than the mixer route.$(br2)Cement is also a block of its own that falls like sand. Slag, from crushing the slag blocks of your steel line, doubles every batch of mixture."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Liquid concrete moves through pipes like any fluid and fills buckets. Poured into the world, it $(item)hardens into concrete blocks$() after a short random delay. The next pages show the three ways to use it: plain blocks, rebar, and the concrete hose."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:limesand,create:limestone,tfmg:cement,tfmg:concrete_mixture,tfmg:slag,tfmg:liquid_concrete_bucket,create:mechanical_mixer,tfmg:industrial_mixer",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

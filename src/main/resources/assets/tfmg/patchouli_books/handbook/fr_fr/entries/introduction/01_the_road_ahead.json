@@ -1,0 +1,26 @@
+{
+  "name": "La route à suivre",
+  "icon": "tfmg:coal_coke",
+  "category": "tfmg:introduction",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)1. L'acier$()$(br)Le charbon devient du $(item)coke$() dans un four à coke. L'air chaud d'un fourneau à air chaud alimente un $(item)haut fourneau$(), qui fond le fer concassé en acier liquide. Un bassin de coulée le transforme en $(item)lingots d'acier$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)2. Pièces et machines$()$(br)L'acier donne des plaques lourdes, des vis, des carters et le $(item)mécanisme en acier$() dont la plupart des machines ont besoin.$(br2)$(l)3. L'électricité$()$(br)Les générateurs transforment la rotation en courant pour les moteurs, les cuves, le polariseur et la machine à bobiner. L'aluminium vient de l'électrolyse."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)4. Le pétrole$()$(br)Trouvez un gisement, pompez-le avec un chevalet de pompage, raffinez-le dans une tour de distillation en carburants, puis brûlez-les dans des $(item)moteurs$(), ou transformez-les en plastique."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coal_coke,tfmg:steel_ingot,tfmg:steel_mechanism,tfmg:aluminum_ingot,tfmg:crude_oil_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

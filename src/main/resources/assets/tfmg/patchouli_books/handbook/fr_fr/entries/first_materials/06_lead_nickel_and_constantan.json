@@ -1,0 +1,30 @@
+{
+  "name": "Plomb, nickel et constantan",
+  "icon": "tfmg:lead_ingot",
+  "category": "tfmg:first_materials",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Les nouveaux minerais donnent aussi des pièces précoces qui ne demandent pas d'acier.$(br2)$(l)Plaques$()$(br)Une presse mécanique sur un dépôt ou un tapis transforme un lingot en une plaque :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Lingot de plomb$() en $(item)plaque de plomb$().$(li)$(item)Lingot de nickel$() en $(item)plaque de nickel$().$(br2)$(l)Constantan$()$(br)Dans un malaxeur $(item)chauffé$() (brûleur à blaze allumé), $(item)1 lingot de cuivre + 1 lingot de nickel$() donnent $(item)2 lingots de constantan$(). Le constantan sert plus tard aux fils et aux pièces électriques."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)La cuve chimique en fonte$()$(br)6 plaques de fonte, 2 plaques de plomb et une cuve à fluide en fonte donnent une $(item)cuve chimique en fonte$(), la première cuve que vous pouvez construire. L'acide sulfurique fait partie des recettes qu'elle accepte."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)En attendant l'acier$()$(br)Les $(item)vis$() et les $(item)armatures$() ne viennent pas de ces métaux : elles sortent d'un lingot d'acier au tailleur de pierre (4 par lingot). Gardez quelques-uns de vos premiers lingots d'acier pour elles."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lead_ingot,tfmg:lead_sheet,tfmg:nickel_ingot,tfmg:nickel_sheet,tfmg:constantan_ingot,tfmg:cast_iron_chemical_vat,tfmg:screw,tfmg:rebar",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

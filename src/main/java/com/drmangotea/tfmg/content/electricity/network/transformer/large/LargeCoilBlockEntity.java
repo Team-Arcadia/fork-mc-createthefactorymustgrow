@@ -2,6 +2,8 @@ package com.drmangotea.tfmg.content.electricity.network.transformer.large;
 
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.registry.TFMGBlocks;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGDataComponents;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -20,7 +22,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LargeCoilBlockEntity extends SmartBlockEntity {
+public class LargeCoilBlockEntity extends SmartBlockEntity implements IInspectable {
 
     int turns = 0;
 
@@ -75,6 +77,26 @@ public class LargeCoilBlockEntity extends SmartBlockEntity {
             return ItemInteractionResult.SUCCESS;
         }
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        report.check(turns > 0, "large_coil.turns", "large_coil.no_turns", "large_coil.no_turns.fix", turns);
+        int pairs = 0;
+        for (Direction direction : Direction.Plane.HORIZONTAL) {
+            BlockPos pos = getBlockPos().relative(direction);
+            if (level.isLoaded(pos) && level.getBlockEntity(pos) instanceof LargeCoilBlockEntity other) {
+                pairs++;
+                if (turns > 0)
+                    report.info("large_coil.pair", other.turns, String.format("%.2f", other.turns / (float) turns));
+            }
+        }
+        if (pairs == 0) {
+            report.problem("large_coil.no_pair");
+            report.fix("large_coil.no_pair.fix");
+        } else {
+            report.fix("large_coil.assemble.fix");
+        }
     }
 
     public void setCapacity(ItemStack stack) {

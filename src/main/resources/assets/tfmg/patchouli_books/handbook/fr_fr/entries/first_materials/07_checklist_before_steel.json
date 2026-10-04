@@ -1,0 +1,30 @@
+{
+  "name": "Liste avant l'acier",
+  "icon": "tfmg:fireproof_bricks",
+  "category": "tfmg:first_materials",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Avant de passer au chapitre sur l'acier, vérifiez que vous avez : $(li)Une production régulière de $(item)briques réfractaires$(), en blocs : les murs du haut fourneau, les fourneaux à air chaud, la sortie et la trappe en consomment."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Une ligne de compactage chauffée pour les $(item)lingots de fonte$(), et une presse qui fait les $(item)plaques de fonte$(). $(li)Une pile de $(item)tuyaux en fonte$() et quelques $(item)cuves à fluide en fonte$(). $(li)Au moins un $(item)four à coke$() et beaucoup de $(item)charbon$() : le haut fourneau brûle de la $(item)poussière de coke de charbon$(), du coke passé aux roues de concassage. $(li)Une ligne de $(item)sable calcaire$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "miel, lave qui coule, perceuse et roues de concassage. $(li)Du $(item)fer$() pour le fourneau : fer brut ou fer brut concassé, les deux fonctionnent. $(li)Un $(item)bassin de coulée$(), pour transformer l'acier liquide en lingots."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)renfort de haut fourneau$() demande de l'acier et des plaques lourdes : construisez d'abord le fourneau en simples briques réfractaires, et renforcez-le ensuite.$(br2)Chapitre suivant : coke, air chaud et votre premier acier."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_bricks,tfmg:cast_iron_ingot,tfmg:cast_iron_pipe,tfmg:coke_oven,tfmg:coal_coke_dust,tfmg:limesand,minecraft:raw_iron,tfmg:casting_basin",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

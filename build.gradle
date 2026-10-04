@@ -72,6 +72,16 @@ neoForge {
             programArguments.addAll '--quickPlaySingleplayer', 'tfmg_gametest'
         }
 
+        // Opens every entry of The Factory Handbook and saves a screenshot of
+        // each spread to run/screenshots/handbook_*.png for review.
+        clientGuideShots {
+            client()
+            systemProperty 'tfmg.guide.screenshots', 'true'
+            systemProperty 'tfmg.guide.screenshots.filter', System.getProperty('handbookFilter', '')
+            systemProperty 'tfmg.gametest.exit', 'true'
+            programArguments.addAll '--quickPlaySingleplayer', 'tfmg_gametest'
+        }
+
         // Same pass on a regular dedicated server with a normal world.
         serverGameTest {
             server()
@@ -143,6 +153,8 @@ dependencies {
     runtimeOnly("curse.maven:configured-457570:7122915")
     implementation("mezz.jei:jei-${jei_minecraft_version}-neoforge:${jei_version}")
     implementation("com.tterrag.registrate:Registrate:${registrate_version}")
+    // The Factory Handbook is a Patchouli book.
+    implementation("vazkii.patchouli:Patchouli:${patchouli_version}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

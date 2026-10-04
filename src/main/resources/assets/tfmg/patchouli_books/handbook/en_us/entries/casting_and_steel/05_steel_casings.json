@@ -1,0 +1,26 @@
+{
+  "name": "Steel casings",
+  "icon": "tfmg:hardened_planks",
+  "category": "tfmg:casting_and_steel",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Hardened planks$()$(br)Fill a $(item)stripped log$() with $(item)250 mB of creosote$() using a spout. Here is a use for the coke oven's creosote."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Steel casing$()$(br)Use a $(item)steel ingot$() on hardened planks: right-click the placed block, or let a deployer do it. It is the base of transformers, polarizers, engine gearboxes and steel doors.$(br2)$(l)Heavy machinery casing$()$(br)Use a $(item)heavy plate$() on a steel casing the same way. Engines, pumpjacks, the industrial mixer, machine inputs and many electrical parts need it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Aluminium casing$()$(br)An $(item)aluminium sheet$() on a steel casing gives an aluminium casing.$(br2)Like Create's casings, these item applications work by hand on a placed block or with a deployer over a belt or depot, so they automate easily once you have a steady supply of plates."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:hardened_planks,tfmg:creosote_bucket,create:spout,tfmg:steel_casing,tfmg:heavy_machinery_casing,tfmg:industrial_aluminum_casing,tfmg:aluminum_sheet,tfmg:heavy_plate",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

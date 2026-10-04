@@ -1,0 +1,30 @@
+{
+  "name": "Lignes du four à coke et du foyer",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:troubleshooting",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Four à coke$()$(li)$(item)Réservoir de CO2 plein : pompez-le par la face du HAUT$() : le CO2 ne sort que par le dessus du four. Un tuyau sur un côté ne le videra jamais.$(li)$(item)Réservoir de créosote plein : pompez-le par un côté$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "N'importe lequel des deux réservoirs plein $(item)met tout le four en pause$(). Envoyez le CO2 vers un échappement ou une cheminée, et gardez la créosote pour les moteurs simples ou le fourneau à air chaud. $(l)Foyer - $(item)Pas assez de carburant pour brûler$() :$() le réservoir contient moins qu'une combustion. Ajoutez du carburant. $(li)$(item)Ce fluide n'est pas un carburant de foyer$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "les foyers brûlent le GPL, le butane, le propane, l'hydrogène, le diesel, le kérosène et le naphta. Videz le réservoir et changez de fluide. $(li)**Échappement plein : évacuez le CO2** : comme les moteurs, un foyer s'arrête quand son CO2 n'a nulle part où aller."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un foyer froid signifie une cuve ou une tour de distillation froide au-dessus : vérifiez d'abord le foyer quand l'une d'elles ralentit."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,tfmg:firebox,tfmg:exhaust,tfmg:creosote_bucket,tfmg:carbon_dioxide_bucket,tfmg:lpg_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Bombe au napalm",
+  "icon": "tfmg:napalm_bomb",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La $(item)bombe au napalm$() est un bloc, fait de 6 plaques de plastique et de 3 seaux de napalm. Elle se comporte comme de la TNT :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)Allumez-la avec un $(item)briquet$() ou une $(item)boule de feu$(), alimentez-la en $(item)redstone$(), ou touchez-la avec un $(item)projectile enflammé$() (une flèche enflammée par exemple). $(li)Elle devient alors une bombe allumée avec une $(item)mèche de 4 secondes$(). $(li)Prise dans une autre explosion, elle part avec une mèche bien plus courte : une rangée de bombes s'enchaîne."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "En explosant, elle projette $(item)40 étincelles de feu$() autour d'elle et produit un souffle qui $(item)détruit des blocs$(). Tout ce qui est inflammable alentour va brûler : gardez-la loin de vos bâtiments en bois et de tout ce que vous tenez à garder.$(br2)Un extincteur nettoie les dégâts (voir les pages suivantes)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:napalm_bomb,tfmg:plastic_sheet,tfmg:napalm_bucket,minecraft:flint_and_steel,minecraft:fire_charge",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

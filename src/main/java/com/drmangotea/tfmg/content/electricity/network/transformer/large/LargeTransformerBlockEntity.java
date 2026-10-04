@@ -6,6 +6,8 @@ import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.electricity.base.IElectric;
 import com.drmangotea.tfmg.content.electricity.base.KineticElectricBlockEntity;
 import com.drmangotea.tfmg.content.electricity.base.UpdateInFrontPacket;
+import com.drmangotea.tfmg.content.items.inspector.IInspectable;
+import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.simibubi.create.foundation.data.recipe.CommonMetal;
 import net.createmod.catnip.platform.CatnipServices;
 import net.minecraft.core.BlockPos;
@@ -31,7 +33,7 @@ import static com.drmangotea.tfmg.content.electricity.network.large_switch.Large
 import static com.drmangotea.tfmg.datagen.recipes.TFMGRecipeProvider.F.lubricationOil;
 import static com.simibubi.create.content.kinetics.base.HorizontalKineticBlock.HORIZONTAL_FACING;
 
-public class LargeTransformerBlockEntity extends KineticElectricBlockEntity {
+public class LargeTransformerBlockEntity extends KineticElectricBlockEntity implements IInspectable {
     public boolean updateInFront = false;
 
 
@@ -273,6 +275,51 @@ public class LargeTransformerBlockEntity extends KineticElectricBlockEntity {
 
         return direction == Direction.UP;
 
+    }
+
+    // Never driven by a shaft: skip the inspector's generic "not turning" check.
+    @Override
+    public boolean wantsRotationCheck() {
+        return false;
+    }
+
+    @Override
+    public void inspect(InspectionReport report) {
+        Direction facing = getBlockState().getValue(HORIZONTAL_FACING);
+        if (!isMainPart) {
+            BlockPos mainPos = getBlockPos().relative(facing.getOpposite());
+            if (level.isLoaded(mainPos) && level.getBlockEntity(mainPos) instanceof LargeTransformerBlockEntity main && main.isMainPart) {
+                report.info("large_transformer.output_part");
+                main.inspect(report);
+            } else {
+                report.problem("large_transformer.no_main");
+                report.fix("large_transformer.no_main.fix");
+            }
+            return;
+        }
+        report.info("large_transformer.faces");
+        if (turnRatio == 0 || Float.isInfinite(turnRatio) || Float.isNaN(turnRatio)) {
+            report.problem("large_transformer.no_ratio");
+            report.fix("large_transformer.no_ratio.fix");
+        } else {
+            report.ok("large_transformer.ratio", String.format("%.2f", turnRatio), getData().getVoltage(), (int) (getData().getVoltage() * turnRatio));
+        }
+        switch (constructionState) {
+            case NEEDS_STEEL -> {
+                report.info("large_transformer.cooling", 30000);
+                report.fix("large_transformer.needs_steel.fix");
+            }
+            case NEEDS_OIL -> {
+                report.info("large_transformer.cooling", 50000);
+                report.fix("large_transformer.needs_oil.fix");
+            }
+            case FINISHED -> report.ok("large_transformer.finished", 100000);
+        }
+        BlockPos outPos = getBlockPos().relative(facing);
+        if (!(level.isLoaded(outPos) && level.getBlockEntity(outPos) instanceof LargeTransformerBlockEntity)) {
+            report.problem("large_transformer.no_output_part");
+            report.fix("large_transformer.no_main.fix");
+        }
     }
 
     enum TransformerConstructionState {

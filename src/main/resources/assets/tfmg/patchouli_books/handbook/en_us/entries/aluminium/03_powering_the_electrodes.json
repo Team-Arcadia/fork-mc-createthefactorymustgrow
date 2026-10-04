@@ -1,0 +1,30 @@
+{
+  "name": "Powering the electrodes",
+  "icon": "tfmg:electrode_holder",
+  "category": "tfmg:aluminium",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "An Electrode Holder only takes power through its $(item)top face$(). Run your cable to the top of each holder."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Current, not just voltage$()$(br)A holder works only when at least $(item)5 A$() flows through it (the server setting electrolysisMinimumCurrent, 5 by default). Current is voltage divided by resistance, and copper and zinc electrodes are $(item)10 ohm$() each:$(br2)$(li)$(item)50 V$() gives exactly 5 A, the minimum,$(li)below 50 V the holder idles and its multimeter line says not enough current."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Do not overdo it$()$(br)A holder breaks if it sees more than $(item)400 A$() or more than $(item)20000 V$() for a moment. With a 10 ohm electrode, 400 A is reached at $(item)4000 V$(), so keep copper and zinc holders well under that."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "An empty holder has no resistance and draws nothing. Remember the vat rule: a holder with an electrode but not enough current blocks every recipe in that vat, not only electrolysis."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electrode_holder,tfmg:copper_electrode,tfmg:zinc_electrode",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

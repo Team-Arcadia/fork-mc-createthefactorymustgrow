@@ -1,0 +1,26 @@
+{
+  "name": "Crude oil recipes",
+  "icon": "tfmg:crude_oil_bucket",
+  "category": "tfmg:distillation",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Outputs are filled $(item)from the bottom up$() in the order below: the first product goes into the lowest output, the lightest into the highest."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)6 outputs: 340 mB crude oil$()$(li)120 mB heavy oil$(li)60 mB diesel$(li)30 mB kerosene$(li)10 mB naphtha$(li)60 mB gasoline$(li)60 mB LPG$(br2)$(l)5 outputs: 330 mB crude oil$()$(br)Same as above $(item)without naphtha$(): 120 heavy oil, 60 diesel, 30 kerosene, 60 gasoline, 60 LPG."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)3 outputs: 200 mB crude oil (light distillation)$()$(br)150 mB heavy oil, 45 mB diesel, 5 mB gasoline.$(br2)All amounts are per run at a heat of 2. The six-output tower gives the widest range of fuels, plus naphtha, which you need for plastics. The three-output tower is cheap to build but turns most of the oil into heavy oil."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:crude_oil_bucket,tfmg:heavy_oil_bucket,tfmg:diesel_bucket,tfmg:kerosene_bucket,tfmg:naphtha_bucket,tfmg:gasoline_bucket,tfmg:lpg_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

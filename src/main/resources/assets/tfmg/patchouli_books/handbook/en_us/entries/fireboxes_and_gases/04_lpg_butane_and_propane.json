@@ -1,0 +1,30 @@
+{
+  "name": "LPG, butane and propane",
+  "icon": "tfmg:lpg_bucket",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)LPG$() comes from the top output of a crude oil tower: 60 mB per run. In a chemical vat it can be split and put back together:$(br2)$(l)Separation$()$(br)$(item)1000 mB LPG$() gives $(item)500 mB butane + 500 mB propane$(). Use any chemical vat with a $(item)Freezer$() attached."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Compression$()$(br)$(item)500 mB butane + 500 mB propane$() give $(item)1000 mB LPG$(). This needs a $(item)Compressor$() pressurising the vat, and only works in a $(item)steel$() or $(item)fireproof$() chemical vat."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Uses$()$(li)All three are firebox fuels and burn in flarestacks and gas lamps.$(li)A spout fills an $(item)engine cylinder$() with 250 mB of butane or propane, to run an engine on that gas.$(li)A spout turns an empty bucket and 1000 mB of LPG into an $(item)LPG tank$(), handy to carry gas by hand."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "LPG is also a strong reason to keep the six-output crude oil tower: the five-output recipe makes as much, but the three-output one makes none. The chemical vat chapter explains how to attach freezers and compressors."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:lpg_bucket,tfmg:butane_bucket,tfmg:propane_bucket,tfmg:freezer,tfmg:compressor,tfmg:steel_chemical_vat,tfmg:engine_cylinder,create:spout",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

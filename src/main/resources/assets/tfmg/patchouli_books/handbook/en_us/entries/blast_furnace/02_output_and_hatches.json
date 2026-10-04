@@ -1,0 +1,26 @@
+{
+  "name": "Output and hatches",
+  "icon": "tfmg:blast_furnace_output",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The output$()$(br)It takes the place of an $(item)edge brick of the bottom layer$() and must $(item)face outward$(), its back against the centre. It faces you when placed, so place it standing outside the tower. Molten steel and slag are pumped out of any of its faces."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The hot air hatch$()$(br)Put $(item)one$() Blast Furnace Hatch in place of an $(item)edge brick$(), on any layer, and pipe hot air into it. The furnace draws its hot air from that hatch only.$(br2)A $(item)second hatch in a wall ends the tower$() at that layer: the furnace stops counting there. Keep a single wall hatch."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The gas hatch$()$(br)A hatch placed in the air $(item)right above the centre of the top layer$() collects the $(item)furnace gas$(). Pump it out and send it to the blast stove as fuel. Without it the gas is simply lost; the furnace still runs.$(br2)That top hatch also accepts items: anything a funnel puts into it falls down the shaft. It is the easiest way to feed a tall furnace."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_furnace_output,tfmg:blast_furnace_hatch,create:mechanical_pump,create:andesite_funnel,tfmg:hot_air_bucket,tfmg:furnace_gas_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

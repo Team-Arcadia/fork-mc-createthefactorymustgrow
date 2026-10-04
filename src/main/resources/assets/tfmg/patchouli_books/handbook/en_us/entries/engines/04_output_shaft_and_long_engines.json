@@ -1,0 +1,47 @@
+{
+  "name": "Output shaft and long engines",
+  "icon": "create:shaft",
+  "category": "tfmg:engines",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)regular engine$() delivers nothing until you right-click one of its end blocks with a $(item)Shaft$(). The shaft sticks out of the free end; a wrench takes it back off. You can put one at each end, the power is then split between the two."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The $(item)radial engine$() has its outputs built in: at both ends of a row, and on both sides of a single block. The $(item)turbine engine$() also has a built-in output, at one end only: look for the shaft stub on its model. Neither needs a shaft item."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Engine blocks join when they are the same block, face the same way and, for regular engines, have the same type. A row holds up to $(item)5 blocks$() by default (config $(item)engineMaxLength$()). Torque grows with every block in the row.$(br2)The 3D view shows a three-block I engine facing north, its shaft in front. Pipe fuel into any block: the row shares one fuel tank of 4000 mB."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Output shaft and long engines",
+      "multiblock": {
+        "pattern": [
+          [
+            "S",
+            "F",
+            "0",
+            "E"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "F": "tfmg:regular_engine[facing=north,engine_state=front,shaft_facing=north,extended=true]",
+          "E": "tfmg:regular_engine[facing=north,engine_state=normal,shaft_facing=south,extended=true]",
+          "0": "tfmg:regular_engine[facing=north,engine_state=normal,shaft_facing=south,extended=true]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:shaft,create:wrench,tfmg:regular_engine",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

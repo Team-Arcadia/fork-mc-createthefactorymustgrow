@@ -1,0 +1,30 @@
+{
+  "name": "Pièces en fonte",
+  "icon": "tfmg:cast_iron_pipe",
+  "category": "tfmg:first_materials",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Avec des lingots et des plaques de fonte, vous fabriquez les pièces de la ligne d'acier : $(li)$(item)Tuyau en fonte$() : 2 plaques + 1 lingot en ligne donnent 4 tuyaux. $(li)$(item)Cuve à fluide en fonte$() : un tonneau entre 2 plaques, à la verticale."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Pompe mécanique en fonte$() : une roue dentée de Create + un tuyau en fonte. $(li)$(item)Volant d'inertie en fonte$() : 8 lingots autour d'un axe de Create. $(li)Des $(item)cadres$() et des $(item)treillis$() en fonte à partir de pépites, pour la décoration. $(l)Les premières machines - $(item)Four à coke$() :$()"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "4 lingots de fonte autour d'un $(item)bloc de fer industriel$() de Create donnent 2 fours à coke. $(li)$(item)Bassin de coulée$() : 3 briques réfractaires (objets), 1 tuyau en fonte et 5 lingots de fonte. $(li)$(item)Fourneau à air chaud$() : 2 tuyaux en fonte, 2 cuves en fonte et 2 blocs de briques réfractaires donnent 2 fourneaux. $(li)$(item)Sortie du haut fourneau$() :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "4 blocs de briques réfractaires, 4 tuyaux en fonte et un bloc de fonte. $(li)$(item)Trappe du haut fourneau$() : 4 blocs de briques réfractaires, 2 plaques de fonte, 2 tuyaux en fonte et une cuve en fonte.$(br2)Aucune de ces machines ne demande d'acier : cette page suffit pour construire toute la ligne d'acier."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cast_iron_pipe,tfmg:cast_iron_fluid_tank,tfmg:cast_iron_mechanical_pump,tfmg:coke_oven,tfmg:casting_basin,tfmg:blast_stove,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

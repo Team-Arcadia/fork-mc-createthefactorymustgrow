@@ -1,0 +1,32 @@
+{
+  "order": 4003,
+  "name": {
+    "en_us": "The blast stove",
+    "fr_fr": "Le fourneau à air chaud"
+  },
+  "layers": [
+    [
+      "SS",
+      "SS"
+    ],
+    [
+      "SS",
+      "SS"
+    ],
+    [
+      "SS",
+      "SS"
+    ],
+    [
+      "SS",
+      "SS"
+    ],
+    [
+      "SS",
+      "SS"
+    ]
+  ],
+  "key": {
+    "S": "tfmg:blast_stove"
+  }
+}

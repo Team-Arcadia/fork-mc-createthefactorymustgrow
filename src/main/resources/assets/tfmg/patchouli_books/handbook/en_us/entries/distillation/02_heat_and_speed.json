@@ -1,0 +1,30 @@
+{
+  "name": "Heat and speed",
+  "icon": "create:blaze_burner",
+  "category": "tfmg:distillation",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The tower needs heat from blocks placed $(item)under the tank$(), across its whole footprint. A 2 x 2 tank has four heater spots, a 3 x 3 tank has nine. The heat of every spot is added up:"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Blaze Burner$(), kindled: $(item)1$(). Superheated (seething): $(item)2$(). A smouldering blaze burner gives nothing.$(li)$(item)Firebox$(), while burning: $(item)2$() per block.$(br2)With a heat of 0 the tower does nothing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Every tick, the tower runs the recipe once, multiplied by $(item)heat / 2$(). A heat of 2 runs the recipe exactly as JEI shows it, every tick. A heat of 8, the 2 x 2 firebox of the first page, runs it four times over."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The controller also needs at least the recipe input times that multiplier in its own tank before it starts a tick. Its tank holds 8000 mB, which is plenty for any heat you can fit under a tank.$(br2)Even a small heater processes oil much faster than a single pumpjack delivers it, so heat rarely limits a refinery. Use more heat when several pumpjacks feed the same tower."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:blaze_burner,tfmg:firebox,tfmg:steel_fluid_tank,tfmg:steel_distillation_controller",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

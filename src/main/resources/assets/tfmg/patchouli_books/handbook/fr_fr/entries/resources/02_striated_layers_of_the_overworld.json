@@ -1,0 +1,30 @@
+{
+  "name": "Les couches striées de l'Overworld",
+  "icon": "tfmg:bauxite",
+  "category": "tfmg:resources",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Comme les minerais striés de Create, TFMG place de grands amas en couches dans l'Overworld, entre $(item)Y -30 et Y 70$(), dans environ un chunk sur 18. Chaque amas suit l'un de quatre motifs, avec de la pierre ou de l'ardoise des abîmes entre les bandes :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Bauxite$() avec basalte lisse, granite et andésite. La bauxite est le minerai de l'aluminium. $(li)$(item)Galène$() avec basalte lisse, bloc de spéléothème et ardoise des abîmes. La galène est une pierre qui contient du plomb. $(li)$(item)Lignite$() avec tuf, ardoise des abîmes et scorie. Le lignite est un charbon brun et tendre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Argile réfractaire$() avec sable, gravier et crimsite.$(br2)La bauxite et la galène sont de vraies pierres de construction : passez-les au tailleur de pierre pour obtenir des variantes taillées, polies et en briques. Le lignite et le soufre se récupèrent tels quels une fois minés. Un amas est grand : quand vous voyez une bande dans une paroi, creusez le long de celle-ci."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cherchez ces couches dans les grottes et les ravins : elles se repèrent bien plus facilement que des blocs de minerai isolés."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite,tfmg:galena,tfmg:lignite,tfmg:fireclay",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

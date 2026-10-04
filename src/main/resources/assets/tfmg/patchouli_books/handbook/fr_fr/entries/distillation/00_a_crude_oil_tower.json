@@ -1,0 +1,118 @@
+{
+  "name": "Une tour à pétrole brut",
+  "icon": "tfmg:steel_fluid_tank",
+  "category": "tfmg:distillation",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une tour de distillation sépare le pétrole brut ou le pétrole lourd en plusieurs fluides à la fois. Elle se compose de quatre éléments :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)une $(item)cuve à fluide en acier$(), remplie du pétrole à séparer, - un $(item)contrôleur de distillation en acier$() sur le côté de cette cuve, - des $(item)sorties de distillation en acier$() empilées au-dessus du contrôleur, avec un $(item)tuyau industriel$() entre chaque paire, - de la $(item)chaleur$() sous la cuve."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La tour montrée ici fait la recette complète du pétrole brut : une cuve de 2 x 2 haute de 12 blocs, le contrôleur sur sa face nord, six sorties et cinq tuyaux au-dessus, et un foyer de 2 x 2 en dessous."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le pétrole entre dans la cuve en acier comme dans n'importe quel réservoir de Create. Le contrôleur le tire du bloc de cuve juste derrière lui vers son propre réservoir de 8000 mB, et chaque sortie recueille un produit dans son propre réservoir de 8000 mB. Pompez les produits par n'importe quel côté des sorties."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une cuve n'accepte qu'$(item)un seul$() contrôleur : un second ne tient pas sur une cuve qui en a déjà un."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Une tour à pétrole brut",
+      "multiblock": {
+        "pattern": [
+          [
+            "O ",
+            "UU",
+            "UU"
+          ],
+          [
+            "P ",
+            "TT",
+            "TT"
+          ],
+          [
+            "O ",
+            "TT",
+            "TT"
+          ],
+          [
+            "P ",
+            "TT",
+            "TT"
+          ],
+          [
+            "O ",
+            "TT",
+            "TT"
+          ],
+          [
+            "P ",
+            "TT",
+            "TT"
+          ],
+          [
+            "O ",
+            "TT",
+            "TT"
+          ],
+          [
+            "P ",
+            "TT",
+            "TT"
+          ],
+          [
+            "O ",
+            "TT",
+            "TT"
+          ],
+          [
+            "P ",
+            "TT",
+            "TT"
+          ],
+          [
+            "O ",
+            "TT",
+            "TT"
+          ],
+          [
+            "C ",
+            "AA",
+            "AA"
+          ],
+          [
+            "  ",
+            "F0",
+            "FF"
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox[blaze=fading]",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "0": "tfmg:firebox[blaze=fading]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_fluid_tank,tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:industrial_pipe,tfmg:firebox,tfmg:crude_oil_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

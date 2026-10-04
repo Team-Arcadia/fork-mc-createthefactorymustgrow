@@ -1,0 +1,73 @@
+{
+  "name": "La forme",
+  "icon": "tfmg:fireproof_brick_reinforcement",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le haut fourneau est une pile de $(item)couches 3x3$(), de $(item)3 à 10$() couches de haut (réglage serveur blastFurnaceMaxHeight)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Chaque couche$()$(li)Les $(item)4 coins$() : renfort en briques réfractaires.$(li)Les $(item)4 milieux de côté$() : briques réfractaires.$(li)Le $(item)centre$() : de l'air.$(br2)$(l)La couche du bas$()$(li)Son $(item)centre$() est un bloc de $(item)briques réfractaires$() : le fond du puits.$(li)Une brique de côté est remplacée par la $(item)sortie de haut fourneau$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le fourneau compte les couches depuis le bas et s'arrête à la première qui est fausse : une erreur à la couche 4 donne un fourneau de 3 couches. En dessous de 3 couches complètes, il ne fait rien."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La vue montre le plus petit fourneau : 3 couches, la sortie côté sud, une trappe d'air chaud dans la paroi ouest et une trappe à gaz au sommet. Il faut 12 renforts, 11 briques réfractaires, la sortie et 2 trappes."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "La forme",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " H ",
+            "   "
+          ],
+          [
+            "eFf",
+            "F F",
+            "gFh"
+          ],
+          [
+            "aFb",
+            "H F",
+            "cFd"
+          ],
+          [
+            "aFb",
+            "F0F",
+            "cOd"
+          ]
+        ],
+        "mapping": {
+          "a": "tfmg:fireproof_brick_reinforcement[east=tall,south=tall,up=true]",
+          "b": "tfmg:fireproof_brick_reinforcement[west=tall,south=tall,up=true]",
+          "c": "tfmg:fireproof_brick_reinforcement[east=tall,north=tall,up=true]",
+          "d": "tfmg:fireproof_brick_reinforcement[west=tall,north=tall,up=true]",
+          "e": "tfmg:fireproof_brick_reinforcement[east=low,south=low,up=true]",
+          "f": "tfmg:fireproof_brick_reinforcement[west=low,south=low,up=true]",
+          "g": "tfmg:fireproof_brick_reinforcement[east=low,north=low,up=true]",
+          "h": "tfmg:fireproof_brick_reinforcement[west=low,north=low,up=true]",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "0": "tfmg:fireproof_bricks"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_brick_reinforcement,tfmg:fireproof_bricks,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

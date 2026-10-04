@@ -1,0 +1,26 @@
+{
+  "name": "Fire extinguisher and lithium torch",
+  "icon": "tfmg:fire_extinguisher",
+  "category": "tfmg:weapons_and_tools",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Fire Extinguisher$()$(br)Hold right-click to spray $(item)dry ice flakes$(), one per tick. A full extinguisher holds $(item)500 flakes$(), about 25 seconds of spraying. $(li)A flake that hits a block $(item)puts out every fire$() within 1 block of the impact (config $(item)fireExtinguisherClearRadius$())."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That includes the green and blue fires of the grenades. $(li)A flake that hits a creature puts it out, $(item)removes Hellfire$(), slows it and freezes it; enough flakes start to hurt.$(br2)Refill it with a $(item)spout$() and 1000 mB of carbon dioxide: the CO2 your engines, fireboxes and coke ovens produce finally has a use."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Lithium Torch$()$(br)A lithium ingot above an aluminium ingot gives 4 $(item)Lithium Torches$(). They give light level 14, go on floors, walls and ceilings, and can be $(item)placed underwater$(), where a normal torch cannot."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fire_extinguisher,create:spout,tfmg:carbon_dioxide_bucket,tfmg:lithium_torch,tfmg:lithium_ingot,tfmg:aluminum_ingot",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Running electrolysis",
+  "icon": "tfmg:bauxite_powder",
+  "category": "tfmg:aluminium",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l)The recipe$()$(br)Every 5 seconds the vat turns $(item)4 Bauxite Powder$() into:$(br2)$(li)$(item)1 Aluminum Ingot$(),$(li)$(item)4 Aluminum Nuggets$() with a 50% chance,$(li)$(item)2 Aluminum Nuggets$() with a 25% chance,$(li)$(item)500 mB Carbon Dioxide$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "On average that is one ingot plus 2.5 nuggets per batch, against a single ingot from superheated mixing."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Keep it flowing$()$(li)Feed powder into the vat with a funnel or a chute. Items can only go into the inputs.$(li)Pull ingots and nuggets out of the output side with a funnel.$(li)$(item)Pump the carbon dioxide out.$() It lands in the output tanks, and once there is no room for another 500 mB the vat stops."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Hydrogen on the side$()$(br)The same two electrodes, without heat, turn $(item)1000 mB Water$() into $(item)500 mB Hydrogen$(). If you send water into your aluminium vat, it will make hydrogen too."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:bauxite_powder,tfmg:aluminum_ingot,tfmg:aluminum_nugget,tfmg:carbon_dioxide_bucket,tfmg:hydrogen_bucket,create:andesite_funnel",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

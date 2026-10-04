@@ -1,0 +1,22 @@
+{
+  "name": "Les lunettes disent ce qui ne va pas",
+  "icon": "create:goggles",
+  "category": "tfmg:introduction",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Portez les $(item)lunettes d'ingénieur$() de Create et regardez une machine. En plus de ses réservoirs et de sa progression, les machines TFMG affichent des $(item)lignes rouges$() quand quelque chose les bloque :"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)une structure incomplète,$(li)un combustible, un fondant ou de l'air chaud manquant,$(li)un réservoir de sortie ou d'échappement plein,$(li)une recette de cuve qui demande plus de chaleur ou de pression.$(br2)Quand une machine reste inactive, regardez-la d'abord avec les lunettes. Le dernier chapitre, $(item)Dépannage$(), liste chaque message et comment le régler."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:goggles",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

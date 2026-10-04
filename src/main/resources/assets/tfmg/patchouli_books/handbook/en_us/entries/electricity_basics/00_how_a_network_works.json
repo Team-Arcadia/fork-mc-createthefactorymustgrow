@@ -1,0 +1,26 @@
+{
+  "name": "How a network works",
+  "icon": "tfmg:generator",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Electric blocks that touch through faces able to carry power form one $(item)network$(). A network has a single voltage and a single power budget. $(li)$(item)Voltage (V)$() is the highest voltage offered by any generator on the network. Two generators do not add their voltages."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(li)$(item)Power generated (W)$() is the sum of what every generator can supply. $(li)Every consumer is wired $(item)in parallel$(): each one sees the full network voltage.$(br2)$(l)The formulas$()$(br)Each consumer has a $(item)resistance R$() in ohms. It then draws a current $(item)I = V / R$() and uses a power $(item)P = V x I$(), so $(item)V x V / R$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Example: a light bulb is 400 ohms. At 200 V it draws 0.5 A and uses 100 W. At 400 V it would draw 1 A and use 400 W.$(br2)Raising the voltage makes every machine draw more current and more power. A lower resistance also means a bigger draw. The network resistance is the parallel total of all its loads."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:generator,tfmg:light_bulb,tfmg:electric_motor,tfmg:multimeter",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}
