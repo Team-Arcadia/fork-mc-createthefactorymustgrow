@@ -303,3 +303,17 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The tank behaviours are built with 4000 mB segments. Only multiblock formation (`applyVatSize`) and `read()` size them to the configured capacity per block (8000 mB by default), so a vat placed alone kept 4000 mB until its chunk reloaded and could never fit a concrete batch.
 **Fix:** `initialize()` sizes the controller's segments the same way `read()` does (shared `sizeTanks`).
 **Prevention:** Capacity that depends on the multiblock size must be set on every path that creates a controller, not only on formation and load.
+
+## [2026-10-04 20:30] - Refuelling a flamethrower from a tank it emptied voided the fuel
+**Context:** New handheld game test: a flamethrower clicked on a Create tank holding 2000 mB of each fuel.
+**Error:** The tank went to 0 mB, the click answered SUCCESS, and the flamethrower held the empty fallback fuel. Partial drains (fuel left in the tank) worked, which is why the 1.3.0 engine fix did not show it.
+**Root cause:** `FlamethrowerItem.useOn` built the new fuel from `fluidStack.getFluid()` after the drain, and `fluidStack` was the tank's live stack (`getFluidInTank` returns it uncopied). Once the drain took everything, the stack read as empty, `createForType` found no fuel type and returned EMPTY.
+**Fix:** The new fuel is built from the fuel type resolved before the drain.
+**Prevention:** Never read a `getFluidInTank` result after draining the same handler; copy it or keep the values first. Test a refill that empties the source exactly, not only one that leaves some behind.
+
+## [2026-10-04 20:38] - A flamethrower that ran dry kept its trigger held
+**Context:** Handheld game test firing 30 mB of gasoline until empty.
+**Error:** The fuel reached empty but the player stayed in use (`isUsingItem`) until the button was released, slowed as when using any item.
+**Root cause:** `onUseTick` returned early when the component was the `FlamethrowerFuel.EMPTY` constant, and `decrement` returns that very constant when the last drop is fired, so the `stopUsingItem` branch below was never reached on the server.
+**Fix:** Any empty fuel, whatever the instance, stops the use.
+**Prevention:** Never decide behaviour by comparing records by identity; use their own `isEmpty()`.

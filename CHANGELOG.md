@@ -76,6 +76,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **A hopper could not fuel a loaded blast furnace** - Once the furnace held ore and flux, a hopper on its output block found no slot for coke dust and kept it. The fuel now shows as a third slot hoppers can fill.
 - **Chemical vats ran on dead attachments** - A recipe matched right after the attachments were found kept running when they had no power or rotation: electrolysis made hydrogen without a generator. The vat now pauses until every attachment works.
 - **A lone chemical vat held half its capacity** - A vat placed on its own kept 4000 mB per tank until its chunk reloaded, so a single vat could never make liquid concrete. It now gets its full capacity at once.
+- **Flamethrower** - Refuelling from a tank that held no more than the flamethrower could take emptied the tank and gave no fuel at all. A flamethrower that runs dry now also lets go of the trigger instead of staying in use.
 
 ### Performance
 
@@ -138,6 +139,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Un entonnoir ne pouvait pas alimenter un haut fourneau charge** - Une fois le minerai et le fondant en place, un entonnoir sur la sortie ne trouvait aucun emplacement pour la poussiere de coke et la gardait. Le combustible apparait maintenant comme un troisieme emplacement que les entonnoirs remplissent.
 - **Les cuves chimiques tournaient sur des machines en panne** - Une recette trouvee juste apres la detection des machines continuait sans courant ni rotation : l'electrolyse faisait de l'hydrogene sans generateur. La cuve attend maintenant que chaque machine fonctionne.
 - **Une cuve seule n'avait que la moitie de sa capacite** - Une cuve posee seule gardait 4000 mB par reservoir jusqu'au rechargement de son chunk, et ne pouvait donc jamais faire de beton liquide. Elle a desormais sa pleine capacite tout de suite.
+- **Lance-flammes** - Faire le plein sur un reservoir qui ne contenait pas plus que ce que le lance-flammes pouvait prendre vidait le reservoir sans rien donner. Un lance-flammes a sec relache aussi la detente au lieu de rester en cours d'utilisation.
 
 ### Performances
 
