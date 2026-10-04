@@ -221,6 +221,21 @@ public class ElectricPumpBlockEntity extends PumpBlockEntity implements IElectri
         return 100;
     }
 
+    /**
+     * The pressure pushed into the pipes depends on the voltage, and Create
+     * only spreads it from updatePressureChange, which a mechanical pump runs
+     * on a speed change. An electric pump never changes speed, so a pump
+     * placed before its power arrived kept the zero pressure it was placed
+     * with and moved nothing through pipes. Spread it again whenever the
+     * voltage moves.
+     */
+    @Override
+    public void onNetworkChanged(int oldVoltage, int oldPower) {
+        IElectric.super.onNetworkChanged(oldVoltage, oldPower);
+        if (level != null && !level.isClientSide && oldVoltage != data.getVoltage())
+            updatePressureChange();
+    }
+
     // Never driven by a shaft: skip the inspector's generic "not turning" check.
     @Override
     public boolean wantsRotationCheck() {
