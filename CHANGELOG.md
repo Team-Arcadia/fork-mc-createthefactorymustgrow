@@ -83,6 +83,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Lead sword, lead axe and lit lithium blade wore out too fast** - Each hit took 3 or 4 durability instead of 2 since the 1.21 port.
 - **Pickaxes, shovels and hoes** - Steel, aluminum and lead ones swung five times a second and hit harder than any sword (the 1.21 port left placeholder attack values). They have their 1.20.1 attack speed and damage again.
 - **Oil hammer** - It never reported anything on a dedicated server; only singleplayer showed the reserves.
+- **Oil can and cooling fluid bottle** - Sneak-clicking an engine poured them into its fuel tank, which nothing could empty again. Sneaking on an engine now empties the can, as its tooltip says.
 
 ### Performance
 
@@ -152,6 +153,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **L'epee et la hache en plomb et la lame au lithium allumee s'usaient trop vite** - Chaque coup retirait 3 ou 4 points de durabilite au lieu de 2 depuis le portage en 1.21.
 - **Pioches, pelles et houes** - Celles en acier, aluminium et plomb frappaient cinq fois par seconde et plus fort que n'importe quelle epee (le portage en 1.21 avait laisse des valeurs provisoires). Elles retrouvent leur vitesse et leurs degats de la 1.20.1.
 - **Marteau a petrole** - Il n'indiquait jamais rien sur un serveur dedie ; seul le solo affichait les reserves.
+- **Burette d'huile et bouteille de liquide de refroidissement** - S'accroupir et cliquer sur un moteur les versait dans son reservoir de carburant, que rien ne pouvait plus vider. Accroupi sur un moteur, le clic vide maintenant la burette, comme le dit son infobulle.
 
 ### Performances
 

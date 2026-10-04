@@ -366,3 +366,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The reserves message was sent only on the client (`level.isClientSide`), reading `TFMG.DEPOSITS`, which is filled only on the server. In singleplayer both sides share that static, so it worked there and nowhere else.
 **Fix:** The server sends the line (`displayClientMessage` on the server player).
 **Prevention:** Data held by a server-side manager must be read and reported on the server; a static shared in singleplayer hides the bug from local testing.
+
+## [2026-10-04 20:36] - Sneak-clicking an engine with an oil can filled its fuel tank
+**Context:** New handheld game test sneak-clicking a regular engine with a full oil can and a full cooling fluid bottle.
+**Error:** 4000 mB of lubrication oil or cooling fluid went into the engine's fuel tank, which refuses extraction, so the engine was jammed with a fluid it cannot burn.
+**Root cause:** The 1.3.0 "sneak pours into any fluid handler" change runs in `onItemUseFirst`, before the engine's own handling, and an engine's capability is its fuel tank, which accepts any fluid.
+**Fix:** On an engine the sneak-click empties the can as its tooltip says; oil and coolant still go in with a plain click.
+**Prevention:** A generic "pour into any fluid handler" must exclude blocks whose handler is not a general container; check what a capability is before filling it.
