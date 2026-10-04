@@ -11,6 +11,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.common.conditions.NotCondition;
+import net.neoforged.neoforge.common.conditions.TagEmptyCondition;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -57,6 +59,9 @@ public class TFMGIndustrialBlastingRecipeGen extends IndustrialBlastingRecipeGen
             .output(TFMGFluids.FURNACE_GAS.get(),20)
             .duration(20)
             .hotAirUsage(20)
+            // Only meaningful when another mod supplies iron dust; without
+            // one JEI listed a recipe whose ore slot read "Empty Tag".
+            .withCondition(new NotCondition(new TagEmptyCondition(TFMGTags.TFMGItemTags.DUSTS_IRON.tag)))
     )
 
 

@@ -91,6 +91,11 @@ public class EngineBlock extends HorizontalKineticBlock {
                 }
                 be.upgrade = Optional.empty();
                 be.updateRotation();
+                // An idle engine was never marked dirty here, so after a
+                // restart the upgrade sat on the engine again while the
+                // player still held the one the wrench had handed back.
+                be.setChanged();
+                be.sendData();
 
                 return InteractionResult.SUCCESS;
             }

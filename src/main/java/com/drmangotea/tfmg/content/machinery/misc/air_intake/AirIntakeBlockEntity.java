@@ -74,7 +74,7 @@ public class AirIntakeBlockEntity extends KineticBlockEntity implements IWrencha
     public AirIntakeBlockEntity(BlockEntityType<?> typeIn, BlockPos pos, BlockState state) {
         super(typeIn, pos, state);
         tankInventory = createInventory();
-        fluidCapability = tankInventory;
+        fluidCapability = new ControllerTankHandler();
 
 
     }
@@ -303,23 +303,61 @@ public class AirIntakeBlockEntity extends KineticBlockEntity implements IWrencha
    // }
 
     private void refreshCapability() {
+        // The published handler resolves its tank on every call (see
+        // ControllerTankHandler), so there is nothing to rebuild here.
+    }
 
-        IFluidHandler handlerForCapability;
+    /**
+     * The tank pipes should see right now: the controller's while this block
+     * is part of a formed intake, its own otherwise. Resolving it per call
+     * replaces a handler cached at formation time, which pipes kept using
+     * after the structure broke apart or its controller was replaced, and
+     * which could point at the tank of a block entity that no longer existed.
+     */
+    private IFluidHandler currentTank() {
+        if (!isUsedByController || controller == null || controller.equals(getBlockPos()) || level == null
+                || !level.isLoaded(controller))
+            return tankInventory;
+        if (level.getBlockEntity(controller) instanceof AirIntakeBlockEntity owner && !owner.isRemoved())
+            return owner.tankInventory;
+        return tankInventory;
+    }
 
-        if (controller == null || controller.equals(this.getBlockPos())
+    private class ControllerTankHandler implements IFluidHandler {
+        @Override
+        public int getTanks() {
+            return currentTank().getTanks();
+        }
 
-        ) {
-            handlerForCapability = tankInventory;
-        } else
-        if(((AirIntakeBlockEntity) level.getBlockEntity(controller))!=null) {
-            handlerForCapability = ((AirIntakeBlockEntity) level.getBlockEntity(controller)).tankInventory;
-        }else             handlerForCapability = tankInventory;
+        @Override
+        public FluidStack getFluidInTank(int tank) {
+            return currentTank().getFluidInTank(tank);
+        }
 
+        @Override
+        public int getTankCapacity(int tank) {
+            return currentTank().getTankCapacity(tank);
+        }
 
+        @Override
+        public boolean isFluidValid(int tank, FluidStack stack) {
+            return currentTank().isFluidValid(tank, stack);
+        }
 
-        IFluidHandler finalHandlerForCapability = handlerForCapability;
-        fluidCapability = finalHandlerForCapability;
-        //oldCap.invalidate();
+        @Override
+        public int fill(FluidStack resource, FluidAction action) {
+            return currentTank().fill(resource, action);
+        }
+
+        @Override
+        public FluidStack drain(FluidStack resource, FluidAction action) {
+            return currentTank().drain(resource, action);
+        }
+
+        @Override
+        public FluidStack drain(int maxDrain, FluidAction action) {
+            return currentTank().drain(maxDrain, action);
+        }
     }
 
 

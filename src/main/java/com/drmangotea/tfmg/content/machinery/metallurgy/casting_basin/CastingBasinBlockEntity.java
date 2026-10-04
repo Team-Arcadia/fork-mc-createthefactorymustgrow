@@ -33,7 +33,8 @@ import java.util.List;
 public class CastingBasinBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
 
     int flowTimer = 0;
-    public SmartInventory inventory = new SmartInventory(1, this, 1, false);
+    // Output only: an item pushed in by a hopper or chute blocked casting.
+    public SmartInventory inventory = new SmartInventory(1, this, 1, false).forbidInsertion();
 
     public FluidTank tank = new SmartFluidTank(1000, this::onFluidChanged);
     public IFluidHandler fluidCapability;

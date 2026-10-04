@@ -1,5 +1,8 @@
 package com.drmangotea.tfmg.content.machinery.vat.base;
 
+import com.drmangotea.tfmg.base.TFMGUtils;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.minecraft.world.Containers;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.machinery.vat.compressor.CompressorBlockEntity;
@@ -93,6 +96,8 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
     boolean evaluateNextTick = true;
     int timer = 0;
     public VatMachineRecipe recipe;
+    // The recipe the current timer value was accumulated for (not persisted).
+    private VatMachineRecipe timerRecipe;
     //machines
     public Map<BlockPos, String> machineMap = new HashMap<>();
     public Map<BlockPos, Boolean> operationalMachinesMap = new HashMap<>();
@@ -117,7 +122,7 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         inputInventory = new VatInventory(4, this);
         outputInventory = new VatInventory(4, this);
         tanks = Couple.create(inputTank, outputTank);
-        itemCapability = new CombinedInvWrapper(inputInventory, outputInventory);
+        itemCapability = new VatItemHandler(inputInventory, outputInventory);
         forceFluidLevelUpdate = true;
         updateConnectivity = false;
         updateCapability = false;
@@ -602,6 +607,13 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         if (recipe.pressure < 0 && pressure > recipe.pressure)
             return;
 
+        // Progress belongs to the recipe that earned it. Swapping the inputs
+        // used to carry the timer over, so a different recipe could finish on
+        // the very next tick. A null tracker (fresh load) adopts the recipe.
+        if (timerRecipe != null && timerRecipe != recipe)
+            timer = 0;
+        timerRecipe = recipe;
+
         if (timer >= recipe.getProcessingDuration()) {
 
             // Pre-flight: make sure ALL outputs (items + fluids) can be placed
@@ -717,7 +729,7 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
                     continue;
                 for (int i = 0; i < outputInventory.getSlots(); i++) {
                     ItemStack inSlot = outputInventory.getStackInSlot(i);
-                    if (!inSlot.isEmpty() && inSlot.is(back.getItem())
+                    if (!inSlot.isEmpty() && ItemStack.isSameItemSameComponents(inSlot, back)
                             && inSlot.getCount() + back.getCount() <= inSlot.getMaxStackSize()) {
                         inSlot.setCount(inSlot.getCount() + back.getCount());
                         back = ItemStack.EMPTY;
@@ -764,6 +776,52 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
             timer = 0;
         } else {
             timer++;
+        }
+    }
+
+    /**
+     * Moves this vat's items and fluids into another vat. Items that do not
+     * fit are dropped when {@code dropLeftovers} is set; fluids that do not
+     * fit stay behind.
+     */
+    public void transferContentsTo(VatBlockEntity other, boolean dropLeftovers) {
+        moveItems(inputInventory, other.inputInventory, dropLeftovers);
+        moveItems(outputInventory, other.outputInventory, dropLeftovers);
+        moveFluids(inputTank, other.inputTank);
+        moveFluids(outputTank, other.outputTank);
+    }
+
+    private void moveItems(VatInventory from, VatInventory to, boolean dropLeftovers) {
+        for (int i = 0; i < from.getSlots(); i++) {
+            ItemStack stack = from.getStackInSlot(i);
+            if (stack.isEmpty())
+                continue;
+            ItemStack left = ItemHandlerHelper.insertItemStacked(to, stack.copy(), false);
+            from.setStackInSlot(i, ItemStack.EMPTY);
+            if (!left.isEmpty() && dropLeftovers)
+                Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), left);
+        }
+    }
+
+    private static void moveFluids(SmartFluidTankBehaviour from, SmartFluidTankBehaviour to) {
+        SmartFluidTankBehaviour.TankSegment[] targets = to.getTanks();
+        for (SmartFluidTankBehaviour.TankSegment segment : from.getTanks()) {
+            SmartFluidTank source = ((TankSegmentAccessor) segment).tfmg$tank();
+            // Same fluid first, then empty segments, like the recipe output.
+            for (SmartFluidTankBehaviour.TankSegment target : targets) {
+                if (source.isEmpty())
+                    break;
+                SmartFluidTank tank = ((TankSegmentAccessor) target).tfmg$tank();
+                if (!tank.isEmpty())
+                    TFMGUtils.moveFluid(source, tank);
+            }
+            for (SmartFluidTankBehaviour.TankSegment target : targets) {
+                if (source.isEmpty())
+                    break;
+                SmartFluidTank tank = ((TankSegmentAccessor) target).tfmg$tank();
+                if (tank.isEmpty())
+                    TFMGUtils.moveFluid(source, tank);
+            }
         }
     }
 
@@ -824,6 +882,11 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         for (ProcessingOutput out : r.getRollableResults()) {
             ItemStack stack = out.getStack();
             if (stack.isEmpty())
+                continue;
+            // A recovered ingredient goes back to the input, not the output;
+            // reserving output room for it stalled the arc furnace whenever
+            // the four output slots were occupied.
+            if (isItemAlsoAnIngredient(r, stack))
                 continue;
             int needed = stack.getCount();
             int placed = -1;
@@ -1334,6 +1397,13 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
             return;
         if (controller.equals(this.controller))
             return;
+        // Create moves only getTank(0) into a new controller, and for the vat
+        // that is a throwaway tank: a filled vat that a bigger vat absorbed
+        // (one placed under it, say) kept its items and fluids out of reach,
+        // and its next save dropped them. Hand everything over first.
+        if (isController() && !controller.equals(worldPosition)
+                && level.getBlockEntity(controller) instanceof VatBlockEntity newController)
+            transferContentsTo(newController, true);
         this.controller = controller;
         refreshCapability();
         setChanged();
@@ -1373,7 +1443,7 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
      * @return item capability of the vat's controller
      */
     private IItemHandlerModifiable getNewItemCapability() {
-        return isController() ? new CombinedInvWrapper(inputInventory, outputInventory)
+        return isController() ? new VatItemHandler(inputInventory, outputInventory)
                 : getControllerBE() != null ? getControllerBE().getNewItemCapability() : itemCapability;
     }
 

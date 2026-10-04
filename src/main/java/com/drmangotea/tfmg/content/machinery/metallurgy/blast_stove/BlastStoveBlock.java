@@ -41,9 +41,31 @@ public class BlastStoveBlock extends Block implements IWrenchable, IBE<BlastStov
             if (!(te instanceof BlastStoveBlockEntity))
                 return;
             BlastStoveBlockEntity tankTE = (BlastStoveBlockEntity) te;
+            // The tanks live on the controller only, and splitting the stove
+            // hands the parts nothing: breaking the controller lost all four.
+            // Pass them to a surviving block, which keeps them as its own once
+            // the split makes it a controller.
+            BlastStoveBlockEntity heir = null;
+            if (!world.isClientSide && tankTE.isController())
+                heir = findHeir(world, pos, tankTE);
             world.removeBlockEntity(pos);
             ConnectivityHandler.splitMulti(tankTE);
+            if (heir != null && !heir.isRemoved())
+                tankTE.transferTanksTo(heir);
         }
+    }
+
+    private static BlastStoveBlockEntity findHeir(Level world, BlockPos pos, BlastStoveBlockEntity controller) {
+        for (int y = 0; y < controller.getHeight(); y++)
+            for (int x = 0; x < controller.getWidth(); x++)
+                for (int z = 0; z < controller.getWidth(); z++) {
+                    BlockPos at = pos.offset(x, y, z);
+                    if (at.equals(pos))
+                        continue;
+                    if (world.getBlockEntity(at) instanceof BlastStoveBlockEntity part)
+                        return part;
+                }
+        return null;
     }
 
     @Override

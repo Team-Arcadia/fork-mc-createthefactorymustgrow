@@ -40,6 +40,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import org.apache.commons.lang3.StringUtils;
@@ -312,6 +313,29 @@ public class TFMGUtils {
                 return super.fill(resource, action);
             }
         };
+    }
+
+    /**
+     * Moves as much of {@code from} as fits into {@code to}, bypassing the
+     * insertion and extraction gates both tanks show to pipes. Used when a
+     * multiblock hands its contents to a new controller; the regular fill
+     * path refuses on output tanks, which is how those contents got lost.
+     * Returns the amount moved.
+     */
+    public static int moveFluid(FluidTank from, FluidTank to) {
+        FluidStack moving = from.getFluid();
+        if (moving.isEmpty())
+            return 0;
+        FluidStack present = to.getFluid();
+        if (!present.isEmpty() && !FluidStack.isSameFluidSameComponents(present, moving))
+            return 0;
+        int room = to.getCapacity() - present.getAmount();
+        int moved = Math.min(room, moving.getAmount());
+        if (moved <= 0)
+            return 0;
+        to.setFluid(moving.copyWithAmount(present.getAmount() + moved));
+        from.setFluid(moving.getAmount() == moved ? FluidStack.EMPTY : moving.copyWithAmount(moving.getAmount() - moved));
+        return moved;
     }
 
     /// //////////////////////

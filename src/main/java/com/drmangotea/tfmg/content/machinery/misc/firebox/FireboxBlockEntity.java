@@ -202,7 +202,13 @@ public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleI
         int overflow = tankInventory.getFluidAmount() - tankInventory.getCapacity();
         if (overflow > 0)
             tankInventory.drain(overflow, IFluidHandler.FluidAction.EXECUTE);
-
+        // read() sizes the exhaust with the multiblock too; resizing only the
+        // fuel tank here left a 3x3 firebox with a 1x1 exhaust until the next
+        // reload, so it choked on its own CO2 almost at once.
+        exhuastTank.setCapacity(blocks * getCapacityMultiplier());
+        int exhaustOverflow = exhuastTank.getFluidAmount() - exhuastTank.getCapacity();
+        if (exhaustOverflow > 0)
+            exhuastTank.drain(exhaustOverflow, IFluidHandler.FluidAction.EXECUTE);
     }
 
     public void removeController(boolean keepFluids) {

@@ -21,6 +21,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.Collections;
@@ -37,9 +38,17 @@ public class LargeCoilBlock extends Block implements IBE<LargeCoilBlockEntity>, 
         withBlockEntityDo(level, pos, be -> be.setCapacity(stack));
     }
 
+    /**
+     * Drops itself carrying its setting. The drop used to be spawned from
+     * onDestroyedByPlayer only, so a wrench pickup, an explosion or a drill
+     * deleted the block outright.
+     */
     @Override
-    public List<ItemStack> getDrops(BlockState p_287732_, LootParams.Builder p_287596_) {
-        return Collections.emptyList();
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+        ItemStack item = new ItemStack(this);
+        if (params.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof LargeCoilBlockEntity be)
+            item.set(TFMGDataComponents.COIL_TURNS, be.turns);
+        return List.of(item);
     }
 
     @Override
@@ -52,17 +61,6 @@ public class LargeCoilBlock extends Block implements IBE<LargeCoilBlockEntity>, 
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
-    @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-        if(!player.isCreative()&&level.getBlockEntity(pos) instanceof LargeCoilBlockEntity be) {
-            ItemStack item = TFMGBlocks.LARGE_COIL.asItem().getDefaultInstance();
-            item.set(TFMGDataComponents.COIL_TURNS, be.turns);
-            ItemEntity itemToSpawn = new ItemEntity((Level) level, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, item);
-            if (itemToSpawn.getItem().getCount() > 0)
-                level.addFreshEntity(itemToSpawn);
-        }
-        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
-    }
 
     @Override
     public Class<LargeCoilBlockEntity> getBlockEntityClass() {

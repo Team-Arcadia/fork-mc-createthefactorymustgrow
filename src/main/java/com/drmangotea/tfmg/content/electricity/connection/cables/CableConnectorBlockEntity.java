@@ -97,19 +97,32 @@ public class CableConnectorBlockEntity extends ElectricBlockEntity implements IH
             return;
 
         for (CableConnection connection : connections) {
+            BlockPos pos = connection.blockPos1;
+            // Both ends store a half of every wire and each used to drop it,
+            // with the far half only cleared on the peer's next tick (never
+            // saved): one explosion over both ends, or a peer in an unloaded
+            // chunk, paid the wire out twice. Clear the far half right now and
+            // drop once. A peer that is not loaded cannot be cleared, so then
+            // only the visible half pays out, and the other end's visible-less
+            // half stays silent when it breaks in turn.
+            boolean drop;
+            if (!pos.equals(getBlockPos()) && level.isLoaded(pos)
+                    && level.getBlockEntity(pos) instanceof CableConnectorBlockEntity be) {
+                if (be.connections.remove(connection)) {
+                    be.setChanged();
+                    be.sendStuff();
+                }
+                be.onPlaced();
+                be.removeWiresNextTick = true;
+                drop = true;
+            } else {
+                drop = connection.visible;
+            }
+            if (!drop)
+                continue;
             ItemEntity itemToDrop = new ItemEntity(level, getBlockPos().getX() + 0.5f, getBlockPos().getY() + 0.5f, getBlockPos().getZ() + 0.5f, new ItemStack(connection.type.getWire().asItem(), (int) (connection.getLength() / 8)));
             if (itemToDrop.getItem().getCount() > 0) {
                 level.addFreshEntity(itemToDrop);
-            }
-            BlockPos pos = connection.blockPos1;
-
-            // level.setBlock(connection.blockPos1.above(), Blocks.GOLD_BLOCK.defaultBlockState(),3);
-            if (level.getBlockEntity(pos) instanceof CableConnectorBlockEntity be) {
-                if (be.getBlockPos().equals(getBlockPos()))
-                    continue;
-                be.onPlaced();
-                be.removeWiresNextTick = true;
-
             }
         }
     }
@@ -132,6 +145,9 @@ public class CableConnectorBlockEntity extends ElectricBlockEntity implements IH
         connections.removeIf(c -> {
             BlockPos pos = c.blockPos1;
 
+            // Keep wires whose far end sits in an unloaded chunk.
+            if (!level.isLoaded(pos))
+                return false;
             return !(level.getBlockEntity(pos) instanceof CableConnectorBlockEntity);
 
         });
@@ -193,6 +209,10 @@ public class CableConnectorBlockEntity extends ElectricBlockEntity implements IH
         for (CableConnection connection : connections) {
             BlockPos pos = connection.blockPos1;
             if (pos.equals(getBlockPos()))
+                continue;
+            // An unloaded far end must not be loaded synchronously here; it
+            // joins the network when its own chunk loads.
+            if (!level.isLoaded(pos))
                 continue;
             if (level.getBlockEntity(pos) instanceof CableConnectorBlockEntity be && !visited.contains(be)) {
                 be.collectConnectedWires(foundList, visited);

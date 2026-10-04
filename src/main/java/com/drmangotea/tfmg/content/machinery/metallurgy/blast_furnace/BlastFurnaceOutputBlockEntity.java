@@ -1,6 +1,8 @@
 package com.drmangotea.tfmg.content.machinery.metallurgy.blast_furnace;
 
+import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.base.capability.DrainOnlyFluidHandler;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.datagen.TFMGDamageSources;
@@ -22,10 +24,12 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.Containers;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
@@ -44,6 +48,9 @@ import java.util.Random;
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
 public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+
+    // Per-tick fluid and progress changes sync at most every few ticks.
+    private final ThrottledSync throttledSync = new ThrottledSync();
 
     public SmartInventory inputInventory;
     public SmartInventory fluxInventory;
@@ -82,7 +89,9 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
 
 
         itemCapability = new InputRouter();
-        fluidCapability = new CombinedTankWrapper(primaryTank, secondaryTank);
+        // Drain-only: water from a shared pipe network used to land in the
+        // metal tank and stall the furnace until someone emptied it.
+        fluidCapability = new DrainOnlyFluidHandler(new CombinedTankWrapper(primaryTank, secondaryTank));
     }
 
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
@@ -107,7 +116,7 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
             return;
         if (!level.isClientSide) {
             setChanged();
-            sendData();
+            throttledSync.request(this);
             // Do NOT invalidate capabilities here — invalidating on every
             // fluid change makes Create's mechanical pump lose its handler
             // reference between extract attempts and stutter to a halt
@@ -170,11 +179,17 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
         timer = (int) (baseDuration - (heigth / timeModifier));
         if (isReinforced)
             timer /= 2;
+        // A speed modifier above 2 drove the timer below -1, a value neither
+        // the "running" (> -1) nor the "idle" (== -1) branch handles, and the
+        // furnace froze for good.
+        timer = Math.max(timer, 0);
     }
 
     @Override
     public void tick() {
         super.tick();
+        if (level != null && !level.isClientSide)
+            throttledSync.tick(this);
 
         if (level.isClientSide) {
             coalCokeHeight.chase(Math.min(fuel + inputInventory.getStackInSlot(0).getCount(), 24), 0.1f, LerpedFloat.Chaser.EXP);
@@ -282,7 +297,7 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
 
                 if (!level.isClientSide) {
                     setChanged();
-                    sendData();
+                    throttledSync.request(this);
                 }
             }
         }
@@ -388,6 +403,7 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
         // pulling units until the destination slot is full, then skip to
         // the next item.
         int budget = 64;
+        int fuelBefore = fuel;
         for (ItemEntity entity : items) {
             if (budget <= 0)
                 return;
@@ -408,17 +424,21 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
                 }
                 if (itemStack.is(TFMGTags.TFMGItemTags.FLUX.tag)) {
                     if (fluxInventory.getItem(0).getCount() < itemStack.getMaxStackSize()
-                            && (fluxInventory.isEmpty() || fluxInventory.getItem(0).is(itemStack.getItem()))) {
-                        fluxInventory.setItem(0, new ItemStack(itemStack.getItem(), fluxInventory.getItem(0).getCount() + 1));
+                            && (fluxInventory.isEmpty() || ItemStack.isSameItemSameComponents(fluxInventory.getItem(0), itemStack))) {
+                        fluxInventory.setItem(0, itemStack.copyWithCount(fluxInventory.getItem(0).getCount() + 1));
                         itemStack.shrink(1);
                     } else {
                         break;
                     }
                     continue;
                 }
+                // Only ore some recipe can smelt goes in: the slot cannot be
+                // emptied, so one stray item used to jam the furnace for good.
+                if (!isSmeltable(itemStack))
+                    break;
                 if (inputInventory.getItem(0).getCount() < itemStack.getMaxStackSize()
-                        && (inputInventory.isEmpty() || inputInventory.getItem(0).is(itemStack.getItem()))) {
-                    inputInventory.setItem(0, new ItemStack(itemStack.getItem(), inputInventory.getItem(0).getCount() + 1));
+                        && (inputInventory.isEmpty() || ItemStack.isSameItemSameComponents(inputInventory.getItem(0), itemStack))) {
+                    inputInventory.setItem(0, itemStack.copyWithCount(inputInventory.getItem(0).getCount() + 1));
                     itemStack.shrink(1);
                     continue;
                 }
@@ -427,6 +447,25 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
                 break;
             }
         }
+        // The fuel counter is a plain int: without this a furnace that was
+        // idle (and so never marked dirty) lost the coke it had just eaten on
+        // the next unload, and the goggles showed the old count.
+        if (fuel != fuelBefore) {
+            setChanged();
+            sendData();
+        }
+    }
+
+    /** True when an industrial blasting recipe takes this item as its ore. */
+    private boolean isSmeltable(ItemStack stack) {
+        if (level == null)
+            return false;
+        for (RecipeHolder<IndustrialBlastingRecipe> holder : level.getRecipeManager()
+                .<RecipeInput, IndustrialBlastingRecipe>getAllRecipesFor(TFMGRecipeTypes.INDUSTRIAL_BLASTING.getType())) {
+            if (!holder.value().getIngredients().isEmpty() && holder.value().getIngredients().get(0).test(stack))
+                return true;
+        }
+        return false;
     }
 
     /**
@@ -451,6 +490,8 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
         }
 
         SmartInventory target = stack.is(TFMGTags.TFMGItemTags.FLUX.tag) ? fluxInventory : inputInventory;
+        if (target == inputInventory && !isSmeltable(stack))
+            return stack;
         ItemStack current = target.getItem(0);
         if (!current.isEmpty() && !ItemStack.isSameItemSameComponents(current, stack))
             return stack;
@@ -552,6 +593,15 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
         super.destroy();
         ItemHelper.dropContents(level, worldPosition, inputInventory);
         ItemHelper.dropContents(level, worldPosition, fluxInventory);
+        // Stored fuel is a counter, not a slot; hand it back as coke dust.
+        int remaining = fuel;
+        while (remaining > 0) {
+            int count = Math.min(remaining, 64);
+            Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(),
+                    new ItemStack(TFMGItems.COAL_COKE_DUST.get(), count));
+            remaining -= count;
+        }
+        fuel = 0;
     }
 
     public int getSize() {

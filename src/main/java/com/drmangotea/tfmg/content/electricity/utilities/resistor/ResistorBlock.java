@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -35,20 +36,17 @@ public class ResistorBlock extends WallMountBlock implements IBE<ResistorBlockEn
         withBlockEntityDo(level, pos, be -> be.setResistance(stack));
     }
 
+    /**
+     * Drops itself carrying its setting. The drop used to be spawned from
+     * onDestroyedByPlayer only, so a wrench pickup, an explosion or a drill
+     * deleted the block outright.
+     */
     @Override
-    public List<ItemStack> getDrops(BlockState p_287732_, LootParams.Builder p_287596_) {
-        return Collections.emptyList();
-    }
-    @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-        if(!player.isCreative()&&level.getBlockEntity(pos) instanceof ResistorBlockEntity be) {
-            ItemStack item = TFMGBlocks.RESISTOR.asItem().getDefaultInstance();
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder params) {
+        ItemStack item = new ItemStack(this);
+        if (params.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof ResistorBlockEntity be)
             item.set(TFMGDataComponents.RESISTANCE, be.resistance);
-            ItemEntity itemToSpawn = new ItemEntity((Level) level, pos.getX() + 0.5f, pos.getY() + 0.5f, pos.getZ() + 0.5f, item);
-            if (itemToSpawn.getItem().getCount() > 0)
-                level.addFreshEntity(itemToSpawn);
-        }
-        return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
+        return List.of(item);
     }
 
     //

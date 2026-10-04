@@ -1,5 +1,6 @@
 package com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.controller;
 
+import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.decoration.tanks.steel.SteelTankBlock;
@@ -42,6 +43,9 @@ import java.util.List;
 import static com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.controller.DistillationControllerBlock.getFacing;
 
 public class DistillationControllerBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+
+    // Per-tick fluid and progress changes sync at most every few ticks.
+    private final ThrottledSync throttledSync = new ThrottledSync();
 
     private static final Object DistillationRecipesKey = new Object();
 
@@ -182,6 +186,8 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
     @Override
     public void tick() {
         super.tick();
+        if (level != null && !level.isClientSide)
+            throttledSync.tick(this);
 
         manageDialRendering();
         if (!level.isClientSide)
@@ -226,7 +232,7 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
 
         if (!level.isClientSide) {
             setChanged();
-            sendData();
+            throttledSync.request(this);
         }
     }
 

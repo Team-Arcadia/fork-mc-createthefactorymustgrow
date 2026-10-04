@@ -9,6 +9,7 @@ import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGRecipeTypes;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyRecipe;
+import com.simibubi.create.foundation.item.ItemHelper;
 import com.simibubi.create.foundation.item.SmartInventory;
 
 import net.createmod.catnip.animation.LerpedFloat;
@@ -133,6 +134,14 @@ public class PolarizerBlockEntity extends ElectricBlockEntity implements IHaveGo
 
     }
 
+    @Override
+    public void destroy() {
+        super.destroy();
+        // The one slot was never dropped, so breaking a polarizer deleted the
+        // item sitting in it.
+        ItemHelper.dropContents(level, worldPosition, inventory);
+    }
+
     public void performRecipe(PolarizingRecipe recipe) {
         // A datapack recipe declaring no item result would throw out of the
         // machine tick rather than simply not matching.
@@ -148,12 +157,15 @@ public class PolarizerBlockEntity extends ElectricBlockEntity implements IHaveGo
         //
         // The particles stay unguarded on purpose: addParticle does nothing on
         // a server level, so moving them behind the guard would silence them.
+        // Reset the charge BEFORE writing the result: the write re-enters
+        // onInventoryChanged, which with the gauge still full ran the next
+        // recipe of a chain at once, several steps in a single tick.
+        capacitorPercentage = 0;
         if (level != null && !level.isClientSide) {
             ItemStack stack = recipe.getRollableResults().get(0).rollOutput(level.random);
             inventory.setStackInSlot(0, stack);
         }
         TFMGUtils.spawnElectricParticles(level, getBlockPos());
-        capacitorPercentage = 0;
     }
 
     public Optional<RecipeHolder<PolarizingRecipe>> getRecipe(ItemStack item) {

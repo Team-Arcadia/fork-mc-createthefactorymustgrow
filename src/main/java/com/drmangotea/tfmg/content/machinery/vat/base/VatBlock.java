@@ -5,12 +5,14 @@ import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.simibubi.create.api.connectivity.ConnectivityHandler;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import com.simibubi.create.foundation.block.IBE;
+import com.simibubi.create.foundation.item.ItemHelper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -122,10 +124,41 @@ public class VatBlock extends Block implements IWrenchable, IBE<VatBlockEntity> 
             if (!(be instanceof VatBlockEntity))
                 return;
             VatBlockEntity tankBE = (VatBlockEntity) be;
+            // Items live on the controller only; splitting the multiblock does
+            // not hand them to the new controllers, so breaking the controller
+            // used to delete every item in the vat. Contraptions remove the
+            // block entity before the block, so a moved vat never gets here.
+            VatBlockEntity heir = null;
+            if (!world.isClientSide && tankBE.isController()) {
+                ItemHelper.dropContents(world, pos, tankBE.inputInventory);
+                ItemHelper.dropContents(world, pos, tankBE.outputInventory);
+                // dropContents leaves the slots full; clear them so the fluid
+                // hand-over below cannot carry the items a second time.
+                for (int i = 0; i < tankBE.inputInventory.getSlots(); i++)
+                    tankBE.inputInventory.setStackInSlot(i, ItemStack.EMPTY);
+                for (int i = 0; i < tankBE.outputInventory.getSlots(); i++)
+                    tankBE.outputInventory.setStackInSlot(i, ItemStack.EMPTY);
+                heir = findHeir(world, pos, tankBE);
+            }
             world.removeBlockEntity(pos);
             ConnectivityHandler.splitMulti(tankBE);
+            // Fluids go to a surviving block, which owns them as its own
+            // controller once the split is done.
+            if (heir != null && !heir.isRemoved())
+                tankBE.transferContentsTo(heir, false);
         }
     }
+    private static VatBlockEntity findHeir(Level world, BlockPos pos, VatBlockEntity controller) {
+        for (int y = 0; y < controller.getHeight(); y++)
+            for (int x = 0; x < controller.getWidth(); x++)
+                for (int z = 0; z < controller.getWidth(); z++) {
+                    BlockPos at = pos.offset(x, y, z);
+                    if (!at.equals(pos) && world.getBlockEntity(at) instanceof VatBlockEntity part)
+                        return part;
+                }
+        return null;
+    }
+
     @Override
     public Class<VatBlockEntity> getBlockEntityClass() {
         return VatBlockEntity.class;

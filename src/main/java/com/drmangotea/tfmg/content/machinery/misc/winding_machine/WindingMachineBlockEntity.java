@@ -1,5 +1,6 @@
 package com.drmangotea.tfmg.content.machinery.misc.winding_machine;
 
+import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.recipes.WindingRecipe;
@@ -23,6 +24,9 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,6 +44,9 @@ import static com.simibubi.create.content.kinetics.base.HorizontalKineticBlock.H
 
 public class WindingMachineBlockEntity extends KineticBlockEntity implements IHaveGoggleInformation {
 
+    // Per-tick fluid and progress changes sync at most every few ticks.
+    private final ThrottledSync throttledSync = new ThrottledSync();
+
     LerpedFloat spoolSpeed = LerpedFloat.linear();
     float angle;
     public SmartInventory inventory;
@@ -50,6 +57,9 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
     // Turns already paid for by a consumed wire but not yet wound onto the
     // mounted spool. One wire buys 125 turns, the crafting recipe's ratio.
     public int wireTurnsPending = 0;
+    // The spool metal the pending turns were paid for: copper turns must not
+    // land on a constantan spool swapped in while the credit was open.
+    private Item wireCreditSpool;
     public static final int TURNS_PER_WIRE = 125;
     public boolean update = false;
 
@@ -206,6 +216,8 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
     @Override
     public void tick() {
         super.tick();
+        if (level != null && !level.isClientSide)
+            throttledSync.tick(this);
         performRecipe();
         if (update) {
             level.updateNeighborsAt(getBlockPos(), getBlockState().getBlock());
@@ -306,6 +318,14 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
             // list, and get(0) would crash the server tick. An empty roll wins
             // nothing this cycle; the wound turns stand and the next tick
             // finishes the recipe with a fresh roll.
+            // A sequenced assembly sub-recipe is one shared instance whose
+            // result Create rebinds to whichever item looked it up last. With
+            // two machines on the same sequence the cached recipe could hand
+            // this machine the other one's step, so look it up again right
+            // before rolling, as Create's own machines do.
+            findRecipe();
+            if (recipe == null)
+                return;
             List<ItemStack> rolled = recipe.rollResults(level.random);
             if (rolled.isEmpty())
                 return;
@@ -349,7 +369,7 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
         // finishes. The dedicated resistor/coil branches already
         // send data per drain — the generic branch was the outlier.
         setChanged();
-        sendData();
+        throttledSync.request(this);
     }
 
     /** The spool a wire winds onto, or empty if the stack is not a wire. */
@@ -388,7 +408,8 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
             // The credit belongs to the spool its wire was spent on. An empty
             // or missing spool cannot say which metal that was, so it lapses
             // rather than winding the wrong one.
-            if (emptyMounted || spool.isEmpty() || !(spool.getItem() instanceof SpoolItem)) {
+            if (emptyMounted || spool.isEmpty() || !(spool.getItem() instanceof SpoolItem)
+                    || (wireCreditSpool != null && !spool.is(wireCreditSpool))) {
                 wireTurnsPending = 0;
                 return false;
             }
@@ -407,13 +428,14 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
             wire.shrink(1);
             inventory.setStackInSlot(0, wire.isEmpty() ? ItemStack.EMPTY : wire);
             wireTurnsPending = TURNS_PER_WIRE;
+            wireCreditSpool = spoolType.getItem();
         }
         if (emptyMounted)
             spool = spoolType;
         spool.set(TFMGDataComponents.SPOOL_AMOUNT, Math.min(1000, turns + 1));
         wireTurnsPending--;
         setChanged();
-        sendData();
+        throttledSync.request(this);
         return true;
     }
 
@@ -452,6 +474,8 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
         compound.put("Spool", spool.saveOptional(registries));
         compound.putInt("AmountWinded", amountWinded);
         compound.putInt("WireTurnsPending", wireTurnsPending);
+        if (wireCreditSpool != null)
+            compound.putString("WireCreditSpool", BuiltInRegistries.ITEM.getKey(wireCreditSpool).toString());
     }
 
     @Override
@@ -460,11 +484,16 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
         inventory.deserializeNBT(registries,compound.getCompound("Inventory"));
 
   
-        if (compound.contains("Spool")) {
-            ItemStack.parse(registries, compound.getCompound("Spool")).ifPresent(i -> spool = i);
-        }
+        // saveOptional writes an empty spool as {}, which parse() rejects with
+        // a logged error and then leaves the previous spool in place, so a
+        // client kept rendering a spool that had been taken out.
+        if (compound.contains("Spool"))
+            spool = ItemStack.parseOptional(registries, compound.getCompound("Spool"));
         amountWinded = compound.getInt("AmountWinded");
         wireTurnsPending = compound.getInt("WireTurnsPending");
+        wireCreditSpool = compound.contains("WireCreditSpool")
+                ? BuiltInRegistries.ITEM.get(ResourceLocation.parse(compound.getString("WireCreditSpool")))
+                : null;
         if (clientPacket)
             spoolSpeed.chase(getGeneratedSpeed(), 1 / 16f, LerpedFloat.Chaser.EXP);
     }

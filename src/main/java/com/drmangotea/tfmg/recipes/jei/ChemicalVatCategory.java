@@ -11,6 +11,7 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import net.createmod.catnip.data.Pair;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
@@ -74,15 +75,32 @@ public class ChemicalVatCategory extends CreateRecipeCategory<VatMachineRecipe> 
 
         for (int i = 0; i < recipe.getRollableResults().size(); i++) {
             ProcessingOutput output = recipe.getRollableResults().get(i);
-            builder
+            var slot = builder
                     .addSlot(RecipeIngredientRole.OUTPUT, 128, itemResultPos)
                     .setBackground(getRenderedSlot(output), -1, -1)
                     .addItemStack(output.getStack())
-                    .addRichTooltipCallback(addStochasticTooltip(output))
-            ;
+                    .addRichTooltipCallback(addStochasticTooltip(output));
+            // A result that is also an ingredient (the coal coke dust of the
+            // arc furnace) never reaches the output: the vat puts it straight
+            // back into its input. Shown as a plain chance output, players
+            // waited for a product that never appeared.
+            if (isRecovered(recipe, output.getStack())) {
+                int lossPercent = Math.round((1 - output.getChance()) * 100);
+                slot.addRichTooltipCallback((view, tooltip) -> {
+                    tooltip.add(Component.translatable("tfmg.jei.vat.recovered").withStyle(ChatFormatting.GOLD));
+                    tooltip.add(Component.translatable("tfmg.jei.vat.recovered.loss", lossPercent).withStyle(ChatFormatting.GRAY));
+                });
+            }
 
             itemResultPos -= 21;
         }
+    }
+
+    private static boolean isRecovered(VatMachineRecipe recipe, ItemStack result) {
+        for (Ingredient ingredient : recipe.getIngredients())
+            if (ingredient.test(result))
+                return true;
+        return false;
     }
 
     public void draw(VatMachineRecipe recipe, IRecipeSlotsView iRecipeSlotsView, GuiGraphics graphics, double mouseX, double mouseY) {
@@ -201,7 +219,30 @@ public class ChemicalVatCategory extends CreateRecipeCategory<VatMachineRecipe> 
             graphics.drawString(Minecraft.getInstance().font,
                     Component.translatable("tfmg.jei.vat.pressure", recipe.pressure).getString(),
                     2, y, 0xFF1C3C64, false);
+            y += 10;
+        }
+        // The minimum size and a vat-type restriction used to be invisible:
+        // a 2x2 firebrick vat never ran the arc furnace and nothing said why.
+        if (recipe.minSize > 1) {
+            int side = (int) Math.ceil(Math.sqrt(recipe.minSize));
+            graphics.drawString(Minecraft.getInstance().font,
+                    Component.translatable("tfmg.jei.vat.min_size", recipe.minSize, side, side).getString(),
+                    2, y, 0xFF404040, false);
+            y += 10;
+        }
+        if (recipe.allowedVatTypes.size() > 1 && recipe.allowedVatTypes.size() < ALL_VAT_TYPES) {
+            StringBuilder names = new StringBuilder();
+            for (String type : recipe.allowedVatTypes) {
+                if (!names.isEmpty())
+                    names.append(", ");
+                names.append(Component.translatable("tfmg.jei.vat.type." + type.replace(":", ".")).getString());
+            }
+            graphics.drawString(Minecraft.getInstance().font,
+                    Component.translatable("tfmg.jei.vat.types", names.toString()).getString(),
+                    2, y, 0xFF404040, false);
         }
     }
+
+    private static final int ALL_VAT_TYPES = 3;
 
 }

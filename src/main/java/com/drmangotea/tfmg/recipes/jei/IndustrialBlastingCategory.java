@@ -44,7 +44,9 @@ public class IndustrialBlastingCategory extends CreateRecipeCategory<IndustrialB
 
         //fluid
         addFluidSlot(builder, 140, 117, recipe.getFluidResults().get(0));
-        if (recipe.getFluidResults().size() > 2)
+        // The slag is the second result; "> 2" hid it on any recipe that had
+        // metal and slag but no gas.
+        if (recipe.getFluidResults().size() > 1)
             addFluidSlot(builder, 160, 117, recipe.getFluidResults().get(1));
 
 

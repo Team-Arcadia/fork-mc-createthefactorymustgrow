@@ -107,12 +107,17 @@ public class BlastFurnaceHatchBlockEntity extends SmartBlockEntity implements IH
         super.read(compound,registries , clientPacket);
 
         tank.readFromNBT(registries,compound.getCompound("TankContent"));
+        // The slot holds items a funnel pushed in while the block below was
+        // not air; without this they vanished on the next chunk reload.
+        if (compound.contains("Inventory"))
+            inventory.deserializeNBT(registries, compound.getCompound("Inventory"));
     }
 
     @Override
     public void write(CompoundTag compound, HolderLookup.Provider registries, boolean clientPacket) {
         super.write(compound,registries , clientPacket);
         compound.put("TankContent", tank.writeToNBT(registries,new CompoundTag()));
+        compound.put("Inventory", inventory.serializeNBT(registries));
 
 
     }

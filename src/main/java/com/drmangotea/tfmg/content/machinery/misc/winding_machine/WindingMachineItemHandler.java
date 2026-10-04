@@ -1,5 +1,7 @@
 package com.drmangotea.tfmg.content.machinery.misc.winding_machine;
 
+import com.drmangotea.tfmg.registry.TFMGItems;
+import com.drmangotea.tfmg.registry.TFMGTags;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 
@@ -88,7 +90,10 @@ public class WindingMachineItemHandler implements IItemHandlerModifiable {
             return ItemStack.EMPTY;
 
         if (slot == SLOT_SPOOL) {
-            if (be.spool.isEmpty())
+            // Only a used-up spool leaves through automation. A hopper under
+            // the machine used to pull a working spool out before it wound a
+            // single turn.
+            if (be.spool.isEmpty() || !be.spool.is(TFMGItems.EMPTY_SPOOL.get()))
                 return ItemStack.EMPTY;
             ItemStack extracted = be.spool.copy();
             if (!simulate) {
@@ -98,6 +103,11 @@ public class WindingMachineItemHandler implements IItemHandlerModifiable {
             return extracted;
         }
 
+        // Wire in the workpiece slot is fuel for the spool, not a product.
+        ItemStack work = be.inventory.getStackInSlot(0);
+        if (work.is(TFMGTags.TFMGItemTags.WIRES_COPPER.tag) || work.is(TFMGTags.TFMGItemTags.WIRES_ALUMINUM.tag)
+                || work.is(TFMGTags.TFMGItemTags.WIRES_CONSTANTAN.tag))
+            return ItemStack.EMPTY;
         return be.inventory.extractItem(0, amount, simulate);
     }
 }

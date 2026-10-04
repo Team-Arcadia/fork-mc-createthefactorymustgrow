@@ -81,7 +81,11 @@ public class ElectricMotorBlockEntity extends KineticElectricBlockEntity {
 
     @Override
     public boolean hasElectricitySlot(Direction direction) {
-        return direction == getBlockState().getValue(FACING).getOpposite() || (direction.getAxis().isHorizontal() && direction == Direction.DOWN);
+        // A lying motor also takes power from below. The old test read the
+        // direction's own axis ("horizontal AND down"), which no direction
+        // satisfies, so only the back face ever connected.
+        return direction == getBlockState().getValue(FACING).getOpposite()
+                || (getBlockState().getValue(FACING).getAxis().isHorizontal() && direction == Direction.DOWN);
     }
 
 
@@ -125,7 +129,8 @@ public class ElectricMotorBlockEntity extends KineticElectricBlockEntity {
         float speedModifier = Math.abs(getSpeed()/256);
 
 
-        return (int)(super.calculateAddedStressCapacity()*speedModifier);
+        // No int cast: it rounded the capacity down to zero below ~22 RPM.
+        return super.calculateAddedStressCapacity()*speedModifier;
     }
 
     //@Override

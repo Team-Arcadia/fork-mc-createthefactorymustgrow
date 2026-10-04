@@ -64,7 +64,9 @@ public class WindingCategory extends CreateRecipeCategory<WindingRecipe> {
 
         public void setRecipe(IRecipeLayoutBuilder builder, SequencedRecipe<?> recipe, IFocusGroup focuses, int x) {
             // Copy for the same reason as WindingCategory.setRecipe above.
-            ItemStack[] spoolStacks = recipe.getRecipe().getIngredients().get(1).getItems();
+            ItemStack[] spoolStacks = recipe.getRecipe().getIngredients().size() < 2
+                    ? new ItemStack[0]
+                    : recipe.getRecipe().getIngredients().get(1).getItems();
             ItemStack coil = spoolStacks.length == 0 ? ItemStack.EMPTY : spoolStacks[0].copy();
             if (!coil.isEmpty())
                 coil.set(TFMGDataComponents.SPOOL_AMOUNT,recipe.getRecipe().getProcessingDuration());

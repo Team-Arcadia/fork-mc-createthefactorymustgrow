@@ -56,17 +56,27 @@ public class EnginePipingUpgrade extends EngineUpgrade {
             AbstractSmallEngineBlockEntity controller = engine.getControllerBE();
 
             FluidTankBlockEntity tankBE = tank.get();
-            int maxOutput = tankBE.getTankInventory().drain(500, IFluidHandler.FluidAction.SIMULATE).getAmount();
-            int maxInput = tankBE.getTankInventory().fill(new FluidStack(tankBE.getFluid(0).getFluidHolder(), 500), IFluidHandler.FluidAction.SIMULATE);
+            // A multiblock tank keeps its fluid on its controller block.
+            FluidTankBlockEntity tankController = tankBE.getControllerBE();
+            if (tankController != null)
+                tankBE = tankController;
             if(controller == null)
                 return;
             if(controller.fuelTank == null)
                 return;
 
-            int amount = Math.min(maxInput, Math.min(maxOutput, controller.fuelTank.getSpace()));
-
-            tankBE.getTankInventory().drain(amount, IFluidHandler.FluidAction.EXECUTE);
-            controller.fuelTank.fill(new FluidStack(tankBE.getFluid(0).getFluidHolder(), amount), IFluidHandler.FluidAction.EXECUTE);
+            FluidStack available = tankBE.getTankInventory().drain(500, IFluidHandler.FluidAction.SIMULATE);
+            if (available.isEmpty())
+                return;
+            // Ask the engine first and move only what it accepts. The old code
+            // drained up to 500 mB and ignored the fill, voiding the fuel when
+            // the engine held a different one, and capped the move by the
+            // SOURCE tank's free space, so a full tank never fed anything.
+            int amount = controller.fuelTank.fill(available, IFluidHandler.FluidAction.SIMULATE);
+            if (amount <= 0)
+                return;
+            FluidStack moved = tankBE.getTankInventory().drain(amount, IFluidHandler.FluidAction.EXECUTE);
+            controller.fuelTank.fill(moved, IFluidHandler.FluidAction.EXECUTE);
 
         } else findTank(engine);
 

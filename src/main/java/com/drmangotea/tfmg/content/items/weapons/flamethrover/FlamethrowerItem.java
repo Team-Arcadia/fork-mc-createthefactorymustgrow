@@ -197,22 +197,26 @@ public class FlamethrowerItem extends Item implements CustomArmPoseItem {
                         FluidStack stackToDrain = fluidStack.copyWithAmount(toDrain);
                         FlamethrowerFuel fuel = FlamethrowerFuel.createForType(level.registryAccess(), fluidStack.getFluid(), toDrain);
                         if (fuel == FlamethrowerFuel.EMPTY) continue;
-                        if (fuelType != null && fuelType != TFMGFlamethrowerFuelTypes.FALLBACK) {
-                            if (fuelType.equals(fuel.fuelType())) {
-                                stack.set(TFMGDataComponents.FLAMETHROWER, existingFuel.increment(toDrain, FUEL_CAPACITY));
-                                capability.drain(stackToDrain, IFluidHandler.FluidAction.EXECUTE);
-                                // getPlayer() is @Nullable (dispenser/automation use).
-                                if (context.getPlayer() != null)
-                                    context.getPlayer().getCooldowns().addCooldown(stack.getItem(), 20);
-                                foundFluid = true;
-                            }
-                        } else {
-                            stack.set(TFMGDataComponents.FLAMETHROWER, fuel);
-                            capability.drain(stackToDrain, IFluidHandler.FluidAction.EXECUTE);
-                            if (context.getPlayer() != null)
-                                context.getPlayer().getCooldowns().addCooldown(stack.getItem(), 20);
-                            foundFluid = true;
-                        }
+                        boolean sameFuel = fuelType != null && fuelType != TFMGFlamethrowerFuelTypes.FALLBACK;
+                        if (sameFuel && !fuelType.equals(fuel.fuelType()))
+                            continue;
+                        // Credit only what actually left the tank. Engines refuse
+                        // extraction, so crediting first refilled the flamethrower
+                        // for free from any running engine.
+                        int drained = capability.drain(stackToDrain, IFluidHandler.FluidAction.EXECUTE).getAmount();
+                        if (drained <= 0)
+                            continue;
+                        if (sameFuel)
+                            stack.set(TFMGDataComponents.FLAMETHROWER, existingFuel.increment(drained, FUEL_CAPACITY));
+                        else
+                            stack.set(TFMGDataComponents.FLAMETHROWER, FlamethrowerFuel.createForType(level.registryAccess(), fluidStack.getFluid(), drained));
+                        // getPlayer() is @Nullable (dispenser/automation use).
+                        if (context.getPlayer() != null)
+                            context.getPlayer().getCooldowns().addCooldown(stack.getItem(), 20);
+                        foundFluid = true;
+                        // One tank per click: a second tank used to overwrite the
+                        // fuel just taken from the first, which was then lost.
+                        break;
                     }
                 }
             }

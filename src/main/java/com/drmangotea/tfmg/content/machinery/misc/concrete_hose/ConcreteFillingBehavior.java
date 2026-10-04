@@ -117,6 +117,12 @@ public class ConcreteFillingBehavior extends TFMGFluidManipulationBehaviour {
 		if (affectedArea == null)
 			affectedArea = BoundingBox.fromCorners(root, root);
 
+		// An exhausted search was only re-seeded when the hose moved, so rebar
+		// placed next to an already filled area afterwards never got filled
+		// by a hose that stayed put. Start over once the validation timer runs out.
+		if (queue.isEmpty() && revalidateIn == 0)
+			softReset(root);
+
 		//if (revalidateIn == 0) {
 		//	visited.clear();
 		//	infinityCheckFrontier.clear();
@@ -134,7 +140,12 @@ public class ConcreteFillingBehavior extends TFMGFluidManipulationBehaviour {
 			.ultraWarm() && FluidHelper.isTag(fluid, FluidTags.WATER);
 		boolean canPlaceSources = AllConfigs.server().fluids.fluidFillPlaceFluidSourceBlocks.get();
 
-		if ((!fillInfinite() && infinite) || evaporate || !canPlaceSources) {
+		// Create's hose pulley voids its fluid when source placement is off;
+		// for liquid concrete that destroyed a bucket every tick. Keep it.
+		if (!canPlaceSources)
+			return false;
+
+		if ((!fillInfinite() && infinite) || evaporate) {
 			FluidState fluidState = world.getFluidState(rootPos);
 			boolean equivalentTo = fluidState.getType()
 				.isSame(fluid);

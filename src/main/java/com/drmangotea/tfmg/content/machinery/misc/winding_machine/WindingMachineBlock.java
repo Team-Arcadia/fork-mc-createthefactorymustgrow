@@ -77,6 +77,12 @@ public class WindingMachineBlock extends HorizontalKineticBlock implements IBE<W
                 if(!be.spool.isEmpty()){
                     player.setItemInHand(hand, be.spool);
                     be.spool = ItemStack.EMPTY;
+                    // Paid wire turns belong to the spool that was taken.
+                    be.wireTurnsPending = 0;
+                    // Without a save mark an idle machine kept its spool on
+                    // disk, so the spool came back after a reload while the
+                    // player still held it.
+                    be.onSpoolChanged();
                     return ItemInteractionResult.SUCCESS;
                 }
             }else {

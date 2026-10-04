@@ -255,6 +255,14 @@ public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHave
 
     }
 
+    /** Moves this block's four tanks into another stove's, as far as they fit. */
+    public void transferTanksTo(BlastStoveBlockEntity other) {
+        TFMGUtils.moveFluid(primaryInputInventory, other.primaryInputInventory);
+        TFMGUtils.moveFluid(secondaryInputInventory, other.secondaryInputInventory);
+        TFMGUtils.moveFluid(primaryOutputInventory, other.primaryOutputInventory);
+        TFMGUtils.moveFluid(secondaryOutputInventory, other.secondaryOutputInventory);
+    }
+
     public void removeController(boolean keepFluids) {
         if (level.isClientSide)
             return;
@@ -297,6 +305,12 @@ public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHave
             return;
         if (controller.equals(this.controller))
             return;
+        // A former controller joining a bigger stove used to keep its four
+        // tanks where nothing could reach them, and its next save dropped them
+        // because only controllers write their tanks. Hand them over first.
+        if (isController() && !controller.equals(worldPosition)
+                && level.getBlockEntity(controller) instanceof BlastStoveBlockEntity newController)
+            transferTanksTo(newController);
         this.controller = controller;
         refreshCapability();
         setChanged();

@@ -50,13 +50,15 @@ public class ConverterBlockEntity extends ElectricBlockEntity implements IVoltag
     public TFMGForgeEnergyStorage createEnergyStorage() {
         return new TFMGForgeEnergyStorage(500000, 10000) {
             @Override
-            public void onEnergyChanged(int amount, int a) {
-                // Re-run the electrical network whenever the FE tank changes so
-                // FE->TFMG conversion actually publishes a voltage on the blue
-                // (TFMG) side. Without this, updateNetwork() never fires on
-                // incoming FE and the heavy cable / downstream machines stay at
-                // 0V (mirrors AccumulatorBlockEntity.onEnergyChanged).
-                updateNextTick();
+            public void onEnergyChanged(int amount, int oldAmount) {
+                // Re-run the electrical network when the FE tank crosses one of
+                // the thresholds the converter's output depends on (empty,
+                // full) so FE->TFMG conversion publishes a voltage on the TFMG
+                // side. Re-running it on every transfer recomputed the whole
+                // grid each tick for as long as FE flowed.
+                int max = getMaxEnergyStored();
+                if ((oldAmount == 0) != (this.energy == 0) || (oldAmount >= max) != (this.energy >= max))
+                    updateNextTick();
                 sendStuff();
             }
         };

@@ -1,5 +1,6 @@
 package com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.output;
 
+import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.base.TFMGIcons;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
@@ -33,6 +34,9 @@ import java.util.List;
  */
 public class DistillationOutputBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
 
+    // Per-tick fluid and progress changes sync at most every few ticks.
+    private final ThrottledSync throttledSync = new ThrottledSync();
+
 
     protected IFluidHandler fluidCapability;
 
@@ -51,12 +55,19 @@ public class DistillationOutputBlockEntity extends SmartBlockEntity implements I
         behaviours.add(mode);
     }
 
+    @Override
+    public void tick() {
+        super.tick();
+        if (level != null && !level.isClientSide)
+            throttledSync.tick(this);
+    }
+
     protected void onFluidStackChanged(FluidStack newFluidStack) {
         if (!hasLevel())
             return;
         if (!level.isClientSide) {
             setChanged();
-            sendData();
+            throttledSync.request(this);
         }
     }
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {

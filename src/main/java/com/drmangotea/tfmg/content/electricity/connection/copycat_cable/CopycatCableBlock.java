@@ -210,12 +210,16 @@ public class CopycatCableBlock extends Block implements IBE<CopycatCableBlockEnt
     @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean pIsMoving) {
 
+        // Pop the material BEFORE IBE.onRemove: that call removes the block
+        // entity, after which the lookup below found nothing and the
+        // material was lost on every break.
+        if (state.hasBlockEntity() && state.getBlock() != newState.getBlock() && !pIsMoving)
+            withBlockEntityDo(level, pos, ufte -> Block.popResource(level, pos, ufte.getConsumedItem()));
+
         IBE.onRemove(state, level, pos, newState);
 
         if (!state.hasBlockEntity() || state.getBlock() == newState.getBlock())
             return;
-        if (!pIsMoving)
-            withBlockEntityDo(level, pos, ufte -> Block.popResource(level, pos, ufte.getConsumedItem()));
         level.removeBlockEntity(pos);
     }
 

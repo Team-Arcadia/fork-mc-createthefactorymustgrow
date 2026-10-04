@@ -22,11 +22,15 @@ public class HotBlastCategory extends CreateRecipeCategory<HotBlastRecipe> {
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, HotBlastRecipe recipe, IFocusGroup focuses) {
 
+        // Datapack recipes may carry a single input or result; get(1) threw
+        // and broke the whole JEI layout.
         addFluidSlot(builder,18,52,recipe.getFluidIngredients().get(0));
-        addFluidSlot(builder,18,74,recipe.getFluidIngredients().get(1));
+        if (recipe.getFluidIngredients().size() > 1)
+            addFluidSlot(builder,18,74,recipe.getFluidIngredients().get(1));
 
         addFluidSlot(builder,105,51,recipe.getFluidResults().get(0));
-        addFluidSlot(builder,105,75,recipe.getFluidResults().get(1));
+        if (recipe.getFluidResults().size() > 1)
+            addFluidSlot(builder,105,75,recipe.getFluidResults().get(1));
 
     }
 

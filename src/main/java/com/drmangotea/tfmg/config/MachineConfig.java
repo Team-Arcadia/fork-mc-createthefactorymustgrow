@@ -80,7 +80,7 @@ public class MachineConfig extends ConfigBase {
         static String accumulatorMaxAmpOutput = "Sets the maximum amperage an accumulator can provide.";
         static String accumulatorChargingRate = "Sets the maximum charging rate of accumulators.";
         static String fireboxExhaustRequirement = "If set to true,fireboxes will require exhaust management.";
-        static String fireboxFuelConsumption = "Determines the amount of fuel a firebox needs to run for 3 seconds.";
+        static String fireboxFuelConsumption = "The amount of fuel (mB) a firebox must hold to keep burning. A burning firebox uses 50 mB every 3 seconds.";
         static String electrolysisMinimumCurrent = "The minimum electric current that will make electrolyzers operational.";
         static String engineMaxLength = "The maximum length of engines.";
         static String surfaceScannerScanDepth = "Y level surface scanner scan at.";

@@ -1,5 +1,10 @@
 package com.drmangotea.tfmg.content.machinery.metallurgy.coke_oven;
 
+import com.drmangotea.tfmg.base.ThrottledSync;
+import com.drmangotea.tfmg.base.capability.DrainOnlyFluidHandler;
+import com.drmangotea.tfmg.base.capability.InsertOnlyItemHandler;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.Containers;
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
@@ -49,6 +54,9 @@ import java.util.Optional;
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
 public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+
+    // Per-tick fluid and progress changes sync at most every few ticks.
+    private final ThrottledSync throttledSync = new ThrottledSync();
 
     public SmartInventory inventory;
     public FluidTank primaryTank;
@@ -112,7 +120,7 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
             return;
         if (!level.isClientSide) {
             setChanged();
-            sendData();
+            throttledSync.request(this);
         }
     }
 
@@ -121,6 +129,8 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
     @Override
     public void tick() {
         super.tick();
+        if (level != null && !level.isClientSide)
+            throttledSync.tick(this);
 
         tickRecipe();
 
@@ -142,6 +152,9 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
         // timer, fill tanks, shrink the input and spawn a ghost ItemEntity.
         // Timer reaches the client through SmartBlockEntity data sync.
         if(level == null || (level.isClientSide && !isVirtual()))
+            return;
+        // Only the controller cooks; a member block's own slot is not reachable.
+        if(!isController())
             return;
         if(inventory.isEmpty()||timer == -1)
             return;
@@ -269,6 +282,29 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
     public boolean isController(){
         return controller == null || controller.equals(getBlockPos());
     }
+    /**
+     * Joins this oven block to the structure run by {@code newController}. A
+     * block that ran its own oven until now hands its coal and its tanks to
+     * the new controller: growing an oven used to strand them in a block
+     * nothing could reach, which went on coking by itself inside the wall.
+     */
+    private void assignController(BlockPos newController) {
+        if (isController() && !newController.equals(getBlockPos())
+                && level.getBlockEntity(newController) instanceof CokeOvenBlockEntity owner && owner != this) {
+            ItemStack held = inventory.getItem(0);
+            if (!held.isEmpty()) {
+                ItemStack left = owner.inventory.insertItem(0, held.copy(), false);
+                inventory.setStackInSlot(0, ItemStack.EMPTY);
+                if (!left.isEmpty())
+                    Containers.dropItemStack(level, worldPosition.getX(), worldPosition.getY(), worldPosition.getZ(), left);
+            }
+            TFMGUtils.moveFluid(primaryTank, owner.primaryTank);
+            TFMGUtils.moveFluid(secondaryTank, owner.secondaryTank);
+            timer = -1;
+        }
+        controller = newController;
+    }
+
     public void createMultiblock(){
 
         // Assembly mutates blockstates and controller links; server only.
@@ -331,7 +367,7 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
                     if (level.getBlockEntity(pos) instanceof CokeOvenBlockEntity be) {
                         if (isInPlane(anchor.getBlockPos(), back, anchor.size, pos)) {
                             boolean controllerChanged = !anchor.getBlockPos().equals(be.controller);
-                            be.controller = anchor.getBlockPos();
+                            be.assignController(anchor.getBlockPos());
                             be.refreshCapability();
                             if (controllerChanged)
                                 be.notifyUpdate();
@@ -360,7 +396,7 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
             if(level.getBlockEntity(pos) instanceof CokeOvenBlockEntity be&&(!level.getBlockState(getBlockPos().relative(facing)).is(TFMGBlocks.COKE_OVEN.get())&&!level.getBlockState(getBlockPos().below()).is(TFMGBlocks.COKE_OVEN.get()))){
 
                 boolean controllerChanged = !getBlockPos().equals(be.controller);
-                be.controller = getBlockPos();
+                be.assignController(getBlockPos());
                 be.refreshCapability();
                 if(controllerChanged)
                     be.notifyUpdate();
@@ -485,8 +521,9 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
     @Override
     public void destroy() {
         super.destroy();
-        if(isController())
-            ItemHelper.dropContents(level, worldPosition, inventory);
+        // Every block owns its slot; a member's is normally empty, but
+        // anything left there is better dropped than deleted.
+        ItemHelper.dropContents(level, worldPosition, inventory);
     }
 
     public void updateOvenBlocks(){
@@ -535,12 +572,16 @@ public class CokeOvenBlockEntity extends SmartBlockEntity implements IHaveGoggle
         event.registerBlockEntity(
                 Capabilities.FluidHandler.BLOCK,
                 TFMGBlockEntities.COKE_OVEN.get(),
-                (be, context) -> context == Direction.UP ? be.secondaryFluidCapability : be.primaryFluidCapability
+                // Both tanks only ever hold by-products: piped water used to
+                // fill one and pause the oven with no way to tell why.
+                (be, context) -> new DrainOnlyFluidHandler(context == Direction.UP ? be.secondaryFluidCapability : be.primaryFluidCapability)
         );
         event.registerBlockEntity(
                 Capabilities.ItemHandler.BLOCK,
                 TFMGBlockEntities.COKE_OVEN.get(),
-                (be, context) -> be.itemCapability
+                // The slot only holds raw input (coke drops as an entity), so
+                // a hopper under the oven was pulling the coal back out.
+                (be, context) -> be.itemCapability == null ? null : new InsertOnlyItemHandler(be.itemCapability)
         );
     }
     @Override

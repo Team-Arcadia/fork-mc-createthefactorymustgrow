@@ -155,8 +155,13 @@ public class SmokestackBlockEntity extends SmartBlockEntity {
 
             int transferAmount = Math.min(tankInventory.getFluidAmount(), be.tankInventory.getCapacity() - be.tankInventory.getFluidAmount());
 
-            tankInventory.drain(transferAmount, IFluidHandler.FluidAction.EXECUTE);
-            be.tankInventory.fill(new FluidStack(TFMGFluids.CARBON_DIOXIDE.get(), transferAmount), IFluidHandler.FluidAction.EXECUTE);
+            // Fill first and drain only what the block above took. Draining
+            // first lost the gas whenever the fill was refused.
+            if (transferAmount > 0) {
+                int accepted = be.tankInventory.fill(tankInventory.getFluid().copyWithAmount(transferAmount), IFluidHandler.FluidAction.EXECUTE);
+                if (accepted > 0)
+                    tankInventory.drain(accepted, IFluidHandler.FluidAction.EXECUTE);
+            }
 
         }
     }

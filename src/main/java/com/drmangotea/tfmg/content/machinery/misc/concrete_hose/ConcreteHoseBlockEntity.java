@@ -77,7 +77,11 @@ public class ConcreteHoseBlockEntity extends KineticBlockEntity {
         super.addBehaviours(behaviours);
     }
 
-    protected void onTankContentsChanged(FluidStack contents) {}
+    protected void onTankContentsChanged(FluidStack contents) {
+        // A pour that only touched a neighbouring chunk left this one clean,
+        // and the drained concrete came back on reload.
+        setChanged();
+    }
 
     @Override
     public void onSpeedChanged(float previousSpeed) {

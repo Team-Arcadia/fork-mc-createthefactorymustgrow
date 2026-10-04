@@ -1,5 +1,6 @@
 package com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.base;
 
+import com.drmangotea.tfmg.base.ThrottledSync;
 import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.base.TFMGUtils;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
@@ -31,6 +32,9 @@ import net.neoforged.neoforge.fluids.capability.templates.FluidTank;
 import java.util.List;
 
 public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGoggleInformation {
+
+    // Per-tick fluid and progress changes sync at most every few ticks.
+    private final ThrottledSync throttledSync = new ThrottledSync();
     public PumpjackBlockEntity controllerHammer;
     public boolean isRunning = false;
     int depositCheckTimer = 0;
@@ -58,6 +62,8 @@ public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGo
     @Override
     public void tick() {
         super.tick();
+        if (level != null && !level.isClientSide)
+            throttledSync.tick(this);
 
 
         if (controllerHammer != null && !level.isLoaded(controllerHammer.getBlockPos()))
@@ -210,7 +216,7 @@ public class PumpjackBaseBlockEntity extends SmartBlockEntity implements IHaveGo
         if (!hasLevel() || level.isClientSide)
             return;
         setChanged();
-        sendData();
+        throttledSync.request(this);
     }
 
     @Override

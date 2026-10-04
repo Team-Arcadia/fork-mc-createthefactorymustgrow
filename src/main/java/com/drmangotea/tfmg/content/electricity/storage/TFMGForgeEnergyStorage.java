@@ -15,8 +15,11 @@ public abstract class TFMGForgeEnergyStorage extends EnergyStorage {
         int oldAmount = this.energy;
 
         int extractedEnergy = super.extractEnergy(maxExtract, simulate);
-        if(extractedEnergy != 0) {
-            onEnergyChanged(maxExtract*-1,oldAmount);
+        // Simulated transfers change nothing. Notifying on them made every
+        // neighbouring FE cable's probe recompute the electrical network and
+        // send a sync packet, every tick.
+        if(extractedEnergy != 0 && !simulate) {
+            onEnergyChanged(-extractedEnergy,oldAmount);
         }
         return extractedEnergy;
     }
@@ -25,7 +28,7 @@ public abstract class TFMGForgeEnergyStorage extends EnergyStorage {
     public int receiveEnergy(int maxReceive, boolean simulate) {
         int oldAmount = this.energy;
         int receiveEnergy = super.receiveEnergy(maxReceive, simulate);
-        if(receiveEnergy != 0) {
+        if(receiveEnergy != 0 && !simulate) {
             onEnergyChanged(receiveEnergy,oldAmount);
         }
         return receiveEnergy;
