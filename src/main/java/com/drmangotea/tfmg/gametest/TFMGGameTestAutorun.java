@@ -1,5 +1,6 @@
 package com.drmangotea.tfmg.gametest;
 
+import net.neoforged.fml.loading.FMLEnvironment;
 import com.drmangotea.tfmg.TFMG;
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTestInfo;
@@ -104,6 +105,12 @@ public final class TFMGGameTestAutorun {
             TFMG.LOGGER.error("[gametest-autorun] could not write the result file", e);
         }
         if (Boolean.getBoolean("tfmg.gametest.exit")) {
+            if (failed == 0 && FMLEnvironment.dist.isClient()) {
+                // Halting under a live render thread crashes in the graphics
+                // driver; a clean stop exits with status 0.
+                ClientExit.stop();
+                return;
+            }
             // Off the server thread: exiting from inside the tick would wait
             // on the very thread that is shutting down.
             Thread exit = new Thread(() -> Runtime.getRuntime().halt(failed), "tfmg-gametest-exit");
