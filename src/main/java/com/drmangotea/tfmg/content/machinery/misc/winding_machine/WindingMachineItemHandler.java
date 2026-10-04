@@ -108,6 +108,11 @@ public class WindingMachineItemHandler implements IItemHandlerModifiable {
         if (work.is(TFMGTags.TFMGItemTags.WIRES_COPPER.tag) || work.is(TFMGTags.TFMGItemTags.WIRES_ALUMINUM.tag)
                 || work.is(TFMGTags.TFMGItemTags.WIRES_CONSTANTAN.tag))
             return ItemStack.EMPTY;
+        // Nor is a workpiece still waiting for its turns: a hopper under the
+        // machine pulled an unfinished coil or resistor out on its first pass,
+        // so a hopper-fed machine never wound anything.
+        if (!be.isWorkpieceDone())
+            return ItemStack.EMPTY;
         return be.inventory.extractItem(0, amount, simulate);
     }
 }

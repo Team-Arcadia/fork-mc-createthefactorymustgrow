@@ -209,6 +209,23 @@ public class WindingMachineBlockEntity extends KineticBlockEntity implements IHa
         return duration;
     }
 
+    /**
+     * True when the workpiece slot holds nothing the machine will still wind:
+     * a resistor or coil that reached its target, or an item no winding
+     * recipe takes. Automation may only take the slot's item out then.
+     */
+    public boolean isWorkpieceDone() {
+        ItemStack work = inventory.getStackInSlot(0);
+        if (work.isEmpty())
+            return true;
+        int target = turnPercentage.getValue() * 10;
+        if (work.is(TFMGBlocks.RESISTOR.asItem()))
+            return work.getOrDefault(TFMGDataComponents.RESISTANCE, 0) >= target;
+        if (work.is(TFMGItems.ELECTROMAGNETIC_COIL.get()) || work.is(TFMGBlocks.LARGE_COIL.get().asItem()))
+            return work.getOrDefault(TFMGDataComponents.COIL_TURNS, 0) >= target;
+        return recipe == null;
+    }
+
     @Override
     public void inspect(InspectionReport report) {
         if (level == null)
