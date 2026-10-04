@@ -303,3 +303,31 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The tank behaviours are built with 4000 mB segments. Only multiblock formation (`applyVatSize`) and `read()` size them to the configured capacity per block (8000 mB by default), so a vat placed alone kept 4000 mB until its chunk reloaded and could never fit a concrete batch.
 **Fix:** `initialize()` sizes the controller's segments the same way `read()` does (shared `sizeTanks`).
 **Prevention:** Capacity that depends on the multiblock size must be set on every path that creates a controller, not only on formation and load.
+
+## [2026-10-04 20:24] - Butane and propane tanks could not be filled
+**Context:** New variant game tests filling an empty bucket with each gas through Create's spout logic (`FillingBySpout`).
+**Error:** `a spout cannot fill a bucket with butane (needs -1 mB)`, same for propane; every other gas passed.
+**Root cause:** Gas tanks are buckets of a `VirtualFluid`, whose `getBucket()` is air, so NeoForge's bucket wrapper never fills them: a spout filling recipe is the only way to make one. `TFMGFillingRecipeGen` still had the butane and propane recipes commented out from before the two gases came back as fuels with their own tanks, so both tanks (shown on the handbook's firebox page) were unobtainable in survival.
+**Fix:** Restored both recipes in the same shape as the others (a bucket and 1000 mB of the gas) and regenerated only `filling/butane_tank.json` and `filling/propane_tank.json`.
+**Prevention:** Every gas with a tank item needs a filling recipe; the `fluid.gas_tank.*` game tests check each gas through the spout.
+
+## [2026-10-04 20:24] - Voltmeter mode set with the wrench was never saved
+**Context:** Variant game test cycling the voltmeter mode with a wrench, then checking the chunk is marked for saving and the mode survives a reload.
+**Error:** `the voltmeter mode change was not marked for saving`.
+**Root cause:** `VoltMeterBlock.onWrenched` changed `be.mode` in memory only: no `setChanged`, no `sendData`. The new mode was lost on the next reload unless something else dirtied the chunk, and other players never received it. `VoltMeterBlockEntity.read` also kept its previous mode when the tag had no `mode` key, which is how `write` stores the default, so a client that had seen another mode stayed on it once the meter was wrenched back to voltage.
+**Fix:** `onWrenched` calls `notifyUpdate()` on the server; `read` resets to `VOLTAGE` before reading the key.
+**Prevention:** Any click handler that changes a block entity field must mark it changed and sync it. A `read` that skips a missing key must reset the field to the default `write` leaves out.
+
+## [2026-10-04 20:28] - Lithium torch and rebar stairs defaulted to holding a fluid
+**Context:** Variant game tests placing blocks by their default state (as commands, structures and schematics do): a lithium torch losing its wall, rebar stairs taking a concrete bucket.
+**Error:** The broken torch left a water source; the stairs refused the concrete bucket (`pouring concrete left 1 tfmg:liquid_concrete_bucket`).
+**Root cause:** A block's default state is the first state of its definition, and a boolean property's first value is `true`. `LithiumTorchBlock` never registered a default, so it was waterlogged; `RebarStairsBlock` inherits `StairBlock`'s default, which sets `WATERLOGGED` but knows nothing of the added `CONCRETELOGGED`, so it came full of liquid concrete. Player placement hid both because `getStateForPlacement` sets the values from the world.
+**Fix:** Both constructors register a default with the fluid property false. The new `noBlockStartsFullOfFluid` test checks every TFMG block's default state.
+**Prevention:** Every block that adds a boolean property must set it in `registerDefaultState`, including blocks extending a vanilla block that registers its own defaults.
+
+## [2026-10-04 20:28] - A mock player picking up a fluid with a bucket crashed the test server
+**Context:** Writing the bucket game tests: a player looking down uses an empty bucket on a fluid source.
+**Error:** `ClassCastException: GameTestHelper$1 cannot be cast to ServerPlayer` at `BucketItem.use`, and the whole game test server stopped.
+**Root cause:** `BucketItem.use` casts the player to `ServerPlayer` unconditionally when it fills a bucket on the server (`CriteriaTriggers.FILLED_BUCKET`). `GameTestHelper.makeMockPlayer` returns a plain `Player`.
+**Fix:** The fluid tests use a bare `ServerPlayer` (no connection, never logged in, as the progression test already does).
+**Prevention:** Use a bare `ServerPlayer` for any item use that may award a criterion. Also, in these tests: `GameTestHelper.destroyBlock` drops nothing (break with `level.destroyBlock(pos, true)` to check drops), and the platform templates' floor is the layer at y=1, so anything that must stand on the floor goes at y=2.
