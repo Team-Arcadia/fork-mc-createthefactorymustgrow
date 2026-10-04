@@ -20,8 +20,17 @@ public class ElectricalNetwork {
         this.id = id;
     }
 
-    //blocks in the network
-    public List<IElectric> members = new ArrayList<>();
+    //blocks in the network, indexed by position (see MemberList)
+    public final MemberList members = new MemberList();
+
+    // Game time of the last stale-member sweep, so lookups sweep at most once
+    // per tick instead of on every call.
+    long lastSweepTick = Long.MIN_VALUE;
+
+    /** True when this very block entity is a member of the network. */
+    public boolean containsMember(IElectric electric) {
+        return members.containsInstance(electric);
+    }
 
     //network's id
     public long id;
@@ -39,22 +48,25 @@ public class ElectricalNetwork {
         // carrying the network id could never be added back once it had left
         // the list - after a stale sweep or a re-key, for instance. It took the
         // repair in lazyTickElectricity to notice and rebuild it from scratch.
+        // The position index makes this O(1); it was a scan of the whole
+        // list for every block a flood fill added.
         long pos = be.getPos();
-        for (int i = 0; i < members.size(); i++) {
-            IElectric member = members.get(i);
-            if (member.getPos() != pos)
-                continue;
-            if (member == be)
-                return;
-            // Same position, different instance: after a chunk reload the old
-            // block entity is dead and must not keep the seat.
-            if (ElectricNetworkManager.isStale(member)) {
-                members.set(i, be);
-                return;
-            }
+        IElectric member = members.at(pos);
+        if (member == null) {
+            members.add(be);
             return;
         }
-        members.add(be);
+        if (member == be)
+            return;
+        // Same position, different instance: after a chunk reload the old
+        // block entity is dead and must not keep the seat.
+        if (ElectricNetworkManager.isStale(member)) {
+            int index = members.indexOf(member);
+            if (index >= 0)
+                members.set(index, be);
+            else
+                members.add(be);
+        }
     }
 
     /**
@@ -207,7 +219,7 @@ public class ElectricalNetwork {
         });
     }
 
-    public List<IElectric> getMembers() {
+    public MemberList getMembers() {
         return members;
     }
 }

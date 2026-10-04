@@ -38,6 +38,10 @@ public class ElectricBlockValues {
 
     public int failTimer = 0;
 
+    // Game time of the last flood fill that reached this block (not saved).
+    // A block a flood already absorbed this tick skips its own flood.
+    public long floodedTick = Long.MIN_VALUE;
+
     public ElectricBlockValues(long pos) {
         this.electricalNetworkId = pos;
     }

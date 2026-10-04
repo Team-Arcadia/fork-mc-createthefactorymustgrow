@@ -97,6 +97,34 @@ public class TFMGElectricityTests {
         });
     }
 
+    /**
+     * A diode bridges two networks in one direction: power flows through it
+     * forwards and not backwards. This exercises the bridge path of the
+     * network update (updateInFront) across separate networks.
+     */
+    @GameTest(template = "gametest/platform_large", batch = "tfmg_electric", timeoutTicks = 300)
+    public static void diodePassesForwardOnly(GameTestHelper helper) {
+        // Line A: generator, hub, diode facing east, hub, motor.
+        diodeLine(helper, 3, Direction.EAST);
+        // Line B: the same with the diode reversed.
+        diodeLine(helper, 7, Direction.WEST);
+        helper.runAfterDelay(80, () -> {
+            check(helper, speed(helper, new BlockPos(6, 1, 3)) != 0, "power did not cross a forward diode");
+            check(helper, speed(helper, new BlockPos(6, 1, 7)) == 0, "power crossed a reversed diode");
+            helper.succeed();
+        });
+    }
+
+    private static void diodeLine(GameTestHelper helper, int z, Direction diode) {
+        helper.setBlock(new BlockPos(1, 1, z), TFMGBlocks.CREATIVE_GENERATOR.get().defaultBlockState());
+        helper.setBlock(new BlockPos(2, 1, z), TFMGBlocks.STEEL_CABLE_HUB.get().defaultBlockState());
+        helper.setBlock(new BlockPos(3, 1, z), TFMGBlocks.DIODE.get().defaultBlockState().setValue(BlockStateProperties.FACING, diode));
+        helper.setBlock(new BlockPos(4, 1, z), TFMGBlocks.STEEL_CABLE_HUB.get().defaultBlockState());
+        helper.setBlock(new BlockPos(5, 1, z), TFMGBlocks.STEEL_CABLE_HUB.get().defaultBlockState());
+        helper.setBlock(new BlockPos(6, 1, z), TFMGBlocks.ELECTRIC_MOTOR.get().defaultBlockState()
+                .setValue(BlockStateProperties.FACING, Direction.EAST));
+    }
+
     private static float speed(GameTestHelper helper, BlockPos motor) {
         return helper.getBlockEntity(motor) instanceof ElectricMotorBlockEntity be ? be.getSpeed() : 0;
     }

@@ -57,6 +57,13 @@ public class TFMGCommonEvents {
 
     }
 
+    // Runs the electrical network recomputes queued during this level tick.
+    @SubscribeEvent
+    public static void onLevelTickEnd(net.neoforged.neoforge.event.tick.LevelTickEvent.Post event) {
+        if (event.getLevel() instanceof net.minecraft.server.level.ServerLevel serverLevel)
+            com.drmangotea.tfmg.content.electricity.base.ElectricNetworkManager.flushUpdates(serverLevel);
+    }
+
     @SubscribeEvent
     public static void onLoadWorld(LevelEvent.Load event) {
         LevelAccessor world = event.getLevel();

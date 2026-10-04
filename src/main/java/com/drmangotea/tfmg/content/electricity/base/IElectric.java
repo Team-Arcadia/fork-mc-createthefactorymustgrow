@@ -70,8 +70,7 @@ public interface IElectric {
             // deleting it and rebuilding it one member at a time.
             map.remove(networkId);
             existing.members.removeIf(ElectricNetworkManager::isStale);
-            if (!existing.members.contains(this))
-                existing.members.add(this);
+            existing.add(this);
             long newId = getPos();
             existing.id = newId;
             for (IElectric member : existing.members) {
@@ -109,6 +108,22 @@ public interface IElectric {
      * initialization, called when the block is placed
      */
     default void onPlaced() {
+
+        // A flood fill that already ran this tick absorbed this block into its
+        // network. Flooding again from here would re-key the whole grid to this
+        // block and walk it once more: on a chunk load every member did that in
+        // turn, n floods over n members. Keep the scheduling the full path does
+        // (loop check, network update, sync); subclasses still run their own
+        // onPlaced logic after this returns.
+        long now = ElectricNetworkManager.gameTime(getLevelAccessor());
+        if (now != Long.MIN_VALUE && getData().floodedTick == now && getData().electricalNetworkId != getPos()
+                && getOrCreateElectricNetwork().containsMember(this)) {
+            getData().checkForLoopsNextTick = true;
+            updateNextTick();
+            sendStuff();
+            return;
+        }
+        getData().floodedTick = now;
 
         ElectricalNetwork network = TFMG.NETWORK_MANAGER.getOrCreateNetworkFor(this);
         setNetwork(getPos());
@@ -219,7 +234,7 @@ public interface IElectric {
 
         java.util.Map<Long, ElectricalNetwork> map = ElectricNetworkManager.networks.get(getLevelAccessor());
         ElectricalNetwork myNetwork = map == null ? null : map.get(getData().getId());
-        if (myNetwork == null || !myNetwork.getMembers().contains(this))
+        if (myNetwork == null || !myNetwork.containsMember(this))
             getData().connectNextTick = true;
 
         if (getData().failTimer >= 4) {
@@ -259,6 +274,7 @@ public interface IElectric {
                             getOrCreateElectricNetwork().add(be);
                             if (be.getData().getId() != getData().getId()) {
                                 be.setNetwork(getData().getId());
+                                be.getData().floodedTick = ElectricNetworkManager.gameTime(getLevelAccessor());
                                 be.onConnected();
                                 if (!getLevelAccessor().isClientSide())
                                     sendStuff();
@@ -548,6 +564,11 @@ public interface IElectric {
     }
 
     default void updateNetwork() {
+        // On the server the recompute runs once per network at the end of the
+        // tick (ElectricNetworkManager.flushUpdates), which also sends the
+        // client packet and this block's sync.
+        if (ElectricNetworkManager.deferUpdate(this))
+            return;
         getOrCreateElectricNetwork().updateNetwork();
         if (getLevelAccessor() instanceof ServerLevel serverLevel)
             CatnipServices.NETWORK.sendToClientsTrackingChunk(serverLevel, new ChunkPos(getBlockPos()), new NetworkUpdatePacket(BlockPos.of(getPos())));

@@ -66,6 +66,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 
 - The blast furnace, coke oven, distillation tower, pumpjack and winding machine no longer send a full sync packet every tick while working; they sync at most four times a second.
 - Simulated Forge Energy transfers no longer recompute the whole electrical network and send a packet each tick next to the converter or accumulator.
+- **Electrical networks load and update in a fraction of the time** - When a chunk loads, every member of a grid used to flood the whole grid again in turn, and every member that asked for an update recomputed the whole network and sent its own packet. A block already reached by a flood this tick no longer floods again (its own setup still runs), members are indexed by position, the stale sweep runs once per tick, and recomputes are gathered into one pass per network at the end of the tick with one packet per chunk. Reconnecting a 502-block grid went from 2.7 s to under 10 ms in the test suite.
 
 ### Ajouts
 
@@ -108,14 +109,8 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 
 - Le haut fourneau, le four a coke, la tour de distillation, le chevalet de pompage et la machine a bobiner n'envoient plus un paquet de synchronisation complet a chaque tick : au plus quatre par seconde.
 - Les transferts Forge Energy simules ne recalculent plus tout le reseau electrique ni n'envoient un paquet a chaque tick a cote du convertisseur ou de l'accumulateur.
+- **Les reseaux electriques se chargent et se mettent a jour en une fraction du temps** - Au chargement d'un chunk, chaque membre d'un reseau re-propageait tout le reseau a son tour, et chaque membre demandant une mise a jour recalculait tout le reseau et envoyait son propre paquet. Un bloc deja atteint par une propagation dans le tick ne la relance plus (sa propre initialisation s'execute toujours), les membres sont indexes par position, le nettoyage des membres perimes se fait une fois par tick, et les recalculs sont regroupes en un passage par reseau en fin de tick avec un paquet par chunk. La reconnexion d'un reseau de 502 blocs est passee de 2,7 s a moins de 10 ms dans la suite de tests.
 
-### Known issues
-
-- **Electrical network rebuilds are costly on very large grids** - A grid rebuild on chunk load is quadratic in the number of members. It is correct, only slow on grids of several hundred blocks; the rework touches the network's chunk-border behaviour, the most fragile part of the mod, so it waits for a release of its own.
-
-### Problemes connus
-
-- **Les reconstructions du reseau electrique coutent cher sur de tres grands reseaux** - La reconstruction au chargement d'un chunk est quadratique en nombre de membres. Elle est correcte, seulement lente sur des reseaux de plusieurs centaines de blocs ; la refonte touche au comportement aux bords de chunk, la partie la plus fragile du mod, elle attend donc une version dediee.
 
 ---
 
