@@ -184,3 +184,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Emptying the fuel tank set `rpm = 0` through `tankUpdated`, but nothing recomputed the rotation when fuel arrived again; only a redstone signal change or an item interaction called `updateRotation`. Any engine switched on before its first fuel, or that ran out and was refilled by a pipe or the piping upgrade, stayed still until the lever was toggled.
 **Fix:** `AbstractEngineBlockEntity.tankUpdated` calls `updateRotation` when the fuel tank goes from empty to holding fuel.
 **Prevention:** Every state that zeroes a machine's output (empty tank, missing input) needs the matching transition back; test machines in the order a pipe feeds them, not only in the order a player clicks.
+
+## [2026-10-04 18:45] - The inspector told players a complete pumpjack assembles on its own
+**Context:** New pumpjack game tests built from the handbook blueprint.
+**Error:** With beam, crank, base and deposit all found and the crank turning, the hammer never moved, and the inspector advised "Complete the beam, the crank and the base: it assembles on its own once all three are found".
+**Root cause:** The hammer is a Create bearing contraption, which only lifts blocks super-glued to the block above the holder. The ponder scene says so; the blueprint and the inspector did not, and the inspector had no line for an unglued beam.
+**Fix:** When everything is found but the hammer is idle, the inspector walks the beam from the holder to the head and to the connector with `SuperGlueEntity.isGlued` and reports the first loose block (`pumpjack.not_glued`, English and French). The game tests glue the beam as players must.
+**Prevention:** Inspector advice for a contraption-based machine must cover Super Glue; when a "does nothing" report is reproduced, check the contraption's block list before suspecting the machine.

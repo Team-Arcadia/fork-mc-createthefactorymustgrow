@@ -201,6 +201,8 @@
   "tfmg.inspector.pumpjack.assembly_error": "Assembly failed: %s",
   "tfmg.inspector.pumpjack.not_assembled": "Not assembled: the hammer does not move",
   "tfmg.inspector.pumpjack.not_assembled.fix": "Complete the beam, the crank and the base: it assembles on its own once all three are found.",
+  "tfmg.inspector.pumpjack.not_glued": "The beam is not glued together (loose at %s %s %s)",
+  "tfmg.inspector.pumpjack.not_glued.fix": "Apply Super Glue over the whole beam, from the head to the connector: the holder only lifts what is glued to it.",
   "tfmg.inspector.pumpjack.peak_rate": "Pumps up to %s mB of Crude Oil per tick, pulsing with the stroke",
   "tfmg.inspector.pumpjack.crank_no_input": "No Machine Input under the crank (%s %s %s)",
   "tfmg.inspector.pumpjack.crank_no_input.fix": "Place a Machine Input right below the crank and turn it with a shaft: the crank reads its speed, nothing else drives it.",
