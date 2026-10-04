@@ -41,14 +41,16 @@ public class TFMGFillingRecipeGen extends FillingRecipeGen {
             .require(SizedFluidIngredient.of(lpg(), 1000))
             .output(lpgTank())
     ),
-    //BUTANE_TANK = create("butane_tank"), b -> b
-    //        .require(butane(), 1000)
-    //        .output(butaneTank())
-    //),
-    //PROPANE_TANK = create("propane_tank"), b -> b
-    //        .require(propane(), 1000)
-    //        .output(propaneTank())
-    //),
+    BUTANE_TANK = create(TFMG.asResource("butane_tank"), b -> b
+            .require(Items.BUCKET)
+            .require(SizedFluidIngredient.of(butane(), 1000))
+            .output(butaneTank())
+    ),
+    PROPANE_TANK = create(TFMG.asResource("propane_tank"), b -> b
+            .require(Items.BUCKET)
+            .require(SizedFluidIngredient.of(propane(), 1000))
+            .output(propaneTank())
+    ),
     HYDROGEN_TANK = create(TFMG.asResource("hydrogen_tank"), b -> b
             .require(Items.BUCKET)
             .require(SizedFluidIngredient.of(hydrogen(), 1000))
