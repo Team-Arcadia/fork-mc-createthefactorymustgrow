@@ -120,9 +120,24 @@ public class TFMGStructureTests {
             if (item != Items.AIR)
                 placed.merge(item, 1, Integer::sum);
         }
+        // What a player adds by hand (blades, electrodes, glue...).
+        TFMGFormationChecks.prepare(helper, ORIGIN, blocks).forEach((item, n) -> placed.merge(item, n, Integer::sum));
         helper.runAfterDelay(80, () -> {
             ServerLevel level = helper.getLevel();
             HolderLookup.Provider registries = level.registryAccess();
+
+            // Every machine of the structure formed as the blueprint shows.
+            List<String> formation = TFMGFormationChecks.problems(helper, ORIGIN, blocks);
+            TFMGGameTestUtil.check(helper, formation.isEmpty(), id + ": did not form: " + formation);
+
+            // Swinging pumpjack beams are contraptions: put them back as
+            // blocks, without the glue, so the rest of the test sees blocks.
+            for (BlockPos rel : blocks.keySet())
+                if (level.getBlockEntity(helper.absolutePos(ORIGIN.offset(rel))) instanceof
+                        com.drmangotea.tfmg.content.machinery.oil_processing.pumpjack.hammer.PumpjackBlockEntity hammer && hammer.isRunning())
+                    hammer.disassemble();
+            helper.killAllEntitiesOfClass(com.simibubi.create.content.contraptions.glue.SuperGlueEntity.class);
+
             Set<String> problems = new TreeSet<>();
             for (BlockPos rel : blocks.keySet()) {
                 BlockPos abs = helper.absolutePos(ORIGIN.offset(rel));
