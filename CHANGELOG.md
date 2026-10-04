@@ -4,6 +4,18 @@ All notable changes to Create: The Factory Must Grow are documented here.
 
 ---
 
+## [1.3.1] - 2026-10-05
+
+Fixes from the first full manual test pass of 1.3.0.
+
+Correctifs issus de la premiere passe de tests manuels complete de la 1.3.0.
+
+### Fixed
+
+### Correctifs
+
+---
+
 ## [1.3.0] - 2026-10-04
 
 A release about trust and about help. Trust: a game test suite now places,

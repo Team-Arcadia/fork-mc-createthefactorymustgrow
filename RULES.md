@@ -11,7 +11,7 @@ Single source of truth for working on this repository. Read fully before changin
 | Package | `com.drmangotea.tfmg` |
 | Tech stack | Java 21, NeoForge 21.1.213 (MC 1.21.1), Create 6.0.10, Ponder 1.0.82, Flywheel 1.0.6, Registrate MC1.21-1.3.0, JEI 19.25 |
 | Build | Gradle (`net.neoforged.moddev` 2.0.89), jar classifier `arcadia-fix` |
-| Version | 1.3.0 (in `gradle.properties` → `mod_version`; NEVER bump without explicit instruction) |
+| Version | 1.3.1 (in `gradle.properties` → `mod_version`; NEVER bump without explicit instruction) |
 | Authors | DrMangoTea, Pepa, Luna (upstream) — Arcadia fork maintained by Team-Arcadia |
 | License | MIT |
 
