@@ -443,3 +443,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** `IElectric.makeMultimeterTooltip` builds goggle lines (`forGoggles`), which reach client classes; it is only called from client overlays.
 **Fix:** The test reads the values the overlay shows (voltage, resistance, current, power) instead.
 **Prevention:** Never call a tooltip or goggle builder from server-side test code.
+
+## [2026-10-04 21:35] - Client autorun failed tests that pass on the test server
+**Context:** Running the full suite on a singleplayer client (`runClientGameTest`) after merging the hand-held item tests.
+**Error:** `quadCannonFiresFour` and `quadCannonRecoversOneAmmoAtMost` failed with "Could not get RegistryAccess"; once fixed, `lithiumTorchPlacement` counted 3 dropped torches instead of 1.
+**Root cause:** The autorun started on `ServerStartedEvent`, before the host joined. Create's `GlobalRegistryAccess`, used by the potato cannons' ammo predicate, reads the client connection on a physical client even from the integrated server thread, so it threw with nobody connected. Real singleplayer always has the host connected. Separately, the hand-held kit counts drops in the test bounds inflated by 4 blocks, and the autorun grid packs tests closer than the test server, so neighbouring tests that also drop lithium torches were counted.
+**Fix:** On a client the autorun now starts when the host logs in; the torch test counts only the items next to the torch that lost its wall.
+**Prevention:** Run all three environments before calling a change done; count drops near the block that produced them, not in the whole inflated test area.

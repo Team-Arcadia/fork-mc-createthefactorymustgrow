@@ -189,6 +189,20 @@ final class TFMGHandheldKit {
         return count;
     }
 
+    /**
+     * Items of a kind lying within a radius of a relative position. The test
+     * bounds are inflated for {@link #dropped}, so on a client or server run,
+     * where tests sit closer together, a neighbour's drops can be counted too.
+     */
+    static int droppedNear(GameTestHelper helper, Item item, BlockPos pos, double radius) {
+        int count = 0;
+        net.minecraft.world.phys.AABB box = new net.minecraft.world.phys.AABB(helper.absolutePos(pos)).inflate(radius);
+        for (ItemEntity entity : helper.getLevel().getEntitiesOfClass(ItemEntity.class, box))
+            if (entity.getItem().is(item))
+                count += entity.getItem().getCount();
+        return count;
+    }
+
     static int blocks(GameTestHelper helper, Block block) {
         return blocks(helper, block, 0);
     }

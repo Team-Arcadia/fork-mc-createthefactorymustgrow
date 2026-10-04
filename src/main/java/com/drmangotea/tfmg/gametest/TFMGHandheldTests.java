@@ -648,7 +648,8 @@ public class TFMGHandheldTests {
         helper.succeedWhen(() -> {
             helper.assertTrue(helper.getLevel().getBrightness(LightLayer.BLOCK, helper.absolutePos(floor)) == 14,
                     "the torch lights its block at " + helper.getLevel().getBrightness(LightLayer.BLOCK, helper.absolutePos(floor)));
-            helper.assertTrue(dropped(helper, torch.asItem()) == 1, "the torch that lost its wall dropped " + dropped(helper, torch.asItem()));
+            int dropped = droppedNear(helper, torch.asItem(), onWall, 1.5);
+            helper.assertTrue(dropped == 1, "the torch that lost its wall dropped " + dropped);
         });
     }
 

@@ -16,6 +16,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.Rotation;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 
 import java.io.IOException;
@@ -45,11 +46,34 @@ public final class TFMGGameTestAutorun {
     private TFMGGameTestAutorun() {
     }
 
+    private static boolean started;
+
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {
         MinecraftServer server = event.getServer();
         if (server instanceof GameTestServer || !Boolean.getBoolean("tfmg.gametest.autorun"))
             return;
+        // A singleplayer game always has its host connected while it is
+        // played, and some code (Create's GlobalRegistryAccess, used by the
+        // potato cannons) reads the client connection even on the integrated
+        // server: wait for the host to join so the run matches real play.
+        if (server.isDedicatedServer())
+            start(server);
+    }
+
+    @SubscribeEvent
+    public static void onPlayerJoined(PlayerEvent.PlayerLoggedInEvent event) {
+        MinecraftServer server = event.getEntity().getServer();
+        if (server == null || server.isDedicatedServer() || server instanceof GameTestServer
+                || !Boolean.getBoolean("tfmg.gametest.autorun"))
+            return;
+        server.execute(() -> start(server));
+    }
+
+    private static void start(MinecraftServer server) {
+        if (started)
+            return;
+        started = true;
         ServerLevel level = server.overworld();
         List<GameTestInfo> infos = new ArrayList<>();
         GameTestRegistry.getAllTestFunctions().stream()
