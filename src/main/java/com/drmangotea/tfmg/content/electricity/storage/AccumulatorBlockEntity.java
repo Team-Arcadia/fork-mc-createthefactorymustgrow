@@ -35,6 +35,8 @@ public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVolt
     public BlockPos controller = getBlockPos();
     int signal;
     boolean signalChanged;
+    // Set while this block is being destroyed: chain scans skip it.
+    private boolean removing;
 
     public AccumulatorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -95,10 +97,65 @@ public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVolt
         // chain's charge. Zero it first so the donation is the only copy;
         // if no sub-chain absorbed it (a lone accumulator), put it back so
         // the dropped item carries the charge instead of voiding it.
+        //
+        // A non-controller holds nothing itself: the bank's charge lives in
+        // its controller, and the rebuild below clamped it to the shorter
+        // surviving chain, so breaking the middle of a full bank voided the
+        // broken block's share and the whole share of the far side. Take the
+        // bank's charge out of the controller too, let the controller side
+        // fill up, hand the rest to the far side, and keep whatever still
+        // does not fit in this block so the dropped item carries it.
+        removing = true;
         int stored = energy.getEnergyStored();
         energy.setEnergy(0);
-        if (!rebuildChainAround(getBlockPos(), stored))
-            energy.setEnergy(stored);
+        AccumulatorBlockEntity head = chainController();
+        if (head != null) {
+            stored += head.energy.getEnergyStored();
+            head.energy.setEnergy(0);
+        }
+        int left = rebuildChainAround(getBlockPos(), stored);
+        length = Math.max(length, 1);
+        energy = createEnergyStorage(1);
+        energy.setEnergy(left);
+    }
+
+    /** The controller of this block's bank when it is another block, or null. */
+    private AccumulatorBlockEntity chainController() {
+        if (isController() || level == null)
+            return null;
+        return level.getBlockEntity(controller) instanceof AccumulatorBlockEntity be && be != this ? be : null;
+    }
+
+    /**
+     * The charge that stays with this block when it is removed, worked out
+     * the way {@link #destroy()} shares it out. Drops are rolled before the
+     * block entity is destroyed on most paths (drills, explosions, the
+     * wrench), so the dropped item must not carry charge the surviving banks
+     * are about to receive.
+     */
+    public int chargeKeptOnRemoval() {
+        if (level == null)
+            return energy.getEnergyStored();
+        int total = energy.getEnergyStored();
+        AccumulatorBlockEntity head = chainController();
+        if (head != null)
+            total += head.energy.getEnergyStored();
+        Direction facing = getBlockState().getValue(FACING);
+        long room = (long) (chainLength(facing.getOpposite(), facing) + chainLength(facing, facing))
+                * TFMGConfigs.common().machines.accumulatorStorage.get();
+        return (int) Math.max(0, total - room);
+    }
+
+    private int chainLength(Direction direction, Direction facing) {
+        int count = 0;
+        for (int i = 1; i < 15; i++) {
+            if (level.getBlockEntity(getBlockPos().relative(direction, i)) instanceof AccumulatorBlockEntity be
+                    && be.getBlockState().getValue(FACING) == facing)
+                count++;
+            else
+                break;
+        }
+        return count;
     }
 
     @Override
@@ -195,57 +252,73 @@ public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVolt
     private void rebuildChainIncludingSelf(int donatedEnergy) {
         if (level == null)
             return;
-        if (rebuildSubChainStartingFrom(getBlockPos(), getBlockState().getValue(FACING), donatedEnergy))
+        if (rebuildSubChainStartingFrom(getBlockPos(), getBlockState().getValue(FACING), donatedEnergy) >= 0)
             return;
         rebuildChainAround(getBlockPos(), donatedEnergy);
     }
 
-    private boolean rebuildChainAround(BlockPos seed, int donatedEnergy) {
+    /** Returns the donated energy that found no room in either side. */
+    private int rebuildChainAround(BlockPos seed, int donatedEnergy) {
         if (level == null)
-            return false;
+            return donatedEnergy;
         Direction facing = getBlockState().getValue(FACING);
         // Find the tail (most-facing.opposite) and head (most-facing) of each
         // sub-chain neighbouring the seed. Scan each side starting one step
         // away from the seed so a break in the middle creates two sub-chains.
         BlockPos tailSide = seed.relative(facing.getOpposite());
         BlockPos headSide = seed.relative(facing);
-        boolean rebuiltOpp = rebuildSubChainStartingFrom(tailSide, facing, donatedEnergy);
-        // The opposite-side sub-chain absorbs the donated energy (controller
-        // side). If it didn't exist, donate to the head side instead so the
-        // energy isn't voided.
-        boolean rebuiltHead = rebuildSubChainStartingFrom(headSide, facing, rebuiltOpp ? 0 : donatedEnergy);
-        return rebuiltOpp || rebuiltHead;
+        // The opposite-side sub-chain (controller side) fills up first, what
+        // does not fit goes to the head side, so no energy is voided.
+        int left = rebuildSubChainStartingFrom(tailSide, facing, donatedEnergy);
+        if (left < 0)
+            left = donatedEnergy;
+        int headLeft = rebuildSubChainStartingFrom(headSide, facing, left);
+        return headLeft < 0 ? left : headLeft;
     }
 
     /**
      * Given an arbitrary accumulator pos, walk the chain in facing/opposite
      * directions, find the controller (most-facing.opposite end), and
-     * promote it. Returns false if no accumulator chain was found here.
+     * promote it. Returns -1 if no accumulator chain was found here, else the
+     * energy that did not fit in the chain.
      */
-    private boolean rebuildSubChainStartingFrom(BlockPos anchor, Direction facing, int extraEnergy) {
-        if (!(level.getBlockEntity(anchor) instanceof AccumulatorBlockEntity start))
-            return false;
-        if (start.getBlockState().getValue(FACING) != facing)
-            return false;
+    /**
+     * The accumulator at pos when it belongs to a chain facing this way. A
+     * block being destroyed is not one: Create's IBE.onRemove runs destroy()
+     * while the block entity is still in the chunk, so without this the
+     * rebuild walked straight through the broken block, kept the old chain
+     * whole, and the split only happened on the next neighbour refresh,
+     * which clamped the charge to the shorter half.
+     */
+    private AccumulatorBlockEntity chainMember(BlockPos pos, Direction facing) {
+        if (level.getBlockEntity(pos) instanceof AccumulatorBlockEntity be && !be.removing
+                && be.getBlockState().getValue(FACING) == facing)
+            return be;
+        return null;
+    }
+
+    private int rebuildSubChainStartingFrom(BlockPos anchor, Direction facing, int extraEnergy) {
+        if (chainMember(anchor, facing) == null)
+            return -1;
         // Find the tail (the most-facing.opposite block belonging to this chain).
         BlockPos tailPos = anchor;
         for (int i = 1; i < 15; i++) {
             BlockPos probe = anchor.relative(facing.getOpposite(), i);
-            if (level.getBlockEntity(probe) instanceof AccumulatorBlockEntity probeBe
-                    && probeBe.getBlockState().getValue(FACING) == facing) {
+            if (chainMember(probe, facing) != null) {
                 tailPos = probe;
             } else break;
         }
-        if (!(level.getBlockEntity(tailPos) instanceof AccumulatorBlockEntity tail))
-            return false;
+        AccumulatorBlockEntity tail = chainMember(tailPos, facing);
+        if (tail == null)
+            return -1;
         // Sum every block's energy from tailPos toward facing direction.
         int totalEnergy = extraEnergy;
         int newLength = 0;
         java.util.List<AccumulatorBlockEntity> members = new java.util.ArrayList<>();
         for (int i = 0; i < 15; i++) {
             BlockPos pos = tailPos.relative(facing, i);
-            if (level.getBlockEntity(pos) instanceof AccumulatorBlockEntity be
-                    && be.getBlockState().getValue(FACING) == facing) {
+            AccumulatorBlockEntity be = chainMember(pos, facing);
+            if (be != null) {
                 totalEnergy += be.energy.getEnergyStored();
                 members.add(be);
                 newLength++;
@@ -255,7 +328,8 @@ public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVolt
         tail.controller = tail.getBlockPos();
         tail.length = newLength;
         tail.energy = tail.createEnergyStorage(1);
-        tail.energy.setEnergy(Math.min(totalEnergy, tail.energy.getMaxEnergyStored()));
+        int kept = Math.min(totalEnergy, tail.energy.getMaxEnergyStored());
+        tail.energy.setEnergy(kept);
         tail.refreshCapability();
         tail.updateNextTick();
         for (AccumulatorBlockEntity be : members) {
@@ -268,7 +342,7 @@ public class AccumulatorBlockEntity extends ElectricBlockEntity implements IVolt
             be.sendStuff();
         }
         tail.sendStuff();
-        return true;
+        return totalEnergy - kept;
     }
 
     public void refreshMultiblock() {

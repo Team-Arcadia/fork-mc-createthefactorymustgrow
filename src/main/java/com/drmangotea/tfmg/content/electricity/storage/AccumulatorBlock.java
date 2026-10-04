@@ -44,7 +44,10 @@ public class AccumulatorBlock extends TFMGDirectionalBlock implements IBE<Accumu
     public List<ItemStack> getDrops(BlockState p_287732_, LootParams.Builder p_287596_) {
         ItemStack stack = TFMGBlocks.ACCUMULATOR.asItem().getDefaultInstance();
         if (p_287596_.getOptionalParameter(LootContextParams.BLOCK_ENTITY) instanceof AccumulatorBlockEntity be)
-            stack.set(TFMGDataComponents.ACCUMULATOR_STORAGE, be.energy.getEnergyStored());
+            // Before destroy() ran (drills, explosions, the wrench) the
+            // charge is still the bank's; afterwards destroy() has left only
+            // what the surviving banks could not take.
+            stack.set(TFMGDataComponents.ACCUMULATOR_STORAGE, be.isRemoved() ? be.energy.getEnergyStored() : be.chargeKeptOnRemoval());
         return List.of(stack);
     }
 
