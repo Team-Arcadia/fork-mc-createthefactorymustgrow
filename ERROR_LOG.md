@@ -149,3 +149,31 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Patchouli draws an anchored ghost through `simulate(..., forView = true)`, which adds one block on Y, while `IMultiblock.validate` uses `forView = false`. The projector checked one block below the drawn ghost, so the layer never matched; Patchouli then reported it complete and the projector read that as the player closing it. On top of that, `strictBlockMatcher` compares against the block's default state, so any block placed with another facing (coke oven, hatches) never matched.
 **Fix:** The projector checks the layer through the same view simulation the visualizer renders, and anchors one block lower so the ghost sits on the clicked face. Each position matches on the block only (`predicateMatcher` with the drawn state for display). The client showcase now places each layer where it is drawn and fails if the projector does not move on.
 **Prevention:** When checking a Patchouli multiblock shown with `showMultiblock`, use `simulate(level, anchor, rotation, true)`, never `validate`.
+
+## [2026-10-04 18:46] - Large engine never powered a shaft placed after it
+**Context:** New structure tests that assert every blueprint forms; the large engine blueprints place the engine (bottom layer) before its shaft (two blocks up).
+**Error:** `engine_upgrades_6: did not form: [large engine at ... has no powered shaft]`.
+**Root cause:** `LargeEngineBlock.onPlace` turns an existing `create:shaft` into a powered shaft, and nothing else ever does: Create's own `ShaftBlock.pickCorrectShaftType` only knows `SteamEngineBlock`. A shaft placed after the engine, as any bottom-up build or blueprint does, stayed a plain shaft and the engine never ran.
+**Fix:** `LargeEngineBlockEntity.lazyTick` converts a valid plain shaft at the shaft position when the engine has none. Verified by disabling the fix: both large engine structures fail; with it every structure passes.
+**Prevention:** A multiblock that binds a neighbour only in `onPlace` breaks for every other placement order. Re-check the binding from the block entity's lazy tick, and test structures in bottom-up order.
+
+## [2026-10-04 18:46] - Firebox placed or reloaded lit burned forever without fuel
+**Context:** Writing distillation and vat schematics, checking what heats them.
+**Error:** A firebox with `blaze=fading` and an empty tank kept heating vats and towers indefinitely.
+**Root cause:** `lazyTick` only put the flame out `if (wasRunning)`, and `running` is not saved: after a chunk reload, or when placed lit, `running` starts false, so the flame was never cleared.
+**Fix:** The flame goes out when the firebox cannot burn and either it was running or its block state still shows a flame.
+**Prevention:** When a runtime flag gates a block state change, base the check on the block state itself, or persist the flag; unsaved flags lie after every reload.
+
+## [2026-10-04 18:46] - Coke oven kept doors inside the wall after growing over a smaller oven
+**Context:** Reviewing coke oven formation for the 2x2 to 6x6 blueprints.
+**Error:** Building the back of a large oven first formed a smaller oven there; once the front column was added, the old controller and its top kept `bottom_on` / `top_on` in the middle of the wall.
+**Root cause:** `setBlockStates` only wrote the front column; the detach loop only resets blocks outside the new square.
+**Fix:** `setBlockStates` now also resets every non-front block of the square to `casual`. The structure tests assert that no block behind the front shows doors. The inspector's maximum size now reports `cokeOvenMaxSize + 1`, the size ovens really reach.
+**Prevention:** When a multiblock grows, rewrite the visual state of every member, not just the ones that change role in the new shape.
+
+## [2026-10-04 18:40] - Machine setters report success only when simulating
+**Context:** The structure test fits a mixer blade and electrodes before checking the vats, and counts the inserted items so their drops are not taken for duplicates.
+**Error:** `aluminium_2: dismantling duplicated items: [copper_electrode 2 dropped for 0 expected]`.
+**Root cause:** `IndustrialMixerBlockEntity.setMixerMode` and `ElectrodeHolderBlockEntity.setElectrode` return true only in simulate mode; the real call always returns false, so nothing was counted.
+**Fix:** Simulate first, then apply and count.
+**Prevention:** Check what a Create-style `(stack, simulate)` setter returns in each mode before trusting its result.

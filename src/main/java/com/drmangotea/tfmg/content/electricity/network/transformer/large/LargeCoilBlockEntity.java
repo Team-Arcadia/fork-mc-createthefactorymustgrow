@@ -57,6 +57,10 @@ public class LargeCoilBlockEntity extends SmartBlockEntity implements IInspectab
         if (level.getBlockEntity(otherCoilPos) instanceof LargeCoilBlockEntity be) {
             float primaryTurns = turns;
             float secondaryTurns = be.turns;
+            // An unwound coil used to assemble with a ratio of x/0, an
+            // infinite or NaN output voltage. The inspector says to wind it.
+            if (primaryTurns <= 0 || secondaryTurns <= 0)
+                return ItemInteractionResult.FAIL;
 
             float turnRatio = secondaryTurns/primaryTurns;
 

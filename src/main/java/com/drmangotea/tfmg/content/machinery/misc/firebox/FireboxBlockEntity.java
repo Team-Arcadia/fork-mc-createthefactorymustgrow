@@ -106,7 +106,11 @@ public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleI
         FireboxBlockEntity controller = isController() ? this : getControllerBE();
 
         if (controller == null || !canBurn(controller)) {
-            if (wasRunning)
+            // Go by the flame actually shown, not only by the running flag:
+            // that flag is not saved, so a firebox reloaded while burning, or
+            // one placed lit by a schematic, never went out and heated
+            // whatever stood on it forever without fuel.
+            if (wasRunning || getBlockState().getValue(FireboxBlock.HEAT_LEVEL) != BlazeBurnerBlock.HeatLevel.NONE)
                 level.setBlock(getBlockPos(), getBlockState().setValue(FireboxBlock.HEAT_LEVEL, BlazeBurnerBlock.HeatLevel.NONE), 2);
             running = false;
 
