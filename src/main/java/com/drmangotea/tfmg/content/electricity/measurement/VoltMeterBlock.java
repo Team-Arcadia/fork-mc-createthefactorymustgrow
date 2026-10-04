@@ -61,6 +61,12 @@ public class VoltMeterBlock extends TFMGHorizontalDirectionalBlock implements IB
 
             }
 
+            // The mode was only changed in memory: nothing marked the meter for
+            // saving, so a chunk reload brought the old mode back, and other
+            // players never received the new one.
+            if (!level.isClientSide)
+                be.notifyUpdate();
+
             return InteractionResult.SUCCESS;
         });
 
