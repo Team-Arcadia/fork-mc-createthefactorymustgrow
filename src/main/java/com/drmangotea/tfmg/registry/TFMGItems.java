@@ -195,6 +195,21 @@ public class TFMGItems {
     public static final ItemEntry<com.drmangotea.tfmg.content.items.blueprint.FactoryBlueprintItem>
             FACTORY_BLUEPRINT = REGISTRATE.item("factory_blueprint", com.drmangotea.tfmg.content.items.blueprint.FactoryBlueprintItem::new)
             .lang("Factory Blueprint")
+            .model((c, p) -> {
+                // One texture per assembly line, picked by the tfmg:line item property.
+                var model = p.withExistingParent(c.getName(), "item/generated")
+                        .texture("layer0", p.modLoc("item/" + c.getName()));
+                var lines = com.drmangotea.tfmg.content.items.blueprint.BlueprintLines.TEXTURED;
+                for (int i = 0; i < lines.size(); i++) {
+                    String variant = c.getName() + "_" + lines.get(i);
+                    var variantModel = p.withExistingParent(variant, "item/generated")
+                            .texture("layer0", p.modLoc("item/" + variant));
+                    model.override()
+                            .predicate(com.drmangotea.tfmg.content.items.blueprint.BlueprintLines.TEXTURE_PROPERTY, i + 1)
+                            .model(variantModel)
+                            .end();
+                }
+            })
             .register();
 
     // In-game guide to the whole mod, opened with a right click.

@@ -1,5 +1,61 @@
 {
   "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "tfmg:item/factory_blueprint_steel",
+      "predicate": {
+        "tfmg:line": 1.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_chemistry",
+      "predicate": {
+        "tfmg:line": 2.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_oil",
+      "predicate": {
+        "tfmg:line": 3.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_power",
+      "predicate": {
+        "tfmg:line": 4.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_coke",
+      "predicate": {
+        "tfmg:line": 5.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_aluminium",
+      "predicate": {
+        "tfmg:line": 6.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_refining",
+      "predicate": {
+        "tfmg:line": 7.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_engines",
+      "predicate": {
+        "tfmg:line": 8.0
+      }
+    },
+    {
+      "model": "tfmg:item/factory_blueprint_electricity",
+      "predicate": {
+        "tfmg:line": 9.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "tfmg:item/factory_blueprint"
   }
