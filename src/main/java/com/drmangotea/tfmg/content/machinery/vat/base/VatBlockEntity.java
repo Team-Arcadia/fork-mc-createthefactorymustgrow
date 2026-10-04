@@ -592,6 +592,14 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
             return;
         if (!isController())
             return;
+        // An attachment that stopped working (mixer below speed, electrode or
+        // freezer without current) pauses the recipe. The check used to sit in
+        // getMatchingRecipe only, so a recipe matched while the machines were
+        // still counted as valid kept running on dead machines: electrolysis
+        // ran with no generator attached and instant mixing recipes completed
+        // with a stopped mixer.
+        if (!areMachinesValid)
+            return;
         // Only enforce a heat MINIMUM when the recipe actually requires heat
         // (recipe.heatLevel > 0). A freeze recipe leaves heatLevel unset (0) and
         // relies on its "tfmg:freezing" machine; the freezer drives the vat's
@@ -989,6 +997,13 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
     @Override
     public void initialize() {
         super.initialize();
+        // A vat that never joined a multiblock kept the 4000 mB segments its
+        // behaviours are built with, while read() sizes them to the configured
+        // tank capacity per block: a freshly placed vat held half of what the
+        // same vat held after a reload, and a lone vat could never fit the
+        // 32000 mB of liquid concrete its recipe makes. Size them here too.
+        if (isController())
+            sizeTanks(getTotalTankSize());
         sendData();
         if (level.isClientSide)
             invalidateRenderBoundingBox();
@@ -1139,6 +1154,11 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         // packet forever.
         if (!oldMachineMap.equals(machineMap))
             notifyUpdate();
+        // Decide at once whether the machines just found can work. Until the
+        // next lazy tick areMachinesValid still described the previous machine
+        // set (true for a fresh vat), which let a recipe match on attachments
+        // that had no power or rotation.
+        revalidateMachines();
     }
 
     public int getTotalCapacity() {
@@ -1607,18 +1627,7 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
             window = compound.getBoolean("Window");
             width = compound.getInt("Size");
             height = compound.getInt("Height");
-            inputTank.forEach(s -> {
-                SmartFluidTank tank = ((TankSegmentAccessor) s).tfmg$tank();
-                tank.setCapacity(getTotalTankSize() * getCapacityMultiplier());
-                if (tank.getSpace() < 0)
-                    tank.drain(-tank.getSpace(), IFluidHandler.FluidAction.EXECUTE);
-            });
-            outputTank.forEach(s -> {
-                SmartFluidTank tank = ((TankSegmentAccessor) s).tfmg$tank();
-                tank.setCapacity(getTotalTankSize() * getCapacityMultiplier());
-                if (tank.getSpace() < 0)
-                    tank.drain(-tank.getSpace(), IFluidHandler.FluidAction.EXECUTE);
-            });
+            sizeTanks(getTotalTankSize());
             inputInventory.deserializeNBT(registries, compound.getCompound("InputItems"));
             outputInventory.deserializeNBT(registries, compound.getCompound("OutputItems"));
             // Recipe progress survives chunk reloads; the recipe object
@@ -1682,6 +1691,18 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         }
         compound.putInt("Luminosity", luminosity);
         super.write(compound, registries, clientPacket);
+    }
+
+    /** Sets every segment to {@code blocks} blocks of tank capacity, dropping what no longer fits. */
+    private void sizeTanks(int blocks) {
+        int capacity = blocks * getCapacityMultiplier();
+        for (SmartFluidTankBehaviour behaviour : List.of(inputTank, outputTank))
+            behaviour.forEach(s -> {
+                SmartFluidTank tank = ((TankSegmentAccessor) s).tfmg$tank();
+                tank.setCapacity(capacity);
+                if (tank.getSpace() < 0)
+                    tank.drain(-tank.getSpace(), IFluidHandler.FluidAction.EXECUTE);
+            });
     }
 
     public int getTotalTankSize() {

@@ -797,13 +797,20 @@ public class BlastFurnaceOutputBlockEntity extends SmartBlockEntity implements I
      */
     private class InputRouter implements IItemHandler {
 
+        // Slot 2 shows the fuel counter as a stack of coke dust. With only the
+        // ore and flux slots visible, a hopper (which only inserts into an
+        // empty slot or onto a matching stack) found two occupied slots of
+        // other items once the furnace held ore and flux, and never delivered
+        // the fuel: a hopper-fed furnace sat forever with ore, flux and no fuel.
         @Override
         public int getSlots() {
-            return 2;
+            return 3;
         }
 
         @Override
         public ItemStack getStackInSlot(int slot) {
+            if (slot == 2)
+                return fuel > 0 ? new ItemStack(TFMGItems.COAL_COKE_DUST.get(), Math.min(fuel, STORAGE_SPACE)) : ItemStack.EMPTY;
             return slot == 1 ? fluxInventory.getItem(0) : inputInventory.getItem(0);
         }
 

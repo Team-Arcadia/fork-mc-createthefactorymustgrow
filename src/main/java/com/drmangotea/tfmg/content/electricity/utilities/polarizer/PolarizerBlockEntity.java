@@ -49,7 +49,55 @@ public class PolarizerBlockEntity extends ElectricBlockEntity implements IHaveGo
 
     public PolarizerBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
-        itemCapability = inventory;
+        itemCapability = new WorkpieceHandler();
+    }
+
+    /**
+     * The single slot holds the workpiece and, once polarised, the product.
+     * Handing it out unfiltered let a hopper or funnel under the polarizer
+     * pull the ingot straight back out before it was ever charged, so the
+     * machine could not be automated. Only an item no polarizing recipe
+     * accepts (the finished product) leaves through automation.
+     */
+    private class WorkpieceHandler implements IItemHandlerModifiable {
+
+        @Override
+        public int getSlots() {
+            return inventory.getSlots();
+        }
+
+        @Override
+        public ItemStack getStackInSlot(int slot) {
+            return inventory.getStackInSlot(slot);
+        }
+
+        @Override
+        public void setStackInSlot(int slot, ItemStack stack) {
+            inventory.setStackInSlot(slot, stack);
+        }
+
+        @Override
+        public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+            return inventory.insertItem(slot, stack, simulate);
+        }
+
+        @Override
+        public ItemStack extractItem(int slot, int amount, boolean simulate) {
+            ItemStack held = inventory.getStackInSlot(slot);
+            if (held.isEmpty() || getRecipe(held).isPresent())
+                return ItemStack.EMPTY;
+            return inventory.extractItem(slot, amount, simulate);
+        }
+
+        @Override
+        public int getSlotLimit(int slot) {
+            return inventory.getSlotLimit(slot);
+        }
+
+        @Override
+        public boolean isItemValid(int slot, ItemStack stack) {
+            return inventory.isItemValid(slot, stack);
+        }
     }
 
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
