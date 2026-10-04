@@ -40,9 +40,9 @@ import java.util.Map;
 @EventBusSubscriber(modid = TFMG.MOD_ID, value = Dist.CLIENT)
 public final class TFMGShowcaseShots {
 
-    private static final int SPACING = 10;
+    private static final int SPACING = TFMGShowcaseCommand.SPACING;
 
-    private enum Step { BUILD, VIEW, SHOOT_VIEW, INSPECT, SHOOT_INSPECT, BLUEPRINT, SHOOT_BLUEPRINT, BUILD_LAYER, CHECK_LAYER, EXIT, DONE }
+    private enum Step { BUILD, VIEW, SHOOT_VIEW, INSPECT, SHOOT_INSPECT, BLUEPRINT, SHOOT_BLUEPRINT, BUILD_LAYER, CHECK_LAYER, SHOOT_TOOLS, EXIT, DONE }
 
     private static Step step = Step.BUILD;
     private static int wait = 120;
@@ -87,7 +87,7 @@ public final class TFMGShowcaseShots {
                     return;
                 }
                 BlockPos pad = origin.offset(index * SPACING, 0, 0);
-                teleport(server, mc, pad.getX() + 2.5, pad.getY() + 5, pad.getZ() - 7, 0, 25);
+                teleport(server, mc, pad.getX() + 2.5, pad.getY() + 8, pad.getZ() - 11, 0, 28);
                 mc.gui.getChat().clearMessages(false);
                 step = Step.SHOOT_VIEW;
                 wait = 60;
@@ -129,8 +129,9 @@ public final class TFMGShowcaseShots {
                 wait = 2;
             }
             case BLUEPRINT -> {
-                // Project the steel line's first structure on an empty spot.
-                BlockPos ground = origin.offset(0, -1, 14 + 30);
+                // Project the steel line's first structure on an empty spot,
+                // in front of the map (the block rows fill the space behind it).
+                BlockPos ground = origin.offset(0, -1, -30);
                 server.execute(() -> server.overworld().setBlock(ground, net.minecraft.world.level.block.Blocks.SMOOTH_STONE.defaultBlockState(), 3));
                 teleport(server, mc, ground.getX() + 0.5, ground.getY() + 4, ground.getZ() - 6, 0, 30);
                 mc.player.setItemInHand(InteractionHand.MAIN_HAND, BlueprintLines.stack("steel"));
@@ -149,8 +150,9 @@ public final class TFMGShowcaseShots {
                 builtLayer = BlueprintProjector.INSTANCE.currentLayer();
                 if (builtLayer < 0) {
                     TFMG.LOGGER.info("[showcase] blueprint walkthrough finished");
-                    step = Step.EXIT;
-                    wait = 60;
+                    showTools(mc);
+                    step = Step.SHOOT_TOOLS;
+                    wait = 20;
                     return;
                 }
                 Map<BlockPos, BlockState> layer = BlueprintProjector.INSTANCE.currentLayerInWorld(mc.level);
@@ -177,15 +179,32 @@ public final class TFMGShowcaseShots {
                 step = Step.BUILD_LAYER;
                 wait = 20;
             }
+            case SHOOT_TOOLS -> {
+                shoot(mc, "showcase_tools_hotbar.png");
+                step = Step.EXIT;
+                wait = 60;
+            }
             case EXIT -> {
                 step = Step.DONE;
                 TFMG.LOGGER.info("[showcase] done, {} structures", structures.size());
+                // A clean stop: halting under a live render thread crashes in
+                // the graphics driver.
                 if (Boolean.getBoolean("tfmg.gametest.exit"))
-                    new Thread(() -> Runtime.getRuntime().halt(0), "tfmg-showcase-exit").start();
+                    mc.stop();
             }
             default -> {
             }
         }
+    }
+
+    /** Handbook, inspector and one blueprint per line in the hotbar, to see their textures. */
+    private static void showTools(Minecraft mc) {
+        net.minecraft.world.entity.player.Inventory inventory = mc.player.getInventory();
+        inventory.setItem(0, new net.minecraft.world.item.ItemStack(com.drmangotea.tfmg.registry.TFMGItems.FACTORY_GUIDE.get()));
+        inventory.setItem(1, new net.minecraft.world.item.ItemStack(com.drmangotea.tfmg.registry.TFMGItems.FACTORY_INSPECTOR.get()));
+        for (int i = 0; i < 7 && i < BlueprintLines.LINES.size(); i++)
+            inventory.setItem(2 + i, BlueprintLines.stack(BlueprintLines.LINES.get(i)));
+        inventory.selected = 0;
     }
 
     private static void teleport(MinecraftServer server, Minecraft mc, double x, double y, double z, float yaw, float pitch) {

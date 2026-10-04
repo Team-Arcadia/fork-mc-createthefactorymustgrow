@@ -37,7 +37,8 @@ import java.util.Map;
 @EventBusSubscriber(modid = TFMG.MOD_ID)
 public final class TFMGShowcaseCommand {
 
-    private static final int SPACING = 10;
+    // Blueprint structures reach 13 blocks on either axis.
+    public static final int SPACING = 16;
 
     private TFMGShowcaseCommand() {
     }
@@ -64,7 +65,7 @@ public final class TFMGShowcaseCommand {
             Map<BlockPos, BlockState> blocks = TFMGStructureTests.blocksOf(blueprint.getValue());
             BlockPos base = origin.offset(x, 0, 0);
             for (int dx = -1; dx < SPACING - 1; dx++)
-                for (int dz = -1; dz < 8; dz++)
+                for (int dz = -1; dz < SPACING - 1; dz++)
                     level.setBlock(base.offset(dx, -1, dz), Blocks.SMOOTH_STONE.defaultBlockState(), 3);
             for (Map.Entry<BlockPos, BlockState> e : blocks.entrySet())
                 level.setBlock(base.offset(e.getKey()), e.getValue(), 3);
@@ -76,7 +77,7 @@ public final class TFMGShowcaseCommand {
         }
 
         // Every TFMG block in a row behind the multiblocks, two blocks apart.
-        BlockPos row = origin.offset(0, 0, 12);
+        BlockPos row = origin.offset(0, 0, SPACING + 2);
         int i = 0;
         for (Block block : TFMGGameTestUtil.tfmgBlocks()) {
             if (block instanceof LiquidBlock)
