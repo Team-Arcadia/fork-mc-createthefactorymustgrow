@@ -151,6 +151,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -432,6 +433,9 @@ public class TFMGBlocks {
             .initialProperties(() -> Blocks.BEDROCK)
             .properties(p -> p.strength(69696969))
             .properties(BlockBehaviour.Properties::requiresCorrectToolForDrops)
+            // Bedrock is immovable only through its -1 hardness, which this
+            // block does not copy: without this a piston pushed deposits.
+            .properties(p -> p.pushReaction(PushReaction.BLOCK))
             .transform(pickaxeOnly())
             // Empty loot table: the block must never drop as an item, no
             // matter how it is removed (Ars Nouveau Break spell, TNT,
