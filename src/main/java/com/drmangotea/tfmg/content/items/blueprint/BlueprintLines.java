@@ -1,7 +1,9 @@
 package com.drmangotea.tfmg.content.items.blueprint;
 
+import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.registry.TFMGDataComponents;
 import com.drmangotea.tfmg.registry.TFMGItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.List;
@@ -18,6 +20,21 @@ public final class BlueprintLines {
 
     public static final List<String> LINES = List.of("steel", "chemistry", "oil", "power");
 
+    /**
+     * Lines with their own item texture, in model override order. A line at
+     * position i is drawn by textures/item/factory_blueprint_&lt;line&gt;.png and
+     * selected by the {@link #TEXTURE_PROPERTY} value i + 1; a blank blueprint
+     * or a line missing from this list keeps the base texture (value 0).
+     * To give a new line its own look, append its id here, add the texture
+     * and rerun datagen. Only append, so existing indices stay put.
+     */
+    public static final List<String> TEXTURED = List.of(
+            "steel", "chemistry", "oil", "power",
+            "coke", "aluminium", "refining", "engines", "electricity");
+
+    /** Item property the blueprint model overrides switch on. */
+    public static final ResourceLocation TEXTURE_PROPERTY = TFMG.asResource("line");
+
     private BlueprintLines() {
     }
 
@@ -31,5 +48,10 @@ public final class BlueprintLines {
     public static String lineOf(ItemStack stack) {
         String line = stack.get(TFMGDataComponents.BLUEPRINT_LINE);
         return line != null && LINES.contains(line) ? line : null;
+    }
+
+    /** The {@link #TEXTURE_PROPERTY} value of a stack: 0 for the base texture. */
+    public static int textureIndex(ItemStack stack) {
+        return TEXTURED.indexOf(lineOf(stack)) + 1;
     }
 }
