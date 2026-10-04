@@ -2,6 +2,7 @@ package com.drmangotea.tfmg.content.items.weapons;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
@@ -13,8 +14,15 @@ public class LeadSwordItem extends SwordItem {
 
     }
 
+    // Since 1.21 the wear of a hit belongs in postHurtEnemy: also wearing the
+    // blade here (from the target's hand slot) cost 3 durability per hit
+    // instead of the lead sword's 2.
+    @Override
+    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        stack.hurtAndBreak(2, attacker, EquipmentSlot.MAINHAND);
+    }
+
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        pStack.hurtAndBreak(2, pAttacker, LivingEntity.getSlotForHand(pTarget.getUsedItemHand()));
         MobEffectInstance poison = pTarget.getEffect(MobEffects.POISON);
 
         if(poison!=null) {

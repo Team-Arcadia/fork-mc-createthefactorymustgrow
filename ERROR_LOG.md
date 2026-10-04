@@ -345,3 +345,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** An `(int)` cast rounds towards zero, so on negative coordinates the blast moved one block towards the origin.
 **Fix:** Both use `BlockPos.containing`, which floors.
 **Prevention:** Never build a BlockPos from casts of entity coordinates; use `blockPosition()` or `BlockPos.containing`.
+
+## [2026-10-04 20:33] - Lead weapons and the lit lithium blade wore twice as fast
+**Context:** New handheld game tests counting durability per hit.
+**Error:** A lead sword lost 3 per hit, a lead axe 4, the lit lithium blade 3, where 1.20.1 took 2 each.
+**Root cause:** Since 1.21 vanilla wears weapons in `postHurtEnemy` (sword 1, digger 2) and only calls `hurtEnemy` for effects. The ported overrides still wore the item in `hurtEnemy`, so both ran; the lead sword also passed the target's hand slot.
+**Fix:** `hurtEnemy` only applies the effects; the lead sword and lit blade wear 2 in `postHurtEnemy`, the lead axe keeps the axe's own 2.
+**Prevention:** When porting a 1.20 `hurtEnemy` that wears the item, move the wear to `postHurtEnemy`.
