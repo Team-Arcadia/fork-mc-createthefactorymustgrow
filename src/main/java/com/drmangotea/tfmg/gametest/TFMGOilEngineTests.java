@@ -10,6 +10,22 @@ import com.drmangotea.tfmg.content.engines.types.AbstractSmallEngineBlockEntity;
 import com.drmangotea.tfmg.content.engines.types.large_engine.LargeEngineBlockEntity;
 import com.drmangotea.tfmg.content.engines.types.regular_engine.RegularEngineBlockEntity;
 import com.drmangotea.tfmg.content.engines.types.regular_engine.RegularEngineBlockEntity.EngineType;
+import com.drmangotea.tfmg.content.decoration.concrete.ConcreteloggedBlock;
+import com.drmangotea.tfmg.content.decoration.pipes.TFMGPipes;
+import com.drmangotea.tfmg.content.machinery.misc.firebox.FireboxBlock;
+import com.drmangotea.tfmg.content.machinery.misc.flarestack.FlarestackBlock;
+import com.drmangotea.tfmg.content.machinery.misc.smokestack.SmokestackBlock;
+import com.drmangotea.tfmg.content.machinery.oil_processing.surface_scanner.SurfaceScannerBlockEntity;
+import com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.output.DistillationOutputBlockEntity;
+import com.drmangotea.tfmg.recipes.DistillationRecipe;
+import com.simibubi.create.content.contraptions.glue.SuperGlueEntity;
+import com.simibubi.create.content.fluids.tank.FluidTankBlockEntity;
+import com.simibubi.create.content.logistics.depot.DepotBlockEntity;
+import com.simibubi.create.content.processing.burner.BlazeBurnerBlock.HeatLevel;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Fluids;
+import net.neoforged.neoforge.fluids.FluidStack;
 import com.drmangotea.tfmg.registry.TFMGBlocks;
 import com.drmangotea.tfmg.registry.TFMGDataComponents;
 import com.drmangotea.tfmg.registry.TFMGItems;
@@ -491,6 +507,561 @@ public class TFMGOilEngineTests {
             helper.assertTrue(inEngine > 0, "the piping upgrade moved no fuel from the tank (tank " + inTank + " mB)");
             helper.assertTrue(inEngine + inTank <= 4000, "fuel was duplicated: " + inEngine + " + " + inTank + " mB from 4000");
             helper.assertTrue(speed(helper, out) != 0, "the engine fed through its piping upgrade does not run");
+        }));
+    }
+
+    // ======================================================= finding oil
+
+    /** A surface scanner turned at 64 RPM finds the oil deposit under its chunk; standing still it says it needs rotation. */
+    @GameTest(template = "gametest/platform", batch = "tfmg_oil", timeoutTicks = 400)
+    public static void surfaceScannerFindsDeposit(GameTestHelper helper) {
+        Map<BlockPos, BlockState> blocks = blueprint(helper, "finding_oil_2", new BlockPos(2, 1, 1));
+        BlockPos scanner = find(blocks, TFMGBlocks.SURFACE_SCANNER.get());
+        BlockPos shaftPos = find(blocks, AllBlocks.SHAFT.get());
+        BlockPos deposit = new BlockPos(0, 0, 4);
+        helper.setBlock(deposit, TFMGBlocks.OIL_DEPOSIT.get());
+        helper.runAfterDelay(30, () -> {
+            assertProblem(helper, scanner, "surface_scanner.slow", "scanner without rotation");
+            // The handbook's input shaft, driven from a motor in its place.
+            helper.setBlock(shaftPos, AllBlocks.CREATIVE_MOTOR.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.SOUTH));
+        });
+        helper.runAfterDelay(32, () -> setMotor(helper, shaftPos, 64));
+        helper.runAfterDelay(33, () -> helper.succeedWhen(() -> {
+            SurfaceScannerBlockEntity be = (SurfaceScannerBlockEntity) be(helper, scanner);
+            BlockPos s = helper.absolutePos(scanner);
+            BlockPos d = helper.absolutePos(deposit);
+            int x = (d.getX() >> 4) - (s.getX() >> 4) + 2;
+            int z = (d.getZ() >> 4) - (s.getZ() >> 4) + 2;
+            Boolean cell = be.grid[x][z];
+            helper.assertTrue(Boolean.TRUE.equals(cell), "the scanner does not show the deposit's chunk (cell " + x + "," + z + " = " + cell + ")");
+            assertClean(helper, scanner, "turning surface scanner");
+        }));
+    }
+
+    // ========================================================== pumpjack
+
+    /** The handbook pumpjack, turned by a motor, pumps crude oil from the deposit into its base. */
+    @GameTest(template = "gametest/platform_huge", batch = "tfmg_oil", timeoutTicks = 1200)
+    public static void pumpjackPumpsCrudeOil(GameTestHelper helper) {
+        runPumpjack(helper, false);
+    }
+
+    /** The same pumpjack with the large hammer head, beam and connector. */
+    @GameTest(template = "gametest/platform_huge", batch = "tfmg_oil", timeoutTicks = 1200)
+    public static void largePumpjackPumpsCrudeOil(GameTestHelper helper) {
+        runPumpjack(helper, true);
+    }
+
+    private static void runPumpjack(GameTestHelper helper, boolean large) {
+        Map<BlockPos, BlockState> blocks = blueprint(helper, "pumpjack_0", new BlockPos(2, 1, 2));
+        if (large) {
+            for (Map.Entry<BlockPos, BlockState> e : blocks.entrySet()) {
+                BlockState state = e.getValue();
+                Block swap = state.is(TFMGBlocks.PUMPJACK_HAMMER_HEAD.get()) ? TFMGBlocks.LARGE_PUMPJACK_HAMMER_HEAD.get()
+                        : state.is(TFMGBlocks.PUMPJACK_HAMMER_PART.get()) ? TFMGBlocks.LARGE_PUMPJACK_HAMMER_PART.get()
+                        : state.is(TFMGBlocks.PUMPJACK_HAMMER_CONNECTOR.get()) ? TFMGBlocks.LARGE_PUMPJACK_HAMMER_CONNECTOR.get() : null;
+                if (swap != null)
+                    helper.setBlock(e.getKey(), swap.withPropertiesOf(state));
+            }
+        }
+        BlockPos base = find(blocks, TFMGBlocks.PUMPJACK_BASE.get());
+        BlockPos hammer = find(blocks, TFMGBlocks.PUMPJACK_HAMMER.get());
+        BlockPos input = find(blocks, AllBlocks.SHAFT.get());
+        Fluid crude = fluid("tfmg:crude_oil");
+        helper.runAfterDelay(30, () -> {
+            assertProblem(helper, hammer, "pumpjack.crank_input_still", "pumpjack without rotation");
+            assertProblem(helper, hammer, "pumpjack.not_glued", "pumpjack with a loose beam");
+            TFMGGameTestUtil.check(helper, amount(helper, base, crude) == 0, "oil before the pumpjack ever turned");
+            glueBeam(helper, blocks);
+            helper.setBlock(input, AllBlocks.CREATIVE_MOTOR.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.SOUTH));
+        });
+        helper.runAfterDelay(32, () -> setMotor(helper, input, 64));
+        helper.runAfterDelay(33, () -> helper.succeedWhen(() -> {
+            int oil = amount(helper, base, crude);
+            helper.assertTrue(oil >= 1000, "the base holds " + oil + " mB of crude oil -> " + report(helper, hammer));
+            assertClean(helper, hammer, "running pumpjack");
+            assertClean(helper, base, "running pumpjack base");
+        }));
+    }
+
+    /** Super Glue over the whole beam, head to connector, as the ponder scene tells players to. */
+    static void glueBeam(GameTestHelper helper, Map<BlockPos, BlockState> blocks) {
+        BlockPos head = find(blocks, TFMGBlocks.PUMPJACK_HAMMER_HEAD.get());
+        BlockPos connector = find(blocks, TFMGBlocks.PUMPJACK_HAMMER_CONNECTOR.get());
+        helper.getLevel().addFreshEntity(new SuperGlueEntity(helper.getLevel(),
+                SuperGlueEntity.span(helper.absolutePos(head), helper.absolutePos(connector))));
+    }
+
+    // ======================================================= distillation
+
+    /**
+     * One test per distillation recipe in the mod's data: a 2x2 steel tower
+     * with as many output stages as the recipe has fractions, heated by four
+     * fireboxes burning LPG and filled with the recipe's input. Every stage
+     * must fill with its own fraction, heaviest at the bottom.
+     */
+    @GameTestGenerator
+    public static List<TestFunction> distillationRecipes() {
+        List<TestFunction> tests = new ArrayList<>();
+        for (String id : new String[]{"crude_oil", "crude_oil_no_naphtha", "crude_oil_light_distillation",
+                "heavy_oil", "heavy_oil_no_naphtha", "heavy_oil_light_distillation"})
+            tests.add(TFMGGameTestUtil.test("tfmg_oil", "distillation." + id, HUGE, 1200,
+                    helper -> runDistillation(helper, "tfmg:distillation/" + id)));
+        return tests;
+    }
+
+    private static final BlockPos TOWER_CONTROLLER = new BlockPos(4, 2, 4);
+
+    /** Builds a 2x2 tower over four fireboxes with {@code stages} outputs; returns the outputs, bottom first. */
+    static List<BlockPos> buildTower(GameTestHelper helper, BlockPos controller, int stages) {
+        BlockPos tank = controller.south();
+        int height = Math.max(2, stages * 2);
+        for (int x = 0; x < 2; x++)
+            for (int z = 0; z < 2; z++) {
+                helper.setBlock(tank.offset(x, -1, z), TFMGBlocks.FIREBOX.get());
+                for (int y = 0; y < height; y++)
+                    helper.setBlock(tank.offset(x, y, z), TFMGBlocks.STEEL_FLUID_TANK.get());
+            }
+        helper.setBlock(controller, TFMGBlocks.STEEL_DISTILLATION_CONTROLLER.get().defaultBlockState()
+                .setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH));
+        List<BlockPos> outputs = new ArrayList<>();
+        for (int i = 0; i < stages; i++) {
+            BlockPos out = controller.above(1 + 2 * i);
+            helper.setBlock(out, TFMGBlocks.STEEL_DISTILLATION_OUTPUT.get());
+            outputs.add(out);
+            if (i < stages - 1)
+                helper.setBlock(out.above(), TFMGBlocks.INDUSTRIAL_PIPE.get());
+        }
+        return outputs;
+    }
+
+    private static void runDistillation(GameTestHelper helper, String recipeId) {
+        BlockPos controller = TOWER_CONTROLLER;
+        BlockPos tank = controller.south();
+        BlockPos firebox = tank.below();
+        DistillationRecipe[] recipe = new DistillationRecipe[1];
+        List<BlockPos> outputs = new ArrayList<>();
+        helper.runAfterDelay(1, () -> {
+            recipe[0] = recipe(helper, recipeId);
+            outputs.addAll(buildTower(helper, controller, recipe[0].getFluidResults().size()));
+        });
+        helper.runAfterDelay(20, () -> {
+            assertProblem(helper, controller, "distillation.no_input", "empty tower");
+            Fluid in = recipe[0].getFluidIngredients().getFirst().getFluids()[0].getFluid();
+            TFMGGameTestUtil.check(helper, fill(helper, tank, in, 20000) == 20000, "the tower tank refused its input");
+        });
+        helper.runAfterDelay(40, () -> {
+            assertProblem(helper, controller, "distillation.no_heat", "cold tower");
+            for (BlockPos out : outputs)
+                TFMGGameTestUtil.check(helper, fluids(helper, out).getFluidInTank(0).isEmpty(), "a cold tower distilled something");
+            TFMGGameTestUtil.check(helper, fill(helper, firebox, fluid("tfmg:lpg"), 8000) == 8000, "the firebox refused LPG");
+        });
+        helper.runAfterDelay(41, () -> helper.succeedWhen(() -> {
+            List<FluidStack> results = recipe[0].getFluidResults();
+            for (int i = 0; i < outputs.size(); i++) {
+                FluidStack held = fluids(helper, outputs.get(i)).getFluidInTank(0);
+                helper.assertTrue(!held.isEmpty(), "stage " + (i + 1) + " is still empty -> " + report(helper, controller));
+                helper.assertTrue(held.getFluid().isSame(results.get(i).getFluid()), "stage " + (i + 1) + " holds "
+                        + BuiltInRegistries.FLUID.getKey(held.getFluid()) + " instead of " + BuiltInRegistries.FLUID.getKey(results.get(i).getFluid()));
+            }
+            assertClean(helper, controller, "running tower");
+        }));
+    }
+
+    /**
+     * A tower whose fireboxes were placed lit (the handbook blueprint does
+     * so) but hold no fuel must not distil: the fireboxes go out and the
+     * inspector says the tower is cold.
+     */
+    @GameTest(template = "gametest/platform_huge", batch = "tfmg_oil", timeoutTicks = 600)
+    public static void unfuelledFireboxesGoOut(GameTestHelper helper) {
+        Map<BlockPos, BlockState> blocks = blueprint(helper, "distillation_0", new BlockPos(4, 1, 4));
+        BlockPos controller = find(blocks, TFMGBlocks.STEEL_DISTILLATION_CONTROLLER.get());
+        BlockPos tank = controller.south();
+        helper.runAfterDelay(10, () -> fill(helper, tank, fluid("tfmg:crude_oil"), 20000));
+        helper.runAfterDelay(200, () -> {
+            for (Map.Entry<BlockPos, BlockState> e : blocks.entrySet())
+                if (e.getValue().is(TFMGBlocks.FIREBOX.get()))
+                    helper.assertBlockState(e.getKey(), s -> s.getValue(FireboxBlock.HEAT_LEVEL) == HeatLevel.NONE, () -> "an empty firebox still burns");
+            for (Map.Entry<BlockPos, BlockState> e : blocks.entrySet())
+                if (e.getValue().is(TFMGBlocks.STEEL_DISTILLATION_OUTPUT.get()))
+                    TFMGGameTestUtil.check(helper, fluids(helper, e.getKey()).getFluidInTank(0).isEmpty(), "the tower distilled without fuel");
+            assertProblem(helper, controller, "distillation.no_heat", "tower over empty fireboxes");
+            helper.succeed();
+        });
+    }
+
+    // ==================================================== burning fluids
+
+    /** Every firebox fuel lights a firebox, burns down and makes exhaust; gasoline is not a firebox fuel. */
+    @GameTest(template = "gametest/platform_huge", batch = "tfmg_burners", timeoutTicks = 600)
+    public static void fireboxBurnsEveryFuel(GameTestHelper helper) {
+        List<Fluid> fuels = sources(TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag);
+        List<BlockPos> boxes = new ArrayList<>();
+        for (int i = 0; i < fuels.size(); i++) {
+            BlockPos pos = new BlockPos(1 + (i % 8) * 2, 1, 1 + (i / 8) * 2);
+            helper.setBlock(pos, TFMGBlocks.FIREBOX.get());
+            boxes.add(pos);
+        }
+        BlockPos empty = new BlockPos(1, 1, 15);
+        BlockPos wrong = new BlockPos(5, 1, 15);
+        helper.setBlock(empty, TFMGBlocks.FIREBOX.get());
+        helper.setBlock(wrong, TFMGBlocks.FIREBOX.get());
+        int[] wrongFilled = new int[1];
+        helper.runAfterDelay(5, () -> {
+            for (int i = 0; i < fuels.size(); i++)
+                TFMGGameTestUtil.check(helper, fill(helper, boxes.get(i), fuels.get(i), 1000) == 1000,
+                        "the firebox refused " + BuiltInRegistries.FLUID.getKey(fuels.get(i)));
+            wrongFilled[0] = fill(helper, wrong, fluid("tfmg:gasoline"), 1000);
+        });
+        helper.runAfterDelay(6, () -> helper.succeedWhen(() -> {
+            for (int i = 0; i < fuels.size(); i++) {
+                BlockPos pos = boxes.get(i);
+                String name = BuiltInRegistries.FLUID.getKey(fuels.get(i)).toString();
+                helper.assertBlockState(pos, s -> s.getValue(FireboxBlock.HEAT_LEVEL) != HeatLevel.NONE, () -> "the firebox on " + name + " is not lit");
+                helper.assertTrue(amount(helper, pos, fuels.get(i)) < 1000, "no " + name + " burnt");
+                helper.assertTrue(amount(helper, pos, fluid("tfmg:carbon_dioxide")) > 0, "no exhaust from " + name);
+                assertClean(helper, pos, "firebox on " + name);
+            }
+            assertProblem(helper, empty, "firebox.no_fuel", "firebox without fuel");
+            if (wrongFilled[0] > 0)
+                assertProblem(helper, wrong, "firebox.wrong_fuel", "firebox on gasoline");
+            helper.assertBlockState(wrong, s -> s.getValue(FireboxBlock.HEAT_LEVEL) == HeatLevel.NONE, () -> "a firebox burns gasoline");
+        }));
+    }
+
+    /** A flarestack lights on every flammable fluid and burns its tank empty; it refuses water. */
+    @GameTest(template = "gametest/platform_huge", batch = "tfmg_burners", timeoutTicks = 600)
+    public static void flarestackBurnsEveryFlammable(GameTestHelper helper) {
+        List<Fluid> burnable = sources(TFMGTags.TFMGFluidTags.FLAMMABLE.tag);
+        for (Fluid f : sources(TFMGTags.TFMGFluidTags.FUEL.tag))
+            if (!burnable.contains(f))
+                burnable.add(f);
+        List<BlockPos> stacks = new ArrayList<>();
+        for (int i = 0; i < burnable.size(); i++) {
+            BlockPos pos = new BlockPos(1 + (i % 8) * 2, 1, 1 + (i / 8) * 2);
+            helper.setBlock(pos, TFMGBlocks.FLARESTACK.get());
+            stacks.add(pos);
+        }
+        BlockPos water = new BlockPos(1, 1, 15);
+        helper.setBlock(water, TFMGBlocks.FLARESTACK.get());
+        boolean[] seen = new boolean[burnable.size()];
+        helper.runAfterDelay(5, () -> {
+            for (int i = 0; i < burnable.size(); i++)
+                TFMGGameTestUtil.check(helper, fill(helper, stacks.get(i), burnable.get(i), 2000) == 2000,
+                        "the flarestack refused " + BuiltInRegistries.FLUID.getKey(burnable.get(i)));
+            TFMGGameTestUtil.check(helper, fill(helper, water, Fluids.WATER, 1000) == 0, "the flarestack took water");
+        });
+        helper.runAfterDelay(7, () -> helper.succeedWhen(() -> {
+            // Watch every stack first: they all burn at once, and a failed
+            // check below would otherwise skip the ones after it this tick.
+            for (int i = 0; i < burnable.size(); i++) {
+                BlockPos pos = stacks.get(i);
+                boolean lit = helper.getLevel().getBlockState(helper.absolutePos(pos)).getValue(FlarestackBlock.LIT);
+                if (lit && amount(helper, pos, burnable.get(i)) > 0 && problems(helper, pos).isEmpty())
+                    seen[i] = true;
+            }
+            for (int i = 0; i < burnable.size(); i++) {
+                BlockPos pos = stacks.get(i);
+                String name = BuiltInRegistries.FLUID.getKey(burnable.get(i)).toString();
+                helper.assertTrue(seen[i], "the flarestack never burned " + name + " cleanly -> " + report(helper, pos));
+                helper.assertTrue(amount(helper, pos, burnable.get(i)) == 0, "the flarestack still holds " + name);
+            }
+        }));
+    }
+
+    /** A gas lamp lights while it has gas; an empty one stays dark. */
+    @GameTest(template = "gametest/platform", batch = "tfmg_burners", timeoutTicks = 200)
+    public static void gasLampLightsOnGas(GameTestHelper helper) {
+        BlockPos lamp = new BlockPos(1, 1, 2);
+        BlockPos dark = new BlockPos(3, 1, 2);
+        helper.setBlock(lamp, TFMGBlocks.GAS_LAMP.get());
+        helper.setBlock(dark, TFMGBlocks.GAS_LAMP.get());
+        helper.runAfterDelay(5, () -> TFMGGameTestUtil.check(helper, fill(helper, lamp, fluid("tfmg:lpg"), 1000) == 1000, "the gas lamp refused LPG"));
+        helper.runAfterDelay(6, () -> helper.succeedWhen(() -> {
+            helper.assertBlockState(lamp, s -> s.getValue(BlockStateProperties.LIT), () -> "the fuelled gas lamp is dark");
+            helper.assertBlockState(dark, s -> !s.getValue(BlockStateProperties.LIT), () -> "the empty gas lamp is lit");
+            assertClean(helper, lamp, "gas lamp");
+        }));
+    }
+
+    /** Exhaust and a three block smokestack take carbon dioxide and vent it; the smokestack passes it up to its top. */
+    @GameTest(template = "gametest/platform", batch = "tfmg_burners", timeoutTicks = 1200)
+    public static void exhaustAndSmokestackVent(GameTestHelper helper) {
+        BlockPos exhaust = new BlockPos(1, 1, 2);
+        BlockPos stack = new BlockPos(3, 1, 2);
+        helper.setBlock(exhaust, TFMGBlocks.EXHAUST.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.UP));
+        for (int y = 0; y < 3; y++)
+            helper.setBlock(stack.above(y), TFMGBlocks.METAL_SMOKESTACK.get());
+        Fluid co2 = fluid("tfmg:carbon_dioxide");
+        boolean[] rose = new boolean[1];
+        helper.runAfterDelay(5, () -> {
+            helper.assertBlockState(stack, s -> !s.getValue(SmokestackBlock.TOP), () -> "the bottom smokestack thinks it is the top");
+            helper.assertBlockState(stack.above(2), s -> s.getValue(SmokestackBlock.TOP), () -> "the top smokestack is not marked as top");
+            TFMGGameTestUtil.check(helper, fill(helper, exhaust, co2, 500) == 500, "the exhaust refused carbon dioxide");
+            TFMGGameTestUtil.check(helper, fill(helper, stack, co2, 4000) == 4000, "the smokestack refused carbon dioxide");
+            TFMGGameTestUtil.check(helper, fill(helper, exhaust, fluid("tfmg:lpg"), 100) == 0, "the exhaust took LPG");
+            assertClean(helper, exhaust, "venting exhaust");
+            assertClean(helper, stack, "venting smokestack");
+        });
+        helper.runAfterDelay(6, () -> helper.succeedWhen(() -> {
+            if (amount(helper, stack.above(2), co2) > 0)
+                rose[0] = true;
+            helper.assertTrue(rose[0], "no carbon dioxide reached the top of the smokestack");
+            helper.assertTrue(amount(helper, exhaust, co2) == 0, "the exhaust still holds " + amount(helper, exhaust, co2) + " mB");
+            int left = amount(helper, stack, co2) + amount(helper, stack.above(), co2) + amount(helper, stack.above(2), co2);
+            helper.assertTrue(left == 0, "the smokestack still holds " + left + " mB");
+        }));
+    }
+
+    /** A Create pump draws a burning firebox's exhaust into a smokestack, so the firebox never chokes. */
+    @GameTest(template = "gametest/platform", batch = "tfmg_burners", timeoutTicks = 1200)
+    public static void fireboxExhaustPumpedToSmokestack(GameTestHelper helper) {
+        BlockPos firebox = new BlockPos(0, 1, 1);
+        BlockPos pipe = new BlockPos(1, 1, 1);
+        BlockPos pump = new BlockPos(2, 1, 1);
+        BlockPos stack = new BlockPos(3, 1, 1);
+        helper.setBlock(firebox, TFMGBlocks.FIREBOX.get());
+        helper.setBlock(pipe, AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(pump, AllBlocks.MECHANICAL_PUMP.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.EAST));
+        helper.setBlock(stack, TFMGBlocks.METAL_SMOKESTACK.get());
+        helper.setBlock(stack.above(), TFMGBlocks.METAL_SMOKESTACK.get());
+        cogDrive(helper, pump, Direction.Axis.X, 64);
+        Fluid co2 = fluid("tfmg:carbon_dioxide");
+        boolean[] vented = new boolean[1];
+        helper.runAfterDelay(3, () -> connect(helper, List.of(pipe)));
+        helper.runAfterDelay(5, () -> fill(helper, firebox, fluid("tfmg:lpg"), 8000));
+        helper.runAfterDelay(6, () -> helper.succeedWhen(() -> {
+            if (amount(helper, stack, co2) + amount(helper, stack.above(), co2) > 0)
+                vented[0] = true;
+            helper.assertTrue(vented[0], "no exhaust reached the smokestack (firebox holds " + amount(helper, firebox, co2) + " mB)");
+            helper.assertTrue(amount(helper, firebox, co2) == 0, "exhaust is left in the firebox");
+            assertClean(helper, firebox, "firebox with exhaust piped away");
+        }));
+    }
+
+    /** Drives a pump (a small cog) through a cogwheel beside it, as players do. */
+    static void cogDrive(GameTestHelper helper, BlockPos pump, Direction.Axis axis, int rpm) {
+        Direction side = axis == Direction.Axis.X ? Direction.SOUTH : Direction.EAST;
+        BlockPos cog = pump.relative(side);
+        helper.setBlock(cog, AllBlocks.COGWHEEL.get().defaultBlockState().setValue(BlockStateProperties.AXIS, axis));
+        Direction along = Direction.fromAxisAndDirection(axis, Direction.AxisDirection.POSITIVE);
+        motor(helper, cog.relative(along), along.getOpposite(), rpm);
+    }
+
+    static List<Fluid> sources(TagKey<Fluid> tag) {
+        List<Fluid> out = new ArrayList<>();
+        for (Holder<Fluid> holder : BuiltInRegistries.FLUID.getTagOrEmpty(tag))
+            if (holder.value().isSource(holder.value().defaultFluidState()) && !out.contains(holder.value()))
+                out.add(holder.value());
+        return out;
+    }
+
+    // ============================================================ fluids
+
+    /** Each TFMG pipe material carries crude oil from tank to tank through its own pump and glass pipe. */
+    @GameTestGenerator
+    public static List<TestFunction> pipeMaterials() {
+        List<TestFunction> tests = new ArrayList<>();
+        for (TFMGPipes.PipeMaterial material : TFMGPipes.PipeMaterial.values())
+            tests.add(TFMGGameTestUtil.test("tfmg_fluids", "pipes." + material.name, TFMGGameTestUtil.PLATFORM_LARGE, 600,
+                    helper -> runPipeLine(helper, material)));
+        return tests;
+    }
+
+    private static void runPipeLine(GameTestHelper helper, TFMGPipes.PipeMaterial material) {
+        var entry = TFMGPipes.PIPES.get(material);
+        BlockPos source = new BlockPos(1, 1, 4);
+        BlockPos target = new BlockPos(7, 1, 4);
+        List<BlockPos> pipes = List.of(new BlockPos(2, 1, 4), new BlockPos(4, 1, 4), new BlockPos(6, 1, 4));
+        BlockPos pump = new BlockPos(3, 1, 4);
+        BlockPos glass = new BlockPos(5, 1, 4);
+        helper.setBlock(source, TFMGBlocks.ALUMINUM_FLUID_TANK.get());
+        helper.setBlock(target, TFMGBlocks.CAST_IRON_FLUID_TANK.get());
+        for (BlockPos p : pipes)
+            helper.setBlock(p, entry.getPipe().get());
+        helper.setBlock(pump, entry.getPump().get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.EAST));
+        helper.setBlock(glass, entry.getGlass().get().defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.X));
+        cogDrive(helper, pump, Direction.Axis.X, 128);
+        Fluid crude = fluid("tfmg:crude_oil");
+        helper.runAfterDelay(3, () -> connect(helper, pipes));
+        helper.runAfterDelay(5, () -> TFMGGameTestUtil.check(helper, fill(helper, source, crude, 4000) == 4000, "the aluminum tank refused crude oil"));
+        helper.runAfterDelay(6, () -> helper.succeedWhen(() -> {
+            int moved = amount(helper, target, crude);
+            int left = amount(helper, source, crude);
+            helper.assertTrue(moved >= 1000, material.name + " line moved " + moved + " mB (source " + left + " mB)");
+            helper.assertTrue(moved + left <= 4000, "crude oil was duplicated: " + moved + " + " + left);
+        }));
+    }
+
+    /** Two stacked TFMG tanks of each metal merge into one tank holding both blocks' worth. */
+    @GameTest(template = "gametest/platform", batch = "tfmg_fluids", timeoutTicks = 200)
+    public static void tanksMergeAndHold(GameTestHelper helper) {
+        Block[] tanks = {TFMGBlocks.STEEL_FLUID_TANK.get(), TFMGBlocks.ALUMINUM_FLUID_TANK.get(), TFMGBlocks.CAST_IRON_FLUID_TANK.get()};
+        for (int i = 0; i < tanks.length; i++) {
+            helper.setBlock(new BlockPos(i + 1, 1, 2), tanks[i]);
+            helper.setBlock(new BlockPos(i + 1, 2, 2), tanks[i]);
+        }
+        helper.runAfterDelay(10, () -> {
+            Fluid diesel = fluid("tfmg:diesel");
+            for (int i = 0; i < tanks.length; i++) {
+                BlockPos bottom = new BlockPos(i + 1, 1, 2);
+                String name = BuiltInRegistries.BLOCK.getKey(tanks[i]).getPath();
+                FluidTankBlockEntity tank = (FluidTankBlockEntity) be(helper, bottom);
+                TFMGGameTestUtil.check(helper, tank.getControllerBE() != null && tank.getControllerBE().getHeight() == 2, name + " did not merge two blocks");
+                int capacity = fluids(helper, bottom).getTankCapacity(0);
+                int filled = fill(helper, bottom, diesel, 1_000_000);
+                TFMGGameTestUtil.check(helper, filled == capacity && filled > 0, name + " took " + filled + " of " + capacity);
+                TFMGGameTestUtil.check(helper, amount(helper, new BlockPos(i + 1, 2, 2), diesel) == filled,
+                        name + ": the top block does not share the bottom block's fluid");
+            }
+            helper.succeed();
+        });
+    }
+
+    /** The electric pump moves fluid only while a generator powers it. */
+    @GameTest(template = "gametest/platform_large", batch = "tfmg_fluids", timeoutTicks = 600)
+    public static void electricPumpMovesFluidWhenPowered(GameTestHelper helper) {
+        BlockPos source = new BlockPos(1, 1, 4);
+        BlockPos target = new BlockPos(5, 1, 4);
+        BlockPos pump = new BlockPos(3, 1, 4);
+        List<BlockPos> pipes = List.of(new BlockPos(2, 1, 4), new BlockPos(4, 1, 4));
+        helper.setBlock(source, TFMGBlocks.STEEL_FLUID_TANK.get());
+        helper.setBlock(target, TFMGBlocks.STEEL_FLUID_TANK.get());
+        for (BlockPos p : pipes)
+            helper.setBlock(p, AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(pump, TFMGBlocks.ELECTRIC_PUMP.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.EAST));
+        helper.runAfterDelay(3, () -> connect(helper, pipes));
+        helper.runAfterDelay(5, () -> fill(helper, source, Fluids.WATER, 8000));
+        helper.runAfterDelay(60, () -> {
+            assertProblem(helper, pump, "electric.no_voltage", "unpowered electric pump");
+            TFMGGameTestUtil.check(helper, amount(helper, target, Fluids.WATER) == 0, "an unpowered electric pump moved water");
+            helper.setBlock(pump.above(), TFMGBlocks.CREATIVE_GENERATOR.get());
+        });
+        helper.runAfterDelay(61, () -> helper.succeedWhen(() -> {
+            int moved = amount(helper, target, Fluids.WATER);
+            helper.assertTrue(moved >= 1000, "the powered electric pump moved " + moved + " mB -> " + report(helper, pump));
+            assertClean(helper, pump, "powered electric pump");
+        }));
+    }
+
+    /** The concrete hose lowers onto rebar and pours liquid concrete into it. */
+    @GameTest(template = "gametest/platform", batch = "tfmg_fluids", timeoutTicks = 600)
+    public static void concreteHoseFillsRebar(GameTestHelper helper) {
+        BlockPos hose = new BlockPos(2, 4, 2);
+        BlockPos rebar = new BlockPos(2, 1, 2);
+        helper.setBlock(rebar, TFMGBlocks.REBAR_BLOCK.get());
+        helper.setBlock(hose, TFMGBlocks.CONCRETE_HOSE.get().defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH));
+        // Its shaft is on the clockwise side of its facing: east.
+        motor(helper, hose.east(), Direction.WEST, -32);
+        helper.runAfterDelay(5, () -> {
+            assertProblem(helper, hose, "concrete_hose.empty", "empty concrete hose");
+            TFMGGameTestUtil.check(helper, fill(helper, hose, fluid("tfmg:liquid_concrete"), 1000) == 1000, "the hose refused liquid concrete");
+        });
+        helper.runAfterDelay(6, () -> helper.succeedWhen(() -> helper.assertBlockState(rebar,
+                s -> s.getValue(ConcreteloggedBlock.CONCRETELOGGED), () -> "the rebar was not filled -> " + report(helper, hose))));
+    }
+
+    // ============================================================= chain
+
+    /**
+     * The whole oil industry, automated end to end: a pumpjack pumps crude
+     * oil, a pump sends it into a firebox-heated distillation tower, a second
+     * pump carries the tower's diesel to an engine, and the engine turns a
+     * Create press that flattens an iron ingot into a sheet.
+     */
+    @GameTest(template = "gametest/platform_huge", batch = "tfmg_chain", timeoutTicks = 4000)
+    public static void oilFieldToPressChain(GameTestHelper helper) {
+        // Pumpjack, turned by a motor on its machine input.
+        Map<BlockPos, BlockState> jack = blueprint(helper, "pumpjack_0", new BlockPos(0, 1, 0));
+        BlockPos base = find(jack, TFMGBlocks.PUMPJACK_BASE.get());
+        BlockPos hammer = find(jack, TFMGBlocks.PUMPJACK_HAMMER.get());
+        BlockPos jackInput = find(jack, AllBlocks.SHAFT.get());
+        motor(helper, jackInput, Direction.SOUTH, 64);
+        helper.runAfterDelay(5, () -> glueBeam(helper, jack));
+
+        // Crude oil line: base -> pipe -> pump -> pipes -> tower tank.
+        List<BlockPos> crudeLine = new ArrayList<>();
+        crudeLine.add(base.south());
+        BlockPos crudePump = base.south(2);
+        for (int z = crudePump.getZ() + 1; z <= 9; z++)
+            crudeLine.add(new BlockPos(base.getX(), base.getY(), z));
+        crudeLine.add(new BlockPos(base.getX() + 1, base.getY(), 9));
+        for (BlockPos p : crudeLine)
+            helper.setBlock(p, AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(crudePump, AllBlocks.MECHANICAL_PUMP.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.SOUTH));
+        cogDrive(helper, crudePump, Direction.Axis.Z, 64);
+
+        // Distillation tower: tank at x 2..3, z 9..10; controller in front.
+        BlockPos controller = new BlockPos(2, 2, 8);
+        List<BlockPos> stages = buildTower(helper, controller, 6);
+        BlockPos dieselStage = stages.get(1);
+
+        // The fireboxes' exhaust is pumped into a smokestack, or they choke.
+        BlockPos exhaustPipe = controller.south().below().east(2);
+        BlockPos exhaustPump = exhaustPipe.east();
+        BlockPos chimney = exhaustPump.east();
+        helper.setBlock(exhaustPipe, AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(exhaustPump, AllBlocks.MECHANICAL_PUMP.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.EAST));
+        helper.setBlock(chimney, TFMGBlocks.METAL_SMOKESTACK.get());
+        helper.setBlock(chimney.above(), TFMGBlocks.METAL_SMOKESTACK.get());
+        cogDrive(helper, exhaustPump, Direction.Axis.X, 64);
+
+        // Diesel line: stage -> pipe -> pump -> pipe -> engine.
+        BlockPos dieselPipe = dieselStage.north();
+        BlockPos dieselPump = dieselPipe.north();
+        BlockPos enginePipe = dieselPump.north();
+        BlockPos engine = enginePipe.north();
+        helper.setBlock(dieselPipe, AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(enginePipe, AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(dieselPump, AllBlocks.MECHANICAL_PUMP.get().defaultBlockState().setValue(BlockStateProperties.FACING, Direction.NORTH));
+        cogDrive(helper, dieselPump, Direction.Axis.Z, 64);
+
+        // Engine facing east, its shaft into a press over a depot.
+        helper.setBlock(engine, TFMGBlocks.REGULAR_ENGINE.get().defaultBlockState().setValue(HorizontalKineticBlock.HORIZONTAL_FACING, Direction.EAST));
+        BlockPos out = engine.east();
+        BlockPos press = out.east();
+        // The press head reaches one block down: the depot sits two below.
+        BlockPos depot = press.below(2);
+        helper.setBlock(press, AllBlocks.MECHANICAL_PRESS.get().defaultBlockState().setValue(HorizontalKineticBlock.HORIZONTAL_FACING, Direction.EAST));
+        helper.setBlock(depot, AllBlocks.DEPOT.get());
+
+        helper.runAfterDelay(10, () -> {
+            List<BlockPos> all = new ArrayList<>(crudeLine);
+            all.add(dieselPipe);
+            all.add(enginePipe);
+            all.add(exhaustPipe);
+            connect(helper, all);
+            Player player = player(helper);
+            AbstractSmallEngineBlockEntity master = helper.getBlockEntity(engine);
+            for (Ingredient component : master.componentsInventory.components)
+                use(helper, player, engine, component.getItems()[0].copy());
+            use(helper, player, engine, AllBlocks.SHAFT.asStack());
+            ItemStack cylinder = cylinderFor(helper, TFMGTags.TFMGFluidTags.DIESEL.tag, false);
+            RegularEngineBlockEntity be = helper.getBlockEntity(engine);
+            for (int s = 0; s < be.pistonInventory.getSlots(); s++)
+                use(helper, player, engine, cylinder.copy());
+            shaft(helper, out, Direction.Axis.X);
+            helper.setBlock(engine.above(), Blocks.REDSTONE_BLOCK);
+            // The tower's fireboxes get their first fuel by hand.
+            fill(helper, controller.south().below(), fluid("tfmg:lpg"), 16000);
+            DepotBlockEntity depotBE = (DepotBlockEntity) be(helper, depot);
+            depotBE.setHeldItem(new ItemStack(Items.IRON_INGOT));
+            // Only the diesel is piped away; the other fractions are voided
+            // once their stage is full, as a player scrolls them to do.
+            for (BlockPos stage : stages)
+                ((DistillationOutputBlockEntity) be(helper, stage)).mode.setValue(DistillationOutputBlockEntity.DistillationOutputMode.VOID_WHEN_FULL.ordinal());
+        });
+        helper.runAfterDelay(11, () -> helper.succeedWhen(() -> {
+            DepotBlockEntity depotBE = (DepotBlockEntity) be(helper, depot);
+            helper.assertTrue(depotBE.getHeldItem().is(AllItems.IRON_SHEET.get()), "no iron sheet yet: base "
+                    + amount(helper, base, fluid("tfmg:crude_oil")) + " mB crude, diesel stage " + contents(fluids(helper, dieselStage))
+                    + ", engine " + contents(fluids(helper, engine)) + ", shaft " + speed(helper, out) + " RPM, press "
+                    + speed(helper, press) + " RPM -> " + report(helper, controller) + " || " + report(helper, engine));
+            // The tower runs in bursts as the pumpjack refills it, so it is
+            // checked by the distillation tests rather than here.
+            assertClean(helper, hammer, "chain pumpjack");
+            assertClean(helper, engine, "chain engine");
         }));
     }
 }
