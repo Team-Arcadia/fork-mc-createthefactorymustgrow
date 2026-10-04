@@ -126,3 +126,19 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Create's `LerpedFloat` / tank level writes `Force:1b` after a load to force the next client sync. It is transport state, not game data, and it only differs where a client is attached. The diff also compared list tags as a whole, so the flag inside a list element failed the whole list.
 **Fix:** The diff now recurses into lists of compounds and ignores `Force` alongside `NeedsSpeedUpdate`.
 **Prevention:** A round-trip difference that appears on only one side (integrated vs dedicated) is almost always sync state; check the key against Create's behaviours before treating it as data loss.
+
+## [2026-10-04 09:55] - A mock server player crashed the game test server
+
+**Context:** Testing the Factory Inspector's progression checklist, which needs a ServerPlayer.
+**Error:** `GameTestHelper.makeMockServerPlayerInLevel()` failed with "Payload configured:session_data may not be sent to the client!" and the whole gameTestServer run crashed instead of failing one test.
+**Root cause:** The helper logs the player in through `PlayerList.placeNewPlayer`, and NeoForge's configuration phase tries to send a configuration payload over the embedded test connection, which is not allowed in that state.
+**Fix:** Build a bare `new ServerPlayer(server, level, profile, ClientInformation.createDefault())` instead: no connection, no login, inventory and stats still work.
+**Prevention:** In TFMG game tests, never log a mock player in. Use `makeMockPlayer` for item use and a bare ServerPlayer when server-side player data is needed.
+
+## [2026-10-04 10:07] - Last screenshot of a dev run was an empty file
+
+**Context:** The clientShowcaseShots run halts the client once its last screenshot is taken.
+**Error:** `showcase_blueprint_projection.png` existed but was empty.
+**Root cause:** `Screenshot.grab` hands the PNG write to a worker thread; `Runtime.halt` right after killed the JVM before the write finished.
+**Fix:** Wait 60 ticks after the last screenshot before halting.
+**Prevention:** Any dev tool that exits the game must leave time for asynchronous writes (screenshots, logs, saves) after its last action.
