@@ -163,3 +163,17 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The output block's item handler showed two slots (ore, flux). A hopper only inserts into an empty slot or onto a matching stack, so once both held other items it never offered the dust, although the router would have accepted it as fuel.
 **Fix:** The handler shows a third slot holding the fuel counter as a stack of coal coke dust (still extraction-proof), so hoppers see where fuel goes.
 **Prevention:** A routing item handler must expose a slot a hopper can match for every kind of item it accepts; test automation with a real hopper, not only with direct `insertItem` calls.
+
+## [2026-10-04 18:36] - The chemical vat ran recipes on dead attachments
+**Context:** Game test of a hydrogen vat whose two electrode holders had no generator yet.
+**Error:** The inspector listed both holders as "attached but not working", yet the vat showed "Recipe found: Hydrogen, Processing: 33%" and would have made hydrogen with no power. An instant mixing recipe could likewise complete with a stopped mixer.
+**Root cause:** `areMachinesValid` was only refreshed by `revalidateMachines()` on the lazy tick, after `evaluate()` had already put the new machines in `machineMap`; a fresh vat starts with it `true`. A recipe matched in that window, and `handleRecipe` never looked at the machines again, so it ran to completion.
+**Fix:** `evaluate()` revalidates the machines it just found, and `handleRecipe` pauses while any attachment cannot operate.
+**Prevention:** A cached "can run" flag must be refreshed in the same step that changes what it describes, and the processing loop must check it every tick, not only the matcher.
+
+## [2026-10-04 18:44] - A lone chemical vat had half its tank capacity until reloaded
+**Context:** Game test making liquid concrete (32000 mB) in a single cast iron vat.
+**Error:** "The output has no room for the result" with an empty vat; the inspector showed 4000 mB segments.
+**Root cause:** The tank behaviours are built with 4000 mB segments. Only multiblock formation (`applyVatSize`) and `read()` size them to the configured capacity per block (8000 mB by default), so a vat placed alone kept 4000 mB until its chunk reloaded and could never fit a concrete batch.
+**Fix:** `initialize()` sizes the controller's segments the same way `read()` does (shared `sizeTanks`).
+**Prevention:** Capacity that depends on the multiblock size must be set on every path that creates a controller, not only on formation and load.
