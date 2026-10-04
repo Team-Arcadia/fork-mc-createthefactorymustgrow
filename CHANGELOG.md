@@ -77,6 +77,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Chemical vats ran on dead attachments** - A recipe matched right after the attachments were found kept running when they had no power or rotation: electrolysis made hydrogen without a generator. The vat now pauses until every attachment works.
 - **A lone chemical vat held half its capacity** - A vat placed on its own kept 4000 mB per tank until its chunk reloaded, so a single vat could never make liquid concrete. It now gets its full capacity at once.
 - **Flamethrower** - Refuelling from a tank that held no more than the flamethrower could take emptied the tank and gave no fuel at all. A flamethrower that runs dry now also lets go of the trigger instead of staying in use.
+- **Quad potato cannon duplicated ammo** - With Potato Recovery each of the four projectiles could give the ammo back, turning one potato into up to four. Only the first one can now, as on Create's cannon.
 
 ### Performance
 
@@ -140,6 +141,7 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Les cuves chimiques tournaient sur des machines en panne** - Une recette trouvee juste apres la detection des machines continuait sans courant ni rotation : l'electrolyse faisait de l'hydrogene sans generateur. La cuve attend maintenant que chaque machine fonctionne.
 - **Une cuve seule n'avait que la moitie de sa capacite** - Une cuve posee seule gardait 4000 mB par reservoir jusqu'au rechargement de son chunk, et ne pouvait donc jamais faire de beton liquide. Elle a desormais sa pleine capacite tout de suite.
 - **Lance-flammes** - Faire le plein sur un reservoir qui ne contenait pas plus que ce que le lance-flammes pouvait prendre vidait le reservoir sans rien donner. Un lance-flammes a sec relache aussi la detente au lieu de rester en cours d'utilisation.
+- **Le quadruple canon a patates dupliquait les munitions** - Avec Recuperation de patates, chacun des quatre projectiles pouvait rendre la munition : une patate en donnait jusqu'a quatre. Seul le premier le peut desormais, comme sur le canon de Create.
 
 ### Performances
 

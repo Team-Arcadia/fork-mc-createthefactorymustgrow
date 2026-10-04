@@ -317,3 +317,10 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** `onUseTick` returned early when the component was the `FlamethrowerFuel.EMPTY` constant, and `decrement` returns that very constant when the last drop is fired, so the `stopUsingItem` branch below was never reached on the server.
 **Fix:** Any empty fuel, whatever the instance, stops the use.
 **Prevention:** Never decide behaviour by comparing records by identity; use their own `isEmpty()`.
+
+## [2026-10-04 20:31] - Quad potato cannon duplicated ammo with Potato Recovery
+**Context:** New handheld game test firing a quad cannon enchanted with Potato Recovery III.
+**Error:** All 4 projectiles of one shot carried a recovery chance ("Recovery" saved as 0.5), so one potato could come back up to four times.
+**Root cause:** `QuadPotatoCannonItem.use` copies Create's split-shot loop but dropped its `if (i != 0) projectile.recoveryChance = 0;`. The field is protected in Create's package, so the copy could not write it and the line was lost.
+**Fix:** A new accessor mixin (`PotatoProjectileEntityAccessor`) clears the recovery chance of every projectile but the first.
+**Prevention:** When copying a Create method into TFMG, check every statement that touches a non-public member: it is the one that silently disappears. One ammo spent must never be recoverable more than once.
