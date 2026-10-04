@@ -1,0 +1,32 @@
+{
+  "line": "refining",
+  "order": 18005,
+  "name": {
+    "en_us": "Fireboxes and Gases: Firebox and chimney",
+    "fr_fr": "Foyers et gaz : Foyer et cheminée"
+  },
+  "layers": [
+    [
+      "FFQK",
+      "FFc "
+    ],
+    [
+      "   K",
+      "    "
+    ],
+    [
+      "   K",
+      "    "
+    ],
+    [
+      "   K",
+      "    "
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "Q": "create:mechanical_pump[facing=east,waterlogged=false]",
+    "c": "create:cogwheel[axis=x,waterlogged=false]",
+    "K": "tfmg:metal_smokestack"
+  }
+}

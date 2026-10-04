@@ -1,0 +1,37 @@
+{
+  "name": "Motor drive",
+  "icon": "tfmg:electric_motor",
+  "category": "tfmg:electric_machines",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)generator$() feeds an $(item)electric motor$() through a cable hub. The motor takes power on its back face and turns the shaft on its front.$(br2)Rotation turned into electricity and back can travel far through cables, where a shaft line could not."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Motor drive",
+      "multiblock": {
+        "pattern": [
+          [
+            "SG0MS"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=x]",
+          "G": "tfmg:generator[facing=west]",
+          "H": "tfmg:steel_cable_hub",
+          "M": "tfmg:electric_motor[facing=east]",
+          "0": "tfmg:steel_cable_hub"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_motor,tfmg:generator,tfmg:steel_cable_hub,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "line": "aluminium",
+  "order": 12005,
+  "name": {
+    "en_us": "Aluminium: Large electrolysis",
+    "fr_fr": "L'aluminium : Grande électrolyse"
+  },
+  "layers": [
+    [
+      "   ",
+      " F ",
+      "   "
+    ],
+    [
+      "VVV",
+      "VVV",
+      "VVV"
+    ],
+    [
+      "E  ",
+      "   ",
+      "  E"
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "V": "tfmg:steel_chemical_vat",
+    "E": "tfmg:electrode_holder"
+  }
+}

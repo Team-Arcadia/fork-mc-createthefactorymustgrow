@@ -1,0 +1,29 @@
+{
+  "line": "refining",
+  "order": 18006,
+  "name": {
+    "en_us": "Fireboxes and Gases: Flarestack stand",
+    "fr_fr": "Foyers et gaz : Torche sur réservoir"
+  },
+  "layers": [
+    [
+      "A "
+    ],
+    [
+      "U "
+    ],
+    [
+      "Qc"
+    ],
+    [
+      "L "
+    ]
+  ],
+  "key": {
+    "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+    "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+    "Q": "create:mechanical_pump[facing=up,waterlogged=false]",
+    "c": "create:cogwheel[axis=y,waterlogged=false]",
+    "L": "tfmg:flarestack"
+  }
+}

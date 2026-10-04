@@ -1,0 +1,50 @@
+{
+  "name": "Petit four, 2x2",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le plus petit vrai four : $(item)4 blocs de four à coke$(), deux de haut et deux de profondeur, tous tournés dans le même sens."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Il ne cuit pas plus vite qu'un bloc seul, mais c'est une façon peu chère d'apprendre la forme. Le bloc en bas à l'avant est le contrôleur : le coke tombe devant lui.$(br2)Ajoutez une couche dessus et une colonne derrière pour en faire un 3x3 plus tard."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Petit four, 2x2",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " C ",
+            " T ",
+            "   "
+          ],
+          [
+            "   ",
+            " C ",
+            " 0 ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south,controller_type=bottom_on]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,minecraft:coal",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

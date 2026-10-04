@@ -1,0 +1,50 @@
+{
+  "name": "Grand interrupteur",
+  "icon": "tfmg:large_switch",
+  "category": "tfmg:network_control",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Le $(item)grand interrupteur$() tourné vers l'est : le courant entre à l'arrière de la première moitié et sort à l'avant de la seconde."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "L'arbre côté nord de la première moitié actionne son bras : un sens le ferme, l'autre l'ouvre. Poser l'objet met en place les deux moitiés."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Grand interrupteur",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "    L"
+          ],
+          [
+            "S X  ",
+            "GH0BH"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "X": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:large_switch[facing=east,is_main_part=true]",
+          "B": "tfmg:large_switch[facing=east,is_main_part=false]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:large_switch[facing=east,is_main_part=true]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_switch,tfmg:steel_cable_hub,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

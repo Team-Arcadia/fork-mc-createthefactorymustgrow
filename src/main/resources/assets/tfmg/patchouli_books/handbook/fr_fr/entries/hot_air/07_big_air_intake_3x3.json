@@ -1,0 +1,50 @@
+{
+  "name": "Grande prise d'air, 3x3",
+  "icon": "tfmg:air_intake",
+  "category": "tfmg:hot_air",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Neuf prises d'air en un carré plat $(item)3x3$(), toutes tournées dans le même sens, forment un grand ventilateur."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "À 256 RPM il donne $(item)57 mB d'air par tick$(), de quoi alimenter deux fourneaux à air chaud 2x2x5. Un seul bloc a besoin d'un arbre dans sa prise arrière ; le bloc le plus rapide fixe la vitesse de tout le ventilateur."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Grande prise d'air, 3x3",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " AAA ",
+            "     "
+          ],
+          [
+            "     ",
+            " AAA ",
+            "     "
+          ],
+          [
+            "     ",
+            " A0A ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:air_intake[facing=south]",
+          "0": "tfmg:air_intake[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:air_intake,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

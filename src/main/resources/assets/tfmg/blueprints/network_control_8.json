@@ -1,0 +1,26 @@
+{
+  "line": "electricity",
+  "order": 9008,
+  "name": {
+    "en_us": "Network Control: Diode and dial",
+    "fr_fr": "Contrôle du réseau : Diode et potentiomètre"
+  },
+  "layers": [
+    [
+      "S    ",
+      "GHDPH"
+    ],
+    [
+      "     ",
+      "    L"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z]",
+    "G": "tfmg:generator[facing=north]",
+    "H": "tfmg:steel_cable_hub",
+    "D": "tfmg:electric_diode[facing=east]",
+    "P": "tfmg:potentiometer[facing=east]",
+    "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+  }
+}

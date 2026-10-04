@@ -196,6 +196,37 @@
         ]
       },
       "items": ["tfmg:traffic_light", "tfmg:freezer", "tfmg:electrode_holder", "tfmg:copper_electrode", "tfmg:zinc_electrode", "tfmg:graphite_electrode"]
+    },
+    {
+      "title": {
+        "en_us": "Motor drive",
+        "fr_fr": "Entraînement électrique"
+      },
+      "text": {
+        "en_us": [
+          "A **generator** feeds an **electric motor** through a cable hub. The motor takes power on its back face and turns the shaft on its front.",
+          "",
+          "Rotation turned into electricity and back can travel far through cables, where a shaft line could not."
+        ],
+        "fr_fr": [
+          "Un **générateur** alimente un **moteur électrique** par un moyeu de câbles. Le moteur prend le courant par sa face arrière et fait tourner l'arbre devant lui.",
+          "",
+          "La rotation changée en électricité puis de nouveau en rotation peut aller loin par des câbles, là où une ligne d'arbres ne le pourrait pas."
+        ]
+      },
+      "items": ["tfmg:electric_motor", "tfmg:generator", "tfmg:steel_cable_hub", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["SGHMS"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=x]",
+          "G": "tfmg:generator[facing=west]",
+          "H": "tfmg:steel_cable_hub",
+          "M": "tfmg:electric_motor[facing=east]"
+        }
+      },
+      "blueprint_line": "power"
     }
   ]
 }

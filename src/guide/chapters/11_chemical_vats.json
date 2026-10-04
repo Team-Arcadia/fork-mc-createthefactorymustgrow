@@ -378,6 +378,195 @@
         ]
       },
       "items": ["tfmg:butane_bucket", "tfmg:propane_bucket", "tfmg:lpg_bucket", "tfmg:lubrication_oil_bucket", "tfmg:cooling_fluid_bucket", "tfmg:air_bucket", "tfmg:compressor", "tfmg:freezer"]
+    },
+    {
+      "title": {
+        "en_us": "Mixing vat, 2x2",
+        "fr_fr": "Cuve de mélange 2x2"
+      },
+      "text": {
+        "en_us": [
+          "A **2x2** steel vat on a **2x2 firebox**, with an industrial mixer on one of its top blocks and a shaft driving the mixer from above.",
+          "",
+          "The merged firebox burns four blocks of fuel at once and gives heat 8, far more than the heat 2 recipes ask for. Give the mixer a **mixer blade** and at least 30 RPM."
+        ],
+        "fr_fr": [
+          "Une cuve en acier **2x2** sur un **foyer 2x2**, avec un mélangeur industriel sur un de ses blocs du dessus et un arbre qui l'entraîne par le haut.",
+          "",
+          "Le foyer fusionné brûle quatre blocs de carburant à la fois et donne une chaleur de 8, bien plus que la chaleur 2 demandée par les recettes. Donnez au mélangeur une **pale de mélangeur** et au moins 30 RPM."
+        ]
+      },
+      "items": ["tfmg:steel_chemical_vat", "tfmg:firebox", "tfmg:industrial_mixer", "tfmg:mixer_blade"],
+      "schematic": {
+        "layers": [
+          ["FF", "FF"],
+          ["VV", "VV"],
+          ["M ", "  "],
+          ["S ", "  "]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Big mixing vat, 3x3",
+        "fr_fr": "Grande cuve 3x3"
+      },
+      "text": {
+        "en_us": [
+          "A **3x3** steel vat two blocks high: 18 blocks of tank. On a vat this wide the mixer only counts in the **centre** of the top layer.",
+          "",
+          "A full 3x3 firebox under it keeps every recipe heated. Swap the mixer blade for a **centrifuge** to run the neon recipe in the same vat."
+        ],
+        "fr_fr": [
+          "Une cuve en acier **3x3** haute de deux blocs : 18 blocs de réservoir. Sur une cuve aussi large, le mélangeur ne compte qu'au **centre** de la couche du dessus.",
+          "",
+          "Un foyer 3x3 complet en dessous chauffe toutes les recettes. Remplacez la pale par une **centrifugeuse** pour faire la recette du néon dans la même cuve."
+        ]
+      },
+      "items": ["tfmg:steel_chemical_vat", "tfmg:firebox", "tfmg:industrial_mixer", "tfmg:centrifuge"],
+      "schematic": {
+        "layers": [
+          ["FFF", "FFF", "FFF"],
+          ["VVV", "VVV", "VVV"],
+          ["VVV", "VVV", "VVV"],
+          ["   ", " M ", "   "],
+          ["   ", " S ", "   "]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Freezing vat",
+        "fr_fr": "Cuve de congélation"
+      },
+      "text": {
+        "en_us": [
+          "A **freezer** under a cast iron vat. Freezing recipes, such as cooling fluid or splitting LPG into butane and propane, accept every kind of vat.",
+          "",
+          "The freezer takes power on any side and needs **more than 3 A**: above 225 V at its 75 ohm. Each working freezer also takes 1 heat away from the vat."
+        ],
+        "fr_fr": [
+          "Un **congélateur** sous une cuve en fonte. Les recettes de congélation, comme le fluide de refroidissement ou la séparation du GPL en butane et propane, acceptent toutes les cuves.",
+          "",
+          "Le congélateur prend le courant par n'importe quel côté et demande **plus de 3 A** : au-dessus de 225 V pour ses 75 ohms. Chaque congélateur en marche retire aussi 1 de chaleur à la cuve."
+        ]
+      },
+      "items": ["tfmg:freezer", "tfmg:cast_iron_chemical_vat", "tfmg:cooling_fluid_bucket", "tfmg:lpg_bucket"],
+      "schematic": {
+        "layers": [
+          ["Z"],
+          ["W"],
+          ["W"]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Pressure vat",
+        "fr_fr": "Cuve sous pression"
+      },
+      "text": {
+        "en_us": [
+          "A **compressor** on top of a 2x2 steel vat, driven by a horizontal shaft on its front at **120 RPM or more**. It adds 1 pressure; turned the other way it removes 1.",
+          "",
+          "Pressure recipes, such as butane and propane back into LPG, need a **steel** or **fireproof** vat. A cast iron vat never takes them."
+        ],
+        "fr_fr": [
+          "Un **compresseur** sur une cuve en acier 2x2, entraîné par un arbre horizontal sur sa face avant à **120 RPM ou plus**. Il ajoute 1 de pression ; tourné dans l'autre sens, il en retire 1.",
+          "",
+          "Les recettes sous pression, comme le butane et le propane recombinés en GPL, demandent une cuve en **acier** ou **réfractaire**. Une cuve en fonte ne les accepte jamais."
+        ]
+      },
+      "items": [
+        "tfmg:compressor",
+        "tfmg:steel_chemical_vat",
+        "create:shaft",
+        "tfmg:butane_bucket",
+        "tfmg:propane_bucket"
+      ],
+      "schematic": {
+        "layers": [
+          ["  ", "VV", "VV"],
+          ["Q ", "K ", "  "]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Liquid air vat",
+        "fr_fr": "Cuve à air liquide"
+      },
+      "text": {
+        "en_us": [
+          "Liquid air needs both a **freezer** and a **compressor** on the same steel vat. Here the freezer sits under a 2x2x2 vat and the compressor on top, with its shaft on the north side.",
+          "",
+          "Both machines must work: a compressor below 120 RPM or a freezer short of current stops every recipe in the vat."
+        ],
+        "fr_fr": [
+          "L'air liquide demande à la fois un **congélateur** et un **compresseur** sur la même cuve en acier. Ici le congélateur est sous une cuve 2x2x2 et le compresseur dessus, son arbre côté nord.",
+          "",
+          "Les deux machines doivent fonctionner : un compresseur sous 120 RPM ou un congélateur sans assez de courant bloque toutes les recettes de la cuve."
+        ]
+      },
+      "items": ["tfmg:freezer", "tfmg:compressor", "tfmg:steel_chemical_vat", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["  ", "Z ", "  "],
+          ["  ", "VV", "VV"],
+          ["  ", "VV", "VV"],
+          ["Q ", "K ", "  "]
+        ],
+        "key": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]"
+        }
+      }
     }
   ]
 }

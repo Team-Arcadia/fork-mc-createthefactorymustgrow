@@ -1,0 +1,118 @@
+{
+  "name": "Pompe à gros balancier",
+  "icon": "tfmg:large_pumpjack_hammer_part",
+  "category": "tfmg:pumpjack",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La même pompe construite avec les $(item)grandes$() pièces de balancier, tête et connecteur. Elles fonctionnent exactement comme les petites ; le support s'élargit tout seul sous une grande pièce."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Collez tout le balancier avec de la $(item)Super Glue$() avant de l'entraîner : les blocs non collés restent en place."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Pompe à gros balancier",
+      "multiblock": {
+        "pattern": [
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  HRRRRRN  ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "     O     ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "     T  C  ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "        S  ",
+            "  B  T  M  ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  P        ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "  D  0     ",
+            "           ",
+            "           ",
+            "           "
+          ]
+        ],
+        "mapping": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=true]",
+          "H": "tfmg:large_pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:large_pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:large_pumpjack_hammer_connector[facing=east]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_pumpjack_hammer_part,tfmg:large_pumpjack_hammer_head,tfmg:large_pumpjack_hammer_connector,tfmg:pumpjack_hammer,create:super_glue",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

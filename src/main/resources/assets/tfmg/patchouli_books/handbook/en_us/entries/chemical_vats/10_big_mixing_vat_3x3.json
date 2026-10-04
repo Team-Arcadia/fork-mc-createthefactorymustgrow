@@ -1,0 +1,87 @@
+{
+  "name": "Big mixing vat, 3x3",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)3x3$() steel vat two blocks high: 18 blocks of tank. On a vat this wide the mixer only counts in the $(item)centre$() of the top layer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A full 3x3 firebox under it keeps every recipe heated. Swap the mixer blade for a $(item)centrifuge$() to run the neon recipe in the same vat."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Big mixing vat, 3x3",
+      "multiblock": {
+        "pattern": [
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   S   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   M   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  VVV  ",
+            "  VVV  ",
+            "  VVV  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  VVV  ",
+            "  VVV  ",
+            "  VVV  ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "  FFF  ",
+            "  F0F  ",
+            "  FFF  ",
+            "       ",
+            "       "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:firebox,tfmg:industrial_mixer,tfmg:centrifuge",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

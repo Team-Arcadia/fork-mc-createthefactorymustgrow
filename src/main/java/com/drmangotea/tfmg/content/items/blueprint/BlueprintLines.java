@@ -16,7 +16,12 @@ import java.util.List;
  */
 public final class BlueprintLines {
 
-    public static final List<String> LINES = List.of("steel", "chemistry", "oil", "power");
+    /**
+     * In the order of a factory's progression. The ids are also the values of
+     * the item model's line property and of the generated blueprints' "line".
+     */
+    public static final List<String> LINES = List.of("coke", "steel", "aluminium", "chemistry", "oil", "refining",
+            "engines", "power", "electricity");
 
     private BlueprintLines() {
     }

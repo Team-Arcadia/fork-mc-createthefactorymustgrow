@@ -1,0 +1,77 @@
+{
+  "name": "Tall electrolysis",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:aluminium",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)2x2$() steel vat three blocks high: 12 blocks of tank for long runs, on the footprint of the basic build."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The holders go on the $(item)top layer$(), the firebox under the bottom one. Machines only count on the top and the bottom of a vat, never on its sides."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tall electrolysis",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  E   ",
+            "   E  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  VV  ",
+            "  VV  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  VV  ",
+            "  VV  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  VV  ",
+            "  VV  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  F   ",
+            "   0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:electrode_holder,tfmg:firebox",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

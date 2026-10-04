@@ -1,0 +1,71 @@
+{
+  "line": "steel",
+  "order": 5008,
+  "name": {
+    "en_us": "The Blast Furnace: Tallest furnace",
+    "fr_fr": "Le haut fourneau : Le plus haut fourneau"
+  },
+  "layers": [
+    [
+      "SFS",
+      "FFF",
+      "SOS"
+    ],
+    [
+      "SFS",
+      "H F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "   ",
+      " H ",
+      "   "
+    ]
+  ],
+  "key": {
+    "S": "tfmg:fireproof_brick_reinforcement",
+    "F": "tfmg:fireproof_bricks",
+    "O": "tfmg:blast_furnace_output[facing=south]",
+    "H": "tfmg:blast_furnace_hatch"
+  }
+}

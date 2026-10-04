@@ -1,0 +1,22 @@
+{
+  "line": "steel",
+  "order": 4007,
+  "name": {
+    "en_us": "Hot Air: Big air intake, 3x3",
+    "fr_fr": "L'air chaud : Grande prise d'air, 3x3"
+  },
+  "layers": [
+    [
+      "AAA"
+    ],
+    [
+      "AAA"
+    ],
+    [
+      "AAA"
+    ]
+  ],
+  "key": {
+    "A": "tfmg:air_intake[facing=south]"
+  }
+}

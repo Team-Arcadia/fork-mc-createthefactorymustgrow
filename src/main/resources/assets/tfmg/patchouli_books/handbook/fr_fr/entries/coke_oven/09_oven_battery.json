@@ -1,0 +1,59 @@
+{
+  "name": "Batterie de fours",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Trois tranches $(item)3x3$() posées côte à côte forment trois fours séparés, chacun avec son contrôleur, son emplacement et ses réservoirs."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Une batterie cuit trois charbons à la fois, là où un grand four n'en cuit qu'un. Faites passer un tapis avec des entonnoirs devant pour alimenter chaque tranche, et récupérez le coke qui tombe des trois portes."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Batterie de fours",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " CCC ",
+            " CCC ",
+            " TTT ",
+            "     "
+          ],
+          [
+            "     ",
+            " CCC ",
+            " CCC ",
+            " MMM ",
+            "     "
+          ],
+          [
+            "     ",
+            " CCC ",
+            " C0C ",
+            " BBB ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,create:belt_connector,create:andesite_funnel",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

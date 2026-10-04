@@ -1,0 +1,24 @@
+{
+  "line": "coke",
+  "order": 3006,
+  "name": {
+    "en_us": "The Coke Oven: Small oven, 2x2",
+    "fr_fr": "Le four à coke : Petit four, 2x2"
+  },
+  "layers": [
+    [
+      "C",
+      "B"
+    ],
+    [
+      "C",
+      "T"
+    ]
+  ],
+  "key": {
+    "C": "tfmg:coke_oven[facing=south]",
+    "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+    "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+    "T": "tfmg:coke_oven[facing=south,controller_type=top_on]"
+  }
+}

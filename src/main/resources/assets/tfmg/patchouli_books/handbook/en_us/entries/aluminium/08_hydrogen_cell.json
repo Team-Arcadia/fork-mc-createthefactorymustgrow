@@ -1,0 +1,48 @@
+{
+  "name": "Hydrogen cell",
+  "icon": "tfmg:cast_iron_chemical_vat",
+  "category": "tfmg:aluminium",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two electrode holders also split $(item)water$() into $(item)hydrogen$(): 1000 mB of water gives 500 mB of hydrogen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That recipe accepts $(item)any vat$(), cast iron included, and needs $(item)no heat$(). A 2x2 cast iron vat with two copper or zinc electrodes is the cheapest hydrogen maker. Hydrogen is a firebox fuel."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Hydrogen cell",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " E  ",
+            "  E ",
+            "    "
+          ],
+          [
+            "    ",
+            " WW ",
+            " W0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "W": "tfmg:cast_iron_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:cast_iron_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cast_iron_chemical_vat,tfmg:electrode_holder,tfmg:zinc_electrode,minecraft:water_bucket,tfmg:hydrogen_bucket",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

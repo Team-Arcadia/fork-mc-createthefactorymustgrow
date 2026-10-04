@@ -1,0 +1,60 @@
+{
+  "name": "Compact arc furnace",
+  "icon": "tfmg:fireproof_chemical_vat",
+  "category": "tfmg:arc_furnace",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The arc furnace needs $(item)9 vat blocks$() at least, not a 3x3 footprint. A fireproof vat $(item)2x2 and three high$() (12 blocks) works too, with its three holders on the top layer."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It takes less floor space, but every holder still needs $(item)1500 V$() or more with a graphite electrode."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Compact arc furnace",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " EE ",
+            " E  ",
+            "    "
+          ],
+          [
+            "    ",
+            " RR ",
+            " RR ",
+            "    "
+          ],
+          [
+            "    ",
+            " RR ",
+            " RR ",
+            "    "
+          ],
+          [
+            "    ",
+            " RR ",
+            " R0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "R": "tfmg:fireproof_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:fireproof_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_chemical_vat,tfmg:electrode_holder,tfmg:graphite_electrode",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

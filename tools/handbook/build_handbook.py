@@ -381,15 +381,23 @@ def build():
 
 BLUEPRINTS = os.path.join(ROOT, 'src', 'main', 'resources', 'assets', 'tfmg', 'blueprints')
 
+# The assembly lines a Factory Blueprint can carry. Must match
+# BlueprintLines.LINES in the mod.
+LINES = ['coke', 'steel', 'aluminium', 'chemistry', 'oil', 'refining', 'engines', 'power', 'electricity']
+
 # Which Factory Blueprint (assembly line) shows the structures of a chapter.
-# Must match BlueprintLines.LINES in the mod.
+# A page can name another line with "blueprint_line", so one chapter can feed
+# several lines.
 LINE_OF_CHAPTER = {
-    'coke_oven': 'steel', 'hot_air': 'steel', 'blast_furnace': 'steel', 'casting_and_steel': 'steel',
-    'chemical_vats': 'chemistry', 'aluminium': 'chemistry', 'arc_furnace': 'chemistry',
-    'fireboxes_and_gases': 'chemistry', 'winding_and_magnets': 'chemistry',
-    'finding_oil': 'oil', 'pumpjack': 'oil', 'distillation': 'oil',
-    'power': 'power', 'electricity_basics': 'power', 'network_control': 'power',
-    'electric_machines': 'power', 'engines': 'power', 'engine_upgrades': 'power',
+    'coke_oven': 'coke',
+    'hot_air': 'steel', 'blast_furnace': 'steel', 'casting_and_steel': 'steel',
+    'aluminium': 'aluminium',
+    'chemical_vats': 'chemistry', 'arc_furnace': 'chemistry',
+    'finding_oil': 'oil', 'pumpjack': 'oil',
+    'distillation': 'refining', 'fireboxes_and_gases': 'refining',
+    'engines': 'engines', 'engine_upgrades': 'engines',
+    'power': 'power', 'electric_machines': 'power', 'winding_and_magnets': 'power',
+    'electricity_basics': 'electricity', 'network_control': 'electricity',
 }
 
 
@@ -399,6 +407,7 @@ def build_blueprints(chapters):
     shutil.rmtree(BLUEPRINTS, ignore_errors=True)
     os.makedirs(BLUEPRINTS, exist_ok=True)
     count = 0
+    per_line = {}
     for chapter_id, chapter in chapters:
         order = chapter.get('order', 1000)
         for index, page in enumerate(chapter['pages']):
@@ -413,17 +422,21 @@ def build_blueprints(chapters):
                 page_title = localized(page.get('title'), lang)
                 sep = ' : ' if lang == 'fr_fr' else ': '
                 name[lang] = chapter_title + sep + page_title if page_title else chapter_title
-            if cid not in LINE_OF_CHAPTER:
+            line = page.get('blueprint_line') or LINE_OF_CHAPTER.get(cid)
+            if not line:
                 sys.exit('chapter %s has a schematic but no blueprint line' % cid)
+            if line not in LINES:
+                sys.exit('%s: unknown blueprint line %s' % (bid, line))
+            per_line[line] = per_line.get(line, 0) + 1
             write(os.path.join(BLUEPRINTS, bid + '.json'), {
-                'line': LINE_OF_CHAPTER[cid],
+                'line': line,
                 'order': order * 100 + index,
                 'name': name,
                 'layers': [[row.replace('.', ' ') for row in layer] for layer in schematic['layers']],
                 'key': schematic['key'],
             })
             count += 1
-    print('blueprints: %d' % count)
+    print('blueprints: %d, per line: %s' % (count, ', '.join('%s %d' % (l, per_line.get(l, 0)) for l in LINES)))
 
 
 def write(path, data):

@@ -1,0 +1,110 @@
+{
+  "name": "Largest oven, 6x6",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "With the default settings an oven stops growing at $(item)6x6$(): 36 blocks, six high and six deep. It cooks a coal in $(item)20 s$(), three times faster than a single block."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Blocks added above or behind a full 6x6 stay separate small ovens. A server can lower the limit with cokeOvenMaxSize.$(br2)One big oven still cooks one item at a time, so feed it with a funnel and empty its fluids often."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Largest oven, 6x6",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  T  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  0  ",
+            "  C  ",
+            "  B  ",
+            "     ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,create:andesite_funnel",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

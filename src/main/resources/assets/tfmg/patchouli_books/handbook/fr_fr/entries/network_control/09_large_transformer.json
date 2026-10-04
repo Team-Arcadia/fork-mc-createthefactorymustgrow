@@ -1,0 +1,68 @@
+{
+  "name": "Grand transformateur",
+  "icon": "tfmg:large_coil",
+  "category": "tfmg:network_control",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Deux $(item)grandes bobines$() enroulées côte à côte. Clic droit sur celle de l'ouest avec un $(item)bloc d'alliage magnétique laminé$() : elle devient la moitié d'entrée, l'autre la moitié de sortie."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chaque moitié ne se connecte que par $(item)le dessus$(). Un tube à câbles monte de chacune : le générateur sur l'entrée, un moteur sur la sortie."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Grand transformateur",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  S   ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  GM  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  TT  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  C0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:large_coil",
+          "T": "tfmg:cable_tube[axis=y,concretelogged=false]",
+          "G": "tfmg:generator[facing=up]",
+          "M": "tfmg:electric_motor[facing=up]",
+          "S": "create:shaft[axis=y]",
+          "0": "tfmg:large_coil"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:large_coil,tfmg:laminated_magnetic_alloy_block,tfmg:cable_tube,tfmg:electric_motor",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

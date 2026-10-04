@@ -1,0 +1,30 @@
+{
+  "line": "power",
+  "order": 8008,
+  "name": {
+    "en_us": "Making Power: Horizontal generator",
+    "fr_fr": "Produire de l'électricité : Générateur couché"
+  },
+  "layers": [
+    [
+      "X ",
+      "X ",
+      "X "
+    ],
+    [
+      "X ",
+      "RS",
+      "X "
+    ],
+    [
+      "X ",
+      "X ",
+      "X "
+    ]
+  ],
+  "key": {
+    "X": "tfmg:stator",
+    "R": "tfmg:rotor[axis=x]",
+    "S": "create:shaft[axis=x]"
+  }
+}

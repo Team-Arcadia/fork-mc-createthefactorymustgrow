@@ -1,0 +1,66 @@
+{
+  "name": "Cuve de mélange 2x2",
+  "icon": "tfmg:steel_chemical_vat",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une cuve en acier $(item)2x2$() sur un $(item)foyer 2x2$(), avec un mélangeur industriel sur un de ses blocs du dessus et un arbre qui l'entraîne par le haut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le foyer fusionné brûle quatre blocs de carburant à la fois et donne une chaleur de 8, bien plus que la chaleur 2 demandée par les recettes. Donnez au mélangeur une $(item)pale de mélangeur$() et au moins 30 RPM."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Cuve de mélange 2x2",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " S  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            " M  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            " VV ",
+            " VV ",
+            "    "
+          ],
+          [
+            "    ",
+            " FF ",
+            " F0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_chemical_vat,tfmg:firebox,tfmg:industrial_mixer,tfmg:mixer_blade",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

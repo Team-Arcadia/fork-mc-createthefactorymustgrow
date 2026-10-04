@@ -1,0 +1,70 @@
+{
+  "name": "Cuve à air liquide",
+  "icon": "tfmg:freezer",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "L'air liquide demande à la fois un $(item)congélateur$() et un $(item)compresseur$() sur la même cuve en acier. Ici le congélateur est sous une cuve 2x2x2 et le compresseur dessus, son arbre côté nord."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les deux machines doivent fonctionner : un compresseur sous 120 RPM ou un congélateur sans assez de courant bloque toutes les recettes de la cuve."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Cuve à air liquide",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " Q  ",
+            " K  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " VV ",
+            " VV ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " VV ",
+            " VV ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " Z0 ",
+            "    ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:freezer,tfmg:compressor,tfmg:steel_chemical_vat,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

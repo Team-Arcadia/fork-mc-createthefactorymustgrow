@@ -1,0 +1,48 @@
+{
+  "name": "Ligne commandée",
+  "icon": "tfmg:electrical_switch",
+  "category": "tfmg:network_control",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un $(item)interrupteur électrique$() tourné vers l'est entre deux moyeux : le courant entre par l'arrière côté générateur et sort par l'avant vers l'ampoule."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Donnez un signal de redstone à l'interrupteur pour le fermer. Un signal plus faible laisse passer moins de tension, comme un variateur."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Ligne commandée",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            "   L"
+          ],
+          [
+            "S   ",
+            "GH0H"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "W": "tfmg:electrical_switch[facing=east]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:electrical_switch[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electrical_switch,tfmg:steel_cable_hub,minecraft:lever",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

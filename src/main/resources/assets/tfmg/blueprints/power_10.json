@@ -1,0 +1,19 @@
+{
+  "line": "power",
+  "order": 8010,
+  "name": {
+    "en_us": "Making Power: Accumulator bank",
+    "fr_fr": "Produire de l'électricité : Banc d'accumulateurs"
+  },
+  "layers": [
+    [
+      "HAAAAAH",
+      "HAAAAAH",
+      "HAAAAAH"
+    ]
+  ],
+  "key": {
+    "H": "tfmg:steel_cable_hub",
+    "A": "tfmg:accumulator[facing=east]"
+  }
+}

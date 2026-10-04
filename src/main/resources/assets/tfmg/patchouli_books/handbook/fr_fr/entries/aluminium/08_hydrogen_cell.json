@@ -1,0 +1,48 @@
+{
+  "name": "Cellule à hydrogène",
+  "icon": "tfmg:cast_iron_chemical_vat",
+  "category": "tfmg:aluminium",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Deux porte-électrodes décomposent aussi l'$(item)eau$() en $(item)hydrogène$() : 1000 mB d'eau donnent 500 mB d'hydrogène."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Cette recette accepte $(item)toutes les cuves$(), fonte comprise, et ne demande $(item)aucune chaleur$(). Une cuve en fonte 2x2 avec deux électrodes de cuivre ou de zinc est la façon la moins chère de faire de l'hydrogène. L'hydrogène est un combustible de foyer."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Cellule à hydrogène",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " E  ",
+            "  E ",
+            "    "
+          ],
+          [
+            "    ",
+            " WW ",
+            " W0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "W": "tfmg:cast_iron_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "0": "tfmg:cast_iron_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cast_iron_chemical_vat,tfmg:electrode_holder,tfmg:zinc_electrode,minecraft:water_bucket,tfmg:hydrogen_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

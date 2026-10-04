@@ -1,0 +1,22 @@
+{
+  "line": "engines",
+  "order": 20011,
+  "name": {
+    "en_us": "Engines: Turbine engine row",
+    "fr_fr": "Les moteurs : Rangée de turbines"
+  },
+  "layers": [
+    [
+      "F",
+      "E",
+      "B",
+      "S"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "F": "tfmg:turbine_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+    "E": "tfmg:turbine_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+    "B": "tfmg:turbine_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]"
+  }
+}

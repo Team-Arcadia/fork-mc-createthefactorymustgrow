@@ -1,0 +1,112 @@
+{
+  "name": "Light tower, 3 outputs",
+  "icon": "tfmg:steel_distillation_controller",
+  "category": "tfmg:distillation",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The cheapest tower: a $(item)1x1$() steel tank six blocks high, the controller on its side, $(item)three outputs$() with two pipes between them, one firebox under the tank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "It runs the light crude oil recipe (heavy oil, diesel, a little gasoline) and the three-output heavy oil recipe. Three outputs or fewer fit on a tank one block wide."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Light tower, 3 outputs",
+      "multiblock": {
+        "pattern": [
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   O   ",
+            "   U   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   P   ",
+            "   T   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   O   ",
+            "   T   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   P   ",
+            "   T   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   O   ",
+            "   T   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "       ",
+            "   C   ",
+            "   A   ",
+            "       ",
+            "       ",
+            "       "
+          ],
+          [
+            "       ",
+            "       ",
+            "       ",
+            "       ",
+            "   0   ",
+            "       ",
+            "       ",
+            "       "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_distillation_controller,tfmg:steel_distillation_output,tfmg:industrial_pipe,tfmg:steel_fluid_tank,tfmg:firebox",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
+    }
+  ]
+}

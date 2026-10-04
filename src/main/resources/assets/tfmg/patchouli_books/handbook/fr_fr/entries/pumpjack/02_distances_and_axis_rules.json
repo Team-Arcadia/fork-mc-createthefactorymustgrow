@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Le support analyse son balancier toutes les demi-secondes, et la pompe s'assemble toute seule dès que toutes les règles ci-dessous sont respectées. Aucun clic ni signal de redstone n'est nécessaire."
+      "text": "Le support analyse son balancier toutes les demi-secondes, et la pompe s'assemble toute seule dès que le balancier est collé et que toutes les règles ci-dessous sont respectées. Aucun clic ni signal de redstone n'est nécessaire."
     },
     {
       "type": "patchouli:text",

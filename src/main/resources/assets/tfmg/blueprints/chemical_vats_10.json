@@ -1,0 +1,45 @@
+{
+  "line": "chemistry",
+  "order": 11010,
+  "name": {
+    "en_us": "Chemical Vats: Big mixing vat, 3x3",
+    "fr_fr": "Cuves chimiques : Grande cuve 3x3"
+  },
+  "layers": [
+    [
+      "FFF",
+      "FFF",
+      "FFF"
+    ],
+    [
+      "VVV",
+      "VVV",
+      "VVV"
+    ],
+    [
+      "VVV",
+      "VVV",
+      "VVV"
+    ],
+    [
+      "   ",
+      " M ",
+      "   "
+    ],
+    [
+      "   ",
+      " S ",
+      "   "
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "V": "tfmg:steel_chemical_vat",
+    "W": "tfmg:cast_iron_chemical_vat",
+    "M": "tfmg:industrial_mixer",
+    "S": "create:shaft[axis=y]",
+    "Z": "tfmg:freezer",
+    "K": "tfmg:compressor[facing=north]",
+    "Q": "create:shaft[axis=z]"
+  }
+}

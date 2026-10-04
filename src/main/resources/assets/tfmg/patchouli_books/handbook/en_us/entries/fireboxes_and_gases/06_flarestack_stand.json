@@ -1,0 +1,67 @@
+{
+  "name": "Flarestack stand",
+  "icon": "tfmg:flarestack",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)flarestack$() burns what a refinery makes too much of. Here a small steel tank holds the surplus, and a $(item)mechanical pump$() facing up, turned by a cogwheel, feeds the flare on top."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The flare burns up to 100 mB per tick while it holds more than 1000 mB, and needs no exhaust."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Flarestack stand",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  L   ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  Qc  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  U   ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  A0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "Q": "create:mechanical_pump[facing=up,waterlogged=false]",
+          "c": "create:cogwheel[axis=y,waterlogged=false]",
+          "L": "tfmg:flarestack",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:flarestack,tfmg:steel_fluid_tank,create:mechanical_pump,create:cogwheel",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

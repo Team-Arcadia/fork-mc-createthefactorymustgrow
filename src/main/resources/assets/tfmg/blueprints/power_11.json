@@ -1,0 +1,19 @@
+{
+  "line": "power",
+  "order": 8011,
+  "name": {
+    "en_us": "Making Power: FE converter",
+    "fr_fr": "Produire de l'électricité : Convertisseur FE"
+  },
+  "layers": [
+    [
+      "VHGS"
+    ]
+  ],
+  "key": {
+    "V": "tfmg:converter[facing=north,input=true]",
+    "H": "tfmg:steel_cable_hub",
+    "G": "tfmg:generator[facing=east]",
+    "S": "create:shaft[axis=x]"
+  }
+}

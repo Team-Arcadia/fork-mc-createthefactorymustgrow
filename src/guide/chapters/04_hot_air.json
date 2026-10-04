@@ -295,6 +295,96 @@
         ]
       },
       "items": ["tfmg:exhaust", "tfmg:brick_smokestack", "tfmg:concrete_smokestack", "tfmg:metal_smokestack", "tfmg:carbon_dioxide_bucket"]
+    },
+    {
+      "title": {
+        "en_us": "Big air intake, 3x3",
+        "fr_fr": "Grande prise d'air, 3x3"
+      },
+      "text": {
+        "en_us": [
+          "Nine air intakes in one flat **3x3** square, all facing the same way, make one big fan.",
+          "",
+          "At 256 RPM it gives **57 mB of air per tick**, enough for two 2x2x5 blast stoves. Only one block needs a shaft in its back socket; the fastest block sets the speed of the whole fan."
+        ],
+        "fr_fr": [
+          "Neuf prises d'air en un carré plat **3x3**, toutes tournées dans le même sens, forment un grand ventilateur.",
+          "",
+          "À 256 RPM il donne **57 mB d'air par tick**, de quoi alimenter deux fourneaux à air chaud 2x2x5. Un seul bloc a besoin d'un arbre dans sa prise arrière ; le bloc le plus rapide fixe la vitesse de tout le ventilateur."
+        ]
+      },
+      "items": ["tfmg:air_intake", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["AAA"],
+          ["AAA"],
+          ["AAA"]
+        ],
+        "key": {
+          "A": "tfmg:air_intake[facing=south]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Starter stove, 2x2x3",
+        "fr_fr": "Petit fourneau, 2x2x3"
+      },
+      "text": {
+        "en_us": [
+          "Twelve blast stove blocks in a **2x2** column, three high. It makes about **10 mB of hot air per tick**.",
+          "",
+          "That is half of what a working blast furnace burns: enough to try the line, not to run it all day. Add layers on top later, the stove keeps its contents as it grows."
+        ],
+        "fr_fr": [
+          "Douze blocs de fourneau à air chaud en colonne **2x2**, trois de haut. Il produit environ **10 mB d'air chaud par tick**.",
+          "",
+          "C'est la moitié de ce que brûle un haut fourneau en marche : assez pour essayer la chaîne, pas pour la faire tourner toute la journée. Ajoutez des couches plus tard, le fourneau garde son contenu en grandissant."
+        ]
+      },
+      "items": ["tfmg:blast_stove"],
+      "schematic": {
+        "layers": [
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"]
+        ],
+        "key": {
+          "S": "tfmg:blast_stove"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Large stove, 2x2x6",
+        "fr_fr": "Grand fourneau, 2x2x6"
+      },
+      "text": {
+        "en_us": [
+          "**24 blocks**, 2x2 wide and six high: about **40 mB of hot air per tick**, enough for **two** blast furnaces.",
+          "",
+          "It also needs about 40 mB of air per tick, so pair it with a 3x3 air intake, and a pump strong enough to clear its CO2."
+        ],
+        "fr_fr": [
+          "**24 blocs**, 2x2 de large et six de haut : environ **40 mB d'air chaud par tick**, de quoi alimenter **deux** hauts fourneaux.",
+          "",
+          "Il lui faut aussi environ 40 mB d'air par tick : associez-le à une prise d'air 3x3, et à une pompe assez forte pour évacuer son CO2."
+        ]
+      },
+      "items": ["tfmg:blast_stove", "tfmg:air_intake"],
+      "schematic": {
+        "layers": [
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"],
+          ["SS", "SS"]
+        ],
+        "key": {
+          "S": "tfmg:blast_stove"
+        }
+      }
     }
   ]
 }

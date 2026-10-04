@@ -1,0 +1,102 @@
+{
+  "name": "Long-stroke pumpjack",
+  "icon": "tfmg:pumpjack_hammer",
+  "category": "tfmg:pumpjack",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The longest beam: head and connector each $(item)6 blocks$() from the holder, 13 blocks in all."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Pumping grows with the connector distance, so this one pumps $(item)6/5$() of the RPM per tick at the peak: twice the pumpjack of the first page at the same speed."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Long-stroke pumpjack",
+      "multiblock": {
+        "pattern": [
+          [
+            "               ",
+            "               ",
+            " HRRRRRRRRRRRN ",
+            "               ",
+            "               "
+          ],
+          [
+            "               ",
+            "               ",
+            "       O       ",
+            "               ",
+            "               "
+          ],
+          [
+            "               ",
+            "               ",
+            "       T     C ",
+            "               ",
+            "               "
+          ],
+          [
+            "               ",
+            "             S ",
+            " B     T     M ",
+            "               ",
+            "               "
+          ],
+          [
+            "               ",
+            "               ",
+            " P             ",
+            "               ",
+            "               "
+          ],
+          [
+            "               ",
+            "               ",
+            " P             ",
+            "               ",
+            "               "
+          ],
+          [
+            "               ",
+            "               ",
+            " P             ",
+            "               ",
+            "               "
+          ],
+          [
+            "               ",
+            "               ",
+            " D     0       ",
+            "               ",
+            "               "
+          ]
+        ],
+        "mapping": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=false]",
+          "H": "tfmg:pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:pumpjack_hammer_connector[facing=east]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:pumpjack_hammer,tfmg:pumpjack_hammer_part,tfmg:pumpjack_hammer_head,tfmg:pumpjack_hammer_connector,tfmg:pumpjack_crank",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
+    }
+  ]
+}

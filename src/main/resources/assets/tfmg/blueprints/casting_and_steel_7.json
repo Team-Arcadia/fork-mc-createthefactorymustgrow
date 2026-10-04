@@ -1,0 +1,44 @@
+{
+  "line": "steel",
+  "order": 6007,
+  "name": {
+    "en_us": "Casting and Steel Parts: Casting line",
+    "fr_fr": "Coulée et pièces en acier : Ligne de coulée"
+  },
+  "layers": [
+    [
+      "SFS",
+      "FFF",
+      "SOS",
+      "cQ ",
+      " pB",
+      " b "
+    ],
+    [
+      "SFS",
+      "H F",
+      "SFS"
+    ],
+    [
+      "SFS",
+      "F F",
+      "SFS"
+    ],
+    [
+      "   ",
+      " H ",
+      "   "
+    ]
+  ],
+  "key": {
+    "S": "tfmg:fireproof_brick_reinforcement",
+    "F": "tfmg:fireproof_bricks",
+    "O": "tfmg:blast_furnace_output[facing=south]",
+    "H": "tfmg:blast_furnace_hatch",
+    "c": "create:cogwheel[axis=z,waterlogged=false]",
+    "Q": "create:mechanical_pump[facing=south,waterlogged=false]",
+    "p": "create:fluid_pipe[down=false,east=true,north=true,south=true,up=false,waterlogged=false,west=false]",
+    "B": "tfmg:casting_basin[facing=west]",
+    "b": "tfmg:casting_basin[facing=north]"
+  }
+}

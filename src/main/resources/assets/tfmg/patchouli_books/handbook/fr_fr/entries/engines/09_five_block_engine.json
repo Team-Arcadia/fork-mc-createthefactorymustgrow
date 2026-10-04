@@ -1,0 +1,47 @@
+{
+  "name": "Moteur à cinq blocs",
+  "icon": "tfmg:regular_engine",
+  "category": "tfmg:engines",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La plus longue rangée avec les réglages par défaut : $(item)5 moteurs ordinaires$(), tous tournés vers le nord. Un arbre à $(item)chaque bout$() partage la puissance entre deux lignes."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Mettez un arbre dans chaque bloc d'extrémité. Le couple grandit à chaque bloc : cette rangée donne bien plus de capacité de contrainte qu'un bloc seul avec le même carburant."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Moteur à cinq blocs",
+      "multiblock": {
+        "pattern": [
+          [
+            "S",
+            "F",
+            "E",
+            "0",
+            "E",
+            "K",
+            "S"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=north]",
+          "E": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]",
+          "K": "tfmg:regular_engine[engine_state=front,extended=true,facing=north,shaft_facing=south]",
+          "0": "tfmg:regular_engine[engine_state=normal,extended=true,facing=north,shaft_facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:regular_engine,create:shaft,tfmg:engine_cylinder",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

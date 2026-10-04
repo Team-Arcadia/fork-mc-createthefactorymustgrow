@@ -1,0 +1,41 @@
+{
+  "name": "FE converter",
+  "icon": "tfmg:converter",
+  "category": "tfmg:power",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "A $(item)converter$() linked to a generator through a cable hub. It takes the TFMG network on $(item)one side only$(), here its east face; check it with a multimeter."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "In its default mode it charges from the network and pushes Forge Energy into machines of other mods placed against its other faces."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "FE converter",
+      "multiblock": {
+        "pattern": [
+          [
+            "VH0S"
+          ]
+        ],
+        "mapping": {
+          "V": "tfmg:converter[facing=north,input=true]",
+          "H": "tfmg:steel_cable_hub",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]",
+          "0": "tfmg:generator[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:converter,tfmg:generator,tfmg:steel_cable_hub,tfmg:multimeter",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

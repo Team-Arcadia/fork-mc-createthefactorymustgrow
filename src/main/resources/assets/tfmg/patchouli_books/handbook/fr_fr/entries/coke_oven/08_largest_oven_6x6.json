@@ -1,0 +1,110 @@
+{
+  "name": "Four maximal, 6x6",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Avec les réglages par défaut, un four cesse de grandir à $(item)6x6$() : 36 blocs, six de haut et six de profondeur. Il cuit un charbon en $(item)20 s$(), trois fois plus vite qu'un bloc seul."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les blocs ajoutés au-dessus ou derrière un 6x6 complet restent de petits fours séparés. Un serveur peut baisser la limite avec cokeOvenMaxSize.$(br2)Un grand four cuit toujours un objet à la fois : alimentez-le avec un entonnoir et videz souvent ses fluides."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Four maximal, 6x6",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  T  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  M  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  C  ",
+            "  C  ",
+            "  C  ",
+            "  0  ",
+            "  C  ",
+            "  B  ",
+            "     ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,create:andesite_funnel",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

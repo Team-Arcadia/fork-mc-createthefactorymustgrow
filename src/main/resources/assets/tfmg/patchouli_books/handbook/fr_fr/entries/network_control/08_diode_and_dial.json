@@ -1,0 +1,49 @@
+{
+  "name": "Diode et potentiomètre",
+  "icon": "tfmg:electric_diode",
+  "category": "tfmg:network_control",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une $(item)diode$() puis un $(item)potentiomètre$(), tous deux tournés vers l'est. La diode ne laisse passer le courant que dans un sens ; le potentiomètre laisse passer de 0 à 100 % de sa tension d'entrée."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Chaque pont démarre un nouveau réseau : côté générateur, entre les deux, et côté ampoule."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Diode et potentiomètre",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "    L"
+          ],
+          [
+            "S    ",
+            "GH0PH"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "D": "tfmg:electric_diode[facing=east]",
+          "P": "tfmg:potentiometer[facing=east]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:electric_diode[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electric_diode,tfmg:potentiometer,tfmg:steel_cable_hub",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

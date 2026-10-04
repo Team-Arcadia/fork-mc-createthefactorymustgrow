@@ -1,0 +1,182 @@
+{
+  "name": "Tallest furnace",
+  "icon": "tfmg:fireproof_bricks",
+  "category": "tfmg:blast_furnace",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The same ring of bricks and reinforcements, stacked $(item)10 layers$() high, the default maximum. A recipe takes $(item)half$() its base time: 200 ticks for a crushed raw iron."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The output sits in the bottom layer, the hot air hatch in the wall just above it and the gas hatch on top of the shaft. Keep the centre of every layer above the floor empty."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tallest furnace",
+      "multiblock": {
+        "pattern": [
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "     H     ",
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    H F    ",
+            "    SFS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ],
+          [
+            "           ",
+            "           ",
+            "           ",
+            "           ",
+            "    SFS    ",
+            "    F0F    ",
+            "    SOS    ",
+            "           ",
+            "           ",
+            "           ",
+            "           "
+          ]
+        ],
+        "mapping": {
+          "S": "tfmg:fireproof_brick_reinforcement",
+          "F": "tfmg:fireproof_bricks",
+          "O": "tfmg:blast_furnace_output[facing=south]",
+          "H": "tfmg:blast_furnace_hatch",
+          "0": "tfmg:fireproof_bricks"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:fireproof_bricks,tfmg:fireproof_brick_reinforcement,tfmg:blast_furnace_output,tfmg:blast_furnace_hatch",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes.",
+      "title": "Items"
+    }
+  ]
+}

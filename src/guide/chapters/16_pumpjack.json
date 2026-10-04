@@ -116,7 +116,7 @@
       },
       "text": {
         "en_us": [
-          "The holder scans its beam every half second, and the pumpjack assembles by itself as soon as every rule below is met. Nothing needs a click or a redstone signal.",
+          "The holder scans its beam every half second, and the pumpjack assembles by itself as soon as the beam is glued and every rule below is met. Nothing needs a click or a redstone signal.",
           "",
           "- The head and the connector must each be within **6 blocks** of the holder along the beam, with only hammer parts in between.",
           "- Every part, the connector and the crank must face along the **same axis** as the holder. A part turned sideways ends the beam there.",
@@ -129,7 +129,7 @@
           "The **large** hammer parts, head and connector work the same way as the small ones and can replace them for a heavier look. With a large part above it, the holder widens automatically."
         ],
         "fr_fr": [
-          "Le support analyse son balancier toutes les demi-secondes, et la pompe s'assemble toute seule dès que toutes les règles ci-dessous sont respectées. Aucun clic ni signal de redstone n'est nécessaire.",
+          "Le support analyse son balancier toutes les demi-secondes, et la pompe s'assemble toute seule dès que le balancier est collé et que toutes les règles ci-dessous sont respectées. Aucun clic ni signal de redstone n'est nécessaire.",
           "",
           "- La tête et le connecteur doivent chacun être à **6 blocs** au plus du support le long du balancier, avec uniquement des pièces de marteau entre eux.",
           "- Chaque pièce, le connecteur et la manivelle doivent être orientés selon le **même axe** que le support. Une pièce tournée de travers arrête le balancier à cet endroit.",
@@ -223,6 +223,156 @@
         ]
       },
       "items": ["tfmg:pumpjack_base", "tfmg:crude_oil_bucket", "create:mechanical_pump", "create:fluid_pipe", "create:goggles", "tfmg:industrial_pipe"]
+    },
+    {
+      "title": {
+        "en_us": "Large hammer pumpjack",
+        "fr_fr": "Pompe à gros balancier"
+      },
+      "text": {
+        "en_us": [
+          "The same pumpjack built with the **large** hammer parts, head and connector. They work exactly like the small ones; the holder widens by itself under a large part.",
+          "",
+          "Glue the whole beam with **Super Glue** before you drive it: unglued blocks stay behind."
+        ],
+        "fr_fr": [
+          "La même pompe construite avec les **grandes** pièces de balancier, tête et connecteur. Elles fonctionnent exactement comme les petites ; le support s'élargit tout seul sous une grande pièce.",
+          "",
+          "Collez tout le balancier avec de la **Super Glue** avant de l'entraîner : les blocs non collés restent en place."
+        ]
+      },
+      "items": [
+        "tfmg:large_pumpjack_hammer_part",
+        "tfmg:large_pumpjack_hammer_head",
+        "tfmg:large_pumpjack_hammer_connector",
+        "tfmg:pumpjack_hammer",
+        "create:super_glue"
+      ],
+      "schematic": {
+        "layers": [
+          ["       ", "D      ", "       "],
+          ["       ", "P      ", "       "],
+          ["       ", "P      ", "       "],
+          ["       ", "P      ", "       "],
+          ["      S", "B  T  M", "       "],
+          ["       ", "   T  C", "       "],
+          ["       ", "   O   ", "       "],
+          ["       ", "HRRRRRN", "       "]
+        ],
+        "key": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=true]",
+          "H": "tfmg:large_pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:large_pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:large_pumpjack_hammer_connector[facing=east]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Short pumpjack",
+        "fr_fr": "Pompe courte"
+      },
+      "text": {
+        "en_us": [
+          "The smallest pumpjack: a beam of **three blocks**, head, part and connector, with the holder under the middle.",
+          "",
+          "The base sits three blocks under the head and the crank two blocks under the connector. With the connector only one block from the holder, it pumps a third of the pumpjack on the first page at the same speed."
+        ],
+        "fr_fr": [
+          "La plus petite pompe : un balancier de **trois blocs**, tête, pièce et connecteur, avec le support sous le milieu.",
+          "",
+          "La base est trois blocs sous la tête et la manivelle deux blocs sous le connecteur. Avec le connecteur à un seul bloc du support, elle pompe le tiers de la pompe de la première page à la même vitesse."
+        ]
+      },
+      "items": [
+        "tfmg:pumpjack_hammer",
+        "tfmg:pumpjack_hammer_part",
+        "tfmg:pumpjack_crank",
+        "tfmg:pumpjack_base",
+        "tfmg:machine_input"
+      ],
+      "schematic": {
+        "layers": [
+          ["   ", "D  ", "   "],
+          ["   ", "P  ", "   "],
+          ["   ", "P  ", "   "],
+          ["   ", "P  ", "   "],
+          ["  S", "BTM", "   "],
+          ["   ", " TC", "   "],
+          ["   ", " O ", "   "],
+          ["   ", "HRN", "   "]
+        ],
+        "key": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=false]",
+          "H": "tfmg:pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:pumpjack_hammer_connector[facing=east]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Long-stroke pumpjack",
+        "fr_fr": "Pompe à grande course"
+      },
+      "text": {
+        "en_us": [
+          "The longest beam: head and connector each **6 blocks** from the holder, 13 blocks in all.",
+          "",
+          "Pumping grows with the connector distance, so this one pumps **6/5** of the RPM per tick at the peak: twice the pumpjack of the first page at the same speed."
+        ],
+        "fr_fr": [
+          "Le balancier le plus long : tête et connecteur chacun à **6 blocs** du support, 13 blocs en tout.",
+          "",
+          "Le débit grandit avec la distance du connecteur : celle-ci pompe au maximum **6/5** des RPM par tick, deux fois la pompe de la première page à la même vitesse."
+        ]
+      },
+      "items": [
+        "tfmg:pumpjack_hammer",
+        "tfmg:pumpjack_hammer_part",
+        "tfmg:pumpjack_hammer_head",
+        "tfmg:pumpjack_hammer_connector",
+        "tfmg:pumpjack_crank"
+      ],
+      "schematic": {
+        "layers": [
+          ["             ", "D            ", "             "],
+          ["             ", "P            ", "             "],
+          ["             ", "P            ", "             "],
+          ["             ", "P            ", "             "],
+          ["            S", "B     T     M", "             "],
+          ["             ", "      T     C", "             "],
+          ["             ", "      O      ", "             "],
+          ["             ", "HRRRRRRRRRRRN", "             "]
+        ],
+        "key": {
+          "D": "tfmg:oil_deposit",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "B": "tfmg:pumpjack_base",
+          "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "M": "tfmg:machine_input[facing=north]",
+          "C": "tfmg:pumpjack_crank[facing=west]",
+          "O": "tfmg:pumpjack_hammer[facing=west,wide=false]",
+          "H": "tfmg:pumpjack_hammer_head[facing=west]",
+          "R": "tfmg:pumpjack_hammer_part[facing=east]",
+          "N": "tfmg:pumpjack_hammer_connector[facing=east]"
+        }
+      }
     }
   ]
 }

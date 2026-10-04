@@ -1,0 +1,65 @@
+{
+  "name": "Électrolyse câblée",
+  "icon": "tfmg:steel_cable_hub",
+  "category": "tfmg:aluminium",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "La cuve d'électrolyse de base avec sa ligne électrique : un $(item)moyeu de câbles en acier$() sur chaque porte-électrode, un troisième moyeu qui les relie, et un $(item)générateur$() au bout, entraîné par un arbre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les moyeux en acier supportent 250 A : deux porte-électrodes à 30 A chacun ne risquent rien. Des moyeux en cuivre brûleraient à 16 A. À partir d'environ 76 RPM, le générateur donne les 50 V dont ils ont besoin."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Électrolyse câblée",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            " HHGS ",
+            "  H   ",
+            "      "
+          ],
+          [
+            "      ",
+            " E    ",
+            "  E   ",
+            "      "
+          ],
+          [
+            "      ",
+            " VV   ",
+            " VV   ",
+            "      "
+          ],
+          [
+            "      ",
+            " F    ",
+            "   0  ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "E": "tfmg:electrode_holder",
+          "H": "tfmg:steel_cable_hub",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_cable_hub,tfmg:generator,tfmg:electrode_holder,create:shaft",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

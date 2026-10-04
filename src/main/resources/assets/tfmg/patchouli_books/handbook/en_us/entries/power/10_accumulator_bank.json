@@ -1,0 +1,41 @@
+{
+  "name": "Accumulator bank",
+  "icon": "tfmg:accumulator",
+  "category": "tfmg:power",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Three chains of five side by side, joined at both ends by a row of $(item)cable hubs$(). Chains next to each other do not connect through their sides, so the hubs tie them into one bank."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Each chain outputs 60 V and up to 20 A, so the bank delivers three times the current of one chain."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Accumulator bank",
+      "multiblock": {
+        "pattern": [
+          [
+            "HAAAAAH",
+            "HAA0AAH",
+            "HAAAAAH"
+          ]
+        ],
+        "mapping": {
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:accumulator[facing=east]",
+          "0": "tfmg:accumulator[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:accumulator,tfmg:steel_cable_hub",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

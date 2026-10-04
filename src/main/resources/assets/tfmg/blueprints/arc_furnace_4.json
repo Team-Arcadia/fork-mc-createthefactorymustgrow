@@ -1,0 +1,30 @@
+{
+  "line": "chemistry",
+  "order": 13004,
+  "name": {
+    "en_us": "The Arc Furnace: Compact arc furnace",
+    "fr_fr": "Le four à arc : Four à arc compact"
+  },
+  "layers": [
+    [
+      "RR",
+      "RR"
+    ],
+    [
+      "RR",
+      "RR"
+    ],
+    [
+      "RR",
+      "RR"
+    ],
+    [
+      "EE",
+      "E "
+    ]
+  ],
+  "key": {
+    "R": "tfmg:fireproof_chemical_vat",
+    "E": "tfmg:electrode_holder"
+  }
+}

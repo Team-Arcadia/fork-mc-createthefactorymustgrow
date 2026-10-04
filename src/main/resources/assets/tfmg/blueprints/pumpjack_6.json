@@ -1,0 +1,63 @@
+{
+  "line": "oil",
+  "order": 16006,
+  "name": {
+    "en_us": "The Pumpjack: Short pumpjack",
+    "fr_fr": "La pompe à pétrole : Pompe courte"
+  },
+  "layers": [
+    [
+      "   ",
+      "D  ",
+      "   "
+    ],
+    [
+      "   ",
+      "P  ",
+      "   "
+    ],
+    [
+      "   ",
+      "P  ",
+      "   "
+    ],
+    [
+      "   ",
+      "P  ",
+      "   "
+    ],
+    [
+      "  S",
+      "BTM",
+      "   "
+    ],
+    [
+      "   ",
+      " TC",
+      "   "
+    ],
+    [
+      "   ",
+      " O ",
+      "   "
+    ],
+    [
+      "   ",
+      "HRN",
+      "   "
+    ]
+  ],
+  "key": {
+    "D": "tfmg:oil_deposit",
+    "P": "tfmg:industrial_pipe[concretelogged=false]",
+    "B": "tfmg:pumpjack_base",
+    "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "M": "tfmg:machine_input[facing=north]",
+    "C": "tfmg:pumpjack_crank[facing=west]",
+    "O": "tfmg:pumpjack_hammer[facing=west,wide=false]",
+    "H": "tfmg:pumpjack_hammer_head[facing=west]",
+    "R": "tfmg:pumpjack_hammer_part[facing=east]",
+    "N": "tfmg:pumpjack_hammer_connector[facing=east]"
+  }
+}

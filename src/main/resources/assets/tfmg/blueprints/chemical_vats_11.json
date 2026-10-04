@@ -1,0 +1,29 @@
+{
+  "line": "chemistry",
+  "order": 11011,
+  "name": {
+    "en_us": "Chemical Vats: Freezing vat",
+    "fr_fr": "Cuves chimiques : Cuve de congélation"
+  },
+  "layers": [
+    [
+      "Z"
+    ],
+    [
+      "W"
+    ],
+    [
+      "W"
+    ]
+  ],
+  "key": {
+    "F": "tfmg:firebox",
+    "V": "tfmg:steel_chemical_vat",
+    "W": "tfmg:cast_iron_chemical_vat",
+    "M": "tfmg:industrial_mixer",
+    "S": "create:shaft[axis=y]",
+    "Z": "tfmg:freezer",
+    "K": "tfmg:compressor[facing=north]",
+    "Q": "create:shaft[axis=z]"
+  }
+}

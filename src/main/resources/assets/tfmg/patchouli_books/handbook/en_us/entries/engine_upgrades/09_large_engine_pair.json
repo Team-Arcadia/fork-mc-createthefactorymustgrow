@@ -1,0 +1,51 @@
+{
+  "name": "Large engine pair",
+  "icon": "tfmg:simple_large_engine",
+  "category": "tfmg:engine_upgrades",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Two $(item)simple large engines$() on the floor, one block apart, drive one shaft line two blocks above them. Each engine turns its own shaft block into a powered shaft, and their power adds up on the line."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Leave the block between engine and shaft empty: the piston moves there."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Large engine pair",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " SSS ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            " E0E ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "E": "tfmg:simple_large_engine[face=floor,facing=north,waterlogged=false]",
+          "S": "create:shaft[axis=x,waterlogged=false]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:simple_large_engine,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

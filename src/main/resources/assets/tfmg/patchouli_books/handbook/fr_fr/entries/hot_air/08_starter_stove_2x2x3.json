@@ -1,0 +1,53 @@
+{
+  "name": "Petit fourneau, 2x2x3",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Douze blocs de fourneau à air chaud en colonne $(item)2x2$(), trois de haut. Il produit environ $(item)10 mB d'air chaud par tick$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "C'est la moitié de ce que brûle un haut fourneau en marche : assez pour essayer la chaîne, pas pour la faire tourner toute la journée. Ajoutez des couches plus tard, le fourneau garde son contenu en grandissant."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Petit fourneau, 2x2x3",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " SS ",
+            " SS ",
+            "    "
+          ],
+          [
+            "    ",
+            " SS ",
+            " SS ",
+            "    "
+          ],
+          [
+            "    ",
+            " SS ",
+            " S0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "S": "tfmg:blast_stove",
+          "0": "tfmg:blast_stove"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

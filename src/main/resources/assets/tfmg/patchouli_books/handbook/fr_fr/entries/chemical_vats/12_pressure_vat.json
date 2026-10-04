@@ -1,0 +1,56 @@
+{
+  "name": "Cuve sous pression",
+  "icon": "tfmg:compressor",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un $(item)compresseur$() sur une cuve en acier 2x2, entraîné par un arbre horizontal sur sa face avant à $(item)120 RPM ou plus$(). Il ajoute 1 de pression ; tourné dans l'autre sens, il en retire 1."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Les recettes sous pression, comme le butane et le propane recombinés en GPL, demandent une cuve en $(item)acier$() ou $(item)réfractaire$(). Une cuve en fonte ne les accepte jamais."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Cuve sous pression",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " Q  ",
+            " K  ",
+            "    ",
+            "    "
+          ],
+          [
+            "    ",
+            "    ",
+            " V0 ",
+            " VV ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "tfmg:steel_chemical_vat"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:compressor,tfmg:steel_chemical_vat,create:shaft,tfmg:butane_bucket,tfmg:propane_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

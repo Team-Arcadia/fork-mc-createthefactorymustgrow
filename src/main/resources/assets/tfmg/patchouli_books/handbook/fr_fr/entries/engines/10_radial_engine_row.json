@@ -1,0 +1,45 @@
+{
+  "name": "Rangée radiale",
+  "icon": "tfmg:radial_engine",
+  "category": "tfmg:engines",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Trois $(item)moteurs radiaux$() en rangée. Leurs sorties sont intégrées aux $(item)deux bouts$() : pas besoin d'arbre à insérer, raccordez simplement une ligne d'arbres d'un côté ou de l'autre."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Un moteur radial contient 8 cylindres par bloc et a le meilleur rendement des petits moteurs, avec le Boxer."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Rangée radiale",
+      "multiblock": {
+        "pattern": [
+          [
+            "S",
+            "F",
+            "0",
+            "B",
+            "S"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:radial_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+          "E": "tfmg:radial_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+          "B": "tfmg:radial_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]",
+          "0": "tfmg:radial_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:radial_engine,create:shaft,tfmg:engine_cylinder",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "Horizontal generator",
+  "icon": "tfmg:rotor",
+  "category": "tfmg:power",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The rotor can lie on its side: here it turns on the east-west axis and its eight stators stand in a vertical ring around it."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The stators take their shape by themselves whatever the axis. Use this layout to drive the generator straight from a horizontal shaft line."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Horizontal generator",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " X  ",
+            " X  ",
+            " X  ",
+            "    "
+          ],
+          [
+            "    ",
+            " X  ",
+            " RS ",
+            " X  ",
+            "    "
+          ],
+          [
+            "    ",
+            " X  ",
+            " X0 ",
+            " X  ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "X": "tfmg:stator",
+          "R": "tfmg:rotor[axis=x]",
+          "S": "create:shaft[axis=x]",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:rotor,tfmg:stator,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

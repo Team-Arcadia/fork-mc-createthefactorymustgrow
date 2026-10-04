@@ -1,0 +1,44 @@
+{
+  "name": "Turbine engine row",
+  "icon": "tfmg:turbine_engine",
+  "category": "tfmg:engines",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Three $(item)turbine engines$() facing north. A turbine row outputs at its $(item)back$() end only, here on the south side."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Turbines take turbine blades instead of cylinders. They are the fastest and strongest small engines, but burn fuel the fastest too."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Turbine engine row",
+      "multiblock": {
+        "pattern": [
+          [
+            "F",
+            "E",
+            "0",
+            "S"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "F": "tfmg:turbine_engine[engine_state=front,extended=false,facing=north,shaft_facing=north]",
+          "E": "tfmg:turbine_engine[engine_state=normal,extended=false,facing=north,shaft_facing=south]",
+          "B": "tfmg:turbine_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]",
+          "0": "tfmg:turbine_engine[engine_state=back,extended=false,facing=north,shaft_facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:turbine_engine,tfmg:turbine_blade,create:shaft",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

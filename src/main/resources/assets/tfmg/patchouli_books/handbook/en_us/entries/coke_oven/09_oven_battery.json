@@ -1,0 +1,59 @@
+{
+  "name": "Oven battery",
+  "icon": "tfmg:coke_oven",
+  "category": "tfmg:coke_oven",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Three $(item)3x3$() slices built side by side make three separate ovens, each with its own controller, slot and tanks."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "A battery cooks three coals at once, where one big oven cooks only one. Run a belt with funnels along the front to feed every slice, and catch the coke falling out of the three doors."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Oven battery",
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            " CCC ",
+            " CCC ",
+            " TTT ",
+            "     "
+          ],
+          [
+            "     ",
+            " CCC ",
+            " CCC ",
+            " MMM ",
+            "     "
+          ],
+          [
+            "     ",
+            " CCC ",
+            " C0C ",
+            " BBB ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "C": "tfmg:coke_oven[facing=south]",
+          "B": "tfmg:coke_oven[facing=south,controller_type=bottom_on]",
+          "M": "tfmg:coke_oven[facing=south,controller_type=middle_on]",
+          "T": "tfmg:coke_oven[facing=south,controller_type=top_on]",
+          "0": "tfmg:coke_oven[facing=south]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:coke_oven,create:belt_connector,create:andesite_funnel",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

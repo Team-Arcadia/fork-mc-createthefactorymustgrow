@@ -1,0 +1,27 @@
+{
+  "line": "electricity",
+  "order": 9010,
+  "name": {
+    "en_us": "Network Control: Large switch",
+    "fr_fr": "Contrôle du réseau : Grand interrupteur"
+  },
+  "layers": [
+    [
+      "S X  ",
+      "GHABH"
+    ],
+    [
+      "     ",
+      "    L"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z]",
+    "X": "create:shaft[axis=z]",
+    "G": "tfmg:generator[facing=north]",
+    "H": "tfmg:steel_cable_hub",
+    "A": "tfmg:large_switch[facing=east,is_main_part=true]",
+    "B": "tfmg:large_switch[facing=east,is_main_part=false]",
+    "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+  }
+}

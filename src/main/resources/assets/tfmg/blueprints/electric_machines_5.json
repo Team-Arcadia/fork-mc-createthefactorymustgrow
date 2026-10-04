@@ -1,0 +1,19 @@
+{
+  "line": "power",
+  "order": 10005,
+  "name": {
+    "en_us": "Electric Machines: Motor drive",
+    "fr_fr": "Machines électriques : Entraînement électrique"
+  },
+  "layers": [
+    [
+      "SGHMS"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=x]",
+    "G": "tfmg:generator[facing=west]",
+    "H": "tfmg:steel_cable_hub",
+    "M": "tfmg:electric_motor[facing=east]"
+  }
+}

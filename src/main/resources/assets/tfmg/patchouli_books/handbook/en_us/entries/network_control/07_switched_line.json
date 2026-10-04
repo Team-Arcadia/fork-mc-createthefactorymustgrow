@@ -1,0 +1,47 @@
+{
+  "name": "Switched line",
+  "icon": "tfmg:electrical_switch",
+  "category": "tfmg:network_control",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "An $(item)electric switch$() facing east between two hubs: power comes in at its back from the generator side and leaves at its front toward the bulb."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Give the switch a redstone signal to close it. A weaker signal passes less voltage, like a dimmer."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Switched line",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            "   L"
+          ],
+          [
+            "S   ",
+            "GH0H"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=z]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "W": "tfmg:electrical_switch[facing=east]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:electrical_switch[facing=east]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:electrical_switch,tfmg:steel_cable_hub,minecraft:lever",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}

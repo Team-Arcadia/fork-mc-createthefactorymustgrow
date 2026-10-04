@@ -1,0 +1,141 @@
+{
+  "name": "Tour à fioul lourd",
+  "icon": "tfmg:steel_distillation_output",
+  "category": "tfmg:distillation",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Quatre sorties$() sur un réservoir 2x2 haut de huit blocs. Quatre sorties ne correspondent qu'à une recette de $(item)fioul lourd$() : cette tour est le second étage d'une raffinerie, nourrie avec le fioul lourd d'une tour à pétrole brut."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Au-delà de trois sorties, le réservoir doit faire au moins deux blocs de large, et sa hauteur doit valoir deux fois le nombre de sorties."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tour à fioul lourd",
+      "multiblock": {
+        "pattern": [
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   UU   ",
+            "   UU   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   P    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   P    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   P    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   O    ",
+            "   TT   ",
+            "   TT   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "   C    ",
+            "   AA   ",
+            "   AA   ",
+            "        ",
+            "        ",
+            "        "
+          ],
+          [
+            "        ",
+            "        ",
+            "        ",
+            "        ",
+            "   F0   ",
+            "   FF   ",
+            "        ",
+            "        ",
+            "        "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_distillation_output,tfmg:steel_fluid_tank,tfmg:heavy_oil_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

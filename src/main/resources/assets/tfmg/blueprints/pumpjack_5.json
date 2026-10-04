@@ -1,0 +1,63 @@
+{
+  "line": "oil",
+  "order": 16005,
+  "name": {
+    "en_us": "The Pumpjack: Large hammer pumpjack",
+    "fr_fr": "La pompe à pétrole : Pompe à gros balancier"
+  },
+  "layers": [
+    [
+      "       ",
+      "D      ",
+      "       "
+    ],
+    [
+      "       ",
+      "P      ",
+      "       "
+    ],
+    [
+      "       ",
+      "P      ",
+      "       "
+    ],
+    [
+      "       ",
+      "P      ",
+      "       "
+    ],
+    [
+      "      S",
+      "B  T  M",
+      "       "
+    ],
+    [
+      "       ",
+      "   T  C",
+      "       "
+    ],
+    [
+      "       ",
+      "   O   ",
+      "       "
+    ],
+    [
+      "       ",
+      "HRRRRRN",
+      "       "
+    ]
+  ],
+  "key": {
+    "D": "tfmg:oil_deposit",
+    "P": "tfmg:industrial_pipe[concretelogged=false]",
+    "B": "tfmg:pumpjack_base",
+    "T": "tfmg:steel_truss[axis=y,waterlogged=false]",
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "M": "tfmg:machine_input[facing=north]",
+    "C": "tfmg:pumpjack_crank[facing=west]",
+    "O": "tfmg:pumpjack_hammer[facing=west,wide=true]",
+    "H": "tfmg:large_pumpjack_hammer_head[facing=west]",
+    "R": "tfmg:large_pumpjack_hammer_part[facing=east]",
+    "N": "tfmg:large_pumpjack_hammer_connector[facing=east]"
+  }
+}

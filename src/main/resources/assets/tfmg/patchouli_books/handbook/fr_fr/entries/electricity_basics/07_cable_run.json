@@ -1,0 +1,47 @@
+{
+  "name": "Ligne de câbles",
+  "icon": "tfmg:cable_tube",
+  "category": "tfmg:electricity_basics",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un générateur alimente une ampoule à six blocs : un $(item)moyeu de câbles$(), deux $(item)tubes à câbles$() et un $(item)poteau électrique$() en ligne droite, un autre moyeu, et l'ampoule dessus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Tubes et poteaux ne se connectent qu'à leurs deux bouts, dans leur axe. Les moyeux se connectent par toutes leurs faces et peuvent tourner."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Ligne de câbles",
+      "multiblock": {
+        "pattern": [
+          [
+            "      L"
+          ],
+          [
+            "SGH0TPH"
+          ]
+        ],
+        "mapping": {
+          "S": "create:shaft[axis=x]",
+          "G": "tfmg:generator[facing=west]",
+          "H": "tfmg:steel_cable_hub",
+          "T": "tfmg:cable_tube[axis=x,concretelogged=false]",
+          "P": "tfmg:electric_post[axis=x,concretelogged=false]",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]",
+          "0": "tfmg:cable_tube[axis=x,concretelogged=false]"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:cable_tube,tfmg:electric_post,tfmg:steel_cable_hub,tfmg:light_bulb,tfmg:generator",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

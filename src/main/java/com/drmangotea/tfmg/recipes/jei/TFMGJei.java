@@ -144,6 +144,24 @@ public class TFMGJei implements IModPlugin {
     }
 
     @Override
+    public void registerItemSubtypes(ISubtypeRegistration registration) {
+        // One Factory Blueprint per assembly line, told apart by its line.
+        registration.registerSubtypeInterpreter(TFMGItems.FACTORY_BLUEPRINT.get(), new mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter<>() {
+            @Override
+            public Object getSubtypeData(ItemStack stack, mezz.jei.api.ingredients.subtypes.UidContext context) {
+                return com.drmangotea.tfmg.content.items.blueprint.BlueprintLines.lineOf(stack);
+            }
+
+            @Override
+            @SuppressWarnings("removal")
+            public String getLegacyStringSubtypeInfo(ItemStack stack, mezz.jei.api.ingredients.subtypes.UidContext context) {
+                String line = com.drmangotea.tfmg.content.items.blueprint.BlueprintLines.lineOf(stack);
+                return line == null ? "" : line;
+            }
+        });
+    }
+
+    @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         loadCategories();
         registration.addRecipeCategories(allCategories.toArray(IRecipeCategory[]::new));

@@ -245,6 +245,192 @@
         ]
       },
       "items": ["tfmg:converter", "create:wrench", "tfmg:multimeter"]
+    },
+    {
+      "title": {
+        "en_us": "Generator station",
+        "fr_fr": "Poste générateur"
+      },
+      "text": {
+        "en_us": [
+          "The simplest power plant: a **generator** turned by a shaft on its front, a **steel cable hub** behind it and a **light bulb** on the hub.",
+          "",
+          "The generator connects on every face. Above 40 RPM the bulb lights up; at 256 RPM the generator gives 302 V."
+        ],
+        "fr_fr": [
+          "La centrale la plus simple : un **générateur** entraîné par un arbre sur sa face avant, un **moyeu de câbles en acier** derrière lui et une **ampoule** sur le moyeu.",
+          "",
+          "Le générateur se connecte par toutes ses faces. Au-dessus de 40 RPM l'ampoule s'allume ; à 256 RPM le générateur donne 302 V."
+        ]
+      },
+      "items": ["tfmg:generator", "tfmg:steel_cable_hub", "tfmg:light_bulb", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["S", "G", "H"],
+          [" ", " ", "L"]
+        ],
+        "key": {
+          "S": "create:shaft[axis=z,waterlogged=false]",
+          "G": "tfmg:generator[facing=north]",
+          "H": "tfmg:steel_cable_hub",
+          "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Double large generator",
+        "fr_fr": "Générateur double"
+      },
+      "text": {
+        "en_us": [
+          "Two large generators stacked on one vertical axis: two **rotors**, each with its own ring of eight stators. The shaft on top turns both rotors.",
+          "",
+          "Each unit works on its own, and the two rings touch, so their power adds up on one network. The rotors put 480 stress on the line."
+        ],
+        "fr_fr": [
+          "Deux grands générateurs empilés sur un même axe vertical : deux **rotors**, chacun avec son anneau de huit stators. L'arbre du haut fait tourner les deux rotors.",
+          "",
+          "Chaque unité fonctionne seule, et les deux anneaux se touchent : leurs puissances s'additionnent sur un même réseau. Les rotors imposent 480 de contrainte à la ligne."
+        ]
+      },
+      "items": ["tfmg:rotor", "tfmg:stator", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["ABC", "DRE", "FGH"],
+          ["ABC", "DRE", "FGH"],
+          ["   ", " S ", "   "]
+        ],
+        "key": {
+          "A": "tfmg:stator[facing=north,stator_state=corner_horizontal,value=true]",
+          "B": "tfmg:stator[facing=south,stator_state=side,value=true]",
+          "C": "tfmg:stator[facing=east,stator_state=corner_horizontal,value=true]",
+          "D": "tfmg:stator[facing=east,stator_state=side,value=true]",
+          "R": "tfmg:rotor[axis=y]",
+          "E": "tfmg:stator[facing=west,stator_state=side,value=true]",
+          "F": "tfmg:stator[facing=west,stator_state=corner_horizontal,value=true]",
+          "G": "tfmg:stator[facing=north,stator_state=side,value=true]",
+          "H": "tfmg:stator[facing=south,stator_state=corner_horizontal,value=true]",
+          "S": "create:shaft[axis=y]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Horizontal generator",
+        "fr_fr": "Générateur couché"
+      },
+      "text": {
+        "en_us": [
+          "The rotor can lie on its side: here it turns on the east-west axis and its eight stators stand in a vertical ring around it.",
+          "",
+          "The stators take their shape by themselves whatever the axis. Use this layout to drive the generator straight from a horizontal shaft line."
+        ],
+        "fr_fr": [
+          "Le rotor peut être couché : ici il tourne sur l'axe est-ouest et ses huit stators forment un anneau vertical autour de lui.",
+          "",
+          "Les stators prennent leur forme tout seuls, quel que soit l'axe. Ce montage se branche directement sur une ligne d'arbres horizontale."
+        ]
+      },
+      "items": ["tfmg:rotor", "tfmg:stator", "create:shaft"],
+      "schematic": {
+        "layers": [
+          ["X ", "X ", "X "],
+          ["X ", "RS", "X "],
+          ["X ", "X ", "X "]
+        ],
+        "key": {
+          "X": "tfmg:stator",
+          "R": "tfmg:rotor[axis=x]",
+          "S": "create:shaft[axis=x]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Accumulator chain",
+        "fr_fr": "Chaîne d'accumulateurs"
+      },
+      "text": {
+        "en_us": [
+          "Eight **accumulators** end to end, all facing east, between two cable hubs. The chain holds 800,000 and outputs 96 V.",
+          "",
+          "A chain connects only at its two ends, along its axis. Up to 15 blocks join one chain."
+        ],
+        "fr_fr": [
+          "Huit **accumulateurs** bout à bout, tous tournés vers l'est, entre deux moyeux de câbles. La chaîne stocke 800 000 et sort 96 V.",
+          "",
+          "Une chaîne ne se connecte qu'à ses deux bouts, dans son axe. Jusqu'à 15 blocs forment une seule chaîne."
+        ]
+      },
+      "items": ["tfmg:accumulator", "tfmg:steel_cable_hub"],
+      "schematic": {
+        "layers": [
+          ["HAAAAAAAAH"]
+        ],
+        "key": {
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:accumulator[facing=east]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "Accumulator bank",
+        "fr_fr": "Banc d'accumulateurs"
+      },
+      "text": {
+        "en_us": [
+          "Three chains of five side by side, joined at both ends by a row of **cable hubs**. Chains next to each other do not connect through their sides, so the hubs tie them into one bank.",
+          "",
+          "Each chain outputs 60 V and up to 20 A, so the bank delivers three times the current of one chain."
+        ],
+        "fr_fr": [
+          "Trois chaînes de cinq côte à côte, reliées aux deux bouts par une rangée de **moyeux de câbles**. Des chaînes voisines ne se connectent pas par leurs côtés : les moyeux les réunissent en un seul banc.",
+          "",
+          "Chaque chaîne sort 60 V et jusqu'à 20 A : le banc fournit trois fois le courant d'une chaîne."
+        ]
+      },
+      "items": ["tfmg:accumulator", "tfmg:steel_cable_hub"],
+      "schematic": {
+        "layers": [
+          ["HAAAAAH", "HAAAAAH", "HAAAAAH"]
+        ],
+        "key": {
+          "H": "tfmg:steel_cable_hub",
+          "A": "tfmg:accumulator[facing=east]"
+        }
+      }
+    },
+    {
+      "title": {
+        "en_us": "FE converter",
+        "fr_fr": "Convertisseur FE"
+      },
+      "text": {
+        "en_us": [
+          "A **converter** linked to a generator through a cable hub. It takes the TFMG network on **one side only**, here its east face; check it with a multimeter.",
+          "",
+          "In its default mode it charges from the network and pushes Forge Energy into machines of other mods placed against its other faces."
+        ],
+        "fr_fr": [
+          "Un **convertisseur** relié à un générateur par un moyeu de câbles. Il ne prend le réseau TFMG que **d'un seul côté**, ici sa face est ; vérifiez avec un multimètre.",
+          "",
+          "Dans son mode par défaut, il se charge sur le réseau et pousse de l'énergie Forge dans les machines d'autres mods posées contre ses autres faces."
+        ]
+      },
+      "items": ["tfmg:converter", "tfmg:generator", "tfmg:steel_cable_hub", "tfmg:multimeter"],
+      "schematic": {
+        "layers": [
+          ["VHGS"]
+        ],
+        "key": {
+          "V": "tfmg:converter[facing=north,input=true]",
+          "H": "tfmg:steel_cable_hub",
+          "G": "tfmg:generator[facing=east]",
+          "S": "create:shaft[axis=x]"
+        }
+      }
     }
   ]
 }

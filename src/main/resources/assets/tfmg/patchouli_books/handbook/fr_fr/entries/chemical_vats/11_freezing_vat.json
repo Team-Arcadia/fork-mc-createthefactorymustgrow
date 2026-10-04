@@ -1,0 +1,58 @@
+{
+  "name": "Cuve de congélation",
+  "icon": "tfmg:freezer",
+  "category": "tfmg:chemical_vats",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Un $(item)congélateur$() sous une cuve en fonte. Les recettes de congélation, comme le fluide de refroidissement ou la séparation du GPL en butane et propane, acceptent toutes les cuves."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Le congélateur prend le courant par n'importe quel côté et demande $(item)plus de 3 A$() : au-dessus de 225 V pour ses 75 ohms. Chaque congélateur en marche retire aussi 1 de chaleur à la cuve."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Cuve de congélation",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ",
+            " W ",
+            "   "
+          ],
+          [
+            "   ",
+            " W ",
+            "   "
+          ],
+          [
+            "   ",
+            " 0 ",
+            "   "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "V": "tfmg:steel_chemical_vat",
+          "W": "tfmg:cast_iron_chemical_vat",
+          "M": "tfmg:industrial_mixer",
+          "S": "create:shaft[axis=y]",
+          "Z": "tfmg:freezer",
+          "K": "tfmg:compressor[facing=north]",
+          "Q": "create:shaft[axis=z]",
+          "0": "tfmg:freezer"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:freezer,tfmg:cast_iron_chemical_vat,tfmg:cooling_fluid_bucket,tfmg:lpg_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

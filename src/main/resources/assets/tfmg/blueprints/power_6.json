@@ -1,0 +1,26 @@
+{
+  "line": "power",
+  "order": 8006,
+  "name": {
+    "en_us": "Making Power: Generator station",
+    "fr_fr": "Produire de l'électricité : Poste générateur"
+  },
+  "layers": [
+    [
+      "S",
+      "G",
+      "H"
+    ],
+    [
+      " ",
+      " ",
+      "L"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z,waterlogged=false]",
+    "G": "tfmg:generator[facing=north]",
+    "H": "tfmg:steel_cable_hub",
+    "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+  }
+}

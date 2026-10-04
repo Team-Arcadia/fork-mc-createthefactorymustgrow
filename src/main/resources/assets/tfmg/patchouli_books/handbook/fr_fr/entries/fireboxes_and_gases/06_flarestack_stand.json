@@ -1,0 +1,67 @@
+{
+  "name": "Torche sur réservoir",
+  "icon": "tfmg:flarestack",
+  "category": "tfmg:fireboxes_and_gases",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Une $(item)torche d'évacuation$() brûle ce qu'une raffinerie produit en trop. Ici un petit réservoir en acier garde le surplus, et une $(item)pompe mécanique$() tournée vers le haut, entraînée par une roue dentée, alimente la torche au-dessus."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "La torche brûle jusqu'à 100 mB par tick tant qu'elle contient plus de 1000 mB, et n'a besoin d'aucun échappement."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Torche sur réservoir",
+      "multiblock": {
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  L   ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  Qc  ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  U   ",
+            "      ",
+            "      "
+          ],
+          [
+            "      ",
+            "      ",
+            "  A0  ",
+            "      ",
+            "      "
+          ]
+        ],
+        "mapping": {
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "Q": "create:mechanical_pump[facing=up,waterlogged=false]",
+          "c": "create:cogwheel[axis=y,waterlogged=false]",
+          "L": "tfmg:flarestack",
+          "0": "minecraft:air"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:flarestack,tfmg:steel_fluid_tank,create:mechanical_pump,create:cogwheel",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "line": "electricity",
+  "order": 9007,
+  "name": {
+    "en_us": "Network Control: Switched line",
+    "fr_fr": "Contrôle du réseau : Ligne commandée"
+  },
+  "layers": [
+    [
+      "S   ",
+      "GHWH"
+    ],
+    [
+      "    ",
+      "   L"
+    ]
+  ],
+  "key": {
+    "S": "create:shaft[axis=z]",
+    "G": "tfmg:generator[facing=north]",
+    "H": "tfmg:steel_cable_hub",
+    "W": "tfmg:electrical_switch[facing=east]",
+    "L": "tfmg:light_bulb[facing=up,level=0,waterlogged=false]"
+  }
+}

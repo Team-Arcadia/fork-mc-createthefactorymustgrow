@@ -1,0 +1,185 @@
+{
+  "name": "Tour à cinq sorties",
+  "icon": "tfmg:steel_distillation_output",
+  "category": "tfmg:distillation",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)Cinq sorties$() sur un réservoir 2x2 haut de dix blocs. Avec du pétrole brut, elle donne tout ce que donne la tour à six sorties sauf le naphta ; avec du fioul lourd, elle fait la recette à cinq sorties."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ajouter ou retirer la sortie du haut, c'est ainsi qu'on change la recette d'une tour."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Tour à cinq sorties",
+      "multiblock": {
+        "pattern": [
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    UU    ",
+            "    UU    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    P     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    O     ",
+            "    TT    ",
+            "    TT    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    C     ",
+            "    AA    ",
+            "    AA    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ],
+          [
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "          ",
+            "    F0    ",
+            "    FF    ",
+            "          ",
+            "          ",
+            "          ",
+            "          "
+          ]
+        ],
+        "mapping": {
+          "F": "tfmg:firebox",
+          "C": "tfmg:steel_distillation_controller[facing=north]",
+          "O": "tfmg:steel_distillation_output",
+          "P": "tfmg:industrial_pipe[concretelogged=false]",
+          "A": "tfmg:steel_fluid_tank[bottom=true,shape=plain,top=false]",
+          "T": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=false]",
+          "U": "tfmg:steel_fluid_tank[bottom=false,shape=plain,top=true]",
+          "0": "tfmg:firebox"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:steel_distillation_output,tfmg:steel_fluid_tank,tfmg:crude_oil_bucket",
+      "link_recipe": false,
+      "text": "Les objets dont parle cette page. Survolez-les pour les détails ; JEI montre leurs recettes.",
+      "title": "Objets"
+    }
+  ]
+}

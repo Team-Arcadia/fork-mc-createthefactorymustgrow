@@ -1,0 +1,53 @@
+{
+  "name": "Starter stove, 2x2x3",
+  "icon": "tfmg:blast_stove",
+  "category": "tfmg:hot_air",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Twelve blast stove blocks in a $(item)2x2$() column, three high. It makes about $(item)10 mB of hot air per tick$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "That is half of what a working blast furnace burns: enough to try the line, not to run it all day. Add layers on top later, the stove keeps its contents as it grows."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Starter stove, 2x2x3",
+      "multiblock": {
+        "pattern": [
+          [
+            "    ",
+            " SS ",
+            " SS ",
+            "    "
+          ],
+          [
+            "    ",
+            " SS ",
+            " SS ",
+            "    "
+          ],
+          [
+            "    ",
+            " SS ",
+            " S0 ",
+            "    "
+          ]
+        ],
+        "mapping": {
+          "S": "tfmg:blast_stove",
+          "0": "tfmg:blast_stove"
+        }
+      },
+      "enable_visualize": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tfmg:blast_stove",
+      "link_recipe": false,
+      "text": "The items this page talks about. Hover for details; JEI shows their recipes."
+    }
+  ]
+}
