@@ -18,4 +18,13 @@ public interface IInspectable {
     default boolean wantsRotationCheck() {
         return true;
     }
+
+    /**
+     * False for blocks that sit on an electrical network without needing
+     * voltage to work (a fuel engine is wired only to carry a generator
+     * upgrade), so the generic "no voltage" check does not flag them.
+     */
+    default boolean wantsElectricCheck() {
+        return true;
+    }
 }

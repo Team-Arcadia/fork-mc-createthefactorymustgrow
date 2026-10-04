@@ -205,3 +205,45 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** `NeonTubeBlockEntity.tick` set its light from the voltage alone, without the `canWork()` check the light bulb has.
 **Fix:** The neon tube lights only when `canWork()`.
 **Prevention:** Every consumer must gate its effect on `canWork()`, not on the voltage alone.
+
+## [2026-10-04 11:00] - Every healthy fuel engine reported "no voltage" in the Factory Inspector
+**Context:** New functional engine game tests assert that the inspector shows no problem line on a running engine.
+**Error:** Regular, radial, turbine and large engines all reported `No voltage reaches this block` with advice to wire a generator, while turning at full speed.
+**Root cause:** Engines extend `KineticElectricBlockEntity` only so the generator upgrade can make them a voltage source. `FactoryInspectorItem` runs `GenericInspections.electric` on every `IElectric`, which flags zero voltage on anything that is not a generator.
+**Fix:** `IInspectable.wantsElectricCheck()` (default true), honoured by the inspector; small engines answer true only with a generator upgrade mounted, the large engine always false.
+**Prevention:** A block that implements `IElectric` for an optional feature must opt out of the generic electric check, the same way `wantsRotationCheck` lets non-shaft kinetic blocks opt out of "not turning".
+
+## [2026-10-04 11:05] - Radial and turbine engines claimed to have no output shaft
+**Context:** Same engine game tests, radial and turbine engines.
+**Error:** Both engines turned their shaft at the expected speed, yet the inspector reported `engine.no_shaft`, the goggles printed "no shaft", and `outputStress()` (goggle stress capacity) read 0.
+**Root cause:** `AbstractSmallEngineBlockEntity.hasOutputShaft` only recognised the `SHAFT` engine state, which only regular engines reach by having a shaft inserted. Radial (`SINGLE`/`SHAFT` ends) and turbine (`SINGLE`/`BACK`) engines export rotation through built-in shaft faces declared by their block's `hasShaftTowards`.
+**Fix:** `hasOutputShaft` now asks the engine block's own `hasShaftTowards` for each horizontal face and counts a face only if it does not lead into another engine block, which keeps the old answer for regular engines.
+**Prevention:** Derive "does this export rotation" from the block's kinetic contract (`hasShaftTowards`), never from one subclass's blockstate value.
+
+## [2026-10-04 18:35] - A firebox placed lit heated forever without fuel
+**Context:** New game test building the handbook distillation blueprint (fireboxes stored as `blaze=fading`) with crude oil but no firebox fuel.
+**Error:** After 200 ticks every firebox still showed a flame and the steel tank kept heat level 8, so the tower would distil on empty fireboxes.
+**Root cause:** Heat is read from the firebox blockstate (`TFMGBoilerHeaters`), but `FireboxBlockEntity.lazyTick` only wrote `HEAT_LEVEL = NONE` when its `running` flag had been true. A firebox whose blockstate arrived lit (blueprint, schematic, `/setblock`, a moved structure) never had `running` set, so the "stop burning" branch never touched it.
+**Fix:** When the firebox cannot burn, the blockstate is put out whenever it is not already `NONE`, whatever `running` says.
+**Prevention:** When a blockstate is the source of truth for other machines, reconcile it against the real condition on every update; never gate the write on a flag that only tracks the block's own past writes.
+
+## [2026-10-04 18:40] - Electric pump powered after its pipes were laid never pumped
+**Context:** New game test: tank, pipe, electric pump, pipe, tank, then a creative generator placed next to the pump.
+**Error:** The pump read 500 V, 2500 W and pressure 1000 in the inspector, yet moved 0 mB.
+**Root cause:** It extends Create's `PumpBlockEntity`, which pushes pressure into the pipe network only when its speed or the pipes change (`updatePressureChange` / `updatePipesOnSide`). The electric pump has no speed, so the pressure it computed while unpowered (0) stayed in the pipes when power arrived, and after any later voltage change.
+**Fix:** `lazyTick` recomputes the pressure from the power state and calls `updatePressureChange()` when it differs from the last value pushed.
+**Prevention:** A Create pump subclass driven by anything but rotation must trigger the pressure redistribution itself whenever its driving input changes.
+
+## [2026-10-04 18:43] - An engine refuelled by pipe after running dry never restarted
+**Context:** New end-to-end game test: distillation tower diesel piped into a regular engine that already had its redstone signal.
+**Error:** The engine held 4000 mB of diesel, the inspector found nothing wrong, and its shaft stayed at 0 RPM.
+**Root cause:** Emptying the fuel tank set `rpm = 0` through `tankUpdated`, but nothing recomputed the rotation when fuel arrived again; only a redstone signal change or an item interaction called `updateRotation`. Any engine switched on before its first fuel, or that ran out and was refilled by a pipe or the piping upgrade, stayed still until the lever was toggled.
+**Fix:** `AbstractEngineBlockEntity.tankUpdated` calls `updateRotation` when the fuel tank goes from empty to holding fuel.
+**Prevention:** Every state that zeroes a machine's output (empty tank, missing input) needs the matching transition back; test machines in the order a pipe feeds them, not only in the order a player clicks.
+
+## [2026-10-04 18:45] - The inspector told players a complete pumpjack assembles on its own
+**Context:** New pumpjack game tests built from the handbook blueprint.
+**Error:** With beam, crank, base and deposit all found and the crank turning, the hammer never moved, and the inspector advised "Complete the beam, the crank and the base: it assembles on its own once all three are found".
+**Root cause:** The hammer is a Create bearing contraption, which only lifts blocks super-glued to the block above the holder. The ponder scene says so; the blueprint and the inspector did not, and the inspector had no line for an unglued beam.
+**Fix:** When everything is found but the hammer is idle, the inspector walks the beam from the holder to the head and to the connector with `SuperGlueEntity.isGlued` and reports the first loose block (`pumpjack.not_glued`, English and French). The game tests glue the beam as players must.
+**Prevention:** Inspector advice for a contraption-based machine must cover Super Glue; when a "does nothing" report is reproduced, check the contraption's block list before suspecting the machine.

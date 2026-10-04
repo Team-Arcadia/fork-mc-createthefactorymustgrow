@@ -2040,6 +2040,8 @@
   "tfmg.inspector.pumpjack.no_deposit.fix": "Use a Surface Scanner to find a deposit, then build the pumpjack right above it.",
   "tfmg.inspector.pumpjack.not_assembled": "Not assembled: the hammer does not move",
   "tfmg.inspector.pumpjack.not_assembled.fix": "Complete the beam, the crank and the base: it assembles on its own once all three are found.",
+  "tfmg.inspector.pumpjack.not_glued": "The beam is not glued together (loose at %s %s %s)",
+  "tfmg.inspector.pumpjack.not_glued.fix": "Apply Super Glue over the whole beam, from the head to the connector: the holder only lifts what is glued to it.",
   "tfmg.inspector.pumpjack.part_of": "Part of the pumpjack whose hammer holder is at %s %s %s:",
   "tfmg.inspector.pumpjack.peak_rate": "Pumps up to %s mB of Crude Oil per tick, pulsing with the stroke",
   "tfmg.inspector.pumpjack.pipe_gap": "The pipe column stops at %s %s %s (%s) before reaching an oil deposit",

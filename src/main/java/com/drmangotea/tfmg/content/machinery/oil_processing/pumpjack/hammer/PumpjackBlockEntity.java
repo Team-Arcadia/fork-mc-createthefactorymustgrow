@@ -617,7 +617,17 @@ public class PumpjackBlockEntity extends GeneratingKineticBlockEntity
             if (lastException != null)
                 report.problem("pumpjack.assembly_error", lastException.component);
             report.problem("pumpjack.not_assembled");
-            report.fix("pumpjack.not_assembled.fix");
+            // Everything found and still idle: the hammer only lifts what
+            // Super Glue holds to the block above the holder, and the advice
+            // below ("assembles once all three are found") did not say so.
+            BlockPos loose = headPosition != null && connectorPosition != null && liveCrank != null && liveBase != null
+                    ? firstUngluedBeamBlock() : null;
+            if (loose != null) {
+                report.problem("pumpjack.not_glued", loose.getX(), loose.getY(), loose.getZ());
+                report.fix("pumpjack.not_glued.fix");
+            } else {
+                report.fix("pumpjack.not_assembled.fix");
+            }
         }
 
         if (liveCrank != null && connectorDistance > 0) {
@@ -626,6 +636,24 @@ public class PumpjackBlockEntity extends GeneratingKineticBlockEntity
         }
         if (liveBase != null)
             liveBase.inspectWell(report);
+    }
+
+    /** The first beam block not glued to its neighbour on the way from the holder to the head or the connector. */
+    private BlockPos firstUngluedBeamBlock() {
+        java.util.Set<com.simibubi.create.content.contraptions.glue.SuperGlueEntity> cache = new java.util.HashSet<>();
+        BlockPos anchor = getBlockPos().above();
+        for (BlockPos end : new BlockPos[]{headPosition, connectorPosition}) {
+            if (end.equals(anchor))
+                continue;
+            Direction step = Direction.getNearest(end.getX() - anchor.getX(), 0, end.getZ() - anchor.getZ());
+            for (BlockPos pos = anchor; !pos.equals(end); pos = pos.relative(step)) {
+                if (!level.isLoaded(pos.relative(step)))
+                    return null;
+                if (!com.simibubi.create.content.contraptions.glue.SuperGlueEntity.isGlued(level, pos, step, cache))
+                    return pos.relative(step);
+            }
+        }
+        return null;
     }
 
     public void setAngle(float forcedAngle) {

@@ -4,10 +4,6 @@ All notable changes to Create: The Factory Must Grow are documented here.
 
 ---
 
-## [Unreleased]
-
----
-
 ## [1.3.0] - 2026-10-04
 
 A release about trust and about help. Trust: a game test suite now places,
@@ -33,8 +29,9 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Machines say what is wrong** - Red goggle lines on the blast furnace (incomplete structure, no fuel, no flux, no hatch, no hot air, full output), coke oven (full CO2 or creosote tank), firebox (wrong fuel, not enough fuel, full exhaust), large engine (no shaft, no air, wrong fuel, full exhaust), chemical vat (a machine not working, no matching recipe, not hot enough, not enough pressure) and regular engines (no redstone signal).
 - **JEI information pages** for the blast furnace, blast stove, air intake, coke oven, casting basin, arc furnace, chemical vats, distillation tower, firebox, surface scanner, large generator and coal coke dust. The vat category now shows the minimum vat size and the allowed vat types.
 - **No more dead end on magnets and aluminium** - The voltmeter needs a magnet, the polarizer needs the voltmeter, and magnets only came out of the polarizer, so survival could never make the first one. A hand recipe (magnetic alloy ingot, redstone blocks, compass) breaks the loop. Likewise the steel mechanism every generator needs takes aluminium, which only electrolysis made: a superheated mixer recipe (4 bauxite powder and 1 coal coke dust) gives the first ingots. The polarizer and electrolysis stay the efficient routes.
+- **The Factory Inspector says when a pumpjack beam still needs Super Glue.**
 - **The casting basin gives its result by hand** - Right-click with an empty hand to take the ingot.
-- **Game tests** - One test per block (place, tick, save and reload, client sync, break), data checks (loot tables, recipe ingredients, item names, the handbook) and machine tests (vat, arc furnace recovery, casting, blast furnace hatch, firebox, electric motor). Run them with `gradlew runGameTestServer`, `runClientGameTest` and `runServerGameTest`. Test code is not shipped in the jar.
+- **Game tests** - One test per block (place, tick, save and reload, client sync, break), data checks (loot tables, recipe ingredients, item names, the handbook) and functional tests where every machine runs for real: the surface scanner, both pumpjacks, one distillation tower per recipe, every engine fuel, layout and upgrade, the turbine, radial and large engines, the engine controller and gearbox, fireboxes, flarestacks, gas lamps, exhausts, smokestacks, TFMG pipes and tanks, the concrete hose, every generator, wire, cable, transformer, accumulator, converter, motor, pump, light, meter and display source, and two full chains (pumpjack to tower to engine to press, and generator to transformers to accumulators to a millstone). Run them with `gradlew runGameTestServer`, `runClientGameTest` and `runServerGameTest`. Test code is not shipped in the jar.
 
 ### Fixed
 
@@ -61,6 +58,15 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Stale client state** - Removed engine upgrades, transformer coils and controller links no longer linger on other players' screens; an unknown gear value no longer breaks a chunk load.
 - **Electric diode model** - It pointed at a model that does not exist and rendered as the missing model.
 - **JEI** - Create's own registrations were registered a second time (duplicate entries, an error on every load); the blast furnace page hid the slag of recipes without gas; datapack recipes with one fluid no longer break the hot blast and winding pages.
+- **A charging accumulator counted as a power source** - The network added its output while it was being charged, so a 1320 W generator ran 1461 W. It now supplies nothing while charging.
+- **Breaking a block of a charged accumulator bank lost charge** - A full 5-block bank kept 40% of its charge. The charge is now shared between the remaining banks and the dropped item.
+- **A converter next to an accumulator** traded energy back and forth and never filled it; the FE side now works one way per mode.
+- **The electric pump** now pumps when its power arrives after its pipes were laid.
+- **The large transformer** input part showed a 1.00 ratio, and **neon tubes** kept shining on a network without enough power.
+- **Fuel engines no longer report "no voltage"** in the Factory Inspector unless a generator is mounted on them.
+- **Radial and turbine engines** no longer claim to have no output shaft, and show their real stress capacity.
+- **A firebox placed already lit** (blueprint, schematic) now goes out when it has no fuel instead of heating forever.
+- **An engine refuelled by pipe** after running dry, or switched on before its first fuel, now restarts on its own.
 - **steel_from_dust** only loads when another mod provides iron dust, instead of showing an empty tag.
 
 ### Performance
@@ -77,8 +83,9 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Les machines disent ce qui ne va pas** - Lignes rouges aux lunettes sur le haut fourneau (structure incomplete, pas de combustible, pas de fondant, pas de trappe, pas d'air chaud, sortie pleine), le four a coke (reservoir de CO2 ou de creosote plein), le foyer (mauvais carburant, carburant insuffisant, echappement plein), le grand moteur (pas d'arbre, pas d'air, mauvais carburant, echappement plein), la cuve chimique (une machine en panne, aucune recette, pas assez chaud, pas assez de pression) et les moteurs classiques (pas de signal redstone).
 - **Pages d'information JEI** pour le haut fourneau, le fourneau a air chaud, la prise d'air, le four a coke, le bassin de coulee, le four a arc, les cuves chimiques, la tour de distillation, le foyer, le scanner de surface, le grand generateur et la poussiere de coke. La categorie des cuves affiche la taille minimale et les types de cuve autorises.
 - **Plus d'impasse sur les aimants et l'aluminium** - Le voltmetre demande un aimant, le polariseur demande le voltmetre, et les aimants ne sortaient que du polariseur : la survie ne pouvait jamais fabriquer le premier. Une recette a la main (lingot d'alliage magnetique, blocs de redstone, boussole) casse la boucle. De meme, le mecanisme en acier qu'exige tout generateur demande de l'aluminium, que seule l'electrolyse produisait : une recette de melangeur surchauffe (4 poudres de bauxite et 1 poussiere de coke) donne les premiers lingots. Le polariseur et l'electrolyse restent les voies rentables.
+- **L'Inspecteur d'usine signale une poutre de chevalet de pompage pas encore collee a la Super Glue.**
 - **Le bassin de coulee se vide a la main** - Clic droit main vide pour prendre le lingot.
-- **Tests en jeu** - Un test par bloc (pose, fonctionnement, sauvegarde et rechargement, synchronisation client, casse), des verifications de donnees (tables de butin, ingredients des recettes, noms des objets, le manuel) et des tests de machines (cuve, recuperation du four a arc, coulee, trappe du haut fourneau, foyer, moteur electrique). A lancer avec `gradlew runGameTestServer`, `runClientGameTest` et `runServerGameTest`. Le code de test n'est pas livre dans le jar.
+- **Tests en jeu** - Un test par bloc (pose, fonctionnement, sauvegarde et rechargement, synchronisation client, casse), des verifications de donnees (tables de butin, ingredients des recettes, noms des objets, le manuel) et des tests fonctionnels ou chaque machine tourne pour de vrai : le scanner de surface, les deux chevalets de pompage, une tour de distillation par recette, chaque carburant, disposition et amelioration de moteur, les moteurs a turbine, radial et grand moteur, le controleur et la boite de vitesses, foyers, torcheres, lampes a gaz, echappements, cheminees, tuyaux et reservoirs TFMG, le tuyau a beton, chaque generateur, fil, cable, transformateur, accumulateur, convertisseur, moteur, pompe, lampe, instrument de mesure et source d'affichage, et deux chaines completes (chevalet vers tour vers moteur vers presse, et generateur vers transformateurs vers accumulateurs vers une meule). A lancer avec `gradlew runGameTestServer`, `runClientGameTest` et `runServerGameTest`. Le code de test n'est pas livre dans le jar.
 
 ### Correctifs
 
@@ -105,6 +112,15 @@ pages JEI expliquent desormais ce qu'il fallait jusqu'ici lire dans le code.
 - **Etat client perime** - Ameliorations de moteur retirees, bobines de transformateur et liaisons de controleur ne restent plus affichees chez les autres joueurs ; une valeur de vitesse inconnue ne casse plus le chargement d'un chunk.
 - **Modele de la diode electrique** - Il pointait vers un modele inexistant et s'affichait en modele manquant.
 - **JEI** - Les enregistrements propres a Create etaient faits une seconde fois (doublons, une erreur a chaque chargement) ; la page du haut fourneau cachait le laitier des recettes sans gaz ; les recettes de datapack a un seul fluide ne cassent plus les pages d'air chaud et de bobinage.
+- **Un accumulateur en charge comptait comme une source d'energie** - Le reseau ajoutait sa sortie pendant qu'il se chargeait : un generateur de 1320 W en fournissait 1461. Il ne fournit plus rien pendant la charge.
+- **Casser un bloc d'un banc d'accumulateurs charge perdait de la charge** - Un banc plein de 5 blocs en gardait 40 %. La charge est maintenant partagee entre les bancs restants et l'objet lache.
+- **Un convertisseur a cote d'un accumulateur** se renvoyait l'energie sans jamais le remplir ; le cote FE fonctionne maintenant dans un seul sens selon le mode.
+- **La pompe electrique** pompe desormais quand le courant arrive apres la pose des tuyaux.
+- **La partie d'entree du grand transformateur** affichait un rapport de 1,00, et **les tubes neon** restaient allumes sur un reseau sans assez de puissance.
+- **Les moteurs a carburant n'affichent plus "pas de tension"** dans l'Inspecteur d'usine, sauf avec un generateur monte dessus.
+- **Les moteurs radial et a turbine** ne pretendent plus ne pas avoir d'arbre de sortie, et affichent leur vraie capacite de contrainte.
+- **Un foyer pose deja allume** (plan, schematic) s'eteint desormais sans carburant au lieu de chauffer pour toujours.
+- **Un moteur reapprovisionne par tuyau** apres une panne seche, ou allume avant son premier carburant, redemarre tout seul.
 - **steel_from_dust** ne se charge que si un autre mod fournit de la poussiere de fer, au lieu d'afficher un tag vide.
 
 ### Performances

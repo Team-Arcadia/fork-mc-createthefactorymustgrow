@@ -2321,6 +2321,8 @@
   "tfmg.inspector.pumpjack.assembly_error": "Échec de l'assemblage : %s",
   "tfmg.inspector.pumpjack.not_assembled": "Non assemblée : le marteau ne bouge pas",
   "tfmg.inspector.pumpjack.not_assembled.fix": "Complétez le balancier, la manivelle et la base : elle s'assemble seule dès que les trois sont trouvés.",
+  "tfmg.inspector.pumpjack.not_glued": "Le balancier n'est pas collé (détaché en %s %s %s)",
+  "tfmg.inspector.pumpjack.not_glued.fix": "Appliquez de la Super Glue sur tout le balancier, de la tête au connecteur : le support ne soulève que ce qui lui est collé.",
   "tfmg.inspector.pumpjack.peak_rate": "Pompe jusqu'à %s mB de pétrole brut par tick, au rythme de la course",
   "tfmg.inspector.pumpjack.crank_no_input": "Pas d'entrée de machine sous la manivelle (%s %s %s)",
   "tfmg.inspector.pumpjack.crank_no_input.fix": "Posez une entrée de machine juste sous la manivelle et faites-la tourner avec un axe : la manivelle lit sa vitesse, rien d'autre ne l'entraîne.",

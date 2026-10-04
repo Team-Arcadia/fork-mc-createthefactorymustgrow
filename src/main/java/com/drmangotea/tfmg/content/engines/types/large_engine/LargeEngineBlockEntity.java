@@ -257,6 +257,12 @@ public class LargeEngineBlockEntity extends AbstractEngineBlockEntity implements
         return false;
     }
 
+    // Takes no electricity and makes none; it is electric only by inheritance.
+    @Override
+    public boolean wantsElectricCheck() {
+        return false;
+    }
+
     @Override
     public void inspect(com.drmangotea.tfmg.content.items.inspector.InspectionReport report) {
         // The engine block itself never turns; it drives the shaft in front.
