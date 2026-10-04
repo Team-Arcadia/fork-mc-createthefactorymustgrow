@@ -82,7 +82,11 @@ public class TestSavedDataManager {
 
         RandomSource randomSource = level.random;
         FluidReservoir reservoir = new FluidReservoir(pos);
-        reservoir.oilReserves = randomSource.nextInt(1000, TFMGConfigs.common().worldgen.depositMaxReserves.get());
+        // Between 1000 and the configured maximum, both included. The upper
+        // bound of nextInt is exclusive, and an equal bound throws: the
+        // config's own minimum (1000) used to crash the first pumpjack.
+        reservoir.oilReserves = randomSource.nextIntBetweenInclusive(1000,
+                Math.max(1000, TFMGConfigs.common().worldgen.depositMaxReserves.get()));
         if (!reservoir.deposits.isEmpty()) {
             TFMG.DEPOSITS.list.add(reservoir);
             TFMG.DEPOSITS.markDirty();

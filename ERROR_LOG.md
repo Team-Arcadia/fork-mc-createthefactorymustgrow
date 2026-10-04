@@ -303,3 +303,24 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The tank behaviours are built with 4000 mB segments. Only multiblock formation (`applyVatSize`) and `read()` size them to the configured capacity per block (8000 mB by default), so a vat placed alone kept 4000 mB until its chunk reloaded and could never fit a concrete batch.
 **Fix:** `initialize()` sizes the controller's segments the same way `read()` does (shared `sizeTanks`).
 **Prevention:** Capacity that depends on the multiblock size must be set on every path that creates a controller, not only on formation and load.
+
+## [2026-10-04 20:25] - The lowest allowed depositMaxReserves crashed the first pumpjack
+**Context:** World game test registering naturally generated oil deposits the way a pumpjack does, with the config at its own minimum.
+**Error:** `java.lang.IllegalArgumentException: bound - origin is non positive` from `TestSavedDataManager.addDeposit`.
+**Root cause:** The reserve was rolled with `nextInt(1000, depositMaxReserves)`. The bound is exclusive, so the maximum was never reached, and the config accepts 1000, which makes origin equal to bound and throws on the server thread.
+**Fix:** `nextIntBetweenInclusive(1000, max(1000, depositMaxReserves))`.
+**Prevention:** Any random range fed by a config value must be tested at the config's minimum; `RandomSource.nextInt(origin, bound)` throws when they are equal.
+
+## [2026-10-04 20:25] - A piston could push the oil deposit
+**Context:** World game test checking the handbook's claim that a deposit cannot be mined, blown up or moved.
+**Error:** `PistonBaseBlock.isPushable` returned true on every face of an oil deposit.
+**Root cause:** The block copies bedrock's properties but replaces its strength with 69696969. Vanilla bedrock is immovable only because its hardness is -1; its push reaction is NORMAL. Create's `non_movable` tag only stops Create contraptions.
+**Fix:** `pushReaction(PushReaction.BLOCK)` on the oil deposit.
+**Prevention:** A block meant to be immovable with a finite hardness needs an explicit push reaction; copying bedrock's properties is not enough once the strength changes.
+
+## [2026-10-04 20:30] - Butane and propane tanks could never be filled
+**Context:** Progression game test following every recipe and in-world mechanic from vanilla and Create items.
+**Error:** `butane_bucket` and `propane_bucket` (the Butane Tank and Propane Tank) were the only TFMG items left unobtainable, although both gases are produced.
+**Root cause:** Gases are Create virtual fluids, whose `getBucket()` is air, so a spout cannot fill a bucket with them generically; every gas tank needs its own filling recipe. The butane and propane recipes were left commented out in `TFMGFillingRecipeGen` since the 1.21.1 port.
+**Fix:** Restored both filling recipes in the same form as the other gas tanks and regenerated them.
+**Prevention:** The progression test lists any item nothing can produce; run it after adding or commenting out a recipe.
