@@ -63,6 +63,24 @@ public class TFMGBlueprintTests {
         helper.succeed();
     }
 
+    /**
+     * The client item property picks a blueprint texture from this index;
+     * a blank blueprint once crashed every screen that drew it.
+     */
+    @GameTest(template = "gametest/platform", batch = "tfmg_data")
+    public static void everyBlueprintHasATextureIndex(GameTestHelper helper) {
+        TFMGGameTestUtil.check(helper, BlueprintLines.textureIndex(TFMGItems.FACTORY_BLUEPRINT.asStack()) == 0,
+                "a blank blueprint must use the base texture");
+        TFMGGameTestUtil.check(helper, BlueprintLines.textureIndex(BlueprintLines.stack("no_such_line")) == 0,
+                "an unknown line must use the base texture");
+        for (String line : BlueprintLines.LINES) {
+            int index = BlueprintLines.textureIndex(BlueprintLines.stack(line));
+            TFMGGameTestUtil.check(helper, index == BlueprintLines.TEXTURED.indexOf(line) + 1 && index > 0,
+                    "line " + line + " has texture index " + index);
+        }
+        helper.succeed();
+    }
+
     @GameTest(template = "gametest/platform", batch = "tfmg_data")
     public static void masterCartographerSellsBlueprints(GameTestHelper helper) {
         var listings = VillagerTrades.TRADES.get(VillagerProfession.CARTOGRAPHER).get(5);

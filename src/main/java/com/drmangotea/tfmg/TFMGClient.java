@@ -43,6 +43,10 @@ public class TFMGClient {
                 com.drmangotea.tfmg.content.items.blueprint.client.BlueprintProjector.INSTANCE;
         neoEventBus.addListener((net.neoforged.neoforge.client.event.ClientTickEvent.Post event) ->
                 com.drmangotea.tfmg.content.items.blueprint.client.BlueprintProjector.INSTANCE.tick());
+        // The blueprint's own panel replaces Patchouli's overlay, which sat
+        // under Jade's at the top centre of the screen.
+        modEventBus.addListener(com.drmangotea.tfmg.content.items.blueprint.client.BlueprintHud::registerLayer);
+        neoEventBus.addListener(com.drmangotea.tfmg.content.items.blueprint.client.BlueprintHud::hidePatchouliOverlay);
         modEventBus.addListener(TFMGParticleTypes::registerFactories);
 
         QUAD_POTATO_CANNON_RENDER_HANDLER.registerListeners(neoEventBus);

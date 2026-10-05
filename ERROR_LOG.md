@@ -450,3 +450,17 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** The autorun started on `ServerStartedEvent`, before the host joined. Create's `GlobalRegistryAccess`, used by the potato cannons' ammo predicate, reads the client connection on a physical client even from the integrated server thread, so it threw with nobody connected. Real singleplayer always has the host connected. Separately, the hand-held kit counts drops in the test bounds inflated by 4 blocks, and the autorun grid packs tests closer than the test server, so neighbouring tests that also drop lithium torches were counted.
 **Fix:** On a client the autorun now starts when the host logs in; the torch test counts only the items next to the torch that lost its wall.
 **Prevention:** Run all three environments before calling a change done; count drops near the block that produced them, not in the whole inflated test area.
+
+## [2026-10-05 01:00] - Crash drawing a blank Factory Blueprint
+**Context:** Manual test of 1.3.0 with the release jar: opening the TFMG creative tab.
+**Error:** `NullPointerException: Rendering screen` at `ImmutableCollections$ListN.indexOf` from `BlueprintLines.textureIndex`, called by the `tfmg:line` item property.
+**Root cause:** `textureIndex` passed `lineOf(stack)` straight to `List.of(...).indexOf`, and immutable lists throw on a null argument. A blank blueprint has no line, so `lineOf` returns null. No automated check resolved item models on a client, and the showcase hotbar only held lined blueprints.
+**Fix:** `textureIndex` returns 0 for a blank or unknown line. A game test checks the index of a blank, an unknown and every line; the client showcase resolves the model of every item of every creative tab (6023 stacks) plus a blank blueprint.
+**Prevention:** Never call `indexOf` / `contains` of a `List.of` with a value that can be null. Any item property function must be exercised on a client run.
+
+## [2026-10-05 01:30] - Blueprint progress hidden by Jade, block in view only with a block behind
+**Context:** Manual test BP-03 with Jade installed.
+**Error:** Patchouli's multiblock progress and Jade's tooltip were drawn on top of each other at the top centre; the ghost block in view was only named when a real block sat behind it.
+**Root cause:** Patchouli draws its overlay at a fixed top-centre position and takes the block in view from the vanilla crosshair hit, which ignores ghost positions.
+**Fix:** While a blueprint layer is projected, the `patchouli:multiblock_progress` GUI layer is cancelled and `BlueprintHud` draws its own panel (position from the new client config `blueprintHudPosition`), finding the ghost in view by stepping along the view ray through the projection.
+**Prevention:** Do not rely on another mod's HUD for our own feature; the showcase now aims at a mid-air ghost and fails if the panel does not name it.

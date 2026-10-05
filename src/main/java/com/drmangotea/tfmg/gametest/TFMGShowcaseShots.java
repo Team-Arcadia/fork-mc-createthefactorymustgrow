@@ -42,12 +42,13 @@ public final class TFMGShowcaseShots {
 
     private static final int SPACING = TFMGShowcaseCommand.SPACING;
 
-    private enum Step { BUILD, VIEW, SHOOT_VIEW, INSPECT, SHOOT_INSPECT, BLUEPRINT, SHOOT_BLUEPRINT, BUILD_LAYER, CHECK_LAYER, SHOOT_TOOLS, EXIT, DONE }
+    private enum Step { BUILD, VIEW, SHOOT_VIEW, INSPECT, SHOOT_INSPECT, BLUEPRINT, SHOOT_BLUEPRINT, BUILD_LAYER, CHECK_LAYER, AIM_GHOST, SHOOT_AIM, SHOOT_TOOLS, EXIT, DONE }
 
     private static Step step = Step.BUILD;
     private static int wait = 120;
     private static int index;
     private static int builtLayer;
+    private static BlockPos aimed;
     private static BlockPos origin;
     private static List<Map.Entry<String, JsonObject>> structures;
 
@@ -66,6 +67,7 @@ public final class TFMGShowcaseShots {
             return;
         switch (step) {
             case BUILD -> {
+                checkItemModels(mc);
                 structures = new ArrayList<>(TFMGStructureTests.readBlueprints().entrySet());
                 BlockPos at = mc.player.blockPosition().above(20);
                 origin = at.offset(4, 0, 4);
@@ -175,7 +177,39 @@ public final class TFMGShowcaseShots {
                 TFMG.LOGGER.info("[showcase] blueprint layer {} built, projector moved to {}", builtLayer + 1,
                         now < 0 ? "done" : "layer " + (now + 1));
                 shoot(mc, String.format("showcase_blueprint_layer_%02d.png", builtLayer + 1));
+                if (now > 0 && aimed == null) {
+                    // Aim at a ghost of the new layer from the side, with only
+                    // sky behind it: the vanilla crosshair finds no block there.
+                    step = Step.AIM_GHOST;
+                    wait = 10;
+                    return;
+                }
                 // Screenshots are written off-thread: give each one time.
+                step = Step.BUILD_LAYER;
+                wait = 20;
+            }
+            case AIM_GHOST -> {
+                Map<BlockPos, BlockState> ghost = BlueprintProjector.INSTANCE.currentLayerInWorld(mc.level);
+                aimed = ghost.keySet().iterator().next();
+                net.minecraft.world.phys.Vec3 target = aimed.getCenter();
+                net.minecraft.world.phys.Vec3 eye = target.add(-3.5, 0.6, -2.5);
+                server.execute(() -> {
+                    ServerPlayer player = server.getPlayerList().getPlayers().get(0);
+                    player.teleportTo(server.overworld(), eye.x, eye.y - player.getEyeHeight(), eye.z, 0, 0);
+                    player.lookAt(net.minecraft.commands.arguments.EntityAnchorArgument.Anchor.EYES, target);
+                    player.connection.teleport(player.getX(), player.getY(), player.getZ(), player.getYRot(), player.getXRot());
+                });
+                step = Step.SHOOT_AIM;
+                wait = 20;
+            }
+            case SHOOT_AIM -> {
+                boolean found = aimed.equals(com.drmangotea.tfmg.content.items.blueprint.client.BlueprintHud.lastLooking);
+                if (found)
+                    TFMG.LOGGER.info("[showcase] blueprint panel names the ghost in view at {}", aimed);
+                else
+                    TFMG.LOGGER.error("[showcase] blueprint panel missed the ghost in view: aimed {}, panel {}", aimed,
+                            com.drmangotea.tfmg.content.items.blueprint.client.BlueprintHud.lastLooking);
+                shoot(mc, "showcase_blueprint_aim.png");
                 step = Step.BUILD_LAYER;
                 wait = 20;
             }
@@ -195,6 +229,36 @@ public final class TFMGShowcaseShots {
             default -> {
             }
         }
+    }
+
+    /**
+     * Resolves the model of every item of every creative tab, with its item
+     * property overrides, the way an inventory screen does. A blank blueprint
+     * crashed this path in 1.3.0 the moment the TFMG tab was opened.
+     */
+    private static void checkItemModels(Minecraft mc) {
+        net.minecraft.world.item.CreativeModeTabs.tryRebuildTabContents(mc.level.enabledFeatures(), true, mc.level.registryAccess());
+        int resolved = 0, failed = 0;
+        for (net.minecraft.world.item.CreativeModeTab tab : net.minecraft.core.registries.BuiltInRegistries.CREATIVE_MODE_TAB) {
+            for (net.minecraft.world.item.ItemStack stack : tab.getDisplayItems()) {
+                try {
+                    mc.getItemRenderer().getModel(stack, mc.level, mc.player, 0);
+                    resolved++;
+                } catch (RuntimeException e) {
+                    failed++;
+                    TFMG.LOGGER.error("[showcase] item model failed for {}", stack, e);
+                }
+            }
+        }
+        net.minecraft.world.item.ItemStack blank = com.drmangotea.tfmg.registry.TFMGItems.FACTORY_BLUEPRINT.asStack();
+        try {
+            mc.getItemRenderer().getModel(blank, mc.level, mc.player, 0);
+            resolved++;
+        } catch (RuntimeException e) {
+            failed++;
+            TFMG.LOGGER.error("[showcase] item model failed for the blank blueprint", e);
+        }
+        TFMG.LOGGER.info("[showcase] item models: {} resolved, {} failed", resolved, failed);
     }
 
     /** Handbook, inspector and one blueprint per line in the hotbar, to see their textures. */

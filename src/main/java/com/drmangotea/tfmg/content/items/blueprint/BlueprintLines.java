@@ -57,6 +57,9 @@ public final class BlueprintLines {
 
     /** The {@link #TEXTURE_PROPERTY} value of a stack: 0 for the base texture. */
     public static int textureIndex(ItemStack stack) {
-        return TEXTURED.indexOf(lineOf(stack)) + 1;
+        // List.of rejects null in indexOf: a blank blueprint has no line and
+        // crashed every screen that drew it (the creative tab first).
+        String line = lineOf(stack);
+        return line == null ? 0 : TEXTURED.indexOf(line) + 1;
     }
 }

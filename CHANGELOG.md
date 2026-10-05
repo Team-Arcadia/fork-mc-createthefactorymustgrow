@@ -12,7 +12,15 @@ Correctifs issus de la premiere passe de tests manuels complete de la 1.3.0.
 
 ### Fixed
 
+- **Crash when a blank Factory Blueprint was drawn** - Opening the TFMG creative tab, or any inventory holding a blueprint without a line, crashed the game while picking its texture.
+- **Blueprint panel under Jade's** - While a blueprint is projected, Patchouli's progress overlay is replaced by the blueprint's own panel (layer, progress, block to place). It sits in the top left corner by default and can be moved with the client setting `blueprintHudPosition` (top left, top right, top centre, above the hotbar).
+- **The block to place showed only with a block behind it** - The panel now names the ghost block under the crosshair even in mid-air, by following the view through the projection instead of relying on the block the crosshair hits.
+
 ### Correctifs
+
+- **Plantage a l'affichage d'un plan d'usine vierge** - Ouvrir l'onglet creatif TFMG, ou tout inventaire contenant un plan sans ligne, faisait planter le jeu au choix de sa texture.
+- **Panneau du plan sous celui de Jade** - Pendant la projection d'un plan, l'affichage de progression de Patchouli est remplace par le panneau du plan (couche, progression, bloc a poser). Il est en haut a gauche par defaut et se deplace avec le reglage client `blueprintHudPosition` (haut gauche, haut droite, haut centre, au-dessus de la barre d'action).
+- **Le bloc a poser n'apparaissait qu'avec un bloc derriere** - Le panneau nomme desormais le bloc fantome vise meme en l'air, en suivant le regard a travers la projection au lieu du bloc touche par le viseur.
 
 ---
 

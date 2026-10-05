@@ -63,6 +63,7 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
     private BlockPos anchor;
     private Rotation rotation = Rotation.NONE;
     private IMultiblock shown;
+    private Component title = Component.empty();
 
     private BlueprintProjector() {
     }
@@ -154,6 +155,16 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
         return true;
     }
 
+    /** Whether a blueprint layer is on screen right now (Patchouli still shows ours). */
+    public boolean isProjecting() {
+        return layer >= 0 && shown != null && PatchouliAPI.get().getCurrentMultiblock() == shown;
+    }
+
+    /** "Structure: layer n of m", as shown when the layer appeared. */
+    public Component title() {
+        return title;
+    }
+
     /** Index of the projected layer, or -1 when nothing is projected. */
     public int currentLayer() {
         return layer;
@@ -183,7 +194,7 @@ public final class BlueprintProjector implements FactoryBlueprintItem.ClientHand
             positions.put(e.getKey(), PatchouliAPI.get().predicateMatcher(e.getValue(), state -> state.is(block)));
         }
         shown = PatchouliAPI.get().makeSparseMultiblock(positions);
-        Component title = Component.translatable("tfmg.blueprint.layer", name(b), index + 1, b.layers().size());
+        title = Component.translatable("tfmg.blueprint.layer", name(b), index + 1, b.layers().size());
         PatchouliAPI.get().showMultiblock(shown, title, anchor, rotation);
         say(player, title.copy().withStyle(ChatFormatting.GOLD));
     }
