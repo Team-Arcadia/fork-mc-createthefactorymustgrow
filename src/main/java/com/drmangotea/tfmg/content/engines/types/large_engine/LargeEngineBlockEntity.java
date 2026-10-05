@@ -6,6 +6,7 @@ import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.engines.base.AbstractEngineBlockEntity;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import com.drmangotea.tfmg.content.engines.base.EngineFluidTank;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGBlocks;
@@ -59,7 +60,8 @@ public class LargeEngineBlockEntity extends AbstractEngineBlockEntity implements
         super(type, pos, state);
         target = new WeakReference<>(null);
         exhaustTank = new EngineFluidTank(2000, true, false, f->tankUpdated(f,false));
-        fuelTank = new EngineFluidTank(2000, false, true, f->tankUpdated(f,true), TFMGTags.TFMGFluidTags.AIR.tag);
+        fuelTank = new EngineFluidTank(2000, false, true, f->tankUpdated(f,true), TFMGTags.TFMGFluidTags.AIR.tag)
+                .withValidator(this::acceptsFuel);
         airTank = new EngineFluidTank(1000, false, true, TFMGTags.TFMGFluidTags.AIR.tag, f->tankUpdated(f,true));
         fluidCapabilityy = new CombinedTankWrapper(exhaustTank,fuelTank,airTank);
     }
@@ -76,6 +78,21 @@ public class LargeEngineBlockEntity extends AbstractEngineBlockEntity implements
     @Override
     public List<TagKey<Fluid>> getSupportedFuels() {
         return List.of(TFMGTags.TFMGFluidTags.DIESEL.tag, TFMGTags.TFMGFluidTags.KEROSENE.tag, TFMGTags.TFMGFluidTags.NAPHTHA.tag, TFMGTags.TFMGFluidTags.FURNACE_GAS.tag);
+    }
+
+    /** A large engine has no cylinders to change: only the fuels it burns go in. */
+    @Override
+    public boolean acceptsFuel(FluidStack stack) {
+        for (TagKey<Fluid> tag : getSupportedFuels())
+            if (stack.getFluid().is(tag))
+                return true;
+        return false;
+    }
+
+    @Override
+    protected void voidForeignFluids() {
+        super.voidForeignFluids();
+        FluidSlots.voidForeignFluid(airTank, this, "air tank");
     }
 
     @Override
