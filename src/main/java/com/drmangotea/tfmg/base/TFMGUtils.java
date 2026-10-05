@@ -49,6 +49,7 @@ import org.joml.Matrix4f;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class TFMGUtils {
@@ -274,21 +275,33 @@ public class TFMGUtils {
     }
 
     public static SmartFluidTank createTank(int capacity, boolean extractionAllowed, Consumer<FluidStack> updateCallback) {
-        return createTank(capacity, extractionAllowed, true, updateCallback, null);
+        return createTank(capacity, extractionAllowed, true, updateCallback, ANY_FLUID);
     }
 
     public static SmartFluidTank createTank(int capacity, boolean extractionAllowed, boolean insertionAllowed, Consumer<FluidStack> updateCallback) {
-        return createTank(capacity, extractionAllowed, insertionAllowed, updateCallback, null);
+        return createTank(capacity, extractionAllowed, insertionAllowed, updateCallback, ANY_FLUID);
     }
 
     public static SmartFluidTank createTank(int capacity, boolean extractionAllowed, boolean insertionAllowed, Consumer<FluidStack> updateCallback, Fluid validFluid) {
+        return createTank(capacity, extractionAllowed, insertionAllowed, updateCallback,
+                validFluid == null ? ANY_FLUID : stack -> stack.getFluid().isSame(validFluid));
+    }
+
+    /** A tank validator that takes every fluid, for storage and output tanks. */
+    public static final Predicate<FluidStack> ANY_FLUID = stack -> true;
+
+    /**
+     * A tank that only takes the fluids {@code accepts} lets through. Pipes,
+     * buckets and the machine's own fill calls all go through it; setFluid()
+     * and NBT loading do not, so the machine can still write what it makes.
+     */
+    public static SmartFluidTank createTank(int capacity, boolean extractionAllowed, boolean insertionAllowed, Consumer<FluidStack> updateCallback, Predicate<FluidStack> accepts) {
+        // Not named "validator": inside the anonymous class that name resolves
+        // to FluidTank's own protected field, which accepts every fluid.
         return new SmartFluidTank(capacity, updateCallback) {
             @Override
             public boolean isFluidValid(FluidStack stack) {
-
-                if (validFluid == null) return true;
-
-                return stack.getFluid().isSame(validFluid);
+                return accepts.test(stack);
             }
 
             @Override

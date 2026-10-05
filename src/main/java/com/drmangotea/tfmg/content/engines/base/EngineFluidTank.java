@@ -6,6 +6,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidStack;
 
 import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class EngineFluidTank extends SmartFluidTank {
 
@@ -15,6 +16,9 @@ public class EngineFluidTank extends SmartFluidTank {
 
     final TagKey<Fluid> allowedFluids;
     final TagKey<Fluid> fluidBlacklist;
+    // Optional extra rule on top of the tags, for tanks whose valid fluids
+    // depend on the engine (its fuel types and cylinders).
+    Predicate<FluidStack> fuelRule;
 
     public EngineFluidTank(int capacity, boolean extractionAllowed, boolean insertionAllowed, Consumer<FluidStack> updateCallback) {
         super(capacity, updateCallback);
@@ -40,6 +44,21 @@ public class EngineFluidTank extends SmartFluidTank {
         this.fluidBlacklist = fluidBlacklist;
     }
 
+
+    /** Only fluids that also pass {@code validator} may be filled in. */
+    public EngineFluidTank withValidator(Predicate<FluidStack> validator) {
+        this.fuelRule = validator;
+        return this;
+    }
+
+    @Override
+    public boolean isFluidValid(FluidStack stack) {
+        if (fluidBlacklist != null && stack.getFluid().is(fluidBlacklist))
+            return false;
+        if (allowedFluids != null && !stack.getFluid().is(allowedFluids))
+            return false;
+        return fuelRule == null || fuelRule.test(stack);
+    }
 
     @Override
     public FluidStack drain(FluidStack resource, FluidAction action) {
@@ -68,15 +87,7 @@ public class EngineFluidTank extends SmartFluidTank {
 
     @Override
     public int fill(FluidStack resource, FluidAction action) {
-
-
-
-        if(fluidBlacklist!=null&&resource.getFluid().is(fluidBlacklist))
-            return 0;
-
-        if (allowedFluids != null&& !resource.getFluid().is(allowedFluids))
-            return 0;
-
+        // super.fill() checks isFluidValid(), which holds the tag rules.
         if (!insertionAllowed) return 0;
         return super.fill(resource, action);
     }
