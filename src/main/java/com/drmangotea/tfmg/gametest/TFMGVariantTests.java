@@ -1114,9 +1114,11 @@ public class TFMGVariantTests {
                     for (BlockPos stage : stages.subList(1, stages.size()))
                         ((DistillationOutputBlockEntity) TFMGOilEngineTestKit.be(helper, stage)).mode
                                 .setValue(DistillationOutputBlockEntity.DistillationOutputMode.VOID_WHEN_FULL.ordinal());
-                    // The bottom stage is already full of its own fraction.
+                    // The bottom stage is already full of its own fraction. Pipes
+                    // can only drain a stage, so fill its tank directly.
                     Fluid bottom = recipe[0].getFluidResults().get(0).getFluid();
-                    TFMGOilEngineTestKit.fill(helper, stages.get(0), bottom, 8000);
+                    ((DistillationOutputBlockEntity) TFMGOilEngineTestKit.be(helper, stages.get(0))).tank
+                            .fill(new FluidStack(bottom, 8000), IFluidHandler.FluidAction.EXECUTE);
                     Report keep = report(helper, stages.get(0));
                     helper.assertTrue(keep.has("distillation_output.keep"), "a fresh stage does not keep its fluid: " + keep);
                     TFMGOilEngineTestKit.fill(helper, tank.below(), TFMGOilEngineTestKit.fluid("tfmg:lpg"), 8000);
