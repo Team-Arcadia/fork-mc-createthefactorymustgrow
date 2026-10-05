@@ -2,6 +2,7 @@ package com.drmangotea.tfmg.content.machinery.metallurgy.blast_stove;
 
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.content.items.inspector.IInspectable;
@@ -73,14 +74,22 @@ public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHave
     // multiblock then goes dead, the heated-air output on top first of all,
     // until a block is broken and replaced to force a formMulti.
     private boolean refreshStoveCapability;
+    // Set by a world load: the inputs are checked for a fluid they do not take
+    // on the next server tick, once the level and its recipes are available.
+    private boolean checkForeignFluids;
 
     public BlastStoveBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         setLazyTickRate(10);
         primaryOutputInventory = TFMGUtils.createTank(8000, true, false, this::onFluidStackChanged);
         secondaryOutputInventory = TFMGUtils.createTank(8000, true, false, this::onFluidStackChanged);
-        primaryInputInventory = TFMGUtils.createTank(8000, false, this::onFluidStackChanged);
-        secondaryInputInventory = TFMGUtils.createTank(8000, false, this::onFluidStackChanged);
+        // Each input only takes what the hot blast recipes read from it. Both
+        // used to take any fluid: the moment the air ran dry, creosote from a
+        // fuel pipe touching a side of the bottom layer, or hot air flowing
+        // back into the top, filled the empty slot, no recipe matched again,
+        // and the slot could not be pumped out, so the stove was dead for good.
+        primaryInputInventory = TFMGUtils.createTank(8000, false, true, this::onFluidStackChanged, this::acceptsAir);
+        secondaryInputInventory = TFMGUtils.createTank(8000, false, true, this::onFluidStackChanged, this::acceptsFuel);
         primaryCapability = new CombinedTankWrapper(primaryOutputInventory, secondaryInputInventory);
         secondaryCapability = new CombinedTankWrapper(primaryInputInventory, secondaryOutputInventory);
         updateConnectivity = false;
@@ -125,6 +134,16 @@ public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHave
         if (refreshStoveCapability) {
             refreshStoveCapability = false;
             refreshCapability();
+        }
+
+        if (checkForeignFluids && level != null && !level.isClientSide) {
+            checkForeignFluids = false;
+            if (isController()) {
+                boolean voided = FluidSlots.voidForeignFluid(primaryInputInventory, this, "air input");
+                voided |= FluidSlots.voidForeignFluid(secondaryInputInventory, this, "fuel input");
+                if (voided)
+                    timer = 0;
+            }
         }
 
         // Running the recipe drains the input tanks and fills the output ones,
@@ -278,6 +297,18 @@ public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHave
 
     protected Object getRecipeCacheKey() {
         return HotBlastRecipesKey;
+    }
+
+    /** Whether some hot blast recipe takes this fluid as its air (first) ingredient. */
+    public boolean acceptsAir(FluidStack stack) {
+        return FluidSlots.acceptedByRecipes(level, getRecipeCacheKey(), TFMGRecipeTypes.HOT_BLAST.getType(),
+                recipe -> List.of(((HotBlastRecipe) recipe).getPrimaryIngredient()), stack);
+    }
+
+    /** Whether some hot blast recipe takes this fluid as its fuel (second) ingredient. */
+    public boolean acceptsFuel(FluidStack stack) {
+        return FluidSlots.acceptedByRecipes(level, getRecipeCacheKey(), TFMGRecipeTypes.HOT_BLAST.getType(),
+                recipe -> List.of(((HotBlastRecipe) recipe).getSecondaryIngredient()), stack);
     }
 
     protected HotBlastRecipe getMatchingRecipes() {
@@ -471,6 +502,9 @@ public class BlastStoveBlockEntity extends FluidTankBlockEntity implements IHave
 
         // Missing key reads as 0, matching the previous behavior of old saves.
         timer = compound.getInt("Timer");
+
+        if (!clientPacket)
+            checkForeignFluids = true;
 
         // Deferred to the next tick rather than refreshed here: the controller
         // BE is not necessarily loaded yet at read time, and

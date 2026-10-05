@@ -10,6 +10,7 @@ import com.drmangotea.tfmg.content.decoration.tanks.steel.SteelTankBlockEntity;
 import com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.output.DistillationOutputBlockEntity;
 import com.drmangotea.tfmg.mixin.accessor.FluidTankBlockEntityAccessor;
 import com.drmangotea.tfmg.recipes.DistillationRecipe;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGRecipeTypes;
 import com.drmangotea.tfmg.registry.TFMGTags;
@@ -59,7 +60,9 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
 
     protected IFluidHandler fluidCapability;
 
-    public final FluidTank tank = new SmartFluidTank(8000, this::onFluidStackChanged);
+    // Only fluids a distillation recipe takes go in: anything else sat in the
+    // tank, matched no recipe and kept the oil out until pumped away.
+    public final FluidTank tank = TFMGUtils.createTank(8000, true, true, this::onFluidStackChanged, this::acceptsInput);
 
     public DistillationControllerBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
@@ -220,6 +223,9 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
             return;
         if (!tank.getFluid().isEmpty() && !tank.getFluid().getFluid().isSame(stored.getFluid()))
             return;
+        // Drain only what the tank will take, or the rest would be voided.
+        if (!tank.isFluidValid(stored))
+            return;
         int pullAmount = Math.min(stored.getAmount(), space);
         if (pullAmount <= 0)
             return;
@@ -253,6 +259,12 @@ public class DistillationControllerBlockEntity extends SmartBlockEntity implemen
         TFMGUtils.createFluidTooltip(this,tooltip);
 
         return true;
+    }
+
+    /** Whether some distillation recipe takes this fluid as its input. */
+    public boolean acceptsInput(FluidStack stack) {
+        return FluidSlots.acceptedByRecipes(level, getRecipeCacheKey(), TFMGRecipeTypes.DISTILLATION.getType(),
+                recipe -> List.of(((DistillationRecipe) recipe).getInputFluid()), stack);
     }
 
     protected DistillationRecipe getMatchingRecipes() {

@@ -3,6 +3,7 @@ package com.drmangotea.tfmg.content.engines.base;
 import com.drmangotea.tfmg.TFMG;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.electricity.base.KineticElectricBlockEntity;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import com.drmangotea.tfmg.content.engines.fuels.BaseFuelTypes;
 import com.drmangotea.tfmg.content.engines.fuels.EngineFuelTypeManager;
 import com.drmangotea.tfmg.content.engines.fuels.FuelType;
@@ -59,13 +60,21 @@ public abstract class AbstractEngineBlockEntity extends KineticElectricBlockEnti
     // Whether the fuel tank held anything at its last change; not saved, a
     // freshly loaded engine recomputes its rotation on its first fill anyway.
     private boolean hadFuel = false;
+    // Set by a world load: the fuel tank is checked for a fluid it does not
+    // take on the next server tick, when the engine is in its level.
+    protected boolean checkForeignFluids;
     //
 
 
     public AbstractEngineBlockEntity(BlockEntityType<?> typeIn, BlockPos pos, BlockState state) {
         super(typeIn, pos, state);
         setLazyTickRate(10);
-        fuelTank = new EngineFluidTank(4000, false, true, f -> tankUpdated(f, true), TFMGTags.TFMGFluidTags.AIR.tag);
+        // Only engine fuels go in. The tank used to take anything but air, so
+        // the carbon dioxide pumped out of this same capability, or water from
+        // a tank behind a piping upgrade, filled it once the fuel ran out, and
+        // nothing could drain it again.
+        fuelTank = new EngineFluidTank(4000, false, true, f -> tankUpdated(f, true), TFMGTags.TFMGFluidTags.AIR.tag)
+                .withValidator(this::acceptsFuel);
         exhaustTank = new EngineFluidTank(8000, true, false, f -> tankUpdated(f, false));
         fluidCapability = new CombinedTankWrapper(fuelTank, exhaustTank);
 
@@ -99,6 +108,32 @@ public abstract class AbstractEngineBlockEntity extends KineticElectricBlockEnti
             analogSignalChanged();
         }
         super.tick();
+        if (checkForeignFluids && level != null && !level.isClientSide) {
+            checkForeignFluids = false;
+            voidForeignFluids();
+        }
+    }
+
+    /** Empties tanks that hold a fluid they do not take, left by an older version. */
+    protected void voidForeignFluids() {
+        FluidSlots.voidForeignFluid(fuelTank, this, "fuel tank");
+    }
+
+    /**
+     * Whether this fluid may be piped into the fuel tank: a fuel this engine
+     * burns now, or any fuel an engine type knows, since a regular engine's
+     * fuels follow the cylinders it is given later.
+     */
+    public boolean acceptsFuel(FluidStack stack) {
+        for (TagKey<Fluid> tag : getSupportedFuels())
+            if (stack.getFluid().is(tag))
+                return true;
+        if (EngineFuelTypeManager.GLOBAL_TYPE_MAP.isEmpty())
+            return true;
+        for (FuelType type : EngineFuelTypeManager.GLOBAL_TYPE_MAP.values())
+            if (type.getFluid() != null && stack.getFluid().is(type.getFluid()))
+                return true;
+        return false;
     }
 
     public void tankUpdated(FluidStack stack, boolean fuelTank) {
@@ -313,8 +348,10 @@ public abstract class AbstractEngineBlockEntity extends KineticElectricBlockEnti
             torque = compound.getFloat("Torque");
         if (compound.contains("HighestSignal"))
             highestSignal = compound.getFloat("HighestSignal");
-        if (!clientPacket)
+        if (!clientPacket) {
             signalChanged = true;
+            checkForeignFluids = true;
+        }
 
         updateRotation();
         updateGeneratedRotation();

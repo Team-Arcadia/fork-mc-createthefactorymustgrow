@@ -4,6 +4,7 @@ import com.drmangotea.tfmg.content.items.inspector.IInspectable;
 import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
 import com.drmangotea.tfmg.registry.TFMGFluids;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import com.simibubi.create.content.fluids.hosePulley.HosePulleyBlock;
 import com.simibubi.create.content.kinetics.base.KineticBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -33,6 +34,7 @@ public class ConcreteHoseBlockEntity extends KineticBlockEntity implements IInsp
     boolean isMoving;
 
     public SmartFluidTank internalTank;
+    private boolean checkForeignFluids;
     public IFluidHandler capability;
     public ConcreteFillingBehavior filler;
     public ConcreteHoseFluidHandler handler;
@@ -179,6 +181,14 @@ public class ConcreteHoseBlockEntity extends KineticBlockEntity implements IInsp
     @Override
     public void tick() {
         super.tick();
+        // Only liquid concrete can be piped in, but a world saved before that
+        // check may hold another fluid, which nothing could pour or remove.
+        if (checkForeignFluids && level != null && !level.isClientSide) {
+            checkForeignFluids = false;
+            if (FluidSlots.voidForeignFluid(internalTank,
+                    stack -> stack.getFluid().isSame(TFMGFluids.LIQUID_CONCRETE.getSource()), this, "tank"))
+                sendData();
+        }
         float newOffset = offset.getValue() + getMovementSpeed();
         if (newOffset < 0) {
             newOffset = 0;
@@ -244,6 +254,8 @@ public class ConcreteHoseBlockEntity extends KineticBlockEntity implements IInsp
         offset.readNBT(compound.getCompound("Offset"), clientPacket);
         internalTank.readFromNBT(registries,compound.getCompound("Tank"));
         super.read(compound,registries , clientPacket);
+        if (!clientPacket)
+            checkForeignFluids = true;
         if (clientPacket)
             infinite = compound.getBoolean("Infinite");
     }

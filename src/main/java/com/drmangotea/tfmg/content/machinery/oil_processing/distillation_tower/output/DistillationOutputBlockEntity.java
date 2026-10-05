@@ -1,6 +1,7 @@
 package com.drmangotea.tfmg.content.machinery.oil_processing.distillation_tower.output;
 
 import com.drmangotea.tfmg.base.ThrottledSync;
+import com.drmangotea.tfmg.base.capability.DrainOnlyFluidHandler;
 import com.drmangotea.tfmg.base.TFMGIcons;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
 import com.drmangotea.tfmg.content.items.inspector.IInspectable;
@@ -48,7 +49,10 @@ public class DistillationOutputBlockEntity extends SmartBlockEntity implements I
     public final FluidTank tank = new SmartFluidTank(8000,this::onFluidStackChanged);
     public DistillationOutputBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
-        fluidCapability = tank;
+        // Pipes only take fractions out. An output used to accept anything
+        // pumped in, and a foreign fluid there refused the tower's fraction:
+        // kept, the stage stalled; voided, the fraction was lost.
+        fluidCapability = new DrainOnlyFluidHandler(tank);
     }
 
     @Override

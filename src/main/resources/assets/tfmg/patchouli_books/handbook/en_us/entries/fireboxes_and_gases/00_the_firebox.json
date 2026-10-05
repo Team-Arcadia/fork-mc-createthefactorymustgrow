@@ -14,7 +14,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Fuels$()$(br)Only fluids in the firebox fuel list burn: $(item)LPG, butane, propane, hydrogen, diesel, naphtha and kerosene$(). The tank accepts any fluid, so pumping in something else just clogs it: goggles then show $(item)This fluid is not a firebox fuel$()."
+      "text": "$(l)Fuels$()$(br)Only fluids in the firebox fuel list burn: $(item)LPG, butane, propane, hydrogen, diesel, naphtha and kerosene$(). The tank refuses every other fluid, so its own CO2 or a stray water line cannot clog it."
     },
     {
       "type": "patchouli:text",

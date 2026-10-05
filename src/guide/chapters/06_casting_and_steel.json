@@ -26,7 +26,7 @@
           "",
           "The basin **refuses inserted items**: it only takes fluids, so a funnel next to it only ever extracts.",
           "",
-          "The tank takes any fluid. Fluid with no casting recipe just sits there, so keep each basin on a clean line."
+          "The tank only takes fluids a casting recipe uses: molten steel, slag, plastic, silicon and liquid concrete. Anything else stays in the pipe."
         ],
         "fr_fr": [
           "Le bassin de coulée transforme une matière en fusion en objets solides. Envoyez-y le fluide par n'importe quelle face ; il contient **1000 mB**.",
@@ -42,7 +42,7 @@
           "",
           "Le bassin **refuse les objets insérés** : il ne prend que des fluides, donc un entonnoir à côté ne fait qu'extraire.",
           "",
-          "Le réservoir accepte n'importe quel fluide. Un fluide sans recette de coulée y reste bloqué : gardez chaque bassin sur une ligne propre."
+          "Le réservoir ne prend que les fluides d'une recette de coulée : acier fondu, laitier, plastique, silicium et béton liquide. Tout autre fluide reste dans le tuyau."
         ]
       },
       "items": ["tfmg:casting_basin", "tfmg:molten_steel_bucket", "tfmg:steel_ingot", "create:andesite_funnel", "minecraft:hopper"]

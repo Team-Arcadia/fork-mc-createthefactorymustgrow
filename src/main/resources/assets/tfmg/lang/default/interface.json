@@ -292,7 +292,7 @@
   "tfmg.jei.info.blast_stove.1": "Turns Air plus Furnace Gas or Creosote into Hot Air for the blast furnace, with CO2 as a by-product.",
   "tfmg.jei.info.blast_stove.2": "Up to 2x2 wide and as tall as you like. A bigger stove works faster: one steel furnace needs about a 2x2 stove 5 blocks high.",
   "tfmg.jei.info.blast_stove.3": "Sides of the bottom layer: Air in, CO2 out. Top and bottom faces: fuel in, Hot Air out.",
-  "tfmg.jei.info.blast_stove.4": "Pump the CO2 away (Exhaust or Smokestack), otherwise the stove stops when its CO2 tank is full. Its input tanks take any fluid and cannot be emptied, so pipe only Air into the bottom sides and fuel into the top or bottom.",
+  "tfmg.jei.info.blast_stove.4": "Pump the CO2 away (Exhaust or Smokestack), otherwise the stove stops when its CO2 tank is full. Pipe Air into the bottom sides and fuel into the top or bottom; each input tank refuses any other fluid.",
   "tfmg.jei.info.air_intake.1": "Makes Air from rotation. Works alone or as a 2x2 or 3x3 square of intakes facing the same way.",
   "tfmg.jei.info.air_intake.2": "Output grows with speed and with the square of the size. A single intake needs at least 40 RPM.",
   "tfmg.jei.info.air_intake.3": "A half-built square produces nothing.",

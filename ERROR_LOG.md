@@ -464,3 +464,66 @@ in other shapes, and the file was only saved by the grep count.
 **Root cause:** Patchouli draws its overlay at a fixed top-centre position and takes the block in view from the vanilla crosshair hit, which ignores ghost positions.
 **Fix:** While a blueprint layer is projected, the `patchouli:multiblock_progress` GUI layer is cancelled and `BlueprintHud` draws its own panel (position from the new client config `blueprintHudPosition`), finding the ghost in view by stepping along the view ray through the projection.
 **Prevention:** Do not rely on another mod's HUD for our own feature; the showcase now aims at a mid-air ghost and fails if the panel does not name it.
+
+## [2026-10-05 09:10] - Blast stove dead for good once creosote took its empty air tank
+**Context:** Multiplayer test report on 1.3.0: after the hot air was drained and the stove ran out of air, creosote replaced the air and the stove never made hot air again.
+**Error:** The air input tank of the stove held creosote; no hot blast recipe matched, and nothing could remove it short of breaking every block of the stove.
+**Root cause:** Both input tanks were built by `TFMGUtils.createTank(8000, false, ...)` with no validator, so `isFluidValid` accepted every fluid. The sides of the bottom layer expose `CombinedTankWrapper(airInput, co2Output)` and the top and bottom faces `CombinedTankWrapper(hotAirOutput, fuelInput)`. While the air tank holds air, another fluid is refused (a tank only tops up its own fluid), so the bug stays hidden; the moment the stove burns its last 25 mB the tank is empty and takes whatever a side pipe pushes, here creosote from a fuel line touching the bottom layer. The top works the same way: Create's wrapper falls through to the next handler when the hot air output refuses a fill, so hot air flowing back into the top filled an empty fuel tank. Inputs refuse extraction, so the wrong fluid could never leave.
+**Fix:** `createTank` gained a `Predicate<FluidStack>` validator. The air and fuel tanks only take what a hot blast recipe reads in that slot (`FluidSlots.acceptedByRecipes`, any fluid when no such recipe exists). A wrong fluid already saved in an input is voided on the first server tick after load, with a log line.
+**Prevention:** Every machine input tank needs a validator. An input that refuses extraction and accepts anything is a permanent trap: "the tank already holds X" was the only thing keeping the wrong fluid out, and it disappears whenever the tank runs dry.
+
+## [2026-10-05 09:20] - Firebox fuel tank took its own CO2, and over-capacity fuel was never trimmed
+**Context:** Audit of every machine with several tanks after the blast stove report.
+**Error:** A firebox whose fuel ran out took CO2 (its own exhaust, pumped through the same capability) or any stray fluid into its fuel tank and stayed cold for good. Separately, shrinking a firebox left its fuel above the new capacity.
+**Root cause:** The fuel tank was `createTank(..., false, true, ...)` with no validator, behind `CombinedTankWrapper(fuel, exhaust)`. The overflow trim in `applyFluidTankSize` and `read` called `drain()`, which that same tank refuses.
+**Fix:** The fuel tank only takes the `tfmg:firebox_fuel` tag, a non-fuel already saved in it is voided on load, and the trim uses `drainFilteredTank` (setFluid).
+**Prevention:** Internal bookkeeping on a tank that refuses extraction must never go through `drain()`; use `setFluid` or a force path.
+
+## [2026-10-05 09:30] - Engine fuel tanks took exhaust and water
+**Context:** Same audit.
+**Error:** A regular, radial or turbine engine that ran dry took CO2 or water into its fuel tank; a large engine took any fuel, including ones it cannot burn. None could be drained, so the engine never ran again.
+**Root cause:** `EngineFluidTank` only blacklisted the air tag. The engine capability is `CombinedTankWrapper(fuel, exhaust)`: a CO2 fill the exhaust refuses falls through to the fuel tank once it is empty. The piping upgrade fed whatever its source tank held.
+**Fix:** `EngineFluidTank.withValidator`. Small engines take their cylinders' fuels or any fluid of a registered fuel type (cylinders may be fitted later); the large engine only the four fuels it burns. The tag rules moved into `isFluidValid`. Fuel and air tanks holding a fluid they do not take are voided on the first server tick after load.
+**Prevention:** Clearing a tank inside `read()` fires its update callback; defer it to a tick whenever that callback touches the level (the engine's recomputes its rotation).
+
+## [2026-10-05 09:40] - Chemical vat inputs filled with fluids no recipe uses
+**Context:** Same audit.
+**Error:** Any fluid piped into a vat took one of its four input tanks for good (inputs refuse extraction); a few stray fluids left the next real ingredient nowhere to go.
+**Root cause:** Create's `SmartFluidTankBehaviour` input tanks take any fluid. With variety enforced a fluid only goes into one tank (a second tank only receives the overflow of a single fill larger than a whole tank), so one fluid filling two slots is not a real case; foreign fluids were.
+**Fix:** Pipes see the inputs through `FilteredFillFluidHandler`, which only lets in fluids some vat recipe uses. Input tanks holding a fluid no recipe uses are voided on load.
+**Prevention:** Wrap a Create behaviour's capability when its tanks cannot carry a validator; the machine keeps its direct access.
+
+## [2026-10-05 09:50] - Distillation stages took piped fluid and the controller pulled water
+**Context:** Same audit.
+**Error:** A distillation output accepted fluid pumped into it, which then refused the tower's fraction (stalling that stage, or voiding the fraction in void mode); the controller took any fluid, from pipes or from the steel tank behind it.
+**Root cause:** Both exposed a plain `SmartFluidTank`.
+**Fix:** Stages expose a `DrainOnlyFluidHandler`; the controller only takes distillation inputs and checks `isFluidValid` before pulling from the steel tank, so a refused fluid stays there instead of being drained and lost. Both tanks could already be pumped out, so nothing is voided on load.
+**Prevention:** Before draining a source into a validated tank, check the tank accepts the fluid, or the drained amount is lost.
+
+## [2026-10-05 10:00] - Casting basin and blast furnace hatch took any fluid
+**Context:** Same audit.
+**Error:** Water or creosote piped into a casting basin or a hatch sat there and kept the metal or the hot air out until pumped away.
+**Root cause:** Plain tanks with no validator.
+**Fix:** The basin only takes fluids a casting recipe uses; the hatch only hot air and the gases blasting recipes give off. Both stay drainable.
+**Prevention:** Name the fluids every input is for, even when it can be drained.
+
+## [2026-10-05 10:05] - Concrete hose could keep a fluid it can never pour
+**Context:** Same audit.
+**Error:** A hose saved by an older version with a fluid other than liquid concrete refused concrete forever, since its handler cannot be drained.
+**Root cause:** The liquid concrete check on fill came after such worlds were saved.
+**Fix:** A non-concrete fluid in the hose is voided on the first server tick after load.
+**Prevention:** When adding a validator to an existing tank, decide what happens to saves that already hold a fluid it now refuses.
+
+## [2026-10-05 10:20] - New tank validators silently accepted every fluid
+**Context:** First game test run of the fluid slot fixes.
+**Error:** Six new tests failed: the casting basin took water, the hatch took creosote, the firebox took CO2, the distillation controller took water, and creosote still reached the blast stove's air tank. The engine and vat validators, built differently, worked.
+**Root cause:** The new `TFMGUtils.createTank(..., Predicate<FluidStack> validator)` returned an anonymous `SmartFluidTank` whose `isFluidValid` called `validator.test(stack)`. Inside an anonymous class an inherited field wins over a captured local of the same name, and NeoForge's `FluidTank` has a protected field `validator` that defaults to accepting everything. The code compiled and read correctly.
+**Fix:** The parameter is now `accepts`; the engine tank's extra rule field is `fuelRule`, so it no longer hides the inherited field either.
+**Prevention:** In an anonymous subclass, never name a captured variable after a field of the superclass (`validator`, `capacity`, `fluid` on `FluidTank`). Prove every new validator with a test that pushes the wrong fluid.
+
+## [2026-10-05 02:20] - Handbook fixes lost on regeneration
+**Context:** Merging the fluid slot fixes, which also corrected three handbook pages (blast stove faces, firebox fuels, casting basin).
+**Error:** Rebuilding the handbook brought back the old texts saying the tanks accept any fluid.
+**Root cause:** The corrections had been written into the generated files under `assets/tfmg/patchouli_books` instead of the chapter sources in `src/guide/chapters`, so the converter overwrote them.
+**Fix:** The same corrections were written into the chapter sources and the book was regenerated.
+**Prevention:** Handbook text is only ever edited in `src/guide/chapters/*.json`, then `python tools/handbook/build_handbook.py`; after a merge touching the book, regenerate and check `git diff` on the generated files is only page breaks.

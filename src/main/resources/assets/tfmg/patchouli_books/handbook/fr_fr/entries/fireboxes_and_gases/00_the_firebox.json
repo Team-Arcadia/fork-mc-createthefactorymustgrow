@@ -14,15 +14,15 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Carburants$()$(br)Seuls les fluides de la liste des carburants de foyer brûlent : $(item)GPL, butane, propane, hydrogène, diesel, naphta et kérosène$(). Le réservoir accepte n'importe quel fluide : en pomper un autre ne fait que le boucher, et les lunettes affichent alors $(item)This fluid is not a firebox fuel$()."
+      "text": "$(l)Carburants$()$(br)Seuls les fluides de la liste des carburants de foyer brûlent : $(item)GPL, butane, propane, hydrogène, diesel, naphta et kérosène$(). Le réservoir refuse tout autre fluide : ni son propre CO2 ni une conduite d'eau égarée ne peuvent le boucher.$(br2)$(l)Chaleur$()"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Chaleur$()$(br)Un foyer qui brûle compte comme un chauffage allumé :$(li)$(item)2 de chaleur$() par bloc pour les tours de distillation, les cuves chimiques et les chaudières à vapeur de Create, comme un brûleur à blaze surchauffé,"
+      "text": "Un foyer qui brûle compte comme un chauffage allumé :$(li)$(item)2 de chaleur$() par bloc pour les tours de distillation, les cuves chimiques et les chaudières à vapeur de Create, comme un brûleur à blaze surchauffé,$(li)$(item)chauffé$(), mais pas surchauffé, pour un bassin de Create posé dessus."
     },
     {
       "type": "patchouli:text",
-      "text": "$(li)$(item)chauffé$(), mais pas surchauffé, pour un bassin de Create posé dessus.$(br2)Quand il s'éteint, sa chaleur tombe à zéro."
+      "text": "Quand il s'éteint, sa chaleur tombe à zéro."
     },
     {
       "type": "patchouli:multiblock",

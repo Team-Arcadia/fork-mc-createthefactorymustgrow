@@ -196,7 +196,7 @@
           "",
           "The **sides of the upper layers** have no connection at all.",
           "",
-          "The input tanks take **any fluid** pushed into them. Air pushed into the top goes into the fuel tank, fuel pushed into a side goes into the air tank, and no recipe matches any more: the stove stops. The input tanks cannot be pumped back out, so check every pipe before you open the line. Goggles show what each tank holds.",
+          "Each input tank takes **only its own fluid**: air through the bottom sides, fuel through the top or bottom. Anything else is refused, so fuel pushed into a side or hot air flowing back into the top cannot clog the stove. Goggles show what each tank holds.",
           "",
           "A simple layout: air and CO2 pipes on two sides of the bottom, a fuel pipe under the stove, and the hot air pump on top, leading to the furnace hatch."
         ],
@@ -213,7 +213,7 @@
           "",
           "Les **côtés des couches supérieures** n'ont aucune connexion.",
           "",
-          "Les réservoirs d'entrée acceptent **n'importe quel fluide**. De l'air envoyé par le dessus va dans le réservoir de combustible, du combustible envoyé par un côté va dans le réservoir d'air, et plus aucune recette ne correspond : le fourneau s'arrête. Les réservoirs d'entrée ne se vident pas à la pompe : vérifiez chaque tuyau avant d'ouvrir la ligne. Les lunettes montrent le contenu de chaque réservoir.",
+          "Chaque réservoir d'entrée ne prend **que son propre fluide** : l'air par les côtés du bas, le combustible par le dessus ou le dessous. Tout autre fluide est refusé, donc un tuyau égaré ne peut plus boucher le fourneau. Du combustible poussé par un côté ou de l'air chaud qui reflue par le dessus restent dans le tuyau. Les lunettes montrent le contenu de chaque réservoir.",
           "",
           "Une disposition simple : tuyaux d'air et de CO2 sur deux côtés du bas, tuyau de combustible sous le fourneau, et pompe d'air chaud au sommet, vers la trappe du haut fourneau."
         ]

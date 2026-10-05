@@ -5,6 +5,13 @@ import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.items.inspector.IInspectable;
 import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.registry.TFMGBlockEntities;
+import com.drmangotea.tfmg.recipes.IndustrialBlastingRecipe;
+import com.drmangotea.tfmg.registry.TFMGFluids;
+import com.drmangotea.tfmg.registry.TFMGRecipeTypes;
+import com.simibubi.create.foundation.recipe.RecipeConditions;
+import com.simibubi.create.foundation.recipe.RecipeFinder;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -48,11 +55,31 @@ public class BlastFurnaceHatchBlockEntity extends SmartBlockEntity implements IH
     public BlastFurnaceHatchBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         setLazyTickRate(10);
-        tank = TFMGUtils.createTank(4000, true, this::onFluidChanged);
+        // A hatch is either the furnace's hot air tuyere or its gas outlet, so
+        // it takes hot air and the gases blasting recipes give off, nothing
+        // else: any other fluid kept the hot air out of the tuyere.
+        tank = TFMGUtils.createTank(4000, true, true, this::onFluidChanged, this::acceptsFluid);
         inventory = new SmartInventory(1, this).withMaxStackSize(64);
         fluidCapability = tank;
         itemCapability = inventory;
     }
+    /** Hot air, or a gas some industrial blasting recipe gives off. */
+    public boolean acceptsFluid(FluidStack stack) {
+        if (stack.getFluid().isSame(TFMGFluids.HOT_AIR.getSource()))
+            return true;
+        if (level == null)
+            return true;
+        for (RecipeHolder<? extends Recipe<?>> holder : RecipeFinder.get(BLASTING_GAS_KEY, level,
+                RecipeConditions.isOfType(TFMGRecipeTypes.INDUSTRIAL_BLASTING.getType()))) {
+            FluidStack gas = ((IndustrialBlastingRecipe) holder.value()).getGasByproduct();
+            if (!gas.isEmpty() && gas.getFluid().isSame(stack.getFluid()))
+                return true;
+        }
+        return false;
+    }
+
+    private static final Object BLASTING_GAS_KEY = new Object();
+
     public static void registerCapabilities(RegisterCapabilitiesEvent event) {
         event.registerBlockEntity(
                 Capabilities.FluidHandler.BLOCK,
