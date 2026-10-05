@@ -1,6 +1,8 @@
 package com.drmangotea.tfmg.content.machinery.vat.base;
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.base.capability.FilteredFillFluidHandler;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
 import net.minecraft.world.Containers;
 import com.drmangotea.tfmg.base.lang.TFMGLang;
@@ -114,6 +116,9 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
     int pressure = 0;
     HeatCondition heatCondition = HeatCondition.NONE;
     private static final Object vatRecipeKey = new Object();
+    // Set by a world load: the input tanks are checked for a fluid no vat
+    // recipe uses on the next server tick, once the recipes are reachable.
+    private boolean checkForeignFluids;
     // display
     private int minValue = 0;
     private int maxValue = 0;
@@ -179,11 +184,28 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         behaviours.add(inputTank);
         behaviours.add(outputTank);
 
-        fluidCapability = new CombinedTankWrapper(inputTank.getCapability(), outputTank.getCapability());
+        fluidCapability = new CombinedTankWrapper(pipeInput(inputTank.getCapability()), outputTank.getCapability());
     }
 
     protected Object getRecipeCacheKey() {
         return vatRecipeKey;
+    }
+
+    /**
+     * The input tanks as pipes see them: they only take fluids some vat recipe
+     * uses. Any fluid used to go in, and an input cannot be pumped out, so a
+     * stray fluid (the product of the line next door, the exhaust of an
+     * engine on the same pipe) kept one of the four input tanks for good, and
+     * a few of them left the next ingredient nowhere to go.
+     */
+    private IFluidHandler pipeInput(IFluidHandler inputs) {
+        return new FilteredFillFluidHandler(inputs, this::acceptsInput);
+    }
+
+    /** Whether some vat recipe takes this fluid as one of its ingredients. */
+    public boolean acceptsInput(FluidStack stack) {
+        return FluidSlots.acceptedByRecipes(level, getRecipeCacheKey(), TFMGRecipeTypes.VAT_MACHINE_RECIPE.getType(),
+                recipe -> ((VatMachineRecipe) recipe).getFluidIngredients(), stack);
     }
 
     protected void updateConnectivity() {
@@ -496,6 +518,12 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
     public void tick() {
         super.tick();
 
+        if (checkForeignFluids && level != null && !level.isClientSide) {
+            checkForeignFluids = false;
+            if (isController())
+                for (SmartFluidTankBehaviour.TankSegment segment : inputTank.getTanks())
+                    FluidSlots.voidForeignFluid(((TankSegmentAccessor) segment).tfmg$tank(), this::acceptsInput, this, "input tank");
+        }
 
         handleRecipe();
 
@@ -1459,7 +1487,7 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
         if (inputHandler == null || outputHandler == null)
             return fluidCapability;
 
-        return isController() ? new CombinedTankWrapper(inputHandler, outputHandler)
+        return isController() ? new CombinedTankWrapper(pipeInput(inputHandler), outputHandler)
                 : getControllerBE() != null ? getControllerBE().getNewFluidCapability() : fluidCapability;
     }
 
@@ -1640,8 +1668,10 @@ public class VatBlockEntity extends SmartBlockEntity implements IHaveGoggleInfor
 
         updateCapability = true;
 
-        if (!clientPacket)
+        if (!clientPacket) {
+            checkForeignFluids = true;
             return;
+        }
 
         boolean changeOfController = !Objects.equals(controllerBefore, controller);
         if (changeOfController || prevSize != width || prevHeight != height) {
