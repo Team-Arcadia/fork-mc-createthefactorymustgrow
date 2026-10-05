@@ -1,6 +1,7 @@
 package com.drmangotea.tfmg.content.machinery.metallurgy.casting_basin;
 
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import com.drmangotea.tfmg.content.items.inspector.IInspectable;
 import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
 import com.drmangotea.tfmg.recipes.CastingRecipe;
@@ -38,7 +39,9 @@ public class CastingBasinBlockEntity extends SmartBlockEntity implements IHaveGo
     // Output only: an item pushed in by a hopper or chute blocked casting.
     public SmartInventory inventory = new SmartInventory(1, this, 1, false).forbidInsertion();
 
-    public FluidTank tank = new SmartFluidTank(1000, this::onFluidChanged);
+    // Only fluids a casting recipe takes go in; anything else matched no
+    // recipe and kept the metal out until it was pumped away.
+    public FluidTank tank = TFMGUtils.createTank(1000, true, true, this::onFluidChanged, this::acceptsInput);
     public IFluidHandler fluidCapability;
     public IItemHandlerModifiable itemCapability;
     public CastingRecipe recipe = null;
@@ -134,6 +137,12 @@ public class CastingBasinBlockEntity extends SmartBlockEntity implements IHaveGo
 
     protected Object getRecipeCacheKey() {
         return castingRecipeKey;
+    }
+
+    /** Whether some casting recipe takes this fluid. */
+    public boolean acceptsInput(FluidStack stack) {
+        return FluidSlots.acceptedByRecipes(level, getRecipeCacheKey(), TFMGRecipeTypes.CASTING.getType(),
+                recipe -> List.of(((CastingRecipe) recipe).getIngrenient()), stack);
     }
 
     @Override
