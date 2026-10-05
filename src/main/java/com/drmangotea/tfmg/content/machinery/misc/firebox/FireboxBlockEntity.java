@@ -2,6 +2,7 @@ package com.drmangotea.tfmg.content.machinery.misc.firebox;
 
 import com.drmangotea.tfmg.base.lang.TFMGTexts;
 import com.drmangotea.tfmg.base.TFMGUtils;
+import com.drmangotea.tfmg.base.capability.FluidSlots;
 import com.drmangotea.tfmg.config.TFMGConfigs;
 import com.drmangotea.tfmg.content.items.inspector.IInspectable;
 import com.drmangotea.tfmg.content.items.inspector.InspectionReport;
@@ -64,7 +65,11 @@ public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleI
     public FireboxBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
         setLazyTickRate(60);
-        tankInventory = TFMGUtils.createTank(getCapacityMultiplier(), false, true, this::onFluidStackChanged);
+        // Only firebox fuel goes in. The tank used to take any fluid, so the
+        // carbon dioxide pumped out of this same capability, or anything else
+        // a pipe carried, filled it once the fuel ran out, and pipes cannot
+        // drain it: the firebox stayed cold for good.
+        tankInventory = TFMGUtils.createTank(getCapacityMultiplier(), false, true, this::onFluidStackChanged, FireboxBlockEntity::isFuel);
         exhuastTank = TFMGUtils.createTank(getCapacityMultiplier(), true, false, this::onFluidStackChanged);
         fluidCapability = new CombinedTankWrapper(tankInventory, exhuastTank);
         updateConnectivity = false;
@@ -204,11 +209,17 @@ public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleI
         return null;
     }
 
+    public static boolean isFuel(FluidStack stack) {
+        return stack.getFluid().is(TFMGTags.TFMGFluidTags.FIREBOX_FUEL.tag);
+    }
+
     public void applyFluidTankSize(int blocks) {
         tankInventory.setCapacity(blocks * getCapacityMultiplier());
         int overflow = tankInventory.getFluidAmount() - tankInventory.getCapacity();
+        // The fuel tank refuses drain() (pipes may not empty it), so trimming
+        // it through drain() did nothing and left it above its capacity.
         if (overflow > 0)
-            tankInventory.drain(overflow, IFluidHandler.FluidAction.EXECUTE);
+            TFMGUtils.drainFilteredTank((SmartFluidTank) tankInventory, overflow);
         // read() sizes the exhaust with the multiblock too; resizing only the
         // fuel tank here left a 3x3 firebox with a 1x1 exhaust until the next
         // reload, so it choked on its own CO2 almost at once.
@@ -391,9 +402,13 @@ public class FireboxBlockEntity extends SmartBlockEntity implements IHaveGoggleI
             exhuastTank.setCapacity(getTotalTankSize() * getCapacityMultiplier());
             exhuastTank.readFromNBT(registries,compound.getCompound("Exhaust"));
             if (tankInventory.getSpace() < 0)
-                tankInventory.drain(-tankInventory.getSpace(), IFluidHandler.FluidAction.EXECUTE);
+                TFMGUtils.drainFilteredTank((SmartFluidTank) tankInventory, -tankInventory.getSpace());
             if (exhuastTank.getSpace() < 0)
                 exhuastTank.drain(-exhuastTank.getSpace(), IFluidHandler.FluidAction.EXECUTE);
+            // A world saved before the fuel tank had a validator may hold a
+            // fluid that is no fuel and that nothing could ever remove.
+            if (!clientPacket)
+                FluidSlots.voidForeignFluid(tankInventory, this, "fuel tank");
         }
 
         updateCapability = true;
