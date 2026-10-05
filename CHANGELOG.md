@@ -12,7 +12,23 @@ Correctifs issus de la premiere passe de tests manuels complete de la 1.3.0.
 
 ### Fixed
 
+- **Blast stove dead for good once creosote took its air tank (the multiplayer report)** - Both input tanks took any fluid. As soon as the stove burnt its last air, creosote from a fuel pipe touching a side of the bottom layer filled the empty air tank (and hot air flowing back into the top could fill an empty fuel tank), no recipe matched again, and pipes cannot empty an input, so the stove never made hot air again. Each input now only takes the fluids the hot blast recipes read from it, and a stove saved with the wrong fluid in an input clears it when the world loads (a line in the server log says what was voided) and runs again.
+- **Firebox fuel tank** - Only firebox fuels go in. Its own CO2 or any stray fluid used to fill it once the fuel ran out and kept it cold for good; a wrong fluid already in it is cleared on load. Shrinking a firebox also left its fuel above the new capacity.
+- **Engine fuel tanks** - Regular, radial and turbine engines only take engine fuels, so their own exhaust or water from a piping upgrade can no longer fill an empty tank for good. The large engine only takes the four fuels it burns. A wrong fluid already in a fuel or air tank is cleared on load.
+- **Chemical vat inputs** - Pipes can only fill the inputs with fluids some vat recipe uses. A stray fluid used to take one of the four input tanks for good, and a few of them left the next ingredient nowhere to go; input tanks holding one are cleared on load.
+- **Distillation tower** - Stages no longer take fluid pumped into them, which then refused the tower's fraction. The controller only takes oils a tower distills, and leaves water in its steel tank instead of pulling it in.
+- **Casting basin and blast furnace hatch** - The basin only takes castable fluids, the hatch only hot air and furnace gas. Both could already be pumped out.
+- **Concrete hose** - A hose saved holding another fluid than liquid concrete, which refused concrete for good, clears it on load.
+
 ### Correctifs
+
+- **Fourneau a air chaud bloque pour de bon quand la creosote prenait son reservoir d'air (le signalement en multijoueur)** - Les deux reservoirs d'entree acceptaient n'importe quel fluide. Des que le fourneau brulait son dernier air, la creosote d'un tuyau de combustible touchant un cote de la couche du bas remplissait le reservoir d'air vide (et de l'air chaud refluant par le dessus pouvait remplir un reservoir de combustible vide), plus aucune recette ne correspondait, et les tuyaux ne peuvent pas vider une entree : le fourneau ne refaisait plus jamais d'air chaud. Chaque entree ne prend plus que les fluides que les recettes de soufflage chaud y lisent, et un fourneau sauvegarde avec le mauvais fluide dans une entree le vide au chargement du monde (une ligne du journal serveur indique ce qui a ete supprime) et repart.
+- **Reservoir de combustible du foyer** - Seuls les combustibles de foyer y entrent. Son propre CO2 ou un fluide egare le remplissait une fois le combustible epuise et l'eteignait pour de bon ; un mauvais fluide deja present est vide au chargement. Reduire un foyer laissait aussi son combustible au-dessus de la nouvelle capacite.
+- **Reservoirs de carburant des moteurs** - Les moteurs classiques, radiaux et a turbine ne prennent que des carburants de moteur : leur propre echappement ou l'eau d'une amelioration de tuyauterie ne peuvent plus remplir un reservoir vide pour de bon. Le grand moteur ne prend que les quatre carburants qu'il brule. Un mauvais fluide deja present dans un reservoir de carburant ou d'air est vide au chargement.
+- **Entrees de la cuve chimique** - Les tuyaux ne remplissent les entrees qu'avec des fluides utilises par une recette de cuve. Un fluide egare prenait l'un des quatre reservoirs d'entree pour de bon, et quelques-uns ne laissaient plus de place au prochain ingredient ; les reservoirs d'entree qui en contiennent sont vides au chargement.
+- **Tour de distillation** - Les etages n'acceptent plus le fluide pompe dedans, qui refusait ensuite la fraction de la tour. Le controleur ne prend que les huiles qu'une tour distille, et laisse l'eau dans son reservoir en acier au lieu de l'aspirer.
+- **Bassin de coulee et trappe du haut fourneau** - Le bassin ne prend que des fluides coulables, la trappe que de l'air chaud et du gaz de haut fourneau. Les deux se vidaient deja a la pompe.
+- **Tuyau a beton** - Un tuyau sauvegarde avec un autre fluide que du beton liquide, qui refusait le beton pour de bon, le vide au chargement.
 
 ---
 

@@ -14,7 +14,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "The input tanks take $(item)any fluid$() pushed into them. Air pushed into the top goes into the fuel tank, fuel pushed into a side goes into the air tank, and no recipe matches any more: the stove stops. The input tanks cannot be pumped back out, so check every pipe before you open the line. Goggles show what each tank holds."
+      "text": "Each input tank takes $(item)only its own fluid$(): air through the bottom sides, fuel through the top or bottom. Anything else is refused, so fuel pushed into a side or hot air flowing back into the top cannot clog the stove. Goggles show what each tank holds."
     },
     {
       "type": "patchouli:text",

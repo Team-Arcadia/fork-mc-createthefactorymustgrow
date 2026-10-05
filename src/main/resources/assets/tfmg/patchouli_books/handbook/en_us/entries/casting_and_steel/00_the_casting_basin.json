@@ -18,7 +18,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "The tank takes any fluid. Fluid with no casting recipe just sits there, so keep each basin on a clean line."
+      "text": "The tank only takes fluids a casting recipe uses: molten steel, slag, plastic, silicon and liquid concrete. Anything else stays in the pipe."
     },
     {
       "type": "patchouli:spotlight",
